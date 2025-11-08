@@ -29,6 +29,9 @@ using json11::Json;
 
 #include "mapjson.h"
 
+string version;
+// System directory separator
+string sep;
 
 string read_text_file(string filepath) {
     ifstream in_file(filepath);
@@ -78,12 +81,14 @@ string json_to_string(const Json &data, const string &field = "", bool silent = 
             output = "";
             break;
         default:{
-            string s = !field.empty() ? ("Value for '" + field + "'") : "JSON field";
-            FATAL_ERROR("%s is unexpected type; expected string, number, or bool.\n", s.c_str());
+            if (!silent) {
+                string s = !field.empty() ? ("Value for '" + field + "'") : "JSON field";
+                FATAL_ERROR("%s is unexpected type; expected string, number, or bool.\n", s.c_str());
+            }
         }
     }
 
-    if (output.empty()){
+    if (!silent && output.empty()) {
         string s = !field.empty() ? ("Value for '" + field + "'") : "JSON field";
         FATAL_ERROR("%s cannot be empty.\n", s.c_str());
     }
@@ -91,14 +96,14 @@ string json_to_string(const Json &data, const string &field = "", bool silent = 
     return output;
 }
 
-string generate_map_header_text(Json map_data, Json layouts_data, string version) {
+string generate_map_header_text(Json map_data, Json layouts_data) {
     string map_layout_id = json_to_string(map_data, "layout");
 
     vector<Json> matched;
 
-    for (auto &field : layouts_data["layouts"].array_items()) {
-        if (map_layout_id == json_to_string(field, "id"))
-            matched.push_back(field);
+    for (auto &layout : layouts_data["layouts"].array_items()) {
+        if (map_layout_id == json_to_string(layout, "id", true))
+            matched.push_back(layout);
     }
 
     if (matched.size() != 1)
@@ -126,27 +131,32 @@ string generate_map_header_text(Json map_data, Json layouts_data, string version
         text << "\t.4byte " << mapName << "_MapScripts\n";
 
     if (map_data.object_items().find("connections") != map_data.object_items().end()
-     && map_data["connections"].array_items().size() > 0)
+     && map_data["connections"].array_items().size() > 0 && json_to_string(map_data, "connections_no_include", true) != "TRUE")
         text << "\t.4byte " << mapName << "_MapConnections\n";
     else
-        text << "\t.4byte 0x0\n";
+        text << "\t.4byte NULL\n";
 
     text << "\t.2byte " << json_to_string(map_data, "music") << "\n"
          << "\t.2byte " << json_to_string(layout, "id") << "\n"
          << "\t.byte "  << json_to_string(map_data, "region_map_section") << "\n"
          << "\t.byte "  << json_to_string(map_data, "requires_flash") << "\n"
          << "\t.byte "  << json_to_string(map_data, "weather") << "\n"
-         << "\t.byte "  << json_to_string(map_data, "map_type") << "\n"
-         << "\t.2byte 0\n";
+         << "\t.byte "  << json_to_string(map_data, "map_type") << "\n";
+
+    if (version != "firered")
+        text << "\t.2byte 0\n";
 
     if (version == "ruby")
         text << "\t.byte " << json_to_string(map_data, "show_map_name") << "\n";
-    else if (version == "emerald")
+    else if (version == "emerald" || version == "firered")
         text << "\tmap_header_flags "
              << "allow_cycling=" << json_to_string(map_data, "allow_cycling") << ", "
              << "allow_escaping=" << json_to_string(map_data, "allow_escaping") << ", "
              << "allow_running=" << json_to_string(map_data, "allow_running") << ", "
              << "show_map_name=" << json_to_string(map_data, "show_map_name") << "\n";
+
+    if (version == "firered")
+        text << "\t.byte " << json_to_string(map_data, "floor_number") << "\n";
 
      text << "\t.byte " << json_to_string(map_data, "battle_scene") << "\n\n";
 
@@ -187,7 +197,7 @@ string generate_map_events_text(Json map_data) {
 
     string mapName = json_to_string(map_data, "name");
 
-    text << "@\n@ DO NOT MODIFY THIS FILE! It is auto-generated from data/maps/" << mapName << "/map.json\n@\n\n";
+    text << "@\n@ DO NOT MODIFY THIS FILE! It is auto-generated from data/maps/" << mapName << "/map.json\n@\n\n\t.align 2\n\n";
 
     string objects_label, warps_label, coords_label, bgs_label;
 
@@ -196,22 +206,36 @@ string generate_map_events_text(Json map_data) {
         text << objects_label << ":\n";
         for (unsigned int i = 0; i < map_data["object_events"].array_items().size(); i++) {
             auto obj_event = map_data["object_events"].array_items()[i];
-            text << "\tobject_event " << i + 1 << ", "
-                 << json_to_string(obj_event, "graphics_id") << ", 0, "
-                 << json_to_string(obj_event, "x") << ", "
-                 << json_to_string(obj_event, "y") << ", "
-                 << json_to_string(obj_event, "elevation") << ", "
-                 << json_to_string(obj_event, "movement_type") << ", "
-                 << json_to_string(obj_event, "movement_range_x") << ", "
-                 << json_to_string(obj_event, "movement_range_y") << ", "
-                 << json_to_string(obj_event, "trainer_type") << ", "
-                 << json_to_string(obj_event, "trainer_sight_or_berry_tree_id") << ", "
-                 << json_to_string(obj_event, "script") << ", "
-                 << json_to_string(obj_event, "flag") << "\n";
+            string type = json_to_string(obj_event, "type", true);
+
+            // If no type field is present, assume it's a regular object event.
+            if (type == "" || type == "object") {
+                text << "\tobject_event " << i + 1 << ", "
+                     << json_to_string(obj_event, "graphics_id") << ", "
+                     << json_to_string(obj_event, "x") << ", "
+                     << json_to_string(obj_event, "y") << ", "
+                     << json_to_string(obj_event, "elevation") << ", "
+                     << json_to_string(obj_event, "movement_type") << ", "
+                     << json_to_string(obj_event, "movement_range_x") << ", "
+                     << json_to_string(obj_event, "movement_range_y") << ", "
+                     << json_to_string(obj_event, "trainer_type") << ", "
+                     << json_to_string(obj_event, "trainer_sight_or_berry_tree_id") << ", "
+                     << json_to_string(obj_event, "script") << ", "
+                     << json_to_string(obj_event, "flag") << "\n";
+            } else if (type == "clone") {
+                text << "\tclone_event " << i + 1 << ", "
+                     << json_to_string(obj_event, "graphics_id") << ", "
+                     << json_to_string(obj_event, "x") << ", "
+                     << json_to_string(obj_event, "y") << ", "
+                     << json_to_string(obj_event, "target_local_id") << ", "
+                     << json_to_string(obj_event, "target_map") << "\n";
+            } else {
+                FATAL_ERROR("Unknown object event type '%s'. Expected 'object' or 'clone'.\n", type.c_str());
+            }
         }
         text << "\n";
     } else {
-        objects_label = "0x0";
+        objects_label = "NULL";
     }
 
     if (map_data["warp_events"].array_items().size() > 0) {
@@ -227,14 +251,15 @@ string generate_map_events_text(Json map_data) {
         }
         text << "\n";
     } else {
-        warps_label = "0x0";
+        warps_label = "NULL";
     }
 
     if (map_data["coord_events"].array_items().size() > 0) {
         coords_label = mapName + "_MapCoordEvents";
         text << coords_label << ":\n";
         for (auto &coord_event : map_data["coord_events"].array_items()) {
-            if (json_to_string(coord_event, "type") == "trigger") {
+            string type = json_to_string(coord_event, "type");
+            if (type == "trigger") {
                 text << "\tcoord_event "
                      << json_to_string(coord_event, "x") << ", "
                      << json_to_string(coord_event, "y") << ", "
@@ -243,24 +268,27 @@ string generate_map_events_text(Json map_data) {
                      << json_to_string(coord_event, "var_value") << ", "
                      << json_to_string(coord_event, "script") << "\n";
             }
-            else if (coord_event["type"] == "weather") {
+            else if (type == "weather") {
                 text << "\tcoord_weather_event "
                      << json_to_string(coord_event, "x") << ", "
                      << json_to_string(coord_event, "y") << ", "
                      << json_to_string(coord_event, "elevation") << ", "
                      << json_to_string(coord_event, "weather") << "\n";
+            } else {
+                FATAL_ERROR("Unknown coord event type '%s'. Expected 'trigger' or 'weather'.\n", type.c_str());
             }
         }
         text << "\n";
     } else {
-        coords_label = "0x0";
+        coords_label = "NULL";
     }
 
     if (map_data["bg_events"].array_items().size() > 0) {
         bgs_label = mapName + "_MapBGEvents";
         text << bgs_label << ":\n";
         for (auto &bg_event : map_data["bg_events"].array_items()) {
-            if (bg_event["type"] == "sign") {
+            string type = json_to_string(bg_event, "type");
+            if (type == "sign") {
                 text << "\tbg_sign_event "
                      << json_to_string(bg_event, "x") << ", "
                      << json_to_string(bg_event, "y") << ", "
@@ -268,25 +296,33 @@ string generate_map_events_text(Json map_data) {
                      << json_to_string(bg_event, "player_facing_dir") << ", "
                      << json_to_string(bg_event, "script") << "\n";
             }
-            else if (bg_event["type"] == "hidden_item") {
+            else if (type == "hidden_item") {
                 text << "\tbg_hidden_item_event "
                      << json_to_string(bg_event, "x") << ", "
                      << json_to_string(bg_event, "y") << ", "
                      << json_to_string(bg_event, "elevation") << ", "
                      << json_to_string(bg_event, "item") << ", "
-                     << json_to_string(bg_event, "flag") << "\n";
+                     << json_to_string(bg_event, "flag");
+                if (version == "firered") {
+                    text << ", "
+                         << json_to_string(bg_event, "quantity") << ", "
+                         << json_to_string(bg_event, "underfoot");
+                }
+                text << "\n";
             }
-            else if (bg_event["type"] == "secret_base") {
+            else if (type == "secret_base") {
                 text << "\tbg_secret_base_event "
                      << json_to_string(bg_event, "x") << ", "
                      << json_to_string(bg_event, "y") << ", "
                      << json_to_string(bg_event, "elevation") << ", "
                      << json_to_string(bg_event, "secret_base_id") << "\n";
+            } else {
+                FATAL_ERROR("Unknown bg event type '%s'. Expected 'sign', 'hidden_item', or 'secret_base'.\n", type.c_str());
             }
         }
         text << "\n";
     } else {
-        bgs_label = "0x0";
+        bgs_label = "NULL";
     }
 
     text << mapName << "_MapEvents::\n"
@@ -296,13 +332,22 @@ string generate_map_events_text(Json map_data) {
     return text.str();
 }
 
-string get_directory_name(string filename) {
-    size_t dir_pos = filename.find_last_of("/\\");
+string strip_trailing_separator(string filename) {
+    if(filename.back() == '/' || filename.back() == '\\')
+        filename.pop_back();
 
+    return filename;
+}
+void infer_separator(string filename) {
+    size_t dir_pos = filename.find_last_of("/\\");
+    sep = filename[dir_pos];
+}
+string file_parent(string filename){
+    size_t dir_pos = filename.find_last_of("/\\");
     return filename.substr(0, dir_pos + 1);
 }
 
-void process_map(string map_filepath, string layouts_filepath, string version) {
+void process_map(string map_filepath, string layouts_filepath, string output_dir) {
     string mapdata_err, layouts_err;
 
     string mapdata_json_text = read_text_file(map_filepath);
@@ -316,14 +361,77 @@ void process_map(string map_filepath, string layouts_filepath, string version) {
     if (layouts_data == Json())
         FATAL_ERROR("%s\n", layouts_err.c_str());
 
-    string header_text = generate_map_header_text(map_data, layouts_data, version);
+    string header_text = generate_map_header_text(map_data, layouts_data);
     string events_text = generate_map_events_text(map_data);
     string connections_text = generate_map_connections_text(map_data);
 
-    string files_dir = get_directory_name(map_filepath);
-    write_text_file(files_dir + "header.inc", header_text);
-    write_text_file(files_dir + "events.inc", events_text);
-    write_text_file(files_dir + "connections.inc", connections_text);
+    string out_dir = strip_trailing_separator(output_dir).append(sep);
+    write_text_file(out_dir + "header.inc", header_text);
+    write_text_file(out_dir + "events.inc", events_text);
+    write_text_file(out_dir + "connections.inc", connections_text);
+}
+
+void process_heal_locations(const vector<string> &map_filepaths, string output_file) {
+    ostringstream heal_locations_text;
+    ostringstream respawn_maps_text;
+    ostringstream respawn_npcs_text;
+
+    // Get heal location data from each map
+    for (const string &filepath : map_filepaths) {
+        string err;
+        string map_json_text = read_text_file(filepath);
+        Json map_data = Json::parse(map_json_text, err);
+        if (map_data == Json())
+            FATAL_ERROR("Failed to read '%s' while generating '%s': %s\n", filepath.c_str(), output_file.c_str(), err.c_str());
+
+        // Skip if no heal locations present
+        if (map_data.object_items().find("heal_locations") == map_data.object_items().end() || map_data["heal_locations"].array_items().size() <= 0)
+            continue;
+
+        string map_id = json_to_string(map_data, "id");
+        for (auto &heal_location : map_data["heal_locations"].array_items()) {
+            // Each array is indexed with the heal location's ID, e.g. '[HEAL_LOCATION_NAME - 1] = '
+            string index_text = "\t[" + json_to_string(heal_location, "id") + " - 1] =";
+
+            // Add element to main heal locations array
+            heal_locations_text << index_text << "\n\t{\n"
+                                << "\t\t.mapGroup = MAP_GROUP(" << map_id << "),\n"
+                                << "\t\t.mapNum = MAP_NUM(" << map_id << "),\n"
+                                << "\t\t.x = " << json_to_string(heal_location, "x") << ",\n"
+                                << "\t\t.y = " << json_to_string(heal_location, "y") << ",\n"
+                                << "\t},\n";
+
+            // Add element to respawn map array (if field is present)
+            if (heal_location.object_items().find("respawn_map") != heal_location.object_items().end()) {
+                string respawn_map_id = json_to_string(heal_location, "respawn_map");
+                respawn_maps_text << index_text << " {"
+                                  << "MAP_GROUP(" << respawn_map_id << "), "
+                                  << "MAP_NUM(" << respawn_map_id << ")"
+                                  << "},\n";
+            }
+
+            // Add element to respawn NPC array (if field is present)
+            if (heal_location.object_items().find("respawn_npc") != heal_location.object_items().end()) {
+                respawn_npcs_text << index_text << " " << json_to_string(heal_location, "respawn_npc") << ",\n";
+            }
+        }
+    }
+
+    ostringstream text;
+    text << "//\n// DO NOT MODIFY THIS FILE! It is auto-generated from data/maps/*/map.json\n//\n\n";
+
+    string arr_body = heal_locations_text.str();
+    text << "static const struct HealLocation sHealLocations[] =\n{\n" << arr_body << "};\n\n";
+
+    arr_body = respawn_maps_text.str();
+    if (!arr_body.empty())
+        text << "static const u16 sWhiteoutRespawnHealCenterMapIdxs[][2] =\n{\n" << arr_body << "};\n\n";
+
+    arr_body = respawn_npcs_text.str();
+    if (!arr_body.empty())
+        text << "static const u8 sWhiteoutRespawnHealerNpcIds[] =\n{\n" << arr_body << "};\n\n";
+
+    write_text_file(output_file, text.str());
 }
 
 string generate_groups_text(Json groups_data) {
@@ -348,7 +456,7 @@ string generate_groups_text(Json groups_data) {
     return text.str();
 }
 
-string generate_connections_text(Json groups_data) {
+string generate_connections_text(Json groups_data, string include_path) {
     vector<Json> map_names;
 
     for (auto &group : groups_data["group_order"].array_items())
@@ -373,12 +481,12 @@ string generate_connections_text(Json groups_data) {
     text << "@\n@ DO NOT MODIFY THIS FILE! It is auto-generated from data/maps/map_groups.json\n@\n\n";
 
     for (Json map_name : map_names)
-        text << "\t.include \"data/maps/" << json_to_string(map_name) << "/connections.inc\"\n";
+        text << "\t.include \"" << include_path << "/" <<  json_to_string(map_name) << "/connections.inc\"\n";
 
     return text.str();
 }
 
-string generate_headers_text(Json groups_data) {
+string generate_headers_text(Json groups_data, string include_path) {
     vector<string> map_names;
 
     for (auto &group : groups_data["group_order"].array_items())
@@ -390,12 +498,12 @@ string generate_headers_text(Json groups_data) {
     text << "@\n@ DO NOT MODIFY THIS FILE! It is auto-generated from data/maps/map_groups.json\n@\n\n";
 
     for (string map_name : map_names)
-        text << "\t.include \"data/maps/" << map_name << "/header.inc\"\n";
+        text << "\t.include \"" << include_path << "/" << map_name << "/header.inc\"\n";
 
     return text.str();
 }
 
-string generate_events_text(Json groups_data) {
+string generate_events_text(Json groups_data, string include_path) {
     vector<string> map_names;
 
     for (auto &group : groups_data["group_order"].array_items())
@@ -404,17 +512,16 @@ string generate_events_text(Json groups_data) {
 
     ostringstream text;
 
-    text << "@\n@ DO NOT MODIFY THIS FILE! It is auto-generated from data/maps/map_groups.json\n@\n\n";
+    text << "@\n@ DO NOT MODIFY THIS FILE! It is auto-generated from " << include_path << "/map_groups.json\n@\n\n";
 
     for (string map_name : map_names)
-        text << "\t.include \"data/maps/" << map_name << "/events.inc\"\n";
+        text << "\t.include \"" << include_path << "/" << map_name << "/events.inc\"\n";
 
     return text.str();
 }
 
 string generate_map_constants_text(string groups_filepath, Json groups_data) {
-    string file_dir = get_directory_name(groups_filepath);
-    char dir_separator = file_dir.back();
+    string file_dir = file_parent(groups_filepath) + sep;
 
     ostringstream text;
 
@@ -424,18 +531,15 @@ string generate_map_constants_text(string groups_filepath, Json groups_data) {
     text << "//\n// DO NOT MODIFY THIS FILE! It is auto-generated from data/maps/map_groups.json\n//\n\n";
 
     int group_num = 0;
-    vector<int> map_count_vec; //DEBUG
 
     for (auto &group : groups_data["group_order"].array_items()) {
         string groupName = json_to_string(group);
         text << "// " << groupName << "\n";
         vector<string> map_ids;
-
-        size_t max_length = 0; //DEBUG
-        int map_count = 0; //DEBUG
+        size_t max_length = 0;
 
         for (auto &map_name : groups_data[groupName].array_items()) {
-            string map_filepath = file_dir + json_to_string(map_name) + dir_separator + "map.json";
+            string map_filepath = file_dir + json_to_string(map_name) + sep + "map.json";
             string err_str;
             Json map_data = Json::parse(read_text_file(map_filepath), err_str);
             if (map_data == Json())
@@ -444,7 +548,6 @@ string generate_map_constants_text(string groups_filepath, Json groups_data) {
             map_ids.push_back(id);
             if (id.length() > max_length)
                 max_length = id.length();
-            map_count++; //DEBUG
         }
 
         int map_id_num = 0;
@@ -455,23 +558,19 @@ string generate_map_constants_text(string groups_filepath, Json groups_data) {
         text << "\n";
 
         group_num++;
-        map_count_vec.push_back(map_count); //DEBUG
     }
 
     text << "#define MAP_GROUPS_COUNT " << group_num << "\n\n";
-
-    text << "// static const u8 MAP_GROUP_COUNT[] = {"; //DEBUG
-    for(int i=0; i<group_num; i++){                     //DEBUG
-        text << map_count_vec[i] << ", ";               //DEBUG
-    }                                                   //DEBUG
-    text << "0};\n\n";                                  //DEBUG
-
     text << "#endif // GUARD_CONSTANTS_MAP_GROUPS_H\n";
 
     return text.str();
 }
 
-void process_groups(string groups_filepath) {
+// Output paths are directories with trailing path separators
+void process_groups(string groups_filepath, string output_asm, string output_c) {
+    output_asm = strip_trailing_separator(output_asm); // Remove separator if existing.
+    output_c = strip_trailing_separator(output_c);
+
     string err;
     Json groups_data = Json::parse(read_text_file(groups_filepath), err);
 
@@ -479,19 +578,16 @@ void process_groups(string groups_filepath) {
         FATAL_ERROR("%s\n", err.c_str());
 
     string groups_text = generate_groups_text(groups_data);
-    string connections_text = generate_connections_text(groups_data);
-    string headers_text = generate_headers_text(groups_data);
-    string events_text = generate_events_text(groups_data);
+    string connections_text = generate_connections_text(groups_data, output_asm);
+    string headers_text = generate_headers_text(groups_data, output_asm);
+    string events_text = generate_events_text(groups_data, output_asm);
     string map_header_text = generate_map_constants_text(groups_filepath, groups_data);
 
-    string file_dir = get_directory_name(groups_filepath);
-    char s = file_dir.back();
-
-    write_text_file(file_dir + "groups.inc", groups_text);
-    write_text_file(file_dir + "connections.inc", connections_text);
-    write_text_file(file_dir + "headers.inc", headers_text);
-    write_text_file(file_dir + "events.inc", events_text);
-    write_text_file(file_dir + ".." + s + ".." + s + "include" + s + "constants" + s + "map_groups.h", map_header_text);
+    write_text_file(output_asm + sep + "groups.inc", groups_text);
+    write_text_file(output_asm + sep + "connections.inc", connections_text);
+    write_text_file(output_asm + sep + "headers.inc", headers_text);
+    write_text_file(output_asm + sep + "events.inc", events_text);
+    write_text_file(output_c + sep + "map_groups.h", map_header_text);
 }
 
 string generate_layout_headers_text(Json layouts_data) {
@@ -500,6 +596,7 @@ string generate_layout_headers_text(Json layouts_data) {
     text << "@\n@ DO NOT MODIFY THIS FILE! It is auto-generated from data/layouts/layouts.json\n@\n\n";
 
     for (auto &layout : layouts_data["layouts"].array_items()) {
+        if (layout == Json::object()) continue;
         string layoutName = json_to_string(layout, "name");
         string border_label = layoutName + "_Border";
         string blockdata_label = layoutName + "_Blockdata";
@@ -514,7 +611,13 @@ string generate_layout_headers_text(Json layouts_data) {
              << "\t.4byte " << border_label << "\n"
              << "\t.4byte " << blockdata_label << "\n"
              << "\t.4byte " << json_to_string(layout, "primary_tileset") << "\n"
-             << "\t.4byte " << json_to_string(layout, "secondary_tileset") << "\n\n";
+             << "\t.4byte " << json_to_string(layout, "secondary_tileset") << "\n";
+        if (version == "firered") {
+            text << "\t.byte " << json_to_string(layout, "border_width") << "\n"
+                 << "\t.byte " << json_to_string(layout, "border_height") << "\n"
+                 << "\t.2byte 0\n";
+        }
+        text << "\n";
     }
 
     return text.str();
@@ -528,8 +631,11 @@ string generate_layouts_table_text(Json layouts_data) {
     text << "\t.align 2\n"
          << json_to_string(layouts_data, "layouts_table_label") << "::\n";
 
-    for (auto &layout : layouts_data["layouts"].array_items())
-        text << "\t.4byte " << json_to_string(layout, "name") << "\n";
+    for (auto &layout : layouts_data["layouts"].array_items()) {
+        string layout_name = json_to_string(layout, "name", true);
+        if (layout_name.empty()) layout_name = "NULL";
+        text << "\t.4byte " << layout_name << "\n";
+    }
 
     return text.str();
 }
@@ -542,16 +648,22 @@ string generate_layouts_constants_text(Json layouts_data) {
 
     text << "//\n// DO NOT MODIFY THIS FILE! It is auto-generated from data/layouts/layouts.json\n//\n\n";
 
-    int i = 0;
-    for (auto &layout : layouts_data["layouts"].array_items())
-        text << "#define " << json_to_string(layout, "id") << " " << ++i << "\n";
+    int i = 1;
+    for (auto &layout : layouts_data["layouts"].array_items()) {
+        if (layout != Json::object())
+            text << "#define " << json_to_string(layout, "id") << " " << i << "\n";
+        i++;
+    }
 
     text << "\n#endif // GUARD_CONSTANTS_LAYOUTS_H\n";
 
     return text.str();
 }
 
-void process_layouts(string layouts_filepath) {
+void process_layouts(string layouts_filepath, string output_asm, string output_c) {
+    output_asm = strip_trailing_separator(output_asm).append(sep);
+    output_c = strip_trailing_separator(output_c).append(sep);
+
     string err;
     Json layouts_data = Json::parse(read_text_file(layouts_filepath), err);
 
@@ -562,12 +674,9 @@ void process_layouts(string layouts_filepath) {
     string layouts_table_text = generate_layouts_table_text(layouts_data);
     string layouts_constants_text = generate_layouts_constants_text(layouts_data);
 
-    string file_dir = get_directory_name(layouts_filepath);
-    char s = file_dir.back();
-
-    write_text_file(file_dir + "layouts.inc", layout_headers_text);
-    write_text_file(file_dir + "layouts_table.inc", layouts_table_text);
-    write_text_file(file_dir + ".." + s + ".." + s + "include" + s + "constants" + s + "layouts.h", layouts_constants_text);
+    write_text_file(output_asm + "layouts.inc", layout_headers_text);
+    write_text_file(output_asm + "layouts_table.inc", layouts_table_text);
+    write_text_file(output_c + "layouts.h", layouts_constants_text);
 }
 
 int main(int argc, char *argv[]) {
@@ -575,39 +684,63 @@ int main(int argc, char *argv[]) {
         FATAL_ERROR("USAGE: mapjson <mode> <game-version> [options]\n");
 
     char *version_arg = argv[2];
-    string version(version_arg);
-    if (version != "emerald" && version != "ruby")
-        FATAL_ERROR("ERROR: <game-version> must be 'emerald' or 'ruby'.\n");
+    version = string(version_arg);
+    if (version != "emerald" && version != "ruby" && version != "firered")
+        FATAL_ERROR("ERROR: <game-version> must be 'emerald', 'firered', or 'ruby'.\n");
 
     char *mode_arg = argv[1];
     string mode(mode_arg);
-    if (mode != "layouts" && mode != "map" && mode != "groups")
-        FATAL_ERROR("ERROR: <mode> must be 'layouts', 'map', or 'groups'.\n");
-
     if (mode == "map") {
-        if (argc != 5)
-            FATAL_ERROR("USAGE: mapjson map <game-version> <map_file> <layouts_file>\n");
+        if (argc != 6)
+            FATAL_ERROR("USAGE: mapjson map <game-version> <map_file> <layouts_file> <output_dir>\n");
 
+        infer_separator(argv[3]);
         string filepath(argv[3]);
         string layouts_filepath(argv[4]);
+        string output_dir(argv[5]);
 
-        process_map(filepath, layouts_filepath, version);
+        process_map(filepath, layouts_filepath, output_dir);
     }
     else if (mode == "groups") {
-        if (argc != 4)
-            FATAL_ERROR("USAGE: mapjson groups <game-version> <groups_file>\n");
+        if (argc != 6)
+            FATAL_ERROR("USAGE: mapjson groups <game-version> <groups_file> <output_asm_dir> <output_c_dir>\n");
 
+        infer_separator(argv[3]);
         string filepath(argv[3]);
+        string output_asm(argv[4]);
+        string output_c(argv[5]);
 
-        process_groups(filepath);
+        process_groups(filepath, output_asm, output_c);
     }
     else if (mode == "layouts") {
-        if (argc != 4)
-            FATAL_ERROR("USAGE: mapjson layouts <game-version> <layouts_file>\n");
+        if (argc != 6)
+            FATAL_ERROR("USAGE: mapjson layouts <game-version> <layouts_file> <output_asm_dir> <output_c_dir>\n");
 
+        infer_separator(argv[3]);
         string filepath(argv[3]);
+        string output_asm(argv[4]);
+        string output_c(argv[5]);
 
-        process_layouts(filepath);
+        process_layouts(filepath, output_asm, output_c);
+    }
+    else if (mode == "heal_locations") {
+        if (argc < 5)
+            FATAL_ERROR("USAGE: mapjson heal_locations <game-version> <map_file> [additional_map_files] <output_file>");
+
+        infer_separator(argv[3]);
+
+        vector<string> filepaths;
+        const int firstMapFileArg = 3;
+        const int lastMapFileArg = argc - 2;
+        for (int i = firstMapFileArg; i <= lastMapFileArg; i++) {
+            filepaths.push_back(argv[i]);
+        }
+        string output_file(argv[argc - 1]);
+
+        process_heal_locations(filepaths, output_file);
+    }
+    else {
+        FATAL_ERROR("ERROR: <mode> must be 'layouts', 'map', 'heal_locations', or 'groups'.\n");
     }
 
     return 0;
