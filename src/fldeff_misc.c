@@ -339,9 +339,15 @@ bool8 IsComputerScreenCloseEffectActive(void)
 #define tBlendCnt      data[7]
 #define tBlendY        data[8]
 
+<<<<<<< HEAD
 static void CreateComputerScreenEffectTask(void (*taskfunc) (u8), u16 increment, u16 unused, u8 priority)
 {
     u8 taskId = CreateTask(taskfunc, priority);
+=======
+static void CreateComputerScreenEffectTask(TaskFunc func, u16 increment, u16 unused, u8 priority)
+{
+    u8 taskId = CreateTask(func, priority);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     gTasks[taskId].tState = 0;
     gTasks[taskId].tHorzIncrement = increment == 0 ? 16 : increment;
@@ -544,7 +550,11 @@ static void AdjustSecretPowerSpritePixelOffsets(void)
     }
 }
 
+<<<<<<< HEAD
 bool8 SetUpFieldMove_SecretPower(void)
+=======
+bool32 SetUpFieldMove_SecretPower(void)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     u8 mb;
 
@@ -839,10 +849,17 @@ void DoSecretBasePCTurnOffEffect(void)
     GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
     PlaySE(SE_PC_OFF);
 
+<<<<<<< HEAD
     if (!VarGet(VAR_GARBAGEVAR))
         MapGridSetMetatileIdAt(x, y, METATILE_SecretBase_PC | MAPGRID_COLLISION_MASK);
     else
         MapGridSetMetatileIdAt(x, y, METATILE_SecretBase_RegisterPC | MAPGRID_COLLISION_MASK);
+=======
+    if (!VarGet(VAR_CURRENT_SECRET_BASE))
+        MapGridSetMetatileIdAt(x, y, METATILE_SecretBase_PC | MAPGRID_IMPASSABLE);
+    else
+        MapGridSetMetatileIdAt(x, y, METATILE_SecretBase_RegisterPC | MAPGRID_IMPASSABLE);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     CurrentMapDrawMetatileAt(x, y);
 }
@@ -1083,7 +1100,11 @@ static void SpriteCB_SandPillar_BreakTop(struct Sprite *sprite)
     PlaySE(SE_M_ROCK_THROW);
 
     if (MapGridGetMetatileIdAt(gFieldEffectArguments[5], gFieldEffectArguments[6] - 1) == METATILE_SecretBase_SandOrnament_TopWall)
+<<<<<<< HEAD
         MapGridSetMetatileIdAt(gFieldEffectArguments[5], gFieldEffectArguments[6] - 1, METATILE_SecretBase_Wall_TopMid | MAPGRID_COLLISION_MASK);
+=======
+        MapGridSetMetatileIdAt(gFieldEffectArguments[5], gFieldEffectArguments[6] - 1, METATILE_SecretBase_Wall_TopMid | MAPGRID_IMPASSABLE);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     else
         MapGridSetMetatileIdAt(gFieldEffectArguments[5], gFieldEffectArguments[6] - 1, METATILE_SecretBase_SandOrnament_BrokenTop);
 
@@ -1103,7 +1124,11 @@ static void SpriteCB_SandPillar_BreakBase(struct Sprite *sprite)
     }
     else
     {
+<<<<<<< HEAD
         MapGridSetMetatileIdAt(gFieldEffectArguments[5], gFieldEffectArguments[6], METATILE_SecretBase_SandOrnament_BrokenBase | MAPGRID_COLLISION_MASK);
+=======
+        MapGridSetMetatileIdAt(gFieldEffectArguments[5], gFieldEffectArguments[6], METATILE_SecretBase_SandOrnament_BrokenBase | MAPGRID_IMPASSABLE);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         CurrentMapDrawMetatileAt(gFieldEffectArguments[5], gFieldEffectArguments[6]);
         sprite->data[0] = 0;
         sprite->callback = SpriteCB_SandPillar_End;
@@ -1133,7 +1158,11 @@ void InteractWithShieldOrTVDecoration(void)
 
         gSpecialVar_Result = 0;
 
+<<<<<<< HEAD
         if (!VarGet(VAR_GARBAGEVAR))
+=======
+        if (!VarGet(VAR_CURRENT_SECRET_BASE))
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             return;
 
         VarSet(VAR_SECRET_BASE_LOW_TV_FLAGS, VarGet(VAR_SECRET_BASE_LOW_TV_FLAGS) | SECRET_BASE_USED_GOLD_SHIELD);
@@ -1144,7 +1173,11 @@ void InteractWithShieldOrTVDecoration(void)
 
         gSpecialVar_Result = 0;
 
+<<<<<<< HEAD
         if (!VarGet(VAR_GARBAGEVAR))
+=======
+        if (!VarGet(VAR_CURRENT_SECRET_BASE))
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             return;
 
         VarSet(VAR_SECRET_BASE_LOW_TV_FLAGS, VarGet(VAR_SECRET_BASE_LOW_TV_FLAGS) | SECRET_BASE_USED_SILVER_SHIELD);
@@ -1152,7 +1185,11 @@ void InteractWithShieldOrTVDecoration(void)
     case METATILE_SecretBase_TV:
         gSpecialVar_Result = 1;
 
+<<<<<<< HEAD
         if (!VarGet(VAR_GARBAGEVAR))
+=======
+        if (!VarGet(VAR_CURRENT_SECRET_BASE))
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             return;
 
         VarSet(VAR_SECRET_BASE_LOW_TV_FLAGS, VarGet(VAR_SECRET_BASE_LOW_TV_FLAGS) | SECRET_BASE_USED_TV);
@@ -1160,7 +1197,11 @@ void InteractWithShieldOrTVDecoration(void)
     case METATILE_SecretBase_RoundTV:
         gSpecialVar_Result = 2;
 
+<<<<<<< HEAD
         if (!VarGet(VAR_GARBAGEVAR))
+=======
+        if (!VarGet(VAR_CURRENT_SECRET_BASE))
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             return;
 
         VarSet(VAR_SECRET_BASE_LOW_TV_FLAGS, VarGet(VAR_SECRET_BASE_LOW_TV_FLAGS) | SECRET_BASE_USED_TV);
@@ -1168,7 +1209,11 @@ void InteractWithShieldOrTVDecoration(void)
     case METATILE_SecretBase_CuteTV:
         gSpecialVar_Result = 3;
 
+<<<<<<< HEAD
         if (!VarGet(VAR_GARBAGEVAR))
+=======
+        if (!VarGet(VAR_CURRENT_SECRET_BASE))
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             return;
 
         VarSet(VAR_SECRET_BASE_LOW_TV_FLAGS, VarGet(VAR_SECRET_BASE_LOW_TV_FLAGS) | SECRET_BASE_USED_TV);

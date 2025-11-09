@@ -44,8 +44,13 @@ static const u16 sDiplomaPalettes[][16] =
     INCBIN_U16("graphics/diploma/hoenn.gbapal"),
 };
 
+<<<<<<< HEAD
 static const u32 sDiplomaTilemap[] = INCBIN_U32("graphics/diploma/tilemap.bin.lz");
 static const u32 sDiplomaTiles[] = INCBIN_U32("graphics/diploma/tiles.4bpp.lz");
+=======
+static const u32 sDiplomaTilemap[] = INCBIN_U32("graphics/diploma/tilemap.bin.smolTM");
+static const u32 sDiplomaTiles[] = INCBIN_U32("graphics/diploma/tiles.4bpp.smol");
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 void CB2_ShowDiploma(void)
 {
@@ -80,7 +85,11 @@ void CB2_ShowDiploma(void)
     DecompressAndCopyTileDataToVram(1, &sDiplomaTiles, 0, 0, 0);
     while (FreeTempTileDataBuffersIfPossible())
         ;
+<<<<<<< HEAD
     LZDecompressWram(sDiplomaTilemap, sDiplomaTilemapPtr);
+=======
+    DecompressDataWithHeaderWram(sDiplomaTilemap, sDiplomaTilemapPtr);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     CopyBgTilemapBufferToVram(1);
     DisplayDiplomaText();
     BlendPalettes(PALETTES_ALL, 16, RGB_BLACK);

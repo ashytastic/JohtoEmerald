@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 .set LOCALID_ATTENDANT, 1
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 SlateportCity_BattleTentLobby_MapScripts::
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, SlateportCity_BattleTentLobby_OnFrame
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, SlateportCity_BattleTentLobby_OnWarp
@@ -11,7 +14,11 @@ SlateportCity_BattleTentLobby_OnWarp:
 
 SlateportCity_BattleTentLobby_EventScript_TurnPlayerNorth::
 	setvar VAR_TEMP_1, 1
+<<<<<<< HEAD
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+=======
+	turnobject LOCALID_PLAYER, DIR_NORTH
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 SlateportCity_BattleTentLobby_OnFrame:
@@ -138,6 +145,7 @@ SlateportCity_BattleTentLobby_EventScript_EnterChallenge::
 	end
 
 SlateportCity_BattleTentLobby_EventScript_WalkToDoor::
+<<<<<<< HEAD
 	applymovement LOCALID_ATTENDANT, SlateportCity_BattleTentLobby_Movement_AttendantWalkToDoor
 	applymovement OBJ_EVENT_ID_PLAYER, SlateportCity_BattleTentLobby_Movement_PlayerWalkToDoor
 	waitmovement 0
@@ -145,6 +153,15 @@ SlateportCity_BattleTentLobby_EventScript_WalkToDoor::
 	waitdooranim
 	applymovement LOCALID_ATTENDANT, SlateportCity_BattleTentLobby_Movement_AttendantEnterDoor
 	applymovement OBJ_EVENT_ID_PLAYER, SlateportCity_BattleTentLobby_Movement_PlayerEnterDoor
+=======
+	applymovement LOCALID_SLATEPORT_TENT_ATTENDANT, SlateportCity_BattleTentLobby_Movement_AttendantWalkToDoor
+	applymovement LOCALID_PLAYER, SlateportCity_BattleTentLobby_Movement_PlayerWalkToDoor
+	waitmovement 0
+	opendoor 6, 1
+	waitdooranim
+	applymovement LOCALID_SLATEPORT_TENT_ATTENDANT, SlateportCity_BattleTentLobby_Movement_AttendantEnterDoor
+	applymovement LOCALID_PLAYER, SlateportCity_BattleTentLobby_Movement_PlayerEnterDoor
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	closedoor 6, 1
 	waitdooranim

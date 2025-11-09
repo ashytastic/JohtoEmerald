@@ -8,14 +8,26 @@
 #include "contest_util.h"
 #include "contest_painting.h"
 #include "data.h"
+<<<<<<< HEAD
+=======
+#include "decompress.h"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include "decoration.h"
 #include "decoration_inventory.h"
 #include "event_data.h"
 #include "field_door.h"
 #include "field_effect.h"
+<<<<<<< HEAD
 #include "event_object_lock.h"
 #include "event_object_movement.h"
 #include "event_scripts.h"
+=======
+#include "field_move.h"
+#include "event_object_lock.h"
+#include "event_object_movement.h"
+#include "event_scripts.h"
+#include "fake_rtc.h"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include "field_message_box.h"
 #include "field_player_avatar.h"
 #include "field_screen_effect.h"
@@ -23,16 +35,30 @@
 #include "field_tasks.h"
 #include "field_weather.h"
 #include "fieldmap.h"
+<<<<<<< HEAD
+=======
+#include "follower_npc.h"
+#include "gpu_regs.h"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include "item.h"
 #include "lilycove_lady.h"
 #include "main.h"
 #include "menu.h"
 #include "money.h"
+<<<<<<< HEAD
 #include "mystery_event_script.h"
 #include "palette.h"
 #include "party_menu.h"
 #include "pokemon_storage_system.h"
 #include "pokemon.h"
+=======
+#include "move.h"
+#include "mystery_event_script.h"
+#include "palette.h"
+#include "party_menu.h"
+#include "pokedex.h"
+#include "pokemon_storage_system.h"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include "random.h"
 #include "overworld.h"
 #include "rotating_tile_puzzle.h"
@@ -50,6 +76,7 @@
 #include "trainer_see.h"
 #include "tv.h"
 #include "window.h"
+<<<<<<< HEAD
 #include "constants/event_objects.h"
 #include "tx_randomizer_and_challenges.h"
 #include "constants/items.h"
@@ -74,6 +101,15 @@ extern s8    MoveIdToTutorIndex(u16 moveId);
 
 typedef u16 (*SpecialFunc)(void);
 typedef void (*NativeFunc)(void);
+=======
+#include "list_menu.h"
+#include "malloc.h"
+#include "constants/event_objects.h"
+#include "constants/map_types.h"
+
+typedef u16 (*SpecialFunc)(void);
+typedef void (*NativeFunc)(struct ScriptContext *ctx);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 EWRAM_DATA const u8 *gRamScriptRetAddr = NULL;
 static EWRAM_DATA u32 sAddressOffset = 0; // For relative addressing in vgoto etc., used by saved scripts (e.g. Mystery Event)
@@ -84,16 +120,28 @@ static EWRAM_DATA u16 sMovingNpcMapNum = 0;
 static EWRAM_DATA u16 sFieldEffectScriptId = 0;
 
 static u8 sBrailleWindowId;
+<<<<<<< HEAD
+=======
+static bool8 sIsScriptedWildDouble;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 extern const SpecialFunc gSpecials[];
 extern const u8 *gStdScripts[];
 extern const u8 *gStdScripts_End[];
 
 static void CloseBrailleWindow(void);
+<<<<<<< HEAD
 
 // This is defined in here so the optimizer can't see its value when compiling
 // script.c.
 void * const gNullScriptPtr = NULL;
+=======
+static void DynamicMultichoiceSortList(struct ListMenuItem *items, u32 count);
+
+// This is defined in here so the optimizer can't see its value when compiling
+// script.c.
+void *const gNullScriptPtr = NULL;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 static const u8 sScriptConditionTable[6][3] =
 {
@@ -106,7 +154,11 @@ static const u8 sScriptConditionTable[6][3] =
     {1, 0, 1}, // !=
 };
 
+<<<<<<< HEAD
 static u8 * const sScriptStringVars[] =
+=======
+static u8 *const sScriptStringVars[] =
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     gStringVar1,
     gStringVar2,
@@ -115,16 +167,31 @@ static u8 * const sScriptStringVars[] =
 
 bool8 ScrCmd_nop(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     return FALSE;
 }
 
 bool8 ScrCmd_nop1(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     return FALSE;
 }
 
 bool8 ScrCmd_end(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     FlagClear(FLAG_SAFE_FOLLOWER_MOVEMENT);
     StopScript(ctx);
     return FALSE;
@@ -134,6 +201,12 @@ bool8 ScrCmd_gotonative(struct ScriptContext *ctx)
 {
     bool8 (*addr)(void) = (bool8 (*)(void))ScriptReadWord(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+    Script_CheckEffectInstrumentedGotoNative(addr);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     SetupNativeScript(ctx, addr);
     return TRUE;
 }
@@ -142,20 +215,39 @@ bool8 ScrCmd_special(struct ScriptContext *ctx)
 {
     u16 index = ScriptReadHalfword(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+    Script_CheckEffectInstrumentedSpecial(index);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gSpecials[index]();
     return FALSE;
 }
 
 bool8 ScrCmd_specialvar(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
     u16 *var = GetVarPointer(ScriptReadHalfword(ctx));
 
     *var = gSpecials[ScriptReadHalfword(ctx)]();
+=======
+    u32 varId = ScriptReadHalfword(ctx);
+    u16 index = ScriptReadHalfword(ctx);
+    u16 *ptr = GetVarPointer(varId);
+
+    Script_RequestEffects(SCREFF_V1);
+    Script_RequestWriteVar(varId);
+    Script_CheckEffectInstrumentedSpecial(index);
+
+    *ptr = gSpecials[index]();
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     return FALSE;
 }
 
 bool8 ScrCmd_callnative(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
     u32 func = ScriptReadWord(ctx);
     ((NativeFunc) func)();
     return FALSE;
@@ -165,10 +257,24 @@ bool8 ScrCmd_callfunc(struct ScriptContext *ctx)
 {
     u32 func = ScriptReadWord(ctx);
     return ((ScrCmdFunc) func)(ctx);
+=======
+    NativeFunc func = (NativeFunc)ScriptReadWord(ctx);
+
+    Script_RequestEffects(SCREFF_V1);
+    Script_CheckEffectInstrumentedCallNative(func);
+
+    func(ctx);
+    return FALSE;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 bool8 ScrCmd_waitstate(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ScriptContext_Stop();
     return TRUE;
 }
@@ -177,12 +283,22 @@ bool8 ScrCmd_goto(struct ScriptContext *ctx)
 {
     const u8 *ptr = (const u8 *)ScriptReadWord(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ScriptJump(ctx, ptr);
     return FALSE;
 }
 
 bool8 ScrCmd_return(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ScriptReturn(ctx);
     return FALSE;
 }
@@ -191,6 +307,11 @@ bool8 ScrCmd_call(struct ScriptContext *ctx)
 {
     const u8 *ptr = (const u8 *)ScriptReadWord(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ScriptCall(ctx, ptr);
     return FALSE;
 }
@@ -200,6 +321,11 @@ bool8 ScrCmd_goto_if(struct ScriptContext *ctx)
     u8 condition = ScriptReadByte(ctx);
     const u8 *ptr = (const u8 *)ScriptReadWord(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (sScriptConditionTable[condition][ctx->comparisonResult] == 1)
         ScriptJump(ctx, ptr);
     return FALSE;
@@ -210,6 +336,11 @@ bool8 ScrCmd_call_if(struct ScriptContext *ctx)
     u8 condition = ScriptReadByte(ctx);
     const u8 *ptr = (const u8 *)ScriptReadWord(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (sScriptConditionTable[condition][ctx->comparisonResult] == 1)
         ScriptCall(ctx, ptr);
     return FALSE;
@@ -220,6 +351,11 @@ bool8 ScrCmd_setvaddress(struct ScriptContext *ctx)
     u32 addr1 = (u32)ctx->scriptPtr - 1;
     u32 addr2 = ScriptReadWord(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     sAddressOffset = addr2 - addr1;
     return FALSE;
 }
@@ -228,6 +364,11 @@ bool8 ScrCmd_vgoto(struct ScriptContext *ctx)
 {
     u32 addr = ScriptReadWord(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ScriptJump(ctx, (u8 *)(addr - sAddressOffset));
     return FALSE;
 }
@@ -236,6 +377,11 @@ bool8 ScrCmd_vcall(struct ScriptContext *ctx)
 {
     u32 addr = ScriptReadWord(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ScriptCall(ctx, (u8 *)(addr - sAddressOffset));
     return FALSE;
 }
@@ -245,6 +391,11 @@ bool8 ScrCmd_vgoto_if(struct ScriptContext *ctx)
     u8 condition = ScriptReadByte(ctx);
     const u8 *ptr = (const u8 *)(ScriptReadWord(ctx) - sAddressOffset);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (sScriptConditionTable[condition][ctx->comparisonResult] == 1)
         ScriptJump(ctx, ptr);
     return FALSE;
@@ -255,6 +406,11 @@ bool8 ScrCmd_vcall_if(struct ScriptContext *ctx)
     u8 condition = ScriptReadByte(ctx);
     const u8 *ptr = (const u8 *)(ScriptReadWord(ctx) - sAddressOffset);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (sScriptConditionTable[condition][ctx->comparisonResult] == 1)
         ScriptCall(ctx, ptr);
     return FALSE;
@@ -265,6 +421,11 @@ bool8 ScrCmd_gotostd(struct ScriptContext *ctx)
     u8 index = ScriptReadByte(ctx);
     const u8 **ptr = &gStdScripts[index];
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (ptr < gStdScripts_End)
         ScriptJump(ctx, *ptr);
     return FALSE;
@@ -275,6 +436,11 @@ bool8 ScrCmd_callstd(struct ScriptContext *ctx)
     u8 index = ScriptReadByte(ctx);
     const u8 **ptr = &gStdScripts[index];
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (ptr < gStdScripts_End)
         ScriptCall(ctx, *ptr);
     return FALSE;
@@ -285,6 +451,11 @@ bool8 ScrCmd_gotostd_if(struct ScriptContext *ctx)
     u8 condition = ScriptReadByte(ctx);
     u8 index = ScriptReadByte(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (sScriptConditionTable[condition][ctx->comparisonResult] == 1)
     {
         const u8 **ptr = &gStdScripts[index];
@@ -299,6 +470,11 @@ bool8 ScrCmd_callstd_if(struct ScriptContext *ctx)
     u8 condition = ScriptReadByte(ctx);
     u8 index = ScriptReadByte(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (sScriptConditionTable[condition][ctx->comparisonResult] == 1)
     {
         const u8 **ptr = &gStdScripts[index];
@@ -310,12 +486,22 @@ bool8 ScrCmd_callstd_if(struct ScriptContext *ctx)
 
 bool8 ScrCmd_returnram(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ScriptJump(ctx, gRamScriptRetAddr);
     return FALSE;
 }
 
 bool8 ScrCmd_endram(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     FlagClear(FLAG_SAFE_FOLLOWER_MOVEMENT);
     ClearRamScript();
     StopScript(ctx);
@@ -326,6 +512,11 @@ bool8 ScrCmd_setmysteryeventstatus(struct ScriptContext *ctx)
 {
     u8 status = ScriptReadByte(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     SetMysteryEventScriptStatus(status);
     return FALSE;
 }
@@ -334,6 +525,11 @@ bool8 ScrCmd_loadword(struct ScriptContext *ctx)
 {
     u8 index = ScriptReadByte(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ctx->data[index] = ScriptReadWord(ctx);
     return FALSE;
 }
@@ -342,6 +538,11 @@ bool8 ScrCmd_loadbytefromptr(struct ScriptContext *ctx)
 {
     u8 index = ScriptReadByte(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ctx->data[index] = *(const u8 *)ScriptReadWord(ctx);
     return FALSE;
 }
@@ -350,6 +551,12 @@ bool8 ScrCmd_setptr(struct ScriptContext *ctx)
 {
     u8 value = ScriptReadByte(ctx);
 
+<<<<<<< HEAD
+=======
+    // TODO: Check if 'ptr' is within a save block?
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     *(u8 *)ScriptReadWord(ctx) = value;
     return FALSE;
 }
@@ -358,6 +565,11 @@ bool8 ScrCmd_loadbyte(struct ScriptContext *ctx)
 {
     u8 index = ScriptReadByte(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ctx->data[index] = ScriptReadByte(ctx);
     return FALSE;
 }
@@ -366,6 +578,12 @@ bool8 ScrCmd_setptrbyte(struct ScriptContext *ctx)
 {
     u8 index = ScriptReadByte(ctx);
 
+<<<<<<< HEAD
+=======
+    // TODO: Check if 'ptr' is within a save block?
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     *(u8 *)ScriptReadWord(ctx) = ctx->data[index];
     return FALSE;
 }
@@ -375,6 +593,11 @@ bool8 ScrCmd_copylocal(struct ScriptContext *ctx)
     u8 destIndex = ScriptReadByte(ctx);
     u8 srcIndex = ScriptReadByte(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ctx->data[destIndex] = ctx->data[srcIndex];
     return FALSE;
 }
@@ -382,27 +605,61 @@ bool8 ScrCmd_copylocal(struct ScriptContext *ctx)
 bool8 ScrCmd_copybyte(struct ScriptContext *ctx)
 {
     u8 *ptr = (u8 *)ScriptReadWord(ctx);
+<<<<<<< HEAD
+=======
+
+    // TODO: Check if 'ptr' is within a save block?
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     *ptr = *(const u8 *)ScriptReadWord(ctx);
     return FALSE;
 }
 
 bool8 ScrCmd_setvar(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
     u16 *ptr = GetVarPointer(ScriptReadHalfword(ctx));
+=======
+    u32 varId = ScriptReadHalfword(ctx);
+    u16 *ptr = GetVarPointer(varId);
+
+    Script_RequestEffects(SCREFF_V1);
+    Script_RequestWriteVar(varId);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     *ptr = ScriptReadHalfword(ctx);
     return FALSE;
 }
 
 bool8 ScrCmd_copyvar(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
     u16 *ptr = GetVarPointer(ScriptReadHalfword(ctx));
+=======
+    u32 varId = ScriptReadHalfword(ctx);
+    u16 *ptr = GetVarPointer(varId);
+
+    Script_RequestEffects(SCREFF_V1);
+    Script_RequestWriteVar(varId);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     *ptr = *GetVarPointer(ScriptReadHalfword(ctx));
     return FALSE;
 }
 
 bool8 ScrCmd_setorcopyvar(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
     u16 *ptr = GetVarPointer(ScriptReadHalfword(ctx));
+=======
+    u32 varId = ScriptReadHalfword(ctx);
+    u16 *ptr = GetVarPointer(varId);
+
+    Script_RequestEffects(SCREFF_V1);
+    Script_RequestWriteVar(varId);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     *ptr = VarGet(ScriptReadHalfword(ctx));
     return FALSE;
 }
@@ -421,6 +678,11 @@ bool8 ScrCmd_compare_local_to_local(struct ScriptContext *ctx)
     const u8 value1 = ctx->data[ScriptReadByte(ctx)];
     const u8 value2 = ctx->data[ScriptReadByte(ctx)];
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ctx->comparisonResult = Compare(value1, value2);
     return FALSE;
 }
@@ -430,6 +692,11 @@ bool8 ScrCmd_compare_local_to_value(struct ScriptContext *ctx)
     const u8 value1 = ctx->data[ScriptReadByte(ctx)];
     const u8 value2 = ScriptReadByte(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ctx->comparisonResult = Compare(value1, value2);
     return FALSE;
 }
@@ -439,6 +706,11 @@ bool8 ScrCmd_compare_local_to_ptr(struct ScriptContext *ctx)
     const u8 value1 = ctx->data[ScriptReadByte(ctx)];
     const u8 value2 = *(const u8 *)ScriptReadWord(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ctx->comparisonResult = Compare(value1, value2);
     return FALSE;
 }
@@ -448,6 +720,11 @@ bool8 ScrCmd_compare_ptr_to_local(struct ScriptContext *ctx)
     const u8 value1 = *(const u8 *)ScriptReadWord(ctx);
     const u8 value2 = ctx->data[ScriptReadByte(ctx)];
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ctx->comparisonResult = Compare(value1, value2);
     return FALSE;
 }
@@ -457,6 +734,11 @@ bool8 ScrCmd_compare_ptr_to_value(struct ScriptContext *ctx)
     const u8 value1 = *(const u8 *)ScriptReadWord(ctx);
     const u8 value2 = ScriptReadByte(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ctx->comparisonResult = Compare(value1, value2);
     return FALSE;
 }
@@ -466,6 +748,11 @@ bool8 ScrCmd_compare_ptr_to_ptr(struct ScriptContext *ctx)
     const u8 value1 = *(const u8 *)ScriptReadWord(ctx);
     const u8 value2 = *(const u8 *)ScriptReadWord(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ctx->comparisonResult = Compare(value1, value2);
     return FALSE;
 }
@@ -475,6 +762,11 @@ bool8 ScrCmd_compare_var_to_value(struct ScriptContext *ctx)
     const u16 value1 = *GetVarPointer(ScriptReadHalfword(ctx));
     const u16 value2 = ScriptReadHalfword(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ctx->comparisonResult = Compare(value1, value2);
     return FALSE;
 }
@@ -484,6 +776,11 @@ bool8 ScrCmd_compare_var_to_var(struct ScriptContext *ctx)
     const u16 *ptr1 = GetVarPointer(ScriptReadHalfword(ctx));
     const u16 *ptr2 = GetVarPointer(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ctx->comparisonResult = Compare(*ptr1, *ptr2);
     return FALSE;
 }
@@ -493,14 +790,32 @@ bool8 ScrCmd_compare_var_to_var(struct ScriptContext *ctx)
 // in the contest scripts to `subvar VAR_*, 1`, else contests will break.
 bool8 ScrCmd_addvar(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
     u16 *ptr = GetVarPointer(ScriptReadHalfword(ctx));
+=======
+    u32 varId = ScriptReadHalfword(ctx);
+    u16 *ptr = GetVarPointer(varId);
+
+    Script_RequestEffects(SCREFF_V1);
+    Script_RequestWriteVar(varId);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     *ptr += ScriptReadHalfword(ctx);
     return FALSE;
 }
 
 bool8 ScrCmd_subvar(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
     u16 *ptr = GetVarPointer(ScriptReadHalfword(ctx));
+=======
+    u32 varId = ScriptReadHalfword(ctx);
+    u16 *ptr = GetVarPointer(varId);
+
+    Script_RequestEffects(SCREFF_V1);
+    Script_RequestWriteVar(varId);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     *ptr -= VarGet(ScriptReadHalfword(ctx));
     return FALSE;
 }
@@ -509,6 +824,11 @@ bool8 ScrCmd_random(struct ScriptContext *ctx)
 {
     u16 max = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gSpecialVar_Result = Random() % max;
     return FALSE;
 }
@@ -518,7 +838,13 @@ bool8 ScrCmd_additem(struct ScriptContext *ctx)
     u16 itemId = VarGet(ScriptReadHalfword(ctx));
     u32 quantity = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
     gSpecialVar_Result = AddBagItem(itemId, (u8)quantity);
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+    gSpecialVar_Result = AddBagItem(itemId, quantity);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     return FALSE;
 }
 
@@ -527,7 +853,13 @@ bool8 ScrCmd_removeitem(struct ScriptContext *ctx)
     u16 itemId = VarGet(ScriptReadHalfword(ctx));
     u32 quantity = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
     gSpecialVar_Result = RemoveBagItem(itemId, (u8)quantity);
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+    gSpecialVar_Result = RemoveBagItem(itemId, quantity);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     return FALSE;
 }
 
@@ -536,6 +868,7 @@ bool8 ScrCmd_checkitemspace(struct ScriptContext *ctx)
     u16 itemId = VarGet(ScriptReadHalfword(ctx));
     u32 quantity = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
     gSpecialVar_Result = CheckBagHasSpace(itemId, (u8)quantity);
     return FALSE;
 }
@@ -546,6 +879,11 @@ bool8 ScrCmd_checkpcspace(struct ScriptContext *ctx)
     u32 quantity = VarGet(ScriptReadHalfword(ctx));
 
     gSpecialVar_Result = CheckPCHasSpace(itemId, (u8)quantity);
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+    gSpecialVar_Result = CheckBagHasSpace(itemId, quantity);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     return FALSE;
 }
 
@@ -554,7 +892,13 @@ bool8 ScrCmd_checkitem(struct ScriptContext *ctx)
     u16 itemId = VarGet(ScriptReadHalfword(ctx));
     u32 quantity = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
     gSpecialVar_Result = CheckBagHasItem(itemId, (u8)quantity);
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+    gSpecialVar_Result = CheckBagHasItem(itemId, quantity);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     return FALSE;
 }
 
@@ -562,7 +906,13 @@ bool8 ScrCmd_checkitemtype(struct ScriptContext *ctx)
 {
     u16 itemId = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
     gSpecialVar_Result = GetPocketByItemId(itemId);
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+    gSpecialVar_Result = GetItemPocket(itemId);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     return FALSE;
 }
 
@@ -571,6 +921,11 @@ bool8 ScrCmd_addpcitem(struct ScriptContext *ctx)
     u16 itemId = VarGet(ScriptReadHalfword(ctx));
     u16 quantity = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gSpecialVar_Result = AddPCItem(itemId, quantity);
     return FALSE;
 }
@@ -580,6 +935,11 @@ bool8 ScrCmd_checkpcitem(struct ScriptContext *ctx)
     u16 itemId = VarGet(ScriptReadHalfword(ctx));
     u16 quantity = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gSpecialVar_Result = CheckPCHasItem(itemId, quantity);
     return FALSE;
 }
@@ -588,6 +948,11 @@ bool8 ScrCmd_adddecoration(struct ScriptContext *ctx)
 {
     u32 decorId = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gSpecialVar_Result = DecorationAdd(decorId);
     return FALSE;
 }
@@ -596,6 +961,11 @@ bool8 ScrCmd_removedecoration(struct ScriptContext *ctx)
 {
     u32 decorId = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gSpecialVar_Result = DecorationRemove(decorId);
     return FALSE;
 }
@@ -604,6 +974,11 @@ bool8 ScrCmd_checkdecorspace(struct ScriptContext *ctx)
 {
     u32 decorId = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gSpecialVar_Result = DecorationCheckSpace(decorId);
     return FALSE;
 }
@@ -612,44 +987,94 @@ bool8 ScrCmd_checkdecor(struct ScriptContext *ctx)
 {
     u32 decorId = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gSpecialVar_Result = CheckHasDecoration(decorId);
     return FALSE;
 }
 
 bool8 ScrCmd_setflag(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
     FlagSet(ScriptReadHalfword(ctx));
+=======
+    u32 flagId = ScriptReadHalfword(ctx);
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+    FlagSet(flagId);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     return FALSE;
 }
 
 bool8 ScrCmd_clearflag(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
     FlagClear(ScriptReadHalfword(ctx));
+=======
+    u32 flagId = ScriptReadHalfword(ctx);
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+    FlagClear(flagId);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     return FALSE;
 }
 
 bool8 ScrCmd_checkflag(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ctx->comparisonResult = FlagGet(ScriptReadHalfword(ctx));
     return FALSE;
 }
 
 bool8 ScrCmd_incrementgamestat(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
     IncrementGameStat(ScriptReadByte(ctx));
+=======
+    u32 statId = ScriptReadByte(ctx);
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+    IncrementGameStat(statId);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     return FALSE;
 }
 
 bool8 ScrCmd_animateflash(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
     AnimateFlash(ScriptReadByte(ctx));
+=======
+    u32 level = ScriptReadByte(ctx);
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+    AnimateFlash(level);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ScriptContext_Stop();
     return TRUE;
 }
 
 bool8 ScrCmd_setflashlevel(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
     SetFlashLevel(VarGet(ScriptReadHalfword(ctx)));
+=======
+    u32 level = VarGet(ScriptReadHalfword(ctx));
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE | SCREFF_HARDWARE);
+
+    SetFlashLevel(level);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     return FALSE;
 }
 
@@ -662,14 +1087,27 @@ static bool8 IsPaletteNotActive(void)
 }
 
 // pauses script until palette fade inactive
+<<<<<<< HEAD
 bool8 ScrFunc_WaitPaletteNotActive(struct ScriptContext *ctx) {
+=======
+bool8 ScrFunc_WaitPaletteNotActive(struct ScriptContext *ctx)
+{
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     SetupNativeScript(ctx, IsPaletteNotActive);
     return TRUE;
 }
 
 bool8 ScrCmd_fadescreen(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
     FadeScreen(ScriptReadByte(ctx), 0);
+=======
+    u32 mode = ScriptReadByte(ctx);
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+    FadeScreen(mode, 0);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     SetupNativeScript(ctx, IsPaletteNotActive);
     return TRUE;
 }
@@ -679,6 +1117,11 @@ bool8 ScrCmd_fadescreenspeed(struct ScriptContext *ctx)
     u8 mode = ScriptReadByte(ctx);
     u8 speed = ScriptReadByte(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     FadeScreen(mode, speed);
     SetupNativeScript(ctx, IsPaletteNotActive);
     return TRUE;
@@ -689,6 +1132,7 @@ bool8 ScrCmd_fadescreenswapbuffers(struct ScriptContext *ctx)
     u8 mode = ScriptReadByte(ctx);
     u8 nowait = ScriptReadByte(ctx);
 
+<<<<<<< HEAD
     switch (mode)
     {
     case FADE_TO_BLACK:
@@ -704,6 +1148,25 @@ bool8 ScrCmd_fadescreenswapbuffers(struct ScriptContext *ctx)
         break;
     }
 
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+    switch (mode)
+    {
+    case FADE_FROM_BLACK:
+        SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(0, 0));
+        break;
+    case FADE_FROM_WHITE:
+        // Restore last weather blend before fading in,
+        // since BLDALPHA was modified by fade-out
+        SetGpuReg(REG_OFFSET_BLDALPHA,
+                  BLDALPHA_BLEND(gWeatherPtr->currBlendEVA, gWeatherPtr->currBlendEVB));
+        break;
+    }
+
+    FadeScreenHardware(mode, 0);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (nowait)
         return FALSE;
     SetupNativeScript(ctx, IsPaletteNotActive);
@@ -720,7 +1183,15 @@ static bool8 RunPauseTimer(void)
 
 bool8 ScrCmd_delay(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
     sPauseCounter = ScriptReadHalfword(ctx);
+=======
+    u32 frames = ScriptReadHalfword(ctx);
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+    sPauseCounter = frames;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     SetupNativeScript(ctx, RunPauseTimer);
     return TRUE;
 }
@@ -730,18 +1201,33 @@ bool8 ScrCmd_initclock(struct ScriptContext *ctx)
     u8 hour = VarGet(ScriptReadHalfword(ctx));
     u8 minute = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     RtcInitLocalTimeOffset(hour, minute);
     return FALSE;
 }
 
 bool8 ScrCmd_dotimebasedevents(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     DoTimeBasedEvents();
     return FALSE;
 }
 
 bool8 ScrCmd_gettime(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     RtcCalcLocalTime();
     gSpecialVar_0x8000 = gLocalTime.hours;
     gSpecialVar_0x8001 = gLocalTime.minutes;
@@ -749,29 +1235,63 @@ bool8 ScrCmd_gettime(struct ScriptContext *ctx)
     return FALSE;
 }
 
+<<<<<<< HEAD
+=======
+bool8 ScrCmd_gettimeofday(struct ScriptContext *ctx)
+{
+    Script_RequestEffects(SCREFF_V1);
+
+    gSpecialVar_0x8000 = GetTimeOfDay();
+    return FALSE;
+}
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 bool8 ScrCmd_setweather(struct ScriptContext *ctx)
 {
     u16 weather = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     SetSavedWeather(weather);
     return FALSE;
 }
 
 bool8 ScrCmd_resetweather(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     SetSavedWeatherFromCurrMapHeader();
     return FALSE;
 }
 
 bool8 ScrCmd_doweather(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     DoCurrentWeather();
     return FALSE;
 }
 
 bool8 ScrCmd_setstepcallback(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
     ActivatePerStepCallback(ScriptReadByte(ctx));
+=======
+    u32 callbackId = ScriptReadByte(ctx);
+
+    Script_RequestEffects(SCREFF_V1);
+
+    ActivatePerStepCallback(callbackId);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     return FALSE;
 }
 
@@ -779,6 +1299,11 @@ bool8 ScrCmd_setmaplayoutindex(struct ScriptContext *ctx)
 {
     u16 value = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     SetCurrentMapLayout(value);
     return FALSE;
 }
@@ -791,6 +1316,11 @@ bool8 ScrCmd_warp(struct ScriptContext *ctx)
     u16 x = VarGet(ScriptReadHalfword(ctx));
     u16 y = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     SetWarpDestination(mapGroup, mapNum, warpId, x, y);
     DoWarp();
     ResetInitialPlayerAvatarState();
@@ -805,6 +1335,11 @@ bool8 ScrCmd_warpsilent(struct ScriptContext *ctx)
     u16 x = VarGet(ScriptReadHalfword(ctx));
     u16 y = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     SetWarpDestination(mapGroup, mapNum, warpId, x, y);
     DoDiveWarp();
     ResetInitialPlayerAvatarState();
@@ -819,6 +1354,11 @@ bool8 ScrCmd_warpdoor(struct ScriptContext *ctx)
     u16 x = VarGet(ScriptReadHalfword(ctx));
     u16 y = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     SetWarpDestination(mapGroup, mapNum, warpId, x, y);
     DoDoorWarp();
     ResetInitialPlayerAvatarState();
@@ -829,11 +1369,21 @@ bool8 ScrCmd_warphole(struct ScriptContext *ctx)
 {
     u8 mapGroup = ScriptReadByte(ctx);
     u8 mapNum = ScriptReadByte(ctx);
+<<<<<<< HEAD
     u16 x;
     u16 y;
 
     PlayerGetDestCoords(&x, &y);
     if (mapGroup == MAP_GROUP(UNDEFINED) && mapNum == MAP_NUM(UNDEFINED))
+=======
+    s16 x;
+    s16 y;
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE | SCREFF_HARDWARE);
+
+    PlayerGetDestCoords(&x, &y);
+    if (mapGroup == MAP_GROUP(MAP_UNDEFINED) && mapNum == MAP_NUM(MAP_UNDEFINED))
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         SetWarpDestinationToFixedHoleWarp(x - MAP_OFFSET, y - MAP_OFFSET);
     else
         SetWarpDestination(mapGroup, mapNum, WARP_ID_NONE, x - MAP_OFFSET, y - MAP_OFFSET);
@@ -851,6 +1401,11 @@ bool8 ScrCmd_warpteleport(struct ScriptContext *ctx)
     u16 x = VarGet(ScriptReadHalfword(ctx));
     u16 y = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     SetWarpDestination(mapGroup, mapNum, warpId, x, y);
     DoTeleportTileWarp();
     ResetInitialPlayerAvatarState();
@@ -865,6 +1420,11 @@ bool8 ScrCmd_warpmossdeepgym(struct ScriptContext *ctx)
     u16 x = VarGet(ScriptReadHalfword(ctx));
     u16 y = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     SetWarpDestination(mapGroup, mapNum, warpId, x, y);
     DoMossdeepGymWarp();
     ResetInitialPlayerAvatarState();
@@ -879,6 +1439,11 @@ bool8 ScrCmd_setwarp(struct ScriptContext *ctx)
     u16 x = VarGet(ScriptReadHalfword(ctx));
     u16 y = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     SetWarpDestination(mapGroup, mapNum, warpId, x, y);
     return FALSE;
 }
@@ -891,6 +1456,11 @@ bool8 ScrCmd_setdynamicwarp(struct ScriptContext *ctx)
     u16 x = VarGet(ScriptReadHalfword(ctx));
     u16 y = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     SetDynamicWarpWithCoords(0, mapGroup, mapNum, warpId, x, y);
     return FALSE;
 }
@@ -903,6 +1473,11 @@ bool8 ScrCmd_setdivewarp(struct ScriptContext *ctx)
     u16 x = VarGet(ScriptReadHalfword(ctx));
     u16 y = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     SetFixedDiveWarp(mapGroup, mapNum, warpId, x, y);
     return FALSE;
 }
@@ -915,6 +1490,11 @@ bool8 ScrCmd_setholewarp(struct ScriptContext *ctx)
     u16 x = VarGet(ScriptReadHalfword(ctx));
     u16 y = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     SetFixedHoleWarp(mapGroup, mapNum, warpId, x, y);
     return FALSE;
 }
@@ -927,14 +1507,30 @@ bool8 ScrCmd_setescapewarp(struct ScriptContext *ctx)
     u16 x = VarGet(ScriptReadHalfword(ctx));
     u16 y = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     SetEscapeWarp(mapGroup, mapNum, warpId, x, y);
     return FALSE;
 }
 
 bool8 ScrCmd_getplayerxy(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
     u16 *pX = GetVarPointer(ScriptReadHalfword(ctx));
     u16 *pY = GetVarPointer(ScriptReadHalfword(ctx));
+=======
+    u32 varIdX = ScriptReadHalfword(ctx);
+    u32 varIdY = ScriptReadHalfword(ctx);
+    u16 *pX = GetVarPointer(varIdX);
+    u16 *pY = GetVarPointer(varIdY);
+
+    Script_RequestEffects(SCREFF_V1);
+    Script_RequestWriteVar(varIdX);
+    Script_RequestWriteVar(varIdY);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     *pX = gSaveBlock1Ptr->pos.x;
     *pY = gSaveBlock1Ptr->pos.y;
@@ -943,13 +1539,26 @@ bool8 ScrCmd_getplayerxy(struct ScriptContext *ctx)
 
 bool8 ScrCmd_getpartysize(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gSpecialVar_Result = CalculatePlayerPartyCount();
     return FALSE;
 }
 
 bool8 ScrCmd_playse(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
     PlaySE(ScriptReadHalfword(ctx));
+=======
+    u32 songId = ScriptReadHalfword(ctx);
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+    PlaySE(songId);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     return FALSE;
 }
 
@@ -963,13 +1572,26 @@ static bool8 WaitForSoundEffectFinish(void)
 
 bool8 ScrCmd_waitse(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     SetupNativeScript(ctx, WaitForSoundEffectFinish);
     return TRUE;
 }
 
 bool8 ScrCmd_playfanfare(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
     PlayFanfare(ScriptReadHalfword(ctx));
+=======
+    u32 songId = ScriptReadHalfword(ctx);
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+    PlayFanfare(songId);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     return FALSE;
 }
 
@@ -980,6 +1602,11 @@ static bool8 WaitForFanfareFinish(void)
 
 bool8 ScrCmd_waitfanfare(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     SetupNativeScript(ctx, WaitForFanfareFinish);
     return TRUE;
 }
@@ -989,6 +1616,11 @@ bool8 ScrCmd_playbgm(struct ScriptContext *ctx)
     u16 songId = ScriptReadHalfword(ctx);
     bool8 save = ScriptReadByte(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (save == TRUE)
         Overworld_SetSavedMusic(songId);
     PlayNewMapMusic(songId);
@@ -997,18 +1629,33 @@ bool8 ScrCmd_playbgm(struct ScriptContext *ctx)
 
 bool8 ScrCmd_savebgm(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     Overworld_SetSavedMusic(ScriptReadHalfword(ctx));
     return FALSE;
 }
 
 bool8 ScrCmd_fadedefaultbgm(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     Overworld_ChangeMusicToDefault();
     return FALSE;
 }
 
 bool8 ScrCmd_fadenewbgm(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     Overworld_ChangeMusicTo(ScriptReadHalfword(ctx));
     return FALSE;
 }
@@ -1017,6 +1664,11 @@ bool8 ScrCmd_fadeoutbgm(struct ScriptContext *ctx)
 {
     u8 speed = ScriptReadByte(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (speed != 0)
         FadeOutBGMTemporarily(4 * speed);
     else
@@ -1029,6 +1681,11 @@ bool8 ScrCmd_fadeinbgm(struct ScriptContext *ctx)
 {
     u8 speed = ScriptReadByte(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (speed != 0)
         FadeInBGM(4 * speed);
     else
@@ -1036,12 +1693,31 @@ bool8 ScrCmd_fadeinbgm(struct ScriptContext *ctx)
     return FALSE;
 }
 
+<<<<<<< HEAD
+=======
+struct ObjectEvent *ScriptHideFollower(void)
+{
+    struct ObjectEvent *obj = GetFollowerObject();
+
+    if (obj == NULL || obj->invisible)
+        return NULL;
+
+    ClearObjectEventMovement(obj, &gSprites[obj->spriteId]);
+    gSprites[obj->spriteId].animCmdIndex = 0; // Reset start frame of animation
+    // Note: ScriptMovement_ returns TRUE on error
+    if (ScriptMovement_StartObjectMovementScript(obj->localId, obj->mapGroup, obj->mapNum, EnterPokeballMovement))
+        return NULL;
+    return obj;
+}
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 bool8 ScrCmd_applymovement(struct ScriptContext *ctx)
 {
     u16 localId = VarGet(ScriptReadHalfword(ctx));
     const u8 *movementScript = (const u8 *)ScriptReadWord(ctx);
     struct ObjectEvent *objEvent;
 
+<<<<<<< HEAD
     // When applying script movements to follower, it may have frozen animation that must be cleared
     if (localId == OBJ_EVENT_ID_FOLLOWER && (objEvent = GetFollowerObject()) && objEvent->frozen) {
         ClearObjectEventMovement(objEvent, &gSprites[objEvent->spriteId]);
@@ -1061,6 +1737,26 @@ bool8 ScrCmd_applymovement(struct ScriptContext *ctx)
         ClearObjectEventMovement(objEvent, &gSprites[objEvent->spriteId]);
         gSprites[objEvent->spriteId].animCmdIndex = 0; // Reset start frame of animation
         ScriptMovement_StartObjectMovementScript(OBJ_EVENT_ID_FOLLOWER, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, EnterPokeballMovement);
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+    // When applying script movements to follower, it may have frozen animation that must be cleared
+    if ((localId == OBJ_EVENT_ID_FOLLOWER && (objEvent = GetFollowerObject()) && objEvent->frozen) 
+            || ((objEvent = &gObjectEvents[GetObjectEventIdByLocalId(localId)]) && IS_OW_MON_OBJ(objEvent)))
+    {
+        ClearObjectEventMovement(objEvent, &gSprites[objEvent->spriteId]);
+        gSprites[objEvent->spriteId].animCmdIndex = 0; // Reset start frame of animation
+    }
+
+    gObjectEvents[GetObjectEventIdByLocalId(localId)].directionOverwrite = DIR_NONE;
+    ScriptMovement_StartObjectMovementScript(localId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, movementScript);
+    sMovingNpcId = localId;
+    if (localId != OBJ_EVENT_ID_FOLLOWER
+     && !FlagGet(FLAG_SAFE_FOLLOWER_MOVEMENT)
+     && (movementScript < Common_Movement_FollowerSafeStart || movementScript > Common_Movement_FollowerSafeEnd))
+    {
+        ScriptHideFollower();
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
     return FALSE;
 }
@@ -1072,6 +1768,11 @@ bool8 ScrCmd_applymovementat(struct ScriptContext *ctx)
     u8 mapGroup = ScriptReadByte(ctx);
     u8 mapNum = ScriptReadByte(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gObjectEvents[GetObjectEventIdByLocalId(localId)].directionOverwrite = DIR_NONE;
     ScriptMovement_StartObjectMovementScript(localId, mapNum, mapGroup, movementScript);
     sMovingNpcId = localId;
@@ -1080,7 +1781,12 @@ bool8 ScrCmd_applymovementat(struct ScriptContext *ctx)
 
 static bool8 WaitForMovementFinish(void)
 {
+<<<<<<< HEAD
     if (ScriptMovement_IsObjectMovementFinished(sMovingNpcId, sMovingNpcMapNum, sMovingNpcMapGroup)) {
+=======
+    if (ScriptMovement_IsObjectMovementFinished(sMovingNpcId, sMovingNpcMapNum, sMovingNpcMapGroup))
+    {
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         struct ObjectEvent *objEvent = GetFollowerObject();
         // If the follower is still entering the pokeball, wait for it to finish too
         // This prevents a `release` after this script command from getting the follower stuck in an intermediate state
@@ -1095,7 +1801,13 @@ bool8 ScrCmd_waitmovement(struct ScriptContext *ctx)
 {
     u16 localId = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
     if (localId != 0)
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+    if (localId != LOCALID_NONE)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         sMovingNpcId = localId;
     sMovingNpcMapGroup = gSaveBlock1Ptr->location.mapGroup;
     sMovingNpcMapNum = gSaveBlock1Ptr->location.mapNum;
@@ -1109,7 +1821,13 @@ bool8 ScrCmd_waitmovementat(struct ScriptContext *ctx)
     u8 mapGroup;
     u8 mapNum;
 
+<<<<<<< HEAD
     if (localId != 0)
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+    if (localId != LOCALID_NONE)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         sMovingNpcId = localId;
     mapGroup = ScriptReadByte(ctx);
     mapNum = ScriptReadByte(ctx);
@@ -1123,6 +1841,11 @@ bool8 ScrCmd_removeobject(struct ScriptContext *ctx)
 {
     u16 localId = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     RemoveObjectEventByLocalIdAndMap(localId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
     return FALSE;
 }
@@ -1133,6 +1856,11 @@ bool8 ScrCmd_removeobjectat(struct ScriptContext *ctx)
     u8 mapGroup = ScriptReadByte(ctx);
     u8 mapNum = ScriptReadByte(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     RemoveObjectEventByLocalIdAndMap(objectId, mapNum, mapGroup);
     return FALSE;
 }
@@ -1141,6 +1869,11 @@ bool8 ScrCmd_addobject(struct ScriptContext *ctx)
 {
     u16 objectId = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     TrySpawnObjectEvent(objectId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
     return FALSE;
 }
@@ -1151,6 +1884,11 @@ bool8 ScrCmd_addobjectat(struct ScriptContext *ctx)
     u8 mapGroup = ScriptReadByte(ctx);
     u8 mapNum = ScriptReadByte(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     TrySpawnObjectEvent(objectId, mapNum, mapGroup);
     return FALSE;
 }
@@ -1161,6 +1899,15 @@ bool8 ScrCmd_setobjectxy(struct ScriptContext *ctx)
     u16 x = VarGet(ScriptReadHalfword(ctx));
     u16 y = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+    // Don't do follower NPC post-warp position set after setobjectxy.
+    if (localId == OBJ_EVENT_ID_NPC_FOLLOWER)
+        SetFollowerNPCData(FNPC_DATA_COME_OUT_DOOR, FNPC_DOOR_NO_POS_SET);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     TryMoveObjectEventToMapCoords(localId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, x, y);
     return FALSE;
 }
@@ -1171,6 +1918,11 @@ bool8 ScrCmd_setobjectxyperm(struct ScriptContext *ctx)
     u16 x = VarGet(ScriptReadHalfword(ctx));
     u16 y = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     SetObjEventTemplateCoords(localId, x, y);
     return FALSE;
 }
@@ -1179,6 +1931,11 @@ bool8 ScrCmd_copyobjectxytoperm(struct ScriptContext *ctx)
 {
     u16 localId = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     TryOverrideObjectEventTemplateCoords(localId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
     return FALSE;
 }
@@ -1189,6 +1946,11 @@ bool8 ScrCmd_showobjectat(struct ScriptContext *ctx)
     u8 mapGroup = ScriptReadByte(ctx);
     u8 mapNum = ScriptReadByte(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     SetObjectInvisibility(localId, mapNum, mapGroup, FALSE);
     return FALSE;
 }
@@ -1199,6 +1961,11 @@ bool8 ScrCmd_hideobjectat(struct ScriptContext *ctx)
     u8 mapGroup = ScriptReadByte(ctx);
     u8 mapNum = ScriptReadByte(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     SetObjectInvisibility(localId, mapNum, mapGroup, TRUE);
     return FALSE;
 }
@@ -1210,6 +1977,11 @@ bool8 ScrCmd_setobjectsubpriority(struct ScriptContext *ctx)
     u8 mapNum = ScriptReadByte(ctx);
     u8 priority = ScriptReadByte(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     SetObjectSubpriority(localId, mapNum, mapGroup, priority + 83);
     return FALSE;
 }
@@ -1220,12 +1992,44 @@ bool8 ScrCmd_resetobjectsubpriority(struct ScriptContext *ctx)
     u8 mapGroup = ScriptReadByte(ctx);
     u8 mapNum = ScriptReadByte(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ResetObjectSubpriority(localId, mapNum, mapGroup);
     return FALSE;
 }
 
 bool8 ScrCmd_faceplayer(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+    if (PlayerHasFollowerNPC() 
+     && gObjectEvents[GetFollowerNPCObjectId()].invisible == FALSE 
+     && gSelectedObjectEvent == GetFollowerNPCObjectId())
+    {
+        struct ObjectEvent *npcFollower = &gObjectEvents[GetFollowerNPCObjectId()];
+
+        switch (DetermineFollowerNPCDirection(&gObjectEvents[gPlayerAvatar.objectEventId], npcFollower))
+        {
+        case DIR_NORTH:
+            ScriptMovement_StartObjectMovementScript(OBJ_EVENT_ID_NPC_FOLLOWER, npcFollower->mapGroup, npcFollower->mapNum, Common_Movement_FaceUp);
+            break;
+        case DIR_SOUTH:
+            ScriptMovement_StartObjectMovementScript(OBJ_EVENT_ID_NPC_FOLLOWER, npcFollower->mapGroup, npcFollower->mapNum, Common_Movement_FaceDown);
+            break;
+        case DIR_EAST:
+            ScriptMovement_StartObjectMovementScript(OBJ_EVENT_ID_NPC_FOLLOWER, npcFollower->mapGroup, npcFollower->mapNum, Common_Movement_FaceRight);
+            break;
+        case DIR_WEST:
+            ScriptMovement_StartObjectMovementScript(OBJ_EVENT_ID_NPC_FOLLOWER, npcFollower->mapGroup, npcFollower->mapNum, Common_Movement_FaceLeft);
+            break;
+        }
+        return FALSE;
+    }
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (gObjectEvents[gSelectedObjectEvent].active)
         ObjectEventFaceOppositeDirection(&gObjectEvents[gSelectedObjectEvent], GetPlayerFacingDirection());
     return FALSE;
@@ -1236,6 +2040,11 @@ bool8 ScrCmd_turnobject(struct ScriptContext *ctx)
     u16 localId = VarGet(ScriptReadHalfword(ctx));
     u8 direction = ScriptReadByte(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ObjectEventTurnByLocalIdAndMap(localId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, direction);
     return FALSE;
 }
@@ -1245,12 +2054,18 @@ bool8 ScrCmd_setobjectmovementtype(struct ScriptContext *ctx)
     u16 localId = VarGet(ScriptReadHalfword(ctx));
     u8 movementType = ScriptReadByte(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     SetObjEventTemplateMovementType(localId, movementType);
     return FALSE;
 }
 
 bool8 ScrCmd_createvobject(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
     u16 graphicsId = ScriptReadByte(ctx); // Support u16 in createvobject
     u8 virtualObjId = ScriptReadByte(ctx);
     u16 x = VarGet(ScriptReadHalfword(ctx));
@@ -1258,6 +2073,17 @@ bool8 ScrCmd_createvobject(struct ScriptContext *ctx)
     u8 elevation = ScriptReadByte(ctx);
     u8 direction = ScriptReadByte(ctx);
 
+=======
+    u16 graphicsId = ScriptReadHalfword(ctx);
+    u8 virtualObjId = ScriptReadByte(ctx);
+    u16 x = VarGet(ScriptReadHalfword(ctx));
+    u16 y = VarGet(ScriptReadHalfword(ctx));
+    u8 elevation = ScriptReadByte(ctx);
+    u8 direction = ScriptReadByte(ctx);
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     CreateVirtualObject(graphicsId, virtualObjId, x, y, elevation, direction);
     return FALSE;
 }
@@ -1267,6 +2093,11 @@ bool8 ScrCmd_turnvobject(struct ScriptContext *ctx)
     u8 virtualObjId = ScriptReadByte(ctx);
     u8 direction = ScriptReadByte(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     TurnVirtualObject(virtualObjId, direction);
     return FALSE;
 }
@@ -1275,14 +2106,27 @@ bool8 ScrCmd_turnvobject(struct ScriptContext *ctx)
 // The player is frozen after waiting for their current movement to finish.
 bool8 ScrCmd_lockall(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (IsOverworldLinkActive())
     {
         return FALSE;
     }
     else
     {
+<<<<<<< HEAD
         FreezeObjects_WaitForPlayer();
         SetupNativeScript(ctx, IsFreezePlayerFinished);
+=======
+        struct ObjectEvent *followerObj = GetFollowerObject();
+        FreezeObjects_WaitForPlayer();
+        SetupNativeScript(ctx, IsFreezePlayerFinished);
+        if (FlagGet(FLAG_SAFE_FOLLOWER_MOVEMENT) && followerObj) // Unfreeze follower object (conditionally)
+            UnfreezeObjectEvent(followerObj);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         return TRUE;
     }
 }
@@ -1291,6 +2135,11 @@ bool8 ScrCmd_lockall(struct ScriptContext *ctx)
 // The player and selected object are frozen after waiting for their current movement to finish.
 bool8 ScrCmd_lock(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (IsOverworldLinkActive())
     {
         return FALSE;
@@ -1319,6 +2168,11 @@ bool8 ScrCmd_lock(struct ScriptContext *ctx)
 
 bool8 ScrCmd_releaseall(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     u8 playerObjectId;
     struct ObjectEvent *followerObject = GetFollowerObject();
     // Release follower from movement iff it exists and is in the shadowing state
@@ -1326,15 +2180,28 @@ bool8 ScrCmd_releaseall(struct ScriptContext *ctx)
         ClearObjectEventMovement(followerObject, &gSprites[followerObject->spriteId]);
 
     HideFieldMessageBox();
+<<<<<<< HEAD
     playerObjectId = GetObjectEventIdByLocalIdAndMap(OBJ_EVENT_ID_PLAYER, 0, 0);
     ObjectEventClearHeldMovementIfFinished(&gObjectEvents[playerObjectId]);
     ScriptMovement_UnfreezeObjectEvents();
     UnfreezeObjectEvents();
+=======
+    playerObjectId = GetObjectEventIdByLocalIdAndMap(LOCALID_PLAYER, 0, 0);
+    ObjectEventClearHeldMovementIfFinished(&gObjectEvents[playerObjectId]);
+    ScriptMovement_UnfreezeObjectEvents();
+    UnfreezeObjectEvents();
+    gMsgBoxIsCancelable = FALSE;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     return FALSE;
 }
 
 bool8 ScrCmd_release(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     u8 playerObjectId;
     struct ObjectEvent *followerObject = GetFollowerObject();
     // Release follower from movement iff it exists and is in the shadowing state
@@ -1344,10 +2211,18 @@ bool8 ScrCmd_release(struct ScriptContext *ctx)
     HideFieldMessageBox();
     if (gObjectEvents[gSelectedObjectEvent].active)
         ObjectEventClearHeldMovementIfFinished(&gObjectEvents[gSelectedObjectEvent]);
+<<<<<<< HEAD
     playerObjectId = GetObjectEventIdByLocalIdAndMap(OBJ_EVENT_ID_PLAYER, 0, 0);
     ObjectEventClearHeldMovementIfFinished(&gObjectEvents[playerObjectId]);
     ScriptMovement_UnfreezeObjectEvents();
     UnfreezeObjectEvents();
+=======
+    playerObjectId = GetObjectEventIdByLocalIdAndMap(LOCALID_PLAYER, 0, 0);
+    ObjectEventClearHeldMovementIfFinished(&gObjectEvents[playerObjectId]);
+    ScriptMovement_UnfreezeObjectEvents();
+    UnfreezeObjectEvents();
+    gMsgBoxIsCancelable = FALSE;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     return FALSE;
 }
 
@@ -1355,6 +2230,11 @@ bool8 ScrCmd_message(struct ScriptContext *ctx)
 {
     const u8 *msg = (const u8 *)ScriptReadWord(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (msg == NULL)
         msg = (const u8 *)ctx->data[0];
     ShowFieldMessage(msg);
@@ -1365,6 +2245,11 @@ bool8 ScrCmd_pokenavcall(struct ScriptContext *ctx)
 {
     const u8 *msg = (const u8 *)ScriptReadWord(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (msg == NULL)
         msg = (const u8 *)ctx->data[0];
     ShowPokenavFieldMessage(msg);
@@ -1375,6 +2260,11 @@ bool8 ScrCmd_messageautoscroll(struct ScriptContext *ctx)
 {
     const u8 *msg = (const u8 *)ScriptReadWord(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (msg == NULL)
         msg = (const u8 *)ctx->data[0];
     gTextFlags.autoScroll = TRUE;
@@ -1388,6 +2278,11 @@ bool8 ScrCmd_messageinstant(struct ScriptContext *ctx)
 {
     const u8 *msg = (const u8 *)ScriptReadWord(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (msg == NULL)
         msg = (const u8 *)ctx->data[0];
     LoadMessageBoxAndBorderGfx();
@@ -1398,12 +2293,22 @@ bool8 ScrCmd_messageinstant(struct ScriptContext *ctx)
 
 bool8 ScrCmd_waitmessage(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     SetupNativeScript(ctx, IsFieldMessageBoxHidden);
     return TRUE;
 }
 
 bool8 ScrCmd_closemessage(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     HideFieldMessageBox();
     return FALSE;
 }
@@ -1419,6 +2324,11 @@ static bool8 WaitForAorBPress(void)
 
 bool8 ScrCmd_waitbuttonpress(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     SetupNativeScript(ctx, WaitForAorBPress);
     return TRUE;
 }
@@ -1428,6 +2338,11 @@ bool8 ScrCmd_yesnobox(struct ScriptContext *ctx)
     u8 left = ScriptReadByte(ctx);
     u8 top = ScriptReadByte(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (ScriptMenu_YesNo(left, top) == TRUE)
     {
         ScriptContext_Stop();
@@ -1439,6 +2354,109 @@ bool8 ScrCmd_yesnobox(struct ScriptContext *ctx)
     }
 }
 
+<<<<<<< HEAD
+=======
+static void DynamicMultichoiceSortList(struct ListMenuItem *items, u32 count)
+{
+    u32 i,j;
+    struct ListMenuItem tmp;
+    for (i = 0; i < count - 1; ++i)
+    {
+        for (j = 0; j < count - i - 1; ++j)
+        {
+            if (items[j].id > items[j+1].id)
+            {
+                tmp = items[j];
+                items[j] = items[j+1];
+                items[j+1] = tmp;
+            }
+        }
+    }
+}
+
+#define DYN_MULTICHOICE_DEFAULT_MAX_BEFORE_SCROLL 6
+
+bool8 ScrCmd_dynmultichoice(struct ScriptContext *ctx)
+{
+    u32 i;
+    u32 left = VarGet(ScriptReadHalfword(ctx));
+    u32 top = VarGet(ScriptReadHalfword(ctx));
+    bool32 ignoreBPress = ScriptReadByte(ctx);
+    u32 maxBeforeScroll = ScriptReadByte(ctx);
+    bool32 shouldSort = ScriptReadByte(ctx);
+    u32 initialSelected = VarGet(ScriptReadHalfword(ctx));
+    u32 callbackSet = ScriptReadByte(ctx);
+    u32 initialRow = 0;
+    // Read vararg
+    u32 argc = ScriptReadByte(ctx);
+    struct ListMenuItem *items;
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+    if (argc == 0)
+        return FALSE;
+
+    if (maxBeforeScroll == 0xFF)
+        maxBeforeScroll = DYN_MULTICHOICE_DEFAULT_MAX_BEFORE_SCROLL;
+
+    if ((const u8*) ScriptPeekWord(ctx) != NULL)
+    {
+        items = AllocZeroed(sizeof(struct ListMenuItem) * argc);
+        for (i = 0; i < argc; ++i)
+        {
+            u8 *nameBuffer = Alloc(100);
+            const u8 *arg = (const u8 *) ScriptReadWord(ctx);
+            StringExpandPlaceholders(nameBuffer, arg);
+            items[i].name = nameBuffer;
+            items[i].id = i;
+            if (i == initialSelected)
+                initialRow = i;
+        }
+    }
+    else
+    {
+        argc = MultichoiceDynamic_StackSize();
+        items = AllocZeroed(sizeof(struct ListMenuItem) * argc);
+        for (i = 0; i < argc; ++i)
+        {
+            struct ListMenuItem *currentItem = MultichoiceDynamic_PeekElementAt(i);
+            items[i] = *currentItem;
+            if (currentItem->id == initialSelected)
+                initialRow = i;
+        }
+        if (shouldSort)
+            DynamicMultichoiceSortList(items, argc);
+        MultichoiceDynamic_DestroyStack();
+    }
+
+    if (ScriptMenu_MultichoiceDynamic(left, top, argc, items, ignoreBPress, maxBeforeScroll, initialRow, callbackSet))
+    {
+        ScriptContext_Stop();
+        return TRUE;
+    }
+    else
+    {
+        return FALSE;
+    }
+}
+
+bool8 ScrCmd_dynmultipush(struct ScriptContext *ctx)
+{
+    const u8 *name = (const u8*) ScriptReadWord(ctx);
+    u32 id = VarGet(ScriptReadHalfword(ctx));
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+    u8 *nameBuffer = Alloc(100);
+    struct ListMenuItem item;
+    StringExpandPlaceholders(nameBuffer, name);
+    item.name = nameBuffer;
+    item.id = id;
+    MultichoiceDynamic_PushElement(item);
+    return FALSE;
+}
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 bool8 ScrCmd_multichoice(struct ScriptContext *ctx)
 {
     u8 left = ScriptReadByte(ctx);
@@ -1446,6 +2464,11 @@ bool8 ScrCmd_multichoice(struct ScriptContext *ctx)
     u8 multichoiceId = ScriptReadByte(ctx);
     bool8 ignoreBPress = ScriptReadByte(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (ScriptMenu_Multichoice(left, top, multichoiceId, ignoreBPress) == TRUE)
     {
         ScriptContext_Stop();
@@ -1465,6 +2488,11 @@ bool8 ScrCmd_multichoicedefault(struct ScriptContext *ctx)
     u8 defaultChoice = ScriptReadByte(ctx);
     bool8 ignoreBPress = ScriptReadByte(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (ScriptMenu_MultichoiceWithDefault(left, top, multichoiceId, ignoreBPress, defaultChoice) == TRUE)
     {
         ScriptContext_Stop();
@@ -1495,6 +2523,11 @@ bool8 ScrCmd_multichoicegrid(struct ScriptContext *ctx)
     u8 numColumns = ScriptReadByte(ctx);
     bool8 ignoreBPress = ScriptReadByte(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (ScriptMenu_MultichoiceGrid(left, top, multichoiceId, ignoreBPress, numColumns) == TRUE)
     {
         ScriptContext_Stop();
@@ -1508,10 +2541,17 @@ bool8 ScrCmd_multichoicegrid(struct ScriptContext *ctx)
 
 bool8 ScrCmd_erasebox(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
     u8 left = ScriptReadByte(ctx);
     u8 top = ScriptReadByte(ctx);
     u8 right = ScriptReadByte(ctx);
     u8 bottom = ScriptReadByte(ctx);
+=======
+    u8 UNUSED left = ScriptReadByte(ctx);
+    u8 UNUSED top = ScriptReadByte(ctx);
+    u8 UNUSED right = ScriptReadByte(ctx);
+    u8 UNUSED bottom = ScriptReadByte(ctx);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     // Menu_EraseWindowRect(left, top, right, bottom);
     return FALSE;
@@ -1519,10 +2559,17 @@ bool8 ScrCmd_erasebox(struct ScriptContext *ctx)
 
 bool8 ScrCmd_drawboxtext(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
     u8 left = ScriptReadByte(ctx);
     u8 top = ScriptReadByte(ctx);
     u8 multichoiceId = ScriptReadByte(ctx);
     bool8 ignoreBPress = ScriptReadByte(ctx);
+=======
+    u8 UNUSED left = ScriptReadByte(ctx);
+    u8 UNUSED top = ScriptReadByte(ctx);
+    u8 UNUSED multichoiceId = ScriptReadByte(ctx);
+    bool8 UNUSED ignoreBPress = ScriptReadByte(ctx);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     /*if (Multichoice(left, top, multichoiceId, ignoreBPress) == TRUE)
     {
@@ -1538,12 +2585,22 @@ bool8 ScrCmd_showmonpic(struct ScriptContext *ctx)
     u8 x = ScriptReadByte(ctx);
     u8 y = ScriptReadByte(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ScriptMenu_ShowPokemonPic(species, x, y);
     return FALSE;
 }
 
 bool8 ScrCmd_hidemonpic(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     // The hide function returns a pointer to a function
     // that returns true once the pic is hidden
     bool8 (*func)(void) = ScriptMenu_HidePokemonPic();
@@ -1558,6 +2615,11 @@ bool8 ScrCmd_showcontestpainting(struct ScriptContext *ctx)
 {
     u8 contestWinnerId = ScriptReadByte(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     // Artist's painting is temporary and already has its data loaded
     if (contestWinnerId != CONTEST_WINNER_ARTIST)
         SetContestWinnerForPainting(contestWinnerId);
@@ -1570,6 +2632,12 @@ bool8 ScrCmd_showcontestpainting(struct ScriptContext *ctx)
 bool8 ScrCmd_braillemessage(struct ScriptContext *ctx)
 {
     u8 *ptr = (u8 *)ScriptReadWord(ctx);
+<<<<<<< HEAD
+=======
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     struct WindowTemplate winTemplate;
     s32 i;
     u8 width, height;
@@ -1623,6 +2691,11 @@ bool8 ScrCmd_braillemessage(struct ScriptContext *ctx)
 
 bool8 ScrCmd_closebraillemessage(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     CloseBrailleWindow();
     return FALSE;
 }
@@ -1631,6 +2704,11 @@ bool8 ScrCmd_vmessage(struct ScriptContext *ctx)
 {
     u32 msg = ScriptReadWord(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ShowFieldMessage((u8 *)(msg - sAddressOffset));
     return FALSE;
 }
@@ -1638,9 +2716,17 @@ bool8 ScrCmd_vmessage(struct ScriptContext *ctx)
 bool8 ScrCmd_bufferspeciesname(struct ScriptContext *ctx)
 {
     u8 stringVarIndex = ScriptReadByte(ctx);
+<<<<<<< HEAD
     u16 species = VarGet(ScriptReadHalfword(ctx)) & ((1 << 10) - 1); // ignore possible shiny / form bits
 
     StringCopy(sScriptStringVars[stringVarIndex], gSpeciesNames[species]);
+=======
+    u16 species = VarGet(ScriptReadHalfword(ctx)) & OBJ_EVENT_MON_SPECIES_MASK; // ignore possible shiny / form bits
+
+    Script_RequestEffects(SCREFF_V1);
+
+    StringCopy(sScriptStringVars[stringVarIndex], GetSpeciesName(species));
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     return FALSE;
 }
 
@@ -1648,6 +2734,7 @@ bool8 ScrCmd_bufferleadmonspeciesname(struct ScriptContext *ctx)
 {
     u8 stringVarIndex = ScriptReadByte(ctx);
 
+<<<<<<< HEAD
     u8 *dest = sScriptStringVars[stringVarIndex];
     u8 partyIndex = GetLeadMonIndex();
     u32 species = GetMonData(&gPlayerParty[partyIndex], MON_DATA_SPECIES, NULL);
@@ -1662,6 +2749,25 @@ bool8 ScrFunc_bufferlivemonnickname(struct ScriptContext *ctx)
     GetMonData(GetFirstLiveMon(), MON_DATA_NICKNAME, sScriptStringVars[stringVarIndex]);
     StringGet_Nickname(sScriptStringVars[stringVarIndex]);
     return FALSE;
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+    u8 *dest = sScriptStringVars[stringVarIndex];
+    u8 partyIndex = GetLeadMonIndex();
+    u32 species = GetMonData(&gPlayerParty[partyIndex], MON_DATA_SPECIES, NULL);
+    StringCopy(dest, GetSpeciesName(species));
+    return FALSE;
+}
+
+void BufferFirstLiveMonNickname(struct ScriptContext *ctx)
+{
+    u8 stringVarIndex = ScriptReadByte(ctx);
+
+    Script_RequestEffects(SCREFF_V1);
+
+    GetMonData(GetFirstLiveMon(), MON_DATA_NICKNAME, sScriptStringVars[stringVarIndex]);
+    StringGet_Nickname(sScriptStringVars[stringVarIndex]);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 bool8 ScrCmd_bufferpartymonnick(struct ScriptContext *ctx)
@@ -1669,6 +2775,11 @@ bool8 ScrCmd_bufferpartymonnick(struct ScriptContext *ctx)
     u8 stringVarIndex = ScriptReadByte(ctx);
     u16 partyIndex = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     GetMonData(&gPlayerParty[partyIndex], MON_DATA_NICKNAME, sScriptStringVars[stringVarIndex]);
     StringGet_Nickname(sScriptStringVars[stringVarIndex]);
     return FALSE;
@@ -1679,6 +2790,11 @@ bool8 ScrCmd_bufferitemname(struct ScriptContext *ctx)
     u8 stringVarIndex = ScriptReadByte(ctx);
     u16 itemId = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     CopyItemName(itemId, sScriptStringVars[stringVarIndex]);
     return FALSE;
 }
@@ -1689,6 +2805,11 @@ bool8 ScrCmd_bufferitemnameplural(struct ScriptContext *ctx)
     u16 itemId = VarGet(ScriptReadHalfword(ctx));
     u16 quantity = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     CopyItemNameHandlePlural(itemId, sScriptStringVars[stringVarIndex], quantity);
     return FALSE;
 }
@@ -1698,6 +2819,11 @@ bool8 ScrCmd_bufferdecorationname(struct ScriptContext *ctx)
     u8 stringVarIndex = ScriptReadByte(ctx);
     u16 decorId = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     StringCopy(sScriptStringVars[stringVarIndex], gDecorations[decorId].name);
     return FALSE;
 }
@@ -1705,9 +2831,17 @@ bool8 ScrCmd_bufferdecorationname(struct ScriptContext *ctx)
 bool8 ScrCmd_buffermovename(struct ScriptContext *ctx)
 {
     u8 stringVarIndex = ScriptReadByte(ctx);
+<<<<<<< HEAD
     u16 moveId = VarGet(ScriptReadHalfword(ctx));
 
     StringCopy(sScriptStringVars[stringVarIndex], gMoveNames[moveId]);
+=======
+    u16 move = VarGet(ScriptReadHalfword(ctx));
+
+    Script_RequestEffects(SCREFF_V1);
+
+    StringCopy(sScriptStringVars[stringVarIndex], GetMoveName(move));
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     return FALSE;
 }
 
@@ -1717,6 +2851,11 @@ bool8 ScrCmd_buffernumberstring(struct ScriptContext *ctx)
     u16 num = VarGet(ScriptReadHalfword(ctx));
     u8 numDigits = CountDigits(num);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ConvertIntToDecimalStringN(sScriptStringVars[stringVarIndex], num, STR_CONV_MODE_LEFT_ALIGN, numDigits);
     return FALSE;
 }
@@ -1726,6 +2865,11 @@ bool8 ScrCmd_bufferstdstring(struct ScriptContext *ctx)
     u8 stringVarIndex = ScriptReadByte(ctx);
     u16 index = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     StringCopy(sScriptStringVars[stringVarIndex], gStdStrings[index]);
     return FALSE;
 }
@@ -1735,6 +2879,11 @@ bool8 ScrCmd_buffercontestname(struct ScriptContext *ctx)
     u8 stringVarIndex = ScriptReadByte(ctx);
     u16 category = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     BufferContestName(sScriptStringVars[stringVarIndex], category);
     return FALSE;
 }
@@ -1744,6 +2893,11 @@ bool8 ScrCmd_bufferstring(struct ScriptContext *ctx)
     u8 stringVarIndex = ScriptReadByte(ctx);
     const u8 *text = (u8 *)ScriptReadWord(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     StringCopy(sScriptStringVars[stringVarIndex], text);
     return FALSE;
 }
@@ -1752,6 +2906,11 @@ bool8 ScrCmd_vbuffermessage(struct ScriptContext *ctx)
 {
     const u8 *ptr = (u8 *)(ScriptReadWord(ctx) - sAddressOffset);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     StringExpandPlaceholders(gStringVar4, ptr);
     return FALSE;
 }
@@ -1761,6 +2920,11 @@ bool8 ScrCmd_vbufferstring(struct ScriptContext *ctx)
     u8 stringVarIndex = ScriptReadByte(ctx);
     u32 addr = ScriptReadWord(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     const u8 *src = (u8 *)(addr - sAddressOffset);
     u8 *dest = sScriptStringVars[stringVarIndex];
     StringCopy(dest, src);
@@ -1772,10 +2936,16 @@ bool8 ScrCmd_bufferboxname(struct ScriptContext *ctx)
     u8 stringVarIndex = ScriptReadByte(ctx);
     u16 boxId = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     StringCopy(sScriptStringVars[stringVarIndex], GetBoxNamePtr(boxId));
     return FALSE;
 }
 
+<<<<<<< HEAD
 bool8 ScrCmd_givemon(struct ScriptContext *ctx)
 {
     u16 species = VarGet(ScriptReadHalfword(ctx));
@@ -1789,10 +2959,17 @@ bool8 ScrCmd_givemon(struct ScriptContext *ctx)
     return FALSE;
 }
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 bool8 ScrCmd_giveegg(struct ScriptContext *ctx)
 {
     u16 species = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gSpecialVar_Result = ScriptGiveEgg(species);
     return FALSE;
 }
@@ -1803,10 +2980,16 @@ bool8 ScrCmd_setmonmove(struct ScriptContext *ctx)
     u8 slot = ScriptReadByte(ctx);
     u16 move = ScriptReadHalfword(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ScriptSetMonMoveSlot(partyIndex, move, slot);
     return FALSE;
 }
 
+<<<<<<< HEAD
 bool8 ScrCmd_checkpartymove(struct ScriptContext *ctx)
 {
     u8 i;
@@ -1814,17 +2997,38 @@ bool8 ScrCmd_checkpartymove(struct ScriptContext *ctx)
 
     gSpecialVar_Result = PARTY_SIZE;
     for (i = 0; i < PARTY_SIZE; i++)
+=======
+bool8 ScrCmd_checkfieldmove(struct ScriptContext *ctx)
+{
+    enum FieldMove fieldMove = ScriptReadByte(ctx);
+    bool32 doUnlockedCheck = ScriptReadByte(ctx);
+    u16 move;
+
+    Script_RequestEffects(SCREFF_V1);
+
+    gSpecialVar_Result = PARTY_SIZE;
+    if (doUnlockedCheck && !IsFieldMoveUnlocked(fieldMove))
+        return FALSE;
+
+    move = FieldMove_GetMoveId(fieldMove);
+    for (u32 i = 0; i < PARTY_SIZE; i++)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     {
         u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL);
         if (!species)
             break;
+<<<<<<< HEAD
         if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG) && MonKnowsMove(&gPlayerParty[i], moveId) == TRUE)
+=======
+        if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG) && MonKnowsMove(&gPlayerParty[i], move) == TRUE)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         {
             gSpecialVar_Result = i;
             gSpecialVar_0x8004 = species;
             break;
         }
     }
+<<<<<<< HEAD
     // If still not found, treat tutor moves (like HEADBUTT) as usable if any party
     // mon can learn them (even if they don't currently know them).
     if (gSpecialVar_Result == PARTY_SIZE)
@@ -1876,6 +3080,9 @@ bool8 ScrCmd_checkpartymove(struct ScriptContext *ctx)
         gSpecialVar_0x8004 = GetMonData(&gPlayerParty[0], MON_DATA_SPECIES, NULL);
         gSpecialVar_Result = 0;
     }
+=======
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     return FALSE;
 }
 
@@ -1885,7 +3092,15 @@ bool8 ScrCmd_addmoney(struct ScriptContext *ctx)
     u8 ignore = ScriptReadByte(ctx);
 
     if (!ignore)
+<<<<<<< HEAD
         AddMoney(&gSaveBlock1Ptr->money, amount);
+=======
+    {
+        Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+        AddMoney(&gSaveBlock1Ptr->money, amount);
+    }
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     return FALSE;
 }
 
@@ -1895,7 +3110,15 @@ bool8 ScrCmd_removemoney(struct ScriptContext *ctx)
     u8 ignore = ScriptReadByte(ctx);
 
     if (!ignore)
+<<<<<<< HEAD
         RemoveMoney(&gSaveBlock1Ptr->money, amount);
+=======
+    {
+        Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+        RemoveMoney(&gSaveBlock1Ptr->money, amount);
+    }
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     return FALSE;
 }
 
@@ -1905,7 +3128,15 @@ bool8 ScrCmd_checkmoney(struct ScriptContext *ctx)
     u8 ignore = ScriptReadByte(ctx);
 
     if (!ignore)
+<<<<<<< HEAD
         gSpecialVar_Result = IsEnoughMoney(&gSaveBlock1Ptr->money, amount);
+=======
+    {
+        Script_RequestEffects(SCREFF_V1);
+
+        gSpecialVar_Result = IsEnoughMoney(&gSaveBlock1Ptr->money, amount);
+    }
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     return FALSE;
 }
 
@@ -1916,12 +3147,25 @@ bool8 ScrCmd_showmoneybox(struct ScriptContext *ctx)
     u8 ignore = ScriptReadByte(ctx);
 
     if (!ignore)
+<<<<<<< HEAD
         DrawMoneyBox(GetMoney(&gSaveBlock1Ptr->money), x, y);
+=======
+    {
+        Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+        DrawMoneyBox(GetMoney(&gSaveBlock1Ptr->money), x, y);
+    }
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     return FALSE;
 }
 
 bool8 ScrCmd_hidemoneybox(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     /*u8 x = ScriptReadByte(ctx);
     u8 y = ScriptReadByte(ctx);*/
 
@@ -1931,12 +3175,25 @@ bool8 ScrCmd_hidemoneybox(struct ScriptContext *ctx)
 
 bool8 ScrCmd_updatemoneybox(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
     u8 x = ScriptReadByte(ctx);
     u8 y = ScriptReadByte(ctx);
     u8 ignore = ScriptReadByte(ctx);
 
     if (!ignore)
         ChangeAmountInMoneyBox(GetMoney(&gSaveBlock1Ptr->money));
+=======
+    u8 UNUSED x = ScriptReadByte(ctx);
+    u8 UNUSED y = ScriptReadByte(ctx);
+    u8 ignore = ScriptReadByte(ctx);
+
+    if (!ignore)
+    {
+        Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+        ChangeAmountInMoneyBox(GetMoney(&gSaveBlock1Ptr->money));
+    }
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     return FALSE;
 }
 
@@ -1945,14 +3202,26 @@ bool8 ScrCmd_showcoinsbox(struct ScriptContext *ctx)
     u8 x = ScriptReadByte(ctx);
     u8 y = ScriptReadByte(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ShowCoinsWindow(GetCoins(), x, y);
     return FALSE;
 }
 
 bool8 ScrCmd_hidecoinsbox(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
     u8 x = ScriptReadByte(ctx);
     u8 y = ScriptReadByte(ctx);
+=======
+    u8 UNUSED x = ScriptReadByte(ctx);
+    u8 UNUSED y = ScriptReadByte(ctx);
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     HideCoinsWindow();
     return FALSE;
@@ -1960,8 +3229,15 @@ bool8 ScrCmd_hidecoinsbox(struct ScriptContext *ctx)
 
 bool8 ScrCmd_updatecoinsbox(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
     u8 x = ScriptReadByte(ctx);
     u8 y = ScriptReadByte(ctx);
+=======
+    u8 UNUSED x = ScriptReadByte(ctx);
+    u8 UNUSED y = ScriptReadByte(ctx);
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     PrintCoinsString(GetCoins());
     return FALSE;
@@ -1969,24 +3245,45 @@ bool8 ScrCmd_updatecoinsbox(struct ScriptContext *ctx)
 
 bool8 ScrCmd_trainerbattle(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_TRAINERBATTLE);
+
+    TrainerBattleLoadArgs(ctx->scriptPtr);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ctx->scriptPtr = BattleSetup_ConfigureTrainerBattle(ctx->scriptPtr);
     return FALSE;
 }
 
 bool8 ScrCmd_dotrainerbattle(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     BattleSetup_StartTrainerBattle();
     return TRUE;
 }
 
 bool8 ScrCmd_gotopostbattlescript(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ctx->scriptPtr = BattleSetup_GetScriptAddrAfterBattle();
     return FALSE;
 }
 
 bool8 ScrCmd_gotobeatenscript(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ctx->scriptPtr = BattleSetup_GetTrainerPostBattleScript();
     return FALSE;
 }
@@ -1995,6 +3292,11 @@ bool8 ScrCmd_checktrainerflag(struct ScriptContext *ctx)
 {
     u16 index = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ctx->comparisonResult = HasTrainerBeenFought(index);
     return FALSE;
 }
@@ -2003,6 +3305,11 @@ bool8 ScrCmd_settrainerflag(struct ScriptContext *ctx)
 {
     u16 index = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     SetTrainerFlag(index);
     return FALSE;
 }
@@ -2011,6 +3318,11 @@ bool8 ScrCmd_cleartrainerflag(struct ScriptContext *ctx)
 {
     u16 index = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ClearTrainerFlag(index);
     return FALSE;
 }
@@ -2020,6 +3332,7 @@ bool8 ScrCmd_setwildbattle(struct ScriptContext *ctx)
     u16 species = ScriptReadHalfword(ctx);
     u8 level = ScriptReadByte(ctx);
     u16 item = ScriptReadHalfword(ctx);
+<<<<<<< HEAD
 
     CreateScriptedWildMon(species, level, item);
     return FALSE;
@@ -2033,13 +3346,44 @@ bool8 ScrCmd_setwildbattleshiny(struct ScriptContext *ctx)
     u16 item = ScriptReadHalfword(ctx);
 
     CreateShinyScriptedMon(species, level, item);
+=======
+    u16 species2 = ScriptReadHalfword(ctx);
+    u8 level2 = ScriptReadByte(ctx);
+    u16 item2 = ScriptReadHalfword(ctx);
+
+    Script_RequestEffects(SCREFF_V1);
+
+    if(species2 == SPECIES_NONE)
+    {
+        CreateScriptedWildMon(species, level, item);
+        sIsScriptedWildDouble = FALSE;
+    }
+    else
+    {
+        CreateScriptedDoubleWildMon(species, level, item, species2, level2, item2);
+        sIsScriptedWildDouble = TRUE;
+    }
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     return FALSE;
 }
 
 bool8 ScrCmd_dowildbattle(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
     BattleSetup_StartScriptedWildBattle();
     ScriptContext_Stop();
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+    if (sIsScriptedWildDouble == FALSE)
+        BattleSetup_StartScriptedWildBattle();
+    else
+        BattleSetup_StartScriptedDoubleWildBattle();
+
+    ScriptContext_Stop();
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     return TRUE;
 }
 
@@ -2047,6 +3391,11 @@ bool8 ScrCmd_pokemart(struct ScriptContext *ctx)
 {
     const void *ptr = (void *)ScriptReadWord(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     CreatePokemartMenu(ptr);
     ScriptContext_Stop();
     return TRUE;
@@ -2056,6 +3405,11 @@ bool8 ScrCmd_pokemartdecoration(struct ScriptContext *ctx)
 {
     const void *ptr = (void *)ScriptReadWord(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     CreateDecorationShop1Menu(ptr);
     ScriptContext_Stop();
     return TRUE;
@@ -2066,6 +3420,11 @@ bool8 ScrCmd_pokemartdecoration2(struct ScriptContext *ctx)
 {
     const void *ptr = (void *)ScriptReadWord(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     CreateDecorationShop2Menu(ptr);
     ScriptContext_Stop();
     return TRUE;
@@ -2075,6 +3434,11 @@ bool8 ScrCmd_playslotmachine(struct ScriptContext *ctx)
 {
     u8 machineId = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     PlaySlotMachine(machineId, CB2_ReturnToFieldContinueScriptPlayMapMusic);
     ScriptContext_Stop();
     return TRUE;
@@ -2086,10 +3450,16 @@ bool8 ScrCmd_setberrytree(struct ScriptContext *ctx)
     u8 berry = ScriptReadByte(ctx);
     u8 growthStage = ScriptReadByte(ctx);
 
+<<<<<<< HEAD
     if (berry == 0)
         PlantBerryTree(treeId, berry, growthStage, FALSE);
     else
         PlantBerryTree(treeId, berry, growthStage, FALSE);
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+    PlantBerryTree(treeId, berry, growthStage, FALSE);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     return FALSE;
 }
 
@@ -2097,12 +3467,22 @@ bool8 ScrCmd_getpokenewsactive(struct ScriptContext *ctx)
 {
     u16 newsKind = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gSpecialVar_Result = IsPokeNewsActive(newsKind);
     return FALSE;
 }
 
 bool8 ScrCmd_choosecontestmon(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ChooseContestMon();
     ScriptContext_Stop();
     return TRUE;
@@ -2111,6 +3491,11 @@ bool8 ScrCmd_choosecontestmon(struct ScriptContext *ctx)
 
 bool8 ScrCmd_startcontest(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     StartContest();
     ScriptContext_Stop();
     return TRUE;
@@ -2118,6 +3503,11 @@ bool8 ScrCmd_startcontest(struct ScriptContext *ctx)
 
 bool8 ScrCmd_showcontestresults(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ShowContestResults();
     ScriptContext_Stop();
     return TRUE;
@@ -2125,6 +3515,11 @@ bool8 ScrCmd_showcontestresults(struct ScriptContext *ctx)
 
 bool8 ScrCmd_contestlinktransfer(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ContestLinkTransfer(gSpecialVar_ContestCategory);
     ScriptContext_Stop();
     return TRUE;
@@ -2134,6 +3529,11 @@ bool8 ScrCmd_dofieldeffect(struct ScriptContext *ctx)
 {
     u16 effectId = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     sFieldEffectScriptId = effectId;
     FieldEffectStart(sFieldEffectScriptId);
     return FALSE;
@@ -2143,6 +3543,11 @@ bool8 ScrCmd_setfieldeffectargument(struct ScriptContext *ctx)
 {
     u8 argNum = ScriptReadByte(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gFieldEffectArguments[argNum] = (s16)VarGet(ScriptReadHalfword(ctx));
     return FALSE;
 }
@@ -2157,7 +3562,15 @@ static bool8 WaitForFieldEffectFinish(void)
 
 bool8 ScrCmd_waitfieldeffect(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
     sFieldEffectScriptId = VarGet(ScriptReadHalfword(ctx));
+=======
+    u32 scriptId = VarGet(ScriptReadHalfword(ctx));
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+    sFieldEffectScriptId = scriptId;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     SetupNativeScript(ctx, WaitForFieldEffectFinish);
     return TRUE;
 }
@@ -2166,12 +3579,22 @@ bool8 ScrCmd_setrespawn(struct ScriptContext *ctx)
 {
     u16 healLocationId = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     SetLastHealLocationWarp(healLocationId);
     return FALSE;
 }
 
 bool8 ScrCmd_checkplayergender(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gSpecialVar_Result = gSaveBlock2Ptr->playerGender;
     return FALSE;
 }
@@ -2181,19 +3604,37 @@ bool8 ScrCmd_playmoncry(struct ScriptContext *ctx)
     u16 species = VarGet(ScriptReadHalfword(ctx));
     u16 mode = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     PlayCry_Script(species, mode);
     return FALSE;
 }
 
+<<<<<<< HEAD
 bool8   ScrFunc_playfirstmoncry(struct ScriptContext *ctx)
 {
     u16 species = GetMonData(GetFirstLiveMon(), MON_DATA_SPECIES);
     PlayCry_Script(species, 0);
     return FALSE;
+=======
+void PlayFirstMonCry(struct ScriptContext *ctx)
+{
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+    PlayCry_Script(GetMonData(GetFirstLiveMon(), MON_DATA_SPECIES), CRY_MODE_NORMAL);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 bool8 ScrCmd_waitmoncry(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     SetupNativeScript(ctx, IsCryFinished);
     return TRUE;
 }
@@ -2205,12 +3646,21 @@ bool8 ScrCmd_setmetatile(struct ScriptContext *ctx)
     u16 metatileId = VarGet(ScriptReadHalfword(ctx));
     bool16 isImpassable = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     x += MAP_OFFSET;
     y += MAP_OFFSET;
     if (!isImpassable)
         MapGridSetMetatileIdAt(x, y, metatileId);
     else
+<<<<<<< HEAD
         MapGridSetMetatileIdAt(x, y, metatileId | MAPGRID_COLLISION_MASK);
+=======
+        MapGridSetMetatileIdAt(x, y, metatileId | MAPGRID_IMPASSABLE);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     return FALSE;
 }
 
@@ -2219,6 +3669,11 @@ bool8 ScrCmd_opendoor(struct ScriptContext *ctx)
     u16 x = VarGet(ScriptReadHalfword(ctx));
     u16 y = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     x += MAP_OFFSET;
     y += MAP_OFFSET;
     PlaySE(GetDoorSoundEffect(x, y));
@@ -2231,6 +3686,11 @@ bool8 ScrCmd_closedoor(struct ScriptContext *ctx)
     u16 x = VarGet(ScriptReadHalfword(ctx));
     u16 y = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     x += MAP_OFFSET;
     y += MAP_OFFSET;
     FieldAnimateDoorClose(x, y);
@@ -2247,6 +3707,11 @@ static bool8 IsDoorAnimationStopped(void)
 
 bool8 ScrCmd_waitdooranim(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     SetupNativeScript(ctx, IsDoorAnimationStopped);
     return TRUE;
 }
@@ -2256,6 +3721,11 @@ bool8 ScrCmd_setdooropen(struct ScriptContext *ctx)
     u16 x = VarGet(ScriptReadHalfword(ctx));
     u16 y = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     x += MAP_OFFSET;
     y += MAP_OFFSET;
     FieldSetDoorOpened(x, y);
@@ -2267,6 +3737,11 @@ bool8 ScrCmd_setdoorclosed(struct ScriptContext *ctx)
     u16 x = VarGet(ScriptReadHalfword(ctx));
     u16 y = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     x += MAP_OFFSET;
     y += MAP_OFFSET;
     FieldSetDoorClosed(x, y);
@@ -2276,10 +3751,17 @@ bool8 ScrCmd_setdoorclosed(struct ScriptContext *ctx)
 // Below two are functions for elevators in RS, do nothing in Emerald
 bool8 ScrCmd_addelevmenuitem(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
     u8 v3 = ScriptReadByte(ctx);
     u16 v5 = VarGet(ScriptReadHalfword(ctx));
     u16 v7 = VarGet(ScriptReadHalfword(ctx));
     u16 v9 = VarGet(ScriptReadHalfword(ctx));
+=======
+    u8 UNUSED v3 = ScriptReadByte(ctx);
+    u16 UNUSED v5 = VarGet(ScriptReadHalfword(ctx));
+    u16 UNUSED v7 = VarGet(ScriptReadHalfword(ctx));
+    u16 UNUSED v9 = VarGet(ScriptReadHalfword(ctx));
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     //ScriptAddElevatorMenuItem(v3, v5, v7, v9);
     return FALSE;
@@ -2295,7 +3777,16 @@ bool8 ScrCmd_showelevmenu(struct ScriptContext *ctx)
 
 bool8 ScrCmd_checkcoins(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
     u16 *ptr = GetVarPointer(ScriptReadHalfword(ctx));
+=======
+    u32 varId = ScriptReadHalfword(ctx);
+    u16 *ptr = GetVarPointer(varId);
+
+    Script_RequestEffects(SCREFF_V1);
+    Script_RequestWriteVar(varId);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     *ptr = GetCoins();
     return FALSE;
 }
@@ -2304,6 +3795,11 @@ bool8 ScrCmd_addcoins(struct ScriptContext *ctx)
 {
     u16 coins = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (AddCoins(coins) == TRUE)
         gSpecialVar_Result = FALSE;
     else
@@ -2315,6 +3811,11 @@ bool8 ScrCmd_removecoins(struct ScriptContext *ctx)
 {
     u16 coins = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (RemoveCoins(coins) == TRUE)
         gSpecialVar_Result = FALSE;
     else
@@ -2326,12 +3827,22 @@ bool8 ScrCmd_moverotatingtileobjects(struct ScriptContext *ctx)
 {
     u16 puzzleNumber = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     sMovingNpcId = MoveRotatingTileObjects(puzzleNumber);
     return FALSE;
 }
 
 bool8 ScrCmd_turnrotatingtileobjects(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     TurnRotatingTileObjects();
     return FALSE;
 }
@@ -2340,24 +3851,44 @@ bool8 ScrCmd_initrotatingtilepuzzle(struct ScriptContext *ctx)
 {
     u16 isTrickHouse = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     InitRotatingTilePuzzle(isTrickHouse);
     return FALSE;
 }
 
 bool8 ScrCmd_freerotatingtilepuzzle(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     FreeRotatingTilePuzzle();
     return FALSE;
 }
 
 bool8 ScrCmd_selectapproachingtrainer(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gSelectedObjectEvent = GetCurrentApproachingTrainerObjectEventId();
     return FALSE;
 }
 
 bool8 ScrCmd_lockfortrainer(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (IsOverworldLinkActive())
     {
         return FALSE;
@@ -2374,19 +3905,37 @@ bool8 ScrCmd_lockfortrainer(struct ScriptContext *ctx)
 }
 
 // This command will set a Pokémon's modernFatefulEncounter bit; there is no similar command to clear it.
+<<<<<<< HEAD
 bool8 ScrCmd_setmonmodernfatefulencounter(struct ScriptContext *ctx)
+=======
+bool8 ScrCmd_setmodernfatefulencounter(struct ScriptContext *ctx)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     bool8 isModernFatefulEncounter = TRUE;
     u16 partyIndex = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     SetMonData(&gPlayerParty[partyIndex], MON_DATA_MODERN_FATEFUL_ENCOUNTER, &isModernFatefulEncounter);
     return FALSE;
 }
 
+<<<<<<< HEAD
 bool8 ScrCmd_checkmonmodernfatefulencounter(struct ScriptContext *ctx)
 {
     u16 partyIndex = VarGet(ScriptReadHalfword(ctx));
 
+=======
+bool8 ScrCmd_checkmodernfatefulencounter(struct ScriptContext *ctx)
+{
+    u16 partyIndex = VarGet(ScriptReadHalfword(ctx));
+
+    Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gSpecialVar_Result = GetMonData(&gPlayerParty[partyIndex], MON_DATA_MODERN_FATEFUL_ENCOUNTER, NULL);
     return FALSE;
 }
@@ -2397,6 +3946,11 @@ bool8 ScrCmd_trywondercardscript(struct ScriptContext *ctx)
 
     if (script)
     {
+<<<<<<< HEAD
+=======
+        Script_RequestEffects(SCREFF_V1);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         gRamScriptRetAddr = ctx->scriptPtr;
         ScriptJump(ctx, script);
     }
@@ -2413,6 +3967,11 @@ bool8 ScrCmd_warpspinenter(struct ScriptContext *ctx)
     u16 x = VarGet(ScriptReadHalfword(ctx));
     u16 y = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     SetWarpDestination(mapGroup, mapNum, warpId, x, y);
     SetSpinStartFacingDir(GetPlayerFacingDirection());
     DoSpinEnterWarp();
@@ -2425,6 +3984,11 @@ bool8 ScrCmd_setmonmetlocation(struct ScriptContext *ctx)
     u16 partyIndex = VarGet(ScriptReadHalfword(ctx));
     u8 location = ScriptReadByte(ctx);
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (partyIndex < PARTY_SIZE)
         SetMonData(&gPlayerParty[partyIndex], MON_DATA_MET_LOCATION, &location);
     return FALSE;
@@ -2439,7 +4003,13 @@ static void CloseBrailleWindow(void)
 bool8 ScrCmd_buffertrainerclassname(struct ScriptContext *ctx)
 {
     u8 stringVarIndex = ScriptReadByte(ctx);
+<<<<<<< HEAD
     u16 trainerClassId = VarGet(ScriptReadHalfword(ctx));
+=======
+    enum TrainerClassID trainerClassId = VarGet(ScriptReadHalfword(ctx));
+
+    Script_RequestEffects(SCREFF_V1);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     StringCopy(sScriptStringVars[stringVarIndex], GetTrainerClassNameFromId(trainerClassId));
     return FALSE;
@@ -2448,7 +4018,13 @@ bool8 ScrCmd_buffertrainerclassname(struct ScriptContext *ctx)
 bool8 ScrCmd_buffertrainername(struct ScriptContext *ctx)
 {
     u8 stringVarIndex = ScriptReadByte(ctx);
+<<<<<<< HEAD
     u16 trainerClassId = VarGet(ScriptReadHalfword(ctx));
+=======
+    enum TrainerClassID trainerClassId = VarGet(ScriptReadHalfword(ctx));
+
+    Script_RequestEffects(SCREFF_V1);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     StringCopy(sScriptStringVars[stringVarIndex], GetTrainerNameFromId(trainerClassId));
     return FALSE;
@@ -2467,12 +4043,18 @@ bool8 ScrCmd_warpwhitefade(struct ScriptContext *ctx)
     u16 x = VarGet(ScriptReadHalfword(ctx));
     u16 y = VarGet(ScriptReadHalfword(ctx));
 
+<<<<<<< HEAD
+=======
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE | SCREFF_HARDWARE);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     SetWarpDestination(mapGroup, mapNum, warpId, x, y);
     DoWhiteFadeWarp();
     ResetInitialPlayerAvatarState();
     return TRUE;
 }
 
+<<<<<<< HEAD
 bool8 ScrCmd_checkpartymonlevel(struct ScriptContext *ctx)
 {
     u16 speciesLook = VarGet(ScriptReadHalfword(ctx));
@@ -2911,10 +4493,81 @@ bool8 ScrCmd_baobacheckmon(struct ScriptContext *ctx)
         gSpecialVar_Result = FALSE;
         break;
     }
+=======
+void ScriptSetDoubleBattleFlag(struct ScriptContext *ctx)
+{
+    Script_RequestEffects(SCREFF_V1);
+
+    sIsScriptedWildDouble = TRUE;
+}
+
+bool8 ScrCmd_removeallitem(struct ScriptContext *ctx)
+{
+    u32 itemId = VarGet(ScriptReadHalfword(ctx));
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+    u32 count = CountTotalItemQuantityInBag(itemId);
+    gSpecialVar_Result = count;
+    RemoveBagItem(itemId, count);
 
     return FALSE;
 }
 
+bool8 ScrCmd_getobjectxy(struct ScriptContext *ctx)
+{
+    u32 localId = VarGet(ScriptReadHalfword(ctx));
+    u32 useTemplate = VarGet(ScriptReadHalfword(ctx));
+    u32 varIdX = ScriptReadHalfword(ctx);
+    u32 varIdY = ScriptReadHalfword(ctx);
+
+    Script_RequestEffects(SCREFF_V1);
+    Script_RequestWriteVar(varIdX);
+    Script_RequestWriteVar(varIdY);
+
+    u16 *pX = GetVarPointer(varIdX);
+    u16 *pY = GetVarPointer(varIdY);
+    GetObjectPosition(pX, pY, localId, useTemplate);
+
+    return FALSE;
+}
+
+bool8 ScrCmd_checkobjectat(struct ScriptContext *ctx)
+{
+    u32 x = VarGet(ScriptReadHalfword(ctx)) + 7;
+    u32 y = VarGet(ScriptReadHalfword(ctx)) + 7;
+    u32 varId = ScriptReadHalfword(ctx);
+
+    Script_RequestEffects(SCREFF_V1);
+    Script_RequestWriteVar(varId);
+
+    u16 *varPointer = GetVarPointer(varId);
+
+    *varPointer = CheckObjectAtXY(x, y);
+
+    return FALSE;
+}
+
+bool8 Scrcmd_getsetpokedexflag(struct ScriptContext *ctx)
+{
+    enum NationalDexOrder speciesId = SpeciesToNationalPokedexNum(VarGet(ScriptReadHalfword(ctx)));
+    u32 desiredFlag = VarGet(ScriptReadHalfword(ctx));
+
+    if (desiredFlag == FLAG_SET_CAUGHT || desiredFlag == FLAG_SET_SEEN)
+        Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+    else
+        Script_RequestEffects(SCREFF_V1);
+
+    gSpecialVar_Result = GetSetPokedexFlag(speciesId, desiredFlag);
+
+    if (desiredFlag == FLAG_SET_CAUGHT)
+        GetSetPokedexFlag(speciesId, FLAG_SET_SEEN);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
+
+    return FALSE;
+}
+
+<<<<<<< HEAD
 // ====================== HnS: giveoddegg ======================
 static const u16 sOddEggSpecies[8] = {
     SPECIES_NONE,        // [0] unused
@@ -3101,9 +4754,148 @@ bool8 ScrCmd_givebp(struct ScriptContext *ctx)
         gSaveBlock2Ptr->frontier.cardBattlePoints = card;
     }
     IncrementDailyBattlePoints(add);
+=======
+bool8 Scrcmd_checkspecies(struct ScriptContext *ctx)
+{
+    u32 givenSpecies = VarGet(ScriptReadHalfword(ctx));
+
+    Script_RequestEffects(SCREFF_V1);
+
+    gSpecialVar_Result = CheckPartyHasSpecies(givenSpecies);
 
     return FALSE;
 }
 
+bool8 Scrcmd_checkspecies_choose(struct ScriptContext *ctx)
+{
+    u32 givenSpecies = VarGet(ScriptReadHalfword(ctx));
+
+    Script_RequestEffects(SCREFF_V1);
+
+    gSpecialVar_Result = (GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES) == givenSpecies);
+
+    return FALSE;
+}
+
+bool8 Scrcmd_getobjectfacingdirection(struct ScriptContext *ctx)
+{
+    u32 objectId = VarGet(ScriptReadHalfword(ctx));
+    u32 varId = ScriptReadHalfword(ctx);
+
+    Script_RequestEffects(SCREFF_V1);
+    Script_RequestWriteVar(varId);
+
+    u16 *varPointer = GetVarPointer(varId);
+
+    *varPointer = gObjectEvents[GetObjectEventIdByLocalId(objectId)].facingDirection;
+
+    return FALSE;
+}
+
+bool8 ScrCmd_hidefollower(struct ScriptContext *ctx)
+{
+    bool16 wait = VarGet(ScriptReadHalfword(ctx));
+    struct ObjectEvent *obj;
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+    if ((obj = ScriptHideFollower()) != NULL && wait)
+    {
+        sMovingNpcId = obj->localId;
+        sMovingNpcMapGroup = obj->mapGroup;
+        sMovingNpcMapNum = obj->mapNum;
+        SetupNativeScript(ctx, WaitForMovementFinish);
+    }
+
+    // Just in case, prevent `applymovement`
+    // from hiding the follower again
+    if (obj)
+        FlagSet(FLAG_SAFE_FOLLOWER_MOVEMENT);
+
+    // execute next script command with no delay
+    return TRUE;
+}
+
+bool8 ScrCmd_addtime(struct ScriptContext *ctx)
+{
+    u32 days = ScriptReadWord(ctx);
+    u32 hours = ScriptReadWord(ctx);
+    u32 minutes = ScriptReadWord(ctx);
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+    FakeRtc_AdvanceTimeBy(days, hours, minutes, 0);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
+
+    return FALSE;
+}
+
+<<<<<<< HEAD
 
 
+=======
+bool8 ScrCmd_adddays(struct ScriptContext *ctx)
+{
+    u32 days = ScriptReadWord(ctx);
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+    FakeRtc_AdvanceTimeBy(days, 0, 0, 0);
+
+    return FALSE;
+}
+
+bool8 ScrCmd_addhours(struct ScriptContext *ctx)
+{
+    u32 hours = ScriptReadWord(ctx);
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+    FakeRtc_AdvanceTimeBy(0, hours, 0, 0);
+
+    return FALSE;
+}
+
+bool8 ScrCmd_addminutes(struct ScriptContext *ctx)
+{
+    u32 minutes = ScriptReadWord(ctx);
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+    FakeRtc_AdvanceTimeBy(0, 0, minutes, 0);
+
+    return FALSE;
+}
+
+bool8 ScrCmd_fwdtime(struct ScriptContext *ctx)
+{
+    u32 hours = ScriptReadWord(ctx);
+    u32 minutes = ScriptReadWord(ctx);
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+    FakeRtc_ForwardTimeTo(hours, minutes, 0);
+
+    return FALSE;
+}
+
+bool8 ScrCmd_fwdweekday(struct ScriptContext *ctx)
+{
+    struct SiiRtcInfo *rtc = FakeRtc_GetCurrentTime();
+
+    u32 weekdayTarget = ScriptReadWord(ctx);
+    u32 daysToAdd = ((weekdayTarget - rtc->dayOfWeek) + WEEKDAY_COUNT) % WEEKDAY_COUNT;
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+    FakeRtc_AdvanceTimeBy(daysToAdd, 0, 0, 0);
+    return FALSE;
+}
+
+void Script_EndTrainerCanSeeIf(struct ScriptContext *ctx)
+{
+    u8 condition = ScriptReadByte(ctx);
+    if (ctx->breakOnTrainerBattle && sScriptConditionTable[condition][ctx->comparisonResult] == 1)
+        StopScript(ctx);
+}
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

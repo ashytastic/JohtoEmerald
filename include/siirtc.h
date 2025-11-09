@@ -2,6 +2,7 @@
 #define GUARD_RTC_H
 
 #include "gba/gba.h"
+<<<<<<< HEAD
 
 #define SIIRTCINFO_INTFE  0x01 // frequency interrupt enable
 #define SIIRTCINFO_INTME  0x02 // per-minute interrupt enable
@@ -29,6 +30,9 @@ enum
     MONTH_DEC,
     MONTH_COUNT = MONTH_DEC
 };
+=======
+#include "constants/siirtc.h"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 struct SiiRtcInfo
 {

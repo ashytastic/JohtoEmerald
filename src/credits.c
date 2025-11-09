@@ -9,6 +9,10 @@
 #include "menu.h"
 #include "international_string_util.h"
 #include "constants/songs.h"
+<<<<<<< HEAD
+=======
+#include "constants/species.h"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include "gpu_regs.h"
 #include "m4a.h"
 #include "constants/rgb.h"
@@ -80,6 +84,7 @@ struct CreditsEntry
     const u8 *text;
 };
 
+<<<<<<< HEAD
 static EWRAM_DATA s16 UNUSED sUnkVar = 0; // Never read, only set to 0
 static EWRAM_DATA u16 sSavedTaskId = 0;
 EWRAM_DATA bool8 gHasHallOfFameRecords = 0;
@@ -88,6 +93,14 @@ static EWRAM_DATA struct CreditsData *sCreditsData = {0};
 
 static const u16 sCredits_Pal[] = INCBIN_U16("graphics/credits/credits.gbapal");
 static const u32 sCreditsCopyrightEnd_Gfx[] = INCBIN_U32("graphics/credits/the_end_copyright.4bpp.lz");
+=======
+static EWRAM_DATA u16 sSavedTaskId = 0;
+EWRAM_DATA bool8 gHasHallOfFameRecords = 0;
+static EWRAM_DATA struct CreditsData *sCreditsData = {0};
+
+static const u16 sCredits_Pal[] = INCBIN_U16("graphics/credits/credits.gbapal");
+static const u32 sCreditsCopyrightEnd_Gfx[] = INCBIN_U32("graphics/credits/the_end_copyright.4bpp.smol");
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 static void SpriteCB_CreditsMonBg(struct Sprite *);
 static void Task_WaitPaletteFade(u8);
@@ -235,9 +248,15 @@ static const union AnimCmd sAnim_Player_LookForward[] =
 static const union AnimCmd *const sAnims_Player[] =
 {
     sAnim_Player_Slow,
+<<<<<<< HEAD
     sAnim_Player_Slow,
     sAnim_Player_Slow,
     sAnim_Player_Slow,
+=======
+    sAnim_Player_Fast,
+    sAnim_Player_LookBack,
+    sAnim_Player_LookForward,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 static const union AnimCmd sAnim_Rival_Slow[] =
@@ -271,6 +290,7 @@ static const union AnimCmd *const sAnims_Rival[] =
     sAnim_Rival_Still,
 };
 
+<<<<<<< HEAD
 #define MONBG_OFFSET (MON_PIC_SIZE * 3)
 static const struct SpriteSheet sSpriteSheet_MonBg[] = {
     { gDecompressionBuffer, MONBG_OFFSET, TAG_MON_BG },
@@ -281,6 +301,8 @@ static const struct SpritePalette sSpritePalette_MonBg[] = {
     {},
 };
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static const struct OamData sOamData_MonBg =
 {
     .y = DISPLAY_HEIGHT,
@@ -354,7 +376,10 @@ static void CB2_Credits(void)
         VBlankCB_Credits();
         RunTasks();
         AnimateSprites();
+<<<<<<< HEAD
         sUsedSpeedUp = TRUE;
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
     BuildOamBuffer();
     UpdatePaletteFade();
@@ -445,9 +470,14 @@ void CB2_StartCreditsSequence(void)
     BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
     EnableInterrupts(INTR_FLAG_VBLANK);
     SetVBlankCallback(VBlankCB_Credits);
+<<<<<<< HEAD
     m4aSongNumStart(MUS_HG_CREDITS);
     SetMainCallback2(CB2_Credits);
     sUsedSpeedUp = FALSE;
+=======
+    m4aSongNumStart(MUS_CREDITS);
+    SetMainCallback2(CB2_Credits);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     sCreditsData = AllocZeroed(sizeof(struct CreditsData));
 
     DeterminePokemonToShow();
@@ -479,7 +509,10 @@ static void Task_CreditsMain(u8 taskId)
         return;
     }
 
+<<<<<<< HEAD
     sUnkVar = 0;
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     mode = gTasks[taskId].tNextMode;
 
     if (gTasks[taskId].tNextMode == MODE_BIKE_SCENE)
@@ -533,6 +566,11 @@ static void Task_ReadyShowMons(u8 taskId)
     }
 }
 
+<<<<<<< HEAD
+=======
+#define MONBG_OFFSET (MON_PIC_SIZE * 3)
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static void Task_LoadShowMons(u8 taskId)
 {
     switch (gMain.state)
@@ -540,13 +578,22 @@ static void Task_LoadShowMons(u8 taskId)
     default:
     case 0:
     {
+<<<<<<< HEAD
         u16 i;
         u16 *temp;
+=======
+        s32 i;
+        u16 *temp;
+        u8 *buffer = Alloc(MONBG_OFFSET + PLTT_SIZEOF(16));
+        struct SpriteSheet bgSheet = { buffer, MONBG_OFFSET, TAG_MON_BG };
+        struct SpritePalette bgPalette = { (u16 *) &buffer[MONBG_OFFSET], TAG_MON_BG };
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
         ResetSpriteData();
         ResetAllPicSprites();
         FreeAllSpritePalettes();
         gReservedSpritePaletteCount = 8;
+<<<<<<< HEAD
         LZ77UnCompVram(gBirchBagGrass_Gfx, (void *)VRAM);
         LZ77UnCompVram(gBirchGrassTilemap, (void *)(BG_SCREEN_ADDR(7)));
         LoadPalette(gBirchBagGrass_Pal + 1, BG_PLTT_ID(0) + 1, PLTT_SIZEOF(2 * 16 - 1));
@@ -559,13 +606,34 @@ static void Task_LoadShowMons(u8 taskId)
             (gDecompressionBuffer + MON_PIC_SIZE * 2)[i] = 0x33;
 
         temp = (u16 *)(&gDecompressionBuffer[MONBG_OFFSET]);
+=======
+        DecompressDataWithHeaderVram(gBirchBagGrass_Gfx, (void *)VRAM);
+        DecompressDataWithHeaderVram(gBirchGrassTilemap, (void *)(BG_SCREEN_ADDR(7)));
+        LoadPalette(gBirchBagGrass_Pal + 1, BG_PLTT_ID(0) + 1, PLTT_SIZEOF(2 * 16 - 1));
+
+        for (i = 0; i < MON_PIC_SIZE; i++)
+        {
+            buffer[i] = 0x11;
+            (buffer + MON_PIC_SIZE)[i] = 0x22;
+            (buffer + MON_PIC_SIZE * 2)[i] = 0x33;
+        }
+
+        temp = (u16 *)(&buffer[MONBG_OFFSET]);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         temp[0] = RGB_BLACK;
         temp[1] = RGB(31, 31, 20); // light yellow
         temp[2] = RGB(31, 20, 20); // light red
         temp[3] = RGB(20, 20, 31); // light blue
 
+<<<<<<< HEAD
         LoadSpriteSheet(sSpriteSheet_MonBg);
         LoadSpritePalette(sSpritePalette_MonBg);
+=======
+        LoadSpriteSheet(&bgSheet);
+        LoadSpritePalette(&bgPalette);
+
+        Free(buffer);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
         gMain.state++;
         break;
@@ -739,7 +807,10 @@ static void Task_UpdatePage(u8 taskId)
             gTasks[taskId].tState = 1;
             gTasks[taskId].tDelay = 72;
             gTasks[gTasks[taskId].tMainTaskId].tPrintedPage = FALSE;
+<<<<<<< HEAD
             sUnkVar = 0;
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         }
         return;
     case 1:
@@ -1207,6 +1278,11 @@ static bool8 LoadBikeScene(u8 scene, u8 taskId)
         gMain.state++;
         break;
     case 2:
+<<<<<<< HEAD
+=======
+        if (gSaveBlock2Ptr->playerGender == MALE)
+        {
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             LoadCompressedSpriteSheet(gSpriteSheet_CreditsBrendan);
             LoadCompressedSpriteSheet(gSpriteSheet_CreditsRivalMay);
             LoadCompressedSpriteSheet(gSpriteSheet_CreditsBicycle);
@@ -1221,6 +1297,27 @@ static bool8 LoadBikeScene(u8 scene, u8 taskId)
             gTasks[taskId].tRivalSpriteId = spriteId;
             gSprites[spriteId].callback = SpriteCB_Rival;
             gSprites[spriteId].anims = sAnims_Rival;
+<<<<<<< HEAD
+=======
+        }
+        else
+        {
+            LoadCompressedSpriteSheet(gSpriteSheet_CreditsMay);
+            LoadCompressedSpriteSheet(gSpriteSheet_CreditsRivalBrendan);
+            LoadCompressedSpriteSheet(gSpriteSheet_CreditsBicycle);
+            LoadSpritePalettes(gSpritePalettes_Credits);
+
+            spriteId = CreateIntroMaySprite(120, 46);
+            gTasks[taskId].tPlayerSpriteId = spriteId;
+            gSprites[spriteId].callback = SpriteCB_Player;
+            gSprites[spriteId].anims = sAnims_Player;
+
+            spriteId = CreateIntroBrendanSprite(DISPLAY_WIDTH + 32, 46);
+            gTasks[taskId].tRivalSpriteId = spriteId;
+            gSprites[spriteId].callback = SpriteCB_Rival;
+            gSprites[spriteId].anims = sAnims_Rival;
+        };
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         gMain.state++;
         break;
     case 3:
@@ -1270,7 +1367,11 @@ static void LoadTheEndScreen(u16 tileOffsetLoad, u16 tileOffsetWrite, u16 palOff
     u16 baseTile;
     u16 i;
 
+<<<<<<< HEAD
     LZ77UnCompVram(sCreditsCopyrightEnd_Gfx, (void *)(VRAM + tileOffsetLoad));
+=======
+    DecompressDataWithHeaderVram(sCreditsCopyrightEnd_Gfx, (void *)(VRAM + tileOffsetLoad));
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     LoadPalette(gIntroCopyright_Pal, palOffset, sizeof(gIntroCopyright_Pal));
 
     baseTile = (palOffset / 16) << 12;
@@ -1530,7 +1631,11 @@ static void SpriteCB_CreditsMonBg(struct Sprite *sprite)
 
 static void DeterminePokemonToShow(void)
 {
+<<<<<<< HEAD
     u16 starter = SpeciesToNationalPokedexNum(GetStarterPokemon(VarGet(VAR_STARTER_MON)));
+=======
+    enum NationalDexOrder starter = SpeciesToNationalPokedexNum(GetStarterPokemon(VarGet(VAR_STARTER_MON)));
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     u16 page;
     u16 dexNum;
     u16 j;

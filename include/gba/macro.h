@@ -93,6 +93,7 @@
 #define DmaSetUnchecked(dmaNum, src, dest, control) \
 {                                                 \
     vu32 *dmaRegs = (vu32 *)REG_ADDR_DMA##dmaNum; \
+<<<<<<< HEAD
     u32 eval_src = (u32)(src);                    \
     u32 eval_dst = (u32)(dest);                   \
     u32 eval_ctl = (u32)(control);                \
@@ -100,6 +101,12 @@
     register u32 r_dst asm("r1") = eval_dst;      \
     register u32 r_ctl asm("r2") = eval_ctl;      \
     asm volatile("stmia %0!, {%1, %2, %3}" : "+l" (dmaRegs) : "l" (r_src), "l" (r_dst), "l" (r_ctl) : "memory");  \
+=======
+    dmaRegs[0] = (vu32)(src);                     \
+    dmaRegs[1] = (vu32)(dest);                    \
+    dmaRegs[2] = (vu32)(control);                 \
+    dmaRegs[2];                                   \
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 #if MODERN

@@ -1,8 +1,11 @@
+<<<<<<< HEAD
 .set LOCALID_CHALLENGE_BIKER, 21
 .set LOCALID_RIVAL, 28
 .set LOCALID_RIVAL_ON_BIKE, 29
 .set LOCALID_BIRCH, 36
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 Route110_MapScripts::
 	map_script MAP_SCRIPT_ON_RESUME, Route110_OnResume
 	map_script MAP_SCRIPT_ON_TRANSITION, Route110_OnTransition
@@ -10,12 +13,18 @@ Route110_MapScripts::
 	.byte 0
 
 Route110_OnResume:
+<<<<<<< HEAD
 	callnative SetTimeBasedEncounters
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	special UpdateCyclingRoadState
 	end
 
 Route110_OnTransition:
+<<<<<<< HEAD
 	callnative SetTimeBasedEncounters
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call Common_EventScript_SetupRivalGfxId
 	call Common_EventScript_SetupRivalOnBikeGfxId
 	call_if_eq VAR_CYCLING_CHALLENGE_STATE, 1, Route110_EventScript_SaveCyclingMusic
@@ -178,7 +187,11 @@ Route110_EventScript_Jaclyn::
 	end
 
 Route110_EventScript_Edwin::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_LOLA, Route110_Text_EdwinIntro, Route110_Text_EdwinDefeated, Route110_EventScript_EdwinRegisterMatchCallAfterBattle
+=======
+	trainerbattle_single TRAINER_EDWIN_1, Route110_Text_EdwinIntro, Route110_Text_EdwinDefeated, Route110_EventScript_EdwinRegisterMatchCallAfterBattle
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route110_EventScript_EdwinRematch
 	msgbox Route110_Text_EdwinPostBattle, MSGBOX_DEFAULT
@@ -189,12 +202,20 @@ Route110_EventScript_EdwinRegisterMatchCallAfterBattle::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route110_Text_EdwinRegister, MSGBOX_DEFAULT
+<<<<<<< HEAD
 	register_matchcall TRAINER_LOLA
+=======
+	register_matchcall TRAINER_EDWIN_1
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	release
 	end
 
 Route110_EventScript_EdwinRematch::
+<<<<<<< HEAD
 	trainerbattle_rematch TRAINER_LOLA, Route110_Text_EdwinRematchIntro, Route110_Text_EdwinRematchDefeated
+=======
+	trainerbattle_rematch TRAINER_EDWIN_1, Route110_Text_EdwinRematchIntro, Route110_Text_EdwinRematchDefeated
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route110_Text_EdwinRematchPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -204,7 +225,11 @@ Route110_EventScript_Dale::
 	end
 
 Route110_EventScript_Jacob::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_RIVAL_CYNDAQUIL_2, Route110_Text_JacobIntro, Route110_Text_JacobDefeated
+=======
+	trainerbattle_single TRAINER_JACOB, Route110_Text_JacobIntro, Route110_Text_JacobDefeated
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route110_Text_JacobPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -240,7 +265,11 @@ Route110_EventScript_Jasmine::
 	end
 
 Route110_EventScript_Abigail::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_ABE, Route110_Text_AbigailIntro, Route110_Text_AbigailDefeated, Route110_EventScript_AbigailRegisterMatchCallAfterBattle
+=======
+	trainerbattle_single TRAINER_ABIGAIL_1, Route110_Text_AbigailIntro, Route110_Text_AbigailDefeated, Route110_EventScript_AbigailRegisterMatchCallAfterBattle
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route110_EventScript_AbigailRematch
 	msgbox Route110_Text_AbigailPostBattle, MSGBOX_DEFAULT
@@ -251,17 +280,29 @@ Route110_EventScript_AbigailRegisterMatchCallAfterBattle::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route110_Text_AbigailRegister, MSGBOX_DEFAULT
+<<<<<<< HEAD
 	register_matchcall TRAINER_ABE
+=======
+	register_matchcall TRAINER_ABIGAIL_1
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	release
 	end
 
 Route110_EventScript_AbigailRematch::
+<<<<<<< HEAD
 	trainerbattle_rematch TRAINER_ABE, Route110_Text_AbigailRematchIntro, Route110_Text_AbigailRematchDefeated
+=======
+	trainerbattle_rematch TRAINER_ABIGAIL_1, Route110_Text_AbigailRematchIntro, Route110_Text_AbigailRematchDefeated
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route110_Text_AbigailRematchPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route110_EventScript_Isabel::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_LTSURGE, Route110_Text_IsabelIntro, Route110_Text_IsabelDefeated, Route110_EventScript_IsabelRegisterMatchCallAfterBattle
+=======
+	trainerbattle_single TRAINER_ISABEL_1, Route110_Text_IsabelIntro, Route110_Text_IsabelDefeated, Route110_EventScript_IsabelRegisterMatchCallAfterBattle
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route110_EventScript_IsabelRematch
 	msgbox Route110_Text_IsabelPostBattle, MSGBOX_DEFAULT
@@ -272,12 +313,20 @@ Route110_EventScript_IsabelRegisterMatchCallAfterBattle::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route110_Text_IsabelRegister, MSGBOX_DEFAULT
+<<<<<<< HEAD
 	register_matchcall TRAINER_LTSURGE
+=======
+	register_matchcall TRAINER_ISABEL_1
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	release
 	end
 
 Route110_EventScript_IsabelRematch::
+<<<<<<< HEAD
 	trainerbattle_rematch TRAINER_LTSURGE, Route110_Text_IsabelRematchIntro, Route110_Text_IsabelRematchDefeated
+=======
+	trainerbattle_rematch TRAINER_ISABEL_1, Route110_Text_IsabelRematchIntro, Route110_Text_IsabelRematchDefeated
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route110_Text_IsabelRematchPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -300,7 +349,11 @@ Route110_EventScript_Joseph::
 	end
 
 Route110_EventScript_Alyssa::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_BRAD, Route110_Text_AlyssaIntro, Route110_Text_AlyssaDefeated
+=======
+	trainerbattle_single TRAINER_ALYSSA, Route110_Text_AlyssaIntro, Route110_Text_AlyssaDefeated
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route110_Text_AlyssaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -362,19 +415,28 @@ Route110_EventScript_EndChallenge::
 
 Route110_EventScript_RivalTrigger1::
 	setvar VAR_0x8008, 1
+<<<<<<< HEAD
 	setflag FLAG_INCREASE_DIFFICULTY
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto Route110_EventScript_RivalScene
 	end
 
 Route110_EventScript_RivalTrigger2::
 	setvar VAR_0x8008, 2
+<<<<<<< HEAD
 	setflag FLAG_INCREASE_DIFFICULTY
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto Route110_EventScript_RivalScene
 	end
 
 Route110_EventScript_RivalTrigger3::
 	setvar VAR_0x8008, 3
+<<<<<<< HEAD
 	setflag FLAG_INCREASE_DIFFICULTY
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto Route110_EventScript_RivalScene
 	end
 
@@ -383,11 +445,19 @@ Route110_EventScript_RivalScene::
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, Route110_EventScript_PlayMayMusic
 	call_if_eq VAR_RESULT, FEMALE, Route110_EventScript_PlayBrendanMusic
+<<<<<<< HEAD
 	applymovement LOCALID_RIVAL, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	applymovement LOCALID_RIVAL, Common_Movement_ExclamationMark
 	waitmovement 0
 	applymovement LOCALID_RIVAL, Common_Movement_Delay48
+=======
+	applymovement LOCALID_ROUTE110_RIVAL, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+	applymovement LOCALID_ROUTE110_RIVAL, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_ROUTE110_RIVAL, Common_Movement_Delay48
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	delay 30
 	call_if_eq VAR_0x8008, 1, Route110_EventScript_RivalApproachPlayer1
@@ -456,7 +526,11 @@ Route110_EventScript_BrendanBattleTorchic::
 	end
 
 Route110_EventScript_BrendanBattleMudkip::
+<<<<<<< HEAD
 	trainerbattle_no_intro TRAINER_DUFF_AND_EDA, Route110_Text_BrendanDefeated
+=======
+	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_110_MUDKIP, Route110_Text_BrendanDefeated
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto Route110_EventScript_BrendanDefeated
 	end
 
@@ -468,7 +542,11 @@ Route110_EventScript_BrendanDefeated::
 	end
 
 Route110_EventScript_GiveItemfinder::
+<<<<<<< HEAD
 	giveitem ITEM_ITEMFINDER
+=======
+	giveitem ITEM_DOWSING_MACHINE
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	return
 
 Route110_EventScript_RivalExit::
@@ -476,52 +554,89 @@ Route110_EventScript_RivalExit::
 	call_if_eq VAR_0x8008, 1, Route110_EventScript_MoveRival1
 	call_if_eq VAR_0x8008, 2, Route110_EventScript_MoveRival2
 	call_if_eq VAR_0x8008, 3, Route110_EventScript_MoveRival3
+<<<<<<< HEAD
 	setobjectmovementtype LOCALID_RIVAL, MOVEMENT_TYPE_FACE_RIGHT
 	setobjectmovementtype LOCALID_RIVAL_ON_BIKE, MOVEMENT_TYPE_FACE_RIGHT
 	removeobject LOCALID_RIVAL
 	addobject LOCALID_RIVAL_ON_BIKE
+=======
+	setobjectmovementtype LOCALID_ROUTE110_RIVAL, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectmovementtype LOCALID_ROUTE110_RIVAL_ON_BIKE, MOVEMENT_TYPE_FACE_RIGHT
+	removeobject LOCALID_ROUTE110_RIVAL
+	addobject LOCALID_ROUTE110_RIVAL_ON_BIKE
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	delay 45
 	call_if_eq VAR_0x8008, 1, Route110_EventScript_RivalExit1
 	call_if_eq VAR_0x8008, 2, Route110_EventScript_RivalExit2
 	call_if_eq VAR_0x8008, 3, Route110_EventScript_RivalExit3
+<<<<<<< HEAD
 	removeobject LOCALID_RIVAL_ON_BIKE
 	setvar VAR_GARBAGEVAR, 1
+=======
+	removeobject LOCALID_ROUTE110_RIVAL_ON_BIKE
+	setvar VAR_ROUTE110_STATE, 1
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	savebgm MUS_DUMMY
 	fadedefaultbgm
 	releaseall
 	end
 
 Route110_EventScript_RivalApproachPlayer1::
+<<<<<<< HEAD
 	applymovement LOCALID_RIVAL, Route110_Movement_RivalApproachPlayer1
+=======
+	applymovement LOCALID_ROUTE110_RIVAL, Route110_Movement_RivalApproachPlayer1
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 Route110_EventScript_RivalApproachPlayer2::
+<<<<<<< HEAD
 	applymovement LOCALID_RIVAL, Route110_Movement_RivalApproachPlayer2
+=======
+	applymovement LOCALID_ROUTE110_RIVAL, Route110_Movement_RivalApproachPlayer2
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 Route110_EventScript_RivalApproachPlayer3::
+<<<<<<< HEAD
 	applymovement LOCALID_RIVAL, Route110_Movement_RivalApproachPlayer3
+=======
+	applymovement LOCALID_ROUTE110_RIVAL, Route110_Movement_RivalApproachPlayer3
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 Route110_EventScript_RivalExit1::
+<<<<<<< HEAD
 	applymovement LOCALID_RIVAL_ON_BIKE, Route110_Movement_RivalExit1
+=======
+	applymovement LOCALID_ROUTE110_RIVAL_ON_BIKE, Route110_Movement_RivalExit1
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 Route110_EventScript_RivalExit2::
+<<<<<<< HEAD
 	applymovement LOCALID_RIVAL_ON_BIKE, Route110_Movement_RivalExit2
+=======
+	applymovement LOCALID_ROUTE110_RIVAL_ON_BIKE, Route110_Movement_RivalExit2
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 Route110_EventScript_RivalExit3::
+<<<<<<< HEAD
 	applymovement LOCALID_RIVAL_ON_BIKE, Route110_Movement_RivalExit3
+=======
+	applymovement LOCALID_ROUTE110_RIVAL_ON_BIKE, Route110_Movement_RivalExit3
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 Route110_EventScript_MoveRival1::
+<<<<<<< HEAD
 	setobjectxyperm LOCALID_RIVAL_ON_BIKE, 33, 55
 	return
 
@@ -531,6 +646,17 @@ Route110_EventScript_MoveRival2::
 
 Route110_EventScript_MoveRival3::
 	setobjectxyperm LOCALID_RIVAL_ON_BIKE, 35, 55
+=======
+	setobjectxyperm LOCALID_ROUTE110_RIVAL_ON_BIKE, 33, 55
+	return
+
+Route110_EventScript_MoveRival2::
+	setobjectxyperm LOCALID_ROUTE110_RIVAL_ON_BIKE, 34, 55
+	return
+
+Route110_EventScript_MoveRival3::
+	setobjectxyperm LOCALID_ROUTE110_RIVAL_ON_BIKE, 35, 55
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	return
 
 Route110_Movement_RivalApproachPlayer1:
@@ -601,6 +727,7 @@ Route110_EventScript_BirchScene4::
 	goto Route110_EventScript_BirchScene
 
 Route110_EventScript_BirchScene::
+<<<<<<< HEAD
 	addobject LOCALID_BIRCH
 	applymovement LOCALID_BIRCH, Route110_Movement_BirchEntrance
 	waitmovement 0
@@ -608,6 +735,15 @@ Route110_EventScript_BirchScene::
 	applymovement LOCALID_BIRCH, Common_Movement_ExclamationMark
 	waitmovement 0
 	applymovement LOCALID_BIRCH, Common_Movement_Delay48
+=======
+	addobject LOCALID_ROUTE110_BIRCH
+	applymovement LOCALID_ROUTE110_BIRCH, Route110_Movement_BirchEntrance
+	waitmovement 0
+	playse SE_PIN
+	applymovement LOCALID_ROUTE110_BIRCH, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_ROUTE110_BIRCH, Common_Movement_Delay48
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	call_if_eq VAR_0x8008, 1, Route110_EventScript_BirchApproachPlayer1
 	call_if_eq VAR_0x8008, 2, Route110_EventScript_BirchApproachPlayer2
@@ -616,6 +752,7 @@ Route110_EventScript_BirchScene::
 	msgbox Route110_Text_ImagineSeeingYouHere, MSGBOX_DEFAULT
 	closemessage
 	delay 20
+<<<<<<< HEAD
 	applymovement LOCALID_BIRCH, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	delay 10
@@ -623,6 +760,15 @@ Route110_EventScript_BirchScene::
 	waitmovement 0
 	delay 20
 	applymovement LOCALID_BIRCH, Common_Movement_WalkInPlaceFasterDown
+=======
+	applymovement LOCALID_ROUTE110_BIRCH, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
+	delay 10
+	applymovement LOCALID_ROUTE110_BIRCH, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	delay 20
+	applymovement LOCALID_ROUTE110_BIRCH, Common_Movement_WalkInPlaceFasterDown
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	delay 30
 	msgbox Route110_Text_HeardYouInstallMatchCall, MSGBOX_DEFAULT
@@ -640,48 +786,84 @@ Route110_EventScript_BirchScene::
 	call_if_eq VAR_0x8008, 2, Route110_EventScript_BirchExit2
 	call_if_eq VAR_0x8008, 3, Route110_EventScript_BirchExit3
 	call_if_eq VAR_0x8008, 4, Route110_EventScript_BirchExit4
+<<<<<<< HEAD
 	removeobject LOCALID_BIRCH
+=======
+	removeobject LOCALID_ROUTE110_BIRCH
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setvar VAR_REGISTER_BIRCH_STATE, 2
 	releaseall
 	end
 
 Route110_EventScript_BirchApproachPlayer1::
+<<<<<<< HEAD
 	applymovement LOCALID_BIRCH, Route110_Movement_BirchApproachPlayer1
+=======
+	applymovement LOCALID_ROUTE110_BIRCH, Route110_Movement_BirchApproachPlayer1
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 Route110_EventScript_BirchApproachPlayer2::
+<<<<<<< HEAD
 	applymovement LOCALID_BIRCH, Route110_Movement_BirchApproachPlayer2
+=======
+	applymovement LOCALID_ROUTE110_BIRCH, Route110_Movement_BirchApproachPlayer2
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 Route110_EventScript_BirchApproachPlayer3::
+<<<<<<< HEAD
 	applymovement LOCALID_BIRCH, Route110_Movement_BirchApproachPlayer3
+=======
+	applymovement LOCALID_ROUTE110_BIRCH, Route110_Movement_BirchApproachPlayer3
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 Route110_EventScript_BirchApproachPlayer4::
+<<<<<<< HEAD
 	applymovement LOCALID_BIRCH, Route110_Movement_BirchApproachPlayer4
+=======
+	applymovement LOCALID_ROUTE110_BIRCH, Route110_Movement_BirchApproachPlayer4
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 Route110_EventScript_BirchExit1::
+<<<<<<< HEAD
 	applymovement LOCALID_BIRCH, Route110_Movement_BirchExit1
+=======
+	applymovement LOCALID_ROUTE110_BIRCH, Route110_Movement_BirchExit1
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 Route110_EventScript_BirchExit2::
+<<<<<<< HEAD
 	applymovement LOCALID_BIRCH, Route110_Movement_BirchExit2
+=======
+	applymovement LOCALID_ROUTE110_BIRCH, Route110_Movement_BirchExit2
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 Route110_EventScript_BirchExit3::
+<<<<<<< HEAD
 	applymovement LOCALID_BIRCH, Route110_Movement_BirchExit3
+=======
+	applymovement LOCALID_ROUTE110_BIRCH, Route110_Movement_BirchExit3
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 Route110_EventScript_BirchExit4::
+<<<<<<< HEAD
 	applymovement LOCALID_BIRCH, Route110_Movement_BirchExit4
+=======
+	applymovement LOCALID_ROUTE110_BIRCH, Route110_Movement_BirchExit4
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
@@ -972,7 +1154,11 @@ Route110_Text_ThereIsNoRecord:
 Route110_Text_ImagineSeeingYouHere:
 	.string "PROF. BIRCH: Oh, {PLAYER}{KUN}!\n"
 	.string "Imagine seeing you here!\p"
+<<<<<<< HEAD
 	.string "And where might my SILVER be?$"
+=======
+	.string "And where might my {RIVAL} be?$"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 Route110_Text_HeardYouInstallMatchCall:
 	.string "Oh, I see!\n"
@@ -992,7 +1178,11 @@ Route110_Text_RegisteredBirchInPokenav:
 
 Route110_Text_KeepAnEyeOutForRival:
 	.string "PROF. BIRCH: {PLAYER}{KUN}…\p"
+<<<<<<< HEAD
 	.string "Please keep an eye out for my SILVER.\n"
+=======
+	.string "Please keep an eye out for my {RIVAL}.\n"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.string "… … … … … …\p"
 	.string "Well, I had better get going.\n"
 	.string "See you again, {PLAYER}{KUN}!$"

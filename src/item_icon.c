@@ -1,8 +1,18 @@
 #include "global.h"
+<<<<<<< HEAD
 #include "decompress.h"
 #include "graphics.h"
 #include "item_icon.h"
 #include "malloc.h"
+=======
+#include "battle_main.h"
+#include "decompress.h"
+#include "graphics.h"
+#include "item.h"
+#include "item_icon.h"
+#include "malloc.h"
+#include "move.h"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include "sprite.h"
 #include "constants/items.h"
 
@@ -93,19 +103,32 @@ u8 AddItemIconSprite(u16 tilesTag, u16 paletteTag, u16 itemId)
     {
         u8 spriteId;
         struct SpriteSheet spriteSheet;
+<<<<<<< HEAD
         struct CompressedSpritePalette spritePalette;
         struct SpriteTemplate *spriteTemplate;
 
         LZDecompressWram(GetItemIconPicOrPalette(itemId, 0), gItemIconDecompressionBuffer);
+=======
+        struct SpritePalette spritePalette;
+        struct SpriteTemplate *spriteTemplate;
+
+        DecompressDataWithHeaderWram(GetItemIconPic(itemId), gItemIconDecompressionBuffer);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         CopyItemIconPicTo4x4Buffer(gItemIconDecompressionBuffer, gItemIcon4x4Buffer);
         spriteSheet.data = gItemIcon4x4Buffer;
         spriteSheet.size = 0x200;
         spriteSheet.tag = tilesTag;
         LoadSpriteSheet(&spriteSheet);
 
+<<<<<<< HEAD
         spritePalette.data = GetItemIconPicOrPalette(itemId, 1);
         spritePalette.tag = paletteTag;
         LoadCompressedSpritePalette(&spritePalette);
+=======
+        spritePalette.data = GetItemIconPalette(itemId);
+        spritePalette.tag = paletteTag;
+        LoadSpritePalette(&spritePalette);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
         spriteTemplate = Alloc(sizeof(*spriteTemplate));
         CpuCopy16(&gItemIconSpriteTemplate, spriteTemplate, sizeof(*spriteTemplate));
@@ -130,19 +153,32 @@ u8 AddCustomItemIconSprite(const struct SpriteTemplate *customSpriteTemplate, u1
     {
         u8 spriteId;
         struct SpriteSheet spriteSheet;
+<<<<<<< HEAD
         struct CompressedSpritePalette spritePalette;
         struct SpriteTemplate *spriteTemplate;
 
         LZDecompressWram(GetItemIconPicOrPalette(itemId, 0), gItemIconDecompressionBuffer);
+=======
+        struct SpritePalette spritePalette;
+        struct SpriteTemplate *spriteTemplate;
+
+        DecompressDataWithHeaderWram(GetItemIconPic(itemId), gItemIconDecompressionBuffer);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         CopyItemIconPicTo4x4Buffer(gItemIconDecompressionBuffer, gItemIcon4x4Buffer);
         spriteSheet.data = gItemIcon4x4Buffer;
         spriteSheet.size = 0x200;
         spriteSheet.tag = tilesTag;
         LoadSpriteSheet(&spriteSheet);
 
+<<<<<<< HEAD
         spritePalette.data = GetItemIconPicOrPalette(itemId, 1);
         spritePalette.tag = paletteTag;
         LoadCompressedSpritePalette(&spritePalette);
+=======
+        spritePalette.data = GetItemIconPalette(itemId);
+        spritePalette.tag = paletteTag;
+        LoadSpritePalette(&spritePalette);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
         spriteTemplate = Alloc(sizeof(*spriteTemplate));
         CpuCopy16(customSpriteTemplate, spriteTemplate, sizeof(*spriteTemplate));
@@ -157,6 +193,7 @@ u8 AddCustomItemIconSprite(const struct SpriteTemplate *customSpriteTemplate, u1
     }
 }
 
+<<<<<<< HEAD
 const void *GetItemIconPicOrPalette(u16 itemId, u8 which)
 {
     if (itemId == ITEM_LIST_END)
@@ -165,4 +202,32 @@ const void *GetItemIconPicOrPalette(u16 itemId, u8 which)
         itemId = 0;
 
     return gItemIconTable[itemId][which];
+=======
+const void *GetItemIconPic(u16 itemId)
+{
+    if (itemId == ITEM_LIST_END)
+        return gItemIcon_ReturnToFieldArrow; // Use last icon, the "return to field" arrow
+    if (itemId >= ITEMS_COUNT)
+        return gItemsInfo[0].iconPic;
+    if (gItemsInfo[itemId].pocket == POCKET_TM_HM)
+    {
+        if (GetItemTMHMIndex(itemId) > NUM_TECHNICAL_MACHINES)
+            return gItemIcon_HM;
+        return gItemIcon_TM;
+    }
+
+    return gItemsInfo[itemId].iconPic;
+}
+
+const u16 *GetItemIconPalette(u16 itemId)
+{
+    if (itemId == ITEM_LIST_END)
+        return gItemIconPalette_ReturnToFieldArrow;
+    if (itemId >= ITEMS_COUNT)
+        return gItemsInfo[0].iconPalette;
+    if (gItemsInfo[itemId].pocket == POCKET_TM_HM)
+        return gTypesInfo[GetMoveType(GetItemTMHMMoveId(itemId))].paletteTMHM;
+
+    return gItemsInfo[itemId].iconPalette;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }

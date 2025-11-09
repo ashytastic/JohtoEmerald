@@ -2,11 +2,17 @@ Route127_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route127_OnTransition
 	map_script MAP_SCRIPT_ON_LOAD, Route127_OnLoad
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route127_OnFrame
+<<<<<<< HEAD
 	map_script MAP_SCRIPT_ON_RESUME, SetTimeEncounters
 	.byte 0
 
 Route127_OnTransition:
 	callnative SetTimeBasedEncounters
+=======
+	.byte 0
+
+Route127_OnTransition:
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
 	call_if_eq VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_HideMapNamePopup
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_127_NORTH, AbnormalWeather_StartKyogreWeather
@@ -23,12 +29,20 @@ Route127_OnFrame:
 	.2byte 0
 
 Route127_EventScript_Camden::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_GARRETT, Route127_Text_CamdenIntro, Route127_Text_CamdenDefeat
+=======
+	trainerbattle_single TRAINER_CAMDEN, Route127_Text_CamdenIntro, Route127_Text_CamdenDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route127_Text_CamdenPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route127_EventScript_Donny::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_KIM, Route127_Text_DonnyIntro, Route127_Text_DonnyDefeat
+=======
+	trainerbattle_single TRAINER_DONNY, Route127_Text_DonnyIntro, Route127_Text_DonnyDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route127_Text_DonnyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -48,12 +62,20 @@ Route127_EventScript_Roger::
 	end
 
 Route127_EventScript_Aidan::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_ANDY, Route127_Text_AidanIntro, Route127_Text_AidanDefeat
+=======
+	trainerbattle_single TRAINER_AIDAN, Route127_Text_AidanIntro, Route127_Text_AidanDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route127_Text_AidanPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route127_EventScript_Athena::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_CHOW, Route127_Text_AthenaIntro, Route127_Text_AthenaDefeat
+=======
+	trainerbattle_single TRAINER_ATHENA, Route127_Text_AthenaIntro, Route127_Text_AthenaDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route127_Text_AthenaPostBattle, MSGBOX_AUTOCLOSE
 	end
 

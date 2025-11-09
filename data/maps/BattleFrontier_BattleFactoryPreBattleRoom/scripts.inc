@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 .set LOCALID_ATTENDANT, 1
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 BattleFrontier_BattleFactoryPreBattleRoom_MapScripts::
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, BattleFrontier_BattleFactoryPreBattleRoom_OnFrame
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, BattleFrontier_BattleFactoryPreBattleRoom_OnWarp
@@ -12,10 +15,17 @@ BattleFrontier_BattleFactoryPreBattleRoom_OnWarp:
 BattleFrontier_BattleFactoryPreBattleRoom_EventScript_SetUpObjects::
 	setvar VAR_TEMP_1, 1
 	goto_if_ne VAR_0x8006, 1, BattleFrontier_BattleFactoryPreBattleRoom_EventScript_TurnPlayerNorth
+<<<<<<< HEAD
 	setobjectxy LOCALID_ATTENDANT, 8, 7
 	turnobject LOCALID_ATTENDANT, DIR_SOUTH
 BattleFrontier_BattleFactoryPreBattleRoom_EventScript_TurnPlayerNorth::
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+=======
+	setobjectxy LOCALID_FACTORY_PRE_BATTLE_ATTENDANT, 8, 7
+	turnobject LOCALID_FACTORY_PRE_BATTLE_ATTENDANT, DIR_SOUTH
+BattleFrontier_BattleFactoryPreBattleRoom_EventScript_TurnPlayerNorth::
+	turnobject LOCALID_PLAYER, DIR_NORTH
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 BattleFrontier_BattleFactoryPreBattleRoom_OnFrame:
@@ -25,8 +35,13 @@ BattleFrontier_BattleFactoryPreBattleRoom_OnFrame:
 BattleFrontier_BattleFactoryPreBattleRoom_EventScript_EnterRoom::
 	goto_if_eq VAR_0x8006, 1, BattleFrontier_BattleFactoryPreBattleRoom_EventScript_ReturnToRoomFromBattle
 	setvar VAR_TEMP_0, 1
+<<<<<<< HEAD
 	applymovement LOCALID_ATTENDANT, BattleFrontier_BattleFactoryPreBattleRoom_Movement_AttendantEnterRoom
 	applymovement OBJ_EVENT_ID_PLAYER, BattleFrontier_BattleFactoryPreBattleRoom_Movement_PlayerEnterRoom
+=======
+	applymovement LOCALID_FACTORY_PRE_BATTLE_ATTENDANT, BattleFrontier_BattleFactoryPreBattleRoom_Movement_AttendantEnterRoom
+	applymovement LOCALID_PLAYER, BattleFrontier_BattleFactoryPreBattleRoom_Movement_PlayerEnterRoom
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	goto_if_eq VAR_0x8006, 2, BattleFrontier_BattleFactoryPreBattleRoom_EventScript_ResumeChallenge
 	factory_generaterentalmons
@@ -66,11 +81,19 @@ BattleFrontier_BattleFactoryPreBattleRoom_EventScript_ReturnToRoomFromBattle::
 	waitse
 	msgbox BattleFrontier_BattleFactoryPreBattleRoom_Text_WaitFewMoments, MSGBOX_DEFAULT
 	closemessage
+<<<<<<< HEAD
 	applymovement LOCALID_ATTENDANT, BattleFrontier_BattleFactoryPreBattleRoom_Movement_AttendantMoveToReceiveCall
 	waitmovement 0
 	msgbox BattleFrontier_BattleFactoryPreBattleRoom_Text_UnderstoodSirWillDo, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_ATTENDANT, BattleFrontier_BattleFactoryPreBattleRoom_Movement_AttendantReturnToPlayer
+=======
+	applymovement LOCALID_FACTORY_PRE_BATTLE_ATTENDANT, BattleFrontier_BattleFactoryPreBattleRoom_Movement_AttendantMoveToReceiveCall
+	waitmovement 0
+	msgbox BattleFrontier_BattleFactoryPreBattleRoom_Text_UnderstoodSirWillDo, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_FACTORY_PRE_BATTLE_ATTENDANT, BattleFrontier_BattleFactoryPreBattleRoom_Movement_AttendantReturnToPlayer
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	msgbox BattleFrontier_BattleFactoryPreBattleRoom_Text_MessageFromHeadComeRightNow, MSGBOX_DEFAULT
 	closemessage
@@ -225,6 +248,10 @@ BattleFrontier_BattleFactoryPreBattleRoom_EventScript_CommentOnOpponentType::
 	call_if_eq VAR_0x8005, TYPE_ICE, BattleFrontier_BattleFactoryPreBattleRoom_EventScript_OpponentUsesIce
 	call_if_eq VAR_0x8005, TYPE_DRAGON, BattleFrontier_BattleFactoryPreBattleRoom_EventScript_OpponentUsesDragon
 	call_if_eq VAR_0x8005, TYPE_DARK, BattleFrontier_BattleFactoryPreBattleRoom_EventScript_OpponentUsesDark
+<<<<<<< HEAD
+=======
+	call_if_eq VAR_0x8005, TYPE_FAIRY, BattleFrontier_BattleFactoryPreBattleRoom_EventScript_OpponentUsesFairy
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call_if_eq VAR_0x8005, NUMBER_OF_MON_TYPES, BattleFrontier_BattleFactoryPreBattleRoom_EventScript_OpponentHasNoMostCommonType
 	return
 
@@ -296,6 +323,13 @@ BattleFrontier_BattleFactoryPreBattleRoom_EventScript_OpponentUsesDark::
 	msgbox BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInDarkType, MSGBOX_DEFAULT
 	return
 
+<<<<<<< HEAD
+=======
+BattleFrontier_BattleFactoryPreBattleRoom_EventScript_OpponentUsesFairy::
+	msgbox BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInFairyType, MSGBOX_DEFAULT
+	return
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 BattleFrontier_BattleFactoryPreBattleRoom_EventScript_OpponentHasNoMostCommonType::
 	msgbox BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerHasNoClearFavorite, MSGBOX_DEFAULT
 	return
@@ -378,6 +412,7 @@ BattleFrontier_BattleFactoryPreBattleRoom_EventScript_AskSwapBeforeHead::
 	case MULTI_B_PRESSED, BattleFrontier_BattleFactoryPreBattleRoom_EventScript_EnterBattleRoom
 
 BattleFrontier_BattleFactoryPreBattleRoom_EventScript_WalkToBattleRoomLv50::
+<<<<<<< HEAD
 	applymovement LOCALID_ATTENDANT, BattleFrontier_BattleFactoryPreBattleRoom_Movement_GuideWalkToBattleRoomLv50
 	applymovement OBJ_EVENT_ID_PLAYER, BattleFrontier_BattleFactoryPreBattleRoom_Movement_PlayerWalkToBattleRoomLv50
 	return
@@ -385,6 +420,15 @@ BattleFrontier_BattleFactoryPreBattleRoom_EventScript_WalkToBattleRoomLv50::
 BattleFrontier_BattleFactoryPreBattleRoom_EventScript_WalkToBattleRoomLvOpen::
 	applymovement LOCALID_ATTENDANT, BattleFrontier_BattleFactoryPreBattleRoom_Movement_GuideWalkToBattleRoomLvOpen
 	applymovement OBJ_EVENT_ID_PLAYER, BattleFrontier_BattleFactoryPreBattleRoom_Movement_PlayerWalkToBattleRoomLvOpen
+=======
+	applymovement LOCALID_FACTORY_PRE_BATTLE_ATTENDANT, BattleFrontier_BattleFactoryPreBattleRoom_Movement_GuideWalkToBattleRoomLv50
+	applymovement LOCALID_PLAYER, BattleFrontier_BattleFactoryPreBattleRoom_Movement_PlayerWalkToBattleRoomLv50
+	return
+
+BattleFrontier_BattleFactoryPreBattleRoom_EventScript_WalkToBattleRoomLvOpen::
+	applymovement LOCALID_FACTORY_PRE_BATTLE_ATTENDANT, BattleFrontier_BattleFactoryPreBattleRoom_Movement_GuideWalkToBattleRoomLvOpen
+	applymovement LOCALID_PLAYER, BattleFrontier_BattleFactoryPreBattleRoom_Movement_PlayerWalkToBattleRoomLvOpen
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	return
 
 BattleFrontier_BattleFactoryPreBattleRoom_Movement_PlayerEnterRoom:
@@ -559,6 +603,13 @@ BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInDarkType:
 	.string "The TRAINER is apparently skilled\n"
 	.string "in the handling of the DARK type.$"
 
+<<<<<<< HEAD
+=======
+BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInFairyType:
+	.string "The TRAINER is apparently skilled\n"
+	.string "in the handling of the FAIRY type.$"
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 BattleFrontier_BattleFactoryPreBattleRoom_Text_TrainerSkilledInSteelType:
 	.string "The TRAINER is apparently skilled\n"
 	.string "in the handling of the STEEL type.$"

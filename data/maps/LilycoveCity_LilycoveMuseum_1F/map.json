@@ -12,7 +12,11 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+<<<<<<< HEAD
   "connections": 0,
+=======
+  "connections": null,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_BEAUTY",
@@ -28,6 +32,10 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
+=======
+      "local_id": "LOCALID_MUSEUM_1F_CURATOR",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
       "x": 16,
       "y": 2,
@@ -38,10 +46,17 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LilycoveCity_LilycoveMuseum_1F_EventScript_Curator",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY",
+=======
+      "flag": "FLAG_HIDE_LILYCOVE_MUSEUM_CURATOR"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SCHOOL_KID_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 13,
       "y": 7,
       "elevation": 3,
@@ -54,7 +69,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_UNUSED_WOMAN_4",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_ARTIST",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 13,
       "y": 10,
       "elevation": 3,
@@ -80,7 +99,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_LASS",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 3,
       "y": 8,
       "elevation": 3,
@@ -103,10 +126,18 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LilycoveCity_LilycoveMuseum_1F_EventScript_Woman2",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_UNUSED_WOMAN_4",
+=======
+      "flag": "FLAG_HIDE_LILYCOVE_MUSEUM_PATRON_1"
+    },
+    {
+      "local_id": "LOCALID_MUSEUM_1F_ARTIST_2",
+      "graphics_id": "OBJ_EVENT_GFX_ARTIST",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 19,
       "y": 3,
       "elevation": 3,
@@ -116,7 +147,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LilycoveCity_LilycoveMuseum_1F_EventScript_Artist2",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
+=======
+      "flag": "FLAG_HIDE_LILYCOVE_MUSEUM_PATRON_4"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
@@ -129,10 +164,17 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LilycoveCity_LilycoveMuseum_1F_EventScript_FatMan",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TRAINER_TOWER_DUDE",
+=======
+      "flag": "FLAG_HIDE_LILYCOVE_MUSEUM_TOURISTS"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 6,
       "y": 2,
       "elevation": 3,
@@ -142,7 +184,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LilycoveCity_LilycoveMuseum_1F_EventScript_PsychicM",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
+=======
+      "flag": "FLAG_HIDE_LILYCOVE_MUSEUM_PATRON_3"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "warp_events": [
@@ -168,9 +214,13 @@
       "dest_warp_id": "0"
     }
   ],
+<<<<<<< HEAD
   "coord_events": [
 
   ],
+=======
+  "coord_events": [],
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "bg_events": [
     {
       "type": "sign",

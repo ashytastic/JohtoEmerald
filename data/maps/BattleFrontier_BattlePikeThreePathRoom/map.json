@@ -12,7 +12,11 @@
   "allow_running": true,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+<<<<<<< HEAD
   "connections": 0,
+=======
+  "connections": null,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_LINK_RECEPTIONIST",
@@ -28,6 +32,10 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
+=======
+      "local_id": "LOCALID_PIKE_HINT_GIVER",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_LINK_RECEPTIONIST",
       "x": 8,
       "y": 5,
@@ -41,9 +49,13 @@
       "flag": "0"
     }
   ],
+<<<<<<< HEAD
   "warp_events": [
 
   ],
+=======
+  "warp_events": [],
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "coord_events": [
     {
       "type": "trigger",
@@ -127,7 +139,11 @@
       "script": "BattleFrontier_BattlePikeThreePathRoom_EventScript_NoTurningBack"
     }
   ],
+<<<<<<< HEAD
   "bg_events": [
 
   ]
+=======
+  "bg_events": []
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }

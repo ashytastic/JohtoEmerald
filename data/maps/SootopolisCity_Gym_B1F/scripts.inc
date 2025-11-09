@@ -2,17 +2,29 @@ SootopolisCity_Gym_B1F_MapScripts::
 	.byte 0
 
 SootopolisCity_Gym_B1F_EventScript_Andrea::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_BRIAN, SootopolisCity_Gym_B1F_Text_AndreaIntro, SootopolisCity_Gym_B1F_Text_AndreaDefeat
+=======
+	trainerbattle_single TRAINER_ANDREA, SootopolisCity_Gym_B1F_Text_AndreaIntro, SootopolisCity_Gym_B1F_Text_AndreaDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox SootopolisCity_Gym_B1F_Text_AndreaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 SootopolisCity_Gym_B1F_EventScript_Crissy::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_HARRY, SootopolisCity_Gym_B1F_Text_CrissyIntro, SootopolisCity_Gym_B1F_Text_CrissyDefeat
+=======
+	trainerbattle_single TRAINER_CRISSY, SootopolisCity_Gym_B1F_Text_CrissyIntro, SootopolisCity_Gym_B1F_Text_CrissyDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox SootopolisCity_Gym_B1F_Text_CrissyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 SootopolisCity_Gym_B1F_EventScript_Brianna::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_ELLEN, SootopolisCity_Gym_B1F_Text_BriannaIntro, SootopolisCity_Gym_B1F_Text_BriannaDefeat
+=======
+	trainerbattle_single TRAINER_BRIANNA, SootopolisCity_Gym_B1F_Text_BriannaIntro, SootopolisCity_Gym_B1F_Text_BriannaDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox SootopolisCity_Gym_B1F_Text_BriannaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -42,12 +54,20 @@ SootopolisCity_Gym_B1F_EventScript_Bethany::
 	end
 
 SootopolisCity_Gym_B1F_EventScript_Annika::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_CARRIE, SootopolisCity_Gym_B1F_Text_AnnikaIntro, SootopolisCity_Gym_B1F_Text_AnnikaDefeat
+=======
+	trainerbattle_single TRAINER_ANNIKA, SootopolisCity_Gym_B1F_Text_AnnikaIntro, SootopolisCity_Gym_B1F_Text_AnnikaDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox SootopolisCity_Gym_B1F_Text_AnnikaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 SootopolisCity_Gym_B1F_EventScript_Daphne::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_JIMMY, SootopolisCity_Gym_B1F_Text_DaphneIntro, SootopolisCity_Gym_B1F_Text_DaphneDefeat
+=======
+	trainerbattle_single TRAINER_DAPHNE, SootopolisCity_Gym_B1F_Text_DaphneIntro, SootopolisCity_Gym_B1F_Text_DaphneDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox SootopolisCity_Gym_B1F_Text_DaphnePostBattle, MSGBOX_AUTOCLOSE
 	end
 

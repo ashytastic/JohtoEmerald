@@ -1,4 +1,5 @@
 Route110_SeasideCyclingRoadSouthEntrance_MapScripts::
+<<<<<<< HEAD
 	map_script MAP_SCRIPT_ON_TRANSITION, Route110_SeasideCyclingRoadSouthEntrance_OnTransition
 	.byte 0
 
@@ -11,6 +12,10 @@ Route110_SeasideCyclingRoadSouthEntrance_EventScript_RestartChallenge::
 	setvar VAR_CYCLING_CHALLENGE_STATE, 1
 	return
 
+=======
+	.byte 0
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 Route110_SeasideCyclingRoadSouthEntrance_EventScript_Clerk::
 	lock
 	faceplayer
@@ -21,13 +26,17 @@ Route110_SeasideCyclingRoadSouthEntrance_EventScript_Clerk::
 Route110_SeasideCyclingRoadSouthEntrance_EventScript_BikeCheck::
 	lockall
 	specialvar VAR_RESULT, GetPlayerAvatarBike
+<<<<<<< HEAD
 	call_if_eq VAR_RESULT, 2, Route110_SeasideCyclingRoadSouthEntrance_EventScript_OnMachBike
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto_if_eq VAR_RESULT, 0, Route110_SeasideCyclingRoadSouthEntrance_EventScript_NoBike
 	setflag FLAG_SYS_CYCLING_ROAD
 	setvar VAR_TEMP_1, 1
 	releaseall
 	end
 
+<<<<<<< HEAD
 Route110_SeasideCyclingRoadSouthEntrance_EventScript_OnMachBike::
 	setvar VAR_CYCLING_CHALLENGE_STATE, 1
 	return
@@ -36,6 +45,12 @@ Route110_SeasideCyclingRoadSouthEntrance_EventScript_NoBike::
 	msgbox Route110_SeasideCyclingRoadSouthEntrance_Text_TooDangerousToWalk, MSGBOX_DEFAULT
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, Route110_SeasideCyclingRoadSouthEntrance_Movement_PushPlayerBackFromCounter
+=======
+Route110_SeasideCyclingRoadSouthEntrance_EventScript_NoBike::
+	msgbox Route110_SeasideCyclingRoadSouthEntrance_Text_TooDangerousToWalk, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_PLAYER, Route110_SeasideCyclingRoadSouthEntrance_Movement_PushPlayerBackFromCounter
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	releaseall
 	end
@@ -46,7 +61,10 @@ Route110_SeasideCyclingRoadSouthEntrance_Movement_PushPlayerBackFromCounter:
 
 Route110_SeasideCyclingRoadSouthEntrance_EventScript_ClearCyclingRoad::
 	lockall
+<<<<<<< HEAD
 	setvar VAR_CYCLING_CHALLENGE_STATE, 0
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	clearflag FLAG_SYS_CYCLING_ROAD
 	setvar VAR_TEMP_1, 0
 	releaseall

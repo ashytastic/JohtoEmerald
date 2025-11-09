@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 .set LOCALID_ATTENDANT, 1
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 BattleFrontier_BattlePikeLobby_MapScripts::
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, BattleFrontier_BattlePikeLobby_OnFrame
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, BattleFrontier_BattlePikeLobby_OnWarp
@@ -18,7 +21,11 @@ BattleFrontier_BattlePikeLobby_OnWarp:
 
 BattleFrontier_BattlePikeLobby_EventScript_TurnPlayerNorth::
 	setvar VAR_TEMP_1, 1
+<<<<<<< HEAD
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+=======
+	turnobject LOCALID_PLAYER, DIR_NORTH
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 BattleFrontier_BattlePikeLobby_EventScript_GetChallengeStatus::
@@ -202,8 +209,13 @@ BattleFrontier_BattlePikeLobby_EventScript_ShowResults::
 	end
 
 BattleFrontier_BattlePikeLobby_EventScript_WalkToCorridor::
+<<<<<<< HEAD
 	applymovement LOCALID_ATTENDANT, BattleFrontier_BattlePikeLobby_Movement_AttendantWalkToCorridor
 	applymovement OBJ_EVENT_ID_PLAYER, BattleFrontier_BattlePikeLobby_Movement_PlayerWalkToCorridor
+=======
+	applymovement LOCALID_PIKE_LOBBY_ATTENDANT, BattleFrontier_BattlePikeLobby_Movement_AttendantWalkToCorridor
+	applymovement LOCALID_PLAYER, BattleFrontier_BattlePikeLobby_Movement_PlayerWalkToCorridor
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
@@ -306,7 +318,11 @@ BattleFrontier_BattlePikeLobby_Text_LookForwardToSeeingYou:
 
 BattleFrontier_BattlePikeLobby_Text_WhichChallengeMode:
 	.string "You have the choice of two courses,\n"
+<<<<<<< HEAD
 	.string "NORMAL and HARD.\l"
+=======
+	.string "Level 50 and Open Level.\l"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.string "Which will you challenge?$"
 
 BattleFrontier_BattlePikeLobby_Text_NotEnoughValidMonsLv50:

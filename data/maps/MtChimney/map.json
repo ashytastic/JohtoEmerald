@@ -12,10 +12,18 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+<<<<<<< HEAD
   "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_PROTON",
+=======
+  "connections": null,
+  "object_events": [
+    {
+      "local_id": "LOCALID_MT_CHIMNEY_ARCHIE",
+      "graphics_id": "OBJ_EVENT_GFX_ARCHIE",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 24,
       "y": 19,
       "elevation": 3,
@@ -25,10 +33,18 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MtChimney_EventScript_Archie",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ARCHER",
+=======
+      "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_AQUA"
+    },
+    {
+      "local_id": "LOCALID_MT_CHIMNEY_MAXIE",
+      "graphics_id": "OBJ_EVENT_GFX_MAXIE",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 13,
       "y": 6,
       "elevation": 3,
@@ -38,10 +54,18 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MtChimney_EventScript_Maxie",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PETREL",
+=======
+      "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA"
+    },
+    {
+      "local_id": "LOCALID_MT_CHIMNEY_TABITHA",
+      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 12,
       "y": 11,
       "elevation": 3,
@@ -51,10 +75,17 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
       "script": "MtChimney_EventScript_Tabitha",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PETREL",
+=======
+      "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 32,
       "y": 5,
       "elevation": 3,
@@ -64,10 +95,17 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MtChimney_EventScript_BusyMagmaGrunt5",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PETREL",
+=======
+      "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 28,
       "y": 12,
       "elevation": 3,
@@ -77,10 +115,17 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MtChimney_EventScript_BusyMagmaGrunt4",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
+=======
+      "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 19,
       "y": 39,
       "elevation": 3,
@@ -90,10 +135,17 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MtChimney_EventScript_BusyAquaGrunt2",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
+=======
+      "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_AQUA"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 29,
       "y": 5,
       "elevation": 3,
@@ -103,10 +155,17 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MtChimney_EventScript_BusyAquaGrunt1",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
+=======
+      "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_AQUA"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 31,
       "y": 12,
       "elevation": 3,
@@ -116,10 +175,17 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MtChimney_EventScript_BusyAquaGrunt3",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ATTENDANT",
+=======
+      "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_AQUA"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 19,
       "y": 39,
       "elevation": 3,
@@ -129,10 +195,17 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MtChimney_EventScript_LavaCookieLady",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PETREL",
+=======
+      "flag": "FLAG_HIDE_MT_CHIMNEY_LAVA_COOKIE_LADY"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 22,
       "y": 39,
       "elevation": 3,
@@ -142,7 +215,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MtChimney_EventScript_BusyMagmaGrunt6",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
+=======
+      "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POOCHYENA",
@@ -155,7 +232,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MtChimney_EventScript_AquaPoochyena",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
+=======
+      "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_AQUA"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POOCHYENA",
@@ -168,10 +249,17 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MtChimney_EventScript_MagmaPoochyena",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PETREL",
+=======
+      "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 23,
       "y": 17,
       "elevation": 3,
@@ -181,7 +269,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MtChimney_EventScript_BusyMagmaGrunt2",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
+=======
+      "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POOCHYENA",
@@ -194,7 +286,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MtChimney_EventScript_MagmaPoochyena",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
+=======
+      "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POOCHYENA",
@@ -207,10 +303,17 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MtChimney_EventScript_MagmaPoochyena",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PETREL",
+=======
+      "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 23,
       "y": 21,
       "elevation": 3,
@@ -220,10 +323,17 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MtChimney_EventScript_BusyMagmaGrunt3",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PETREL",
+=======
+      "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 21,
       "y": 19,
       "elevation": 3,
@@ -233,7 +343,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MtChimney_EventScript_BusyMagmaGrunt1",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
+=======
+      "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POOCHYENA",
@@ -246,7 +360,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MtChimney_EventScript_AquaPoochyena",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
+=======
+      "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_AQUA"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POOCHYENA",
@@ -259,7 +377,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MtChimney_EventScript_MagmaPoochyena",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
+=======
+      "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POOCHYENA",
@@ -272,7 +394,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MtChimney_EventScript_AquaPoochyena",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
+=======
+      "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_AQUA"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POOCHYENA",
@@ -285,10 +411,18 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MtChimney_EventScript_MagmaPoochyena",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PETREL",
+=======
+      "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA"
+    },
+    {
+      "local_id": "LOCALID_MT_CHIMNEY_MAGMA_GRUNT_2",
+      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 9,
       "y": 16,
       "elevation": 3,
@@ -298,7 +432,11 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "MtChimney_EventScript_Grunt2",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
+=======
+      "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POOCHYENA",
@@ -311,7 +449,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MtChimney_EventScript_AquaPoochyena",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
+=======
+      "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_AQUA"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POOCHYENA",
@@ -324,10 +466,17 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MtChimney_EventScript_MagmaPoochyena",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN",
+=======
+      "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 16,
       "y": 18,
       "elevation": 3,
@@ -337,7 +486,11 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "MtChimney_EventScript_Shelby",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
+=======
+      "flag": "FLAG_HIDE_MT_CHIMNEY_TRAINERS"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BEAUTY",
@@ -350,7 +503,11 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "6",
       "script": "MtChimney_EventScript_Melissa",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
+=======
+      "flag": "FLAG_HIDE_MT_CHIMNEY_TRAINERS"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BEAUTY",
@@ -363,7 +520,11 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "MtChimney_EventScript_Sheila",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
+=======
+      "flag": "FLAG_HIDE_MT_CHIMNEY_TRAINERS"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BEAUTY",
@@ -376,10 +537,18 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "MtChimney_EventScript_Shirley",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ARIANA",
+=======
+      "flag": "FLAG_HIDE_MT_CHIMNEY_TRAINERS"
+    },
+    {
+      "local_id": "LOCALID_MT_CHIMNEY_MAGMA_GRUNT_1",
+      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_F",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 13,
       "y": 16,
       "elevation": 3,
@@ -389,7 +558,11 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "MtChimney_EventScript_Grunt1",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
+=======
+      "flag": "FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_HIKER",
@@ -402,7 +575,11 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "6",
       "script": "MtChimney_EventScript_Sawyer",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
+=======
+      "flag": "FLAG_HIDE_MT_CHIMNEY_TRAINERS"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "warp_events": [
@@ -435,9 +612,13 @@
       "dest_warp_id": "3"
     }
   ],
+<<<<<<< HEAD
   "coord_events": [
 
   ],
+=======
+  "coord_events": [],
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "bg_events": [
     {
       "type": "sign",

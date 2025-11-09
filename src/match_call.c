@@ -3,6 +3,10 @@
 #include "battle.h"
 #include "battle_setup.h"
 #include "bg.h"
+<<<<<<< HEAD
+=======
+#include "birch_pc.h"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include "data.h"
 #include "event_data.h"
 #include "event_object_movement.h"
@@ -131,10 +135,17 @@ static EWRAM_DATA struct MatchCallState sMatchCallState = {0};
 static EWRAM_DATA struct BattleFrontierStreakInfo sBattleFrontierStreakInfo = {0};
 
 static u32 GetCurrentTotalMinutes(struct Time *);
+<<<<<<< HEAD
 static u32 GetNumRegisteredNPCs(void);
 static u32 GetActiveMatchCallTrainerId(u32);
 static int GetTrainerMatchCallId(int);
 static u16 GetRematchTrainerLocation(int);
+=======
+static u32 GetNumRegisteredTrainers(void);
+static u32 GetActiveMatchCallTrainerId(u32);
+static int GetTrainerMatchCallId(int);
+static mapsec_u16_t GetRematchTrainerLocation(int);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static bool32 TrainerIsEligibleForRematch(int);
 static void StartMatchCall(void);
 static void ExecuteMatchCall(u8);
@@ -171,7 +182,11 @@ static void PopulateBattleFrontierStreak(int, u8 *);
 static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
 {
     {
+<<<<<<< HEAD
         .trainerId = TRAINER_GRUNT_33,
+=======
+        .trainerId = TRAINER_ROSE_1,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .unused = 0,
         .battleTopicTextIds = BATTLE_TEXT_IDS(8),
         .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 3),
@@ -180,7 +195,11 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 8),
     },
     {
+<<<<<<< HEAD
         .trainerId = TRAINER_BRIANA,
+=======
+        .trainerId = TRAINER_ANDRES_1,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .unused = 0,
         .battleTopicTextIds = BATTLE_TEXT_IDS(12),
         .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 62),
@@ -189,7 +208,11 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 12),
     },
     {
+<<<<<<< HEAD
         .trainerId = TRAINER_KRISE,
+=======
+        .trainerId = TRAINER_DUSTY_1,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .unused = 0,
         .battleTopicTextIds = BATTLE_TEXT_IDS(12),
         .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 4),
@@ -225,7 +248,11 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 1),
     },
     {
+<<<<<<< HEAD
         .trainerId = TRAINER_HILLARY,
+=======
+        .trainerId = TRAINER_CRISTIN_1,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .unused = 0,
         .battleTopicTextIds = BATTLE_TEXT_IDS(10),
         .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 64),
@@ -234,7 +261,11 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 10),
     },
     {
+<<<<<<< HEAD
         .trainerId = TRAINER_EMMA,
+=======
+        .trainerId = TRAINER_BROOKE_1,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .unused = 0,
         .battleTopicTextIds = BATTLE_TEXT_IDS(9),
         .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 8),
@@ -261,7 +292,11 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 8),
     },
     {
+<<<<<<< HEAD
         .trainerId = TRAINER_GRUNT_18,
+=======
+        .trainerId = TRAINER_CINDY_1,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .unused = 0,
         .battleTopicTextIds = BATTLE_TEXT_IDS(8),
         .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 10),
@@ -280,7 +315,11 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 10),
     },
     {
+<<<<<<< HEAD
         .trainerId = TRAINER_ARIANA_1,
+=======
+        .trainerId = TRAINER_JESSICA_1,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .unused = 0,
         .battleTopicTextIds = BATTLE_TEXT_IDS(10),
         .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 11),
@@ -334,7 +373,11 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 3),
     },
     {
+<<<<<<< HEAD
         .trainerId = TRAINER_NORTON,
+=======
+        .trainerId = TRAINER_FERNANDO_1,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .unused = 0,
         .battleTopicTextIds = BATTLE_TEXT_IDS(6),
         .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 17),
@@ -343,7 +386,11 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 6),
     },
     {
+<<<<<<< HEAD
         .trainerId = TRAINER_JENN,
+=======
+        .trainerId = TRAINER_DALTON_1,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .unused = 0,
         .battleTopicTextIds = BATTLE_TEXT_IDS(4),
         .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 18),
@@ -352,7 +399,11 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 4),
     },
     {
+<<<<<<< HEAD
         .trainerId = TRAINER_DARYL,
+=======
+        .trainerId = TRAINER_BERNIE_1,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .unused = 0,
         .battleTopicTextIds = BATTLE_TEXT_IDS(11),
         .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 19),
@@ -361,7 +412,11 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 11),
     },
     {
+<<<<<<< HEAD
         .trainerId = TRAINER_NAOKO,
+=======
+        .trainerId = TRAINER_ETHAN_1,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .unused = 0,
         .battleTopicTextIds = BATTLE_TEXT_IDS(1),
         .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 20),
@@ -379,7 +434,11 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 12),
     },
     {
+<<<<<<< HEAD
         .trainerId = TRAINER_RIVAL_TOTODILE_5,
+=======
+        .trainerId = TRAINER_JEFFREY_1,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .unused = 0,
         .battleTopicTextIds = BATTLE_TEXT_IDS(7),
         .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 21),
@@ -388,7 +447,11 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 7),
     },
     {
+<<<<<<< HEAD
         .trainerId = TRAINER_GAVEN,
+=======
+        .trainerId = TRAINER_CAMERON_1,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .unused = 0,
         .battleTopicTextIds = BATTLE_TEXT_IDS(4),
         .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 22),
@@ -397,7 +460,11 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 4),
     },
     {
+<<<<<<< HEAD
         .trainerId = TRAINER_LANCE_1,
+=======
+        .trainerId = TRAINER_JACKI_1,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .unused = 0,
         .battleTopicTextIds = BATTLE_TEXT_IDS(8),
         .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 23),
@@ -424,7 +491,11 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 2),
     },
     {
+<<<<<<< HEAD
         .trainerId = TRAINER_ARCHER_1,
+=======
+        .trainerId = TRAINER_JERRY_1,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .unused = 0,
         .battleTopicTextIds = BATTLE_TEXT_IDS(1),
         .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 25),
@@ -442,7 +513,11 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 9),
     },
     {
+<<<<<<< HEAD
         .trainerId = TRAINER_LTSURGE,
+=======
+        .trainerId = TRAINER_ISABEL_1,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .unused = 0,
         .battleTopicTextIds = BATTLE_TEXT_IDS(14),
         .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 29),
@@ -478,7 +553,11 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 13),
     },
     {
+<<<<<<< HEAD
         .trainerId = TRAINER_EUGENE,
+=======
+        .trainerId = TRAINER_CALVIN_1,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .unused = 0,
         .battleTopicTextIds = BATTLE_TEXT_IDS(1),
         .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 32),
@@ -487,7 +566,11 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 1),
     },
     {
+<<<<<<< HEAD
         .trainerId = TRAINER_MASA,
+=======
+        .trainerId = TRAINER_ELLIOT_1,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .unused = 0,
         .battleTopicTextIds = BATTLE_TEXT_IDS(3),
         .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 33),
@@ -496,7 +579,11 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 3),
     },
     {
+<<<<<<< HEAD
         .trainerId = TRAINER_WILL_2,
+=======
+        .trainerId = TRAINER_ISAIAH_1,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .unused = 0,
         .battleTopicTextIds = BATTLE_TEXT_IDS(5),
         .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 38),
@@ -514,7 +601,11 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 9),
     },
     {
+<<<<<<< HEAD
         .trainerId = TRAINER_ABE,
+=======
+        .trainerId = TRAINER_ABIGAIL_1,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .unused = 0,
         .battleTopicTextIds = BATTLE_TEXT_IDS(9),
         .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 35),
@@ -523,7 +614,11 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 9),
     },
     {
+<<<<<<< HEAD
         .trainerId = TRAINER_LEWIS,
+=======
+        .trainerId = TRAINER_DYLAN_1,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .unused = 0,
         .battleTopicTextIds = BATTLE_TEXT_IDS(5),
         .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 36),
@@ -586,7 +681,11 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 1),
     },
     {
+<<<<<<< HEAD
         .trainerId = TRAINER_JAMIE,
+=======
+        .trainerId = TRAINER_CYNDY_1,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .unused = 0,
         .battleTopicTextIds = BATTLE_TEXT_IDS(9),
         .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 44),
@@ -604,7 +703,11 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 8),
     },
     {
+<<<<<<< HEAD
         .trainerId = TRAINER_PROTON_1,
+=======
+        .trainerId = TRAINER_JENNY_1,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .unused = 0,
         .battleTopicTextIds = BATTLE_TEXT_IDS(9),
         .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 46),
@@ -613,7 +716,11 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 9),
     },
     {
+<<<<<<< HEAD
         .trainerId = TRAINER_KAZU,
+=======
+        .trainerId = TRAINER_DIANA_1,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .unused = 0,
         .battleTopicTextIds = BATTLE_TEXT_IDS(2),
         .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 47),
@@ -622,7 +729,11 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 2),
     },
     {
+<<<<<<< HEAD
         .trainerId = TRAINER_AMY_AND_MAY,
+=======
+        .trainerId = TRAINER_AMY_AND_LIV_1,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .unused = 2,
         .battleTopicTextIds = BATTLE_TEXT_IDS(2),
         .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 48),
@@ -631,7 +742,11 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 2),
     },
     {
+<<<<<<< HEAD
         .trainerId = TRAINER_MIKE,
+=======
+        .trainerId = TRAINER_ERNEST_1,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .unused = 0,
         .battleTopicTextIds = BATTLE_TEXT_IDS(3),
         .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 49),
@@ -640,7 +755,11 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 3),
     },
     {
+<<<<<<< HEAD
         .trainerId = TRAINER_GRUNT_29,
+=======
+        .trainerId = TRAINER_CORY_1,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .unused = 0,
         .battleTopicTextIds = BATTLE_TEXT_IDS(3),
         .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 63),
@@ -649,7 +768,11 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 3),
     },
     {
+<<<<<<< HEAD
         .trainerId = TRAINER_LOLA,
+=======
+        .trainerId = TRAINER_EDWIN_1,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .unused = 0,
         .battleTopicTextIds = BATTLE_TEXT_IDS(7),
         .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 50),
@@ -667,7 +790,11 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 8),
     },
     {
+<<<<<<< HEAD
         .trainerId = TRAINER_CHUCK_1_3,
+=======
+        .trainerId = TRAINER_ISAAC_1,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .unused = 0,
         .battleTopicTextIds = BATTLE_TEXT_IDS(5),
         .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 51),
@@ -676,7 +803,11 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 5),
     },
     {
+<<<<<<< HEAD
         .trainerId = TRAINER_ROD,
+=======
+        .trainerId = TRAINER_GABRIELLE_1,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .unused = 0,
         .battleTopicTextIds = BATTLE_TEXT_IDS(8),
         .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 2),
@@ -685,7 +816,11 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 8),
     },
     {
+<<<<<<< HEAD
         .trainerId = TRAINER_GRUNT_3,
+=======
+        .trainerId = TRAINER_CATHERINE_1,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .unused = 0,
         .battleTopicTextIds = BATTLE_TEXT_IDS(9),
         .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 54),
@@ -694,7 +829,11 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 9),
     },
     {
+<<<<<<< HEAD
         .trainerId = TRAINER_RIVAL_CHIKORITA_4,
+=======
+        .trainerId = TRAINER_JACKSON_1,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .unused = 0,
         .battleTopicTextIds = BATTLE_TEXT_IDS(5),
         .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 53),
@@ -703,7 +842,11 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 5),
     },
     {
+<<<<<<< HEAD
         .trainerId = TRAINER_WHITNEY_1,
+=======
+        .trainerId = TRAINER_HALEY_1,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .unused = 0,
         .battleTopicTextIds = BATTLE_TEXT_IDS(2),
         .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 55),
@@ -712,7 +855,11 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 2),
     },
     {
+<<<<<<< HEAD
         .trainerId = TRAINER_RIVAL_CYNDAQUIL_4,
+=======
+        .trainerId = TRAINER_JAMES_1,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .unused = 0,
         .battleTopicTextIds = BATTLE_TEXT_IDS(1),
         .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 56),
@@ -1025,9 +1172,12 @@ static const struct MatchCallText *const sMatchCallGeneralTopics[] =
 extern const u8 gBirchDexRatingText_AreYouCurious[];
 extern const u8 gBirchDexRatingText_SoYouveSeenAndCaught[];
 extern const u8 gBirchDexRatingText_OnANationwideBasis[];
+<<<<<<< HEAD
 extern const u8 gBirchDexRatingText_CaughtAllNational[];
 extern const u8 gBirchDexRatingText_GoFindMrPokemon[];
 extern const u8 gBirchDexRatingText_Robbery[];
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 void InitMatchCallCounters(void)
 {
@@ -1101,7 +1251,11 @@ static bool32 UpdateMatchCallStepCounter(void)
 static bool32 SelectMatchCallTrainer(void)
 {
     u32 matchCallId;
+<<<<<<< HEAD
     u32 numRegistered = GetNumRegisteredNPCs();
+=======
+    u32 numRegistered = GetNumRegisteredTrainers();
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (numRegistered == 0)
         return FALSE;
 
@@ -1117,12 +1271,21 @@ static bool32 SelectMatchCallTrainer(void)
     return TRUE;
 }
 
+<<<<<<< HEAD
 static u32 GetNumRegisteredNPCs(void)
+=======
+// Ignores registrable non-trainer NPCs, and special trainers like Wally and the gym leaders.
+static u32 GetNumRegisteredTrainers(void)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     u32 i, count;
     for (i = 0, count = 0; i < REMATCH_SPECIAL_TRAINER_START; i++)
     {
+<<<<<<< HEAD
         if (FlagGet(FLAG_MATCH_CALL_REGISTERED + i))
+=======
+        if (FlagGet(TRAINER_REGISTERED_FLAGS_START + i))
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             count++;
     }
 
@@ -1134,7 +1297,11 @@ static u32 GetActiveMatchCallTrainerId(u32 activeMatchCallId)
     u32 i;
     for (i = 0; i < REMATCH_SPECIAL_TRAINER_START; i++)
     {
+<<<<<<< HEAD
         if (FlagGet(FLAG_MATCH_CALL_REGISTERED + i))
+=======
+        if (FlagGet(TRAINER_REGISTERED_FLAGS_START + i))
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         {
             if (!activeMatchCallId)
                 return gRematchTable[i].trainerIds[0];
@@ -1157,9 +1324,12 @@ static u32 GetActiveMatchCallTrainerId(u32 activeMatchCallId)
 */
 bool32 TryStartMatchCall(void)
 {
+<<<<<<< HEAD
     if (gSaveBlock2Ptr->optionsDisableMatchCall == 1)   //tx_optionsPlus
         return FALSE;
     
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (FlagGet(FLAG_HAS_MATCH_CALL)
         && UpdateMatchCallStepCounter()
         && UpdateMatchCallMinutesCounter()
@@ -1202,7 +1372,11 @@ static void StartMatchCall(void)
 static const u16 sMatchCallWindow_Pal[] = INCBIN_U16("graphics/pokenav/match_call/window.gbapal");
 static const u8 sMatchCallWindow_Gfx[] = INCBIN_U8("graphics/pokenav/match_call/window.4bpp");
 static const u16 sPokenavIcon_Pal[] = INCBIN_U16("graphics/pokenav/match_call/nav_icon.gbapal");
+<<<<<<< HEAD
 static const u32 sPokenavIcon_Gfx[] = INCBIN_U32("graphics/pokenav/match_call/nav_icon.4bpp.lz");
+=======
+static const u32 sPokenavIcon_Gfx[] = INCBIN_U32("graphics/pokenav/match_call/nav_icon.4bpp.smol");
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 static const u8 sText_PokenavCallEllipsis[] = _("………………\p");
 
@@ -1373,7 +1547,11 @@ static bool32 MatchCall_EndCall(u8 taskId)
         if (!sMatchCallState.triggeredFromScript)
         {
             LoadMessageBoxAndBorderGfx();
+<<<<<<< HEAD
             playerObjectId = GetObjectEventIdByLocalIdAndMap(OBJ_EVENT_ID_PLAYER, 0, 0);
+=======
+            playerObjectId = GetObjectEventIdByLocalIdAndMap(LOCALID_PLAYER, 0, 0);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             ObjectEventClearHeldMovementIfFinished(&gObjectEvents[playerObjectId]);
             ScriptMovement_UnfreezeObjectEvents();
             UnfreezeObjectEvents();
@@ -1465,10 +1643,21 @@ static void Task_SpinPokenavIcon(u8 taskId)
 
 static bool32 TrainerIsEligibleForRematch(int matchCallId)
 {
+<<<<<<< HEAD
     return gSaveBlock1Ptr->trainerRematches[matchCallId] > 0;
 }
 
 static u16 GetRematchTrainerLocation(int matchCallId)
+=======
+#if FREE_MATCH_CALL == FALSE
+    return gSaveBlock1Ptr->trainerRematches[matchCallId] > 0;
+#else
+    return FALSE;
+#endif //FREE_MATCH_CALL
+}
+
+static mapsec_u16_t GetRematchTrainerLocation(int matchCallId)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     const struct MapHeader *mapHeader = Overworld_GetMapHeaderByGroupAndId(gRematchTable[matchCallId].mapGroup, gRematchTable[matchCallId].mapNum);
     return mapHeader->regionMapSectionId;
@@ -1674,10 +1863,17 @@ static void PopulateMatchCallStringVar(int matchCallId, int funcId, u8 *destStr)
 static const struct MultiTrainerMatchCallText sMultiTrainerMatchCallTexts[] =
 {
     { .trainerId = TRAINER_KIRA_AND_DAN_1, .text = gText_Kira },
+<<<<<<< HEAD
     { .trainerId = TRAINER_AMY_AND_MAY,  .text = gText_Amy },
     { .trainerId = TRAINER_JOHN_AND_JAY_1, .text = gText_John },
     { .trainerId = TRAINER_LILA_AND_ROY_1, .text = gText_Roy },
     { .trainerId = TRAINER_REENA, .text = gText_Gabby },
+=======
+    { .trainerId = TRAINER_AMY_AND_LIV_1,  .text = gText_Amy },
+    { .trainerId = TRAINER_JOHN_AND_JAY_1, .text = gText_John },
+    { .trainerId = TRAINER_LILA_AND_ROY_1, .text = gText_Roy },
+    { .trainerId = TRAINER_GABBY_AND_TY_1, .text = gText_Gabby },
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     { .trainerId = TRAINER_ANNA_AND_MEG_1, .text = gText_Anna },
 };
 
@@ -1694,7 +1890,11 @@ static void PopulateTrainerName(int matchCallId, u8 *destStr)
         }
     }
 
+<<<<<<< HEAD
     StringCopy(destStr, gTrainers[trainerId].trainerName);
+=======
+    StringCopy(destStr, GetTrainerNameFromId(trainerId));
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void PopulateMapName(int matchCallId, u8 *destStr)
@@ -1752,10 +1952,18 @@ static void PopulateSpeciesFromTrainerLocation(int matchCallId, u8 *destStr)
     int numSpecies;
     u8 slot;
     int i = 0;
+<<<<<<< HEAD
 
     if (gWildMonHeaders[i].mapGroup != MAP_GROUP(UNDEFINED)) // ??? This check is nonsense.
     {
         while (gWildMonHeaders[i].mapGroup != MAP_GROUP(UNDEFINED))
+=======
+    enum TimeOfDay timeOfDay;
+
+    if (gWildMonHeaders[i].mapGroup != MAP_GROUP(MAP_UNDEFINED)) // ??? This check is nonsense.
+    {
+        while (gWildMonHeaders[i].mapGroup != MAP_GROUP(MAP_UNDEFINED))
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         {
             if (gWildMonHeaders[i].mapGroup == gRematchTable[matchCallId].mapGroup
              && gWildMonHeaders[i].mapNum == gRematchTable[matchCallId].mapNum)
@@ -1764,6 +1972,7 @@ static void PopulateSpeciesFromTrainerLocation(int matchCallId, u8 *destStr)
             i++;
         }
 
+<<<<<<< HEAD
         if (gWildMonHeaders[i].mapGroup != MAP_GROUP(UNDEFINED))
         {
             numSpecies = 0;
@@ -1778,12 +1987,34 @@ static void PopulateSpeciesFromTrainerLocation(int matchCallId, u8 *destStr)
             {
                 slot = GetWaterEncounterSlot();
                 species[numSpecies] = gWildMonHeaders[i].waterMonsInfo->wildPokemon[slot].species;
+=======
+        if (gWildMonHeaders[i].mapGroup != MAP_GROUP(MAP_UNDEFINED))
+        {
+            timeOfDay = GetTimeOfDayForEncounters(i, WILD_AREA_LAND);
+            numSpecies = 0;
+            if (gWildMonHeaders[i].encounterTypes[timeOfDay].landMonsInfo)
+            {
+                slot = GetLandEncounterSlot();
+                species[numSpecies] = gWildMonHeaders[i].encounterTypes[timeOfDay].landMonsInfo->wildPokemon[slot].species;
+                numSpecies++;
+            }
+
+            timeOfDay = GetTimeOfDayForEncounters(i, WILD_AREA_WATER);
+            if (gWildMonHeaders[i].encounterTypes[timeOfDay].waterMonsInfo)
+            {
+                slot = GetWaterEncounterSlot();
+                species[numSpecies] = gWildMonHeaders[i].encounterTypes[timeOfDay].waterMonsInfo->wildPokemon[slot].species;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 numSpecies++;
             }
 
             if (numSpecies)
             {
+<<<<<<< HEAD
                 StringCopy(destStr, gSpeciesNames[species[Random() % numSpecies]]);
+=======
+                StringCopy(destStr, GetSpeciesName(species[Random() % numSpecies]));
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 return;
             }
         }
@@ -1795,11 +2026,16 @@ static void PopulateSpeciesFromTrainerLocation(int matchCallId, u8 *destStr)
 static void PopulateSpeciesFromTrainerParty(int matchCallId, u8 *destStr)
 {
     u16 trainerId;
+<<<<<<< HEAD
     union TrainerMonPtr party;
+=======
+    const struct TrainerMon *party;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     u8 monId;
     const u8 *speciesName;
 
     trainerId = GetLastBeatenRematchTrainerId(sMatchCallTrainers[matchCallId].trainerId);
+<<<<<<< HEAD
     party = gTrainers[trainerId].party;
     monId = Random() % gTrainers[trainerId].partySize;
 
@@ -1819,6 +2055,14 @@ static void PopulateSpeciesFromTrainerParty(int matchCallId, u8 *destStr)
         speciesName = gSpeciesNames[party.ItemCustomMoves[monId].species];
         break;
     }
+=======
+    party = GetTrainerPartyFromId(trainerId);
+    monId = Random() % GetTrainerPartySizeFromId(trainerId);
+    if (party != NULL)
+        speciesName = GetSpeciesName(party[monId].species);
+    else
+        speciesName = GetSpeciesName(SPECIES_NONE);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     StringCopy(destStr, speciesName);
 }
@@ -1852,6 +2096,7 @@ static void PopulateBattleFrontierStreak(int matchCallId, u8 *destStr)
     ConvertIntToDecimalStringN(destStr, sBattleFrontierStreakInfo.streak, STR_CONV_MODE_LEFT_ALIGN, i);
 }
 
+<<<<<<< HEAD
 static const u16 sBadgeFlags[NUM_BADGES] =
 {
     FLAG_BADGE01_GET,
@@ -1864,13 +2109,19 @@ static const u16 sBadgeFlags[NUM_BADGES] =
     FLAG_BADGE08_GET,
 };
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static int GetNumOwnedBadges(void)
 {
     u32 i;
 
     for (i = 0; i < NUM_BADGES; i++)
     {
+<<<<<<< HEAD
         if (!FlagGet(sBadgeFlags[i]))
+=======
+        if (!FlagGet(gBadgeFlags[i]))
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             break;
     }
 
@@ -1987,6 +2238,7 @@ static u16 GetFrontierStreakInfo(u16 facilityId, u32 *topicTextId)
     return streak;
 }
 
+<<<<<<< HEAD
 static u8 GetPokedexRatingLevel(u16 numSeen)
 {
     if (numSeen < 10)
@@ -2066,10 +2318,13 @@ static const u8 *const sBirchDexRatingTexts[] =
     gBirchDexRatingText_DexCompleted,
 };
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 void BufferPokedexRatingForMatchCall(u8 *destStr)
 {
     int numSeen, numCaught;
     u8 *str;
+<<<<<<< HEAD
     u8 dexRatingLevel;
 
     //HnS Check if lab state is 3 — show MR. POKéMON message only
@@ -2084,6 +2339,8 @@ void BufferPokedexRatingForMatchCall(u8 *destStr)
         StringCopy(destStr, gBirchDexRatingText_Robbery);
         return;
     }
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     u8 *buffer = Alloc(sizeof(gStringVar4));
     if (!buffer)
@@ -2096,12 +2353,19 @@ void BufferPokedexRatingForMatchCall(u8 *destStr)
     numCaught = GetHoennPokedexCount(FLAG_GET_CAUGHT);
     ConvertIntToDecimalStringN(gStringVar1, numSeen, STR_CONV_MODE_LEFT_ALIGN, 3);
     ConvertIntToDecimalStringN(gStringVar2, numCaught, STR_CONV_MODE_LEFT_ALIGN, 3);
+<<<<<<< HEAD
     dexRatingLevel = GetPokedexRatingLevel(numCaught);
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     str = StringCopy(buffer, gBirchDexRatingText_AreYouCurious);
     *(str++) = CHAR_PROMPT_CLEAR;
     str = StringCopy(str, gBirchDexRatingText_SoYouveSeenAndCaught);
     *(str++) = CHAR_PROMPT_CLEAR;
+<<<<<<< HEAD
     StringCopy(str, sBirchDexRatingTexts[dexRatingLevel]);
+=======
+    StringCopy(str, GetPokedexRatingText(numCaught));
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     str = StringExpandPlaceholders(destStr, buffer);
 
     if (IsNationalPokedexEnabled())
@@ -2109,6 +2373,7 @@ void BufferPokedexRatingForMatchCall(u8 *destStr)
         *(str++) = CHAR_PROMPT_CLEAR;
         numSeen = GetNationalPokedexCount(FLAG_GET_SEEN);
         numCaught = GetNationalPokedexCount(FLAG_GET_CAUGHT);
+<<<<<<< HEAD
         ConvertIntToDecimalStringN(gStringVar1, numSeen, STR_CONV_MODE_LEFT_ALIGN, 3);
         ConvertIntToDecimalStringN(gStringVar2, numCaught, STR_CONV_MODE_LEFT_ALIGN, 3);
         if(numCaught == 419){
@@ -2118,12 +2383,20 @@ void BufferPokedexRatingForMatchCall(u8 *destStr)
         StringExpandPlaceholders(str, gBirchDexRatingText_OnANationwideBasis);
         }
 
+=======
+        ConvertIntToDecimalStringN(gStringVar1, numSeen, STR_CONV_MODE_LEFT_ALIGN, 4);
+        ConvertIntToDecimalStringN(gStringVar2, numCaught, STR_CONV_MODE_LEFT_ALIGN, 4);
+        StringExpandPlaceholders(str, gBirchDexRatingText_OnANationwideBasis);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
 
     Free(buffer);
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 void LoadMatchCallWindowGfx(u32 windowId, u32 destOffset, u32 paletteId)
 {
     u8 bg = GetWindowAttribute(windowId, WINDOW_BG);

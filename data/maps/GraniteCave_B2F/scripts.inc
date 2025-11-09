@@ -1,4 +1,5 @@
 GraniteCave_B2F_MapScripts::
+<<<<<<< HEAD
 	map_script MAP_SCRIPT_ON_LOAD, GraniteCave_B2F_OnLoad
 	.byte 0
 
@@ -60,3 +61,7 @@ GraniteCave_B2F_RegigigasDoor:
 	playse SE_BANG
 	setflag FLAG_SYS_BRAILLE_REGIGIGAS_COMPLETED
 	end
+=======
+	.byte 0
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

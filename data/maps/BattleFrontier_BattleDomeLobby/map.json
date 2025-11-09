@@ -12,10 +12,18 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+<<<<<<< HEAD
   "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_KURT",
+=======
+  "connections": null,
+  "object_events": [
+    {
+      "local_id": "LOCALID_DOME_ATTENDANT_SINGLES",
+      "graphics_id": "OBJ_EVENT_GFX_TEALA",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 5,
       "y": 10,
       "elevation": 0,
@@ -28,7 +36,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_MAN",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 1,
       "y": 11,
       "elevation": 0,
@@ -41,7 +53,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_LASS",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 14,
       "y": 14,
       "elevation": 0,
@@ -67,7 +83,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_SUPER_NERD",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_MANIAC",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 8,
       "y": 14,
       "elevation": 0,
@@ -80,7 +100,12 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_KURT",
+=======
+      "local_id": "LOCALID_DOME_ATTENDANT_DOUBLES",
+      "graphics_id": "OBJ_EVENT_GFX_TEALA",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 17,
       "y": 10,
       "elevation": 0,
@@ -109,9 +134,13 @@
       "dest_warp_id": "1"
     }
   ],
+<<<<<<< HEAD
   "coord_events": [
 
   ],
+=======
+  "coord_events": [],
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "bg_events": [
     {
       "type": "sign",

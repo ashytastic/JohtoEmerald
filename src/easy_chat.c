@@ -17,6 +17,10 @@
 #include "main.h"
 #include "mystery_gift.h"
 #include "menu.h"
+<<<<<<< HEAD
+=======
+#include "move.h"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include "overworld.h"
 #include "palette.h"
 #include "pokedex.h"
@@ -243,6 +247,7 @@ enum {
     GFXTAG_BUTTON_WINDOW,
 };
 
+<<<<<<< HEAD
 #define GFXTAG_TRIANGLE_CURSOR 0
 #define GFXTAG_RECTANGLE_CURSOR 1
 #define GFXTAG_SCROLL_INDICATOR 2
@@ -250,6 +255,8 @@ enum {
 #define GFXTAG_MODE_WINDOW 4
 #define GFXTAG_RS_INTERVIEW_FRAME 5
 #define GFXTAG_BUTTON_WINDOW 6
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 // State values for sEasyChatScreen->inputState
 // Control which input handler to use in HandleEasyChatInput
@@ -388,6 +395,16 @@ enum {
     WINANIM_KEYBOARD_SWITCH_IN,
 };
 
+<<<<<<< HEAD
+=======
+// Window IDs
+enum {
+    WIN_TITLE,
+    WIN_MSG,
+    WIN_INPUT_SELECT, // Word groups, word list, and keyboard
+};
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 // Values for text frame tilemap
 #define FRAME_OFFSET_ORANGE 0x1000 // Orange frame, for phrase text
 #define FRAME_OFFSET_GREEN  0x4000 // Green frame, for keyboard/word select
@@ -713,10 +730,17 @@ static const u32 sStartSelectButtons_Gfx[] = INCBIN_U32("graphics/easy_chat/star
 // on screen the interview_frame gfx was shown behind them.
 // In Emerald all Easy Chat screens have a filled background, so these gfx go unused
 static const u16 sRSInterviewFrame_Pal[] = INCBIN_U16("graphics/easy_chat/interview_frame.gbapal");
+<<<<<<< HEAD
 static const u32 sRSInterviewFrame_Gfx[] = INCBIN_U32("graphics/easy_chat/interview_frame.4bpp.lz");
 static const u16 sTextInputFrameOrange_Pal[] = INCBIN_U16("graphics/easy_chat/text_input_frame_orange.gbapal");
 static const u16 sTextInputFrameGreen_Pal[] = INCBIN_U16("graphics/easy_chat/text_input_frame_green.gbapal");
 static const u32 sTextInputFrame_Gfx[] = INCBIN_U32("graphics/easy_chat/text_input_frame.4bpp.lz");
+=======
+static const u32 sRSInterviewFrame_Gfx[] = INCBIN_U32("graphics/easy_chat/interview_frame.4bpp.smol");
+static const u16 sTextInputFrameOrange_Pal[] = INCBIN_U16("graphics/easy_chat/text_input_frame_orange.gbapal");
+static const u16 sTextInputFrameGreen_Pal[] = INCBIN_U16("graphics/easy_chat/text_input_frame_green.gbapal");
+static const u32 sTextInputFrame_Gfx[] = INCBIN_U32("graphics/easy_chat/text_input_frame.4bpp.smol");
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static const u16 sTitleText_Pal[] = INCBIN_U16("graphics/easy_chat/title_text.gbapal");
 static const u16 sText_Pal[] = INCBIN_U16("graphics/easy_chat/text.gbapal");
 
@@ -826,7 +850,11 @@ static const struct BgTemplate sEasyChatBgTemplates[] = {
 };
 
 static const struct WindowTemplate sEasyChatWindowTemplates[] = {
+<<<<<<< HEAD
     {
+=======
+    [WIN_TITLE] = {
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .bg = 1,
         .tilemapLeft = 6,
         .tilemapTop = 0,
@@ -835,7 +863,11 @@ static const struct WindowTemplate sEasyChatWindowTemplates[] = {
         .paletteNum = 10,
         .baseBlock = 0x10,
     },
+<<<<<<< HEAD
     {
+=======
+    [WIN_MSG] = {
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .bg = 0,
         .tilemapLeft = 3,
         .tilemapTop = 15,
@@ -844,7 +876,11 @@ static const struct WindowTemplate sEasyChatWindowTemplates[] = {
         .paletteNum = 15,
         .baseBlock = 0xA,
     },
+<<<<<<< HEAD
     {
+=======
+    [WIN_INPUT_SELECT] = {
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .bg = 2,
         .tilemapLeft = 1,
         .tilemapTop = 0,
@@ -1453,6 +1489,7 @@ static void ExitEasyChatScreen(MainCallback callback)
     SetMainCallback2(callback);
 }
 
+<<<<<<< HEAD
 // ===== HnS: INTERVIEW password matcher =====
 
 // 7 passwords; each is EXACTLY four Easy Chat words (order matters).
@@ -1494,6 +1531,8 @@ static u16 EvaluateInterviewPassword(const u16 *w)  // expects 4 words
 }
 // ===== end HnS block =====
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 void ShowEasyChatScreen(void)
 {
     int i;
@@ -1519,6 +1558,7 @@ void ShowEasyChatScreen(void)
         break;
     case EASY_CHAT_TYPE_BARD_SONG:
         bard = &gSaveBlock1Ptr->oldMan.bard;
+<<<<<<< HEAD
         for (i = 0; i < BARD_SONG_LENGTH; i ++)
             bard->temporaryLyrics[i] = bard->songLyrics[i];
 
@@ -1528,6 +1568,16 @@ void ShowEasyChatScreen(void)
           // Use the normal TV buffer so the UI works as intended
         words = gSaveBlock1Ptr->tvShows[gSpecialVar_0x8005].bravoTrainer.words;
         // (optional cosmetic) displayedPersonType = EASY_CHAT_PERSON_REPORTER_FEMALE;
+=======
+        for (i = 0; i < NUM_BARD_SONG_WORDS; i ++)
+            bard->newSongLyrics[i] = bard->songLyrics[i];
+
+        words = bard->newSongLyrics;
+        break;
+    case EASY_CHAT_TYPE_INTERVIEW:
+        words = gSaveBlock1Ptr->tvShows[gSpecialVar_0x8005].bravoTrainer.words;
+        displayedPersonType = gSpecialVar_0x8006;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         break;
     case EASY_CHAT_TYPE_FAN_CLUB:
         words = &gSaveBlock1Ptr->tvShows[gSpecialVar_0x8005].fanclubOpinions.words[gSpecialVar_0x8006];
@@ -2032,11 +2082,17 @@ static u16 HandleEasyChatInput_ConfirmWordsYesNo(void)
     case 1: // No
         sEasyChatScreen->inputState = GetEasyChatBackupState();
         return ECFUNC_CLOSE_PROMPT;
+<<<<<<< HEAD
     case 0: // Yes //HnS
         SetSpecialEasyChatResult();
         gSpecialVar_Result = (sEasyChatScreen->type == EASY_CHAT_TYPE_INTERVIEW)
                         ? gSpecialVar_0x8004
                         : GetEasyChatCompleted();
+=======
+    case 0: // Yes
+        SetSpecialEasyChatResult();
+        gSpecialVar_Result = GetEasyChatCompleted();
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         SaveCurrentPhrase();
         return ECFUNC_EXIT;
     default:
@@ -3010,10 +3066,13 @@ static void SetSpecialEasyChatResult(void)
 {
     switch (sEasyChatScreen->type)
     {
+<<<<<<< HEAD
     case EASY_CHAT_TYPE_INTERVIEW:
         // Compute 1..7 (or 0 if no match) from the 4 chosen words
         gSpecialVar_0x8004 = EvaluateInterviewPassword(sEasyChatScreen->currentPhrase);
         break;
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     case EASY_CHAT_TYPE_PROFILE:
         FlagSet(FLAG_SYS_CHAT_USED);
         break;
@@ -3994,10 +4053,17 @@ static void PrintTitle(void)
         return;
 
     xOffset = GetStringCenterAlignXOffset(FONT_NORMAL, titleText, 144);
+<<<<<<< HEAD
     FillWindowPixelBuffer(0, PIXEL_FILL(0));
     PrintEasyChatTextWithColors(0, FONT_NORMAL, titleText, xOffset, 1, TEXT_SKIP_DRAW, TEXT_COLOR_TRANSPARENT, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_LIGHT_GRAY);
     PutWindowTilemap(0);
     CopyWindowToVram(0, COPYWIN_FULL);
+=======
+    FillWindowPixelBuffer(WIN_TITLE, PIXEL_FILL(0));
+    PrintEasyChatTextWithColors(WIN_TITLE, FONT_NORMAL, titleText, xOffset, 1, TEXT_SKIP_DRAW, TEXT_COLOR_TRANSPARENT, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_LIGHT_GRAY);
+    PutWindowTilemap(WIN_TITLE);
+    CopyWindowToVram(WIN_TITLE, COPYWIN_FULL);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void PrintEasyChatText(u8 windowId, u8 fontId, const u8 *str, u8 x, u8 y, u8 speed, void (*callback)(struct TextPrinterTemplate *, u16))
@@ -4017,10 +4083,17 @@ static void PrintEasyChatTextWithColors(u8 windowId, u8 fontId, const u8 *str, u
 static void PrintInitialInstructions(void)
 {
     FillBgTilemapBufferRect(0, 0, 0, 0, 32, 20, 17);
+<<<<<<< HEAD
     LoadUserWindowBorderGfx(1, 1, BG_PLTT_ID(14));
     DrawTextBorderOuter(1, 1, 14);
     PrintEasyChatStdMessage(MSG_INSTRUCTIONS);
     PutWindowTilemap(1);
+=======
+    LoadUserWindowBorderGfx(WIN_MSG, 1, BG_PLTT_ID(14));
+    DrawTextBorderOuter(WIN_MSG, 1, 14);
+    PrintEasyChatStdMessage(MSG_INSTRUCTIONS);
+    PutWindowTilemap(WIN_MSG);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     CopyBgTilemapBufferToVram(0);
 }
 
@@ -4064,6 +4137,7 @@ static void PrintEasyChatStdMessage(u8 msgId)
         break;
     }
 
+<<<<<<< HEAD
     FillWindowPixelBuffer(1, PIXEL_FILL(1));
     if (text1)
         PrintEasyChatText(1, FONT_NORMAL, text1, 0, 1, TEXT_SKIP_DRAW, 0);
@@ -4072,6 +4146,16 @@ static void PrintEasyChatStdMessage(u8 msgId)
         PrintEasyChatText(1, FONT_NORMAL, text2, 0, 17, TEXT_SKIP_DRAW, 0);
 
     CopyWindowToVram(1, COPYWIN_FULL);
+=======
+    FillWindowPixelBuffer(WIN_MSG, PIXEL_FILL(1));
+    if (text1)
+        PrintEasyChatText(WIN_MSG, FONT_NORMAL, text1, 0, 1, TEXT_SKIP_DRAW, 0);
+
+    if (text2)
+        PrintEasyChatText(WIN_MSG, FONT_NORMAL, text2, 0, 17, TEXT_SKIP_DRAW, 0);
+
+    CopyWindowToVram(WIN_MSG, COPYWIN_FULL);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void CreateEasyChatYesNoMenu(u8 initialCursorPos)
@@ -4258,14 +4342,23 @@ static void AdjustBgTilemapForFooter(void)
 
 static void DrawLowerWindow(void)
 {
+<<<<<<< HEAD
     PutWindowTilemap(2);
     CopyBgTilemapBufferToVram(2);
+=======
+    PutWindowTilemap(WIN_INPUT_SELECT);
+    CopyBgTilemapBufferToVram(WIN_INPUT_SELECT);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void InitLowerWindowText(u32 whichText)
 {
     ResetLowerWindowScroll();
+<<<<<<< HEAD
     FillWindowPixelBuffer(2, PIXEL_FILL(1));
+=======
+    FillWindowPixelBuffer(WIN_INPUT_SELECT, PIXEL_FILL(1));
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     switch (whichText)
     {
     case TEXT_GROUPS:
@@ -4279,7 +4372,11 @@ static void InitLowerWindowText(u32 whichText)
         break;
     }
 
+<<<<<<< HEAD
     CopyWindowToVram(2, COPYWIN_GFX);
+=======
+    CopyWindowToVram(WIN_INPUT_SELECT, COPYWIN_GFX);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void PrintKeyboardText(void)
@@ -4308,7 +4405,11 @@ static void PrintKeyboardGroupNames(void)
                 return;
             }
 
+<<<<<<< HEAD
             PrintEasyChatText(2, FONT_NORMAL, GetEasyChatWordGroupName(groupId), x * 84 + 10, y, TEXT_SKIP_DRAW, NULL);
+=======
+            PrintEasyChatText(WIN_INPUT_SELECT, FONT_NORMAL, GetEasyChatWordGroupName(groupId), x * 84 + 10, y, TEXT_SKIP_DRAW, NULL);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         }
 
         y += 16;
@@ -4320,7 +4421,11 @@ static void PrintKeyboardAlphabet(void)
     u32 i;
 
     for (i = 0; i < ARRAY_COUNT(sEasyChatKeyboardAlphabet); i++)
+<<<<<<< HEAD
         PrintEasyChatText(2, FONT_NORMAL, sEasyChatKeyboardAlphabet[i], 10, 97 + i * 16, TEXT_SKIP_DRAW, NULL);
+=======
+        PrintEasyChatText(WIN_INPUT_SELECT, FONT_NORMAL, sEasyChatKeyboardAlphabet[i], 10, 97 + i * 16, TEXT_SKIP_DRAW, NULL);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void PrintInitialWordSelectText(void)
@@ -4391,16 +4496,26 @@ static void PrintWordSelectText(u8 scrollOffset, u8 numRows)
             {
                 CopyEasyChatWordPadded(sScreenControl->wordSelectPrintBuffer, easyChatWord, 0);
                 if (!DummyWordCheck(easyChatWord))
+<<<<<<< HEAD
                     PrintEasyChatText(2, FONT_NORMAL, sScreenControl->wordSelectPrintBuffer, (j * 13 + 3) * 8, y, TEXT_SKIP_DRAW, NULL);
                 else // Never reached
                     PrintEasyChatTextWithColors(2, FONT_NORMAL, sScreenControl->wordSelectPrintBuffer, (j * 13 + 3) * 8, y, TEXT_SKIP_DRAW, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_RED, TEXT_COLOR_LIGHT_GRAY);
+=======
+                    PrintEasyChatText(WIN_INPUT_SELECT, FONT_NORMAL, sScreenControl->wordSelectPrintBuffer, (j * 13 + 3) * 8, y, TEXT_SKIP_DRAW, NULL);
+                else // Never reached
+                    PrintEasyChatTextWithColors(WIN_INPUT_SELECT, FONT_NORMAL, sScreenControl->wordSelectPrintBuffer, (j * 13 + 3) * 8, y, TEXT_SKIP_DRAW, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_RED, TEXT_COLOR_LIGHT_GRAY);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             }
         }
 
         y += 16;
     }
 
+<<<<<<< HEAD
     CopyWindowToVram(2, COPYWIN_GFX);
+=======
+    CopyWindowToVram(WIN_INPUT_SELECT, COPYWIN_GFX);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void EraseWordSelectRows(u8 scrollOffset, u8 numRows)
@@ -4424,15 +4539,26 @@ static void EraseWordSelectRows(u8 scrollOffset, u8 numRows)
         var1 = 0;
     }
 
+<<<<<<< HEAD
     FillWindowPixelRect(2, PIXEL_FILL(1), 0, y, 224, var2);
     if (var1)
         FillWindowPixelRect(2, PIXEL_FILL(1), 0, 0, 224, var1);
+=======
+    FillWindowPixelRect(WIN_INPUT_SELECT, PIXEL_FILL(1), 0, y, 224, var2);
+    if (var1)
+        FillWindowPixelRect(WIN_INPUT_SELECT, PIXEL_FILL(1), 0, 0, 224, var1);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void ClearWordSelectWindow(void)
 {
+<<<<<<< HEAD
     FillWindowPixelBuffer(2, PIXEL_FILL(1));
     CopyWindowToVram(2, COPYWIN_GFX);
+=======
+    FillWindowPixelBuffer(WIN_INPUT_SELECT, PIXEL_FILL(1));
+    CopyWindowToVram(WIN_INPUT_SELECT, COPYWIN_GFX);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void InitLowerWindowAnim(int winAnimType)
@@ -5058,6 +5184,7 @@ static void TryAddInterviewObjectEvents(void)
     switch (GetDisplayedPersonType())
     {
     case EASY_CHAT_PERSON_REPORTER_MALE:
+<<<<<<< HEAD
         graphicsId = OBJ_EVENT_GFX_FIREBREATHER;
         break;
     case EASY_CHAT_PERSON_REPORTER_FEMALE:
@@ -5065,6 +5192,15 @@ static void TryAddInterviewObjectEvents(void)
         break;
     case EASY_CHAT_PERSON_BOY:
         graphicsId = OBJ_EVENT_GFX_MR_FUJI;
+=======
+        graphicsId = OBJ_EVENT_GFX_REPORTER_M;
+        break;
+    case EASY_CHAT_PERSON_REPORTER_FEMALE:
+        graphicsId = OBJ_EVENT_GFX_REPORTER_F;
+        break;
+    case EASY_CHAT_PERSON_BOY:
+        graphicsId = OBJ_EVENT_GFX_BOY_1;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         break;
     default:
         return;
@@ -5252,10 +5388,17 @@ static const u8 *GetEasyChatWord(u8 groupId, u16 index)
     {
     case EC_GROUP_POKEMON:
     case EC_GROUP_POKEMON_NATIONAL:
+<<<<<<< HEAD
         return gSpeciesNames[index];
     case EC_GROUP_MOVE_1:
     case EC_GROUP_MOVE_2:
         return gMoveNames[index];
+=======
+        return GetSpeciesName(index);
+    case EC_GROUP_MOVE_1:
+    case EC_GROUP_MOVE_2:
+        return GetMoveName(index);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     default:
         return gEasyChatGroups[groupId].wordData.words[index].text;
     }
@@ -5272,7 +5415,11 @@ u8 *CopyEasyChatWord(u8 *dest, u16 easyChatWord)
     {
         u16 index = EC_INDEX(easyChatWord);
         u8 groupId = EC_GROUP(easyChatWord);
+<<<<<<< HEAD
         resultStr = StringCopy(dest, GetEasyChatWord(groupId, index));
+=======
+        resultStr = StringCopyUppercase(dest, GetEasyChatWord(groupId, index));
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
     else
     {
@@ -5592,7 +5739,11 @@ static u16 GetRandomUnlockedEasyChatPokemon(void)
     numWords = gEasyChatGroups[EC_GROUP_POKEMON].numWords;
     for (i = 0; i < numWords; i++)
     {
+<<<<<<< HEAD
         u16 dexNum = SpeciesToNationalPokedexNum(*species);
+=======
+        enum NationalDexOrder dexNum = SpeciesToNationalPokedexNum(*species);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         if (GetSetPokedexFlag(dexNum, FLAG_GET_SEEN))
         {
             if (index)
@@ -5898,16 +6049,33 @@ static u8 IsEasyChatWordUnlocked(u16 easyChatWord)
 void InitializeEasyChatWordArray(u16 *words, u16 length)
 {
     u16 i;
+<<<<<<< HEAD
     for (i = length - 1; i != EC_EMPTY_WORD; i--)
         *(words++) = EC_EMPTY_WORD;
+=======
+    if (words != NULL)
+    {
+        for (i = length - 1; i != EC_EMPTY_WORD; i--)
+            *(words++) = EC_EMPTY_WORD;
+    }
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 void InitQuestionnaireWords(void)
 {
     int i;
     u16 *words = GetQuestionnaireWordsPtr();
+<<<<<<< HEAD
     for (i = 0; i < NUM_QUESTIONNAIRE_WORDS; i++)
         words[i] = EC_EMPTY_WORD;
+=======
+
+    if (words != NULL)
+    {
+        for (i = 0; i < NUM_QUESTIONNAIRE_WORDS; i++)
+            words[i] = EC_EMPTY_WORD;
+    }
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 bool32 IsEasyChatAnswerUnlocked(int easyChatWord)

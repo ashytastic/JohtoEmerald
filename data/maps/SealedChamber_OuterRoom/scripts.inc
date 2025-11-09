@@ -10,7 +10,10 @@ SealedChamber_OuterRoom_OnResume:
 	end
 
 SealedChamber_OuterRoom_OnTransition:
+<<<<<<< HEAD
 	setflag FLAG_TEMP_HIDE_FOLLOWER
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setflag FLAG_LANDMARK_SEALED_CHAMBER
 	end
 

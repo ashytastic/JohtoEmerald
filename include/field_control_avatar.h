@@ -11,7 +11,11 @@ struct FieldInput
     bool8 heldDirection2:1;
     bool8 tookStep:1;
     bool8 pressedBButton:1;
+<<<<<<< HEAD
     bool8 input_field_1_0:1;
+=======
+    bool8 pressedRButton:1;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     bool8 input_field_1_1:1;
     bool8 input_field_1_2:1;
     bool8 input_field_1_3:1;
@@ -20,20 +24,36 @@ struct FieldInput
     bool8 input_field_1_6:1;
     bool8 input_field_1_7:1;
     u8 dpadDirection;
+<<<<<<< HEAD
     bool8 pressedRButton:1;
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 void FieldClearPlayerInput(struct FieldInput *pStruct);
 void FieldGetPlayerInput(struct FieldInput *pStruct, u16 keys, u16 heldKeys);
 int ProcessPlayerFieldInput(struct FieldInput *pStruct);
+<<<<<<< HEAD
 void overworld_poison_timer_set(void);
 void RestartWildEncounterImmunitySteps(void);
 const u8 *GetObjectEventScriptPointerPlayerFacing(void);
 bool8 TryDoDiveWarp(struct MapPosition *position, u16 b);
+=======
+void RestartWildEncounterImmunitySteps(void);
+const u8 *GetObjectEventScriptPointerPlayerFacing(void);
+bool8 TryDoDiveWarp(struct MapPosition *position, u16 metatileBehavior);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 int SetCableClubWarp(void);
 u8 TrySetDiveWarp(void);
 const u8 *GetInteractedLinkPlayerScript(struct MapPosition *position, u8 metatileBehavior, u8 direction);
 const u8 *GetCoordEventScriptAtMapPosition(struct MapPosition *position);
 void ClearPoisonStepCounter(void);
+<<<<<<< HEAD
+=======
+void CancelSignPostMessageBox(struct FieldInput *input);
+
+#define NOT_SIGNPOST 0
+#define WALK_AWAY_SIGNPOST_FRAMES 6
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 #endif // GUARD_FIELDCONTROLAVATAR_H

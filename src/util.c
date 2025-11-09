@@ -4,6 +4,7 @@
 #include "palette.h"
 #include "constants/rgb.h"
 
+<<<<<<< HEAD
 const u32 gBitTable[] =
 {
     1 << 0,
@@ -40,6 +41,8 @@ const u32 gBitTable[] =
     1 << 31,
 };
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static const struct SpriteTemplate sInvisibleSpriteTemplate =
 {
     .tileTag = 0,
@@ -261,12 +264,19 @@ u32 CalcByteArraySum(const u8 *data, u32 length)
     return sum;
 }
 
+<<<<<<< HEAD
 
 
 void BlendPalette(u16 palOffset, u16 numEntries, u8 coeff, u16 blendColor)
 {
     u16 i;
     struct PlttData *data2 = (struct PlttData *)&blendColor;
+=======
+void BlendPalette(u16 palOffset, u16 numEntries, u8 coeff, u32 blendColor)
+{
+    u16 i;
+    struct PlttData *data2 = (struct PlttData *) & blendColor;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     for (i = 0; i < numEntries; i++)
     {
         u16 index = i + palOffset;

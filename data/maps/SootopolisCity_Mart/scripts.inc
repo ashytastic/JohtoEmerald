@@ -6,6 +6,7 @@ SootopolisCity_Mart_EventScript_Clerk::
 	faceplayer
 	message gText_HowMayIServeYou
 	waitmessage
+<<<<<<< HEAD
 	pokemart 0
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
@@ -16,6 +17,8 @@ SootopolisCity_Mart_EventScript_Clerk2::
 	faceplayer
 	message gText_HowMayIServeYou
 	waitmessage
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	pokemart SootopolisCity_Mart_Pokemart
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
@@ -23,12 +26,25 @@ SootopolisCity_Mart_EventScript_Clerk2::
 
 	.align 2
 SootopolisCity_Mart_Pokemart:
+<<<<<<< HEAD
 	.2byte ITEM_X_ATTACK
 	.2byte ITEM_X_DEFEND
 	.2byte ITEM_SHADOW_MAIL
 	.2byte ITEM_NONE
 	release
 	end
+=======
+	.2byte ITEM_ULTRA_BALL
+	.2byte ITEM_HYPER_POTION
+	.2byte ITEM_MAX_POTION
+	.2byte ITEM_FULL_HEAL
+	.2byte ITEM_REVIVE
+	.2byte ITEM_MAX_REPEL
+	.2byte ITEM_X_ATTACK
+	.2byte ITEM_X_DEFENSE
+	.2byte ITEM_SHADOW_MAIL
+	pokemartlistend
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 SootopolisCity_Mart_EventScript_FatMan::
 	lock

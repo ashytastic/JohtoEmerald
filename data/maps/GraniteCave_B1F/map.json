@@ -12,7 +12,11 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+<<<<<<< HEAD
   "connections": 0,
+=======
+  "connections": null,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -23,9 +27,15 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
+<<<<<<< HEAD
       "trainer_sight_or_berry_tree_id": "0",
       "script": "GraniteCave_B1F_EventScript_ItemPokeBall",
       "flag": "FLAG_ITEM_GARBAGEFLAG"
+=======
+      "trainer_sight_or_berry_tree_id": "ITEM_POKE_BALL",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_GRANITE_CAVE_B1F_POKE_BALL"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "warp_events": [
@@ -79,10 +89,15 @@
       "dest_warp_id": "4"
     }
   ],
+<<<<<<< HEAD
   "coord_events": [
 
   ],
   "bg_events": [
 
   ]
+=======
+  "coord_events": [],
+  "bg_events": []
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }

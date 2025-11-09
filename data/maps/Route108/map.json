@@ -3,7 +3,11 @@
   "name": "Route108",
   "layout": "LAYOUT_ROUTE108",
   "music": "MUS_ROUTE104",
+<<<<<<< HEAD
   "region_map_section": "MAPSEC_ROUTE_33",
+=======
+  "region_map_section": "MAPSEC_ROUTE_108",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_ROUTE",
@@ -26,7 +30,11 @@
   ],
   "object_events": [
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M_WATER",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 52,
       "y": 13,
       "elevation": 1,
@@ -39,7 +47,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_F_WATER",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_SWIMMER_F",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 35,
       "y": 12,
       "elevation": 1,
@@ -52,7 +64,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M_WATER",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 13,
       "y": 13,
       "elevation": 1,
@@ -65,7 +81,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_F_WATER",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_SWIMMER_F",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 8,
       "y": 7,
       "elevation": 1,
@@ -78,7 +98,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_WORKER_F",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 41,
       "y": 5,
       "elevation": 3,
@@ -112,9 +136,15 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
+<<<<<<< HEAD
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route108_EventScript_ItemStarPiece",
       "flag": "FLAG_ITEM_GARBAGEFLAG"
+=======
+      "trainer_sight_or_berry_tree_id": "ITEM_STAR_PIECE",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_ROUTE_108_STAR_PIECE"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "warp_events": [
@@ -126,9 +156,13 @@
       "dest_warp_id": "0"
     }
   ],
+<<<<<<< HEAD
   "coord_events": [
 
   ],
+=======
+  "coord_events": [],
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "bg_events": [
     {
       "type": "hidden_item",

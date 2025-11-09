@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 .set LOCALID_ATTENDANT, 1
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 BattleFrontier_BattleArenaLobby_MapScripts::
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, BattleFrontier_BattleArenaLobby_OnFrame
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, BattleFrontier_BattleArenaLobby_OnWarp
@@ -11,7 +14,11 @@ BattleFrontier_BattleArenaLobby_OnWarp:
 
 BattleFrontier_BattleArenaLobby_EventScript_TurnPlayerNorth::
 	setvar VAR_TEMP_1, 1
+<<<<<<< HEAD
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+=======
+	turnobject LOCALID_PLAYER, DIR_NORTH
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 BattleFrontier_BattleArenaLobby_OnFrame:
@@ -204,6 +211,7 @@ BattleFrontier_BattleArenaLobby_EventScript_EndCancelChallenge::
 	end
 
 BattleFrontier_BattleArenaLobby_EventScript_WalkToDoorLv50::
+<<<<<<< HEAD
 	applymovement LOCALID_ATTENDANT, BattleFrontier_BattleArenaLobby_Movement_AttendantWalkToLeftDoor
 	applymovement OBJ_EVENT_ID_PLAYER, BattleFrontier_BattleArenaLobby_Movement_PlayerWalkToLeftDoor
 	waitmovement 0
@@ -211,6 +219,15 @@ BattleFrontier_BattleArenaLobby_EventScript_WalkToDoorLv50::
 	waitdooranim
 	applymovement LOCALID_ATTENDANT, BattleFrontier_BattleArenaLobby_Movement_AttendantEnterDoor
 	applymovement OBJ_EVENT_ID_PLAYER, BattleFrontier_BattleArenaLobby_Movement_PlayerEnterDoor
+=======
+	applymovement LOCALID_ARENA_ATTENDANT, BattleFrontier_BattleArenaLobby_Movement_AttendantWalkToLeftDoor
+	applymovement LOCALID_PLAYER, BattleFrontier_BattleArenaLobby_Movement_PlayerWalkToLeftDoor
+	waitmovement 0
+	opendoor 2, 2
+	waitdooranim
+	applymovement LOCALID_ARENA_ATTENDANT, BattleFrontier_BattleArenaLobby_Movement_AttendantEnterDoor
+	applymovement LOCALID_PLAYER, BattleFrontier_BattleArenaLobby_Movement_PlayerEnterDoor
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	closedoor 2, 2
 	waitdooranim
@@ -253,6 +270,7 @@ BattleFrontier_BattleArenaLobby_Movement_PlayerEnterDoor:
 	step_end
 
 BattleFrontier_BattleArenaLobby_EventScript_WalkToDoorLvOpen::
+<<<<<<< HEAD
 	applymovement LOCALID_ATTENDANT, BattleFrontier_BattleArenaLobby_Movement_AttendantWalkToRightDoor
 	applymovement OBJ_EVENT_ID_PLAYER, BattleFrontier_BattleArenaLobby_Movement_PlayerWalkToRightDoor
 	waitmovement 0
@@ -260,6 +278,15 @@ BattleFrontier_BattleArenaLobby_EventScript_WalkToDoorLvOpen::
 	waitdooranim
 	applymovement LOCALID_ATTENDANT, BattleFrontier_BattleArenaLobby_Movement_AttendantEnterDoor
 	applymovement OBJ_EVENT_ID_PLAYER, BattleFrontier_BattleArenaLobby_Movement_PlayerEnterDoor
+=======
+	applymovement LOCALID_ARENA_ATTENDANT, BattleFrontier_BattleArenaLobby_Movement_AttendantWalkToRightDoor
+	applymovement LOCALID_PLAYER, BattleFrontier_BattleArenaLobby_Movement_PlayerWalkToRightDoor
+	waitmovement 0
+	opendoor 11, 2
+	waitdooranim
+	applymovement LOCALID_ARENA_ATTENDANT, BattleFrontier_BattleArenaLobby_Movement_AttendantEnterDoor
+	applymovement LOCALID_PLAYER, BattleFrontier_BattleArenaLobby_Movement_PlayerEnterDoor
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	closedoor 11, 2
 	waitdooranim
@@ -396,7 +423,11 @@ BattleFrontier_BattleArenaLobby_Text_OkayToSave:
 
 BattleFrontier_BattleArenaLobby_Text_WhichLevelMode:
 	.string "The BATTLE ARENA offers two levels\n"
+<<<<<<< HEAD
 	.string "of challenge, NORMAL and HARD.\l"
+=======
+	.string "of challenge, Level 50 and Open Level.\l"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.string "Which is your choice?$"
 
 BattleFrontier_BattleArenaLobby_Text_SelectThreeMons:

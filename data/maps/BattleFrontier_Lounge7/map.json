@@ -1,7 +1,11 @@
 {
   "id": "MAP_BATTLE_FRONTIER_LOUNGE7",
   "name": "BattleFrontier_Lounge7",
+<<<<<<< HEAD
   "layout": "LAYOUT_UNUSED_CAVE1",
+=======
+  "layout": "LAYOUT_BATTLE_FRONTIER_LOUNGE2",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "music": "MUS_B_TOWER_RS",
   "region_map_section": "MAPSEC_BATTLE_FRONTIER",
   "requires_flash": false,
@@ -12,7 +16,11 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+<<<<<<< HEAD
   "connections": 0,
+=======
+  "connections": null,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
@@ -28,7 +36,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 2,
       "y": 5,
       "elevation": 0,
@@ -41,7 +53,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 6,
       "y": 5,
       "elevation": 0,
@@ -65,6 +81,7 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "BattleFrontier_Lounge7_EventScript_Gentleman",
       "flag": "0"
+<<<<<<< HEAD
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
@@ -78,6 +95,8 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "BattleFrontier_Lounge7_EventScript_ElementalMoveTutor",
       "flag": "0"
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "warp_events": [
@@ -89,10 +108,15 @@
       "dest_warp_id": "7"
     }
   ],
+<<<<<<< HEAD
   "coord_events": [
 
   ],
   "bg_events": [
 
   ]
+=======
+  "coord_events": [],
+  "bg_events": []
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }

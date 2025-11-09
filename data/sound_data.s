@@ -2,7 +2,12 @@
 
 	.include "asm/macros/m4a.inc"
 	.include "asm/macros/music_voice.inc"
+<<<<<<< HEAD
 
+=======
+	.include "include/config/general.h"
+	.include "include/config/pokemon.h"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.include "sound/voice_groups.inc"
 	.include "sound/keysplit_tables.inc"
 	.include "sound/programmable_wave_data.inc"

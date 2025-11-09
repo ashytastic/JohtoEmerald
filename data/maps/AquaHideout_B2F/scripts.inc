@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 .set LOCALID_MATT, 1
 .set LOCALID_SUBMARINE, 4
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 AquaHideout_B2F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, AquaHideout_B2F_OnTransition
 	.byte 0
@@ -15,7 +18,11 @@ AquaHideout_B2F_EventScript_PreventMattNoticing::
 
 AquaHideout_B2F_EventScript_MattNoticePlayer::
 	lockall
+<<<<<<< HEAD
 	setvar VAR_0x8008, LOCALID_MATT
+=======
+	setvar VAR_0x8008, LOCALID_AQUA_HIDEOUT_MATT
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	playse SE_PIN
 	applymovement VAR_0x8008, Common_Movement_ExclamationMark
 	waitmovement 0
@@ -32,8 +39,13 @@ AquaHideout_B2F_EventScript_Matt::
 	end
 
 AquaHideout_B2F_EventScript_SubmarineEscape::
+<<<<<<< HEAD
 	setvar VAR_0x8008, LOCALID_MATT
 	setvar VAR_0x8009, LOCALID_SUBMARINE
+=======
+	setvar VAR_0x8008, LOCALID_AQUA_HIDEOUT_MATT
+	setvar VAR_0x8009, LOCALID_AQUA_HIDEOUT_SUBMARINE
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	applymovement VAR_0x8008, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	delay 20
@@ -50,7 +62,11 @@ AquaHideout_B2F_EventScript_SubmarineEscape::
 	waitmovement 0
 	msgbox AquaHideout_B2F_Text_MattPostBattle, MSGBOX_DEFAULT
 	setflag FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE
+<<<<<<< HEAD
 	setflag FLAG_GARBAGEFLAG
+=======
+	setflag FLAG_HIDE_LILYCOVE_CITY_AQUA_GRUNTS
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	release
 	end
 
@@ -70,7 +86,11 @@ AquaHideout_B2F_Movement_SumbarineDepartRight:
 	step_end
 
 AquaHideout_B2F_EventScript_Grunt4::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_SETH, AquaHideout_B2F_Text_Grunt4Intro, AquaHideout_B2F_Text_Grunt4Defeat, AquaHideout_B2F_EventScript_Grunt4Defeated
+=======
+	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_4, AquaHideout_B2F_Text_Grunt4Intro, AquaHideout_B2F_Text_Grunt4Defeat, AquaHideout_B2F_EventScript_Grunt4Defeated
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox AquaHideout_B2F_Text_Grunt4PostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -80,12 +100,20 @@ AquaHideout_B2F_EventScript_Grunt4Defeated::
 	end
 
 AquaHideout_B2F_EventScript_Grunt6::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_STANLY, AquaHideout_B2F_Text_Grunt6Intro, AquaHideout_B2F_Text_Grunt6Defeat
+=======
+	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_6, AquaHideout_B2F_Text_Grunt6Intro, AquaHideout_B2F_Text_Grunt6Defeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox AquaHideout_B2F_Text_Grunt6PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 AquaHideout_B2F_EventScript_Grunt8::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_STEVE, AquaHideout_B2F_Text_Grunt8Intro, AquaHideout_B2F_Text_Grunt8Defeat
+=======
+	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_8, AquaHideout_B2F_Text_Grunt8Intro, AquaHideout_B2F_Text_Grunt8Defeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox AquaHideout_B2F_Text_Grunt8PostBattle, MSGBOX_AUTOCLOSE
 	end
 

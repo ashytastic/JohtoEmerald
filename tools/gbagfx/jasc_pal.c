@@ -46,10 +46,21 @@ void ReadJascPaletteLine(FILE *fp, char *line)
         }
 
         if (c == '\n')
+<<<<<<< HEAD
             FATAL_ERROR("LF line endings aren't supported.\n");
 
         if (c == EOF)
             FATAL_ERROR("Unexpected EOF. No CRLF at end of file.\n");
+=======
+        {
+            line[length] = 0;
+
+            return;
+        }
+
+        if (c == EOF)
+            FATAL_ERROR("Unexpected EOF. No LF or CRLF at end of file.\n");
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
         if (c == 0)
             FATAL_ERROR("NUL character in file.\n");
@@ -162,8 +173,12 @@ void ReadJascPalette(char *path, struct Palette *palette)
 
     if (fp == NULL)
         return;
+<<<<<<< HEAD
     // fprintf(stderr, "Opened auxiliary .pla file for reading: %s\n", path);
     
+=======
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     int i = 0;
     // Keep reading lines until number of colors is reached or we run out
     while (i < palette->numColors && fgets(line, MAX_LINE_LENGTH, fp) != NULL)

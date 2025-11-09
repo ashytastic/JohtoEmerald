@@ -1,8 +1,11 @@
+<<<<<<< HEAD
 .set LOCALID_COLE, 2
 .set LOCALID_GERALD, 3
 .set LOCALID_AXLE, 4
 .set LOCALID_DANIELLE, 5
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 LavaridgeTown_Gym_1F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, LavaridgeTown_Gym_1F_OnTransition
 	.byte 0
@@ -22,6 +25,7 @@ LavaridgeTown_Gym_1F_EventScript_SetTrainerTempVars::
 	goto_if_defeated TRAINER_COLE, LavaridgeTown_Gym_1F_EventScript_SetGeraldTempVar
 	setvar VAR_TEMP_B, 1
 LavaridgeTown_Gym_1F_EventScript_SetGeraldTempVar::
+<<<<<<< HEAD
 	goto_if_defeated TRAINER_RUSSELL, LavaridgeTown_Gym_1F_EventScript_SetAxleTempVar
 	setvar VAR_TEMP_C, 1
 LavaridgeTown_Gym_1F_EventScript_SetAxleTempVar::
@@ -29,6 +33,15 @@ LavaridgeTown_Gym_1F_EventScript_SetAxleTempVar::
 	setvar VAR_TEMP_D, 1
 LavaridgeTown_Gym_1F_EventScript_SetDanielleTempVar::
 	goto_if_defeated TRAINER_JIM, LavaridgeTown_Gym_1F_EventScript_EndSetTrainerTempVars
+=======
+	goto_if_defeated TRAINER_GERALD, LavaridgeTown_Gym_1F_EventScript_SetAxleTempVar
+	setvar VAR_TEMP_C, 1
+LavaridgeTown_Gym_1F_EventScript_SetAxleTempVar::
+	goto_if_defeated TRAINER_AXLE, LavaridgeTown_Gym_1F_EventScript_SetDanielleTempVar
+	setvar VAR_TEMP_D, 1
+LavaridgeTown_Gym_1F_EventScript_SetDanielleTempVar::
+	goto_if_defeated TRAINER_DANIELLE, LavaridgeTown_Gym_1F_EventScript_EndSetTrainerTempVars
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setvar VAR_TEMP_E, 1
 LavaridgeTown_Gym_1F_EventScript_EndSetTrainerTempVars::
 	return
@@ -37,6 +50,7 @@ LavaridgeTown_Gym_1F_EventScript_CheckBuryTrainers::
 	goto_if_defeated TRAINER_COLE, LavaridgeTown_Gym_1F_EventScript_CheckBuryGerald
 	setobjectmovementtype LOCALID_COLE, MOVEMENT_TYPE_BURIED
 LavaridgeTown_Gym_1F_EventScript_CheckBuryGerald::
+<<<<<<< HEAD
 	goto_if_defeated TRAINER_RUSSELL, LavaridgeTown_Gym_1F_EventScript_CheckBuryAxle
 	setobjectmovementtype LOCALID_GERALD, MOVEMENT_TYPE_BURIED
 LavaridgeTown_Gym_1F_EventScript_CheckBuryAxle::
@@ -44,12 +58,25 @@ LavaridgeTown_Gym_1F_EventScript_CheckBuryAxle::
 	setobjectmovementtype LOCALID_AXLE, MOVEMENT_TYPE_BURIED
 LavaridgeTown_Gym_1F_EventScript_CheckBuryDanielle::
 	goto_if_defeated TRAINER_JIM, LavaridgeTown_Gym_1F_EventScript_EndCheckBuryTrainers
+=======
+	goto_if_defeated TRAINER_GERALD, LavaridgeTown_Gym_1F_EventScript_CheckBuryAxle
+	setobjectmovementtype LOCALID_GERALD, MOVEMENT_TYPE_BURIED
+LavaridgeTown_Gym_1F_EventScript_CheckBuryAxle::
+	goto_if_defeated TRAINER_AXLE, LavaridgeTown_Gym_1F_EventScript_CheckBuryDanielle
+	setobjectmovementtype LOCALID_AXLE, MOVEMENT_TYPE_BURIED
+LavaridgeTown_Gym_1F_EventScript_CheckBuryDanielle::
+	goto_if_defeated TRAINER_DANIELLE, LavaridgeTown_Gym_1F_EventScript_EndCheckBuryTrainers
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setobjectmovementtype LOCALID_DANIELLE, MOVEMENT_TYPE_BURIED
 LavaridgeTown_Gym_1F_EventScript_EndCheckBuryTrainers::
 	return
 
 LavaridgeTown_Gym_1F_EventScript_Flannery::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_PING, LavaridgeTown_Gym_1F_Text_FlanneryIntro, LavaridgeTown_Gym_1F_Text_FlanneryDefeat, LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated, NO_MUSIC
+=======
+	trainerbattle_single TRAINER_FLANNERY_1, LavaridgeTown_Gym_1F_Text_FlanneryIntro, LavaridgeTown_Gym_1F_Text_FlanneryDefeat, LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated, NO_MUSIC
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, LavaridgeTown_Gym_1F_EventScript_FlanneryRematch
 	goto_if_unset FLAG_RECEIVED_TM_OVERHEAT, LavaridgeTown_Gym_1F_EventScript_GiveOverheat2
@@ -63,6 +90,7 @@ LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated::
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox LavaridgeTown_Gym_1F_Text_ExplainHeatBadgeTakeThis, MSGBOX_DEFAULT
 	setflag FLAG_WHITEOUT_TO_LAVARIDGE
+<<<<<<< HEAD
 	setflag FLAG_DEFEATED_ECRUTEAK_CITY_GYM
 	setflag FLAG_BADGE04_GET
 	addvar VAR_GARBAGEVAR, 1
@@ -71,6 +99,16 @@ LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated::
 	call Common_EventScript_SetGymTrainers
 	setflag FLAG_HIDE_VERDANTURF_TOWN_WANDAS_HOUSE_WALLY
 	setvar VAR_GARBAGEVAR, 1
+=======
+	setflag FLAG_DEFEATED_LAVARIDGE_GYM
+	setflag FLAG_BADGE04_GET
+	addvar VAR_PETALBURG_GYM_STATE, 1
+	call_if_eq VAR_PETALBURG_GYM_STATE, 6, Common_EventScript_ReadyPetalburgGymForBattle
+	setvar VAR_0x8008, 4
+	call Common_EventScript_SetGymTrainers
+	setflag FLAG_HIDE_VERDANTURF_TOWN_WANDAS_HOUSE_WALLY
+	setvar VAR_LAVARIDGE_TOWN_STATE, 1
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call LavaridgeTown_Gym_1F_EventScript_GiveOverheat
 	closemessage
 	delay 30
@@ -99,12 +137,20 @@ LavaridgeTown_Gym_1F_EventScript_GiveOverheat::
 	return
 
 LavaridgeTown_Gym_1F_EventScript_FlanneryRematch::
+<<<<<<< HEAD
 	trainerbattle_rematch_double TRAINER_PING, LavaridgeTown_Gym_1F_Text_FlanneryPreRematch, LavaridgeTown_Gym_1F_Text_FlanneryRematchDefeat, LavaridgeTown_Gym_1F_Text_FlanneryRematchNeedTwoMons
+=======
+	trainerbattle_rematch_double TRAINER_FLANNERY_1, LavaridgeTown_Gym_1F_Text_FlanneryPreRematch, LavaridgeTown_Gym_1F_Text_FlanneryRematchDefeat, LavaridgeTown_Gym_1F_Text_FlanneryRematchNeedTwoMons
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox LavaridgeTown_Gym_1F_Text_FlanneryPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 LavaridgeTown_Gym_1F_EventScript_Cole::
+<<<<<<< HEAD
 	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_COLE, LOCALID_COLE, LavaridgeTown_Gym_1F_Text_ColeIntro, LavaridgeTown_Gym_1F_Text_ColeDefeat, LavaridgeTown_Gym_EventScript_CheckTrainerScript
+=======
+	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, LOCALID_COLE, TRAINER_COLE, LavaridgeTown_Gym_1F_Text_ColeIntro, LavaridgeTown_Gym_1F_Text_ColeDefeat, LavaridgeTown_Gym_EventScript_CheckTrainerScript, OBJ_ID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox LavaridgeTown_Gym_1F_Text_ColePostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -116,44 +162,76 @@ LavaridgeTown_Gym_EventScript_CheckTrainerScript::
 	end
 
 LavaridgeTown_Gym_1F_EventScript_Axle::
+<<<<<<< HEAD
 	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_COREY, LOCALID_AXLE, LavaridgeTown_Gym_1F_Text_AxleIntro, LavaridgeTown_Gym_1F_Text_AxleDefeat, LavaridgeTown_Gym_EventScript_CheckTrainerScript
+=======
+	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, LOCALID_AXLE, TRAINER_AXLE, LavaridgeTown_Gym_1F_Text_AxleIntro, LavaridgeTown_Gym_1F_Text_AxleDefeat, LavaridgeTown_Gym_EventScript_CheckTrainerScript, OBJ_ID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox LavaridgeTown_Gym_1F_Text_AxlePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 LavaridgeTown_Gym_B1F_EventScript_Keegan::
+<<<<<<< HEAD
 	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_KEEGAN, LOCALID_KEEGAN, LavaridgeTown_Gym_B1F_Text_KeeganIntro, LavaridgeTown_Gym_B1F_Text_KeeganDefeat, LavaridgeTown_Gym_EventScript_CheckTrainerScript
+=======
+	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, LOCALID_KEEGAN, TRAINER_KEEGAN, LavaridgeTown_Gym_B1F_Text_KeeganIntro, LavaridgeTown_Gym_B1F_Text_KeeganDefeat, LavaridgeTown_Gym_EventScript_CheckTrainerScript, OBJ_ID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox LavaridgeTown_Gym_B1F_Text_KeeganPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 LavaridgeTown_Gym_1F_EventScript_Danielle::
+<<<<<<< HEAD
 	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_JIM, LOCALID_DANIELLE, LavaridgeTown_Gym_1F_Text_DanielleIntro, LavaridgeTown_Gym_1F_Text_DanielleDefeat, LavaridgeTown_Gym_EventScript_CheckTrainerScript
+=======
+	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, LOCALID_DANIELLE, TRAINER_DANIELLE, LavaridgeTown_Gym_1F_Text_DanielleIntro, LavaridgeTown_Gym_1F_Text_DanielleDefeat, LavaridgeTown_Gym_EventScript_CheckTrainerScript, OBJ_ID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox LavaridgeTown_Gym_1F_Text_DaniellePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 LavaridgeTown_Gym_1F_EventScript_Gerald::
+<<<<<<< HEAD
 	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_RUSSELL, LOCALID_GERALD, LavaridgeTown_Gym_1F_Text_GeraldIntro, LavaridgeTown_Gym_1F_Text_GeraldDefeat, LavaridgeTown_Gym_EventScript_CheckTrainerScript
+=======
+	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, LOCALID_GERALD, TRAINER_GERALD, LavaridgeTown_Gym_1F_Text_GeraldIntro, LavaridgeTown_Gym_1F_Text_GeraldDefeat, LavaridgeTown_Gym_EventScript_CheckTrainerScript, OBJ_ID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox LavaridgeTown_Gym_1F_Text_GeraldPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 LavaridgeTown_Gym_B1F_EventScript_Jace::
+<<<<<<< HEAD
 	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_KOGA_2, LOCALID_JACE, LavaridgeTown_Gym_B1F_Text_JaceIntro, LavaridgeTown_Gym_B1F_Text_JaceDefeat, LavaridgeTown_Gym_EventScript_CheckTrainerScript
+=======
+	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, LOCALID_JACE, TRAINER_JACE, LavaridgeTown_Gym_B1F_Text_JaceIntro, LavaridgeTown_Gym_B1F_Text_JaceDefeat, LavaridgeTown_Gym_EventScript_CheckTrainerScript, OBJ_ID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox LavaridgeTown_Gym_B1F_Text_JacePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 LavaridgeTown_Gym_B1F_EventScript_Jeff::
+<<<<<<< HEAD
 	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_JEFF, LOCALID_JEFF, LavaridgeTown_Gym_B1F_Text_JeffIntro, LavaridgeTown_Gym_B1F_Text_JeffDefeat, LavaridgeTown_Gym_EventScript_CheckTrainerScript
+=======
+	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, LOCALID_JEFF, TRAINER_JEFF, LavaridgeTown_Gym_B1F_Text_JeffIntro, LavaridgeTown_Gym_B1F_Text_JeffDefeat, LavaridgeTown_Gym_EventScript_CheckTrainerScript, OBJ_ID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox LavaridgeTown_Gym_B1F_Text_JeffPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 LavaridgeTown_Gym_B1F_EventScript_Eli::
+<<<<<<< HEAD
 	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_ELI, LOCALID_ELI, LavaridgeTown_Gym_B1F_Text_EliIntro, LavaridgeTown_Gym_B1F_Text_EliDefeat, LavaridgeTown_Gym_EventScript_CheckTrainerScript
+=======
+	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, LOCALID_ELI, TRAINER_ELI, LavaridgeTown_Gym_B1F_Text_EliIntro, LavaridgeTown_Gym_B1F_Text_EliDefeat, LavaridgeTown_Gym_EventScript_CheckTrainerScript, OBJ_ID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox LavaridgeTown_Gym_B1F_Text_EliPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 LavaridgeTown_Gym_1F_EventScript_GymGuide::
 	lock
 	faceplayer
+<<<<<<< HEAD
 	goto_if_set FLAG_DEFEATED_ECRUTEAK_CITY_GYM, LavaridgeTown_Gym_1F_EventScript_GymGuidePostVictory
+=======
+	goto_if_set FLAG_DEFEATED_LAVARIDGE_GYM, LavaridgeTown_Gym_1F_EventScript_GymGuidePostVictory
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox LavaridgeTown_Gym_1F_Text_GymGuideAdvice, MSGBOX_DEFAULT
 	release
 	end

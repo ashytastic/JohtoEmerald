@@ -1,7 +1,10 @@
 #include <cstdio>
 #include <cstring>
 #include <cstdint>
+<<<<<<< HEAD
 #include <map>
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include <vector>
 #include <string>
 #include "ramscrgen.h"
@@ -22,6 +25,10 @@ static int s_shstrtabIndex;
 
 static std::uint32_t s_symtabOffset;
 static std::uint32_t s_strtabOffset;
+<<<<<<< HEAD
+=======
+static std::uint32_t s_pseudoCommonSectionIndex;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 static std::uint32_t s_symbolCount;
 static std::uint32_t s_elfFileOffset;
@@ -101,6 +108,7 @@ static void VerifyElfIdent()
         FATAL_ERROR("error: \"%s\" not little-endian ELF\n", s_elfPath.c_str());
 }
 
+<<<<<<< HEAD
 static void VerifyAr()
 {
     char expectedMagic[8] = {'!', '<', 'a', 'r', 'c', 'h', '>', '\n'};
@@ -113,6 +121,8 @@ static void VerifyAr()
         FATAL_ERROR("error: AR magic did not match in \"%s\"\n", s_archiveFilePath.c_str());
 }
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static void ReadElfHeader()
 {
     Seek(0x20);
@@ -123,6 +133,7 @@ static void ReadElfHeader()
     s_shstrtabIndex = ReadInt16();
 }
 
+<<<<<<< HEAD
 static void FindArObj()
 {
     char file_ident[17] = {0};
@@ -157,6 +168,8 @@ static void FindArObj()
     FATAL_ERROR("error: could not find object \"%s\" in archive \"%s\"\n", s_archiveObjectPath.c_str(), s_archiveFilePath.c_str());
 }
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static std::string GetSectionName(std::uint32_t shstrtabOffset, int index)
 {
     Seek(s_sectionHeaderOffset + s_sectionHeaderEntrySize * index);
@@ -169,6 +182,10 @@ static void FindTableOffsets()
 {
     s_symtabOffset = 0;
     s_strtabOffset = 0;
+<<<<<<< HEAD
+=======
+    s_pseudoCommonSectionIndex = 0;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     Seek(s_sectionHeaderOffset + s_sectionHeaderEntrySize * s_shstrtabIndex + 0x10);
     std::uint32_t shstrtabOffset = ReadInt32();
@@ -192,6 +209,14 @@ static void FindTableOffsets()
                 FATAL_ERROR("error: mutiple .strtab sections found in \"%s\"\n", s_elfPath.c_str());
             Seek(s_sectionHeaderOffset + s_sectionHeaderEntrySize * i + 0x10);
             s_strtabOffset = ReadInt32();
+<<<<<<< HEAD
+=======
+        } else if (name == "common_data") {
+            if (s_pseudoCommonSectionIndex) {
+                FATAL_ERROR("error: mutiple common_data sections found in \"%s\"\n", s_elfPath.c_str());
+            }
+            s_pseudoCommonSectionIndex = i;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         }
     }
 
@@ -202,12 +227,17 @@ static void FindTableOffsets()
         FATAL_ERROR("error: couldn't find .strtab section in \"%s\"\n", s_elfPath.c_str());
 }
 
+<<<<<<< HEAD
 static std::map<std::string, std::uint32_t> GetCommonSymbols_Shared()
+=======
+static std::vector<std::pair<std::string, std::uint32_t>> GetCommonSymbols_Shared()
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     VerifyElfIdent();
     ReadElfHeader();
     FindTableOffsets();
 
+<<<<<<< HEAD
     std::map<std::string, std::uint32_t> commonSymbols;
 
     std::vector<Symbol> commonSymbolVec;
@@ -231,11 +261,42 @@ static std::map<std::string, std::uint32_t> GetCommonSymbols_Shared()
         Seek(s_strtabOffset + sym.nameOffset);
         std::string name = ReadString();
         commonSymbols[name] = sym.size;
+=======
+    std::vector<std::pair<std::string, std::uint32_t>> commonSymbols;
+
+    if (s_pseudoCommonSectionIndex) {
+        std::vector<Symbol> commonSymbolVec;
+    
+        Seek(s_symtabOffset);
+    
+        for (std::uint32_t i = 0; i < s_symbolCount; i++)
+        {
+            Symbol sym;
+            sym.nameOffset = ReadInt32();
+            Skip(4);
+            sym.size = ReadInt32();
+            Skip(2);
+            std::uint16_t sectionIndex = ReadInt16();
+            if (sectionIndex == s_pseudoCommonSectionIndex)
+                commonSymbolVec.push_back(sym);
+        }
+    
+        for (const Symbol& sym : commonSymbolVec)
+        {
+            Seek(s_strtabOffset + sym.nameOffset);
+            std::string name = ReadString();
+            if (name == "$d" || name == "") {
+                continue;
+            }
+            commonSymbols.emplace_back(name, sym.size);
+        }
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
 
     return commonSymbols;
 }
 
+<<<<<<< HEAD
 std::map<std::string, std::uint32_t> GetCommonSymbolsFromLib(std::string sourcePath, std::string libpath)
 {
     std::size_t colonPos = libpath.find(':');
@@ -261,6 +322,13 @@ std::map<std::string, std::uint32_t> GetCommonSymbols(std::string sourcePath, st
     s_elfFileOffset = 0;
     if (path[0] == '*')
         return GetCommonSymbolsFromLib(sourcePath, path);
+=======
+std::vector<std::pair<std::string, std::uint32_t>> GetCommonSymbols(std::string sourcePath, std::string path)
+{
+    s_elfFileOffset = 0;
+    if (path[0] == '*')
+        FATAL_ERROR("error: library common syms are unsupported (filename: \"%s\")\n", path.c_str());
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     s_elfPath = sourcePath + "/" + path;
     s_file = std::fopen(s_elfPath.c_str(), "rb");

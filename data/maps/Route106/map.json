@@ -3,7 +3,11 @@
   "name": "Route106",
   "layout": "LAYOUT_ROUTE106",
   "music": "MUS_ROUTE104",
+<<<<<<< HEAD
   "region_map_section": "MAPSEC_ROUTE_31",
+=======
+  "region_map_section": "MAPSEC_ROUTE_106",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_ROUTE",
@@ -26,7 +30,11 @@
   ],
   "object_events": [
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M_WATER",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 18,
       "y": 5,
       "elevation": 1,
@@ -39,7 +47,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_F_WATER",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_SWIMMER_F",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 29,
       "y": 10,
       "elevation": 1,
@@ -52,7 +64,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_FISHER",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 51,
       "y": 14,
       "elevation": 3,
@@ -65,7 +81,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_FISHER",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 65,
       "y": 14,
       "elevation": 3,
@@ -86,9 +106,15 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
+<<<<<<< HEAD
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route106_EventScript_ItemProtein",
       "flag": "FLAG_ITEM_GARBAGEFLAG"
+=======
+      "trainer_sight_or_berry_tree_id": "ITEM_PROTEIN",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_ROUTE_106_PROTEIN"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "warp_events": [
@@ -100,9 +126,13 @@
       "dest_warp_id": "0"
     }
   ],
+<<<<<<< HEAD
   "coord_events": [
 
   ],
+=======
+  "coord_events": [],
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "bg_events": [
     {
       "type": "hidden_item",

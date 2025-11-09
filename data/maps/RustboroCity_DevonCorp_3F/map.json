@@ -3,7 +3,11 @@
   "name": "RustboroCity_DevonCorp_3F",
   "layout": "LAYOUT_RUSTBORO_CITY_DEVON_CORP_3F",
   "music": "MUS_RUSTBORO",
+<<<<<<< HEAD
   "region_map_section": "MAPSEC_CHERRYGROVE_CITY",
+=======
+  "region_map_section": "MAPSEC_RUSTBORO_CITY",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -12,7 +16,11 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+<<<<<<< HEAD
   "connections": 0,
+=======
+  "connections": null,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
@@ -28,7 +36,12 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_GYM_GUY",
+=======
+      "local_id": "LOCALID_DEVON_CORP_3F_EMPLOYEE",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_2",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 3,
       "y": 5,
       "elevation": 3,
@@ -38,7 +51,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "RustboroCity_DevonCorp_3F_EventScript_Employee",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
+=======
+      "flag": "FLAG_HIDE_RUSTBORO_CITY_DEVON_CORP_3F_EMPLOYEE"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
@@ -63,9 +80,13 @@
       "dest_warp_id": "1"
     }
   ],
+<<<<<<< HEAD
   "coord_events": [
 
   ],
+=======
+  "coord_events": [],
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "bg_events": [
     {
       "type": "sign",

@@ -20,11 +20,25 @@
 
 #include <string>
 #include <stack>
+<<<<<<< HEAD
+=======
+#include <unistd.h>
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include "preproc.h"
 #include "asm_file.h"
 #include "c_file.h"
 #include "charmap.h"
 
+<<<<<<< HEAD
+=======
+#ifdef _WIN32
+#include <io.h>
+#include <fcntl.h>
+#endif
+
+static void UsageAndExit(const char *program);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 Charmap* g_charmap;
 
 void PrintAsmBytes(unsigned char *s, int length)
@@ -43,11 +57,20 @@ void PrintAsmBytes(unsigned char *s, int length)
     }
 }
 
+<<<<<<< HEAD
 void PreprocAsmFile(std::string filename)
 {
     std::stack<AsmFile> stack;
 
     stack.push(AsmFile(filename));
+=======
+void PreprocAsmFile(std::string filename, bool isStdin, bool doEnum)
+{
+    std::stack<AsmFile> stack;
+
+    stack.push(AsmFile(filename, isStdin, doEnum));
+    std::printf("# 1 \"%s\"\n", filename.c_str());
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     for (;;)
     {
@@ -61,15 +84,22 @@ void PreprocAsmFile(std::string filename)
                 stack.top().OutputLocation();
         }
 
+<<<<<<< HEAD
         //stack.top().OutputLocation();
 
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         Directive directive = stack.top().GetDirective();
 
         switch (directive)
         {
         case Directive::Include:
+<<<<<<< HEAD
             stack.push(AsmFile(stack.top().ReadPath()));
+=======
+            stack.push(AsmFile(stack.top().ReadPath(), false, doEnum));
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             stack.top().OutputLocation();
             break;
         case Directive::String:
@@ -86,6 +116,15 @@ void PreprocAsmFile(std::string filename)
             PrintAsmBytes(s, length);
             break;
         }
+<<<<<<< HEAD
+=======
+        case Directive::Enum:
+        {
+            if (!stack.top().ParseEnum())
+                stack.top().OutputLine();
+            break;
+        }
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         case Directive::Unknown:
         {
             std::string globalLabel = stack.top().GetGlobalLabel();
@@ -112,9 +151,15 @@ void PreprocCFile(const char * filename, bool isStdin)
     cFile.Preproc();
 }
 
+<<<<<<< HEAD
 char* GetFileExtension(char* filename)
 {
     char* extension = filename;
+=======
+const char* GetFileExtension(const char* filename)
+{
+    const char* extension = filename;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     while (*extension != 0)
         extension++;
@@ -133,6 +178,7 @@ char* GetFileExtension(char* filename)
     return extension;
 }
 
+<<<<<<< HEAD
 int main(int argc, char **argv)
 {
     if (argc < 3 || argc > 4)
@@ -144,11 +190,59 @@ int main(int argc, char **argv)
     g_charmap = new Charmap(argv[2]);
 
     char* extension = GetFileExtension(argv[1]);
+=======
+static void UsageAndExit(const char *program)
+{
+    std::fprintf(stderr, "Usage: %s [-i] [-e] SRC_FILE CHARMAP_FILE\nwhere -i denotes if input is from stdin\n      -e enables enum handling\n", program);
+    std::exit(EXIT_FAILURE);
+}
+
+int main(int argc, char **argv)
+{
+    int opt;
+    const char *source = NULL;
+    const char *charmap = NULL;
+    bool isStdin = false;
+    bool doEnum = false;
+
+    /* preproc [-i] [-e] SRC_FILE CHARMAP_FILE */
+    while ((opt = getopt(argc, argv, "ie")) != -1)
+    {
+        switch (opt)
+        {
+        case 'i':
+            isStdin = true;
+            break;
+        case 'e':
+            doEnum = true;
+            break;
+        default:
+            UsageAndExit(argv[0]);
+            break;
+        }
+    }
+
+    if (optind + 2 != argc)
+        UsageAndExit(argv[0]);
+
+    source = argv[optind + 0];
+    charmap = argv[optind + 1];
+
+    g_charmap = new Charmap(charmap);
+
+#ifdef _WIN32
+	// On Windows, piping from stdout can break newlines. Treat stdout as binary stream to avoid this.
+	_setmode(_fileno(stdout), _O_BINARY);
+#endif
+
+    const char* extension = GetFileExtension(source);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     if (!extension)
         FATAL_ERROR("\"%s\" has no file extension.\n", argv[1]);
 
     if ((extension[0] == 's') && extension[1] == 0)
+<<<<<<< HEAD
         PreprocAsmFile(argv[1]);
     else if ((extension[0] == 'c' || extension[0] == 'i') && extension[1] == 0) {
         if (argc == 4) {
@@ -162,6 +256,21 @@ int main(int argc, char **argv)
         }
     } else
         FATAL_ERROR("\"%s\" has an unknown file extension of \"%s\".\n", argv[1], extension);
+=======
+    {
+        PreprocAsmFile(source, isStdin, doEnum);
+    }
+    else if ((extension[0] == 'c' || extension[0] == 'i') && extension[1] == 0)
+    {
+        if (doEnum)
+            FATAL_ERROR("-e is invalid for C sources\n");
+        PreprocCFile(source, isStdin);
+    }
+    else
+    {
+        FATAL_ERROR("\"%s\" has an unknown file extension of \"%s\".\n", argv[1], extension);
+    }
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     return 0;
 }

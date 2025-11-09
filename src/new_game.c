@@ -44,14 +44,26 @@
 #include "berry_powder.h"
 #include "mystery_gift.h"
 #include "union_room_chat.h"
+<<<<<<< HEAD
 #include "constants/items.h"
 #include "tx_randomizer_and_challenges.h"
+=======
+#include "constants/map_groups.h"
+#include "constants/items.h"
+#include "difficulty.h"
+#include "follower_npc.h"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 extern const u8 EventScript_ResetAllMapFlags[];
 
 static void ClearFrontierRecord(void);
 static void WarpToTruck(void);
 static void ResetMiniGamesRecords(void);
+<<<<<<< HEAD
+=======
+static void ResetItemFlags(void);
+static void ResetDexNav(void);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 EWRAM_DATA bool8 gDifferentSaveFile = FALSE;
 EWRAM_DATA bool8 gEnableContestDebugging = FALSE;
@@ -91,6 +103,7 @@ static void InitPlayerTrainerId(void)
 // L=A isnt set here for some reason.
 static void SetDefaultOptions(void)
 {
+<<<<<<< HEAD
     gSaveBlock2Ptr->optionsTextSpeed = OPTIONS_TEXT_SPEED_FAST;
     gSaveBlock2Ptr->optionsWindowFrameType = 0;
     gSaveBlock2Ptr->optionsSound = OPTIONS_SOUND_STEREO;
@@ -123,13 +136,26 @@ static void SetDefaultOptions(void)
     gSaveBlock2Ptr->optionsMusicOnOff = 0;
     gSaveBlock2Ptr->optionsNewBackgrounds = 1; //HnS
     gSaveBlock2Ptr->optionsRunType = 1;
+=======
+    gSaveBlock2Ptr->optionsTextSpeed = OPTIONS_TEXT_SPEED_MID;
+    gSaveBlock2Ptr->optionsWindowFrameType = 0;
+    gSaveBlock2Ptr->optionsSound = OPTIONS_SOUND_MONO;
+    gSaveBlock2Ptr->optionsBattleStyle = OPTIONS_BATTLE_STYLE_SHIFT;
+    gSaveBlock2Ptr->optionsBattleSceneOff = FALSE;
+    gSaveBlock2Ptr->regionMapZoom = FALSE;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void ClearPokedexFlags(void)
 {
     gUnusedPokedexU8 = 0;
+<<<<<<< HEAD
     memset(&gSaveBlock2Ptr->pokedex.owned, 0, sizeof(gSaveBlock2Ptr->pokedex.owned));
     memset(&gSaveBlock2Ptr->pokedex.seen, 0, sizeof(gSaveBlock2Ptr->pokedex.seen));
+=======
+    memset(&gSaveBlock1Ptr->dexCaught, 0, sizeof(gSaveBlock1Ptr->dexCaught));
+    memset(&gSaveBlock1Ptr->dexSeen, 0, sizeof(gSaveBlock1Ptr->dexSeen));
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 void ClearAllContestWinnerPics(void)
@@ -153,8 +179,12 @@ static void ClearFrontierRecord(void)
 
 static void WarpToTruck(void)
 {
+<<<<<<< HEAD
     SaveData_TxRandomizerAndChallenges();
     SetWarpDestination(MAP_GROUP(NEW_BARK_TOWN_PLAYERS_HOUSE_2F), MAP_NUM(NEW_BARK_TOWN_PLAYERS_HOUSE_2F), 1, 0, 0);
+=======
+    SetWarpDestination(MAP_GROUP(MAP_INSIDE_OF_TRUCK), MAP_NUM(MAP_INSIDE_OF_TRUCK), WARP_ID_NONE, -1, -1);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     WarpIntoMap();
 }
 
@@ -176,12 +206,15 @@ void ResetMenuAndMonGlobals(void)
 
 void NewGameInitData(void)
 {
+<<<<<<< HEAD
     bool8 HardPrev = FlagGet(FLAG_DIFFICULTY_HARD);
     bool8 TMPrev = FlagGet(FLAG_FINITE_TMS);
     bool8 UnlimitedWT = FlagGet(FLAG_UNLIMITIED_WONDERTRADE);
     bool8 EnableMints = FlagGet(FLAG_MINTS_ENABLED);
     bool8 EnableExtraLegendaries = FlagGet(FLAG_EXTRA_LEGENDARIES);
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (gSaveFileStatus == SAVE_STATUS_EMPTY || gSaveFileStatus == SAVE_STATUS_CORRUPT)
         RtcReset();
 
@@ -192,6 +225,10 @@ void NewGameInitData(void)
     ResetPokedex();
     ClearFrontierRecord();
     ClearSav1();
+<<<<<<< HEAD
+=======
+    ClearSav3();
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ClearAllMail();
     gSaveBlock2Ptr->specialSaveWarpFlags = 0;
     gSaveBlock2Ptr->gcnLinkFlags = 0;
@@ -214,10 +251,15 @@ void NewGameInitData(void)
     gPlayerPartyCount = 0;
     ZeroPlayerPartyMons();
     ResetPokemonStorageSystem();
+<<<<<<< HEAD
     ClearRoamerData();
     ClearRoamerLocationData();
     gSaveBlock1Ptr->registeredItem = ITEM_NONE;
     gSaveBlock1Ptr->registeredLongItem = 0;
+=======
+    DeactivateAllRoamers();
+    gSaveBlock1Ptr->registeredItem = ITEM_NONE;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ClearBag();
     NewGameInitPCItems();
     ClearPokeblocks();
@@ -239,6 +281,7 @@ void NewGameInitData(void)
     WipeTrainerNameRecords();
     ResetTrainerHillResults();
     ResetContestLinkResults();
+<<<<<<< HEAD
     RandomizeTypeEffectivenessListEWRAM(Random32());
     if ((gSaveBlock1Ptr->tx_Features_PkmnDeath) && (gSaveBlock1Ptr->tx_Challenges_Nuzlocke))
         gSaveBlock1Ptr->tx_Features_PkmnDeath = 0;
@@ -289,6 +332,12 @@ void CheckIfRandomizerIsActive(void)
         || (gSaveBlock1Ptr->tx_Random_OneForOne == 1)
         || (gSaveBlock1Ptr->tx_Random_Items == 1)))
             FlagSet(FLAG_WT_ENABLED_RANDOMIZER);
+=======
+    SetCurrentDifficultyLevel(DIFFICULTY_NORMAL);
+    ResetItemFlags();
+    ResetDexNav();
+    ClearFollowerNPCData();
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void ResetMiniGamesRecords(void)
@@ -298,3 +347,21 @@ static void ResetMiniGamesRecords(void)
     ResetPokemonJumpRecords();
     CpuFill16(0, &gSaveBlock2Ptr->berryPick, sizeof(struct BerryPickingResults));
 }
+<<<<<<< HEAD
+=======
+
+static void ResetItemFlags(void)
+{
+#if OW_SHOW_ITEM_DESCRIPTIONS == OW_ITEM_DESCRIPTIONS_FIRST_TIME
+    memset(&gSaveBlock3Ptr->itemFlags, 0, sizeof(gSaveBlock3Ptr->itemFlags));
+#endif
+}
+
+static void ResetDexNav(void)
+{
+#if USE_DEXNAV_SEARCH_LEVELS == TRUE
+    memset(gSaveBlock3Ptr->dexNavSearchLevels, 0, sizeof(gSaveBlock3Ptr->dexNavSearchLevels));
+#endif
+    gSaveBlock3Ptr->dexNavChain = 0;
+}
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

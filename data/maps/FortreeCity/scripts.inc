@@ -4,7 +4,11 @@ FortreeCity_MapScripts::
 	.byte 0
 
 FortreeCity_OnTransition:
+<<<<<<< HEAD
 	setflag FLAG_VISITED_VIRIDIAN_CITY
+=======
+	setflag FLAG_VISITED_FORTREE_CITY
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 FortreeCity_OnResume:
@@ -153,3 +157,7 @@ FortreeCity_Text_GymSign:
 	.string "LEADER: WINONA\p"
 	.string "“The bird user taking flight into\n"
 	.string "the world.”$"
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

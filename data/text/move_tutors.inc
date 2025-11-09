@@ -1,8 +1,11 @@
 MoveTutor_Text_ThisMoveCanOnlyBeLearnedOnce:
+<<<<<<< HEAD
 	.string "Are you ready to learn this move?$"
 	.string "It will cost you 5.000¥.$"
 
 MoveTutor_Text_ThisMoveCanOnlyBeLearnedOnceFinite:
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.string "This move can be learned only\n"
 	.string "once. Is that okay?$"
 
@@ -142,7 +145,12 @@ MoveTutor_Text_SleepTalkTaught:
 	.string "even as I SLEEP TALK…$"
 
 MoveTutor_Text_SubstituteTeach:
+<<<<<<< HEAD
 	.string "When I travel around the world...\p"
+=======
+	.string "When I see the wide world from up\n"
+	.string "here on the roof…\p"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.string "I think about how nice it would be\n"
 	.string "if there were more than just one me\l"
 	.string "so I could enjoy all sorts of lives.\p"
@@ -170,7 +178,11 @@ MoveTutor_Text_DynamicPunchTeach:
 	.string "I can't do this anymore!\p"
 	.string "It's utterly hopeless!\p"
 	.string "I'm a FIGHTING-type TRAINER,\n"
+<<<<<<< HEAD
 	.string "so I can't win at the SAFFRON GYM\l"
+=======
+	.string "so I can't win at the MOSSDEEP GYM\l"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.string "no matter how hard I try!\p"
 	.string "Argh! Punch! Punch! Punch!\n"
 	.string "Punch! Punch! Punch!\p"
@@ -188,12 +200,20 @@ MoveTutor_Text_DynamicPunchWhichMon:
 	.string "Which POKéMON should I teach?$"
 
 MoveTutor_Text_DynamicPunchTaught:
+<<<<<<< HEAD
 	.string "I want you to win at the SAFFRON GYM\n"
+=======
+	.string "I want you to win at the MOSSDEEP GYM\n"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.string "using that DYNAMICPUNCH!$"
 
 MoveTutor_Text_DoubleEdgeTeach:
 	.string "Sigh…\p"
+<<<<<<< HEAD
 	.string "VIRIDIAN's GYM LEADER is really\n"
+=======
+	.string "SOOTOPOLIS's GYM LEADER is really\n"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.string "lovably admirable.\p"
 	.string "But that also means I have many\n"
 	.string "rivals for his attention.\p"

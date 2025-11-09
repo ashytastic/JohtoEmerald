@@ -1,4 +1,5 @@
 VictoryRoad_B2F_MapScripts::
+<<<<<<< HEAD
 	map_script MAP_SCRIPT_ON_RESUME, VictoryRoad_B2F_OnResume
 	map_script MAP_SCRIPT_ON_TRANSITION, VictoryRoad_B2F_OnTransition
 	.byte 0
@@ -16,6 +17,10 @@ VictoryRoad_B2F_SwitchToModern::
 	setmaplayoutindex LAYOUT_VICTORY_ROAD_B2F_MODERN
 	end
 
+=======
+	.byte 0
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 VictoryRoad_B2F_EventScript_Vito::
 	trainerbattle_single TRAINER_VITO, VictoryRoad_B2F_Text_VitoIntro, VictoryRoad_B2F_Text_VitoDefeat
 	msgbox VictoryRoad_B2F_Text_VitoPostBattle, MSGBOX_AUTOCLOSE
@@ -37,12 +42,20 @@ VictoryRoad_B2F_EventScript_Julie::
 	end
 
 VictoryRoad_B2F_EventScript_Felix::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_NORMAN, VictoryRoad_B2F_Text_FelixIntro, VictoryRoad_B2F_Text_FelixDefeat
+=======
+	trainerbattle_single TRAINER_FELIX, VictoryRoad_B2F_Text_FelixIntro, VictoryRoad_B2F_Text_FelixDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox VictoryRoad_B2F_Text_FelixPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 VictoryRoad_B2F_EventScript_Dianne::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_KENJI, VictoryRoad_B2F_Text_DianneIntro, VictoryRoad_B2F_Text_DianneDefeat
+=======
+	trainerbattle_single TRAINER_DIANNE, VictoryRoad_B2F_Text_DianneIntro, VictoryRoad_B2F_Text_DianneDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox VictoryRoad_B2F_Text_DiannePostBattle, MSGBOX_AUTOCLOSE
 	end
 

@@ -26,17 +26,29 @@ struct SendRecvHeader
 static u32 MGL_Receive(struct MysteryGiftLink *);
 static u32 MGL_Send(struct MysteryGiftLink *);
 
+<<<<<<< HEAD
 u32 MysteryGiftLink_Recv(struct MysteryGiftLink * link)
+=======
+u32 MysteryGiftLink_Recv(struct MysteryGiftLink *link)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     return link->recvFunc(link);
 }
 
+<<<<<<< HEAD
 u32 MysteryGiftLink_Send(struct MysteryGiftLink * link)
+=======
+u32 MysteryGiftLink_Send(struct MysteryGiftLink *link)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     return link->sendFunc(link);
 }
 
+<<<<<<< HEAD
 void MysteryGiftLink_Init(struct MysteryGiftLink * link, u32 sendPlayerId, u32 recvPlayerId)
+=======
+void MysteryGiftLink_Init(struct MysteryGiftLink *link, u32 sendPlayerId, u32 recvPlayerId)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     link->sendPlayerId = sendPlayerId;
     link->recvPlayerId = recvPlayerId;
@@ -53,7 +65,11 @@ void MysteryGiftLink_Init(struct MysteryGiftLink * link, u32 sendPlayerId, u32 r
     link->recvFunc = MGL_Receive;
 }
 
+<<<<<<< HEAD
 void MysteryGiftLink_InitSend(struct MysteryGiftLink * link, u32 ident, const void * src, u32 size)
+=======
+void MysteryGiftLink_InitSend(struct MysteryGiftLink *link, u32 ident, const void *src, u32 size)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     link->state = 0;
     link->sendIdent = ident;
@@ -66,7 +82,11 @@ void MysteryGiftLink_InitSend(struct MysteryGiftLink * link, u32 ident, const vo
     link->sendBuffer = src;
 }
 
+<<<<<<< HEAD
 void MysteryGiftLink_InitRecv(struct MysteryGiftLink * link, u32 ident, void * dest)
+=======
+void MysteryGiftLink_InitRecv(struct MysteryGiftLink *link, u32 ident, void *dest)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     link->state = 0;
     link->recvIdent = ident;
@@ -76,7 +96,11 @@ void MysteryGiftLink_InitRecv(struct MysteryGiftLink * link, u32 ident, void * d
     link->recvBuffer = dest;
 }
 
+<<<<<<< HEAD
 static void MGL_ReceiveBlock(u32 playerId, void * dest, size_t size)
+=======
+static void MGL_ReceiveBlock(u32 playerId, void *dest, size_t size)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     memcpy(dest, gBlockRecvBuffer[playerId], size);
 }
@@ -94,7 +118,11 @@ static void MGL_ResetReceived(u32 playerId)
     ResetBlockReceivedFlag(playerId);
 }
 
+<<<<<<< HEAD
 static bool32 MGL_Receive(struct MysteryGiftLink * link)
+=======
+static bool32 MGL_Receive(struct MysteryGiftLink *link)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     struct SendRecvHeader header;
 
@@ -159,7 +187,11 @@ static bool32 MGL_Receive(struct MysteryGiftLink * link)
     return FALSE;
 }
 
+<<<<<<< HEAD
 static bool32 MGL_Send(struct MysteryGiftLink * link)
+=======
+static bool32 MGL_Send(struct MysteryGiftLink *link)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     struct SendRecvHeader header;
 

@@ -17,21 +17,34 @@ struct Pokenav_MainMenu
 {
     void (*loopTask)(u32);
     u32 (*isLoopTaskActiveFunc)(void);
+<<<<<<< HEAD
     u32 unused;
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     u32 currentTaskId;
     u32 helpBarWindowId;
     u32 palettes;
     struct Sprite *spinningPokenav;
     struct Sprite *leftHeaderSprites[2];
     struct Sprite *submenuLeftHeaderSprites[2];
+<<<<<<< HEAD
     u8 tilemapBuffer[BG_SCREEN_SIZE];
+=======
+    ALIGNED(4) u8 tilemapBuffer[BG_SCREEN_SIZE];
+    ALIGNED(4) u8 leftHeaderMenuBuffer[0x1000];
+    ALIGNED(4) u8 leftHeaderSubMenuBuffer[0x1000];
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 // This struct uses a 32bit tag, and doesn't have a size field.
 // Needed to match LoadLeftHeaderGfxForSubMenu.
 struct CompressedSpriteSheetNoSize
 {
+<<<<<<< HEAD
     const u32 *data;  // LZ77 compressed palette data
+=======
+    const u32 *data;  // Compressed sprite data
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     u32 tag;
 };
 
@@ -54,8 +67,13 @@ static void SpriteCB_SpinningPokenav(struct Sprite *);
 static u32 LoopedTask_InitPokenavMenu(s32);
 
 static const u16 sSpinningPokenav_Pal[] = INCBIN_U16("graphics/pokenav/nav_icon.gbapal");
+<<<<<<< HEAD
 static const u32 sSpinningPokenav_Gfx[] = INCBIN_U32("graphics/pokenav/nav_icon.4bpp.lz");
 static const u32 sBlueLightCopy[] = INCBIN_U32("graphics/pokenav/blue_light.4bpp.lz"); // Unused copy of sMatchCallBlueLightTiles
+=======
+static const u32 sSpinningPokenav_Gfx[] = INCBIN_U32("graphics/pokenav/nav_icon.4bpp.smol");
+static const u32 sBlueLightCopy[] = INCBIN_U32("graphics/pokenav/blue_light.4bpp.smol"); // Unused copy of sMatchCallBlueLightTiles
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 const struct BgTemplate gPokenavMainMenuBgTemplates[] =
 {
@@ -86,6 +104,7 @@ static const struct WindowTemplate sHelpBarWindowTemplate[] =
 
 static const u8 *const sHelpBarTexts[HELPBAR_COUNT] =
 {
+<<<<<<< HEAD
     [HELPBAR_NONE]                 = gText_Pokenav_ClearButtonList,
     [HELPBAR_MAP_ZOOMED_OUT]       = gText_PokenavMap_CancelOnly,
     [HELPBAR_MAP_ZOOMED_IN]        = gText_PokenavMap_CancelOnly,
@@ -98,6 +117,22 @@ static const u8 *const sHelpBarTexts[HELPBAR_COUNT] =
     [HELPBAR_RIBBONS_MON_LIST]     = gText_PokenavRibbons_MonListButtons,
     [HELPBAR_RIBBONS_LIST]         = gText_PokenavRibbons_RibbonListButtons,
     [HELPBAR_RIBBONS_CHECK]        = gText_PokenavRibbons_RibbonCheckButtons,
+=======
+    [HELPBAR_NONE]                  = COMPOUND_STRING("{CLEAR 0x80}"),
+    [HELPBAR_MAP_ZOOMED_OUT]        = COMPOUND_STRING("{A_BUTTON}ZOOM {B_BUTTON}CANCEL"),
+    [HELPBAR_MAP_ZOOMED_IN]         = COMPOUND_STRING("{A_BUTTON}FULL {B_BUTTON}CANCEL"),
+    [HELPBAR_MAP_ZOOMED_OUT_CANFLY] = COMPOUND_STRING("{A_BUTTON}ZOOM {B_BUTTON}CANCEL {R_BUTTON}FLY"),
+    [HELPBAR_MAP_ZOOMED_IN_CANFLY]  = COMPOUND_STRING("{A_BUTTON}FULL {B_BUTTON}CANCEL {R_BUTTON}FLY"),
+    [HELPBAR_CONDITION_MON_LIST]    = COMPOUND_STRING("{A_BUTTON}CONDITION {B_BUTTON}CANCEL"),
+    [HELPBAR_CONDITION_MON_STATUS]  = COMPOUND_STRING("{A_BUTTON}MARKINGS {B_BUTTON}CANCEL"),
+    [HELPBAR_CONDITION_MARKINGS]    = COMPOUND_STRING("{A_BUTTON}SELECT MARK {B_BUTTON}CANCEL"),
+    [HELPBAR_MC_TRAINER_LIST]       = COMPOUND_STRING("{A_BUTTON}MENU {B_BUTTON}CANCEL"),
+    [HELPBAR_MC_CALL_MENU]          = COMPOUND_STRING("{A_BUTTON}OK {B_BUTTON}CANCEL"),
+    [HELPBAR_MC_CHECK_PAGE]         = COMPOUND_STRING("{B_BUTTON}CANCEL"),
+    [HELPBAR_RIBBONS_MON_LIST]      = COMPOUND_STRING("{A_BUTTON}RIBBONS {B_BUTTON}CANCEL"),
+    [HELPBAR_RIBBONS_LIST]          = COMPOUND_STRING("{A_BUTTON}CHECK {B_BUTTON}CANCEL"),
+    [HELPBAR_RIBBONS_CHECK]         = COMPOUND_STRING("{B_BUTTON}CANCEL"),
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 static const u8 sHelpBarTextColors[3] =
@@ -376,13 +411,19 @@ void SetActiveMenuLoopTasks(void *createLoopTask, void *isLoopTaskActive) // Fix
     struct Pokenav_MainMenu *menu = GetSubstructPtr(POKENAV_SUBSTRUCT_MAIN_MENU);
     menu->loopTask = createLoopTask;
     menu->isLoopTaskActiveFunc = isLoopTaskActive;
+<<<<<<< HEAD
     menu->unused = 0;
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 void RunMainMenuLoopedTask(u32 state)
 {
     struct Pokenav_MainMenu *menu = GetSubstructPtr(POKENAV_SUBSTRUCT_MAIN_MENU);
+<<<<<<< HEAD
     menu->unused = 0;
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     menu->loopTask(state);
 }
 
@@ -684,8 +725,13 @@ static void LoadLeftHeaderGfxForMenu(u32 menuGfxId)
     tag = sMenuLeftHeaderSpriteSheets[menuGfxId].tag;
     size = GetDecompressedDataSize(sMenuLeftHeaderSpriteSheets[menuGfxId].data);
     LoadPalette(&gPokenavLeftHeader_Pal[tag * 16], OBJ_PLTT_ID(IndexOfSpritePaletteTag(1)), PLTT_SIZE_4BPP);
+<<<<<<< HEAD
     LZ77UnCompWram(sMenuLeftHeaderSpriteSheets[menuGfxId].data, gDecompressionBuffer);
     RequestDma3Copy(gDecompressionBuffer, (void *)OBJ_VRAM0 + (GetSpriteTileStartByTag(2) * 32), size, 1);
+=======
+    DecompressDataWithHeaderWram(sMenuLeftHeaderSpriteSheets[menuGfxId].data, menu->leftHeaderMenuBuffer);
+    RequestDma3Copy(menu->leftHeaderMenuBuffer, (void *)OBJ_VRAM0 + (GetSpriteTileStartByTag(2) * 32), size, 1);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     menu->leftHeaderSprites[1]->oam.tileNum = GetSpriteTileStartByTag(2) + sMenuLeftHeaderSpriteSheets[menuGfxId].size;
 
     if (menuGfxId == POKENAV_GFX_MAP_MENU_ZOOMED_OUT || menuGfxId == POKENAV_GFX_MAP_MENU_ZOOMED_IN)
@@ -696,16 +742,29 @@ static void LoadLeftHeaderGfxForMenu(u32 menuGfxId)
 
 static void LoadLeftHeaderGfxForSubMenu(u32 menuGfxId)
 {
+<<<<<<< HEAD
+=======
+    struct Pokenav_MainMenu *menu;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     u32 size, tag;
 
     if (menuGfxId >= POKENAV_GFX_MENUS_END - POKENAV_GFX_SUBMENUS_START)
         return;
 
+<<<<<<< HEAD
     tag = sPokenavSubMenuLeftHeaderSpriteSheets[menuGfxId].tag;
     size = GetDecompressedDataSize(sPokenavSubMenuLeftHeaderSpriteSheets[menuGfxId].data);
     LoadPalette(&gPokenavLeftHeader_Pal[tag * 16], OBJ_PLTT_ID(IndexOfSpritePaletteTag(2)), PLTT_SIZE_4BPP);
     LZ77UnCompWram(sPokenavSubMenuLeftHeaderSpriteSheets[menuGfxId].data, &gDecompressionBuffer[0x1000]);
     RequestDma3Copy(&gDecompressionBuffer[0x1000], (void *)OBJ_VRAM0 + 0x800 + (GetSpriteTileStartByTag(2) * 32), size, 1);
+=======
+    menu = GetSubstructPtr(POKENAV_SUBSTRUCT_MAIN_MENU);
+    tag = sPokenavSubMenuLeftHeaderSpriteSheets[menuGfxId].tag;
+    size = GetDecompressedDataSize(sPokenavSubMenuLeftHeaderSpriteSheets[menuGfxId].data);
+    LoadPalette(&gPokenavLeftHeader_Pal[tag * 16], OBJ_PLTT_ID(IndexOfSpritePaletteTag(2)), PLTT_SIZE_4BPP);
+    DecompressDataWithHeaderWram(sPokenavSubMenuLeftHeaderSpriteSheets[menuGfxId].data, menu->leftHeaderSubMenuBuffer);
+    RequestDma3Copy(menu->leftHeaderSubMenuBuffer, (void *)OBJ_VRAM0 + 0x800 + (GetSpriteTileStartByTag(2) * 32), size, 1);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 void ShowLeftHeaderGfx(u32 menuGfxId, bool32 isMain, bool32 isOnRightSide)

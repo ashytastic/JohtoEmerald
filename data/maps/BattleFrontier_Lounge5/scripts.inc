@@ -51,12 +51,17 @@ BattleFrontier_Lounge5_Text_NatureGirlNoneShown::
 	.string "Boo!\n"
 	.string "Cheapie!$"
 
+<<<<<<< HEAD
 BattleFrontier_Lounge5_Text_NatureGirlHardy::
+=======
+BattleFrontier_Lounge5_Text_NatureGirlAttackHighAttackLow::
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.string "Hmhm…\p"
 	.string "This one says it likes to battle!\n"
 	.string "It will battle even if it has a lot\l"
 	.string "of ouchies!$"
 
+<<<<<<< HEAD
 BattleFrontier_Lounge5_Text_NatureGirlLonely::
 	.string "Hmhm…\p"
 	.string "This one says it likes to be sneaky!\n"
@@ -64,11 +69,15 @@ BattleFrontier_Lounge5_Text_NatureGirlLonely::
 	.string "it will hit back!$"
 
 BattleFrontier_Lounge5_Text_NatureGirlBrave::
+=======
+BattleFrontier_Lounge5_Text_NatureGirlAttackHighDefenseLow::
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.string "Hmhm…\p"
 	.string "This one says it likes to battle!\n"
 	.string "But if it gets enough ouchies,\l"
 	.string "it will worry about itself!$"
 
+<<<<<<< HEAD
 BattleFrontier_Lounge5_Text_NatureGirlAdamant::
 	.string "Hmhm…\p"
 	.string "This one says it likes to battle!\n"
@@ -112,11 +121,15 @@ BattleFrontier_Lounge5_Text_NatureGirlLax::
 	.string "if it has a lot of ouchies!$"
 
 BattleFrontier_Lounge5_Text_NatureGirlTimid::
+=======
+BattleFrontier_Lounge5_Text_NatureGirlAttackHighSupportLow::
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.string "Hmhm…\p"
 	.string "This one says it likes to battle!\n"
 	.string "But if it gets enough ouchies,\l"
 	.string "it will turn sneaky!$"
 
+<<<<<<< HEAD
 BattleFrontier_Lounge5_Text_NatureGirlHasty::
 	.string "Hmhm…\p"
 	.string "This one says it likes to battle!\n"
@@ -136,17 +149,31 @@ BattleFrontier_Lounge5_Text_NatureGirlJolly::
 	.string "it will worry about itself!$"
 
 BattleFrontier_Lounge5_Text_NatureGirlModest::
+=======
+BattleFrontier_Lounge5_Text_NatureGirlDefenseHighAttackLow::
+	.string "Hmhm…\p"
+	.string "This one says it looks after itself!\n"
+	.string "But if it gets enough ouchies,\l"
+	.string "it will hit back!$"
+
+BattleFrontier_Lounge5_Text_NatureGirlDefenseHighDefenseLow::
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.string "Hmhm…\p"
 	.string "This one says it looks after itself!\n"
 	.string "It says it worries about itself whether\l"
 	.string "or not it has a lot of ouchies!$"
 
+<<<<<<< HEAD
 BattleFrontier_Lounge5_Text_NatureGirlMild::
+=======
+BattleFrontier_Lounge5_Text_NatureGirlDefenseHighSupportLow::
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.string "Hmhm…\p"
 	.string "This one says it looks after itself!\n"
 	.string "But if it gets enough ouchies,\l"
 	.string "it will turn sneaky!$"
 
+<<<<<<< HEAD
 BattleFrontier_Lounge5_Text_NatureGirlBashful::
 	.string "Hmhm…\p"
 	.string "This one says it looks after itself!\n"
@@ -154,11 +181,27 @@ BattleFrontier_Lounge5_Text_NatureGirlBashful::
 	.string "if it has a lot of ouchies!$"
 
 BattleFrontier_Lounge5_Text_NatureGirlRash::
+=======
+BattleFrontier_Lounge5_Text_NatureGirlSupportHighAttackLow::
+	.string "Hmhm…\p"
+	.string "This one says it likes to be sneaky!\n"
+	.string "But if it gets enough ouchies,\l"
+	.string "it will hit back!$"
+
+BattleFrontier_Lounge5_Text_NatureGirlSupportHighDefenseLow::
+	.string "Hmhm…\p"
+	.string "This one says it likes to be sneaky!\n"
+	.string "But if it gets enough ouchies,\l"
+	.string "it will worry about itself!$"
+
+BattleFrontier_Lounge5_Text_NatureGirlSupportHighSupportLow::
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.string "Hmhm…\p"
 	.string "This one says it likes to be sneaky!\n"
 	.string "It says it likes to be sneaky even\l"
 	.string "if it has a lot of ouchies!$"
 
+<<<<<<< HEAD
 BattleFrontier_Lounge5_Text_NatureGirlCalm::
 	.string "Hmhm…\p"
 	.string "This one says it looks after itself!\n"
@@ -183,6 +226,8 @@ BattleFrontier_Lounge5_Text_NatureGirlCareful::
 	.string "But if it gets enough ouchies,\l"
 	.string "it will turn sneaky!$"
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 BattleFrontier_Lounge5_Text_NatureGirlEgg::
 	.string "That's silly! An EGG is asleep!\n"
 	.string "I can't talk to it!$"

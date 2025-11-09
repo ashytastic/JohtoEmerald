@@ -8,7 +8,11 @@ static void STWI_stop_timer(void);
 static s32 STWI_restart_Command(void);
 static s32 STWI_reset_ClockCounter(void);
 
+<<<<<<< HEAD
 struct STWIStatus *gSTWIStatus;
+=======
+COMMON_DATA struct STWIStatus *gSTWIStatus = NULL;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 void STWI_init_all(struct RfuIntrStruct *interruptStruct, IntrFunc *interrupt, bool8 copyInterruptToRam)
 {

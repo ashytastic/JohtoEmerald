@@ -48,15 +48,25 @@ SealedChamber_OuterRoom_Braille_Comma:
 
 SealedChamber_OuterRoom_Braille_DigHere:
 	brailleformat 7, 4, 23, 15, 10, 7
+<<<<<<< HEAD
 	.braille "SWEET SCENT\n"
 	.braille "HERE.$"
+=======
+	.braille "DIG HERE.$"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 SealedChamber_InnerRoom_Braille_FirstWailordLastRelicanth:
 	brailleformat 0, 0, 29, 19, 3, 3
 	.braille "FIRST COMES\n"
+<<<<<<< HEAD
 	.braille "MAGNEZONE.\n"
 	.braille "LAST COMES\n"
 	.braille "VIBRAVA.$"
+=======
+	.braille "WAILORD.\n"
+	.braille "LAST COMES\n"
+	.braille "RELICANTH.$"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 SealedChamber_InnerRoom_Braille_InThisCaveWeHaveLived:
 	brailleformat 2, 0, 26, 19, 5, 3
@@ -116,6 +126,7 @@ AncientTomb_Braille_ShineInTheMiddle:
 	.braille "INHERIT OUR\n"
 	.braille "WILL, SHINE\n"
 	.braille "IN THE MIDDLE.$"
+<<<<<<< HEAD
 
 Regieleki_Braille_Sapphire:
 	brailleformat 3, 0, 25, 19, 6, 3
@@ -137,3 +148,5 @@ Regigigas_Braille_Text:
 	.braille "DEFEATED.\n"
 	.braille "YOU ARE\n"
 	.braille "CHAMPION.$"
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

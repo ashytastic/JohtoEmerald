@@ -1,9 +1,25 @@
+<<<<<<< HEAD
 .macro def_special ptr
 .global SPECIAL_\ptr
 .set SPECIAL_\ptr, __special__
 .set __special__, __special__ + 1
 	.4byte \ptr
 	.endm
+=======
+@ 'requests_effects' should be set to 1 if the special contains a call
+@ to 'Script_RequestEffects', which allows it to be analyzed with
+@ 'RunScriptImmediatelyUntilEffect'.
+.macro def_special ptr:req, requests_effects=0
+.global SPECIAL_\ptr
+.set SPECIAL_\ptr, __special__
+.set __special__, __special__ + 1
+	.if \requests_effects == 0
+	.4byte \ptr
+	.else
+	.4byte \ptr + ROM_SIZE
+	.endif
+.endm
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 .set __special__, 0
 		.align 2
@@ -142,6 +158,7 @@ gSpecials::
 	def_special BufferDeepLinkPhrase
 	def_special GetDewfordHallPaintingNameIndex
 	def_special SwapRegisteredBike
+<<<<<<< HEAD
 	def_special CalculatePlayerPartyCount 		@ tx_randomizer_and_challenges
 	def_special GetMaxPartySize 					@ tx_randomizer_and_challenges
 	def_special IsPokecenterChallengeActivated 	@ tx_randomizer_and_challenges
@@ -149,6 +166,9 @@ gSpecials::
 	def_special IsRandomItemsActivated 			@ tx_randomizer_and_challenges
 	def_special RandomItem						@ tx_randomizer_and_challenges
 	def_special RandomItemHidden				@ tx_randomizer_and_challenges
+=======
+	def_special CalculatePlayerPartyCount
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	def_special CountPartyNonEggMons
 	def_special CountPartyAliveNonEggMons_IgnoreVar0x8004Slot
 	def_special ShouldReadyContestArtist
@@ -303,7 +323,11 @@ gSpecials::
 	def_special WaitWeather
 	def_special BufferEReaderTrainerName
 	def_special GetSlotMachineId
+<<<<<<< HEAD
 	def_special GetPlayerFacingDirection
+=======
+	def_special GetPlayerFacingDirection, requests_effects=TRUE
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	def_special FoundAbandonedShipRoom1Key
 	def_special FoundAbandonedShipRoom2Key
 	def_special FoundAbandonedShipRoom4Key
@@ -492,7 +516,10 @@ gSpecials::
 	def_special CloseBattleFrontierTutorWindow
 	def_special ScrollableMultichoice_RedrawPersistentMenu
 	def_special ChooseMonForMoveTutor
+<<<<<<< HEAD
 	def_special GetBattleFrontierTutorMoveIndex
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	def_special ScrollableMultichoice_ClosePersistentMenu
 	def_special DoDeoxysRockInteraction
 	def_special SetDeoxysRockPalette
@@ -541,6 +568,7 @@ gSpecials::
 	def_special RemoveRecordsWindow
 	def_special CloseDeptStoreElevatorWindow
 	def_special TrySetBattleTowerLinkType
+<<<<<<< HEAD
 	def_special DoSlidingPuzzle
 	def_special SetHpEvs
 	def_special SetAtkEvs
@@ -585,3 +613,28 @@ gSpecials::
 	def_special DoPokemonLeagueLightingEffect
 	def_special SetVermilionTrashCans
 	def_special SwitchMonAbility
+=======
+	def_special TrySpecialOverworldEvo
+	def_special GetNumberSprayStrength
+	def_special GetSprayId
+	def_special GetLastUsedSprayType
+	def_special TrySkyBattle
+	def_special VsSeekerResetObjectMovementAfterChargeComplete
+	def_special VsSeekerFreezeObjectsAfterChargeComplete
+	def_special PlayerHasMulch
+	def_special Bag_ChooseMulch
+	def_special ObjectEventInteractionApplyMulch
+	def_special ObjectEventInteractionPullBerryWeed
+	def_special ObjectEventInteractionClearBerryPests
+	def_special ObjectEventInteractionBerryHasWeed
+	def_special ObjectEventInteractionBerryHasPests
+	def_special CanWaterBerryPlot
+	def_special Script_GetChosenMonOffensiveEVs
+	def_special Script_GetChosenMonDefensiveEVs
+	def_special Script_GetChosenMonOffensiveIVs
+	def_special Script_GetChosenMonDefensiveIVs
+	def_special UseBlankMessageToCancelPokemonPic
+	def_special EnterCode
+	def_special GetCodeFeedback
+	def_special SetHiddenNature
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

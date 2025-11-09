@@ -22,6 +22,11 @@ enum
     CONDITION_SEARCH_FUNC_SELECT_MON,
 };
 
+<<<<<<< HEAD
+=======
+static const u8 gText_NumberIndex[] = _("No. {DYNAMIC 0}");
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 struct Pokenav_SearchResults
 {
     u32 (*callback)(struct Pokenav_SearchResults *);
@@ -78,8 +83,13 @@ static const LoopedTask sConditionSearchLoopedTaskFuncs[] =
 };
 
 static const u16 sConditionSearchResultFramePal[] = INCBIN_U16("graphics/pokenav/condition/search_results.gbapal");
+<<<<<<< HEAD
 static const u32 sConditionSearchResultTiles[] = INCBIN_U32("graphics/pokenav/condition/search_results.4bpp.lz");
 static const u32 sConditionSearchResultTilemap[] = INCBIN_U32("graphics/pokenav/condition/search_results.bin.lz");
+=======
+static const u32 sConditionSearchResultTiles[] = INCBIN_U32("graphics/pokenav/condition/search_results.4bpp.smol");
+static const u32 sConditionSearchResultTilemap[] = INCBIN_U32("graphics/pokenav/condition/search_results.bin.smolTM");
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static const u16 sListBg_Pal[] = INCBIN_U16("graphics/pokenav/condition/search_results_list.gbapal");
 
 static const struct BgTemplate sConditionSearchResultBgTemplates[] =
@@ -184,6 +194,7 @@ static bool32 HandleConditionSearchInput_WaitSetup(struct Pokenav_SearchResults 
 static u32 HandleConditionSearchInput(struct Pokenav_SearchResults *menu)
 {
     if (JOY_REPEAT(DPAD_UP))
+<<<<<<< HEAD
         return CONDITION_SEARCH_FUNC_MOVE_UP;
     else if (JOY_REPEAT(DPAD_DOWN))
         return CONDITION_SEARCH_FUNC_MOVE_DOWN;
@@ -191,6 +202,23 @@ static u32 HandleConditionSearchInput(struct Pokenav_SearchResults *menu)
         return CONDITION_SEARCH_FUNC_PAGE_UP;
     else if (JOY_NEW(DPAD_RIGHT))
         return CONDITION_SEARCH_FUNC_PAGE_DOWN;
+=======
+    {
+        return CONDITION_SEARCH_FUNC_MOVE_UP;
+    }
+    else if (JOY_REPEAT(DPAD_DOWN))
+    {
+        return CONDITION_SEARCH_FUNC_MOVE_DOWN;
+    }
+    else if (JOY_NEW(DPAD_LEFT))
+    {
+        return CONDITION_SEARCH_FUNC_PAGE_UP;
+    }
+    else if (JOY_NEW(DPAD_RIGHT))
+    {
+        return CONDITION_SEARCH_FUNC_PAGE_DOWN;
+    }
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     else if (JOY_NEW(B_BUTTON))
     {
         // Exiting back to main search menu
@@ -207,7 +235,13 @@ static u32 HandleConditionSearchInput(struct Pokenav_SearchResults *menu)
         return CONDITION_SEARCH_FUNC_SELECT_MON;
     }
     else
+<<<<<<< HEAD
         return CONDITION_SEARCH_FUNC_NONE;
+=======
+    {
+        return CONDITION_SEARCH_FUNC_NONE;
+    }
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static u32 ReturnToConditionSearchList(struct Pokenav_SearchResults *menu)
@@ -228,27 +262,43 @@ static u32 GetReturningFromGraph(void)
 
 static struct PokenavMonListItem * GetSearchResultsMonDataList(void)
 {
+<<<<<<< HEAD
     struct Pokenav_SearchResults * menu = GetSubstructPtr(POKENAV_SUBSTRUCT_CONDITION_SEARCH_RESULTS);
+=======
+    struct Pokenav_SearchResults *menu = GetSubstructPtr(POKENAV_SUBSTRUCT_CONDITION_SEARCH_RESULTS);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     return menu->monList->monData;
 }
 
 static u16 GetSearchResultsMonListCount(void)
 {
+<<<<<<< HEAD
     struct Pokenav_SearchResults * menu = GetSubstructPtr(POKENAV_SUBSTRUCT_CONDITION_SEARCH_RESULTS);
+=======
+    struct Pokenav_SearchResults *menu = GetSubstructPtr(POKENAV_SUBSTRUCT_CONDITION_SEARCH_RESULTS);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     return menu->monList->listCount;
 }
 
 // data below has been set by ConvertConditionsToListRanks
 static s32 GetSearchResultsSelectedMonRank(void)
 {
+<<<<<<< HEAD
     struct Pokenav_SearchResults * menu = GetSubstructPtr(POKENAV_SUBSTRUCT_CONDITION_SEARCH_RESULTS);
+=======
+    struct Pokenav_SearchResults *menu = GetSubstructPtr(POKENAV_SUBSTRUCT_CONDITION_SEARCH_RESULTS);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     s32 i = PokenavList_GetSelectedIndex();
     return menu->monList->monData[i].data;
 }
 
 static u16 GetSearchResultsCurrentListIndex(void)
 {
+<<<<<<< HEAD
     struct Pokenav_SearchResults * menu = GetSubstructPtr(POKENAV_SUBSTRUCT_CONDITION_SEARCH_RESULTS);
+=======
+    struct Pokenav_SearchResults *menu = GetSubstructPtr(POKENAV_SUBSTRUCT_CONDITION_SEARCH_RESULTS);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     return menu->monList->currIndex;
 }
 
@@ -261,7 +311,11 @@ static u32 BuildPartyMonSearchResults(s32 state)
 {
     s32 i;
     struct PokenavMonListItem item;
+<<<<<<< HEAD
     struct Pokenav_SearchResults * menu = GetSubstructPtr(POKENAV_SUBSTRUCT_CONDITION_SEARCH_RESULTS);
+=======
+    struct Pokenav_SearchResults *menu = GetSubstructPtr(POKENAV_SUBSTRUCT_CONDITION_SEARCH_RESULTS);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     menu->monList->listCount = 0;
     menu->monList->currIndex = 0;
@@ -284,7 +338,11 @@ static u32 BuildPartyMonSearchResults(s32 state)
 
 static u32 InitBoxMonSearchResults(s32 state)
 {
+<<<<<<< HEAD
     struct Pokenav_SearchResults * menu = GetSubstructPtr(POKENAV_SUBSTRUCT_CONDITION_SEARCH_RESULTS);
+=======
+    struct Pokenav_SearchResults *menu = GetSubstructPtr(POKENAV_SUBSTRUCT_CONDITION_SEARCH_RESULTS);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     menu->monId = 0;
     menu->boxId = 0;
     return LT_INC_AND_CONTINUE;
@@ -292,7 +350,11 @@ static u32 InitBoxMonSearchResults(s32 state)
 
 static u32 BuildBoxMonSearchResults(s32 state)
 {
+<<<<<<< HEAD
     struct Pokenav_SearchResults * menu = GetSubstructPtr(POKENAV_SUBSTRUCT_CONDITION_SEARCH_RESULTS);
+=======
+    struct Pokenav_SearchResults *menu = GetSubstructPtr(POKENAV_SUBSTRUCT_CONDITION_SEARCH_RESULTS);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     s32 boxId = menu->boxId;
     s32 monId = menu->monId;
     s32 boxCount = 0;
@@ -330,7 +392,11 @@ static u32 BuildBoxMonSearchResults(s32 state)
 // The condition value in data is then overwritten with their ranking.
 static u32 ConvertConditionsToListRanks(s32 state)
 {
+<<<<<<< HEAD
     struct Pokenav_SearchResults * menu = GetSubstructPtr(POKENAV_SUBSTRUCT_CONDITION_SEARCH_RESULTS);
+=======
+    struct Pokenav_SearchResults *menu = GetSubstructPtr(POKENAV_SUBSTRUCT_CONDITION_SEARCH_RESULTS);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     s32 listCount = menu->monList->listCount;
     s32 prevCondition = menu->monList->monData[0].data;
     s32 i;
@@ -688,12 +754,22 @@ static void CreateSearchResultsList(void)
     CreatePokenavList(&sConditionSearchResultBgTemplates[1], &template, 0);
 }
 
+<<<<<<< HEAD
 static void BufferSearchMonListItem(struct PokenavMonListItem * item, u8 * dest)
 {
     u8 gender;
     u8 level;
     u8 * s;
     const u8 * genderStr;
+=======
+static void BufferSearchMonListItem(struct PokenavMonListItem *item, u8 *dest)
+{
+    u8 gender;
+    u8 level;
+    u8 *s, *end;
+    const u8 *genderStr;
+    u32 fontId;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     // Mon is in party
     if (item->boxId == TOTAL_BOXES_COUNT)
@@ -706,14 +782,21 @@ static void BufferSearchMonListItem(struct PokenavMonListItem * item, u8 * dest)
     // Mon is in PC
     else
     {
+<<<<<<< HEAD
         struct BoxPokemon * mon = GetBoxedMonPtr(item->boxId, item->monId);
+=======
+        struct BoxPokemon *mon = GetBoxedMonPtr(item->boxId, item->monId);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         gender = GetBoxMonGender(mon);
         level = GetLevelFromBoxMonExp(mon);
         GetBoxMonData(mon, MON_DATA_NICKNAME, gStringVar3);
     }
 
+<<<<<<< HEAD
     StringGet_Nickname(gStringVar3);
     dest = GetStringClearToWidth(dest, FONT_NORMAL, gStringVar3, 60);
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     switch (gender)
     {
     default:
@@ -726,6 +809,14 @@ static void BufferSearchMonListItem(struct PokenavMonListItem * item, u8 * dest)
         genderStr = sText_FemaleSymbol;
         break;
     }
+<<<<<<< HEAD
+=======
+    end = StringGet_Nickname(gStringVar3);
+    fontId = GetFontIdToFit(gStringVar3, FONT_NORMAL, 0, 60);
+    WrapFontIdToFit(gStringVar3, end, FONT_NORMAL, 60);
+    dest = GetStringClearToWidth(dest, fontId, gStringVar3, 60);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     s = StringCopy(gStringVar1, genderStr);
     *s++ = CHAR_SLASH;
     *s++ = CHAR_EXTRA_SYMBOL;

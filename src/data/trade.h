@@ -642,12 +642,21 @@ static const u8 sGbaAffineMapCable[] = INCBIN_U8("graphics/trade/gba_affine_map_
 static const u8 sGbaAffineMapWireless[] = INCBIN_U8("graphics/trade/gba_affine_map_wireless.bin");
 static const u16 sGbaMapWireless[] = INCBIN_U16("graphics/trade/gba_map_wireless.bin");
 static const u16 sGbaMapCable[] = INCBIN_U16("graphics/trade/gba_map_cable.bin");
+<<<<<<< HEAD
 static const u32 sWirelessCloseup_Map[] = INCBIN_U32("graphics/trade/crossing_highlight_wireless.bin.lz");
 static const u16 sWirelessSignalSend_Pal[] = INCBIN_U16("graphics/trade/wireless_signal_send.gbapal");
 static const u16 sWirelessSignalRecv_Pal[] = INCBIN_U16("graphics/trade/wireless_signal_receive.gbapal");
 static const u16 sWirelessSignalNone_Pal[] = INCBIN_U16("graphics/trade/wireless_signal_none.gbapal");
 static const u32 sWirelessSignal_Gfx[] = INCBIN_U32("graphics/trade/wireless_signal.4bpp.lz");
 static const u32 sWirelessSignal_Tilemap[] = INCBIN_U32("graphics/trade/wireless_signal.bin.lz");
+=======
+static const u32 sWirelessCloseup_Map[] = INCBIN_U32("graphics/trade/crossing_highlight_wireless.bin.smolTM");
+static const u16 sWirelessSignalSend_Pal[] = INCBIN_U16("graphics/trade/wireless_signal_send.gbapal");
+static const u16 sWirelessSignalRecv_Pal[] = INCBIN_U16("graphics/trade/wireless_signal_receive.gbapal");
+static const u16 sWirelessSignalNone_Pal[] = INCBIN_U16("graphics/trade/wireless_signal_none.gbapal");
+static const u32 sWirelessSignal_Gfx[] = INCBIN_U32("graphics/trade/wireless_signal.4bpp.smol");
+static const u32 sWirelessSignal_Tilemap[] = INCBIN_U32("graphics/trade/wireless_signal.bin.smolTM");
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 static const struct OamData sOamData_Pokeball =
 {
@@ -982,6 +991,7 @@ static const union AffineAnimCmd *const sAffineAnims_CrossingMonPics[] =
     sAffineAnim_CrossingMonPic
 };
 
+<<<<<<< HEAD
 
 /*
     .personality = 0x84,
@@ -993,21 +1003,31 @@ static const union AffineAnimCmd *const sAffineAnims_CrossingMonPics[] =
     else
         return MON_MALE;
 */
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static const struct InGameTrade sIngameTrades[] =
 {
     [INGAME_TRADE_SEEDOT] =
     {
+<<<<<<< HEAD
         .nickname = _("BUDDY"),
         .species = SPECIES_BUDEW,
         .ivs31 = {31, 31, 31, 31, 31, 31},
         .ivs = {5, 4, 5, 4, 4, 4},
         .abilityNum = 0,
+=======
+        .nickname = _("DOTS"),
+        .species = SPECIES_SEEDOT,
+        .ivs = {5, 4, 5, 4, 4, 4},
+        .abilityNum = 1,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .otId = 38726,
         .conditions = {30, 5, 5, 5, 5},
         .personality = 0x84,
         .heldItem = ITEM_CHESTO_BERRY,
         .mailNum = -1,
         .otName = _("KOBE"),
+<<<<<<< HEAD
         .otGender = FEMALE,
         .sheen = 10,
         .requestedSpecies = SPECIES_RALTS
@@ -1028,12 +1048,36 @@ static const struct InGameTrade sIngameTrades[] =
         .otGender = MALE,
         .sheen = 10,
         .requestedSpecies = SPECIES_BELLSPROUT
+=======
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_RALTS
+    },
+    [INGAME_TRADE_PLUSLE] =
+    {
+        .nickname = _("PLUSES"),
+        .species = SPECIES_PLUSLE,
+        .ivs = {4, 4, 4, 5, 5, 4},
+        .abilityNum = 0,
+        .otId = 73996,
+        .conditions = {5, 5, 30, 5, 5},
+        .personality = 0x6F,
+        .heldItem = ITEM_WOOD_MAIL,
+        .mailNum = 0,
+        .otName = _("ROMAN"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_VOLBEAT
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     [INGAME_TRADE_HORSEA] =
     {
         .nickname = _("SEASOR"),
         .species = SPECIES_HORSEA,
+<<<<<<< HEAD
         .ivs31 = {31, 31, 31, 31, 31, 31},
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .ivs = {5, 4, 4, 4, 5, 4},
         .abilityNum = 0,
         .otId = 46285,
@@ -1050,7 +1094,10 @@ static const struct InGameTrade sIngameTrades[] =
     {
         .nickname = _("MEOWOW"),
         .species = SPECIES_MEOWTH,
+<<<<<<< HEAD
         .ivs31 = {31, 31, 31, 31, 31, 31},
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .ivs = {4, 5, 4, 5, 4, 4},
         .abilityNum = 0,
         .otId = 91481,
@@ -1062,6 +1109,7 @@ static const struct InGameTrade sIngameTrades[] =
         .otGender = FEMALE,
         .sheen = 10,
         .requestedSpecies = SPECIES_SKITTY
+<<<<<<< HEAD
     },
     [INGAME_TRADE_MACHOP] =
     {
@@ -1215,6 +1263,8 @@ static const struct InGameTrade sIngameTrades[] =
         .otGender = MALE,
         .sheen = 10,
         .requestedSpecies = SPECIES_MEOWTH
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
 };
 

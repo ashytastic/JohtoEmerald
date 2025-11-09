@@ -1415,7 +1415,11 @@ const struct Decoration gDecorations[] =
         .description = DecorDesc_WAILMER_DOLL,
         .tiles = DecorGfx_WAILMER_DOLL,
     },
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     [DECOR_REGIROCK_DOLL] =
     {
         .id = DECOR_REGIROCK_DOLL,

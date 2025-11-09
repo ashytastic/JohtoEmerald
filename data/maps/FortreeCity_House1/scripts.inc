@@ -5,7 +5,11 @@ FortreeCity_House1_EventScript_Trader::
 	lock
 	faceplayer
 	goto_if_set FLAG_FORTREE_NPC_TRADE_COMPLETED, FortreeCity_House1_EventScript_TradeCompleted
+<<<<<<< HEAD
 	setvar VAR_0x8008, INGAME_TRADE_ONIX
+=======
+	setvar VAR_0x8008, INGAME_TRADE_PLUSLE
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	copyvar VAR_0x8004, VAR_0x8008
 	specialvar VAR_RESULT, GetInGameTradeSpeciesInfo
 	copyvar VAR_0x8009, VAR_RESULT
@@ -67,9 +71,14 @@ FortreeCity_House1_Text_YouWillTradeWontYou:
 	.string "…Uh… Did you hear that?\n"
 	.string "My shout from the bottom of my heart?\p"
 	.string "Having heard that, you will trade\n"
+<<<<<<< HEAD
 	.string "your {STR_VAR_1} for my {STR_VAR_2},\p"
 	.string "won't you? It's a super rare POKéMON\n"
 	.string "from another region!$"
+=======
+	.string "your {STR_VAR_1} for my {STR_VAR_2},\l"
+	.string "won't you?$"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 FortreeCity_House1_Text_MonYouTakeCare:
 	.string "Oh, yeah, right on!\p"

@@ -5,8 +5,15 @@
 #include "m4a.h"
 #include "main.h"
 #include "pokemon.h"
+<<<<<<< HEAD
 #include "constants/songs.h"
 #include "task.h"
+=======
+#include "constants/cries.h"
+#include "constants/songs.h"
+#include "task.h"
+#include "test_runner.h"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 struct Fanfare
 {
@@ -14,7 +21,11 @@ struct Fanfare
     u16 duration;
 };
 
+<<<<<<< HEAD
 EWRAM_DATA struct MusicPlayerInfo* gMPlay_PokemonCry = NULL;
+=======
+EWRAM_DATA struct MusicPlayerInfo *gMPlay_PokemonCry = NULL;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 EWRAM_DATA u8 gPokemonCryBGMDuckingCounter = 0;
 
 static u16 sCurrentMapMusic;
@@ -23,13 +34,18 @@ static u8 sMapMusicState;
 static u8 sMapMusicFadeInSpeed;
 static u16 sFanfareCounter;
 
+<<<<<<< HEAD
 bool8 gDisableMusic;
+=======
+COMMON_DATA bool8 gDisableMusic = 0;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 extern struct ToneData gCryTable[];
 extern struct ToneData gCryTable_Reverse[];
 
 static void Task_Fanfare(u8 taskId);
 static void CreateFanfareTask(void);
+<<<<<<< HEAD
 static void Task_DuckBGMForPokemonCry(u8 taskId);
 static void RestoreBGMVolumeAfterPokemonCry(void);
 
@@ -155,6 +171,29 @@ static const struct Fanfare sFanfaresHGSS[] = {
     [FANFARE_OBTAIN_B_POINTS]          = { MUS_OBTAIN_B_POINTS         , 313 },
     [FANFARE_REGISTER_MATCH_CALL]      = { MUS_REGISTER_MATCH_CALL     , 135 },
     [FANFARE_OBTAIN_SYMBOL]            = { MUS_OBTAIN_SYMBOL           , 318 },
+=======
+static void RestoreBGMVolumeAfterPokemonCry(void);
+
+static const struct Fanfare sFanfares[] = {
+    [FANFARE_LEVEL_UP]            = { MUS_LEVEL_UP,             80 },
+    [FANFARE_OBTAIN_ITEM]         = { MUS_OBTAIN_ITEM,         160 },
+    [FANFARE_EVOLVED]             = { MUS_EVOLVED,             220 },
+    [FANFARE_OBTAIN_TMHM]         = { MUS_OBTAIN_TMHM,         220 },
+    [FANFARE_HEAL]                = { MUS_HEAL,                160 },
+    [FANFARE_OBTAIN_BADGE]        = { MUS_OBTAIN_BADGE,        340 },
+    [FANFARE_MOVE_DELETED]        = { MUS_MOVE_DELETED,        180 },
+    [FANFARE_OBTAIN_BERRY]        = { MUS_OBTAIN_BERRY,        120 },
+    [FANFARE_AWAKEN_LEGEND]       = { MUS_AWAKEN_LEGEND,       710 },
+    [FANFARE_SLOTS_JACKPOT]       = { MUS_SLOTS_JACKPOT,       250 },
+    [FANFARE_SLOTS_WIN]           = { MUS_SLOTS_WIN,           150 },
+    [FANFARE_TOO_BAD]             = { MUS_TOO_BAD,             160 },
+    [FANFARE_RG_POKE_FLUTE]       = { MUS_RG_POKE_FLUTE,       450 },
+    [FANFARE_RG_OBTAIN_KEY_ITEM]  = { MUS_RG_OBTAIN_KEY_ITEM,  170 },
+    [FANFARE_RG_DEX_RATING]       = { MUS_RG_DEX_RATING,       196 },
+    [FANFARE_OBTAIN_B_POINTS]     = { MUS_OBTAIN_B_POINTS,     313 },
+    [FANFARE_OBTAIN_SYMBOL]       = { MUS_OBTAIN_SYMBOL,       318 },
+    [FANFARE_REGISTER_MATCH_CALL] = { MUS_REGISTER_MATCH_CALL, 135 },
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 void InitMapMusic(void)
@@ -283,6 +322,7 @@ void PlayFanfareByFanfareNum(u8 fanfareNum)
 {
     u16 songNum;
     m4aMPlayStop(&gMPlayInfo_BGM);
+<<<<<<< HEAD
     if (gSaveBlock2Ptr->optionsSoundEffects == 0)
     {
         songNum = sFanfares[fanfareNum].songNum;
@@ -298,6 +338,10 @@ void PlayFanfareByFanfareNum(u8 fanfareNum)
         songNum = sFanfaresHGSS[fanfareNum].songNum;
         sFanfareCounter = sFanfaresHGSS[fanfareNum].duration;
     }
+=======
+    songNum = sFanfares[fanfareNum].songNum;
+    sFanfareCounter = sFanfares[fanfareNum].duration;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     m4aSongNumStart(songNum);
 }
 
@@ -322,6 +366,7 @@ bool8 WaitFanfare(bool8 stop)
 // Unused
 void StopFanfareByFanfareNum(u8 fanfareNum)
 {
+<<<<<<< HEAD
     if (gSaveBlock2Ptr->optionsSoundEffects == 0)
     {
         m4aSongNumStop(sFanfares[fanfareNum].songNum);
@@ -334,11 +379,15 @@ void StopFanfareByFanfareNum(u8 fanfareNum)
     {
         m4aSongNumStop(sFanfaresHGSS[fanfareNum].songNum);
     }
+=======
+    m4aSongNumStop(sFanfares[fanfareNum].songNum);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 void PlayFanfare(u16 songNum)
 {
     s32 i;
+<<<<<<< HEAD
     if (gSaveBlock2Ptr->optionsSoundEffects == 0)
     {
         for (i = 0; (u32)i < ARRAY_COUNT(sFanfares); i++)
@@ -375,6 +424,18 @@ void PlayFanfare(u16 songNum)
                 }
         }
     }
+=======
+    for (i = 0; (u32)i < ARRAY_COUNT(sFanfares); i++)
+    {
+        if (sFanfares[i].songNum == songNum)
+        {
+            PlayFanfareByFanfareNum(i);
+            CreateFanfareTask();
+            return;
+        }
+    }
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     // songNum is not in sFanfares
     // Play first fanfare in table instead
     PlayFanfareByFanfareNum(0);
@@ -390,6 +451,16 @@ bool8 IsFanfareTaskInactive(void)
 
 static void Task_Fanfare(u8 taskId)
 {
+<<<<<<< HEAD
+=======
+    if (gTestRunnerHeadless)
+    {
+        DestroyTask(taskId);
+        sFanfareCounter = 0;
+        return;
+    }
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (sFanfareCounter)
     {
         sFanfareCounter--;
@@ -413,6 +484,7 @@ void FadeInNewBGM(u16 songNum, u8 speed)
         songNum = 0;
     if (songNum == MUS_NONE)
         songNum = 0;
+<<<<<<< HEAD
     if (gSaveBlock2Ptr->optionsMusicOnOff == 0)
     {
         m4aSongNumStart(songNum);
@@ -429,6 +501,13 @@ void FadeInNewBGM(u16 songNum, u8 speed)
         m4aSongNumStop(0);
         m4aMPlayFadeIn(0, 0);
     }
+=======
+    m4aSongNumStart(songNum);
+    m4aMPlayImmInit(&gMPlayInfo_BGM);
+    m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 0);
+    m4aSongNumStop(songNum);
+    m4aMPlayFadeIn(&gMPlayInfo_BGM, speed);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 void FadeOutBGMTemporarily(u8 speed)
@@ -536,6 +615,7 @@ void PlayCryInternal(u16 species, s8 pan, s8 volume, u8 priority, u8 mode)
     u32 length;
     u32 pitch;
     u32 chorus;
+<<<<<<< HEAD
     u32 index;
     u8 table;
 
@@ -544,6 +624,12 @@ void PlayCryInternal(u16 species, s8 pan, s8 volume, u8 priority, u8 mode)
     // Set default values
     // May be overridden depending on mode.
     length = 140;
+=======
+
+    // Set default values
+    // May be overridden depending on mode.
+    length = 210;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     reverse = FALSE;
     release = 0;
     pitch = 15360;
@@ -616,6 +702,15 @@ void PlayCryInternal(u16 species, s8 pan, s8 volume, u8 priority, u8 mode)
     case CRY_MODE_WEAK:
         pitch = 15000;
         break;
+<<<<<<< HEAD
+=======
+    case CRY_MODE_DYNAMAX:
+        length = 255;
+        release = 255;
+        pitch = 12150;
+        chorus = 200;
+        break;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
 
     SetPokemonCryVolume(volume);
@@ -627,6 +722,7 @@ void PlayCryInternal(u16 species, s8 pan, s8 volume, u8 priority, u8 mode)
     SetPokemonCryChorus(chorus);
     SetPokemonCryPriority(priority);
 
+<<<<<<< HEAD
     // This is a fancy way to get a cry of a Pokémon.
     // It creates 4 sets of 128 mini cry tables.
     // If you wish to expand Pokémon, you need to
@@ -655,6 +751,14 @@ void PlayCryInternal(u16 species, s8 pan, s8 volume, u8 priority, u8 mode)
     }
 
     #undef GET_CRY
+=======
+    enum PokemonCry cryId = GetCryIdBySpecies(species);
+    if (cryId != CRY_NONE)
+    {
+        cryId--;
+        gMPlay_PokemonCry = SetPokemonCryTone(reverse ? &gCryTable_Reverse[cryId] : &gCryTable[cryId]);
+    }
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 bool8 IsCryFinished(void)
@@ -702,7 +806,11 @@ bool8 IsCryPlaying(void)
         return FALSE;
 }
 
+<<<<<<< HEAD
 static void Task_DuckBGMForPokemonCry(u8 taskId)
+=======
+void Task_DuckBGMForPokemonCry(u8 taskId)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     if (gPokemonCryBGMDuckingCounter)
     {
@@ -729,6 +837,7 @@ void PlayBGM(u16 songNum)
         songNum = 0;
     if (songNum == MUS_NONE)
         songNum = 0;
+<<<<<<< HEAD
     if (gSaveBlock2Ptr->optionsMusicOnOff ==0)
     {
         m4aSongNumStart(songNum);
@@ -736,6 +845,11 @@ void PlayBGM(u16 songNum)
     else
         m4aSongNumStart(0);
 }
+=======
+    m4aSongNumStart(songNum);
+}
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 void PlaySE(u16 songNum)
 {
     m4aSongNumStart(songNum);

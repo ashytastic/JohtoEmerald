@@ -1,11 +1,18 @@
 Route130_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route130_OnTransition
+<<<<<<< HEAD
 	map_script MAP_SCRIPT_ON_RESUME, SetTimeEncounters
 	.byte 0
 
 Route130_OnTransition:
 	callnative SetTimeBasedEncounters
 	call_if_ge VAR_GARBAGEVAR, 4, Route130_EventScript_CheckSetAbnormalWeather
+=======
+	.byte 0
+
+Route130_OnTransition:
+	call_if_ge VAR_SOOTOPOLIS_CITY_STATE, 4, Route130_EventScript_CheckSetAbnormalWeather
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	specialvar VAR_RESULT, IsMirageIslandPresent
 	goto_if_eq VAR_RESULT, TRUE, Route130_EventScript_SetMirageIslandLayout
 @ Mirage Island isn't currently visible, hide any objects on the island. Only the first flag is actually associated with anything.

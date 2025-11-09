@@ -7,7 +7,10 @@
 #include "metatile_behavior.h"
 #include "overworld.h"
 #include "sound.h"
+<<<<<<< HEAD
 #include "constants/map_types.h"
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include "constants/songs.h"
 
 // this file's functions
@@ -62,6 +65,7 @@ static void Bike_SetBikeStill(void);
     bike does not. This is because the Acro needs to know the button inputs
     for its complex tricks and actions.
 */
+<<<<<<< HEAD
 //HnS added for cycling road
 bool8 ShouldForceCyclingRoadDownward(void)
 {
@@ -74,6 +78,8 @@ bool8 ShouldForceCyclingRoadDownward(void)
     return MetatileBehavior_IsCyclingRoadPullDownTile(metatileBehavior);
 }
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 static void (*const sMachBikeTransitions[])(u8) =
 {
@@ -138,6 +144,7 @@ static const struct BikeHistoryInputInfo sAcroBikeTricksList[] =
 // code
 void MovePlayerOnBike(u8 direction, u16 newKeys, u16 heldKeys)
 {
+<<<<<<< HEAD
  if (ShouldForceCyclingRoadDownward() && heldKeys == 0)
     {
         // If B is held, disable slope forcing
@@ -154,6 +161,8 @@ void MovePlayerOnBike(u8 direction, u16 newKeys, u16 heldKeys)
             return;
         }
     }
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_MACH_BIKE)
         MovePlayerOnMachBike(direction, newKeys, heldKeys);
     else
@@ -170,7 +179,11 @@ static u8 GetMachBikeTransition(u8 *dirTraveling)
 {
     // if the dir updated before this function, get the relevent new direction to check later.
     u8 direction = GetPlayerMovementDirection();
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     // fix direction when moving on sideways stairs
     switch (direction)
     {
@@ -234,7 +247,11 @@ static void MachBikeTransition_TurnDirection(u8 direction)
         Bike_SetBikeStill();
     }
     else
+<<<<<<< HEAD
     {        
+=======
+    {
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         MachBikeTransition_FaceDirection(playerObjEvent->facingDirection);
     }
 }
@@ -274,9 +291,16 @@ static void MachBikeTransition_TrySpeedUp(u8 direction)
         }
         else
         {
+<<<<<<< HEAD
             if (ObjectMovingOnRockStairs(playerObjEvent, direction) && gPlayerAvatar.bikeFrameCounter > 1)
                 gPlayerAvatar.bikeFrameCounter--;
             
+=======
+            // we did not hit anything that can slow us down, so perform the advancement callback depending on the bikeFrameCounter and try to increase the mach bike's speed.
+            if (ObjectMovingOnRockStairs(playerObjEvent, direction) && gPlayerAvatar.bikeFrameCounter > 1)
+                gPlayerAvatar.bikeFrameCounter--;
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             sMachBikeSpeedCallbacks[gPlayerAvatar.bikeFrameCounter](direction);
             gPlayerAvatar.bikeSpeed = gPlayerAvatar.bikeFrameCounter + (gPlayerAvatar.bikeFrameCounter >> 1); // same as dividing by 2, but compiler is insistent on >> 1
             if (gPlayerAvatar.bikeFrameCounter < 2) // do not go faster than the last element in the mach bike array
@@ -320,6 +344,7 @@ static void MovePlayerOnAcroBike(u8 newDirection, u16 newKeys, u16 heldKeys)
 {
     sAcroBikeTransitions[CheckMovementInputAcroBike(&newDirection, newKeys, heldKeys)](newDirection);
 }
+<<<<<<< HEAD
 static u8 CheckMovementInputAcroBike(u8 *newDirection, u16 newKeys, u16 heldKeys)
 {
     u8 direction = GetPlayerMovementDirection(); // Get last real direction
@@ -339,11 +364,17 @@ static u8 CheckMovementInputAcroBike(u8 *newDirection, u16 newKeys, u16 heldKeys
 
 
 /* //HnS
+=======
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static u8 CheckMovementInputAcroBike(u8 *newDirection, u16 newKeys, u16 heldKeys)
 {
     return sAcroBikeInputHandlers[gPlayerAvatar.acroBikeState](newDirection, newKeys, heldKeys);
 }
+<<<<<<< HEAD
 */
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 static u8 AcroBikeHandleInputNormal(u8 *newDirection, u16 newKeys, u16 heldKeys)
 {
@@ -430,12 +461,22 @@ static u8 AcroBikeHandleInputWheelieStanding(u8 *newDirection, u16 newKeys, u16 
     struct ObjectEvent *playerObjEvent;
 
     direction = GetPlayerMovementDirection();
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
     gPlayerAvatar.runningState = NOT_MOVING;
 
     if (heldKeys & B_BUTTON)
+<<<<<<< HEAD
         gPlayerAvatar.bikeFrameCounter++;
+=======
+    {
+        gPlayerAvatar.bikeFrameCounter++;
+    }
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     else
     {
         // B button was released.
@@ -762,7 +803,11 @@ static void AcroBikeTransition_WheelieMoving(u8 direction)
         }
         return;
     }
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     PlayerWheelieMove(direction);
     gPlayerAvatar.runningState = MOVING;
 }
@@ -824,14 +869,22 @@ static void AcroBikeTransition_WheelieLoweringMoving(u8 direction)
 
     PlayerEndWheelieWhileMoving(direction);
 }
+<<<<<<< HEAD
 void Bike_TryAcroBikeHistoryUpdate(u16 newKeys, u16 heldKeys) {} //HnS
 /*
+=======
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 void Bike_TryAcroBikeHistoryUpdate(u16 newKeys, u16 heldKeys)
 {
     if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ACRO_BIKE)
         AcroBike_TryHistoryUpdate(newKeys, heldKeys);
 }
+<<<<<<< HEAD
 */
+=======
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static void AcroBike_TryHistoryUpdate(u16 newKeys, u16 heldKeys) // newKeys is unused
 {
     u8 direction = Bike_DPadToDirection(heldKeys);
@@ -933,11 +986,16 @@ static u8 Bike_DPadToDirection(u16 heldKeys)
 
 static u8 GetBikeCollision(u8 direction)
 {
+<<<<<<< HEAD
     u8 metatitleBehavior;
+=======
+    u8 metatileBehavior;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
     s16 x = playerObjEvent->currentCoords.x;
     s16 y = playerObjEvent->currentCoords.y;
     MoveCoords(direction, &x, &y);
+<<<<<<< HEAD
     metatitleBehavior = MapGridGetMetatileBehaviorAt(x, y);
     return GetBikeCollisionAt(playerObjEvent, x, y, direction, metatitleBehavior);
 }
@@ -945,11 +1003,24 @@ static u8 GetBikeCollision(u8 direction)
 static u8 GetBikeCollisionAt(struct ObjectEvent *objectEvent, s16 x, s16 y, u8 direction, u8 metatitleBehavior)
 {
     u8 collision = CheckForObjectEventCollision(objectEvent, x, y, direction, metatitleBehavior);
+=======
+    metatileBehavior = MapGridGetMetatileBehaviorAt(x, y);
+    return GetBikeCollisionAt(playerObjEvent, x, y, direction, metatileBehavior);
+}
+
+static u8 GetBikeCollisionAt(struct ObjectEvent *objectEvent, s16 x, s16 y, u8 direction, u8 metatileBehavior)
+{
+    u8 collision = CheckForObjectEventCollision(objectEvent, x, y, direction, metatileBehavior);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     if (collision > COLLISION_OBJECT_EVENT)
         return collision;
 
+<<<<<<< HEAD
     if (collision == COLLISION_NONE && IsRunningDisallowedByMetatile(metatitleBehavior))
+=======
+    if (collision == COLLISION_NONE && IsRunningDisallowedByMetatile(metatileBehavior))
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         collision = COLLISION_IMPASSABLE;
 
     if (collision)
@@ -960,7 +1031,11 @@ static u8 GetBikeCollisionAt(struct ObjectEvent *objectEvent, s16 x, s16 y, u8 d
 
 bool8 RS_IsRunningDisallowed(u8 tile)
 {
+<<<<<<< HEAD
     if (IsRunningDisallowedByMetatile(tile) == TRUE)
+=======
+    if (IsRunningDisallowedByMetatile(tile) != FALSE || gMapHeader.mapType == MAP_TYPE_INDOOR)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         return TRUE;
     else
         return FALSE;
@@ -1041,6 +1116,7 @@ bool8 IsPlayerNotUsingAcroBikeOnBumpySlope(void)
 
 void GetOnOffBike(u8 transitionFlags)
 {
+<<<<<<< HEAD
     gUnusedBikeCameraAheadPanback = FALSE;
 
     if (gPlayerAvatar.flags & (PLAYER_AVATAR_FLAG_MACH_BIKE | PLAYER_AVATAR_FLAG_ACRO_BIKE))
@@ -1051,15 +1127,27 @@ void GetOnOffBike(u8 transitionFlags)
             Overworld_ClearSavedMusic();
             Overworld_PlaySpecialMapMusic();
         }
+=======
+    if (gPlayerAvatar.flags & (PLAYER_AVATAR_FLAG_MACH_BIKE | PLAYER_AVATAR_FLAG_ACRO_BIKE))
+    {
+        SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_ON_FOOT);
+        Overworld_ClearSavedMusic();
+        Overworld_PlaySpecialMapMusic();
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
     else
     {
         SetPlayerAvatarTransitionFlags(transitionFlags);
+<<<<<<< HEAD
         if (gSaveBlock2Ptr->optionsBikeMusic == 0)
         {
             //Overworld_SetSavedMusic(MUS_CYCLING);
             //Overworld_ChangeMusicTo(MUS_CYCLING);
         }
+=======
+        Overworld_SetSavedMusic(MUS_CYCLING);
+        Overworld_ChangeMusicTo(MUS_CYCLING);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
 }
 
@@ -1129,8 +1217,15 @@ void Bike_HandleBumpySlopeJump(void)
 
 bool32 IsRunningDisallowed(u8 metatile)
 {
+<<<<<<< HEAD
     if (IsRunningDisallowedByMetatile(metatile) == TRUE)
         return TRUE;
     else
         return FALSE;
+=======
+    if ((OW_RUNNING_INDOORS == GEN_3 && !gMapHeader.allowRunning) || IsRunningDisallowedByMetatile(metatile) == TRUE)
+        return TRUE;
+
+    return FALSE;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }

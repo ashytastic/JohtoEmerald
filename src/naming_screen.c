@@ -27,9 +27,15 @@
 #include "overworld.h"
 #include "walda_phrase.h"
 #include "main.h"
+<<<<<<< HEAD
 #include "constants/event_objects.h"
 #include "constants/rgb.h"
 #include "tx_randomizer_and_challenges.h"
+=======
+#include "decompress.h"
+#include "constants/event_objects.h"
+#include "constants/rgb.h"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 enum {
     INPUT_NONE,
@@ -191,9 +197,15 @@ static const u16 sRival_Pal[] = INCBIN_U16("graphics/naming_screen/rival.gbapal"
 static const u8 *const sTransferredToPCMessages[] =
 {
     gText_PkmnTransferredSomeonesPC,
+<<<<<<< HEAD
     gText_PkmnTransferredBillsPC,
     gText_PkmnTransferredSomeonesPCBoxFull,
     gText_PkmnTransferredBillsPCBoxFull
+=======
+    gText_PkmnTransferredLanettesPC,
+    gText_PkmnTransferredSomeonesPCBoxFull,
+    gText_PkmnTransferredLanettesPCBoxFull
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 static const u8 sText_AlphabetUpperLower[] = _("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!");
@@ -673,6 +685,7 @@ static bool8 MainState_PressedOKButton(void)
     SetInputState(INPUT_STATE_DISABLED);
     SetCursorFlashing(FALSE);
     TryStartButtonFlash(BUTTON_COUNT, FALSE, TRUE);
+<<<<<<< HEAD
     if (sNamingScreen->templateNum == NAMING_SCREEN_CAUGHT_MON
         && CalculatePlayerPartyCount() >= PARTY_SIZE)
     {
@@ -685,6 +698,10 @@ static bool8 MainState_PressedOKButton(void)
         sNamingScreen->state = STATE_FADE_OUT;
         return TRUE;
     }
+=======
+    sNamingScreen->state = STATE_FADE_OUT;
+    return TRUE;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static bool8 MainState_FadeOut(void)
@@ -700,7 +717,15 @@ static bool8 MainState_Exit(void)
     {
         if (sNamingScreen->templateNum == NAMING_SCREEN_PLAYER)
             SeedRngAndSetTrainerId();
+<<<<<<< HEAD
         SetMainCallback2(sNamingScreen->returnCallback);
+=======
+        if (sNamingScreen->templateNum == NAMING_SCREEN_CAUGHT_MON
+         && CalculatePlayerPartyCount() < PARTY_SIZE)
+            SetMainCallback2(BattleMainCB2);
+        else
+            SetMainCallback2(sNamingScreen->returnCallback);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         DestroyTask(FindTaskIdByFunc(Task_NamingScreen));
         FreeAllWindowBuffers();
         FREE_AND_SET_NULL(sNamingScreen);
@@ -708,7 +733,11 @@ static bool8 MainState_Exit(void)
     return FALSE;
 }
 
+<<<<<<< HEAD
 static void DisplaySentToPCMessage(void)
+=======
+static UNUSED void DisplaySentToPCMessage(void)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     u8 stringToDisplay = 0;
 
@@ -725,7 +754,11 @@ static void DisplaySentToPCMessage(void)
         stringToDisplay = 2;
     }
 
+<<<<<<< HEAD
     if (FlagGet(FLAG_SYS_PC_BILL))
+=======
+    if (FlagGet(FLAG_SYS_PC_LANETTE))
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         stringToDisplay++;
 
     StringExpandPlaceholders(gStringVar4, sTransferredToPCMessages[stringToDisplay]);
@@ -1374,6 +1407,10 @@ static void NamingScreen_CreatePlayerIcon(void);
 static void NamingScreen_CreatePCIcon(void);
 static void NamingScreen_CreateMonIcon(void);
 static void NamingScreen_CreateWaldaDadIcon(void);
+<<<<<<< HEAD
+=======
+static void NamingScreen_CreateCodeIcon(void);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 static void (*const sIconFunctions[])(void) =
 {
@@ -1382,6 +1419,10 @@ static void (*const sIconFunctions[])(void) =
     NamingScreen_CreatePCIcon,
     NamingScreen_CreateMonIcon,
     NamingScreen_CreateWaldaDadIcon,
+<<<<<<< HEAD
+=======
+    NamingScreen_CreateCodeIcon,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 static void CreateInputTargetIcon(void)
@@ -1419,7 +1460,11 @@ static void NamingScreen_CreateMonIcon(void)
     u8 spriteId;
 
     LoadMonIconPalettes();
+<<<<<<< HEAD
     spriteId = CreateMonIcon(sNamingScreen->monSpecies, SpriteCallbackDummy, 56, 40, 0, sNamingScreen->monPersonality, 1);
+=======
+    spriteId = CreateMonIcon(sNamingScreen->monSpecies, SpriteCallbackDummy, 56, 40, 0, sNamingScreen->monPersonality);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gSprites[spriteId].oam.priority = 3;
 }
 
@@ -1427,16 +1472,34 @@ static void NamingScreen_CreateWaldaDadIcon(void)
 {
     u8 spriteId;
 
+<<<<<<< HEAD
     spriteId = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_BALDING_MAN, SpriteCallbackDummy, 56, 37, 0);
+=======
+    spriteId = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_MAN_1, SpriteCallbackDummy, 56, 37, 0);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gSprites[spriteId].oam.priority = 3;
     StartSpriteAnim(&gSprites[spriteId], ANIM_STD_GO_SOUTH);
 }
 
+<<<<<<< HEAD
+=======
+static void NamingScreen_CreateCodeIcon(void)
+{
+    u8 spriteId;
+    spriteId = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_MYSTERY_GIFT_MAN, SpriteCallbackDummy, 56, 37, 0);
+    gSprites[spriteId].oam.priority = 3;
+}
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 //--------------------------------------------------
 // Keyboard handling
 //--------------------------------------------------
 
 static bool8 KeyboardKeyHandler_Character(u8);
+<<<<<<< HEAD
+=======
+static void SwapKeyboardToLowerAfterFirstCapitalLetter(void);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static bool8 KeyboardKeyHandler_Page(u8);
 static bool8 KeyboardKeyHandler_Backspace(u8);
 static bool8 KeyboardKeyHandler_OK(u8);
@@ -1481,6 +1544,11 @@ static bool8 KeyboardKeyHandler_Character(u8 input)
     {
         bool8 textFull = AddTextCharacter();
 
+<<<<<<< HEAD
+=======
+        SwapKeyboardToLowerAfterFirstCapitalLetter();
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         SquishCursor();
         if (textFull)
         {
@@ -1491,6 +1559,23 @@ static bool8 KeyboardKeyHandler_Character(u8 input)
     return FALSE;
 }
 
+<<<<<<< HEAD
+=======
+static void SwapKeyboardToLowerAfterFirstCapitalLetter(void)
+{
+    if (AUTO_LOWERCASE_KEYBOARD < GEN_6)
+        return;
+
+    if (sNamingScreen->currentPage != KBPAGE_LETTERS_UPPER)
+        return;
+
+    if (GetTextEntryPosition() != 1)
+        return;
+
+    MainState_StartPageSwap();
+}
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static bool8 KeyboardKeyHandler_Page(u8 input)
 {
     TryStartButtonFlash(BUTTON_PAGE, TRUE, FALSE);
@@ -1511,8 +1596,11 @@ static bool8 KeyboardKeyHandler_Backspace(u8 input)
 static bool8 KeyboardKeyHandler_OK(u8 input)
 {
     TryStartButtonFlash(BUTTON_OK, TRUE, FALSE);
+<<<<<<< HEAD
     if (IsNuzlockeNicknamingActive() && GetTextEntryPosition() == 0)
         return FALSE;
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (input == INPUT_A_BUTTON)
     {
         PlaySE(SE_SELECT);
@@ -1713,10 +1801,18 @@ static void DrawNormalTextEntryBox(void)
 
 static void DrawMonTextEntryBox(void)
 {
+<<<<<<< HEAD
     u8 buffer[32];
 
     StringCopy(buffer, gSpeciesNames[sNamingScreen->monSpecies]);
     StringAppendN(buffer, sNamingScreen->template->title, 15);
+=======
+    u8 buffer[64];
+
+    u8 *end = StringCopy(buffer, GetSpeciesName(sNamingScreen->monSpecies));
+    WrapFontIdToFit(buffer, end, FONT_NORMAL, 128 - 64);
+    StringAppendN(end, sNamingScreen->template->title, 15);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     FillWindowPixelBuffer(sNamingScreen->windows[WIN_TEXT_ENTRY_BOX], PIXEL_FILL(1));
     AddTextPrinterParameterized(sNamingScreen->windows[WIN_TEXT_ENTRY_BOX], FONT_NORMAL, buffer, 8, 1, 0, 0);
     PutWindowTilemap(sNamingScreen->windows[WIN_TEXT_ENTRY_BOX]);
@@ -1729,6 +1825,10 @@ static void (*const sDrawTextEntryBoxFuncs[])(void) =
     [NAMING_SCREEN_CAUGHT_MON] = DrawMonTextEntryBox,
     [NAMING_SCREEN_NICKNAME]   = DrawMonTextEntryBox,
     [NAMING_SCREEN_WALDA]      = DrawNormalTextEntryBox,
+<<<<<<< HEAD
+=======
+    [NAMING_SCREEN_CODE]       = DrawNormalTextEntryBox,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 static void DrawTextEntryBox(void)
@@ -1867,7 +1967,11 @@ static void SaveInputText(void)
 
 static void LoadGfx(void)
 {
+<<<<<<< HEAD
     LZ77UnCompWram(gNamingScreenMenu_Gfx, sNamingScreen->tileBuffer);
+=======
+    DecompressDataWithHeaderWram(gNamingScreenMenu_Gfx, sNamingScreen->tileBuffer);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     LoadBgTiles(1, sNamingScreen->tileBuffer, sizeof(sNamingScreen->tileBuffer), 0);
     LoadBgTiles(2, sNamingScreen->tileBuffer, sizeof(sNamingScreen->tileBuffer), 0);
     LoadBgTiles(3, sNamingScreen->tileBuffer, sizeof(sNamingScreen->tileBuffer), 0);
@@ -1962,7 +2066,11 @@ static void PrintKeyboardKeys(u8 window, u8 page)
     PutWindowTilemap(window);
 }
 
+<<<<<<< HEAD
 static const u8 *const sNextKeyboardPageTilemaps[] =
+=======
+static const u32 *const sNextKeyboardPageTilemaps[] =
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     [KBPAGE_SYMBOLS] = gNamingScreenKeyboardUpper_Tilemap,
     [KBPAGE_LETTERS_UPPER] = gNamingScreenKeyboardLower_Tilemap, // lower
@@ -2131,6 +2239,21 @@ static const struct NamingScreenTemplate sWaldaWordsScreenTemplate =
     .title = gText_TellHimTheWords,
 };
 
+<<<<<<< HEAD
+=======
+static const u8 sText_EnterCode[] = _("Enter code:");
+static const struct NamingScreenTemplate sCodeScreenTemplate = 
+{
+    .copyExistingString = FALSE,
+    .maxChars = CODE_NAME_LENGTH,
+    .iconFunction = 5,
+    .addGenderIcon = FALSE,
+    .initialPage = KBPAGE_LETTERS_UPPER,
+    .unused = 35,
+    .title = sText_EnterCode,
+};
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static const struct NamingScreenTemplate *const sNamingScreenTemplates[] =
 {
     [NAMING_SCREEN_PLAYER]     = &sPlayerNamingScreenTemplate,
@@ -2138,6 +2261,10 @@ static const struct NamingScreenTemplate *const sNamingScreenTemplates[] =
     [NAMING_SCREEN_CAUGHT_MON] = &sMonNamingScreenTemplate,
     [NAMING_SCREEN_NICKNAME]   = &sMonNamingScreenTemplate,
     [NAMING_SCREEN_WALDA]      = &sWaldaWordsScreenTemplate,
+<<<<<<< HEAD
+=======
+    [NAMING_SCREEN_CODE]       = &sCodeScreenTemplate,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 static const struct OamData sOam_8x8 =
@@ -2587,3 +2714,8 @@ static const struct SpritePalette sSpritePalettes[] =
     {gNamingScreenMenu_Pal[4], PALTAG_OK_BUTTON},
     {}
 };
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

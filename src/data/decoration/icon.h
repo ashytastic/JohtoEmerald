@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 const u32 *const gDecorIconTable[][2] =
+=======
+const struct DecorItem gDecorIconTable[] =
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     [DECOR_NONE]            = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
     [DECOR_SMALL_DESK]      = {NULL, NULL},

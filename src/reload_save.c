@@ -1,5 +1,9 @@
 #include "global.h"
 #include "main.h"
+<<<<<<< HEAD
+=======
+#include "crt0.h"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include "gpu_regs.h"
 #include "m4a.h"
 #include "load_save.h"
@@ -15,6 +19,10 @@ void ReloadSave(void)
     u16 imeBackup = REG_IME;
     REG_IME = 0;
     RegisterRamReset(RESET_EWRAM);
+<<<<<<< HEAD
+=======
+    ReInitializeEWRAM();
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ClearGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_FORCED_BLANK);
     REG_IME = imeBackup;
     gMain.inBattle = FALSE;

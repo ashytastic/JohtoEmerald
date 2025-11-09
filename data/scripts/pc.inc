@@ -34,8 +34,13 @@ EventScript_AccessPlayersPC::
 
 EventScript_AccessPokemonStorage::
 	playse SE_PC_LOGIN
+<<<<<<< HEAD
 	call_if_unset FLAG_SYS_PC_BILL, EventScript_AccessSomeonesPC
 	call_if_set FLAG_SYS_PC_BILL, EventScript_AccessBillsPC
+=======
+	call_if_unset FLAG_SYS_PC_LANETTE, EventScript_AccessSomeonesPC
+	call_if_set FLAG_SYS_PC_LANETTE, EventScript_AccessLanettesPC
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox gText_StorageSystemOpened, MSGBOX_DEFAULT
 	special ShowPokemonStorageSystemPC
 	waitstate
@@ -46,8 +51,13 @@ EventScript_AccessSomeonesPC::
 	msgbox gText_AccessedSomeonesPC, MSGBOX_DEFAULT
 	return
 
+<<<<<<< HEAD
 EventScript_AccessBillsPC::
 	msgbox gText_AccessedBillsPC, MSGBOX_DEFAULT
+=======
+EventScript_AccessLanettesPC::
+	msgbox gText_AccessedLanettesPC, MSGBOX_DEFAULT
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	return
 
 EventScript_TurnOffPC::
@@ -64,3 +74,14 @@ EventScript_AccessHallOfFame::
 	waitstate
 	goto EventScript_AccessPC
 	end
+<<<<<<< HEAD
+=======
+
+EventScript_AccessPokemonBoxLink::
+	playse SE_PC_LOGIN
+	msgbox gText_StorageSystemOpened, MSGBOX_DEFAULT
+	special ShowPokemonStorageSystemPC
+	waitstate
+	goto EventScript_TurnOffPC
+	end
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

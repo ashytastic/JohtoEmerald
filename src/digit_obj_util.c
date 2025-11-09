@@ -239,9 +239,15 @@ static void DrawNumObjsLeadingZeros(struct DigitPrinter *objWork, s32 num, bool3
 static void DrawNumObjsMinusInFront(struct DigitPrinter *objWork, s32 num, bool32 sign)
 {
     u32 pow10 = objWork->pow10;
+<<<<<<< HEAD
     static int oamId;
     static int curDigit;
     static int firstDigit;
+=======
+    int oamId;
+    int curDigit;
+    int firstDigit;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     oamId = objWork->firstOamId;
     curDigit = 0;

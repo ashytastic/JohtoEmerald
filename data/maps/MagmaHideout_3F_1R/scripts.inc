@@ -1,4 +1,5 @@
 MagmaHideout_3F_1R_MapScripts::
+<<<<<<< HEAD
 	map_script MAP_SCRIPT_ON_TRANSITION, MagmaHideout_3F_1R_OnTransition
 	.byte 0
 
@@ -17,6 +18,10 @@ MagmaHideout_Entei_CryStrong::
 	release
 	end
 
+=======
+	.byte 0
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 MagmaHideout_3F_1R_EventScript_Grunt9::
 	trainerbattle_single TRAINER_GRUNT_MAGMA_HIDEOUT_9, MagmaHideout_3F_1R_Text_Grunt9Intro, MagmaHideout_3F_1R_Text_Grunt9Defeat
 	msgbox MagmaHideout_3F_1R_Text_Grunt9PostBattle, MSGBOX_AUTOCLOSE

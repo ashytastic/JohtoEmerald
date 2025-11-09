@@ -15,7 +15,10 @@
 #include "util.h"
 #include "mystery_event_msg.h"
 #include "pokemon_storage_system.h"
+<<<<<<< HEAD
 #include "tx_randomizer_and_challenges.h"
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 extern ScrCmdFunc gMysteryEventScriptCmdTable[];
 extern ScrCmdFunc gMysteryEventScriptCmdTableEnd[];
@@ -227,6 +230,10 @@ bool8 MEScrCmd_runscript(struct ScriptContext *ctx)
 
 bool8 MEScrCmd_setenigmaberry(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+#if FREE_ENIGMA_BERRY == FALSE
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     u8 *str;
     const u8 *message;
     bool32 haveBerry = IsEnigmaBerryValid();
@@ -259,6 +266,10 @@ bool8 MEScrCmd_setenigmaberry(struct ScriptContext *ctx)
         VarSet(VAR_ENIGMA_BERRY_AVAILABLE, 1);
     else
         ctx->mStatus = MEVENT_STATUS_LOAD_ERROR;
+<<<<<<< HEAD
+=======
+#endif //FREE_ENIGMA_BERRY
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     return FALSE;
 }
@@ -327,7 +338,11 @@ bool8 MEScrCmd_givepokemon(struct ScriptContext *ctx)
     else
         StringCopyN(gStringVar1, gText_Pokemon, POKEMON_NAME_LENGTH + 1);
 
+<<<<<<< HEAD
     if (gPlayerPartyCount == GetMaxPartySize())
+=======
+    if (gPlayerPartyCount == PARTY_SIZE)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     {
         StringExpandPlaceholders(gStringVar4, gText_MysteryEventFullParty);
         ctx->mStatus = MEVENT_STATUS_FAILURE;
@@ -339,7 +354,11 @@ bool8 MEScrCmd_givepokemon(struct ScriptContext *ctx)
 
         if (species != SPECIES_EGG)
         {
+<<<<<<< HEAD
             u16 pokedexNum = SpeciesToNationalPokedexNum(species);
+=======
+            enum NationalDexOrder pokedexNum = SpeciesToNationalPokedexNum(species);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             GetSetPokedexFlag(pokedexNum, FLAG_SET_SEEN);
             GetSetPokedexFlag(pokedexNum, FLAG_SET_CAUGHT);
         }
@@ -358,11 +377,19 @@ bool8 MEScrCmd_givepokemon(struct ScriptContext *ctx)
 
 bool8 MEScrCmd_addtrainer(struct ScriptContext *ctx)
 {
+<<<<<<< HEAD
+=======
+#if FREE_BATTLE_TOWER_E_READER == FALSE
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     u32 data = ScriptReadWord(ctx) - ctx->mOffset + ctx->mScriptBase;
     memcpy(&gSaveBlock2Ptr->frontier.ereaderTrainer, (void *)data, sizeof(gSaveBlock2Ptr->frontier.ereaderTrainer));
     ValidateEReaderTrainer();
     StringExpandPlaceholders(gStringVar4, gText_MysteryEventNewTrainer);
     ctx->mStatus = MEVENT_STATUS_SUCCESS;
+<<<<<<< HEAD
+=======
+#endif //FREE_BATTLE_TOWER_E_READER
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     return FALSE;
 }
 

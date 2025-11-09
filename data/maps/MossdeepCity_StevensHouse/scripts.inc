@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 .set LOCALID_STEVEN, 1
 .set LOCALID_BELDUM_BALL, 2
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 MossdeepCity_StevensHouse_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, MossdeepCity_StevensHouse_OnLoad
 	map_script MAP_SCRIPT_ON_TRANSITION, MossdeepCity_StevensHouse_OnTransition
@@ -20,8 +23,13 @@ MossdeepCity_StevensHouse_OnTransition:
 	end
 
 MossdeepCity_StevensHouse_EventScript_SetStevenPos::
+<<<<<<< HEAD
 	setobjectxyperm LOCALID_STEVEN, 6, 5
 	setobjectmovementtype LOCALID_STEVEN, MOVEMENT_TYPE_FACE_UP
+=======
+	setobjectxyperm LOCALID_STEVENS_HOUSE_STEVEN, 6, 5
+	setobjectmovementtype LOCALID_STEVENS_HOUSE_STEVEN, MOVEMENT_TYPE_FACE_UP
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	return
 
 MossdeepCity_StevensHouse_OnFrame:
@@ -30,6 +38,7 @@ MossdeepCity_StevensHouse_OnFrame:
 
 MossdeepCity_StevensHouse_EventScript_StevenGivesDive::
 	lockall
+<<<<<<< HEAD
 	applymovement LOCALID_STEVEN, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	playse SE_PIN
@@ -41,15 +50,35 @@ MossdeepCity_StevensHouse_EventScript_StevenGivesDive::
 	waitmovement 0
 	msgbox MossdeepCity_StevensHouse_Text_YouveEarnedHMDive, MSGBOX_DEFAULT
 	giveitem ITEM_HM_WHIRLPOOL
+=======
+	applymovement LOCALID_STEVENS_HOUSE_STEVEN, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
+	playse SE_PIN
+	applymovement LOCALID_STEVENS_HOUSE_STEVEN, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_STEVENS_HOUSE_STEVEN, Common_Movement_Delay48
+	waitmovement 0
+	applymovement LOCALID_STEVENS_HOUSE_STEVEN, MossdeepCity_StevensHouse_Movement_StevenApproachPlayer
+	waitmovement 0
+	msgbox MossdeepCity_StevensHouse_Text_YouveEarnedHMDive, MSGBOX_DEFAULT
+	giveitem ITEM_HM_DIVE
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setflag FLAG_RECEIVED_HM_DIVE
 	setflag FLAG_OMIT_DIVE_FROM_STEVEN_LETTER
 	msgbox MossdeepCity_StevensHouse_Text_ExplainDive, MSGBOX_DEFAULT
 	closemessage
 	delay 20
+<<<<<<< HEAD
 	applymovement LOCALID_STEVEN, MossdeepCity_StevensHouse_Movement_StevenReturn
 	waitmovement 0
 	setflag FLAG_GARBAGEFLAG
 	setflag FLAG_GARBAGEFLAG
+=======
+	applymovement LOCALID_STEVENS_HOUSE_STEVEN, MossdeepCity_StevensHouse_Movement_StevenReturn
+	waitmovement 0
+	setflag FLAG_HIDE_MOSSDEEP_CITY_SCOTT
+	setflag FLAG_HIDE_SEAFLOOR_CAVERN_ENTRANCE_AQUA_GRUNT
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setvar VAR_STEVENS_HOUSE_STATE, 2
 	releaseall
 	end
@@ -94,8 +123,11 @@ MossdeepCity_StevensHouse_EventScript_GiveBeldum::
 
 MossdeepCity_StevensHouse_EventScript_SendBeldumParty::
 	call MossdeepCity_StevensHouse_EventScript_ReceivedBeldumFanfare
+<<<<<<< HEAD
 	specialvar VAR_RESULT, IsNuzlockeNicknamingActive
 	goto_if_eq VAR_RESULT, TRUE, MossdeepCity_StevensHouse_EventScript_SendBeldumParty_Nuzlocke
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, MossdeepCity_StevensHouse_EventScript_ReceivedBeldum
 	call Common_EventScript_GetGiftMonPartySlot
@@ -103,6 +135,7 @@ MossdeepCity_StevensHouse_EventScript_SendBeldumParty::
 	goto MossdeepCity_StevensHouse_EventScript_ReceivedBeldum
 	end
 
+<<<<<<< HEAD
 MossdeepCity_StevensHouse_EventScript_SendBeldumParty_Nuzlocke::
 	call Common_EventScript_GetGiftMonPartySlot
 	call Common_EventScript_NameReceivedPartyMon
@@ -113,16 +146,23 @@ MossdeepCity_StevensHouse_EventScript_SendBeldumPC::
 	call MossdeepCity_StevensHouse_EventScript_ReceivedBeldumFanfare
 	specialvar VAR_RESULT, IsNuzlockeNicknamingActive
 	goto_if_eq VAR_RESULT, TRUE, MossdeepCity_StevensHouse_EventScript_SendBeldumPC_Nuzlocke
+=======
+MossdeepCity_StevensHouse_EventScript_SendBeldumPC::
+	call MossdeepCity_StevensHouse_EventScript_ReceivedBeldumFanfare
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, MossdeepCity_StevensHouse_EventScript_BeldumTransferredToPC
 	call Common_EventScript_NameReceivedBoxMon
 	goto MossdeepCity_StevensHouse_EventScript_BeldumTransferredToPC
 	end
+<<<<<<< HEAD
 	
 MossdeepCity_StevensHouse_EventScript_SendBeldumPC_Nuzlocke::
 	call Common_EventScript_NameReceivedBoxMon
 	goto MossdeepCity_StevensHouse_EventScript_BeldumTransferredToPC
 	end
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 MossdeepCity_StevensHouse_EventScript_BeldumTransferredToPC::
 	call Common_EventScript_TransferredToPC
@@ -131,7 +171,11 @@ MossdeepCity_StevensHouse_EventScript_BeldumTransferredToPC::
 
 MossdeepCity_StevensHouse_EventScript_ReceivedBeldumFanfare::
 	bufferspeciesname STR_VAR_2, SPECIES_BELDUM
+<<<<<<< HEAD
 	removeobject LOCALID_BELDUM_BALL
+=======
+	removeobject LOCALID_STEVENS_HOUSE_BALL
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	playfanfare MUS_OBTAIN_ITEM
 	message MossdeepCity_StevensHouse_Text_ObtainedBeldum
 	waitmessage
@@ -140,7 +184,11 @@ MossdeepCity_StevensHouse_EventScript_ReceivedBeldumFanfare::
 	return
 
 MossdeepCity_StevensHouse_EventScript_ReceivedBeldum::
+<<<<<<< HEAD
 	setflag FLAG_GARBAGEFLAG
+=======
+	setflag FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_BELDUM_POKEBALL
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setflag FLAG_RECEIVED_BELDUM
 	releaseall
 	end
@@ -161,7 +209,11 @@ MossdeepCity_StevensHouse_EventScript_Letter::
 
 @ Unused, leftover from RS
 MossdeepCity_StevensHouse_EventScript_DiveItemBall::
+<<<<<<< HEAD
 	finditem ITEM_HM_WHIRLPOOL
+=======
+	finditem ITEM_HM_DIVE
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setflag FLAG_RECEIVED_HM_DIVE
 	end
 

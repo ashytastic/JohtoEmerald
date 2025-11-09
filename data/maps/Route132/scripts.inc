@@ -1,6 +1,9 @@
 Route132_MapScripts::
+<<<<<<< HEAD
 	map_script MAP_SCRIPT_ON_TRANSITION, SetTimeEncounters
 	map_script MAP_SCRIPT_ON_RESUME, SetTimeEncounters
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.byte 0
 
 Route132_EventScript_Gilbert::
@@ -29,7 +32,11 @@ Route132_EventScript_Paxton::
 	end
 
 Route132_EventScript_Darcy::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_JIM, Route132_Text_DarcyIntro, Route132_Text_DarcyDefeat
+=======
+	trainerbattle_single TRAINER_DARCY, Route132_Text_DarcyIntro, Route132_Text_DarcyDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route132_Text_DarcyPostBattle, MSGBOX_AUTOCLOSE
 	end
 

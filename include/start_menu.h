@@ -8,7 +8,10 @@ void Task_ShowStartMenu(u8 taskId);
 void ShowStartMenu(void);
 void ShowBattlePyramidStartMenu(void);
 void SaveGame(void);
+<<<<<<< HEAD
 void ForceSaveGame(void);
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 void CB2_SetUpSaveAfterLinkBattle(void);
 void SaveForBattleTowerLink(void);
 void HideStartMenu(void);

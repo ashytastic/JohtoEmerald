@@ -295,7 +295,11 @@ Route110_TrickHousePuzzle7_EventScript_Patricia::
 	end
 
 Route110_TrickHousePuzzle7_EventScript_Alexis::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_BENJAMIN, Route110_TrickHousePuzzle7_Text_AlexisIntro, Route110_TrickHousePuzzle7_Text_AlexisDefeat
+=======
+	trainerbattle_single TRAINER_ALEXIS, Route110_TrickHousePuzzle7_Text_AlexisIntro, Route110_TrickHousePuzzle7_Text_AlexisDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route110_TrickHousePuzzle7_Text_AlexisPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -305,12 +309,20 @@ Route110_TrickHousePuzzle7_EventScript_Mariela::
 	end
 
 Route110_TrickHousePuzzle7_EventScript_Alvaro::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_BORIS, Route110_TrickHousePuzzle7_Text_AlvaroIntro, Route110_TrickHousePuzzle7_Text_AlvaroDefeat
+=======
+	trainerbattle_single TRAINER_ALVARO, Route110_TrickHousePuzzle7_Text_AlvaroIntro, Route110_TrickHousePuzzle7_Text_AlvaroDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route110_TrickHousePuzzle7_Text_AlvaroPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route110_TrickHousePuzzle7_EventScript_Everett::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_NICOLE, Route110_TrickHousePuzzle7_Text_EverettIntro, Route110_TrickHousePuzzle7_Text_EverettDefeat
+=======
+	trainerbattle_single TRAINER_EVERETT, Route110_TrickHousePuzzle7_Text_EverettIntro, Route110_TrickHousePuzzle7_Text_EverettDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route110_TrickHousePuzzle7_Text_EverettPostBattle, MSGBOX_AUTOCLOSE
 	end
 

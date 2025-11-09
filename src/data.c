@@ -3,14 +3,25 @@
 #include "battle.h"
 #include "data.h"
 #include "graphics.h"
+<<<<<<< HEAD
+=======
+#include "trainer_pools.h"
+#include "battle_transition.h"
+#include "constants/abilities.h"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include "constants/items.h"
 #include "constants/moves.h"
 #include "constants/trainers.h"
 #include "constants/battle_ai.h"
 
 const u16 gMinigameDigits_Pal[] = INCBIN_U16("graphics/link/minigame_digits.gbapal");
+<<<<<<< HEAD
 const u32 gMinigameDigits_Gfx[] = INCBIN_U32("graphics/link/minigame_digits.4bpp.lz");
 static const u32 sMinigameDigitsThin_Gfx[] = INCBIN_U32("graphics/link/minigame_digits2.4bpp.lz"); // Unused
+=======
+const u32 gMinigameDigits_Gfx[] = INCBIN_U32("graphics/link/minigame_digits.4bpp.smol");
+static const u32 sMinigameDigitsThin_Gfx[] = INCBIN_U32("graphics/link/minigame_digits2.4bpp.smol"); // Unused
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 #define BATTLER_OFFSET(i) (gHeap + 0x8000 + MON_PIC_SIZE * (i))
 
@@ -46,6 +57,7 @@ const struct SpriteFrameImage gBattlerPicTable_OpponentRight[] =
     {BATTLER_OFFSET(15), MON_PIC_SIZE},
 };
 
+<<<<<<< HEAD
 const struct SpriteFrameImage gTrainerBackPicTable_Brendan[] =
 {
     {gTrainerBackPic_Brendan + TRAINER_PIC_SIZE * 0, TRAINER_PIC_SIZE},
@@ -113,12 +125,19 @@ const struct SpriteFrameImage gTrainerBackPicTable_Steven[] =
 };
 
 static const union AnimCmd sAnim_GeneralFrame0[] =
+=======
+const union AnimCmd sAnim_GeneralFrame0[] =
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     ANIMCMD_FRAME(0, 0),
     ANIMCMD_END,
 };
 
+<<<<<<< HEAD
 static const union AnimCmd sAnim_GeneralFrame3[] =
+=======
+const union AnimCmd sAnim_GeneralFrame3[] =
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     ANIMCMD_FRAME(3, 0),
     ANIMCMD_END,
@@ -278,6 +297,7 @@ static const union AnimCmd sAnim_MonPic_1[] =
     ANIMCMD_END,
 };
 
+<<<<<<< HEAD
 static const union AnimCmd sAnim_MonPic_2[] =
 {
     ANIMCMD_FRAME(2, 0),
@@ -290,10 +310,13 @@ static const union AnimCmd sAnim_MonPic_3[] =
     ANIMCMD_END,
 };
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 const union AnimCmd *const gAnims_MonPic[MAX_MON_PIC_FRAMES] =
 {
     sAnim_MonPic_0,
     sAnim_MonPic_1,
+<<<<<<< HEAD
     sAnim_MonPic_2,
     sAnim_MonPic_3,
 };
@@ -326,4 +349,20 @@ const union AnimCmd *const gAnims_MonPic[MAX_MON_PIC_FRAMES] =
 #include "data/trainers.h"
 #include "data/text/species_names.h"
 #include "data/text/move_names.h"
+=======
+};
+
+const union AnimCmd *const gAnims_Trainer[] ={
+    sAnim_GeneralFrame0,
+    sAnim_GeneralFrame0,
+};
+
+#include "data/trainer_parties.h"
+
+const struct Trainer gTrainers[DIFFICULTY_COUNT][TRAINERS_COUNT] =
+{
+#include "data/trainers.h"
+};
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include "data/text/follower_messages.h"

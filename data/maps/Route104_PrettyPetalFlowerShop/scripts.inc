@@ -1,19 +1,26 @@
+<<<<<<< HEAD
 .set LOCALID_OWNER, 1
 .set LOCALID_MINT_CLERK, 4
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 Route104_PrettyPetalFlowerShop_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route104_PrettyPetalFlowerShop_OnTransition
 	.byte 0
 
 Route104_PrettyPetalFlowerShop_OnTransition:
+<<<<<<< HEAD
 	call_if_unset FLAG_MINTS_ENABLED, Route104_PrettyPetalFlowerShop_HideMintClerk
 	call_if_set FLAG_MINTS_ENABLED, Route104_PrettyPetalFlowerShop_ShowMintClerk
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setflag FLAG_LANDMARK_FLOWER_SHOP
 	goto_if_unset FLAG_MET_PRETTY_PETAL_SHOP_OWNER, Route104_PrettyPetalFlowerShop_EventScript_MoveShopOwner
 	goto_if_unset FLAG_BADGE03_GET, Route104_PrettyPetalFlowerShop_EventScript_MoveShopOwner
 	setflag FLAG_TEMP_1
 	end
 
+<<<<<<< HEAD
 Route104_PrettyPetalFlowerShop_HideMintClerk::
 	setflag FLAG_MINTS_CLERK
 	removeobject LOCALID_MINT_CLERK
@@ -26,6 +33,10 @@ Route104_PrettyPetalFlowerShop_ShowMintClerk::
 
 Route104_PrettyPetalFlowerShop_EventScript_MoveShopOwner::
 	setobjectxyperm LOCALID_OWNER, 4, 6
+=======
+Route104_PrettyPetalFlowerShop_EventScript_MoveShopOwner::
+	setobjectxyperm LOCALID_FLOWER_SHOP_OWNER, 4, 6
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 Route104_PrettyPetalFlowerShop_EventScript_ShopOwner::
@@ -41,6 +52,7 @@ Route104_PrettyPetalFlowerShop_EventScript_ShopOwner::
 	release
 	end
 
+<<<<<<< HEAD
 Route104_PrettyPetalFlowerShop_EventScript_MintOwner::
 	lock
 	faceplayer
@@ -94,6 +106,8 @@ Route104_PrettyPetalFlowerShop_EventScript_NoSellMints::
 	release
 	end
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 Route104_PrettyPetalFlowerShop_EventScript_AlreadyMet::
 	msgbox Route104_PrettyPetalFlowerShop_Text_LearnAboutBerries, MSGBOX_YESNO
 	call_if_eq VAR_RESULT, YES, Route104_PrettyPetalFlowerShop_EventScript_ExplainBerries
@@ -125,23 +139,38 @@ Route104_PrettyPetalFlowerShop_Pokemart_Plants:
 	.2byte DECOR_COLORFUL_PLANT
 	.2byte DECOR_BIG_PLANT
 	.2byte DECOR_GORGEOUS_PLANT
+<<<<<<< HEAD
 	.2byte DECOR_NONE
 	release
 	end
+=======
+	pokemartlistend
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 Route104_PrettyPetalFlowerShop_EventScript_WailmerPailGirl::
 	lock
 	faceplayer
+<<<<<<< HEAD
 	goto_if_unset FLAG_GARBAGEFLAG, Route104_PrettyPetalFlowerShop_EventScript_GiveWailmerPail
+=======
+	goto_if_unset FLAG_RECEIVED_WAILMER_PAIL, Route104_PrettyPetalFlowerShop_EventScript_GiveWailmerPail
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route104_PrettyPetalFlowerShop_Text_WailmerPailExplanation, MSGBOX_DEFAULT
 	release
 	end
 
 Route104_PrettyPetalFlowerShop_EventScript_GiveWailmerPail::
 	msgbox Route104_PrettyPetalFlowerShop_Text_YouCanHaveThis, MSGBOX_DEFAULT
+<<<<<<< HEAD
 	giveitem ITEM_SQUIRT_BOTTLE
 	msgbox Route104_PrettyPetalFlowerShop_Text_WailmerPailExplanation, MSGBOX_DEFAULT
 	setflag FLAG_GARBAGEFLAG
+=======
+	giveitem ITEM_WAILMER_PAIL
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	msgbox Route104_PrettyPetalFlowerShop_Text_WailmerPailExplanation, MSGBOX_DEFAULT
+	setflag FLAG_RECEIVED_WAILMER_PAIL
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	release
 	end
 

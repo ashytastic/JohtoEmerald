@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .set LOCALID_OLD_WOMAN, 2
 .set LOCALID_TM_CLERK, 6
 
@@ -20,11 +21,17 @@ BattleFrontier_Mart_ShowTMClerk::
 	addobject LOCALID_TM_CLERK
 	return
 
+=======
+BattleFrontier_Mart_MapScripts::
+	.byte 0
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 BattleFrontier_Mart_EventScript_Clerk::
 	lock
 	faceplayer
 	message gText_HowMayIServeYou
 	waitmessage
+<<<<<<< HEAD
 	pokemart 0
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
@@ -35,6 +42,8 @@ BattleFrontier_Mart_EventScript_Clerk2::
 	faceplayer
 	message gText_HowMayIServeYou
 	waitmessage
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	pokemart BattleFrontier_Mart_Pokemart
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
@@ -42,6 +51,7 @@ BattleFrontier_Mart_EventScript_Clerk2::
 
 	.align 2
 BattleFrontier_Mart_Pokemart:
+<<<<<<< HEAD
 	.2byte ITEM_SAFARI_BALL
 	.2byte ITEM_MAX_REVIVE
 	.2byte ITEM_PP_UP
@@ -102,6 +112,22 @@ BattleFrontier_Mart_PokemartTMs:
 	.2byte ITEM_NONE
 	release
 	end
+=======
+	.2byte ITEM_ULTRA_BALL
+	.2byte ITEM_HYPER_POTION
+	.2byte ITEM_MAX_POTION
+	.2byte ITEM_FULL_RESTORE
+	.2byte ITEM_FULL_HEAL
+	.2byte ITEM_REVIVE
+	.2byte ITEM_MAX_REPEL
+	.2byte ITEM_PROTEIN
+	.2byte ITEM_CALCIUM
+	.2byte ITEM_IRON
+	.2byte ITEM_ZINC
+	.2byte ITEM_CARBOS
+	.2byte ITEM_HP_UP
+	pokemartlistend
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 BattleFrontier_Mart_EventScript_OldMan::
 	msgbox BattleFrontier_Mart_Text_ChaperonGrandson, MSGBOX_NPC
@@ -109,7 +135,11 @@ BattleFrontier_Mart_EventScript_OldMan::
 
 BattleFrontier_Mart_EventScript_OldWoman::
 	lock
+<<<<<<< HEAD
 	applymovement LOCALID_OLD_WOMAN, Common_Movement_FaceDown
+=======
+	applymovement LOCALID_FRONTIER_MART_OLD_WOMAN, Common_Movement_FaceDown
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	msgbox BattleFrontier_Mart_Text_ProteinMakeNiceGift, MSGBOX_DEFAULT
 	release

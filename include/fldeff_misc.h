@@ -5,7 +5,11 @@ void ComputerScreenOpenEffect(u16 increment, u16 unused, u8 priority);
 void ComputerScreenCloseEffect(u16 increment, u16 unused, u8 priority);
 bool8 IsComputerScreenOpenEffectActive(void);
 bool8 IsComputerScreenCloseEffectActive(void);
+<<<<<<< HEAD
 bool8 SetUpFieldMove_SecretPower(void);
+=======
+bool32 SetUpFieldMove_SecretPower(void);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 bool8 FldEff_UseSecretPowerCave(void);
 bool8 FldEff_SecretPowerCave(void);
 bool8 FldEff_UseSecretPowerTree(void);

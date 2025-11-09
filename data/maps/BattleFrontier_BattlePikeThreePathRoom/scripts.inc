@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 .set LOCALID_HINT_GIVER, 2
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 BattleFrontier_BattlePikeThreePathRoom_MapScripts::
 	map_script MAP_SCRIPT_ON_RESUME, BattleFrontier_BattlePikeRoom_OnResume
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, BattleFrontier_BattlePikeThreePathRoom_OnFrame
@@ -20,7 +23,11 @@ BattleFrontier_BattlePikeThreePathRoom_OnWarp:
 
 BattleFrontier_BattlePikeThreePathRoom_EventScript_TurnPlayerNorth::
 	setvar VAR_TEMP_4, 1
+<<<<<<< HEAD
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+=======
+	turnobject LOCALID_PLAYER, DIR_NORTH
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 BattleFrontier_BattlePikeThreePathRoom_EventScript_GetChallengeStatus::
@@ -160,12 +167,20 @@ BattleFrontier_BattlePikeThreePathRoom_EventScript_SetPikeQueenHint::
 	end
 
 BattleFrontier_BattlePikeThreePathRoom_EventScript_GivePikeQueenHint::
+<<<<<<< HEAD
 	applymovement LOCALID_HINT_GIVER, BattleFrontier_BattlePikeThreePathRoom_Movement_HintGiverApproachPlayer
+=======
+	applymovement LOCALID_PIKE_HINT_GIVER, BattleFrontier_BattlePikeThreePathRoom_Movement_HintGiverApproachPlayer
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	lockall
 	msgbox BattleFrontier_BattlePikeThreePathRoom_Text_TerrifyingEvent, MSGBOX_DEFAULT
 	releaseall
+<<<<<<< HEAD
 	applymovement LOCALID_HINT_GIVER, BattleFrontier_BattlePikeThreePathRoom_Movement_HintGiverReturnToPos
+=======
+	applymovement LOCALID_PIKE_HINT_GIVER, BattleFrontier_BattlePikeThreePathRoom_Movement_HintGiverReturnToPos
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	setvar VAR_TEMP_5, 255
 	end

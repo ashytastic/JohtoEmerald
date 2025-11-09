@@ -2,6 +2,7 @@
 #include "constants/items.h"
 #include "constants/moves.h"
 
+<<<<<<< HEAD
 static const u16 sContestLadyMonGfxId[] =
 {
     [CONTEST_CATEGORY_COOL]   = OBJ_EVENT_GFX_ZIGZAGOON_1,
@@ -9,13 +10,67 @@ static const u16 sContestLadyMonGfxId[] =
     [CONTEST_CATEGORY_CUTE]   = OBJ_EVENT_GFX_POOCHYENA,
     [CONTEST_CATEGORY_SMART]  = OBJ_EVENT_GFX_KECLEON,
     [CONTEST_CATEGORY_TOUGH]  = OBJ_EVENT_GFX_PIKACHU
+=======
+struct LilycoveContestLadyValues
+{
+    u16 monGfxId;
+    u16 monSpecies;
+    const u8 *monName;
+    const u8 *categoryName;
+    const u8 *contestName;
+};
+
+static const struct LilycoveContestLadyValues sContestLadyValues[] =
+{
+    [CONTEST_CATEGORY_COOL] = {
+        .monGfxId = OBJ_EVENT_GFX_ZIGZAGOON_1,
+        .monSpecies = SPECIES_ZIGZAGOON,
+        .monName = COMPOUND_STRING("HANDSOME"),
+        .categoryName = COMPOUND_STRING("coolness"),
+        .contestName = gText_CoolnessContest,
+    },
+    [CONTEST_CATEGORY_BEAUTY] = {
+        .monGfxId = OBJ_EVENT_GFX_SKITTY,
+        .monSpecies = SPECIES_SKITTY,
+        .monName = COMPOUND_STRING("VINNY"),
+        .categoryName = COMPOUND_STRING("beauty"),
+        .contestName = gText_BeautyContest,
+    },
+    [CONTEST_CATEGORY_CUTE] = {
+        .monGfxId = OBJ_EVENT_GFX_POOCHYENA,
+        .monSpecies = SPECIES_POOCHYENA,
+        .monName = COMPOUND_STRING("MOREME"),
+        .categoryName = COMPOUND_STRING("cuteness"),
+        .contestName = gText_CutenessContest,
+    },
+    [CONTEST_CATEGORY_SMART] = {
+        .monGfxId = OBJ_EVENT_GFX_KECLEON,
+        .monSpecies = SPECIES_KECLEON,
+        .monName = COMPOUND_STRING("IRONHARD"),
+        .categoryName = COMPOUND_STRING("smartness"),
+        .contestName = gText_SmartnessContest,
+    },
+    [CONTEST_CATEGORY_TOUGH] = {
+        .monGfxId = OBJ_EVENT_GFX_PIKACHU,
+        .monSpecies = SPECIES_PIKACHU,
+        .monName = COMPOUND_STRING("MUSCLE"),
+        .categoryName = COMPOUND_STRING("toughness"),
+        .contestName = gText_ToughnessContest,
+    },
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 static const u16 sLilycoveLadyGfxId[] =
 {
+<<<<<<< HEAD
     OBJ_EVENT_GFX_LASS,
     OBJ_EVENT_GFX_WOMAN_2,
     OBJ_EVENT_GFX_CAPTAIN
+=======
+    OBJ_EVENT_GFX_WOMAN_4,
+    OBJ_EVENT_GFX_WOMAN_2,
+    OBJ_EVENT_GFX_GIRL_2
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 // Quiz Lady data
@@ -290,12 +345,21 @@ static const u16 sQuizLadyPrizes[] =
 // Favor Lady data
 static const u8 *const sFavorLadyRequests[] =
 {
+<<<<<<< HEAD
     gText_FavorLady_Slippery,
     gText_FavorLady_Roundish,
     gText_FavorLady_Whamish,
     gText_FavorLady_Shiny,
     gText_FavorLady_Sticky,
     gText_FavorLady_Pointy
+=======
+    COMPOUND_STRING("slippery"),
+    COMPOUND_STRING("roundish"),
+    COMPOUND_STRING("wham-ish"),
+    COMPOUND_STRING("shiny"),
+    COMPOUND_STRING("sticky"),
+    COMPOUND_STRING("pointy"),
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 static const u16 sFavorLadyAcceptedItems_Slippery[] =
@@ -360,7 +424,11 @@ static const u16 sFavorLadyAcceptedItems_Shiny[] =
     ITEM_HEAL_POWDER,
     ITEM_X_SPEED,
     ITEM_X_ATTACK,
+<<<<<<< HEAD
     ITEM_X_DEFEND,
+=======
+    ITEM_X_DEFENSE,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ITEM_BLUE_FLUTE,
     ITEM_YELLOW_FLUTE,
     ITEM_RED_FLUTE,
@@ -429,6 +497,7 @@ static const u16 sFavorLadyPrizes[] =
     ITEM_RARE_CANDY,
     ITEM_PP_MAX
 };
+<<<<<<< HEAD
 
 
 static const u8 *const sContestLadyMonNames[] =
@@ -466,3 +535,5 @@ static const u16 sContestLadyMonSpecies[] =
     [CONTEST_CATEGORY_SMART]  = SPECIES_KECLEON,
     [CONTEST_CATEGORY_TOUGH]  = SPECIES_PIKACHU
 };
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

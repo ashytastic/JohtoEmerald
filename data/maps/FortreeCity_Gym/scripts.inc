@@ -31,7 +31,11 @@ FortreeCity_Gym_EventScript_WinonaDefeated::
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox FortreeCity_Gym_Text_ExplainFeatherBadgeTakeThis, MSGBOX_DEFAULT
+<<<<<<< HEAD
 	setflag FLAG_DEFEATED_OLIVINE_CITY_GYM
+=======
+	setflag FLAG_DEFEATED_FORTREE_GYM
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setflag FLAG_BADGE06_GET
 	setvar VAR_0x8008, 6
 	call Common_EventScript_SetGymTrainers
@@ -75,34 +79,58 @@ FortreeCity_Gym_EventScript_Jared::
 	end
 
 FortreeCity_Gym_EventScript_Edwardo::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_LOIS, FortreeCity_Gym_Text_EdwardoIntro, FortreeCity_Gym_Text_EdwardoDefeat
+=======
+	trainerbattle_single TRAINER_EDWARDO, FortreeCity_Gym_Text_EdwardoIntro, FortreeCity_Gym_Text_EdwardoDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox FortreeCity_Gym_Text_EdwardoPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 FortreeCity_Gym_EventScript_Flint::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_RAY, FortreeCity_Gym_Text_FlintIntro, FortreeCity_Gym_Text_FlintDefeat
+=======
+	trainerbattle_single TRAINER_FLINT, FortreeCity_Gym_Text_FlintIntro, FortreeCity_Gym_Text_FlintDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox FortreeCity_Gym_Text_FlintPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 FortreeCity_Gym_EventScript_Ashley::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_CHARLES, FortreeCity_Gym_Text_AshleyIntro, FortreeCity_Gym_Text_AshleyDefeat
+=======
+	trainerbattle_single TRAINER_ASHLEY, FortreeCity_Gym_Text_AshleyIntro, FortreeCity_Gym_Text_AshleyDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox FortreeCity_Gym_Text_AshleyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 FortreeCity_Gym_EventScript_Humberto::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_CHUCK_2, FortreeCity_Gym_Text_HumbertoIntro, FortreeCity_Gym_Text_HumbertoDefeat
+=======
+	trainerbattle_single TRAINER_HUMBERTO, FortreeCity_Gym_Text_HumbertoIntro, FortreeCity_Gym_Text_HumbertoDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox FortreeCity_Gym_Text_HumbertoPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 FortreeCity_Gym_EventScript_Darius::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_JIN, FortreeCity_Gym_Text_DariusIntro, FortreeCity_Gym_Text_DariusDefeat
+=======
+	trainerbattle_single TRAINER_DARIUS, FortreeCity_Gym_Text_DariusIntro, FortreeCity_Gym_Text_DariusDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox FortreeCity_Gym_Text_DariusPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 FortreeCity_Gym_EventScript_GymGuide::
 	lock
 	faceplayer
+<<<<<<< HEAD
 	goto_if_set FLAG_DEFEATED_OLIVINE_CITY_GYM, FortreeCity_Gym_EventScript_GymGuidePostVictory
+=======
+	goto_if_set FLAG_DEFEATED_FORTREE_GYM, FortreeCity_Gym_EventScript_GymGuidePostVictory
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox FortreeCity_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT
 	release
 	end
@@ -258,10 +286,14 @@ FortreeCity_Gym_Text_ExplainFeatherBadgeTakeThis:
 	.string "to LV 70, even those received through\l"
 	.string "trades, will obey your every command.\p"
 	.string "You will also be able to use\n"
+<<<<<<< HEAD
 	.string "the HM move FLY outside of battle,\p"
 	.string "even if the POKéMON does not know it.\p"
 	.string "The only requirement is that the\n"
 	.string "POKéMON has to be a FLYING TYPE.\p"
+=======
+	.string "the HM move FLY outside of battle.\p"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.string "And this…\n"
 	.string "This is a gift from me.$"
 

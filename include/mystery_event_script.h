@@ -12,7 +12,11 @@ enum {
 void InitMysteryEventScriptContext(u8 *script);
 bool32 RunMysteryEventScriptContextCommand(u32 *status);
 u32 RunMysteryEventScript(u8 *script);
+<<<<<<< HEAD
 void SetMysteryEventScriptStatus(u32 val);
+=======
+void SetMysteryEventScriptStatus(u32 status);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 u16 GetRecordMixingGift(void);
 
 #endif // GUARD_MYSTERY_EVENT_SCRIPT_H

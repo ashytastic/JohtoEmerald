@@ -4,11 +4,16 @@ ShoalCave_LowTideEntranceRoom_MapScripts::
 
 ShoalCave_LowTideEntranceRoom_OnTransition:
 	special UpdateShoalTideFlag
+<<<<<<< HEAD
 	goto_if_set FLAG_SYS_LAKE_OF_RAGE_TIDE, ShoalCave_LowTideEntranceRoom_EventScript_SetHighTide
+=======
+	goto_if_set FLAG_SYS_SHOAL_TIDE, ShoalCave_LowTideEntranceRoom_EventScript_SetHighTide
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto ShoalCave_LowTideEntranceRoom_EventScript_SetLowTide
 
 ShoalCave_LowTideEntranceRoom_EventScript_SetHighTide::
 	setmaplayoutindex LAYOUT_SHOAL_CAVE_HIGH_TIDE_ENTRANCE_ROOM
+<<<<<<< HEAD
 	goto_if_set FLAG_DEFEATED_SUICUNE, MagmaHideout_End
 	goto_if_set FLAG_UNLOCK_DOGS, ShoalCave_LowTideEntranceRoom_Suicune_CryFaint
 	end
@@ -16,12 +21,17 @@ ShoalCave_LowTideEntranceRoom_EventScript_SetHighTide::
 ShoalCave_LowTideEntranceRoom_Suicune_CryFaint::
 	playmoncry SPECIES_SUICUNE, CRY_MODE_FAINT
 	release
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 ShoalCave_LowTideEntranceRoom_EventScript_SetLowTide::
 	setmaplayoutindex LAYOUT_SHOAL_CAVE_LOW_TIDE_ENTRANCE_ROOM
+<<<<<<< HEAD
 	goto_if_set FLAG_DEFEATED_SUICUNE, MagmaHideout_End
 	goto_if_set FLAG_UNLOCK_DOGS, ShoalCave_LowTideEntranceRoom_Suicune_CryFaint
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 ShoalCave_LowTideEntranceRoom_EventScript_ShellBellExpert::
@@ -88,6 +98,7 @@ ShoalCave_LowTideEntranceRoom_EventScript_DeclineShellBell::
 	end
 
 ShoalCave_LowTideEntranceRoom_EventScript_ResetShoalItems::
+<<<<<<< HEAD
 	clearflag FLAG_GARBAGEFLAG
 	clearflag FLAG_GARBAGEFLAG
 	clearflag FLAG_GARBAGEFLAG
@@ -96,5 +107,15 @@ ShoalCave_LowTideEntranceRoom_EventScript_ResetShoalItems::
 	clearflag FLAG_GARBAGEFLAG
 	clearflag FLAG_GARBAGEFLAG
 	clearflag FLAG_GARBAGEFLAG
+=======
+	clearflag FLAG_RECEIVED_SHOAL_SALT_1
+	clearflag FLAG_RECEIVED_SHOAL_SALT_2
+	clearflag FLAG_RECEIVED_SHOAL_SALT_3
+	clearflag FLAG_RECEIVED_SHOAL_SALT_4
+	clearflag FLAG_RECEIVED_SHOAL_SHELL_1
+	clearflag FLAG_RECEIVED_SHOAL_SHELL_2
+	clearflag FLAG_RECEIVED_SHOAL_SHELL_3
+	clearflag FLAG_RECEIVED_SHOAL_SHELL_4
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	clearflag FLAG_SYS_SHOAL_ITEM
 	return

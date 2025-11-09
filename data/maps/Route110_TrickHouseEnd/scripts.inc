@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 .set LOCALID_TRICK_MASTER, 1
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 Route110_TrickHouseEnd_MapScripts::
 	map_script MAP_SCRIPT_ON_RESUME, Route110_TrickHouseEnd_OnResume
 	map_script MAP_SCRIPT_ON_TRANSITION, Route110_TrickHouseEnd_OnTransition
@@ -22,9 +25,15 @@ Route110_TrickHouseEnd_OnWarp:
 	.2byte 0
 
 Route110_TrickHouseEnd_EventScript_SetTrickMasterPos::
+<<<<<<< HEAD
 	addobject LOCALID_TRICK_MASTER
 	showobjectat LOCALID_TRICK_MASTER, MAP_ROUTE110_TRICK_HOUSE_END
 	turnobject LOCALID_TRICK_MASTER, DIR_EAST
+=======
+	addobject LOCALID_TRICK_MASTER_END
+	showobjectat LOCALID_TRICK_MASTER_END, MAP_ROUTE110_TRICK_HOUSE_END
+	turnobject LOCALID_TRICK_MASTER_END, DIR_EAST
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 Route110_TrickHouseEnd_OnFrame:
@@ -151,7 +160,11 @@ Route110_TrickHouseEnd_EventScript_CompletedPuzzle8::
 	delay 30
 	msgbox Route110_TrickHouseEnd_Text_FountainOfIdeasRunDry, MSGBOX_DEFAULT
 	closemessage
+<<<<<<< HEAD
 	applymovement LOCALID_TRICK_MASTER, Common_Movement_FacePlayer
+=======
+	applymovement LOCALID_TRICK_MASTER_END, Common_Movement_FacePlayer
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	delay 30
 	msgbox Route110_TrickHouseEnd_Text_DefeatedMePreferWhichTent, MSGBOX_DEFAULT
@@ -179,12 +192,21 @@ Route110_TrickHouseEnd_EventScript_GiveBlueTent::
 	return
 
 Route110_TrickHouseEnd_EventScript_TrickMasterExit::
+<<<<<<< HEAD
 	applymovement LOCALID_TRICK_MASTER, Route110_TrickHouse_Movement_TrickMasterSpin
 	waitmovement 0
 	playse SE_M_EXPLOSION
 	applymovement LOCALID_TRICK_MASTER, Route110_TrickHouse_Movement_TrickMasterJumpAway
 	waitmovement 0
 	removeobject LOCALID_TRICK_MASTER
+=======
+	applymovement LOCALID_TRICK_MASTER_END, Route110_TrickHouse_Movement_TrickMasterSpin
+	waitmovement 0
+	playse SE_M_EXPLOSION
+	applymovement LOCALID_TRICK_MASTER_END, Route110_TrickHouse_Movement_TrickMasterJumpAway
+	waitmovement 0
+	removeobject LOCALID_TRICK_MASTER_END
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	addvar VAR_TRICK_HOUSE_LEVEL, 1
 	return
 
@@ -201,27 +223,44 @@ Route110_TrickHouseEnd_EventScript_NoRoomForTent::
 	return
 
 Route110_TrickHouseEnd_EventScript_TrickMasterFaceAwaySouth::
+<<<<<<< HEAD
 	applymovement LOCALID_TRICK_MASTER, Common_Movement_WalkInPlaceFasterDown
+=======
+	applymovement LOCALID_TRICK_MASTER_END, Common_Movement_WalkInPlaceFasterDown
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 Route110_TrickHouseEnd_EventScript_TrickMasterFaceAwayNorth::
+<<<<<<< HEAD
 	applymovement LOCALID_TRICK_MASTER, Common_Movement_WalkInPlaceFasterUp
+=======
+	applymovement LOCALID_TRICK_MASTER_END, Common_Movement_WalkInPlaceFasterUp
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 Route110_TrickHouseEnd_EventScript_TrickMasterFaceAwayWest::
+<<<<<<< HEAD
 	applymovement LOCALID_TRICK_MASTER, Common_Movement_WalkInPlaceFasterLeft
+=======
+	applymovement LOCALID_TRICK_MASTER_END, Common_Movement_WalkInPlaceFasterLeft
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 Route110_TrickHouseEnd_EventScript_TrickMasterFaceAwayEast::
+<<<<<<< HEAD
 	applymovement LOCALID_TRICK_MASTER, Common_Movement_WalkInPlaceFasterRight
+=======
+	applymovement LOCALID_TRICK_MASTER_END, Common_Movement_WalkInPlaceFasterRight
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 Route110_TrickHouseEnd_EventScript_TrickMasterExitTrigger::
 	lockall
+<<<<<<< HEAD
 	turnobject LOCALID_TRICK_MASTER, DIR_WEST
 	playse SE_PIN
 	applymovement LOCALID_TRICK_MASTER, Common_Movement_ExclamationMark
@@ -238,6 +277,24 @@ Route110_TrickHouseEnd_EventScript_TrickMasterExitTrigger::
 	waitmovement 0
 	delay 4
 	turnobject LOCALID_TRICK_MASTER, DIR_EAST
+=======
+	turnobject LOCALID_TRICK_MASTER_END, DIR_WEST
+	playse SE_PIN
+	applymovement LOCALID_TRICK_MASTER_END, Common_Movement_ExclamationMark
+	waitmovement 0
+	delay 20
+	applymovement LOCALID_TRICK_MASTER_END, Route110_TrickHouseEnd_Movement_TrickMasterSurprise
+	waitmovement 0
+	playse SE_M_EXPLOSION
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+	msgbox Route110_TrickHouseEnd_Text_YoureIgnoringMe, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_PLAYER, Route110_TrickHouseEnd_Movement_KeepPlayerInRoom
+	waitmovement 0
+	delay 4
+	turnobject LOCALID_TRICK_MASTER_END, DIR_EAST
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	releaseall
 	end
 

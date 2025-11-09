@@ -31,13 +31,21 @@ enum class Directive
     Include,
     String,
     Braille,
+<<<<<<< HEAD
+=======
+    Enum,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     Unknown
 };
 
 class AsmFile
 {
 public:
+<<<<<<< HEAD
     AsmFile(std::string filename);
+=======
+    AsmFile(std::string filename, bool isStdin, bool doEnum);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     AsmFile(AsmFile&& other);
     AsmFile(const AsmFile&) = delete;
     ~AsmFile();
@@ -49,9 +57,17 @@ public:
     bool IsAtEnd();
     void OutputLine();
     void OutputLocation();
+<<<<<<< HEAD
 
 private:
     char* m_buffer;
+=======
+    bool ParseEnum();
+
+private:
+    char* m_buffer;
+    bool m_doEnum;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     long m_pos;
     long m_size;
     long m_lineNum;
@@ -68,6 +84,13 @@ private:
     void RaiseError(const char* format, ...);
     void RaiseWarning(const char* format, ...);
     void VerifyStringLength(int length);
+<<<<<<< HEAD
+=======
+    int SkipWhitespaceAndEol();
+    int FindLastLineNumber(std::string& filename);
+    std::string ReadIdentifier();
+    long ReadInteger(std::string filename, long line);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 #endif // ASM_FILE_H

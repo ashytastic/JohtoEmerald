@@ -12,7 +12,11 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+<<<<<<< HEAD
   "connections": 0,
+=======
+  "connections": null,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -23,9 +27,15 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
+<<<<<<< HEAD
       "trainer_sight_or_berry_tree_id": "0",
       "script": "GraniteCave_B2F_EventScript_ItemRepel",
       "flag": "FLAG_ITEM_GARBAGEFLAG"
+=======
+      "trainer_sight_or_berry_tree_id": "ITEM_REPEL",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_GRANITE_CAVE_B2F_REPEL"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -36,9 +46,15 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
+<<<<<<< HEAD
       "trainer_sight_or_berry_tree_id": "0",
       "script": "GraniteCave_B2F_EventScript_ItemRareCandy",
       "flag": "FLAG_ITEM_GARBAGEFLAG"
+=======
+      "trainer_sight_or_berry_tree_id": "ITEM_RARE_CANDY",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_GRANITE_CAVE_B2F_RARE_CANDY"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
@@ -167,6 +183,7 @@
       "elevation": 3,
       "dest_map": "MAP_GRANITE_CAVE_B1F",
       "dest_warp_id": "6"
+<<<<<<< HEAD
     },
     {
       "x": 21,
@@ -179,6 +196,11 @@
   "coord_events": [
 
   ],
+=======
+    }
+  ],
+  "coord_events": [],
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "bg_events": [
     {
       "type": "hidden_item",
@@ -191,6 +213,7 @@
     {
       "type": "hidden_item",
       "x": 15,
+<<<<<<< HEAD
       "y": 10,
       "elevation": 3,
       "item": "ITEM_EVERSTONE",
@@ -219,6 +242,12 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "GraniteCave_B2F_RegigigasStart"
+=======
+      "y": 11,
+      "elevation": 3,
+      "item": "ITEM_EVERSTONE",
+      "flag": "FLAG_HIDDEN_ITEM_GRANITE_CAVE_B2F_EVERSTONE_2"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ]
 }

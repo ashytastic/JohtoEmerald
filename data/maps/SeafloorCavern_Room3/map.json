@@ -12,7 +12,11 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+<<<<<<< HEAD
   "connections": 0,
+=======
+  "connections": null,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
@@ -106,7 +110,11 @@
       "flag": "FLAG_TEMP_19"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_F",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_F",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 9,
       "y": 5,
       "elevation": 3,
@@ -116,10 +124,17 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "6",
       "script": "SeafloorCavern_Room3_EventScript_Shelly",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
+=======
+      "flag": "FLAG_HIDE_SEAFLOOR_CAVERN_AQUA_GRUNTS"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 5,
       "y": 5,
       "elevation": 3,
@@ -129,7 +144,11 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "4",
       "script": "SeafloorCavern_Room3_EventScript_Grunt5",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
+=======
+      "flag": "FLAG_HIDE_SEAFLOOR_CAVERN_AQUA_GRUNTS"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "warp_events": [
@@ -155,10 +174,15 @@
       "dest_warp_id": "1"
     }
   ],
+<<<<<<< HEAD
   "coord_events": [
 
   ],
   "bg_events": [
 
   ]
+=======
+  "coord_events": [],
+  "bg_events": []
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }

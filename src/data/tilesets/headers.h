@@ -3,6 +3,7 @@
 // Whether a palette has a night version, located at ((x + 9) % 16).pal
 #define SWAP_PAL(x) ((x) < NUM_PALS_IN_PRIMARY ? 1 << (x) : 1 << ((x) - NUM_PALS_IN_PRIMARY))
 
+<<<<<<< HEAD
 // NOTE: Instead of using LIGHT_PAL, 
 // consider taking a look at the .pla files
 // to mark colors as lights, instead.
@@ -17,18 +18,30 @@ const struct Tileset gTileset_General =
 {
     .isCompressed = TRUE,
     //.swapPalettes = SWAP_PAL(4),
+=======
+const struct Tileset gTileset_General =
+{
+    .isCompressed = TRUE,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     .isSecondary = FALSE,
     .tiles = gTilesetTiles_General,
     .palettes = gTilesetPalettes_General,
     .metatiles = gMetatiles_General,
     .metatileAttributes = gMetatileAttributes_General,
+<<<<<<< HEAD
     .callback = InitTilesetAnim_HoennGeneral,
+=======
+    .callback = InitTilesetAnim_General,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 const struct Tileset gTileset_Petalburg =
 {
     .isCompressed = TRUE,
+<<<<<<< HEAD
     .swapPalettes = SWAP_PAL(9),
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     .isSecondary = TRUE,
     .tiles = gTilesetTiles_Petalburg,
     .palettes = gTilesetPalettes_Petalburg,
@@ -62,7 +75,10 @@ const struct Tileset gTileset_Dewford =
 const struct Tileset gTileset_Slateport =
 {
     .isCompressed = TRUE,
+<<<<<<< HEAD
     //.swapPalettes = SWAP_PAL(6),
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     .isSecondary = TRUE,
     .tiles = gTilesetTiles_Slateport,
     .palettes = gTilesetPalettes_Slateport,
@@ -96,7 +112,10 @@ const struct Tileset gTileset_Lavaridge =
 const struct Tileset gTileset_Fallarbor =
 {
     .isCompressed = TRUE,
+<<<<<<< HEAD
     .swapPalettes = SWAP_PAL(7),
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     .isSecondary = TRUE,
     .tiles = gTilesetTiles_Fallarbor,
     .palettes = gTilesetPalettes_Fallarbor,
@@ -119,7 +138,10 @@ const struct Tileset gTileset_Fortree =
 const struct Tileset gTileset_Lilycove =
 {
     .isCompressed = TRUE,
+<<<<<<< HEAD
     //.swapPalettes = SWAP_PAL(6),
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     .isSecondary = TRUE,
     .tiles = gTilesetTiles_Lilycove,
     .palettes = gTilesetPalettes_Lilycove,
@@ -131,7 +153,10 @@ const struct Tileset gTileset_Lilycove =
 const struct Tileset gTileset_Mossdeep =
 {
     .isCompressed = TRUE,
+<<<<<<< HEAD
     //.swapPalettes = SWAP_PAL(8),
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     .isSecondary = TRUE,
     .tiles = gTilesetTiles_Mossdeep,
     .palettes = gTilesetPalettes_Mossdeep,
@@ -149,13 +174,19 @@ const struct Tileset gTileset_EverGrande =
     .metatiles = gMetatiles_EverGrande,
     .metatileAttributes = gMetatileAttributes_EverGrande,
     .callback = InitTilesetAnim_EverGrande,
+<<<<<<< HEAD
     .swapPalettes = SWAP_PAL(8),
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 const struct Tileset gTileset_Pacifidlog =
 {
     .isCompressed = TRUE,
+<<<<<<< HEAD
     .swapPalettes = SWAP_PAL(9),
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     .isSecondary = TRUE,
     .tiles = gTilesetTiles_Pacifidlog,
     .palettes = gTilesetPalettes_Pacifidlog,
@@ -167,7 +198,10 @@ const struct Tileset gTileset_Pacifidlog =
 const struct Tileset gTileset_Sootopolis =
 {
     .isCompressed = TRUE,
+<<<<<<< HEAD
     //.swapPalettes = SWAP_PAL(6),
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     .isSecondary = TRUE,
     .tiles = gTilesetTiles_Sootopolis,
     .palettes = gTilesetPalettes_Sootopolis,
@@ -660,8 +694,13 @@ const struct Tileset gTileset_SecretBase =
     .callback = NULL,
 };
 
+<<<<<<< HEAD
 const struct Tileset * const gTilesetPointer_SecretBase = &gTileset_SecretBase;
 const struct Tileset * const gTilesetPointer_SecretBaseRedCave = &gTileset_SecretBaseRedCave;
+=======
+const struct Tileset *const gTilesetPointer_SecretBase = &gTileset_SecretBase;
+const struct Tileset *const gTilesetPointer_SecretBaseRedCave = &gTileset_SecretBaseRedCave;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 const struct Tileset gTileset_EliteFour =
 {
@@ -849,6 +888,7 @@ const struct Tileset gTileset_UnionRoom =
     .metatileAttributes = gMetatileAttributes_UnionRoom,
     .callback = NULL,
 };
+<<<<<<< HEAD
 
 const struct Tileset gTileset_Johto_General =
 {
@@ -1872,3 +1912,5 @@ const struct Tileset gTileset_SeaCottage =
     .metatileAttributes = gMetatileAttributes_SeaCottage,
     .callback = NULL,
 };
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

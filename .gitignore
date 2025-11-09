@@ -13,6 +13,12 @@
 *.8bpp
 *.gbapal
 *.lz
+<<<<<<< HEAD
+=======
+*.smol
+*.fastSmol
+*.smolTM
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 *.rl
 *.latfont
 *.hwjpnfont
@@ -29,8 +35,13 @@ build/
 .DS_Store
 *.ddump
 .idea/
+<<<<<<< HEAD
 porymap.user.cfg
 porymap.project.cfg
+=======
+porymap.*.cfg
+prefabs.json
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 .vscode/
 *.a
 .fuse_hidden*
@@ -39,4 +50,21 @@ porymap.project.cfg
 *.sym
 *.js
 /pokeemerald-*.png
+<<<<<<< HEAD
 /pokeemerald_modern-*.png
+=======
+src/data/map_group_count.h
+include/constants/heal_locations.h
+tools/trainerproc/trainerproc
+src/data/battle_partners.h
+src/data/trainers.h
+src/data/debug_trainers.h
+test/battle/trainer_control.h
+tools/compresSmol/compresSmol
+tools/compresSmol/compresSmolTilemap
+*.Identifier
+*.smol
+*.fastSmol
+*.smolTM
+__pycache__
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

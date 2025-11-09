@@ -543,7 +543,11 @@ const u16 DecorGfx_AZURILL_DOLL[] = {
 };
 
 const u16 DecorGfx_SKITTY_DOLL[] = {
+<<<<<<< HEAD
     OBJ_EVENT_GFX_KECLEON_DOLL
+=======
+    OBJ_EVENT_GFX_SKITTY_DOLL
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 const u16 DecorGfx_SWABLU_DOLL[] = {
@@ -603,7 +607,11 @@ const u16 DecorGfx_WATER_CUSHION[] = {
 };
 
 const u16 DecorGfx_SNORLAX_DOLL[] = {
+<<<<<<< HEAD
     OBJ_EVENT_GFX_BIG_SNORLAX
+=======
+    OBJ_EVENT_GFX_BIG_SNORLAX_DOLL
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 const u16 DecorGfx_RHYDON_DOLL[] = {
@@ -611,7 +619,11 @@ const u16 DecorGfx_RHYDON_DOLL[] = {
 };
 
 const u16 DecorGfx_LAPRAS_DOLL[] = {
+<<<<<<< HEAD
     OBJ_EVENT_GFX_LAPRAS
+=======
+    OBJ_EVENT_GFX_BIG_LAPRAS_DOLL
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 const u16 DecorGfx_VENUSAUR_DOLL[] = {
@@ -640,4 +652,8 @@ const u16 DecorGfx_REGICE_DOLL[] = {
 
 const u16 DecorGfx_REGISTEEL_DOLL[] = {
     OBJ_EVENT_GFX_BIG_REGISTEEL_DOLL
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

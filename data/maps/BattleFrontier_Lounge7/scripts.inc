@@ -67,51 +67,91 @@ BattleFrontier_Lounge7_EventScript_ChooseNewLeftTutorMove::
 
 BattleFrontier_Lounge7_EventScript_Softboiled::
 	setvar VAR_0x8008, 16
+<<<<<<< HEAD
+=======
+	setvar VAR_0x8005, MOVE_SOFT_BOILED
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_SeismicToss::
 	setvar VAR_0x8008, 24
+<<<<<<< HEAD
+=======
+	setvar VAR_0x8005, MOVE_SEISMIC_TOSS
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_DreamEater::
 	setvar VAR_0x8008, 24
+<<<<<<< HEAD
+=======
+	setvar VAR_0x8005, MOVE_DREAM_EATER
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_MegaPunch::
 	setvar VAR_0x8008, 24
+<<<<<<< HEAD
+=======
+	setvar VAR_0x8005, MOVE_MEGA_PUNCH
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_MegaKick::
 	setvar VAR_0x8008, 48
+<<<<<<< HEAD
+=======
+	setvar VAR_0x8005, MOVE_MEGA_KICK
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_BodySlam::
 	setvar VAR_0x8008, 48
+<<<<<<< HEAD
+=======
+	setvar VAR_0x8005, MOVE_BODY_SLAM
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_RockSlide::
 	setvar VAR_0x8008, 48
+<<<<<<< HEAD
+=======
+	setvar VAR_0x8005, MOVE_ROCK_SLIDE
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_Counter::
 	setvar VAR_0x8008, 48
+<<<<<<< HEAD
+=======
+	setvar VAR_0x8005, MOVE_COUNTER
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_ThunderWave::
 	setvar VAR_0x8008, 48
+<<<<<<< HEAD
+=======
+	setvar VAR_0x8005, MOVE_THUNDER_WAVE
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_SwordsDance::
 	setvar VAR_0x8008, 48
+<<<<<<< HEAD
+=======
+	setvar VAR_0x8005, MOVE_SWORDS_DANCE
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
@@ -181,51 +221,88 @@ BattleFrontier_Lounge7_EventScript_ChooseNewRightTutorMove::
 
 BattleFrontier_Lounge7_EventScript_DefenseCurl::
 	setvar VAR_0x8008, 16
+<<<<<<< HEAD
+=======
+	setvar VAR_0x8005, MOVE_DEFENSE_CURL
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_Snore::
 	setvar VAR_0x8008, 24
+<<<<<<< HEAD
+=======
+	setvar VAR_0x8005, MOVE_SNORE
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_MudSlap::
 	setvar VAR_0x8008, 24
+<<<<<<< HEAD
+=======
+	setvar VAR_0x8005, MOVE_MUD_SLAP
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_Swift::
 	setvar VAR_0x8008, 24
+<<<<<<< HEAD
+=======
+	setvar VAR_0x8005, MOVE_SWIFT
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_IcyWind::
 	setvar VAR_0x8008, 24
+<<<<<<< HEAD
+=======
+	setvar VAR_0x8005, MOVE_ICY_WIND
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_Endure::
 	setvar VAR_0x8008, 48
+<<<<<<< HEAD
+=======
+	setvar VAR_0x8005, MOVE_ENDURE
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_PsychUp::
 	setvar VAR_0x8008, 48
+<<<<<<< HEAD
+=======
+	setvar VAR_0x8005, MOVE_PSYCH_UP
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_IcePunch::
 	setvar VAR_0x8008, 48
+<<<<<<< HEAD
+=======
+	setvar VAR_0x8005, MOVE_ICE_PUNCH
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_ThunderPunch::
 	setvar VAR_0x8008, 48
+<<<<<<< HEAD
+=======
+	setvar VAR_0x8005, MOVE_THUNDER_PUNCH
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_FirePunch::
 	setvar VAR_0x8008, 48
+<<<<<<< HEAD
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
@@ -291,6 +368,9 @@ BattleFrontier_Lounge7_EventScript_BlastBurn::
 
 BattleFrontier_Lounge7_EventScript_HydroCannon::
 	setvar VAR_0x8008, 64
+=======
+	setvar VAR_0x8005, MOVE_FIRE_PUNCH
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
@@ -311,11 +391,16 @@ BattleFrontier_Lounge7_EventScript_CancelChooseMon::
 @ VAR_TEMP_FRONTIER_TUTOR_SELECTION is the move selection
 @ VAR_TEMP_FRONTIER_TUTOR_ID is which move tutor was spoken to
 BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection::
+<<<<<<< HEAD
 	copyvar VAR_0x8004, VAR_TEMP_FRONTIER_TUTOR_SELECTION
 	copyvar VAR_0x8005, VAR_TEMP_FRONTIER_TUTOR_ID
 	special BufferBattleFrontierTutorMoveName
 	buffernumberstring STR_VAR_2, VAR_0x8008
 	copyvar VAR_0x8004, VAR_TEMP_C
+=======
+	special BufferBattleFrontierTutorMoveName
+	buffernumberstring STR_VAR_2, VAR_0x8008
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox BattleFrontier_Lounge7_Text_MoveWillBeXBattlePoints, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, BattleFrontier_Lounge7_EventScript_ChooseNewMove
 	specialvar VAR_TEMP_1, GetFrontierBattlePoints
@@ -326,7 +411,10 @@ BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection::
 
 BattleFrontier_Lounge7_EventScript_TeachTutorMove::
 	msgbox BattleFrontier_Lounge7_Text_TeachMoveToWhichMon, MSGBOX_DEFAULT
+<<<<<<< HEAD
 	special GetBattleFrontierTutorMoveIndex
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	fadescreen FADE_TO_BLACK
 	special CloseBattlePointsWindow
 	special CloseBattleFrontierTutorWindow
@@ -341,7 +429,10 @@ BattleFrontier_Lounge7_EventScript_TeachTutorMove::
 
 BattleFrontier_Lounge7_EventScript_ChooseNewMove::
 	goto_if_eq VAR_TEMP_FRONTIER_TUTOR_ID, 0, BattleFrontier_Lounge7_EventScript_ChooseNewLeftTutorMove
+<<<<<<< HEAD
 	goto_if_eq VAR_TEMP_FRONTIER_TUTOR_ID, 2, BattleFrontier_Lounge7_EventScript_ChooseNewElementalTutorMove
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto BattleFrontier_Lounge7_EventScript_ChooseNewRightTutorMove
 	end
 
@@ -543,6 +634,7 @@ BattleFrontier_Lounge7_Text_FirePunchDesc::
 	.string "A fiery punch\n"
 	.string "that may burn\n"
 	.string "the foe.$"
+<<<<<<< HEAD
 
 BattleFrontier_Lounge7_Text_ElementalTutorIntro::
 	.string "Zzzzzz…\p"
@@ -569,3 +661,5 @@ BattleFrontier_Lounge7_Text_StrongElementalMoveDesc::
 	.string "Powerful, but\n"
 	.string "leaves the user\n"
 	.string "immobile one turn.$"
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

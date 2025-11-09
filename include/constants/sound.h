@@ -1,6 +1,7 @@
 #ifndef GUARD_CONSTANTS_SOUND_H
 #define GUARD_CONSTANTS_SOUND_H
 
+<<<<<<< HEAD
 #define FANFARE_LEVEL_UP                 0
 #define FANFARE_HEAL                     1
 #define FANFARE_OBTAIN_BADGE             2
@@ -72,6 +73,26 @@
 #define FANFARE_HG_OBTAIN_CASTLE_POINTS  68
 #define FANFARE_HG_CLEAR_MINIGAME        69
 #define FANFARE_HG_PARTNER               70
+=======
+#define FANFARE_LEVEL_UP             0
+#define FANFARE_OBTAIN_ITEM          1
+#define FANFARE_EVOLVED              2
+#define FANFARE_OBTAIN_TMHM          3
+#define FANFARE_HEAL                 4
+#define FANFARE_OBTAIN_BADGE         5
+#define FANFARE_MOVE_DELETED         6
+#define FANFARE_OBTAIN_BERRY         7
+#define FANFARE_AWAKEN_LEGEND        8
+#define FANFARE_SLOTS_JACKPOT        9
+#define FANFARE_SLOTS_WIN           10
+#define FANFARE_TOO_BAD             11
+#define FANFARE_RG_POKE_FLUTE       12
+#define FANFARE_RG_OBTAIN_KEY_ITEM  13
+#define FANFARE_RG_DEX_RATING       14
+#define FANFARE_OBTAIN_B_POINTS     15
+#define FANFARE_OBTAIN_SYMBOL       16
+#define FANFARE_REGISTER_MATCH_CALL 17
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 #define CRY_MODE_NORMAL        0 // Default
 #define CRY_MODE_DOUBLES       1 // Shortened cry for double battles
@@ -86,6 +107,10 @@
 #define CRY_MODE_GROWL_2      10 // For 2nd cry used by the move Growl
 #define CRY_MODE_WEAK         11 // Used when a Pokémon is unhealthy
 #define CRY_MODE_WEAK_DOUBLES 12 // Equivalent to CRY_MODE_DOUBLES for CRY_MODE_WEAK
+<<<<<<< HEAD
+=======
+#define CRY_MODE_DYNAMAX      13 // Used during Dynamax
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 // Given to SoundTask_PlayDoubleCry to determine which cry mode to use. Values are arbitrary
 #define DOUBLE_CRY_ROAR  2

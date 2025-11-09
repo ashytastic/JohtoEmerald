@@ -2,6 +2,10 @@
 #include "field_effect.h"
 #include "field_player_avatar.h"
 #include "fldeff.h"
+<<<<<<< HEAD
+=======
+#include "follower_npc.h"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include "party_menu.h"
 #include "overworld.h"
 #include "task.h"
@@ -10,8 +14,16 @@
 static void FieldCallback_Teleport(void);
 static void StartTeleportFieldEffect(void);
 
+<<<<<<< HEAD
 bool8 SetUpFieldMove_Teleport(void)
 {
+=======
+bool32 SetUpFieldMove_Teleport(void)
+{
+    if (!CheckFollowerNPCFlag(FOLLOWER_NPC_FLAG_CAN_LEAVE_ROUTE))
+        return FALSE;
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE)
     {
         gFieldCallback2 = FieldCallback_PrepareFadeInForTeleport;

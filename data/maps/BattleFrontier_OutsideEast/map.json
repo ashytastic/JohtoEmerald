@@ -34,7 +34,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_MAN",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 42,
       "y": 15,
       "elevation": 0,
@@ -60,7 +64,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_CHANNELER",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_HEX_MANIAC",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 54,
       "y": 16,
       "elevation": 0,
@@ -86,7 +94,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_CHEF",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_COOK",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 41,
       "y": 56,
       "elevation": 3,
@@ -99,7 +111,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 8,
       "y": 46,
       "elevation": 0,
@@ -125,7 +141,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_POLICEMAN",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_RICH_BOY",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 45,
       "y": 47,
       "elevation": 3,
@@ -164,7 +184,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_BALDING_MAN",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 17,
       "y": 40,
       "elevation": 0,
@@ -177,7 +201,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_ZIGZAGOON",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_ZIGZAGOON_2",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 40,
       "y": 56,
       "elevation": 3,
@@ -190,6 +218,10 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
+=======
+      "local_id": "LOCALID_FRONTIER_SUDOWOODO",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_SUDOWOODO",
       "x": 54,
       "y": 62,
@@ -203,7 +235,11 @@
       "flag": "FLAG_HIDE_BATTLE_FRONTIER_SUDOWOODO"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_SUPER_NERD",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_MANIAC",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 42,
       "y": 34,
       "elevation": 3,
@@ -216,7 +252,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 51,
       "y": 53,
       "elevation": 3,
@@ -229,7 +269,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_TRAINER_TOWER_DUDE",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 62,
       "y": 18,
       "elevation": 0,
@@ -242,7 +286,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_MAN",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 11,
       "y": 21,
       "elevation": 0,
@@ -255,7 +303,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_WORKER_F",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 10,
       "y": 21,
       "elevation": 0,
@@ -268,7 +320,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_WORKER_F",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 16,
       "y": 30,
       "elevation": 0,
@@ -294,7 +350,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_SUPER_NERD",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_MANIAC",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 54,
       "y": 31,
       "elevation": 0,
@@ -307,7 +367,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_LASS",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 54,
       "y": 32,
       "elevation": 0,
@@ -320,7 +384,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_ATTENDANT",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 58,
       "y": 55,
       "elevation": 3,
@@ -357,6 +425,7 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "BattleFrontier_OutsideEast_EventScript_Camper",
       "flag": "0"
+<<<<<<< HEAD
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
@@ -474,6 +543,8 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "0"
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "warp_events": [
@@ -555,8 +626,13 @@
       "dest_warp_id": "0"
     },
     {
+<<<<<<< HEAD
       "x": 22,
       "y": 44,
+=======
+      "x": 21,
+      "y": 45,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "elevation": 0,
       "dest_map": "MAP_BATTLE_FRONTIER_LOUNGE9",
       "dest_warp_id": "0"
@@ -576,9 +652,13 @@
       "dest_warp_id": "0"
     }
   ],
+<<<<<<< HEAD
   "coord_events": [
 
   ],
+=======
+  "coord_events": [],
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "bg_events": [
     {
       "type": "sign",
@@ -644,6 +724,7 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Common_EventScript_ShowPokemonCenterSign"
     }
+<<<<<<< HEAD
   ],
   "heal_locations": [
     {
@@ -651,5 +732,7 @@
       "x": 3,
       "y": 52
 	}
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   ]
 }

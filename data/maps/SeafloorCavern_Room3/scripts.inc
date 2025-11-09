@@ -2,12 +2,20 @@ SeafloorCavern_Room3_MapScripts::
 	.byte 0
 
 SeafloorCavern_Room3_EventScript_Shelly::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_GRANT, SeafloorCavern_Room3_Text_ShellyIntro, SeafloorCavern_Room3_Text_ShellyDefeat
+=======
+	trainerbattle_single TRAINER_SHELLY_SEAFLOOR_CAVERN, SeafloorCavern_Room3_Text_ShellyIntro, SeafloorCavern_Room3_Text_ShellyDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox SeafloorCavern_Room3_Text_ShellyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 SeafloorCavern_Room3_EventScript_Grunt5::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_VANCE, SeafloorCavern_Room3_Text_Grunt5Intro, SeafloorCavern_Room3_Text_Grunt5Defeat
+=======
+	trainerbattle_single TRAINER_GRUNT_SEAFLOOR_CAVERN_5, SeafloorCavern_Room3_Text_Grunt5Intro, SeafloorCavern_Room3_Text_Grunt5Defeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox SeafloorCavern_Room3_Text_Grunt5PostBattle, MSGBOX_AUTOCLOSE
 	end
 

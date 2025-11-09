@@ -2,7 +2,11 @@
   "id": "MAP_SCORCHED_SLAB",
   "name": "ScorchedSlab",
   "layout": "LAYOUT_SCORCHED_SLAB",
+<<<<<<< HEAD
   "music": "MUS_DP_OREBURGH_MINE",
+=======
+  "music": "MUS_PETALBURG_WOODS",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "region_map_section": "MAPSEC_SCORCHED_SLAB",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -12,7 +16,11 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+<<<<<<< HEAD
   "connections": 0,
+=======
+  "connections": null,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -23,9 +31,15 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
+<<<<<<< HEAD
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ScorchedSlab_EventScript_ItemTMSunnyDay",
       "flag": "FLAG_ITEM_GARBAGEFLAG"
+=======
+      "trainer_sight_or_berry_tree_id": "ITEM_TM_SUNNY_DAY",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_SCORCHED_SLAB_TM_SUNNY_DAY"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "warp_events": [
@@ -35,6 +49,7 @@
       "elevation": 1,
       "dest_map": "MAP_ROUTE120",
       "dest_warp_id": "1"
+<<<<<<< HEAD
     },
     {
       "x": 7,
@@ -50,4 +65,10 @@
   "bg_events": [
 
   ]
+=======
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }

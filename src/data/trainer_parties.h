@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 static const struct TrainerMonNoItemDefaultMoves sParty_Sawyer1[] = {
     {
     .iv = 0,
@@ -21981,3 +21982,6 @@ static const struct TrainerMonNoItemDefaultMoves sParty_DuffAndEda[] = { //Young
     .species = SPECIES_CLOYSTER,
     },
 };
+=======
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

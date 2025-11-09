@@ -121,7 +121,11 @@ static const u16 *const sMoveStyles[FACTORY_NUM_STYLES - 1] =
     [FACTORY_STYLE_WEATHER - 1]       = sMoves_DependsOnTheBattlesFlow,
 };
 
+<<<<<<< HEAD
 static void (* const sBattleFactoryFunctions[])(void) =
+=======
+static void (*const sBattleFactoryFunctions[])(void) =
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     [BATTLE_FACTORY_FUNC_INIT]                   = InitFactoryChallenge,
     [BATTLE_FACTORY_FUNC_GET_DATA]               = GetBattleFactoryData,
@@ -218,7 +222,11 @@ static void InitFactoryChallenge(void)
         gFrontierTempParty[i] = 0xFFFF;
 
     SetDynamicWarp(0, gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum, WARP_ID_NONE);
+<<<<<<< HEAD
     gTrainerBattleOpponent_A = 0;
+=======
+    TRAINER_BATTLE_PARAM.opponentA = 0;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void GetBattleFactoryData(void)
@@ -268,6 +276,10 @@ static void SetBattleFactoryData(void)
 
 static void SaveFactoryChallenge(void)
 {
+<<<<<<< HEAD
+=======
+    ClearEnemyPartyAfterChallenge();
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gSaveBlock2Ptr->frontier.challengeStatus = gSpecialVar_0x8005;
     VarSet(VAR_TEMP_CHALLENGE_STATUS, 0);
     gSaveBlock2Ptr->frontier.challengePaused = TRUE;
@@ -324,7 +336,11 @@ static void GenerateOpponentMons(void)
         }
     } while (i != gSaveBlock2Ptr->frontier.curChallengeBattleNum);
 
+<<<<<<< HEAD
     gTrainerBattleOpponent_A = trainerId;
+=======
+    TRAINER_BATTLE_PARAM.opponentA = trainerId;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (gSaveBlock2Ptr->frontier.curChallengeBattleNum < FRONTIER_STAGES_PER_CHALLENGE - 1)
         gSaveBlock2Ptr->frontier.trainerIds[gSaveBlock2Ptr->frontier.curChallengeBattleNum] = trainerId;
 
@@ -346,8 +362,13 @@ static void GenerateOpponentMons(void)
         if (j != (int)ARRAY_COUNT(gSaveBlock2Ptr->frontier.rentalMons))
             continue;
 
+<<<<<<< HEAD
         // "High tier" pokemon are only allowed on open level mode
         if (lvlMode == FRONTIER_LVL_OPEN && monId > FRONTIER_MONS_HIGH_TIER)
+=======
+        // "High tier" Pokémon are only allowed on open level mode
+        if (lvlMode == FRONTIER_LVL_50 && monId > FRONTIER_MONS_HIGH_TIER)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             continue;
 
         // Ensure this species hasn't already been chosen for the opponent
@@ -362,7 +383,11 @@ static void GenerateOpponentMons(void)
         // Ensure held items don't repeat on the opponent's team
         for (k = firstMonId; k < firstMonId + i; k++)
         {
+<<<<<<< HEAD
             if (heldItems[k] != ITEM_NONE && heldItems[k] == gBattleFrontierHeldItems[gFacilityTrainerMons[monId].itemTableId])
+=======
+            if (heldItems[k] != ITEM_NONE && heldItems[k] == gFacilityTrainerMons[monId].heldItem)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 break;
         }
         if (k != firstMonId + i)
@@ -370,7 +395,11 @@ static void GenerateOpponentMons(void)
 
         // Successful selection
         species[i] = gFacilityTrainerMons[monId].species;
+<<<<<<< HEAD
         heldItems[i] = gBattleFrontierHeldItems[gFacilityTrainerMons[monId].itemTableId];
+=======
+        heldItems[i] = gFacilityTrainerMons[monId].heldItem;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         gFrontierTempParty[i] = monId;
         i++;
     }
@@ -378,7 +407,11 @@ static void GenerateOpponentMons(void)
 
 static void SetOpponentGfxVar(void)
 {
+<<<<<<< HEAD
     SetBattleFacilityTrainerGfxId(gTrainerBattleOpponent_A, 0);
+=======
+    SetBattleFacilityTrainerGfxId(TRAINER_BATTLE_PARAM.opponentA, 0);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void SetRentalsToOpponentParty(void)
@@ -386,6 +419,7 @@ static void SetRentalsToOpponentParty(void)
     u8 i;
 
     if (gSaveBlock2Ptr->frontier.lvlMode != FRONTIER_LVL_TENT)
+<<<<<<< HEAD
         if (gSaveBlock2Ptr->optionStyle == 1) //off
             gFacilityTrainerMons = gBattleFrontierMons;
         else if (gSaveBlock2Ptr->optionStyle == 0) //on
@@ -395,6 +429,11 @@ static void SetRentalsToOpponentParty(void)
             gFacilityTrainerMons = gSlateportBattleTentMons;
         else if (gSaveBlock2Ptr->optionStyle == 0) //on
             gFacilityTrainerMons = gSlateportBattleTentMonsSplit;
+=======
+        gFacilityTrainerMons = gBattleFrontierMons;
+    else
+        gFacilityTrainerMons = gSlateportBattleTentMons;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     for (i = 0; i < FRONTIER_PARTY_SIZE; i++)
     {
@@ -402,12 +441,17 @@ static void SetRentalsToOpponentParty(void)
         gSaveBlock2Ptr->frontier.rentalMons[i + FRONTIER_PARTY_SIZE].ivs = GetBoxMonData(&gEnemyParty[i].box, MON_DATA_ATK_IV, NULL);
         gSaveBlock2Ptr->frontier.rentalMons[i + FRONTIER_PARTY_SIZE].personality = GetMonData(&gEnemyParty[i], MON_DATA_PERSONALITY, NULL);
         gSaveBlock2Ptr->frontier.rentalMons[i + FRONTIER_PARTY_SIZE].abilityNum = GetBoxMonData(&gEnemyParty[i].box, MON_DATA_ABILITY_NUM, NULL);
+<<<<<<< HEAD
         SetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, &gBattleFrontierHeldItems[gFacilityTrainerMons[gFrontierTempParty[i]].itemTableId]);
+=======
+        SetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, &gFacilityTrainerMons[gFrontierTempParty[i]].heldItem);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
 }
 
 static void SetPlayerAndOpponentParties(void)
 {
+<<<<<<< HEAD
     int i, j, k;
     int count = 0;
     u8 bits = 0;
@@ -423,14 +467,28 @@ static void SetPlayerAndOpponentParties(void)
             gFacilityTrainerMons = gSlateportBattleTentMons;
         else if (gSaveBlock2Ptr->optionStyle == 0) //on
             gFacilityTrainerMons = gSlateportBattleTentMonsSplit;
+=======
+    int i;
+    u8 monLevel;
+    u16 monId;
+    u8 ivs;
+
+    if (gSaveBlock2Ptr->frontier.lvlMode == FRONTIER_LVL_TENT)
+    {
+        gFacilityTrainerMons = gSlateportBattleTentMons;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         monLevel = TENT_MIN_LEVEL;
     }
     else
     {
+<<<<<<< HEAD
         if (gSaveBlock2Ptr->optionStyle == 1) //off
             gFacilityTrainerMons = gBattleFrontierMons;
         else if (gSaveBlock2Ptr->optionStyle == 0) //on
             gFacilityTrainerMons = gBattleFrontierMonsSplit;
+=======
+        gFacilityTrainerMons = gBattleFrontierMons;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         if (gSaveBlock2Ptr->frontier.lvlMode != FRONTIER_LVL_50)
             monLevel = FRONTIER_MAX_LEVEL_OPEN;
         else
@@ -444,6 +502,7 @@ static void SetPlayerAndOpponentParties(void)
         {
             monId = gSaveBlock2Ptr->frontier.rentalMons[i].monId;
             ivs = gSaveBlock2Ptr->frontier.rentalMons[i].ivs;
+<<<<<<< HEAD
             CreateMon(&gPlayerParty[i],
                       gFacilityTrainerMons[monId].species,
                       monLevel,
@@ -474,6 +533,10 @@ static void SetPlayerAndOpponentParties(void)
             SetMonData(&gPlayerParty[i], MON_DATA_FRIENDSHIP, &friendship);
             SetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, &gBattleFrontierHeldItems[gFacilityTrainerMons[monId].itemTableId]);
             SetMonData(&gPlayerParty[i], MON_DATA_ABILITY_NUM, &gSaveBlock2Ptr->frontier.rentalMons[i].abilityNum);
+=======
+
+            CreateFacilityMon(&gFacilityTrainerMons[monId], monLevel, ivs, OT_ID_PLAYER_ID, FLAG_FRONTIER_MON_FACTORY, &gPlayerParty[i]);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         }
     }
 
@@ -485,6 +548,7 @@ static void SetPlayerAndOpponentParties(void)
         {
             monId = gSaveBlock2Ptr->frontier.rentalMons[i + FRONTIER_PARTY_SIZE].monId;
             ivs = gSaveBlock2Ptr->frontier.rentalMons[i + FRONTIER_PARTY_SIZE].ivs;
+<<<<<<< HEAD
             CreateMon(&gEnemyParty[i],
                       gFacilityTrainerMons[monId].species,
                       monLevel,
@@ -513,6 +577,9 @@ static void SetPlayerAndOpponentParties(void)
                 SetMonMoveAvoidReturn(&gEnemyParty[i], gFacilityTrainerMons[monId].moves[k], k);
             SetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, &gBattleFrontierHeldItems[gFacilityTrainerMons[monId].itemTableId]);
             SetMonData(&gEnemyParty[i], MON_DATA_ABILITY_NUM, &gSaveBlock2Ptr->frontier.rentalMons[i + FRONTIER_PARTY_SIZE].abilityNum);
+=======
+            CreateFacilityMon(&gFacilityTrainerMons[monId], monLevel, ivs, OT_ID_PLAYER_ID, FLAG_FRONTIER_MON_FACTORY, &gEnemyParty[i]);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         }
         break;
     }
@@ -549,10 +616,14 @@ static void GenerateInitialRentalMons(void)
     else
         factoryBattleMode = FRONTIER_MODE_SINGLES;
 
+<<<<<<< HEAD
     if (gSaveBlock2Ptr->optionStyle == 1) //off
         gFacilityTrainerMons = gBattleFrontierMons;
     else if (gSaveBlock2Ptr->optionStyle == 0) //on
         gFacilityTrainerMons = gBattleFrontierMonsSplit;
+=======
+    gFacilityTrainerMons = gBattleFrontierMons;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (gSaveBlock2Ptr->frontier.lvlMode != FRONTIER_LVL_50)
     {
         factoryLvlMode = FRONTIER_LVL_OPEN;
@@ -597,7 +668,11 @@ static void GenerateInitialRentalMons(void)
         // Cannot have two same held items.
         for (j = firstMonId; j < firstMonId + i; j++)
         {
+<<<<<<< HEAD
             if (heldItems[j] != ITEM_NONE && heldItems[j] == gBattleFrontierHeldItems[gFacilityTrainerMons[monId].itemTableId])
+=======
+            if (heldItems[j] != ITEM_NONE && heldItems[j] == gFacilityTrainerMons[monId].heldItem)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             {
                 if (gFacilityTrainerMons[monId].species == currSpecies)
                     currSpecies = SPECIES_NONE;
@@ -609,7 +684,11 @@ static void GenerateInitialRentalMons(void)
 
         gSaveBlock2Ptr->frontier.rentalMons[i].monId = monId;
         species[i] = gFacilityTrainerMons[monId].species;
+<<<<<<< HEAD
         heldItems[i] = gBattleFrontierHeldItems[gFacilityTrainerMons[monId].itemTableId];
+=======
+        heldItems[i] = gFacilityTrainerMons[monId].heldItem;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         monIds[i] = monId;
         i++;
     }
@@ -625,10 +704,14 @@ static void GetOpponentMostCommonMonType(void)
     u8 typeCounts[NUMBER_OF_MON_TYPES];
     u8 mostCommonTypes[2];
 
+<<<<<<< HEAD
     if (gSaveBlock2Ptr->optionStyle == 1) //off
         gFacilityTrainerMons = gBattleFrontierMons;
     else if (gSaveBlock2Ptr->optionStyle == 0) //on
         gFacilityTrainerMons = gBattleFrontierMonsSplit;
+=======
+    gFacilityTrainerMons = gBattleFrontierMons;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     // Count the number of times each type occurs in the opponent's party.
     for (i = TYPE_NORMAL; i < NUMBER_OF_MON_TYPES; i++)
@@ -636,9 +719,15 @@ static void GetOpponentMostCommonMonType(void)
     for (i = 0; i < FRONTIER_PARTY_SIZE; i++)
     {
         u32 species = gFacilityTrainerMons[gFrontierTempParty[i]].species;
+<<<<<<< HEAD
         typeCounts[GetTypeBySpecies(species, 1)]++;
         if (GetTypeBySpecies(species, 1) != GetTypeBySpecies(species, 2))
             typeCounts[GetTypeBySpecies(species, 2)]++;
+=======
+        typeCounts[GetSpeciesType(species, 0)]++;
+        if (GetSpeciesType(species, 0) != GetSpeciesType(species, 1))
+            typeCounts[GetSpeciesType(species, 1)]++;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
 
     // Determine which are the two most-common types.
@@ -678,10 +767,14 @@ static void GetOpponentBattleStyle(void)
     u8 stylePoints[FACTORY_NUM_STYLES];
 
     count = 0;
+<<<<<<< HEAD
     if (gSaveBlock2Ptr->optionStyle == 1) //off
         gFacilityTrainerMons = gBattleFrontierMons;
     else if (gSaveBlock2Ptr->optionStyle == 0) //on
         gFacilityTrainerMons = gBattleFrontierMonsSplit;
+=======
+    gFacilityTrainerMons = gBattleFrontierMons;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     for (i = 0; i < FACTORY_NUM_STYLES; i++)
         stylePoints[i] = 0;
 
@@ -737,6 +830,7 @@ static void RestorePlayerPartyHeldItems(void)
     u8 i;
 
     if (gSaveBlock2Ptr->frontier.lvlMode != FRONTIER_LVL_TENT)
+<<<<<<< HEAD
         if (gSaveBlock2Ptr->optionStyle == 1) //off
             gFacilityTrainerMons = gBattleFrontierMons;
         else if (gSaveBlock2Ptr->optionStyle == 0) //on
@@ -746,12 +840,21 @@ static void RestorePlayerPartyHeldItems(void)
             gFacilityTrainerMons = gSlateportBattleTentMons;
         else if (gSaveBlock2Ptr->optionStyle == 0) //on
             gFacilityTrainerMons = gSlateportBattleTentMonsSplit;
+=======
+        gFacilityTrainerMons = gBattleFrontierMons;
+    else
+        gFacilityTrainerMons = gSlateportBattleTentMons;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     for (i = 0; i < FRONTIER_PARTY_SIZE; i++)
     {
         SetMonData(&gPlayerParty[i],
                    MON_DATA_HELD_ITEM,
+<<<<<<< HEAD
                    &gBattleFrontierHeldItems[gFacilityTrainerMons[gSaveBlock2Ptr->frontier.rentalMons[i].monId].itemTableId]);
+=======
+                   &gFacilityTrainerMons[gSaveBlock2Ptr->frontier.rentalMons[i].monId].heldItem);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
 }
 
@@ -788,7 +891,10 @@ void FillFactoryBrainParty(void)
     int i, j, k;
     u16 species[FRONTIER_PARTY_SIZE];
     u16 heldItems[FRONTIER_PARTY_SIZE];
+<<<<<<< HEAD
     u8 friendship;
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     int monLevel;
     u8 fixedIV;
     u32 otId;
@@ -807,7 +913,11 @@ void FillFactoryBrainParty(void)
 
         if (gFacilityTrainerMons[monId].species == SPECIES_UNOWN)
             continue;
+<<<<<<< HEAD
         if (lvlMode == FRONTIER_LVL_OPEN && monId > FRONTIER_MONS_HIGH_TIER)
+=======
+        if (monLevel == FRONTIER_MAX_LEVEL_50 && monId > FRONTIER_MONS_HIGH_TIER)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             continue;
 
         for (j = 0; j < (int)ARRAY_COUNT(gSaveBlock2Ptr->frontier.rentalMons); j++)
@@ -828,13 +938,18 @@ void FillFactoryBrainParty(void)
 
         for (k = 0; k < i; k++)
         {
+<<<<<<< HEAD
             if (heldItems[k] != ITEM_NONE && heldItems[k] == gBattleFrontierHeldItems[gFacilityTrainerMons[monId].itemTableId])
+=======
+            if (heldItems[k] != ITEM_NONE && heldItems[k] == gFacilityTrainerMons[monId].heldItem)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 break;
         }
         if (k != i)
             continue;
 
         species[i] = gFacilityTrainerMons[monId].species;
+<<<<<<< HEAD
         heldItems[i] = gBattleFrontierHeldItems[gFacilityTrainerMons[monId].itemTableId];
         CreateMonWithEVSpreadNatureOTID(&gEnemyParty[i],
                                              gFacilityTrainerMons[monId].species,
@@ -849,6 +964,12 @@ void FillFactoryBrainParty(void)
             SetMonMoveAvoidReturn(&gEnemyParty[i], gFacilityTrainerMons[monId].moves[k], k);
         SetMonData(&gEnemyParty[i], MON_DATA_FRIENDSHIP, &friendship);
         SetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, &gBattleFrontierHeldItems[gFacilityTrainerMons[monId].itemTableId]);
+=======
+        heldItems[i] = gFacilityTrainerMons[monId].heldItem;
+        CreateFacilityMon(&gFacilityTrainerMons[monId],
+                monLevel, fixedIV, otId, FLAG_FRONTIER_MON_FACTORY,
+                &gEnemyParty[i]);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         i++;
     }
 }
@@ -913,7 +1034,11 @@ u8 GetNumPastRentalsRank(u8 battleMode, u8 lvlMode)
     return ret;
 }
 
+<<<<<<< HEAD
 u32 GetAiScriptsInBattleFactory(void)
+=======
+u64 GetAiScriptsInBattleFactory(void)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     int lvlMode = gSaveBlock2Ptr->frontier.lvlMode;
 
@@ -926,6 +1051,7 @@ u32 GetAiScriptsInBattleFactory(void)
         int battleMode = VarGet(VAR_FRONTIER_BATTLE_MODE);
         int challengeNum = gSaveBlock2Ptr->frontier.factoryWinStreaks[battleMode][lvlMode] / FRONTIER_STAGES_PER_CHALLENGE;
 
+<<<<<<< HEAD
         if (gTrainerBattleOpponent_A == TRAINER_FRONTIER_BRAIN)
             return AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY;
         else if (challengeNum < 2)
@@ -934,6 +1060,16 @@ u32 GetAiScriptsInBattleFactory(void)
             return AI_SCRIPT_CHECK_BAD_MOVE;
         else
             return AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY;
+=======
+        if (TRAINER_BATTLE_PARAM.opponentA == TRAINER_FRONTIER_BRAIN)
+            return AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY;
+        else if (challengeNum < 2)
+            return 0;
+        else if (challengeNum < 4)
+            return AI_FLAG_CHECK_BAD_MOVE;
+        else
+            return AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
 }
 

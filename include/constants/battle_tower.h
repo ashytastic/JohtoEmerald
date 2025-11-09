@@ -38,4 +38,13 @@
 #define BATTLE_TOWER_LINKSTAT_MEMBER_RETIRE  2
 #define BATTLE_TOWER_LINKSTAT_LEADER_RETIRE  3
 
+<<<<<<< HEAD
+=======
+// Ids for special multi battle types
+#define MULTI_BATTLE_2_VS_2 0
+#define MULTI_BATTLE_2_VS_WILD 1
+#define MULTI_BATTLE_2_VS_1 2
+#define MULTI_BATTLE_CHOOSE_MONS 0x80
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #endif //GUARD_CONSTANTS_BATTLE_TOWER_H

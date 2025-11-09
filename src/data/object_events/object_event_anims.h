@@ -1144,7 +1144,11 @@ static const union AnimCmd *const sAnimTable_Standard[] = {
     [ANIM_STD_GO_FASTEST_EAST] = sAnim_GoFastestEast,
 };
 
+<<<<<<< HEAD
 static const union AnimCmd *const sAnimTable_Following[] = {
+=======
+const union AnimCmd *const sAnimTable_Following[] = {
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     [ANIM_STD_FACE_SOUTH] = sAnim_FaceSouth,
     [ANIM_STD_FACE_NORTH] = sAnim_FaceNorth2F,
     [ANIM_STD_FACE_WEST] = sAnim_FaceWest2F,
@@ -1173,7 +1177,11 @@ static const union AnimCmd *const sAnimTable_Following[] = {
 };
 
 // Like the above, but has separate frames for facing right
+<<<<<<< HEAD
 static const union AnimCmd *const sAnimTable_Following_Asym[] = {
+=======
+const union AnimCmd *const sAnimTable_Following_Asym[] = {
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     [ANIM_STD_FACE_SOUTH] = sAnim_FaceSouth,
     [ANIM_STD_FACE_NORTH] = sAnim_FaceNorth2F,
     [ANIM_STD_FACE_WEST] = sAnim_FaceWest2F,
@@ -1200,6 +1208,7 @@ static const union AnimCmd *const sAnimTable_Following_Asym[] = {
     [ANIM_EXIT_POKEBALL_FAST_EAST] = sAnim_ExitPokeballFastEast_Asym,
 };
 
+<<<<<<< HEAD
 const union AnimCmd sAnim_FaceEast2F_Special[] =
 {
     ANIMCMD_FRAME(6, 16),
@@ -1255,6 +1264,8 @@ static const union AnimCmd *const sAnimTable_FollowingSpecial[] = {
     sAnim_ExitPokeballFastEast,
 };
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static const union AnimCmd *const sAnimTable_HoOh[] = {
     [ANIM_STD_FACE_SOUTH] = sAnim_FaceSouth,
     [ANIM_STD_FACE_NORTH] = sAnim_FaceNorth,
@@ -1386,6 +1397,7 @@ static const union AnimCmd *const sAnimTable_Rayquaza[] = {
     [ANIM_STD_GO_FASTEST_EAST] = sAnim_RayquazaNormal,
 };
 
+<<<<<<< HEAD
 static const union AnimCmd *const sAnimTable_Whirlpool[] = {
     [ANIM_STD_FACE_SOUTH] = sAnim_RayquazaFaceSouth,
     [ANIM_STD_FACE_NORTH] = sAnim_RayquazaFaceNorth,
@@ -1409,6 +1421,8 @@ static const union AnimCmd *const sAnimTable_Whirlpool[] = {
     [ANIM_STD_GO_FASTEST_EAST] = sAnim_RayquazaNormal,
 };
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static const union AnimCmd *const sAnimTable_BrendanMayNormal[] = {
     [ANIM_STD_FACE_SOUTH] = sAnim_FaceSouth,
     [ANIM_STD_FACE_NORTH] = sAnim_FaceNorth,
@@ -1538,6 +1552,11 @@ static const union AnimCmd *const sAnimTable_BerryTree[] = {
     [BERRY_STAGE_PLANTED - 1] = sAnim_BerryTreeStage0,
     [BERRY_STAGE_SPROUTED - 1] = sAnim_BerryTreeStage1,
     [BERRY_STAGE_TALLER - 1] = sAnim_BerryTreeStage2,
+<<<<<<< HEAD
+=======
+    [BERRY_STAGE_TRUNK - 1] = sAnim_BerryTreeStage2,
+    [BERRY_STAGE_BUDDING - 1] = sAnim_BerryTreeStage2,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     [BERRY_STAGE_FLOWERING - 1] = sAnim_BerryTreeStage3,
     [BERRY_STAGE_BERRIES - 1] = sAnim_BerryTreeStage4,
 };

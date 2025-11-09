@@ -10,7 +10,10 @@ PacifidlogTown_House2_EventScript_FanClubYoungerBrother::
 	call_if_set FLAG_MET_FANCLUB_YOUNGER_BROTHER, PacifidlogTown_House2_EventScript_MonAssessment
 	call_if_unset FLAG_MET_FANCLUB_YOUNGER_BROTHER, PacifidlogTown_House2_EventScript_FirstMonAssessment
 	setflag FLAG_MET_FANCLUB_YOUNGER_BROTHER
+<<<<<<< HEAD
 	goto_if_set FLAG_FINITE_TMS, PacifidlogTown_House2_EventScript_FanClubYoungerBrotherFinite
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	specialvar VAR_RESULT, GetLeadMonFriendshipScore
 	goto_if_ge VAR_RESULT, FRIENDSHIP_150_TO_199, PacifidlogTown_House2_EventScript_GiveReturn
 	specialvar VAR_RESULT, GetLeadMonFriendshipScore
@@ -18,6 +21,7 @@ PacifidlogTown_House2_EventScript_FanClubYoungerBrother::
 	goto PacifidlogTown_House2_EventScript_GiveFrustration
 	end
 
+<<<<<<< HEAD
 PacifidlogTown_House2_EventScript_FanClubYoungerBrotherFinite::
 	specialvar VAR_RESULT, GetLeadMonFriendshipScore
 	goto_if_ge VAR_RESULT, FRIENDSHIP_150_TO_199, PacifidlogTown_House2_EventScript_GiveReturnFinite
@@ -26,6 +30,8 @@ PacifidlogTown_House2_EventScript_FanClubYoungerBrotherFinite::
 	goto PacifidlogTown_House2_EventScript_GiveFrustrationFinite
 	end
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 PacifidlogTown_House2_EventScript_UpdateFanClubTMFlag::
 	goto_if_unset FLAG_RECEIVED_FANCLUB_TM_THIS_WEEK, Common_EventScript_NopReturn
 	specialvar VAR_RESULT, GetDaysUntilPacifidlogTMAvailable
@@ -45,7 +51,11 @@ PacifidlogTown_House2_EventScript_ClearReceivedFanClubTM::
 	clearflag FLAG_RECEIVED_FANCLUB_TM_THIS_WEEK
 	return
 
+<<<<<<< HEAD
 PacifidlogTown_House2_EventScript_GiveReturnFinite::
+=======
+PacifidlogTown_House2_EventScript_GiveReturn::
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox PacifidlogTown_House2_Text_AdoringPokemonTakeThis, MSGBOX_DEFAULT
 	giveitem ITEM_TM_RETURN
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
@@ -55,6 +65,7 @@ PacifidlogTown_House2_EventScript_GiveReturnFinite::
 	release
 	end
 
+<<<<<<< HEAD
 PacifidlogTown_House2_EventScript_GiveReturn::
 	msgbox PacifidlogTown_House2_Text_AdoringPokemonTakeThis, MSGBOX_DEFAULT
 	checkitem ITEM_TM27
@@ -75,12 +86,18 @@ PacifidlogTown_House2_EventScript_GiveReturnDone::
 PacifidlogTown_House2_Text_GiveReturnDone:
 	.string "Oh, you already have it.$"
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 PacifidlogTown_House2_EventScript_PutInEffort::
 	msgbox PacifidlogTown_House2_Text_PutInSomeMoreEffort, MSGBOX_DEFAULT
 	release
 	end
 
+<<<<<<< HEAD
 PacifidlogTown_House2_EventScript_GiveFrustrationFinite::
+=======
+PacifidlogTown_House2_EventScript_GiveFrustration::
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox PacifidlogTown_House2_Text_ViciousPokemonTakeThis, MSGBOX_DEFAULT
 	giveitem ITEM_TM_FRUSTRATION
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
@@ -90,6 +107,7 @@ PacifidlogTown_House2_EventScript_GiveFrustrationFinite::
 	release
 	end
 
+<<<<<<< HEAD
 PacifidlogTown_House2_EventScript_GiveFrustration::
 	msgbox PacifidlogTown_House2_Text_ViciousPokemonTakeThis, MSGBOX_DEFAULT
 	checkitem ITEM_TM21
@@ -102,6 +120,8 @@ PacifidlogTown_House2_EventScript_GiveFrustration::
 	release
 	end
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 PacifidlogTown_House2_EventScript_ComeBackInXDays::
 	specialvar VAR_RESULT, GetDaysUntilPacifidlogTMAvailable
 	buffernumberstring STR_VAR_1, VAR_RESULT

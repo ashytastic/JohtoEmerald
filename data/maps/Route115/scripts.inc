@@ -2,7 +2,10 @@ Route115_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, Route115_OnLoad
 	map_script MAP_SCRIPT_ON_TRANSITION, Route115_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route115_OnFrame
+<<<<<<< HEAD
 	map_script MAP_SCRIPT_ON_RESUME, SetTimeEncounters
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.byte 0
 
 Route115_OnLoad:
@@ -11,7 +14,10 @@ Route115_OnLoad:
 	end
 
 Route115_OnTransition:
+<<<<<<< HEAD
 	callnative SetTimeBasedEncounters
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call_if_eq VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_HideMapNamePopup
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_115_WEST, AbnormalWeather_StartGroudonWeather
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_115_EAST, AbnormalWeather_StartGroudonWeather
@@ -81,7 +87,11 @@ Route115_EventScript_RematchNob::
 	end
 
 Route115_EventScript_Cyndy::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_JAMIE, Route115_Text_CyndyIntro, Route115_Text_CyndyDefeat, Route115_EventScript_RegisterCyndy
+=======
+	trainerbattle_single TRAINER_CYNDY_1, Route115_Text_CyndyIntro, Route115_Text_CyndyDefeat, Route115_EventScript_RegisterCyndy
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route115_EventScript_RematchCyndy
 	msgbox Route115_Text_CyndyPostBattle, MSGBOX_DEFAULT
@@ -92,17 +102,29 @@ Route115_EventScript_RegisterCyndy::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route115_Text_CyndyRegister, MSGBOX_DEFAULT
+<<<<<<< HEAD
 	register_matchcall TRAINER_JAMIE
+=======
+	register_matchcall TRAINER_CYNDY_1
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	release
 	end
 
 Route115_EventScript_RematchCyndy::
+<<<<<<< HEAD
 	trainerbattle_rematch TRAINER_JAMIE, Route115_Text_CyndyRematchIntro, Route115_Text_CyndyRematchDefeat
+=======
+	trainerbattle_rematch TRAINER_CYNDY_1, Route115_Text_CyndyRematchIntro, Route115_Text_CyndyRematchDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route115_Text_CyndyPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 Route115_EventScript_Hector::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_JASMINE_1, Route115_Text_HectorIntro, Route115_Text_HectorDefeat
+=======
+	trainerbattle_single TRAINER_HECTOR, Route115_Text_HectorIntro, Route115_Text_HectorDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route115_Text_HectorPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -112,12 +134,20 @@ Route115_EventScript_Kyra::
 	end
 
 Route115_EventScript_Jaiden::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_RIVAL_CYNDAQUIL_3, Route115_Text_JaidenIntro, Route115_Text_JaidenDefeat
+=======
+	trainerbattle_single TRAINER_JAIDEN, Route115_Text_JaidenIntro, Route115_Text_JaidenDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route115_Text_JaidenPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route115_EventScript_Alix::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_BILL, Route115_Text_AlixIntro, Route115_Text_AlixDefeat
+=======
+	trainerbattle_single TRAINER_ALIX, Route115_Text_AlixIntro, Route115_Text_AlixDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route115_Text_AlixPostBattle, MSGBOX_AUTOCLOSE
 	end
 

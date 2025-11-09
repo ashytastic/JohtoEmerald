@@ -272,7 +272,11 @@ static const struct Subsprite sOamTable_32x32_4[] = {
     }
 };
 
+<<<<<<< HEAD
 static const struct SubspriteTable sOamTables_32x32[] = {
+=======
+const struct SubspriteTable sOamTables_32x32[] = {
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     {},
     {ARRAY_COUNT(sOamTable_32x32_0), sOamTable_32x32_0},
     {ARRAY_COUNT(sOamTable_32x32_1), sOamTable_32x32_1},
@@ -371,7 +375,11 @@ static const struct Subsprite sOamTable_64x64_3[] = {
     }
 };
 
+<<<<<<< HEAD
 static const struct SubspriteTable sOamTables_64x64[] = {
+=======
+const struct SubspriteTable sOamTables_64x64[] = {
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     {},
     {ARRAY_COUNT(sOamTable_64x64_0), sOamTable_64x64_0},
     {ARRAY_COUNT(sOamTable_64x64_1), sOamTable_64x64_1},
@@ -1416,7 +1424,11 @@ static const struct SubspriteTable sOamTables_88x32[] = {
     {ARRAY_COUNT(sOamTable_88x32_3), sOamTable_88x32_3}
 };
 
+<<<<<<< HEAD
 #if LARGE_OW_SUPPORT
+=======
+#if OW_LARGE_OW_SUPPORT
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 // These tables allow (virtual) sprite sizes so that
 // some space can be saved by making graphics smaller.
 // Note: When using these for followers, the minimum

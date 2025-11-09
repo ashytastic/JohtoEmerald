@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 .set LOCALID_DEVON_EMPLOYEE, 2
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 RustboroCity_DevonCorp_3F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, RustboroCity_DevonCorp_3F_OnTransition
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, RustboroCity_DevonCorp_3F_OnWarp
@@ -7,6 +10,7 @@ RustboroCity_DevonCorp_3F_MapScripts::
 	.byte 0
 
 RustboroCity_DevonCorp_3F_OnTransition:
+<<<<<<< HEAD
 	call_if_eq VAR_GARBAGEVAR, 0, RustboroCity_DevonCorp_3F_EventScript_SetEmployeePos
 	end
 
@@ -25,28 +29,65 @@ RustboroCity_DevonCorp_3F_EventScript_PlayerFaceEast::
 
 RustboroCity_DevonCorp_3F_OnFrame:
 	map_script_2 VAR_GARBAGEVAR, 0, RustboroCity_DevonCorp_3F_EventScript_MeetPresident
+=======
+	call_if_eq VAR_DEVON_CORP_3F_STATE, 0, RustboroCity_DevonCorp_3F_EventScript_SetEmployeePos
+	end
+
+RustboroCity_DevonCorp_3F_EventScript_SetEmployeePos::
+	setobjectxyperm LOCALID_DEVON_CORP_3F_EMPLOYEE, 3, 2
+	setobjectmovementtype LOCALID_DEVON_CORP_3F_EMPLOYEE, MOVEMENT_TYPE_FACE_LEFT
+	return
+
+RustboroCity_DevonCorp_3F_OnWarp:
+	map_script_2 VAR_DEVON_CORP_3F_STATE, 0, RustboroCity_DevonCorp_3F_EventScript_PlayerFaceEast
+	.2byte 0
+
+RustboroCity_DevonCorp_3F_EventScript_PlayerFaceEast::
+	turnobject LOCALID_PLAYER, DIR_EAST
+	end
+
+RustboroCity_DevonCorp_3F_OnFrame:
+	map_script_2 VAR_DEVON_CORP_3F_STATE, 0, RustboroCity_DevonCorp_3F_EventScript_MeetPresident
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.2byte 0
 
 RustboroCity_DevonCorp_3F_EventScript_MeetPresident::
 	lockall
 	msgbox RustboroCity_DevonCorp_3F_Text_ThisIs3rdFloorWaitHere, MSGBOX_DEFAULT
 	closemessage
+<<<<<<< HEAD
 	applymovement LOCALID_DEVON_EMPLOYEE, RustboroCity_DevonCorp_3F_Movement_EmployeeWalkOffscreen
 	waitmovement 0
 	delay 80
 	applymovement LOCALID_DEVON_EMPLOYEE, RustboroCity_DevonCorp_3F_Movement_EmployeeReturnToPlayer
+=======
+	applymovement LOCALID_DEVON_CORP_3F_EMPLOYEE, RustboroCity_DevonCorp_3F_Movement_EmployeeWalkOffscreen
+	waitmovement 0
+	delay 80
+	applymovement LOCALID_DEVON_CORP_3F_EMPLOYEE, RustboroCity_DevonCorp_3F_Movement_EmployeeReturnToPlayer
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	msgbox RustboroCity_DevonCorp_3F_Text_WordWithPresidentComeWithMe, MSGBOX_DEFAULT
 	closemessage
 	playbgm MUS_FOLLOW_ME, FALSE
+<<<<<<< HEAD
 	applymovement LOCALID_DEVON_EMPLOYEE, RustboroCity_DevonCorp_3F_Movement_LeadPlayerToPresident
 	applymovement OBJ_EVENT_ID_PLAYER, RustboroCity_DevonCorp_3F_Movement_PlayerFollowToPresident
+=======
+	applymovement LOCALID_DEVON_CORP_3F_EMPLOYEE, RustboroCity_DevonCorp_3F_Movement_LeadPlayerToPresident
+	applymovement LOCALID_PLAYER, RustboroCity_DevonCorp_3F_Movement_PlayerFollowToPresident
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	msgbox RustboroCity_DevonCorp_3F_Text_PleaseGoAhead, MSGBOX_DEFAULT
 	closemessage
 	fadedefaultbgm
+<<<<<<< HEAD
 	applymovement LOCALID_DEVON_EMPLOYEE, RustboroCity_DevonCorp_3F_Movement_EmployeeFaceDesk
 	applymovement OBJ_EVENT_ID_PLAYER, RustboroCity_DevonCorp_3F_Movement_PlayerApproachDesk
+=======
+	applymovement LOCALID_DEVON_CORP_3F_EMPLOYEE, RustboroCity_DevonCorp_3F_Movement_EmployeeFaceDesk
+	applymovement LOCALID_PLAYER, RustboroCity_DevonCorp_3F_Movement_PlayerApproachDesk
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	msgbox RustboroCity_DevonCorp_3F_Text_MrStoneIHaveFavor, MSGBOX_DEFAULT
 	giveitem ITEM_LETTER
@@ -61,6 +102,7 @@ RustboroCity_DevonCorp_3F_EventScript_MeetPresident::
 	closemessage
 	call Common_EventScript_OutOfCenterPartyHeal
 	msgbox RustboroCity_DevonCorp_3F_Text_MrStoneGoWithCautionAndCare, MSGBOX_DEFAULT
+<<<<<<< HEAD
 	setflag FLAG_GARBAGEFLAG
 	clearflag FLAG_GARBAGEFLAG
 	clearflag FLAG_GARBAGEFLAG
@@ -70,6 +112,17 @@ RustboroCity_DevonCorp_3F_EventScript_MeetPresident::
 	clearflag FLAG_GARBAGEFLAG
 	setvar VAR_GARBAGEVAR, 1
 	setvar VAR_GARBAGEVAR, 6
+=======
+	setflag FLAG_HIDE_ROUTE_116_WANDAS_BOYFRIEND
+	clearflag FLAG_HIDE_RUSTURF_TUNNEL_WANDAS_BOYFRIEND
+	clearflag FLAG_HIDE_RUSTURF_TUNNEL_WANDA
+	clearflag FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY
+	clearflag FLAG_HIDE_BRINEYS_HOUSE_PEEKO
+	setvar VAR_BRINEY_LOCATION, 1
+	clearflag FLAG_HIDE_RUSTBORO_CITY_RIVAL
+	setvar VAR_DEVON_CORP_3F_STATE, 1
+	setvar VAR_RUSTBORO_CITY_STATE, 6
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	releaseall
 	end
 
@@ -251,9 +304,17 @@ RustboroCity_DevonCorp_3F_Text_ThankYouForDeliveringLetter:
 	.string "It should help you, a TRAINER.$"
 
 RustboroCity_DevonCorp_3F_Text_ExplainExpShare:
+<<<<<<< HEAD
 	.string "MR. STONE: If you turn EXP. SHARE on,\n"
 	.string "all POKéMON in the party will gain\l"
 	.string "half the EXP Points from battle.\p"
+=======
+	.string "MR. STONE: A POKéMON holding that\n"
+	.string "EXP. SHARE will be given some of the\l"
+	.string "EXP Points from battle.\p"
+	.string "It will get EXP Points even if it didn't\n"
+	.string "actually battle.\p"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.string "I would say EXP. SHARE is quite useful\n"
 	.string "for raising weak POKéMON.$"
 

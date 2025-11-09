@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 .set LOCALID_RAYQUAZA_SLEEPING, 1
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 SkyPillar_Top_MapScripts::
 	map_script MAP_SCRIPT_ON_RESUME, SkyPillar_Top_OnResume
 	map_script MAP_SCRIPT_ON_TRANSITION, SkyPillar_Top_OnTransition
@@ -31,7 +34,11 @@ SkyPillar_Top_EventScript_TryShowRayquaza::
 	return
 
 SkyPillar_Top_EventScript_ShowRayquaza::
+<<<<<<< HEAD
 	clearflag FLAG_GARBAGEFLAG_STILL
+=======
+	clearflag FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	return
 
 SkyPillar_Top_OnWarp:
@@ -43,11 +50,14 @@ SkyPillar_Top_EventScript_RayquazaFaceDown::
 	end
 
 SkyPillar_Top_EventScript_Rayquaza::
+<<<<<<< HEAD
 	call_if_set FLAG_DIFFICULTY_HARD, SkyPillar_Top_EventScript_RayquazaHard
 	call_if_unset FLAG_DIFFICULTY_HARD, SkyPillar_Top_EventScript_RayquazaNormal
 	end
 
 SkyPillar_Top_EventScript_RayquazaNormal::
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	lockall
 	waitse
 	playmoncry SPECIES_RAYQUAZA, CRY_MODE_ENCOUNTER
@@ -66,6 +76,7 @@ SkyPillar_Top_EventScript_RayquazaNormal::
 	releaseall
 	end
 
+<<<<<<< HEAD
 SkyPillar_Top_EventScript_RayquazaHard::
 	lockall
 	waitse
@@ -102,6 +113,8 @@ SkyPillar_Top_EventScript_RayquazaHard_Stats::
 	special SetSpdStat
 	return
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 SkyPillar_Top_EventScript_DefeatedRayquaza::
 	setflag FLAG_DEFEATED_RAYQUAZA
 	goto SkyPillar_Top_EventScript_DefeatedRayquaza2
@@ -131,10 +144,17 @@ SkyPillar_Top_EventScript_RanFromRayquaza2::
 SkyPillar_Top_EventScript_AwakenRayquaza::
 	lockall
 	fadeoutbgm 1
+<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
 	special SpawnCameraObject
 	applymovement OBJ_EVENT_ID_CAMERA, SkyPillar_Top_Movement_CameraPanUp
+=======
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	special SpawnCameraObject
+	applymovement LOCALID_CAMERA, SkyPillar_Top_Movement_CameraPanUp
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	special RemoveCameraObject
 	applymovement LOCALID_RAYQUAZA_SLEEPING, SkyPillar_Top_Movement_RayquazaStir
@@ -164,10 +184,17 @@ SkyPillar_Top_EventScript_AwakenRayquaza::
 	delay 20
 	fadeinbgm 1
 	special SpawnCameraObject
+<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_CAMERA, SkyPillar_Top_Movement_CameraPanDown
 	waitmovement 0
 	special RemoveCameraObject
 	setvar VAR_GARBAGEVAR, 5
+=======
+	applymovement LOCALID_CAMERA, SkyPillar_Top_Movement_CameraPanDown
+	waitmovement 0
+	special RemoveCameraObject
+	setvar VAR_SOOTOPOLIS_CITY_STATE, 5
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setvar VAR_SKY_PILLAR_STATE, 1
 	setvar VAR_SKY_PILLAR_RAYQUAZA_CRY_DONE, 1
 	releaseall

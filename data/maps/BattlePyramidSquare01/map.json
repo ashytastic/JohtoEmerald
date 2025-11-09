@@ -28,7 +28,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 5,
       "y": 3,
       "elevation": 4,
@@ -41,7 +45,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_POLICEMAN",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_RICH_BOY",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 2,
       "y": 6,
       "elevation": 4,
@@ -54,7 +62,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_BOY",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_BOY_2",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 6,
       "y": 6,
       "elevation": 4,

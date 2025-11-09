@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 .set LOCALID_LUGIA, 1
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 NavelRock_Bottom_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, NavelRock_Bottom_OnTransition
 	map_script MAP_SCRIPT_ON_RESUME, NavelRock_Bottom_OnResume
@@ -26,7 +29,11 @@ NavelRock_Bottom_OnResume:
 NavelRock_Bottom_EventScript_TryRemoveLugia::
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
+<<<<<<< HEAD
 	removeobject LOCALID_LUGIA
+=======
+	removeobject LOCALID_NAVEL_ROCK_LUGIA
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	return
 
 NavelRock_Bottom_EventScript_Lugia::
@@ -63,6 +70,7 @@ NavelRock_Bottom_EventScript_Lugia::
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, NavelRock_Bottom_EventScript_RanFromLugia
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, NavelRock_Bottom_EventScript_RanFromLugia
 	setflag FLAG_CAUGHT_LUGIA
+<<<<<<< HEAD
 	call_if_set FLAG_EXTRA_LEGENDARIES, NavelRock_Bottom_Enable_Johto_Legendaries
 	release
 	end
@@ -80,6 +88,13 @@ NavelRock_Bottom_Enable_Johto_Legendaries::
 NavelRock_Bottom_EventScript_DefeatedLugia::
 	setflag FLAG_DEFEATED_LUGIA
 	call_if_set FLAG_EXTRA_LEGENDARIES, NavelRock_Bottom_Enable_Johto_Legendaries
+=======
+	release
+	end
+
+NavelRock_Bottom_EventScript_DefeatedLugia::
+	setflag FLAG_DEFEATED_LUGIA
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setvar VAR_0x8004, SPECIES_LUGIA
 	goto Common_EventScript_LegendaryFlewAway
 	end

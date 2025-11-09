@@ -21,6 +21,10 @@
 #include "util.h"
 #include "constants/songs.h"
 #include "constants/battle_arena.h"
+<<<<<<< HEAD
+=======
+#include "constants/battle_move_effects.h"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include "constants/battle_string_ids.h"
 #include "constants/battle_frontier.h"
 #include "constants/frontier_util.h"
@@ -49,6 +53,7 @@ enum {
     ANIM_ICON_LINE,     // Line segment for separating the score total at the bottom
 };
 
+<<<<<<< HEAD
 // This table holds the number of points to add to the 'mind' score for each move.
 // All moves with power != 0 give 1 point, with the following exceptions:
 //    - Counter, Mirror Coat, and Bide give 0 points
@@ -288,6 +293,8 @@ static const s8 sMindRatings[MOVES_COUNT] =
     [MOVE_POISON_JAB] = 1,
 };
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static const struct OamData sOam_JudgmentIcon =
 {
     .y = 0,
@@ -354,7 +361,11 @@ static const struct CompressedSpriteSheet sBattleArenaJudgmentSymbolsSpriteSheet
     {0}
 };
 
+<<<<<<< HEAD
 static void (* const sArenaFunctions[])(void) =
+=======
+static void (*const sArenaFunctions[])(void) =
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     [BATTLE_ARENA_FUNC_INIT]             = InitArenaChallenge,
     [BATTLE_ARENA_FUNC_GET_DATA]         = GetArenaData,
@@ -403,7 +414,11 @@ u8 BattleArena_ShowJudgmentWindow(u8 *state)
         BeginNormalPaletteFade(0x7FFFFF1C, 4, 0, 8, RGB_BLACK);
         SetGpuReg(REG_OFFSET_WININ, (WININ_WIN0_ALL & ~WININ_WIN0_BG0) | WININ_WIN1_ALL);
         LoadCompressedSpriteSheet(sBattleArenaJudgmentSymbolsSpriteSheet);
+<<<<<<< HEAD
         LoadCompressedPalette(gBattleArenaJudgmentSymbolsPalette, OBJ_PLTT_ID(15), PLTT_SIZE_4BPP);
+=======
+        LoadPalette(gBattleArenaJudgmentSymbolsPalette, OBJ_PLTT_ID(15), PLTT_SIZE_4BPP);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         gBattle_WIN0H = 0xFF;
         gBattle_WIN0V = 0x70;
         (*state)++;
@@ -595,7 +610,31 @@ void BattleArena_InitPoints(void)
 
 void BattleArena_AddMindPoints(u8 battler)
 {
+<<<<<<< HEAD
     gBattleStruct->arenaMindPoints[battler] += sMindRatings[gCurrentMove];
+=======
+// All moves with power != 0 give 1 point, with the following exceptions:
+//    - Counter, Mirror Coat, and Bide give 0 points
+//    - Fake Out subtracts 1 point
+// All status moves give 0 points, with the following exceptions:
+//    - Protect, Detect, and Endure subtract 1 point
+    enum BattleMoveEffects effect = GetMoveEffect(gCurrentMove);
+
+    if (effect == EFFECT_FIRST_TURN_ONLY
+     || effect == EFFECT_PROTECT
+     || effect == EFFECT_ENDURE)
+    {
+        gBattleStruct->arenaMindPoints[battler]--;
+    }
+    else if (!IsBattleMoveStatus(gCurrentMove)
+          && effect != EFFECT_COUNTER
+          && effect != EFFECT_MIRROR_COAT
+          && effect != EFFECT_METAL_BURST
+          && effect != EFFECT_BIDE)
+    {
+        gBattleStruct->arenaMindPoints[battler]++;
+    }
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 void BattleArena_AddSkillPoints(u8 battler)
@@ -604,6 +643,7 @@ void BattleArena_AddSkillPoints(u8 battler)
 
     if (gHitMarker & HITMARKER_OBEYS)
     {
+<<<<<<< HEAD
         u8 *failedMoveBits = &gBattleStruct->alreadyStatusedMoveAttempt;
         if (*failedMoveBits & gBitTable[battler])
         {
@@ -624,6 +664,27 @@ void BattleArena_AddSkillPoints(u8 battler)
             skillPoints[battler] += 2;
         }
         else if (gMoveResultFlags & MOVE_RESULT_NOT_VERY_EFFECTIVE)
+=======
+        if (gBattleStruct->battlerState[battler].alreadyStatusedMoveAttempt)
+        {
+            gBattleStruct->battlerState[battler].alreadyStatusedMoveAttempt = FALSE;
+            skillPoints[battler] -= 2;
+        }
+        else if (gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT)
+        {
+            if (!(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_MISSED) || gBattleCommunication[MISS_TYPE] != B_MSG_PROTECTED)
+                skillPoints[battler] -= 2;
+        }
+        else if ((gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_SUPER_EFFECTIVE) && (gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NOT_VERY_EFFECTIVE))
+        {
+            skillPoints[battler] += 1;
+        }
+        else if (gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_SUPER_EFFECTIVE)
+        {
+            skillPoints[battler] += 2;
+        }
+        else if (gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NOT_VERY_EFFECTIVE)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         {
             skillPoints[battler] -= 1;
         }
@@ -634,7 +695,11 @@ void BattleArena_AddSkillPoints(u8 battler)
     }
 }
 
+<<<<<<< HEAD
 void BattleArena_DeductSkillPoints(u8 battler, u16 stringId)
+=======
+void BattleArena_DeductSkillPoints(u8 battler, enum StringID stringId)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     s8 *skillPoints = gBattleStruct->arenaSkillPoints;
 
@@ -661,6 +726,11 @@ void BattleArena_DeductSkillPoints(u8 battler, u16 stringId)
     case STRINGID_PKMNSTAYEDAWAKEUSING:
         skillPoints[battler] -= 3;
         break;
+<<<<<<< HEAD
+=======
+    default:
+        break;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
 }
 
@@ -691,7 +761,11 @@ static void InitArenaChallenge(void)
         gSaveBlock2Ptr->frontier.arenaWinStreaks[lvlMode] = 0;
 
     SetDynamicWarp(0, gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum, WARP_ID_NONE);
+<<<<<<< HEAD
     gTrainerBattleOpponent_A = 0;
+=======
+    TRAINER_BATTLE_PARAM.opponentA = 0;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void GetArenaData(void)
@@ -748,6 +822,10 @@ static void SetArenaData(void)
 
 static void SaveArenaChallenge(void)
 {
+<<<<<<< HEAD
+=======
+    ClearEnemyPartyAfterChallenge();
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gSaveBlock2Ptr->frontier.challengeStatus = gSpecialVar_0x8005;
     VarSet(VAR_TEMP_CHALLENGE_STATUS, 0);
     gSaveBlock2Ptr->frontier.challengePaused = TRUE;
@@ -780,7 +858,11 @@ static void GiveArenaPrize(void)
 
 static void BufferArenaOpponentName(void)
 {
+<<<<<<< HEAD
     GetFrontierTrainerName(gStringVar1, gTrainerBattleOpponent_A);
+=======
+    GetFrontierTrainerName(gStringVar1, TRAINER_BATTLE_PARAM.opponentA);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 void DrawArenaRefereeTextBox(void)

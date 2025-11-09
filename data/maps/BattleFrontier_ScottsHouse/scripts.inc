@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 .set LOCALID_SCOTT, 1
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 BattleFrontier_ScottsHouse_MapScripts::
 	.byte 0
 
@@ -149,7 +152,11 @@ BattleFrontier_ScottsHouse_EventScript_WelcomeToFrontier::
 	call_if_eq VAR_FACING, DIR_EAST, BattleFrontier_ScottsHouse_EventScript_ScottFaceAwayEast
 	call_if_eq VAR_FACING, DIR_WEST, BattleFrontier_ScottsHouse_EventScript_ScottFaceAwayWest
 	msgbox BattleFrontier_ScottsHouse_Text_HowMuchEffortItTookToMakeReal, MSGBOX_DEFAULT
+<<<<<<< HEAD
 	applymovement LOCALID_SCOTT, Common_Movement_FacePlayer
+=======
+	applymovement LOCALID_SCOTTS_HOUSE_SCOTT, Common_Movement_FacePlayer
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	msgbox BattleFrontier_ScottsHouse_Text_HaveThisAsMementoOfOurPathsCrossing, MSGBOX_DEFAULT
 	goto_if_eq VAR_SCOTT_STATE, 13, BattleFrontier_ScottsHouse_EventScript_Give4BattlePoints
@@ -192,22 +199,38 @@ BattleFrontier_ScottsHouse_EventScript_GiveBattlePoints::
 	end
 
 BattleFrontier_ScottsHouse_EventScript_ScottFaceAwayNorth::
+<<<<<<< HEAD
 	applymovement LOCALID_SCOTT, Common_Movement_WalkInPlaceFasterUp
+=======
+	applymovement LOCALID_SCOTTS_HOUSE_SCOTT, Common_Movement_WalkInPlaceFasterUp
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 BattleFrontier_ScottsHouse_EventScript_ScottFaceAwaySouth::
+<<<<<<< HEAD
 	applymovement LOCALID_SCOTT, Common_Movement_WalkInPlaceFasterDown
+=======
+	applymovement LOCALID_SCOTTS_HOUSE_SCOTT, Common_Movement_WalkInPlaceFasterDown
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 BattleFrontier_ScottsHouse_EventScript_ScottFaceAwayEast::
+<<<<<<< HEAD
 	applymovement LOCALID_SCOTT, Common_Movement_WalkInPlaceFasterRight
+=======
+	applymovement LOCALID_SCOTTS_HOUSE_SCOTT, Common_Movement_WalkInPlaceFasterRight
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 BattleFrontier_ScottsHouse_EventScript_ScottFaceAwayWest::
+<<<<<<< HEAD
 	applymovement LOCALID_SCOTT, Common_Movement_WalkInPlaceFasterLeft
+=======
+	applymovement LOCALID_SCOTTS_HOUSE_SCOTT, Common_Movement_WalkInPlaceFasterLeft
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 

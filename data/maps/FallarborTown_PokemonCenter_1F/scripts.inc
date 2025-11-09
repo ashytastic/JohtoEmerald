@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 .set LOCALID_NURSE, 1
 .set LOCALID_Bill, 4
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 FallarborTown_PokemonCenter_1F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, FallarborTown_PokemonCenter_1F_OnTransition
 	map_script MAP_SCRIPT_ON_RESUME, CableClub_OnResume
@@ -12,7 +15,11 @@ FallarborTown_PokemonCenter_1F_OnTransition:
 	end
 
 FallarborTown_PokemonCenter_1F_EventScript_Nurse::
+<<<<<<< HEAD
 	setvar VAR_0x800B, LOCALID_NURSE
+=======
+	setvar VAR_0x800B, LOCALID_FALLARBOR_NURSE
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call Common_EventScript_PkmnCenterNurse
 	waitmessage
 	waitbuttonpress
@@ -27,6 +34,7 @@ FallarborTown_PokemonCenter_1F_EventScript_ExpertM::
 	msgbox FallarborTown_PokemonCenter_1F_Text_PlantHardyTrees, MSGBOX_NPC
 	end
 
+<<<<<<< HEAD
 FallarborTown_PokemonCenter_1F_EventScript_Bill::
 	lock
 	faceplayer
@@ -57,6 +65,38 @@ FallarborTown_PokemonCenter_1F_EventScript_BillExited::
 	end
 
 FallarborTown_PokemonCenter_1F_Movement_BillExitNorth:
+=======
+FallarborTown_PokemonCenter_1F_EventScript_Lanette::
+	lock
+	faceplayer
+	msgbox FallarborTown_PokemonCenter_1F_Text_LanetteGreeting, MSGBOX_DEFAULT
+	closemessage
+	switch VAR_FACING
+	case DIR_NORTH, FallarborTown_PokemonCenter_1F_EventScript_LanetteExitNorth
+	case DIR_WEST, FallarborTown_PokemonCenter_1F_EventScript_LanetteExitWest
+	end
+
+FallarborTown_PokemonCenter_1F_EventScript_LanetteExitNorth::
+	applymovement LOCALID_FALLARBOR_LANETTE, FallarborTown_PokemonCenter_1F_Movement_LanetteExitNorth
+	waitmovement 0
+	goto FallarborTown_PokemonCenter_1F_EventScript_LanetteExited
+	end
+
+FallarborTown_PokemonCenter_1F_EventScript_LanetteExitWest::
+	applymovement LOCALID_FALLARBOR_LANETTE, FallarborTown_PokemonCenter_1F_Movement_LanetteExitWest
+	waitmovement 0
+	goto FallarborTown_PokemonCenter_1F_EventScript_LanetteExited
+	end
+
+FallarborTown_PokemonCenter_1F_EventScript_LanetteExited::
+	playse SE_SLIDING_DOOR
+	removeobject LOCALID_FALLARBOR_LANETTE
+	clearflag FLAG_HIDE_LANETTES_HOUSE_LANETTE
+	release
+	end
+
+FallarborTown_PokemonCenter_1F_Movement_LanetteExitNorth:
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	walk_right
 	walk_down
 	walk_down
@@ -71,7 +111,11 @@ FallarborTown_PokemonCenter_1F_Movement_BillExitNorth:
 	delay_8
 	step_end
 
+<<<<<<< HEAD
 FallarborTown_PokemonCenter_1F_Movement_BillExitWest:
+=======
+FallarborTown_PokemonCenter_1F_Movement_LanetteExitWest:
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	walk_down
 	walk_down
 	walk_left
@@ -84,7 +128,11 @@ FallarborTown_PokemonCenter_1F_Movement_BillExitWest:
 	delay_8
 	step_end
 
+<<<<<<< HEAD
 FallarborTown_PokemonCenter_1F_Text_BillGreeting:
+=======
+FallarborTown_PokemonCenter_1F_Text_LanetteGreeting:
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.string "Oh, hello.\n"
 	.string "You are?\p"
 	.string "Okay, your name's {PLAYER}{KUN}.\n"
@@ -95,7 +143,11 @@ FallarborTown_PokemonCenter_1F_Text_BillGreeting:
 	.string "a simple deductive process.\p"
 	.string "You spoke to me because you wanted\n"
 	.string "to access something on this PC.\p"
+<<<<<<< HEAD
 	.string "Oh, I'm sorry. I'm Bill.\p"
+=======
+	.string "Oh, I'm sorry. I'm LANETTE.\p"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.string "Honestly, I'm glad to meet you--it's\n"
 	.string "great you're using the Storage System.\p"
 	.string "If you could, please visit me at home.\n"

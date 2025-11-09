@@ -1,11 +1,19 @@
 #ifndef GUARD_POKEMON_STORAGE_SYSTEM_H
 #define GUARD_POKEMON_STORAGE_SYSTEM_H
 
+<<<<<<< HEAD
 #define TOTAL_BOXES_COUNT       15
+=======
+#define TOTAL_BOXES_COUNT       14
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #define IN_BOX_ROWS             5 // Number of rows, 6 Pokémon per row
 #define IN_BOX_COLUMNS          6 // Number of columns, 5 Pokémon per column
 #define IN_BOX_COUNT            (IN_BOX_ROWS * IN_BOX_COLUMNS)
 #define BOX_NAME_LENGTH         8
+<<<<<<< HEAD
+=======
+#define MAX_FUSION_STORAGE      4
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 /*
             COLUMNS
@@ -22,11 +30,18 @@ struct PokemonStorage
     /*0x0001*/ struct BoxPokemon boxes[TOTAL_BOXES_COUNT][IN_BOX_COUNT];
     /*0x8344*/ u8 boxNames[TOTAL_BOXES_COUNT][BOX_NAME_LENGTH + 1];
     /*0x83C2*/ u8 boxWallpapers[TOTAL_BOXES_COUNT];
+<<<<<<< HEAD
 };
 
 extern struct PokemonStorage *gPokemonStoragePtr;
 //HnS
 s32 StorePokemonInBox(struct BoxPokemon *src, u8 *boxId, u8 *position);
+=======
+    /*0x8432*/ struct Pokemon fusions[MAX_FUSION_STORAGE];
+};
+
+extern struct PokemonStorage *gPokemonStoragePtr;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 void DrawTextWindowAndBufferTiles(const u8 *string, void *dst, u8 zero1, u8 zero2, s32 bytesToBuffer);
 u8 CountMonsInBox(u8 boxId);
@@ -59,7 +74,11 @@ bool8 CheckFreePokemonStorageSpace(void);
 bool32 CheckBoxMonSanityAt(u32 boxId, u32 boxPosition);
 u32 CountStorageNonEggMons(void);
 u32 CountAllStorageMons(void);
+<<<<<<< HEAD
 bool32 AnyStorageMonWithMove(u16 moveId);
+=======
+bool32 AnyStorageMonWithMove(u16 move);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 void ResetWaldaWallpaper(void);
 void SetWaldaWallpaperLockedOrUnlocked(bool32 unlocked);
@@ -75,11 +94,15 @@ void SetWaldaPhrase(const u8 *src);
 bool32 IsWaldaPhraseEmpty(void);
 
 void EnterPokeStorage(u8 boxOption);
+<<<<<<< HEAD
 u16 GetHPFromBoxHP(struct Pokemon *mon);
 u32 GetStatusFromBoxStatus(struct Pokemon *mon);
 //tx_randomizer_and_challenges
 void PurgeMonOrBoxMon(u8 boxId, u8 position);
 u16 GetFirstBoxPokemon(void);
 void MoveFirstBoxPokemon(void);
+=======
+u32 CountPartyNonEggMons(void);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 #endif // GUARD_POKEMON_STORAGE_SYSTEM_H

@@ -13,5 +13,10 @@ gText_StorageSystemOpened::
 gText_AccessedPlayersPC::
 	.string "Accessed {PLAYER}'s PC.$"
 
+<<<<<<< HEAD
 gText_AccessedBillsPC::
 	.string "Accessed BILL'S PC.$"
+=======
+gText_AccessedLanettesPC::
+	.string "Accessed LANETTE's PC.$"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

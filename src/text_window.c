@@ -5,6 +5,10 @@
 #include "palette.h"
 #include "bg.h"
 #include "graphics.h"
+<<<<<<< HEAD
+=======
+#include "menu.h"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 const u8 gTextWindowFrame1_Gfx[] = INCBIN_U8("graphics/text_window/1.4bpp");
 static const u8 sTextWindowFrame2_Gfx[] = INCBIN_U8("graphics/text_window/2.4bpp");
@@ -81,6 +85,12 @@ static const struct TilesPal sWindowFrames[WINDOW_FRAMES_COUNT] =
     {sTextWindowFrame20_Gfx, sTextWindowFrame20_Pal}
 };
 
+<<<<<<< HEAD
+=======
+static const u16 sTextWindowDexNavFrame[] = INCBIN_U16("graphics/text_window/dexnav_pal.gbapal");
+static const struct TilesPal sDexNavWindowFrame = {gTextWindowFrame1_Gfx, sTextWindowDexNavFrame};
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 // code
 const struct TilesPal *GetWindowFrameTilesPal(u8 id)
 {
@@ -96,6 +106,15 @@ void LoadMessageBoxGfx(u8 windowId, u16 destOffset, u8 palOffset)
     LoadPalette(GetOverworldTextboxPalettePtr(), palOffset, PLTT_SIZE_4BPP);
 }
 
+<<<<<<< HEAD
+=======
+void LoadSignBoxGfx(u8 windowId, u16 destOffset, u8 palOffset)
+{
+    LoadBgTiles(GetWindowAttribute(windowId, WINDOW_BG), gSignpostWindow_Gfx, 0x1C0, destOffset);
+    LoadPalette(GetTextWindowPalette(1), palOffset, PLTT_SIZE_4BPP);
+}
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 void LoadUserWindowBorderGfx_(u8 windowId, u16 destOffset, u8 palOffset)
 {
     LoadUserWindowBorderGfx(windowId, destOffset, palOffset);
@@ -195,3 +214,12 @@ void LoadUserWindowBorderGfxOnBg(u8 bg, u16 destOffset, u8 palOffset)
     LoadBgTiles(bg, sWindowFrames[gSaveBlock2Ptr->optionsWindowFrameType].tiles, 0x120, destOffset);
     LoadPalette(GetWindowFrameTilesPal(gSaveBlock2Ptr->optionsWindowFrameType)->pal, palOffset, PLTT_SIZE_4BPP);
 }
+<<<<<<< HEAD
+=======
+
+void LoadDexNavWindowGfx(u8 windowId, u16 destOffset, u8 palOffset)
+{
+    LoadBgTiles(GetWindowAttribute(windowId, WINDOW_BG), sDexNavWindowFrame.tiles, 0x120, destOffset);
+    LoadPalette(sDexNavWindowFrame.pal, palOffset, 32);
+}
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

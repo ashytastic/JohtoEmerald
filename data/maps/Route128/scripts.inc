@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .set LOCALID_STEVEN, 3
 .set LOCALID_ARCHIE, 4
 .set LOCALID_MAXIE, 5
@@ -10,16 +11,29 @@ Route128_MapScripts::
 
 Route128_OnTransition:
 	callnative SetTimeBasedEncounters
+=======
+Route128_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route128_OnTransition
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route128_OnFrame
+	.byte 0
+
+Route128_OnTransition:
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
 	end
 
 Route128_OnFrame:
+<<<<<<< HEAD
 	map_script_2 VAR_GARBAGEVAR, 1, Route128_EventScript_KyogreAwakenedScene
+=======
+	map_script_2 VAR_ROUTE128_STATE, 1, Route128_EventScript_KyogreAwakenedScene
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.2byte 0
 
 Route128_EventScript_KyogreAwakenedScene::
 	lockall
 	delay 20
+<<<<<<< HEAD
 	applymovement LOCALID_ARCHIE, Route128_Movement_ArchieLookAround
 	waitmovement 0
 	msgbox Route128_Text_ArchieWhatHappened, MSGBOX_DEFAULT
@@ -43,19 +57,53 @@ Route128_EventScript_KyogreAwakenedScene::
 	applymovement LOCALID_ARCHIE, Route128_Movement_ArchieRunLeft
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 	applymovement LOCALID_MAXIE, Route128_Movement_MaxieWalkLeft
+=======
+	applymovement LOCALID_ROUTE128_ARCHIE, Route128_Movement_ArchieLookAround
+	waitmovement 0
+	msgbox Route128_Text_ArchieWhatHappened, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_ROUTE128_ARCHIE, Route128_Movement_ArchieBackUp
+	waitmovement 0
+	msgbox Route128_Text_ArchieIOnlyWanted, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_ROUTE128_MAXIE, Route128_Movement_MaxieApproachArchie
+	waitmovement 0
+	applymovement LOCALID_ROUTE128_ARCHIE, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	msgbox Route128_Text_MaxieDoYouUnderstandNow, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_ROUTE128_MAXIE, Route128_Movement_MaxieApproachPlayer
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	msgbox Route128_Text_MaxieResposibilityFallsToArchieAndMe, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_ROUTE128_ARCHIE, Route128_Movement_ArchieRunLeft
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_ROUTE128_MAXIE, Route128_Movement_MaxieWalkLeft
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	msgbox Route128_Text_MaxieThisDefiesBelief, MSGBOX_DEFAULT
 	closemessage
 	delay 40
+<<<<<<< HEAD
 	applymovement LOCALID_MAXIE, Route128_Movement_MaxieExit
 	applymovement LOCALID_ARCHIE, Route128_Movement_ArchieExit
 	waitmovement 0
 	removeobject LOCALID_MAXIE
 	removeobject LOCALID_ARCHIE
+=======
+	applymovement LOCALID_ROUTE128_MAXIE, Route128_Movement_MaxieExit
+	applymovement LOCALID_ROUTE128_ARCHIE, Route128_Movement_ArchieExit
+	waitmovement 0
+	removeobject LOCALID_ROUTE128_MAXIE
+	removeobject LOCALID_ROUTE128_ARCHIE
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	delay 100
 	setfieldeffectargument 0, 1
 	dofieldeffect FLDEFF_NPCFLY_OUT
 	waitfieldeffect FLDEFF_NPCFLY_OUT
+<<<<<<< HEAD
 	addobject LOCALID_STEVEN
 	applymovement LOCALID_STEVEN, Route128_Movement_StevenApproachPlayer
 	waitmovement 0
@@ -72,15 +120,40 @@ Route128_EventScript_KyogreAwakenedScene::
 	msgbox Route128_Text_StevenImGoingToSootopolis, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_STEVEN, Common_Movement_WalkInPlaceFasterDown
+=======
+	addobject LOCALID_ROUTE128_STEVEN
+	applymovement LOCALID_ROUTE128_STEVEN, Route128_Movement_StevenApproachPlayer
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	msgbox Route128_Text_StevenWhatIsHappening, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_ROUTE128_STEVEN, Route128_Movement_StevenWalkUp
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	msgbox Route128_Text_StevenWholeWorldWillDrown, MSGBOX_DEFAULT
+	applymovement LOCALID_ROUTE128_STEVEN, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+	msgbox Route128_Text_StevenImGoingToSootopolis, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_ROUTE128_STEVEN, Common_Movement_WalkInPlaceFasterDown
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	delay 50
 	setfieldeffectargument 0, 1
 	dofieldeffect FLDEFF_NPCFLY_OUT
 	delay 15
+<<<<<<< HEAD
 	removeobject LOCALID_STEVEN
 	waitfieldeffect FLDEFF_NPCFLY_OUT
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	setvar VAR_GARBAGEVAR, 2
+=======
+	removeobject LOCALID_ROUTE128_STEVEN
+	waitfieldeffect FLDEFF_NPCFLY_OUT
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
+	setvar VAR_ROUTE128_STATE, 2
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	releaseall
 	end
 
@@ -181,7 +254,11 @@ Route128_Movement_MaxieApproachPlayer:
 	step_end
 
 Route128_EventScript_Isaiah::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_WILL_2, Route128_Text_IsaiahIntro, Route128_Text_IsaiahDefeat, Route128_EventScript_RegisterIsaiah
+=======
+	trainerbattle_single TRAINER_ISAIAH_1, Route128_Text_IsaiahIntro, Route128_Text_IsaiahDefeat, Route128_EventScript_RegisterIsaiah
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route128_EventScript_RematchIsaiah
 	msgbox Route128_Text_IsaiahPostBattle, MSGBOX_DEFAULT
@@ -192,12 +269,20 @@ Route128_EventScript_RegisterIsaiah::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route128_Text_IsaiahRegister, MSGBOX_DEFAULT
+<<<<<<< HEAD
 	register_matchcall TRAINER_WILL_2
+=======
+	register_matchcall TRAINER_ISAIAH_1
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	release
 	end
 
 Route128_EventScript_RematchIsaiah::
+<<<<<<< HEAD
 	trainerbattle_rematch TRAINER_WILL_2, Route128_Text_IsaiahRematchIntro, Route128_Text_IsaiahRematchDefeat
+=======
+	trainerbattle_rematch TRAINER_ISAIAH_1, Route128_Text_IsaiahRematchIntro, Route128_Text_IsaiahRematchDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route128_Text_IsaiahPostRematch, MSGBOX_AUTOCLOSE
 	end
 
@@ -223,7 +308,11 @@ Route128_EventScript_RematchKatelyn::
 	end
 
 Route128_EventScript_Alexa::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_BAILEY, Route128_Text_AlexaIntro, Route128_Text_AlexaDefeat
+=======
+	trainerbattle_single TRAINER_ALEXA, Route128_Text_AlexaIntro, Route128_Text_AlexaDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route128_Text_AlexaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -238,12 +327,20 @@ Route128_EventScript_Wayne::
 	end
 
 Route128_EventScript_Harrison::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_PRYCE_1_2, Route128_Text_HarrisonIntro, Route128_Text_HarrisonDefeat
+=======
+	trainerbattle_single TRAINER_HARRISON, Route128_Text_HarrisonIntro, Route128_Text_HarrisonDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route128_Text_HarrisonPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route128_EventScript_Carlee::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_GRUNT, Route128_Text_CarleeIntro, Route128_Text_CarleeDefeat
+=======
+	trainerbattle_single TRAINER_CARLEE, Route128_Text_CarleeIntro, Route128_Text_CarleeDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route128_Text_CarleePostBattle, MSGBOX_AUTOCLOSE
 	end
 

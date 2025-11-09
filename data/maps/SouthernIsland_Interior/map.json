@@ -10,6 +10,7 @@
   "allow_cycling": true,
   "allow_escaping": false,
   "allow_running": true,
+<<<<<<< HEAD
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": 0,
@@ -18,6 +19,16 @@
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
       "x": 15,
       "y": 0,
+=======
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_VAR_0",
+      "x": 13,
+      "y": 12,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -25,12 +36,22 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_VAR_1",
       "x": 13,
       "y": 0,
+=======
+      "flag": "FLAG_HIDE_SOUTHERN_ISLAND_EON_STONE"
+    },
+    {
+      "local_id": "LOCALID_SOUTHERN_ISLAND_LATI",
+      "graphics_id": "OBJ_EVENT_GFX_VAR_1",
+      "x": 13,
+      "y": 2,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -38,6 +59,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
@@ -65,6 +87,9 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SouthernIsland_Interior_EventScript_Latias",
       "flag": "FLAG_HIDE_LATIAS"
+=======
+      "flag": "FLAG_HIDE_SOUTHERN_ISLAND_UNCHOSEN_EON_DUO_MON"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "warp_events": [
@@ -83,6 +108,7 @@
       "dest_warp_id": "1"
     }
   ],
+<<<<<<< HEAD
   "coord_events": [
 
   ],
@@ -91,6 +117,14 @@
       "type": "sign",
       "x": 14,
       "y": 0,
+=======
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 13,
+      "y": 11,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "SouthernIsland_Interior_EventScript_TryLatiEncounter"

@@ -20,11 +20,22 @@
 #include "decompress.h"
 #include "constants/rgb.h"
 
+<<<<<<< HEAD
 static void CB2_MysteryEventMenu(void);
 static void PrintMysteryMenuText(u8 windowId, const u8 *text, u8 x, u8 y, s32 speed);
 
 static EWRAM_DATA u8 sUnused = 0; // set but unused
 
+=======
+enum {
+    WIN_MSG,
+    WIN_LOADING,
+};
+
+static void CB2_MysteryEventMenu(void);
+static void PrintMysteryMenuText(u8 windowId, const u8 *text, u8 x, u8 y, s32 speed);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static const struct BgTemplate sBgTemplates[] =
 {
     {
@@ -40,7 +51,11 @@ static const struct BgTemplate sBgTemplates[] =
 
 static const struct WindowTemplate sWindowTemplates[] =
 {
+<<<<<<< HEAD
     {
+=======
+    [WIN_MSG] = {
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .bg = 0,
         .tilemapLeft = 4,
         .tilemapTop = 15,
@@ -49,7 +64,11 @@ static const struct WindowTemplate sWindowTemplates[] =
         .paletteNum = 14,
         .baseBlock = 20
     },
+<<<<<<< HEAD
     {
+=======
+    [WIN_LOADING] = {
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .bg = 0,
         .tilemapLeft = 7,
         .tilemapTop = 6,
@@ -87,7 +106,11 @@ void CB2_InitMysteryEventMenu(void)
         s32 i;
 
         DeactivateAllTextPrinters();
+<<<<<<< HEAD
         for (i = 0; i < 2; i++)
+=======
+        for (i = 0; i < (int)ARRAY_COUNT(sWindowTemplates) - 1; i++)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             FillWindowPixelBuffer(i, PIXEL_FILL(0));
 
         FillBgTilemapBufferRect_Palette0(0, 0, 0, 0, DISPLAY_TILE_WIDTH, DISPLAY_TILE_HEIGHT);
@@ -131,9 +154,15 @@ static void CB2_MysteryEventMenu(void)
     switch (gMain.state)
     {
     case 0:
+<<<<<<< HEAD
         DrawStdFrameWithCustomTileAndPalette(0, TRUE, 1, 0xD);
         PutWindowTilemap(0);
         CopyWindowToVram(0, COPYWIN_FULL);
+=======
+        DrawStdFrameWithCustomTileAndPalette(WIN_MSG, TRUE, 1, 0xD);
+        PutWindowTilemap(WIN_MSG);
+        CopyWindowToVram(WIN_MSG, COPYWIN_FULL);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         ShowBg(0);
         BeginNormalPaletteFade(PALETTES_ALL, 0, 0x10, 0, RGB_BLACK);
         gMain.state++;
@@ -141,12 +170,20 @@ static void CB2_MysteryEventMenu(void)
     case 1:
         if (!gPaletteFade.active)
         {
+<<<<<<< HEAD
             PrintMysteryMenuText(0, gText_LinkStandby2, 1, 2, 1);
+=======
+            PrintMysteryMenuText(WIN_MSG, gText_LinkStandby2, 1, 2, 1);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             gMain.state++;
         }
         break;
     case 2:
+<<<<<<< HEAD
         if (!IsTextPrinterActive(0))
+=======
+        if (!IsTextPrinterActive(WIN_MSG))
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         {
             gMain.state++;
             gLinkType = LINKTYPE_MYSTERY_EVENT;
@@ -154,10 +191,17 @@ static void CB2_MysteryEventMenu(void)
         }
         break;
     case 3:
+<<<<<<< HEAD
         if ((gLinkStatus & 0x20) && (gLinkStatus & 0x1C) > 4)
         {
             PlaySE(SE_PIN);
             PrintMysteryMenuText(0, gText_PressAToLoadEvent, 1, 2, 1);
+=======
+        if ((gLinkStatus & LINK_STAT_MASTER) && (gLinkStatus & LINK_STAT_PLAYER_COUNT) > 4)
+        {
+            PlaySE(SE_PIN);
+            PrintMysteryMenuText(WIN_MSG, gText_PressAToLoadEvent, 1, 2, 1);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             gMain.state++;
         }
         if (JOY_NEW(B_BUTTON))
@@ -168,7 +212,11 @@ static void CB2_MysteryEventMenu(void)
         }
         break;
     case 4:
+<<<<<<< HEAD
         if (!IsTextPrinterActive(0))
+=======
+        if (!IsTextPrinterActive(WIN_MSG))
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             gMain.state++;
         break;
     case 5:
@@ -178,10 +226,17 @@ static void CB2_MysteryEventMenu(void)
             {
                 PlaySE(SE_SELECT);
                 CheckShouldAdvanceLinkState();
+<<<<<<< HEAD
                 DrawStdFrameWithCustomTileAndPalette(1, TRUE, 1, 0xD);
                 PrintMysteryMenuText(1, gText_LoadingEvent, 1, 2, 0);
                 PutWindowTilemap(1);
                 CopyWindowToVram(1, COPYWIN_FULL);
+=======
+                DrawStdFrameWithCustomTileAndPalette(WIN_LOADING, TRUE, 1, 0xD);
+                PrintMysteryMenuText(WIN_LOADING, gText_LoadingEvent, 1, 2, 0);
+                PutWindowTilemap(WIN_LOADING);
+                CopyWindowToVram(WIN_LOADING, COPYWIN_FULL);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 gMain.state++;
             }
             else if (JOY_NEW(B_BUTTON))
@@ -194,7 +249,11 @@ static void CB2_MysteryEventMenu(void)
         else
         {
             GetEventLoadMessage(gStringVar4, MEVENT_STATUS_LOAD_ERROR);
+<<<<<<< HEAD
             PrintMysteryMenuText(0, gStringVar4, 1, 2, 1);
+=======
+            PrintMysteryMenuText(WIN_MSG, gStringVar4, 1, 2, 1);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             gMain.state = 13;
         }
         break;
@@ -207,19 +266,31 @@ static void CB2_MysteryEventMenu(void)
                 {
                     SetCloseLinkCallback();
                     GetEventLoadMessage(gStringVar4, MEVENT_STATUS_LOAD_ERROR);
+<<<<<<< HEAD
                     PrintMysteryMenuText(0, gStringVar4, 1, 2, 1);
+=======
+                    PrintMysteryMenuText(WIN_MSG, gStringVar4, 1, 2, 1);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                     gMain.state = 13;
                 }
                 else if (CheckLanguageMatch())
                 {
+<<<<<<< HEAD
                     PrintMysteryMenuText(0, gText_DontRemoveCableTurnOff, 1, 2, 1);
+=======
+                    PrintMysteryMenuText(WIN_MSG, gText_DontRemoveCableTurnOff, 1, 2, 1);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                     gMain.state++;
                 }
                 else
                 {
                     CloseLink();
                     GetEventLoadMessage(gStringVar4, MEVENT_STATUS_LOAD_ERROR);
+<<<<<<< HEAD
                     PrintMysteryMenuText(0, gStringVar4, 1, 2, 1);
+=======
+                    PrintMysteryMenuText(WIN_MSG, gStringVar4, 1, 2, 1);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                     gMain.state = 13;
                 }
             }
@@ -232,7 +303,11 @@ static void CB2_MysteryEventMenu(void)
         }
         break;
     case 7:
+<<<<<<< HEAD
         if (!IsTextPrinterActive(0))
+=======
+        if (!IsTextPrinterActive(WIN_MSG))
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             gMain.state++;
         break;
     case 8:
@@ -252,14 +327,26 @@ static void CB2_MysteryEventMenu(void)
     case 11:
         if (gReceivedRemoteLinkPlayers == 0)
         {
+<<<<<<< HEAD
             u16 status = RunMysteryEventScript(gDecompressionBuffer);
             CpuFill32(0, gDecompressionBuffer, 0x7D4);
             if (!GetEventLoadMessage(gStringVar4, status))
                 TrySavingData(SAVE_NORMAL);
+=======
+            // No clue what is going on here, and from where gDecompressionBuffer gets actually populated with mystery event script.
+            /*
+            u16 status = RunMysteryEventScript(gDecompressionBuffer);
+            CpuFill32(0, gDecompressionBuffer, 0x7D4);
+
+            if (!GetEventLoadMessage(gStringVar4, status))
+                TrySavingData(SAVE_NORMAL);
+            */
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             gMain.state++;
         }
         break;
     case 12:
+<<<<<<< HEAD
         PrintMysteryMenuText(0, gStringVar4, 1, 2, 1);
         gMain.state++;
         break;
@@ -269,6 +356,14 @@ static void CB2_MysteryEventMenu(void)
             gMain.state++;
             sUnused = 0;
         }
+=======
+        PrintMysteryMenuText(WIN_MSG, gStringVar4, 1, 2, 1);
+        gMain.state++;
+        break;
+    case 13:
+        if (!IsTextPrinterActive(WIN_MSG))
+            gMain.state++;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         break;
     case 14:
         if (JOY_NEW(A_BUTTON))
@@ -287,11 +382,19 @@ static void CB2_MysteryEventMenu(void)
         break;
     }
 
+<<<<<<< HEAD
     if (gLinkStatus & 0x40 && !IsLinkMaster())
     {
         CloseLink();
         GetEventLoadMessage(gStringVar4, MEVENT_STATUS_LOAD_ERROR);
         PrintMysteryMenuText(0, gStringVar4, 1, 2, 1);
+=======
+    if (gLinkStatus & LINK_STAT_CONN_ESTABLISHED && !IsLinkMaster())
+    {
+        CloseLink();
+        GetEventLoadMessage(gStringVar4, MEVENT_STATUS_LOAD_ERROR);
+        PrintMysteryMenuText(WIN_MSG, gStringVar4, 1, 2, 1);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         gMain.state = 13;
     }
 

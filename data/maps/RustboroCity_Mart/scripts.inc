@@ -1,6 +1,7 @@
 RustboroCity_Mart_MapScripts::
 	.byte 0
 
+<<<<<<< HEAD
 RustboroCity_Mart_EventScript_Clerk2::
 	lock
 	faceplayer
@@ -10,14 +11,21 @@ RustboroCity_Mart_EventScript_Clerk2::
 	goto_if_set FLAG_MET_DEVON_EMPLOYEE, RustboroCity_Mart_EventScript_PokemartExpanded
 	end
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 RustboroCity_Mart_EventScript_Clerk::
 	lock
 	faceplayer
 	message gText_HowMayIServeYou
 	waitmessage
+<<<<<<< HEAD
 	pokemart 0
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
+=======
+	goto_if_unset FLAG_MET_DEVON_EMPLOYEE, RustboroCity_Mart_EventScript_PokemartBasic
+	goto_if_set FLAG_MET_DEVON_EMPLOYEE, RustboroCity_Mart_EventScript_PokemartExpanded
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 RustboroCity_Mart_EventScript_PokemartBasic::
@@ -28,12 +36,26 @@ RustboroCity_Mart_EventScript_PokemartBasic::
 
 	.align 2
 RustboroCity_Mart_Pokemart_Basic:
+<<<<<<< HEAD
 	.2byte ITEM_X_SPEED
 	.2byte ITEM_X_ATTACK
 	.2byte ITEM_X_DEFEND
 	.2byte ITEM_NONE
 	release
 	end
+=======
+	.2byte ITEM_POKE_BALL
+	.2byte ITEM_POTION
+	.2byte ITEM_SUPER_POTION
+	.2byte ITEM_ANTIDOTE
+	.2byte ITEM_PARALYZE_HEAL
+	.2byte ITEM_ESCAPE_ROPE
+	.2byte ITEM_REPEL
+	.2byte ITEM_X_SPEED
+	.2byte ITEM_X_ATTACK
+	.2byte ITEM_X_DEFENSE
+	pokemartlistend
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 RustboroCity_Mart_EventScript_PokemartExpanded::
 	pokemart RustboroCity_Mart_Pokemart_Expanded
@@ -43,6 +65,7 @@ RustboroCity_Mart_EventScript_PokemartExpanded::
 
 	.align 2
 RustboroCity_Mart_Pokemart_Expanded:
+<<<<<<< HEAD
 	.2byte ITEM_TIMER_BALL
 	.2byte ITEM_REPEAT_BALL
 	.2byte ITEM_X_SPEED
@@ -51,6 +74,21 @@ RustboroCity_Mart_Pokemart_Expanded:
 	.2byte ITEM_NONE
 	release
 	end
+=======
+	.2byte ITEM_POKE_BALL
+	.2byte ITEM_TIMER_BALL
+	.2byte ITEM_REPEAT_BALL
+	.2byte ITEM_POTION
+	.2byte ITEM_SUPER_POTION
+	.2byte ITEM_ANTIDOTE
+	.2byte ITEM_PARALYZE_HEAL
+	.2byte ITEM_ESCAPE_ROPE
+	.2byte ITEM_REPEL
+	.2byte ITEM_X_SPEED
+	.2byte ITEM_X_ATTACK
+	.2byte ITEM_X_DEFENSE
+	pokemartlistend
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 RustboroCity_Mart_EventScript_PokefanF::
 	msgbox RustboroCity_Mart_Text_BuyingHealsInCaseOfShroomish, MSGBOX_NPC

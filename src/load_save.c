@@ -1,6 +1,11 @@
 #include "global.h"
 #include "malloc.h"
 #include "berry_powder.h"
+<<<<<<< HEAD
+=======
+#include "fake_rtc.h"
+#include "follower_npc.h"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include "item.h"
 #include "load_save.h"
 #include "main.h"
@@ -9,11 +14,19 @@
 #include "pokemon_storage_system.h"
 #include "random.h"
 #include "save_location.h"
+<<<<<<< HEAD
+=======
+#include "script_pokemon_util.h"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include "trainer_hill.h"
 #include "gba/flash_internal.h"
 #include "decoration_inventory.h"
 #include "agb_flash.h"
+<<<<<<< HEAD
 #include "tx_randomizer_and_challenges.h"
+=======
+#include "event_data.h"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include "constants/event_objects.h"
 
 static void ApplyNewEncryptionKeyToAllEncryptedData(u32 encryptionKey);
@@ -22,15 +35,23 @@ static void ApplyNewEncryptionKeyToAllEncryptedData(u32 encryptionKey);
 
 struct LoadedSaveData
 {
+<<<<<<< HEAD
  /*0x0000*/ struct ItemSlot items[BAG_ITEMS_COUNT];
  /*0x0078*/ struct ItemSlot keyItems[BAG_KEYITEMS_COUNT];
  /*0x00F0*/ struct ItemSlot pokeBalls[BAG_POKEBALLS_COUNT];
  /*0x0130*/ struct ItemSlot TMsHMs[BAG_TMHM_COUNT];
  /*0x0230*/ struct ItemSlot berries[BAG_BERRIES_COUNT];
+=======
+ /*0x0000*/ struct Bag bag;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
  /*0x02E8*/ struct Mail mail[MAIL_COUNT];
 };
 
 // EWRAM DATA
+<<<<<<< HEAD
+=======
+EWRAM_DATA struct SaveBlock3 gSaveblock3 = {};
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 EWRAM_DATA struct SaveBlock2ASLR gSaveblock2 = {0};
 EWRAM_DATA struct SaveBlock1ASLR gSaveblock1 = {0};
 EWRAM_DATA struct PokemonStorageASLR gPokemonStorage = {0};
@@ -39,10 +60,18 @@ EWRAM_DATA struct LoadedSaveData gLoadedSaveData = {0};
 EWRAM_DATA u32 gLastEncryptionKey = 0;
 
 // IWRAM common
+<<<<<<< HEAD
 bool32 gFlashMemoryPresent;
 struct SaveBlock1 *gSaveBlock1Ptr;
 struct SaveBlock2 *gSaveBlock2Ptr;
 struct PokemonStorage *gPokemonStoragePtr;
+=======
+COMMON_DATA bool32 gFlashMemoryPresent = 0;
+COMMON_DATA struct SaveBlock1 *gSaveBlock1Ptr = NULL;
+COMMON_DATA struct SaveBlock2 *gSaveBlock2Ptr = NULL;
+IWRAM_INIT struct SaveBlock3 *gSaveBlock3Ptr = &gSaveblock3;
+COMMON_DATA struct PokemonStorage *gPokemonStoragePtr = NULL;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 // code
 void CheckForFlashMemory(void)
@@ -58,6 +87,15 @@ void CheckForFlashMemory(void)
     }
 }
 
+<<<<<<< HEAD
+=======
+void ClearSav3(void)
+{
+    CpuFill16(0, &gSaveblock3, sizeof(struct SaveBlock3));
+    FakeRtc_Reset();
+}
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 void ClearSav2(void)
 {
     CpuFill16(0, &gSaveblock2, sizeof(struct SaveBlock2ASLR));
@@ -71,7 +109,11 @@ void ClearSav1(void)
 // Offset is the sum of the trainer id bytes
 void SetSaveBlocksPointers(u16 offset)
 {
+<<<<<<< HEAD
     struct SaveBlock1** sav1_LocalVar = &gSaveBlock1Ptr;
+=======
+    struct SaveBlock1 **sav1_LocalVar = &gSaveBlock1Ptr;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     offset = (offset + Random()) & (SAVEBLOCK_MOVE_RANGE - 4);
 
@@ -128,7 +170,11 @@ void MoveSaveBlocks_ResetHeap(void)
     gMain.vblankCallback = vblankCB;
 
     // create a new encryption key
+<<<<<<< HEAD
     encryptionKey = (Random() << 16) + (Random());
+=======
+    encryptionKey = Random32();
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ApplyNewEncryptionKeyToAllEncryptedData(encryptionKey);
     gSaveBlock2Ptr->encryptionKey = encryptionKey;
 }
@@ -162,21 +208,45 @@ void ClearContinueGameWarpStatus2(void)
 void SavePlayerParty(void)
 {
     int i;
+<<<<<<< HEAD
 
     gSaveBlock1Ptr->playerPartyCount = gPlayerPartyCount;
 
     for (i = 0; i < PARTY_SIZE; i++)
         gSaveBlock1Ptr->playerParty[i] = gPlayerParty[i];
+=======
+    *GetSavedPlayerPartyCount() = gPlayerPartyCount;
+
+    for (i = 0; i < PARTY_SIZE; i++)
+        SavePlayerPartyMon(i, &gPlayerParty[i]);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 void LoadPlayerParty(void)
 {
     int i;
 
+<<<<<<< HEAD
     gPlayerPartyCount = gSaveBlock1Ptr->playerPartyCount;
 
     for (i = 0; i < PARTY_SIZE; i++)
         gPlayerParty[i] = gSaveBlock1Ptr->playerParty[i];
+=======
+    gPlayerPartyCount = *GetSavedPlayerPartyCount();
+
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        u32 data;
+        gPlayerParty[i] = *GetSavedPlayerPartyMon(i);
+
+        // TODO: Turn this into a save migration once those are available.
+        // At which point we can remove hp and status from Pokemon entirely.
+        data = gPlayerParty[i].maxHP - gPlayerParty[i].hp;
+        SetBoxMonData(&gPlayerParty[i].box, MON_DATA_HP_LOST, &data);
+        data = gPlayerParty[i].status;
+        SetBoxMonData(&gPlayerParty[i].box, MON_DATA_STATUS, &data);
+    }
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 void SaveObjectEvents(void)
@@ -184,7 +254,12 @@ void SaveObjectEvents(void)
     int i;
     u16 graphicsId;
 
+<<<<<<< HEAD
     for (i = 0; i < OBJECT_EVENTS_COUNT; i++) {
+=======
+    for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
+    {
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         gSaveBlock1Ptr->objectEvents[i] = gObjectEvents[i];
         // Swap graphicsId bytes when saving and loading
         // This keeps compatibility with vanilla,
@@ -193,7 +268,11 @@ void SaveObjectEvents(void)
         gSaveBlock1Ptr->objectEvents[i].graphicsId = (graphicsId >> 8) | (graphicsId << 8);
         gSaveBlock1Ptr->objectEvents[i].spriteId = 127; // magic number
         // To avoid crash on vanilla, save follower as inactive
+<<<<<<< HEAD
         if (gObjectEvents[i].localId == OBJ_EVENT_ID_FOLLOWER) 
+=======
+        if (gObjectEvents[i].localId == OBJ_EVENT_ID_FOLLOWER)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             gSaveBlock1Ptr->objectEvents[i].active = FALSE;
     }
 }
@@ -203,7 +282,12 @@ void LoadObjectEvents(void)
     int i;
     u16 graphicsId;
 
+<<<<<<< HEAD
     for (i = 0; i < OBJECT_EVENTS_COUNT; i++) {
+=======
+    for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
+    {
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         gObjectEvents[i] = gSaveBlock1Ptr->objectEvents[i];
         // Swap graphicsId bytes when saving and loading
         // This keeps compatibility with vanilla,
@@ -216,7 +300,11 @@ void LoadObjectEvents(void)
         // Try to restore saved inactive follower
         if (gObjectEvents[i].localId == OBJ_EVENT_ID_FOLLOWER &&
             !gObjectEvents[i].active &&
+<<<<<<< HEAD
             gObjectEvents[i].graphicsId >= OBJ_EVENT_GFX_MON_BASE)
+=======
+            gObjectEvents[i].graphicsId & OBJ_EVENT_MON)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             gObjectEvents[i].active = TRUE;
     }
 }
@@ -229,7 +317,10 @@ void CopyPartyAndObjectsToSave(void)
 
 void CopyPartyAndObjectsFromSave(void)
 {
+<<<<<<< HEAD
     PrintTXSaveData(); //tx_randomizer_and_challenges
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     LoadPlayerParty();
     LoadObjectEvents();
 }
@@ -238,6 +329,7 @@ void LoadPlayerBag(void)
 {
     int i;
 
+<<<<<<< HEAD
     // load player items.
     for (i = 0; i < BAG_ITEMS_COUNT; i++)
         gLoadedSaveData.items[i] = gSaveBlock1Ptr->bagPocket_Items[i];
@@ -257,6 +349,10 @@ void LoadPlayerBag(void)
     // load player berries.
     for (i = 0; i < BAG_BERRIES_COUNT; i++)
         gLoadedSaveData.berries[i] = gSaveBlock1Ptr->bagPocket_Berries[i];
+=======
+    // load player bag.
+    memcpy(&gLoadedSaveData.bag, &gSaveBlock1Ptr->bag, sizeof(struct Bag));
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     // load mail.
     for (i = 0; i < MAIL_COUNT; i++)
@@ -270,6 +366,7 @@ void SavePlayerBag(void)
     int i;
     u32 encryptionKeyBackup;
 
+<<<<<<< HEAD
     // save player items.
     for (i = 0; i < BAG_ITEMS_COUNT; i++)
         gSaveBlock1Ptr->bagPocket_Items[i] = gLoadedSaveData.items[i];
@@ -289,6 +386,10 @@ void SavePlayerBag(void)
     // save player berries.
     for (i = 0; i < BAG_BERRIES_COUNT; i++)
         gSaveBlock1Ptr->bagPocket_Berries[i] = gLoadedSaveData.berries[i];
+=======
+    // save player bag.
+    memcpy(&gSaveBlock1Ptr->bag, &gLoadedSaveData.bag, sizeof(struct Bag));
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     // save mail.
     for (i = 0; i < MAIL_COUNT; i++)
@@ -315,7 +416,11 @@ void ApplyNewEncryptionKeyToWord(u32 *word, u32 newKey)
 static void ApplyNewEncryptionKeyToAllEncryptedData(u32 encryptionKey)
 {
     ApplyNewEncryptionKeyToGameStats(encryptionKey);
+<<<<<<< HEAD
     ApplyNewEncryptionKeyToBagItems_(encryptionKey);
+=======
+    ApplyNewEncryptionKeyToBagItems(encryptionKey);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ApplyNewEncryptionKeyToBerryPowder(encryptionKey);
     ApplyNewEncryptionKeyToWord(&gSaveBlock1Ptr->money, encryptionKey);
     ApplyNewEncryptionKeyToHword(&gSaveBlock1Ptr->coins, encryptionKey);

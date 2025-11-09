@@ -50,7 +50,11 @@ enum {
 struct UsePokeblockSession
 {
     void (*callback)(void);
+<<<<<<< HEAD
     void (*exitCallback)(void);
+=======
+    MainCallback exitCallback;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     struct Pokeblock *pokeblock;
     struct Pokemon *mon;
     u8 stringBuffer[64];
@@ -162,7 +166,11 @@ extern const u16 gConditionText_Pal[];
 // The below 3 are saved for returning to the screen after feeding a pokeblock to a mon
 // so that the rest of the data can be freed
 static EWRAM_DATA struct UsePokeblockSession *sInfo = NULL;
+<<<<<<< HEAD
 static EWRAM_DATA void (*sExitCallback)(void) = NULL;
+=======
+static EWRAM_DATA MainCallback sExitCallback = NULL;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static EWRAM_DATA struct Pokeblock *sPokeblock = NULL;
 EWRAM_DATA u8 gPokeblockMonId = 0;
 EWRAM_DATA s16 gPokeblockGain = 0;
@@ -173,8 +181,13 @@ static EWRAM_DATA struct UsePokeblockMenu *sMenu = NULL;
 
 static const u32 sMonFrame_Pal[] = INCBIN_U32("graphics/pokeblock/use_screen/mon_frame_pal.bin");
 static const u32 sMonFrame_Gfx[] = INCBIN_U32("graphics/pokeblock/use_screen/mon_frame.4bpp");
+<<<<<<< HEAD
 static const u32 sMonFrame_Tilemap[] = INCBIN_U32("graphics/pokeblock/use_screen/mon_frame.bin.lz");
 static const u32 sGraphData_Tilemap[] = INCBIN_U32("graphics/pokeblock/use_screen/graph_data.bin.lz");
+=======
+static const u32 sMonFrame_Tilemap[] = INCBIN_U32("graphics/pokeblock/use_screen/mon_frame.bin.smolTM");
+static const u32 sGraphData_Tilemap[] = INCBIN_U32("graphics/pokeblock/use_screen/graph_data.bin.smolTM");
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 // The condition/flavors aren't listed in their normal order in this file, they're listed as shown on the graph going counter-clockwise
 // Normally they would go Cool/Spicy, Beauty/Dry, Cute/Sweet, Smart/Bitter, Tough/Sour (also graph order, but clockwise)
@@ -665,6 +678,15 @@ static void UsePokeblockMenu(void)
             sInfo->mainState = STATE_HANDLE_INPUT;
             break;
         case 0: // YES
+<<<<<<< HEAD
+=======
+            if (IsSheenMaxed())
+            {
+                PrintWontEatAnymore();
+                sInfo->mainState = STATE_WAIT_MSG;
+            }
+            else
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             {
                 SetUsePokeblockCallback(FeedPokeblockToMon);
             }
@@ -993,6 +1015,10 @@ static void AddPokeblockToConditions(struct Pokeblock *pokeblock, struct Pokemon
     s16 stat;
     u8 data;
 
+<<<<<<< HEAD
+=======
+    if (GetMonData(mon, MON_DATA_SHEEN) != MAX_SHEEN)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     {
         CalculatePokeblockEffectiveness(pokeblock, mon);
         for (i = 0; i < CONDITION_COUNT; i++)
@@ -1327,7 +1353,11 @@ static bool8 LoadUsePokeblockMenuGfx(void)
         sMonFrame_TilemapPtr = Alloc(1280);
         break;
     case 2:
+<<<<<<< HEAD
         LZ77UnCompVram(sMonFrame_Tilemap, sMonFrame_TilemapPtr);
+=======
+        DecompressDataWithHeaderVram(sMonFrame_Tilemap, sMonFrame_TilemapPtr);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         break;
     case 3:
         LoadBgTiles(3, sMonFrame_Gfx, 224, 0);
@@ -1340,10 +1370,17 @@ static bool8 LoadUsePokeblockMenuGfx(void)
         sMenu->curMonXOffset = -80;
         break;
     case 6:
+<<<<<<< HEAD
         LZ77UnCompVram(gUsePokeblockGraph_Gfx, sGraph_Gfx);
         break;
     case 7:
         LZ77UnCompVram(gUsePokeblockGraph_Tilemap, sGraph_Tilemap);
+=======
+        DecompressDataWithHeaderVram(gUsePokeblockGraph_Gfx, sGraph_Gfx);
+        break;
+    case 7:
+        DecompressDataWithHeaderVram(gUsePokeblockGraph_Tilemap, sGraph_Tilemap);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         LoadPalette(gUsePokeblockGraph_Pal, BG_PLTT_ID(2), PLTT_SIZE_4BPP);
         break;
     case 8:
@@ -1355,7 +1392,11 @@ static bool8 LoadUsePokeblockMenuGfx(void)
         CopyBgTilemapBufferToVram(1);
         break;
     case 10:
+<<<<<<< HEAD
         LZ77UnCompVram(sGraphData_Tilemap, sMenu->tilemapBuffer);
+=======
+        DecompressDataWithHeaderVram(sGraphData_Tilemap, sMenu->tilemapBuffer);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         break;
     case 11:
         LoadBgTilemap(2, sMenu->tilemapBuffer, 1280, 0);
@@ -1384,9 +1425,15 @@ static void UpdateMonInfoText(u16 loadId, bool8 firstPrint)
     {
         AddTextPrinterParameterized(WIN_NAME, FONT_NORMAL, sMenu->monNameStrings[loadId], 0, 1, 0, NULL);
         partyIndex = GetPartyIdFromSelectionId(sMenu->info.curSelection);
+<<<<<<< HEAD
         nature = GetNature(&gPlayerParty[partyIndex], FALSE);
         str = StringCopy(sMenu->info.natureText, gText_NatureSlash);
         str = StringCopy(str, gNatureNamePointers[nature]);
+=======
+        nature = GetNature(&gPlayerParty[partyIndex]);
+        str = StringCopy(sMenu->info.natureText, gText_NatureSlash);
+        str = StringCopy(str, gNaturesInfo[nature].name);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         AddTextPrinterParameterized3(WIN_NATURE, FONT_NORMAL, 2, 1, sNatureTextColors, 0, sMenu->info.natureText);
     }
 

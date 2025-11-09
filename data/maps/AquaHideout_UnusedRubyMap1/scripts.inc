@@ -1,4 +1,5 @@
 AquaHideout_UnusedRubyMap1_MapScripts::
+<<<<<<< HEAD
 	map_script MAP_SCRIPT_ON_RESUME, AquaHideout_UnusedRubyMap1_OnResume
 	map_script MAP_SCRIPT_ON_LOAD, AquaHideout_UnusedRubyMap1_OnLoad
 	map_script MAP_SCRIPT_ON_TRANSITION, AquaHideout_UnusedRubyMap1_OnTransition
@@ -200,3 +201,7 @@ AquaHideout_UnusedRubyMap1_EventScript_DusknoirButtonText3::
 
 AquaHideout_UnusedRubyMap1_Movement:
 	step_end
+=======
+	.byte 0
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

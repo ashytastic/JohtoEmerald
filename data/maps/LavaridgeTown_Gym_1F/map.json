@@ -3,7 +3,11 @@
   "name": "LavaridgeTown_Gym_1F",
   "layout": "LAYOUT_LAVARIDGE_TOWN_GYM_1F",
   "music": "MUS_GYM",
+<<<<<<< HEAD
   "region_map_section": "MAPSEC_GOLDENROD_CITY",
+=======
+  "region_map_section": "MAPSEC_LAVARIDGE_TOWN",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "requires_flash": false,
   "weather": "WEATHER_FOG_HORIZONTAL",
   "map_type": "MAP_TYPE_INDOOR",
@@ -12,10 +16,17 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_GYM",
+<<<<<<< HEAD
   "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_MORTY",
+=======
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FLANNERY",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 13,
       "y": 9,
       "elevation": 3,
@@ -28,7 +39,12 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_ROCKER",
+=======
+      "local_id": "LOCALID_COLE",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_5",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 3,
       "y": 14,
       "elevation": 3,
@@ -41,7 +57,12 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_MAN",
+=======
+      "local_id": "LOCALID_GERALD",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 2,
       "y": 15,
       "elevation": 3,
@@ -54,7 +75,12 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_ROCKER",
+=======
+      "local_id": "LOCALID_AXLE",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_5",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 3,
       "y": 10,
       "elevation": 3,
@@ -67,7 +93,12 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
+=======
+      "local_id": "LOCALID_DANIELLE",
+      "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 5,
       "y": 2,
       "elevation": 3,
@@ -80,7 +111,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_GYM_GUY",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_MAN_2",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 12,
       "y": 16,
       "elevation": 3,
@@ -277,9 +312,13 @@
       "dest_warp_id": "23"
     }
   ],
+<<<<<<< HEAD
   "coord_events": [
 
   ],
+=======
+  "coord_events": [],
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "bg_events": [
     {
       "type": "sign",

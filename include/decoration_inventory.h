@@ -12,9 +12,15 @@ extern struct DecorationInventory gDecorationInventories[];
 void SetDecorationInventoriesPointers(void);
 void ClearDecorationInventories(void);
 s8 GetFirstEmptyDecorSlot(u8 category);
+<<<<<<< HEAD
 u8 CheckHasDecoration(u8 decor);
 u8 DecorationAdd(u8 decor);
 u8 DecorationCheckSpace(u8 decor);
+=======
+bool8 CheckHasDecoration(u8 decor);
+bool8 DecorationAdd(u8 decor);
+bool8 DecorationCheckSpace(u8 decor);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 s8 DecorationRemove(u8 decor);
 void CondenseDecorationsInCategory(u8 category);
 u8 GetNumOwnedDecorationsInCategory(u8 category);

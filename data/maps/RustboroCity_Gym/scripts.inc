@@ -15,6 +15,7 @@ RustboroCity_Gym_EventScript_RoxanneDefeated::
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox RustboroCity_Gym_Text_StoneBadgeInfoTakeThis, MSGBOX_DEFAULT
+<<<<<<< HEAD
 	setflag FLAG_DEFEATED_VIOLET_GYM
 	setflag FLAG_BADGE01_GET
 	setvar VAR_GARBAGEVAR, 1
@@ -22,6 +23,15 @@ RustboroCity_Gym_EventScript_RoxanneDefeated::
 	setvar VAR_0x8008, 1
 	call Common_EventScript_SetGymTrainers
 	call_if_eq VAR_GARBAGEVAR, 6, Common_EventScript_ReadyPetalburgGymForBattle
+=======
+	setflag FLAG_DEFEATED_RUSTBORO_GYM
+	setflag FLAG_BADGE01_GET
+	setvar VAR_RUSTBORO_CITY_STATE, 1
+	addvar VAR_PETALBURG_GYM_STATE, 1
+	setvar VAR_0x8008, 1
+	call Common_EventScript_SetGymTrainers
+	call_if_eq VAR_PETALBURG_GYM_STATE, 6, Common_EventScript_ReadyPetalburgGymForBattle
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto RustboroCity_Gym_EventScript_GiveRockTomb
 	end
 
@@ -29,6 +39,7 @@ RustboroCity_Gym_EventScript_GiveRockTomb::
 	giveitem ITEM_TM_ROCK_TOMB
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_TM_ROCK_TOMB
+<<<<<<< HEAD
 	goto_if_set FLAG_FINITE_TMS, RustboroCity_Gym_EventScript_GiveRockTombFinite
 	msgbox RustboroCity_Gym_Text_ExplainRockTombInfinite, MSGBOX_DEFAULT
 	release
@@ -36,6 +47,9 @@ RustboroCity_Gym_EventScript_GiveRockTomb::
 
 RustboroCity_Gym_EventScript_GiveRockTombFinite::
 	msgbox RustboroCity_Gym_Text_ExplainRockTomb MSGBOX_DEFAULT
+=======
+	msgbox RustboroCity_Gym_Text_ExplainRockTomb, MSGBOX_DEFAULT
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	release
 	end
 
@@ -62,7 +76,11 @@ RustboroCity_Gym_EventScript_Marc::
 RustboroCity_Gym_EventScript_GymGuide::
 	lock
 	faceplayer
+<<<<<<< HEAD
 	goto_if_set FLAG_DEFEATED_VIOLET_GYM, RustboroCity_Gym_EventScript_GymGuidePostVictory
+=======
+	goto_if_set FLAG_DEFEATED_RUSTBORO_GYM, RustboroCity_Gym_EventScript_GymGuidePostVictory
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox RustboroCity_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT
 	release
 	end
@@ -219,6 +237,7 @@ RustboroCity_Gym_Text_ExplainRockTomb:
 	.string "It not only inflicts damage by dropping\n"
 	.string "rocks, it also lowers SPEED.\p"
 	.string "If you use a TM, it instantly teaches\n"
+<<<<<<< HEAD
 	.string "the move to a POKéMON.$"
 	.string "Remember, a TM can be used only once,\n"
 	.string "so think before you use it.$"
@@ -233,6 +252,12 @@ RustboroCity_Gym_Text_ExplainRockTombInfinite:
 	.string "A TM can be used as many times as you'd\n"
 	.string "like, so please enjoy it.$"
 
+=======
+	.string "the move to a POKéMON.\p"
+	.string "Remember, a TM can be used only once,\n"
+	.string "so think before you use it.$"
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 RustboroCity_Gym_Text_RoxannePostBattle:
 	.string "Since you are so strong, you should\n"
 	.string "challenge other GYM LEADERS.\p"

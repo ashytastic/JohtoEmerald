@@ -3,7 +3,11 @@
   "name": "PetalburgCity_Gym",
   "layout": "LAYOUT_PETALBURG_CITY_GYM",
   "music": "MUS_GYM",
+<<<<<<< HEAD
   "region_map_section": "MAPSEC_SAFARI_ZONE_GATE",
+=======
+  "region_map_section": "MAPSEC_PETALBURG_CITY",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -12,10 +16,18 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_GYM",
+<<<<<<< HEAD
   "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_JASMINE",
+=======
+  "connections": null,
+  "object_events": [
+    {
+      "local_id": "LOCALID_PETALBURG_GYM_NORMAN",
+      "graphics_id": "OBJ_EVENT_GFX_NORMAN",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 4,
       "y": 2,
       "elevation": 0,
@@ -25,10 +37,17 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PetalburgCity_Gym_EventScript_Norman",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WORKER_F",
+=======
+      "flag": "FLAG_HIDE_PETALBURG_GYM_NORMAN"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 4,
       "y": 94,
       "elevation": 3,
@@ -41,7 +60,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_MAN",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 4,
       "y": 81,
       "elevation": 3,
@@ -54,7 +77,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_MAN",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 4,
       "y": 42,
       "elevation": 3,
@@ -67,7 +94,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_WORKER_F",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 4,
       "y": 55,
       "elevation": 3,
@@ -80,7 +111,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_MAN",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 4,
       "y": 68,
       "elevation": 3,
@@ -93,7 +128,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_WORKER_F",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 4,
       "y": 16,
       "elevation": 3,
@@ -106,7 +145,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_MAN",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 4,
       "y": 29,
       "elevation": 3,
@@ -119,7 +162,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_GYM_GUY",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_MAN_2",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 3,
       "y": 109,
       "elevation": 3,
@@ -129,10 +176,18 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PetalburgCity_Gym_EventScript_GymGuide",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SILVER",
+=======
+      "flag": "FLAG_HIDE_PETALBURG_GYM_GREETER"
+    },
+    {
+      "local_id": "LOCALID_PETALBURG_GYM_WALLY",
+      "graphics_id": "OBJ_EVENT_GFX_WALLY",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 4,
       "y": 111,
       "elevation": 3,
@@ -142,10 +197,18 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ATTENDANT_M",
+=======
+      "flag": "FLAG_HIDE_PETALBURG_GYM_WALLY"
+    },
+    {
+      "local_id": "LOCALID_PETALBURG_GYM_WALLYS_DAD",
+      "graphics_id": "OBJ_EVENT_GFX_POKEFAN_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 1,
       "y": 7,
       "elevation": 3,
@@ -155,7 +218,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
+=======
+      "flag": "FLAG_HIDE_PETALBURG_GYM_WALLYS_DAD"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "warp_events": [
@@ -426,9 +493,13 @@
       "dest_warp_id": "33"
     }
   ],
+<<<<<<< HEAD
   "coord_events": [
 
   ],
+=======
+  "coord_events": [],
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "bg_events": [
     {
       "type": "sign",

@@ -48,7 +48,11 @@ Route111_EventScript_GiveSecretPower::
 	msgbox Route111_Text_ExplainSecretPower, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_RECEIVED_SECRET_POWER
+<<<<<<< HEAD
 	clearflag FLAG_GARBAGEFLAG
+=======
+	clearflag FLAG_HIDE_SLATEPORT_CITY_TM_SALESMAN
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call_if_eq VAR_FACING, DIR_WEST, Route111_EventScript_SecretPowerManExit
 	call_if_eq VAR_FACING, DIR_EAST, Route111_EventScript_SecretPowerManExit
 	call_if_eq VAR_FACING, DIR_NORTH, Route111_EventScript_SecretPowerManExitNorth

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 ShoalCave_LowTideIceRoom_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, ShoalCave_LowTideIceRoom_OnTransition
@@ -15,3 +16,8 @@ ShoalCave_LowTideIceRoom_SwitchToModern::
 	playmoncry SPECIES_SUICUNE, CRY_MODE_NORMAL
 	release
 	end
+=======
+ShoalCave_LowTideIceRoom_MapScripts::
+	.byte 0
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

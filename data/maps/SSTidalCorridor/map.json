@@ -12,9 +12,16 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+<<<<<<< HEAD
   "connections": 0,
   "object_events": [
     {
+=======
+  "connections": null,
+  "object_events": [
+    {
+      "local_id": "LOCALID_SS_TIDAL_EXIT_SAILOR",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
       "x": 1,
       "y": 11,
@@ -41,7 +48,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 9,
       "y": 2,
       "elevation": 3,
@@ -51,10 +62,17 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SSTidalCorridor_EventScript_Briney",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SLOWPOKE_NO_TAIL",
+=======
+      "flag": "FLAG_HIDE_SS_TIDAL_CORRIDOR_MR_BRINEY"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WINGULL",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 7,
       "y": 2,
       "elevation": 3,
@@ -64,10 +82,18 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SSTidalCorridor_EventScript_Peeko",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PROF_OAK",
+=======
+      "flag": "FLAG_HIDE_SS_TIDAL_CORRIDOR_MR_BRINEY"
+    },
+    {
+      "local_id": "LOCALID_SS_TIDAL_SCOTT",
+      "graphics_id": "OBJ_EVENT_GFX_SCOTT",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 9,
       "y": 10,
       "elevation": 3,
@@ -77,7 +103,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
+=======
+      "flag": "FLAG_HIDE_SS_TIDAL_CORRIDOR_SCOTT"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "warp_events": [
@@ -145,9 +175,13 @@
       "dest_warp_id": "0"
     }
   ],
+<<<<<<< HEAD
   "coord_events": [
 
   ],
+=======
+  "coord_events": [],
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "bg_events": [
     {
       "type": "sign",

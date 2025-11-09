@@ -1,11 +1,19 @@
+<<<<<<< HEAD
 .set LOCALID_MOVE_RELEARNER, 1
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 FallarborTown_MoveRelearnersHouse_MapScripts::
 	.byte 0
 
 FallarborTown_MoveRelearnersHouse_EventScript_MoveRelearner::
 	lockall
+<<<<<<< HEAD
 	faceplayer
+=======
+	applymovement LOCALID_MOVE_RELEARNER, Common_Movement_FacePlayer
+	waitmovement 0
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto_if_set FLAG_TEMP_1, FallarborTown_MoveRelearnersHouse_EventScript_AskTeachMove
 	msgbox FallarborTown_MoveRelearnersHouse_Text_ImTheMoveTutor, MSGBOX_DEFAULT
 	setflag FLAG_TEMP_1

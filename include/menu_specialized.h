@@ -15,6 +15,18 @@ enum {
     MAILBOXWIN_COUNT
 };
 
+<<<<<<< HEAD
+=======
+// Window IDs for the move relearner
+enum {
+    RELEARNERWIN_DESC_BATTLE,
+    RELEARNERWIN_DESC_CONTEST,
+    RELEARNERWIN_MOVE_LIST,
+    RELEARNERWIN_MSG,
+    RELEARNERWIN_YESNO,
+};
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 enum {
     TAG_CONDITION_MON = 100,
     TAG_CONDITION_BALL,
@@ -35,7 +47,11 @@ enum {
 
 // The number of extra sparkles shown on a Pokémon's condition screen.
 // All Pokémon start with 1, so the max here is MAX_CONDITION_SPARKLES - 1
+<<<<<<< HEAD
 #define GET_NUM_CONDITION_SPARKLES(sheen)((sheen) != MAX_SHEEN) ? (sheen) / ((u32)MAX_SHEEN / (MAX_CONDITION_SPARKLES - 1) + 1) : MAX_CONDITION_SPARKLES - 1;
+=======
+#define GET_NUM_CONDITION_SPARKLES(sheen) ((sheen) != MAX_SHEEN) ? (sheen) / ((u32)MAX_SHEEN / (MAX_CONDITION_SPARKLES - 1) + 1) : MAX_CONDITION_SPARKLES - 1;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 #define CONDITION_GRAPH_TOP_Y  56
 #define CONDITION_GRAPH_BOTTOM_Y 121
@@ -103,25 +119,44 @@ bool8 ConditionMenu_UpdateMonExit(struct ConditionGraph *graph, s16 *x);
 bool8 MoveConditionMonOnscreen(s16 *x);
 bool8 MoveConditionMonOffscreen(s16 *x);
 void GetConditionMenuMonNameAndLocString(u8 *locationDst, u8 *nameDst, u16 boxId, u16 monId, u16 partyId, u16 numMons, bool8 excludesCancel);
+<<<<<<< HEAD
 void GetConditionMenuMonConditions(struct ConditionGraph *graph, u8 *sheen, u16 boxId, u16 monId, u16 partyId, u16 id, u16 numMons, bool8 excludesCancel);
 void GetConditionMenuMonGfx(void *tilesDst, void *palDst, u16 boxId, u16 monId, u16 partyId, u16 numMons, bool8 excludesCancel);
 void LoadConditionMonPicTemplate(struct SpriteSheet *sheet, struct SpriteTemplate *template, struct SpritePalette *pal);
 void LoadConditionSelectionIcons(struct SpriteSheet *sheets, struct SpriteTemplate * template, struct SpritePalette *pals);
+=======
+void GetConditionMenuMonConditions(struct ConditionGraph *graph, u8 *numSparkles, u16 boxId, u16 monId, u16 partyId, u16 id, u16 numMons, bool8 excludesCancel);
+void GetConditionMenuMonGfx(void *tilesDst, void *palDst, u16 boxId, u16 monId, u16 partyId, u16 numMons, bool8 excludesCancel);
+void LoadConditionMonPicTemplate(struct SpriteSheet *sheet, struct SpriteTemplate *template, struct SpritePalette *pal);
+void LoadConditionSelectionIcons(struct SpriteSheet *sheets, struct SpriteTemplate *template, struct SpritePalette *pals);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 s32 GetBoxOrPartyMonData(u16 boxId, u16 monId, s32 request, u8 *dst);
 
 // Condition sparkles
 void LoadConditionSparkle(struct SpriteSheet *sheet, struct SpritePalette *pal);
 void ResetConditionSparkleSprites(struct Sprite **sprites);
+<<<<<<< HEAD
 void CreateConditionSparkleSprites(struct Sprite **sprites, u8 monSpriteId, u8 count);
+=======
+void CreateConditionSparkleSprites(struct Sprite **sprites, u8 monSpriteId, u8 _count);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 void DestroyConditionSparkleSprites(struct Sprite **sprites);
 void FreeConditionSparkles(struct Sprite **sprites);
 
 // Move relearner
+<<<<<<< HEAD
 void MoveRelearnerPrintText(u8 *str);
 bool16 MoveRelearnerRunTextPrinters(void);
 void MoveRelearnerCreateYesNoMenu(void);
 u8 LoadMoveRelearnerMovesList(const struct ListMenuItem *items, u16 numChoices);
 void InitMoveRelearnerWindows(bool8 useContextWindow);
+=======
+void MoveRelearnerPrintMessage(u8 *str);
+bool16 MoveRelearnerRunTextPrinters(void);
+void MoveRelearnerCreateYesNoMenu(void);
+u8 LoadMoveRelearnerMovesList(const struct ListMenuItem *items, u16 numChoices);
+void InitMoveRelearnerWindows(bool8 useContestWindow);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 // Level up window
 void DrawLevelUpWindowPg1(u16 windowId, u16 *statsBefore, u16 *statsAfter, u8 bgClr, u8 fgClr, u8 shadowClr);

@@ -2,11 +2,17 @@ Route114_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route114_OnTransition
 	map_script MAP_SCRIPT_ON_LOAD, Route114_OnLoad
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route114_OnFrame
+<<<<<<< HEAD
 	map_script MAP_SCRIPT_ON_RESUME, SetTimeEncounters
 	.byte 0
 
 Route114_OnTransition:
 	callnative SetTimeBasedEncounters
+=======
+	.byte 0
+
+Route114_OnTransition:
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call_if_eq VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_HideMapNamePopup
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_114_NORTH, AbnormalWeather_StartGroudonWeather
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_114_SOUTH, AbnormalWeather_StartGroudonWeather
@@ -77,8 +83,13 @@ Route114_EventScript_FossilManiacsHouseSign::
 	msgbox Route114_Text_FossilManiacsHouseSign, MSGBOX_SIGN
 	end
 
+<<<<<<< HEAD
 Route114_EventScript_BillsHouseSign::
 	msgbox Route114_Text_BillsHouse, MSGBOX_SIGN
+=======
+Route114_EventScript_LanettesHouseSign::
+	msgbox Route114_Text_LanettesHouse, MSGBOX_SIGN
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 Route114_EventScript_Lenny::
@@ -123,7 +134,11 @@ Route114_EventScript_RematchSteve::
 	end
 
 Route114_EventScript_Bernie::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_DARYL, Route114_Text_BernieIntro, Route114_Text_BernieDefeat, Route114_EventScript_RegisterBernie
+=======
+	trainerbattle_single TRAINER_BERNIE_1, Route114_Text_BernieIntro, Route114_Text_BernieDefeat, Route114_EventScript_RegisterBernie
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route114_EventScript_RematchBernie
 	msgbox Route114_Text_BerniePostBattle, MSGBOX_DEFAULT
@@ -134,12 +149,20 @@ Route114_EventScript_RegisterBernie::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route114_Text_BernieRegister, MSGBOX_DEFAULT
+<<<<<<< HEAD
 	register_matchcall TRAINER_DARYL
+=======
+	register_matchcall TRAINER_BERNIE_1
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	release
 	end
 
 Route114_EventScript_RematchBernie::
+<<<<<<< HEAD
 	trainerbattle_rematch TRAINER_DARYL, Route114_Text_BernieRematchIntro, Route114_Text_BernieRematchDefeat
+=======
+	trainerbattle_rematch TRAINER_BERNIE_1, Route114_Text_BernieRematchIntro, Route114_Text_BernieRematchDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route114_Text_BerniePostRematch, MSGBOX_AUTOCLOSE
 	end
 
@@ -164,12 +187,20 @@ Route114_EventScript_Ivy::
 	end
 
 Route114_EventScript_Angelina::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_CARA, Route114_Text_AngelinaIntro, Route114_Text_AngelinaDefeat
+=======
+	trainerbattle_single TRAINER_ANGELINA, Route114_Text_AngelinaIntro, Route114_Text_AngelinaDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route114_Text_AngelinaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route114_EventScript_Charlotte::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_GRUNT_13, Route114_Text_CharlotteIntro, Route114_Text_CharlotteDefeat
+=======
+	trainerbattle_single TRAINER_CHARLOTTE, Route114_Text_CharlotteIntro, Route114_Text_CharlotteDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route114_Text_CharlottePostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -199,6 +230,11 @@ Route114_Text_FossilManiacsHouseSign:
 	.string "FOSSIL MANIAC'S HOUSE\n"
 	.string "“Fossils gratefully accepted!”$"
 
+<<<<<<< HEAD
 Route114_Text_BillsHouse:
 	.string "BILL'S HOUSE$"
+=======
+Route114_Text_LanettesHouse:
+	.string "LANETTE'S HOUSE$"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 

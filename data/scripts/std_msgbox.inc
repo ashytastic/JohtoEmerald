@@ -8,11 +8,19 @@ Std_MsgboxNPC:
 	return
 
 Std_MsgboxSign:
+<<<<<<< HEAD
+=======
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	lockall
 	message NULL
 	waitmessage
 	waitbuttonpress
 	releaseall
+<<<<<<< HEAD
+=======
+	clearflag FLAG_SAFE_FOLLOWER_MOVEMENT
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	return
 
 Std_MsgboxDefault:

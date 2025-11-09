@@ -1,10 +1,16 @@
 Route126_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route126_OnTransition
+<<<<<<< HEAD
 	map_script MAP_SCRIPT_ON_RESUME, SetTimeEncounters
 	.byte 0
 
 Route126_OnTransition:
 	callnative SetTimeBasedEncounters
+=======
+	.byte 0
+
+Route126_OnTransition:
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
 	end
 
@@ -34,7 +40,11 @@ Route126_EventScript_Leonardo::
 	end
 
 Route126_EventScript_Isobel::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_KOGA_1, Route126_Text_IsobelIntro, Route126_Text_IsobelDefeat
+=======
+	trainerbattle_single TRAINER_ISOBEL, Route126_Text_IsobelIntro, Route126_Text_IsobelDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route126_Text_IsobelPostBattle, MSGBOX_AUTOCLOSE
 	end
 

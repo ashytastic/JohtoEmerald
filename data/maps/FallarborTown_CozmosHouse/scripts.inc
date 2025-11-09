@@ -6,21 +6,29 @@ FallarborTown_CozmosHouse_EventScript_ProfCozmo::
 	faceplayer
 	goto_if_set FLAG_RECEIVED_TM_RETURN, FallarborTown_CozmosHouse_EventScript_GaveMeteorite
 	checkitem ITEM_METEORITE
+<<<<<<< HEAD
 	goto_if_eq VAR_RESULT, TRUE, FallarborTown_CozmosHouse_EventScript_PlayerHasMeteoriteCheck
+=======
+	goto_if_eq VAR_RESULT, TRUE, FallarborTown_CozmosHouse_EventScript_PlayerHasMeteorite
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox FallarborTown_CozmosHouse_Text_MeteoriteWillNeverBeMineNow, MSGBOX_DEFAULT
 	release
 	end
 
+<<<<<<< HEAD
 FallarborTown_CozmosHouse_EventScript_PlayerHasMeteoriteCheck::
 	goto_if_set FLAG_FINITE_TMS, FallarborTown_CozmosHouse_EventScript_PlayerHasMeteoriteTM27
 	goto_if_unset FLAG_FINITE_TMS, FallarborTown_CozmosHouse_EventScript_PlayerHasMeteorite
 	end
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 FallarborTown_CozmosHouse_EventScript_PlayerHasMeteorite::
 	call_if_unset FLAG_TEMP_2, FallarborTown_CozmosHouse_EventScript_NoticeMeteorite
 	call_if_set FLAG_TEMP_2, FallarborTown_CozmosHouse_EventScript_AskForMeteorite
 	goto_if_eq VAR_RESULT, NO, FallarborTown_CozmosHouse_EventScript_DeclineGiveMeteorite
 	msgbox FallarborTown_CozmosHouse_Text_PleaseUseThisTM, MSGBOX_DEFAULT
+<<<<<<< HEAD
 	giveitem ITEM_NUGGET
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setvar VAR_0x8004, ITEM_METEORITE
@@ -35,6 +43,8 @@ FallarborTown_CozmosHouse_EventScript_PlayerHasMeteoriteTM27::
 	call_if_set FLAG_TEMP_2, FallarborTown_CozmosHouse_EventScript_AskForMeteorite
 	goto_if_eq VAR_RESULT, NO, FallarborTown_CozmosHouse_EventScript_DeclineGiveMeteorite
 	msgbox FallarborTown_CozmosHouse_Text_PleaseUseThisTM, MSGBOX_DEFAULT
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	giveitem ITEM_TM_RETURN
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setvar VAR_0x8004, ITEM_METEORITE
@@ -100,10 +110,17 @@ FallarborTown_CozmosHouse_Text_IsThatMeteoriteMayIHaveIt:
 	.string "took from METEOR FALLS?\p"
 	.string "Please, may I have it?\p"
 	.string "I'm not asking for it for free.\n"
+<<<<<<< HEAD
 	.string "How about in exchange for this NUGGET?$"
 
 FallarborTown_CozmosHouse_Text_PleaseUseThisTM:
 	.string "PROF. COZMO: This item, it represents\n"
+=======
+	.string "How about in exchange for this TM?$"
+
+FallarborTown_CozmosHouse_Text_PleaseUseThisTM:
+	.string "PROF. COZMO: This TM, it represents\n"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.string "my feeling of gratitude.\l"
 	.string "Please use it!$"
 

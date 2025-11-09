@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 .set LOCALID_NURSE, 1
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 RustboroCity_PokemonCenter_1F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, RustboroCity_PokemonCenter_1F_OnTransition
 	map_script MAP_SCRIPT_ON_RESUME, CableClub_OnResume
@@ -10,6 +13,7 @@ RustboroCity_PokemonCenter_1F_OnTransition:
 	call Common_EventScript_UpdateBrineyLocation
 	end
 
+<<<<<<< HEAD
 RustboroCity_PokemonCenter_1F_ProbopassEvo::
 	msgbox RustboroCity_PokemonCenter_1F_ProbopassEvo_Text, MSGBOX_NPC
 	end
@@ -31,6 +35,10 @@ RustboroCity_PokemonCenter_1F_ProbopassEvo_Text:
 
 RustboroCity_PokemonCenter_1F_EventScript_Nurse::
 	setvar VAR_0x800B, LOCALID_NURSE
+=======
+RustboroCity_PokemonCenter_1F_EventScript_Nurse::
+	setvar VAR_0x800B, LOCALID_RUSTBORO_NURSE
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call Common_EventScript_PkmnCenterNurse
 	waitmessage
 	waitbuttonpress

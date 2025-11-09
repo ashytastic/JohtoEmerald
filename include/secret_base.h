@@ -3,7 +3,11 @@
 
 void HideSecretBaseDecorationSprites(void);
 void CopyCurSecretBaseOwnerName_StrVar1(void);
+<<<<<<< HEAD
 void ClearJapaneseSecretBases(struct SecretBase *dest);
+=======
+void ClearJapaneseSecretBases(struct SecretBase *bases);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 void SetPlayerSecretBaseParty(void);
 u8 *GetSecretBaseMapName(u8 *dest);
 const u8 *GetSecretBaseTrainerLoseText(void);
@@ -24,7 +28,11 @@ void SetCurSecretBaseIdFromPosition(const struct MapPosition *position, const st
 void TrySetCurSecretBaseIndex(void);
 void CheckPlayerHasSecretBase(void);
 void ToggleSecretBaseEntranceMetatile(void);
+<<<<<<< HEAD
 void ScriptContext_Enable(void);
 void ReceiveSecretBasesData(void *records, size_t recordSize, u8 linkIdx);
+=======
+void ReceiveSecretBasesData(void *secretBases, size_t recordSize, u8 linkIdx);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 #endif //GUARD_SECRET_BASE_H

@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 CASTFORMGFXDIR := graphics/pokemon/castform
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 TILESETGFXDIR := data/tilesets
 FONTGFXDIR := graphics/fonts
 INTERFACEGFXDIR := graphics/interface
@@ -22,6 +25,7 @@ POKEDEXGFXDIR := graphics/pokedex
 STARTERGFXDIR := graphics/starter_choose
 NAMINGGFXDIR := graphics/naming_screen
 SPINDAGFXDIR := graphics/pokemon/spinda/spots
+<<<<<<< HEAD
 
 types := normal fight flying poison ground rock bug ghost steel mystery fire water grass electric psychic ice dragon dark fairy
 contest_types := cool beauty cute smart tough
@@ -62,6 +66,13 @@ $(CASTFORMGFXDIR)/shiny.gbapal: $(CASTFORMGFXDIR)/normal/shiny.gbapal \
 
 
 
+=======
+TITLESCREENGFXDIR := graphics/title_screen
+
+types := none normal fight flying poison ground rock bug ghost steel mystery fire water grass electric psychic ice dragon dark fairy stellar
+contest_types := cool beauty cute smart tough
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 ### Tilesets ###
 
 $(TILESETGFXDIR)/secondary/petalburg/tiles.4bpp: %.4bpp: %.png
@@ -275,6 +286,21 @@ $(FONTGFXDIR)/narrow.latfont: $(FONTGFXDIR)/latin_narrow.png
 $(FONTGFXDIR)/small_narrow.latfont: $(FONTGFXDIR)/latin_small_narrow.png
 	$(GFX) $< $@
 
+<<<<<<< HEAD
+=======
+$(FONTGFXDIR)/narrower.latfont: $(FONTGFXDIR)/latin_narrower.png
+	$(GFX) $< $@
+
+$(FONTGFXDIR)/small_narrower.latfont: $(FONTGFXDIR)/latin_small_narrower.png
+	$(GFX) $< $@
+
+$(FONTGFXDIR)/short_narrow.latfont: $(FONTGFXDIR)/latin_short_narrow.png
+	$(GFX) $< $@
+
+$(FONTGFXDIR)/short_narrower.latfont: $(FONTGFXDIR)/latin_short_narrower.png
+	$(GFX) $< $@
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 $(FONTGFXDIR)/small.hwjpnfont: $(FONTGFXDIR)/japanese_small.png
 	$(GFX) $< $@
 
@@ -298,21 +324,40 @@ $(FONTGFXDIR)/frlg_female.fwjpnfont: $(FONTGFXDIR)/japanese_frlg_female.png
 
 
 ### Miscellaneous ###
+<<<<<<< HEAD
 graphics/title_screen/pokemon_logo.gbapal: %.gbapal: %.pal
 	$(GFX) $< $@ -num_colors 224
 
+=======
+
+$(TITLESCREENGFXDIR)/pokemon_logo.gbapal: %.gbapal: %.pal
+	$(GFX) $< $@ -num_colors 224
+
+$(TITLESCREENGFXDIR)/emerald_version.8bpp: %.8bpp: %.png
+	$(GFX) $< $@ -mwidth 8 -mheight 4
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 graphics/pokemon_jump/bg.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 63 -Wnum_tiles
 
 graphics/pokenav/region_map/map.8bpp: %.8bpp: %.png
 	$(GFX) $< $@ -num_tiles 233 -Wnum_tiles
 
+<<<<<<< HEAD
 graphics/pokenav/region_map/johtomap.8bpp: %.8bpp: %.png
 	$(GFX) $< $@ -num_tiles 233 -Wnum_tiles
 
 $(MISCGFXDIR)/japanese_hof.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 29 -Wnum_tiles
 
+=======
+$(MISCGFXDIR)/japanese_hof.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -num_tiles 29 -Wnum_tiles
+
+$(MISCGFXDIR)/mirage_tower.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -num_tiles 73 -Wnum_tiles
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 $(BATINTGFXDIR)/textbox.gbapal: $(BATINTGFXDIR)/textbox_0.gbapal \
                                 $(BATINTGFXDIR)/textbox_1.gbapal
 	@cat $^ >$@
@@ -360,6 +405,12 @@ $(UNUSEDGFXDIR)/color_frames.4bpp: %.4bpp: %.png
 $(BATINTGFXDIR)/unused_window2bar.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 5 -Wnum_tiles
 
+<<<<<<< HEAD
+=======
+$(BATINTGFXDIR)/ability_pop_up.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 8 -mheight 4
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 $(JPCONTESTGFXDIR)/composite_1.4bpp: $(JPCONTESTGFXDIR)/frame_1.4bpp \
                                      $(JPCONTESTGFXDIR)/floor.4bpp \
                                      $(JPCONTESTGFXDIR)/frame_2.4bpp \
@@ -422,11 +473,15 @@ $(RAYQUAZAGFXDIR)/scene_2/bg.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 313 -Wnum_tiles
 
 $(RAYQUAZAGFXDIR)/scene_3/rayquaza.4bpp: %.4bpp: %.png
+<<<<<<< HEAD
 	$(GFX) $< $@ -num_tiles 124 -Wnum_tiles
 
 $(RAYQUAZAGFXDIR)/scene_3/rayquaza_tail_fix.4bpp: $(RAYQUAZAGFXDIR)/scene_3/rayquaza_tail.4bpp
 	cp $< $@
 	head -c 12 /dev/zero >> $@
+=======
+	$(GFX) $< $@ -num_tiles 128 -Wnum_tiles
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 $(RAYQUAZAGFXDIR)/scene_4/streaks.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 19 -Wnum_tiles
@@ -673,9 +728,12 @@ $(PKNAVGFXDIR)/match_call/ui.4bpp: %.4bpp: %.png
 $(POKEDEXGFXDIR)/region_map.8bpp: %.8bpp: %.png
 	$(GFX) $< $@ -num_tiles 232 -Wnum_tiles
 
+<<<<<<< HEAD
 $(POKEDEXGFXDIR)/johto_region_map.8bpp: %.8bpp: %.png
 	$(GFX) $< $@ -num_tiles 232 -Wnum_tiles
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 $(POKEDEXGFXDIR)/region_map_affine.8bpp: %.8bpp: %.png
 	$(GFX) $< $@ -num_tiles 233 -Wnum_tiles
 

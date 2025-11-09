@@ -4,7 +4,11 @@ PacifidlogTown_MapScripts::
 	.byte 0
 
 PacifidlogTown_OnTransition:
+<<<<<<< HEAD
 	setflag FLAG_VISITED_CIANWOOD_CITY
+=======
+	setflag FLAG_VISITED_PACIFIDLOG_TOWN
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 PacifidlogTown_OnResume:

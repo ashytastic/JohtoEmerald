@@ -3,7 +3,11 @@
   "name": "Route128",
   "layout": "LAYOUT_ROUTE128",
   "music": "MUS_ROUTE120",
+<<<<<<< HEAD
   "region_map_section": "MAPSEC_WHIRL_ISLANDS",
+=======
+  "region_map_section": "MAPSEC_ROUTE_128",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_OCEAN_ROUTE",
@@ -36,7 +40,11 @@
   ],
   "object_events": [
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M_WATER",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 35,
       "y": 33,
       "elevation": 1,
@@ -49,7 +57,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_F_WATER",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_SWIMMER_F",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 78,
       "y": 24,
       "elevation": 1,
@@ -62,6 +74,10 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
+=======
+      "local_id": "LOCALID_ROUTE128_STEVEN",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_STEVEN",
       "x": 40,
       "y": 22,
@@ -72,10 +88,18 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PROTON",
+=======
+      "flag": "FLAG_HIDE_ROUTE_128_STEVEN"
+    },
+    {
+      "local_id": "LOCALID_ROUTE128_ARCHIE",
+      "graphics_id": "OBJ_EVENT_GFX_ARCHIE",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 37,
       "y": 22,
       "elevation": 3,
@@ -85,10 +109,18 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ARCHER",
+=======
+      "flag": "FLAG_HIDE_ROUTE_128_ARCHIE"
+    },
+    {
+      "local_id": "LOCALID_ROUTE128_MAXIE",
+      "graphics_id": "OBJ_EVENT_GFX_MAXIE",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 38,
       "y": 21,
       "elevation": 3,
@@ -98,10 +130,17 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FISHER",
+=======
+      "flag": "FLAG_HIDE_ROUTE_128_MAXIE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 63,
       "y": 28,
       "elevation": 3,
@@ -114,7 +153,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_MAN",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 47,
       "y": 9,
       "elevation": 3,
@@ -127,7 +170,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_WORKER_F",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 24,
       "y": 8,
       "elevation": 3,
@@ -140,7 +187,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_F_WATER",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_SWIMMER_F",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 101,
       "y": 29,
       "elevation": 1,
@@ -153,7 +204,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M_WATER",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 101,
       "y": 22,
       "elevation": 1,
@@ -166,12 +221,17 @@
       "flag": "0"
     }
   ],
+<<<<<<< HEAD
   "warp_events": [
 
   ],
   "coord_events": [
 
   ],
+=======
+  "warp_events": [],
+  "coord_events": [],
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "bg_events": [
     {
       "type": "hidden_item",

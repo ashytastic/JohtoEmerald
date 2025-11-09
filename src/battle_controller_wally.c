@@ -32,6 +32,7 @@
 #include "constants/trainers.h"
 #include "constants/rgb.h"
 
+<<<<<<< HEAD
 // this file's functions
 static void WallyHandleGetMonData(void);
 static void WallyHandleGetRawMonData(void);
@@ -168,12 +169,93 @@ static void UNUSED SpriteCB_Null7(void)
 void SetControllerToWally(void)
 {
     gBattlerControllerFuncs[gActiveBattler] = WallyBufferRunCommand;
+=======
+static void WallyHandleDrawTrainerPic(u32 battler);
+static void WallyHandleTrainerSlide(u32 battler);
+static void WallyHandleSuccessBallThrowAnim(u32 battler);
+static void WallyHandleBallThrowAnim(u32 battler);
+static void WallyHandleChooseAction(u32 battler);
+static void WallyHandleChooseMove(u32 battler);
+static void WallyHandleChooseItem(u32 battler);
+static void WallyHandleFaintingCry(u32 battler);
+static void WallyHandleIntroTrainerBallThrow(u32 battler);
+static void WallyHandleDrawPartyStatusSummary(u32 battler);
+static void WallyHandleEndLinkBattle(u32 battler);
+
+static void WallyBufferRunCommand(u32 battler);
+static void CompleteOnChosenItem(u32 battler);
+static void Intro_WaitForShinyAnimAndHealthbox(u32 battler);
+
+static void (*const sWallyBufferCommands[CONTROLLER_CMDS_COUNT])(u32 battler) =
+{
+    [CONTROLLER_GETMONDATA]               = BtlController_HandleGetMonData,
+    [CONTROLLER_GETRAWMONDATA]            = BtlController_HandleGetRawMonData,
+    [CONTROLLER_SETMONDATA]               = BtlController_HandleSetMonData,
+    [CONTROLLER_SETRAWMONDATA]            = BtlController_Empty,
+    [CONTROLLER_LOADMONSPRITE]            = BtlController_Empty,
+    [CONTROLLER_SWITCHINANIM]             = BtlController_Empty,
+    [CONTROLLER_RETURNMONTOBALL]          = BtlController_HandleReturnMonToBall,
+    [CONTROLLER_DRAWTRAINERPIC]           = WallyHandleDrawTrainerPic,
+    [CONTROLLER_TRAINERSLIDE]             = WallyHandleTrainerSlide,
+    [CONTROLLER_TRAINERSLIDEBACK]         = BtlController_Empty,
+    [CONTROLLER_FAINTANIMATION]           = BtlController_Empty,
+    [CONTROLLER_PALETTEFADE]              = BtlController_Empty,
+    [CONTROLLER_SUCCESSBALLTHROWANIM]     = WallyHandleSuccessBallThrowAnim,
+    [CONTROLLER_BALLTHROWANIM]            = WallyHandleBallThrowAnim,
+    [CONTROLLER_PAUSE]                    = BtlController_Empty,
+    [CONTROLLER_MOVEANIMATION]            = BtlController_HandleMoveAnimation,
+    [CONTROLLER_PRINTSTRING]              = BtlController_HandlePrintString,
+    [CONTROLLER_PRINTSTRINGPLAYERONLY]    = BtlController_HandlePrintStringPlayerOnly,
+    [CONTROLLER_CHOOSEACTION]             = WallyHandleChooseAction,
+    [CONTROLLER_YESNOBOX]                 = BtlController_Empty,
+    [CONTROLLER_CHOOSEMOVE]               = WallyHandleChooseMove,
+    [CONTROLLER_OPENBAG]                  = WallyHandleChooseItem,
+    [CONTROLLER_CHOOSEPOKEMON]            = BtlController_Empty,
+    [CONTROLLER_23]                       = BtlController_Empty,
+    [CONTROLLER_HEALTHBARUPDATE]          = BtlController_HandleHealthBarUpdate,
+    [CONTROLLER_EXPUPDATE]                = BtlController_Empty,
+    [CONTROLLER_STATUSICONUPDATE]         = BtlController_Empty,
+    [CONTROLLER_STATUSANIMATION]          = BtlController_Empty,
+    [CONTROLLER_STATUSXOR]                = BtlController_Empty,
+    [CONTROLLER_DATATRANSFER]             = BtlController_Empty,
+    [CONTROLLER_DMA3TRANSFER]             = BtlController_Empty,
+    [CONTROLLER_PLAYBGM]                  = BtlController_Empty,
+    [CONTROLLER_32]                       = BtlController_Empty,
+    [CONTROLLER_TWORETURNVALUES]          = BtlController_Empty,
+    [CONTROLLER_CHOSENMONRETURNVALUE]     = BtlController_Empty,
+    [CONTROLLER_ONERETURNVALUE]           = BtlController_Empty,
+    [CONTROLLER_ONERETURNVALUE_DUPLICATE] = BtlController_Empty,
+    [CONTROLLER_HITANIMATION]             = BtlController_HandleHitAnimation,
+    [CONTROLLER_CANTSWITCH]               = BtlController_Empty,
+    [CONTROLLER_PLAYSE]                   = BtlController_HandlePlaySE,
+    [CONTROLLER_PLAYFANFAREORBGM]         = BtlController_HandlePlayFanfareOrBGM,
+    [CONTROLLER_FAINTINGCRY]              = WallyHandleFaintingCry,
+    [CONTROLLER_INTROSLIDE]               = BtlController_HandleIntroSlide,
+    [CONTROLLER_INTROTRAINERBALLTHROW]    = WallyHandleIntroTrainerBallThrow,
+    [CONTROLLER_DRAWPARTYSTATUSSUMMARY]   = WallyHandleDrawPartyStatusSummary,
+    [CONTROLLER_HIDEPARTYSTATUSSUMMARY]   = BtlController_Empty,
+    [CONTROLLER_ENDBOUNCE]                = BtlController_Empty,
+    [CONTROLLER_SPRITEINVISIBILITY]       = BtlController_Empty,
+    [CONTROLLER_BATTLEANIMATION]          = BtlController_HandleBattleAnimation,
+    [CONTROLLER_LINKSTANDBYMSG]           = BtlController_Empty,
+    [CONTROLLER_RESETACTIONMOVESELECTION] = BtlController_Empty,
+    [CONTROLLER_ENDLINKBATTLE]            = WallyHandleEndLinkBattle,
+    [CONTROLLER_DEBUGMENU]                = BtlController_Empty,
+    [CONTROLLER_TERMINATOR_NOP]           = BtlController_TerminatorNop
+};
+
+void SetControllerToWally(u32 battler)
+{
+    gBattlerControllerEndFuncs[battler] = WallyBufferExecCompleted;
+    gBattlerControllerFuncs[battler] = WallyBufferRunCommand;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gBattleStruct->wallyBattleState = 0;
     gBattleStruct->wallyMovesState = 0;
     gBattleStruct->wallyWaitFrames = 0;
     gBattleStruct->wallyMoveFrames = 0;
 }
 
+<<<<<<< HEAD
 static void WallyBufferRunCommand(void)
 {
     if (gBattleControllerExecFlags & gBitTable[gActiveBattler])
@@ -186,6 +268,20 @@ static void WallyBufferRunCommand(void)
 }
 
 static void WallyHandleActions(void)
+=======
+static void WallyBufferRunCommand(u32 battler)
+{
+    if (IsBattleControllerActiveOnLocal(battler))
+    {
+        if (gBattleResources->bufferA[battler][0] < ARRAY_COUNT(sWallyBufferCommands))
+            sWallyBufferCommands[gBattleResources->bufferA[battler][0]](battler);
+        else
+            BtlController_Complete(battler);
+    }
+}
+
+static void WallyHandleActions(u32 battler)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     switch (gBattleStruct->wallyBattleState)
     {
@@ -196,8 +292,13 @@ static void WallyHandleActions(void)
         if (--gBattleStruct->wallyWaitFrames == 0)
         {
             PlaySE(SE_SELECT);
+<<<<<<< HEAD
             BtlController_EmitTwoReturnValues(BUFFER_B, B_ACTION_USE_MOVE, 0);
             WallyBufferExecCompleted();
+=======
+            BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_USE_MOVE, 0);
+            BtlController_Complete(battler);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             gBattleStruct->wallyBattleState++;
             gBattleStruct->wallyMovesState = 0;
             gBattleStruct->wallyWaitFrames = B_WAIT_TIME_LONG;
@@ -207,8 +308,13 @@ static void WallyHandleActions(void)
         if (--gBattleStruct->wallyWaitFrames == 0)
         {
             PlaySE(SE_SELECT);
+<<<<<<< HEAD
             BtlController_EmitTwoReturnValues(BUFFER_B, B_ACTION_USE_MOVE, 0);
             WallyBufferExecCompleted();
+=======
+            BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_USE_MOVE, 0);
+            BtlController_Complete(battler);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             gBattleStruct->wallyBattleState++;
             gBattleStruct->wallyMovesState = 0;
             gBattleStruct->wallyWaitFrames = B_WAIT_TIME_LONG;
@@ -217,8 +323,13 @@ static void WallyHandleActions(void)
     case 3:
         if (--gBattleStruct->wallyWaitFrames == 0)
         {
+<<<<<<< HEAD
             BtlController_EmitTwoReturnValues(BUFFER_B, B_ACTION_WALLY_THROW, 0);
             WallyBufferExecCompleted();
+=======
+            BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_WALLY_THROW, 0);
+            BtlController_Complete(battler);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             gBattleStruct->wallyBattleState++;
             gBattleStruct->wallyMovesState = 0;
             gBattleStruct->wallyWaitFrames = B_WAIT_TIME_LONG;
@@ -238,13 +349,19 @@ static void WallyHandleActions(void)
         if (--gBattleStruct->wallyWaitFrames == 0)
         {
             PlaySE(SE_SELECT);
+<<<<<<< HEAD
             BtlController_EmitTwoReturnValues(BUFFER_B, B_ACTION_USE_ITEM, 0);
             WallyBufferExecCompleted();
+=======
+            BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_USE_ITEM, 0);
+            BtlController_Complete(battler);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         }
         break;
     }
 }
 
+<<<<<<< HEAD
 static void CompleteOnBattlerSpriteCallbackDummy(void)
 {
     if (gSprites[gBattlerSpriteIds[gActiveBattler]].callback == SpriteCallbackDummy)
@@ -268,12 +385,20 @@ static void OpenBagAfterPaletteFade(void)
     if (!gPaletteFade.active)
     {
         gBattlerControllerFuncs[gActiveBattler] = CompleteOnChosenItem;
+=======
+static void OpenBagAfterPaletteFade(u32 battler)
+{
+    if (!gPaletteFade.active)
+    {
+        gBattlerControllerFuncs[battler] = CompleteOnChosenItem;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         ReshowBattleScreenDummy();
         FreeAllWindowBuffers();
         DoWallyTutorialBagMenu();
     }
 }
 
+<<<<<<< HEAD
 static void CompleteOnChosenItem(void)
 {
     if (gMain.callback2 == BattleMainCB2 && !gPaletteFade.active)
@@ -331,11 +456,70 @@ static void Intro_WaitForShinyAnimAndHealthbox(void)
 
         gBattleSpritesDataPtr->healthBoxesData[BATTLE_PARTNER(gActiveBattler)].triedShinyMonAnim = FALSE;
         gBattleSpritesDataPtr->healthBoxesData[BATTLE_PARTNER(gActiveBattler)].finishedShinyMonAnim = FALSE;
+=======
+static void CompleteOnChosenItem(u32 battler)
+{
+    if (gMain.callback2 == BattleMainCB2 && !gPaletteFade.active)
+    {
+        BtlController_EmitOneReturnValue(battler, B_COMM_TO_ENGINE, gSpecialVar_ItemId);
+        BtlController_Complete(battler);
+    }
+}
+
+static void Intro_TryShinyAnimShowHealthbox(u32 battler)
+{
+    if (!gBattleSpritesDataPtr->healthBoxesData[battler].triedShinyMonAnim
+     && !gBattleSpritesDataPtr->healthBoxesData[battler].ballAnimActive)
+        TryShinyAnimation(battler, GetBattlerMon(battler));
+
+    if (!gBattleSpritesDataPtr->healthBoxesData[BATTLE_PARTNER(battler)].triedShinyMonAnim
+     && !gBattleSpritesDataPtr->healthBoxesData[BATTLE_PARTNER(battler)].ballAnimActive)
+        TryShinyAnimation(BATTLE_PARTNER(battler), GetBattlerMon(BATTLE_PARTNER(battler)));
+
+    if (!gBattleSpritesDataPtr->healthBoxesData[battler].ballAnimActive
+        && !gBattleSpritesDataPtr->healthBoxesData[BATTLE_PARTNER(battler)].ballAnimActive
+        && gSprites[gBattleControllerData[battler]].callback == SpriteCallbackDummy
+        && gSprites[gBattlerSpriteIds[battler]].callback == SpriteCallbackDummy)
+    {
+        if (IsDoubleBattle() && !(gBattleTypeFlags & BATTLE_TYPE_MULTI))
+        {
+            DestroySprite(&gSprites[gBattleControllerData[BATTLE_PARTNER(battler)]]);
+            UpdateHealthboxAttribute(gHealthboxSpriteIds[BATTLE_PARTNER(battler)], GetBattlerMon(BATTLE_PARTNER(battler)), HEALTHBOX_ALL);
+            StartHealthboxSlideIn(BATTLE_PARTNER(battler));
+            SetHealthboxSpriteVisible(gHealthboxSpriteIds[BATTLE_PARTNER(battler)]);
+        }
+        DestroySprite(&gSprites[gBattleControllerData[battler]]);
+        UpdateHealthboxAttribute(gHealthboxSpriteIds[battler], GetBattlerMon(battler), HEALTHBOX_ALL);
+        StartHealthboxSlideIn(battler);
+        SetHealthboxSpriteVisible(gHealthboxSpriteIds[battler]);
+
+        gBattleSpritesDataPtr->animationData->introAnimActive = FALSE;
+        gBattlerControllerFuncs[battler] = Intro_WaitForShinyAnimAndHealthbox;
+    }
+}
+
+static void Intro_WaitForShinyAnimAndHealthbox(u32 battler)
+{
+    bool32 healthboxAnimDone = FALSE;
+
+    if (gSprites[gHealthboxSpriteIds[battler]].callback == SpriteCallbackDummy)
+        healthboxAnimDone = TRUE;
+
+    if (healthboxAnimDone && gBattleSpritesDataPtr->healthBoxesData[battler].finishedShinyMonAnim
+        && gBattleSpritesDataPtr->healthBoxesData[BATTLE_PARTNER(battler)].finishedShinyMonAnim)
+    {
+        gBattleSpritesDataPtr->healthBoxesData[battler].triedShinyMonAnim = FALSE;
+        gBattleSpritesDataPtr->healthBoxesData[battler].finishedShinyMonAnim = FALSE;
+
+        gBattleSpritesDataPtr->healthBoxesData[BATTLE_PARTNER(battler)].triedShinyMonAnim = FALSE;
+        gBattleSpritesDataPtr->healthBoxesData[BATTLE_PARTNER(battler)].finishedShinyMonAnim = FALSE;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
         FreeSpriteTilesByTag(ANIM_TAG_GOLD_STARS);
         FreeSpritePaletteByTag(ANIM_TAG_GOLD_STARS);
 
         CreateTask(Task_PlayerController_RestoreBgmAfterCry, 10);
+<<<<<<< HEAD
         HandleLowHpMusicChange(&gPlayerParty[gBattlerPartyIndexes[gActiveBattler]], gActiveBattler);
 
         WallyBufferExecCompleted();
@@ -404,10 +588,22 @@ static void CompleteOnFinishedBattleAnimation(void)
 static void WallyBufferExecCompleted(void)
 {
     gBattlerControllerFuncs[gActiveBattler] = WallyBufferRunCommand;
+=======
+        HandleLowHpMusicChange(GetBattlerMon(battler), battler);
+
+        BtlController_Complete(battler);
+    }
+}
+
+void WallyBufferExecCompleted(u32 battler)
+{
+    gBattlerControllerFuncs[battler] = WallyBufferRunCommand;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (gBattleTypeFlags & BATTLE_TYPE_LINK)
     {
         u8 playerId = GetMultiplayerId();
 
+<<<<<<< HEAD
         PrepareBufferDataTransferLink(2, 4, &playerId);
         gBattleBufferA[gActiveBattler][0] = CONTROLLER_TERMINATOR_NOP;
     }
@@ -1027,11 +1223,20 @@ static void WallyHandleReturnMonToBall(void)
         DestroySprite(&gSprites[gBattlerSpriteIds[gActiveBattler]]);
         SetHealthboxSpriteInvisible(gHealthboxSpriteIds[gActiveBattler]);
         WallyBufferExecCompleted();
+=======
+        PrepareBufferDataTransferLink(battler, B_COMM_CONTROLLER_IS_DONE, 4, &playerId);
+        gBattleResources->bufferA[battler][0] = CONTROLLER_TERMINATOR_NOP;
+    }
+    else
+    {
+        MarkBattleControllerIdleOnLocal(battler);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
 }
 
 #define sSpeedX data[0]
 
+<<<<<<< HEAD
 static void WallyHandleDrawTrainerPic(void)
 {
     DecompressTrainerBackPic(TRAINER_BACK_PIC_WALLY, gActiveBattler);
@@ -1063,10 +1268,23 @@ static void WallyHandleTrainerSlide(void)
     gSprites[gBattlerSpriteIds[gActiveBattler]].sSpeedX = 2;
     gSprites[gBattlerSpriteIds[gActiveBattler]].callback = SpriteCB_TrainerSlideIn;
     gBattlerControllerFuncs[gActiveBattler] = CompleteOnBankSpriteCallbackDummy2;
+=======
+static void WallyHandleDrawTrainerPic(u32 battler)
+{
+    BtlController_HandleDrawTrainerPic(battler, TRAINER_BACK_PIC_WALLY, FALSE,
+                                       80, 80 + 4 * (8 - gTrainerBacksprites[TRAINER_BACK_PIC_WALLY].coordinates.size),
+                                       30);
+}
+
+static void WallyHandleTrainerSlide(u32 battler)
+{
+    BtlController_HandleTrainerSlide(battler, TRAINER_BACK_PIC_WALLY);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 #undef sSpeedX
 
+<<<<<<< HEAD
 static void WallyHandleTrainerSlideBack(void)
 {
     WallyBufferExecCompleted();
@@ -1194,11 +1412,25 @@ static void WallyHandlePrintSelectionString(void)
 }
 
 static void HandleChooseActionAfterDma3(void)
+=======
+static void WallyHandleSuccessBallThrowAnim(u32 battler)
+{
+    BtlController_HandleSuccessBallThrowAnim(battler, GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT), B_ANIM_BALL_THROW_WITH_TRAINER, FALSE);
+}
+
+static void WallyHandleBallThrowAnim(u32 battler)
+{
+    BtlController_HandleBallThrowAnim(battler, GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT), B_ANIM_BALL_THROW_WITH_TRAINER, FALSE);
+}
+
+static void HandleChooseActionAfterDma3(u32 battler)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     if (!IsDma3ManagerBusyWithBgCopy())
     {
         gBattle_BG0_X = 0;
         gBattle_BG0_Y = DISPLAY_HEIGHT;
+<<<<<<< HEAD
         gBattlerControllerFuncs[gActiveBattler] = WallyHandleActions;
     }
 }
@@ -1208,27 +1440,50 @@ static void WallyHandleChooseAction(void)
     s32 i;
 
     gBattlerControllerFuncs[gActiveBattler] = HandleChooseActionAfterDma3;
+=======
+        gBattlerControllerFuncs[battler] = WallyHandleActions;
+    }
+}
+
+static void WallyHandleChooseAction(u32 battler)
+{
+    s32 i;
+
+    gBattlerControllerFuncs[battler] = HandleChooseActionAfterDma3;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     BattlePutTextOnWindow(gText_BattleMenu, B_WIN_ACTION_MENU);
 
     for (i = 0; i < 4; i++)
         ActionSelectionDestroyCursorAt(i);
 
+<<<<<<< HEAD
     ActionSelectionCreateCursorAt(gActionSelectionCursor[gActiveBattler], 0);
+=======
+    ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     BattleStringExpandPlaceholdersToDisplayedString(gText_WhatWillWallyDo);
     BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_ACTION_PROMPT);
 }
 
+<<<<<<< HEAD
 static void WallyHandleYesNoBox(void)
 {
     WallyBufferExecCompleted();
 }
 
 static void WallyHandleChooseMove(void)
+=======
+static void WallyHandleChooseMove(u32 battler)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     switch (gBattleStruct->wallyMovesState)
     {
     case 0:
+<<<<<<< HEAD
         InitMoveSelectionsVarsAndStrings();
+=======
+        InitMoveSelectionsVarsAndStrings(battler);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         gBattleStruct->wallyMovesState++;
         gBattleStruct->wallyMoveFrames = 80;
         break;
@@ -1244,13 +1499,19 @@ static void WallyHandleChooseMove(void)
         if (--gBattleStruct->wallyMoveFrames == 0)
         {
             PlaySE(SE_SELECT);
+<<<<<<< HEAD
             BtlController_EmitTwoReturnValues(BUFFER_B, 10, 0x100);
             WallyBufferExecCompleted();
+=======
+            BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_EXEC_SCRIPT, 0x100);
+            BtlController_Complete(battler);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         }
         break;
     }
 }
 
+<<<<<<< HEAD
 static void WallyHandleChooseItem(void)
 {
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
@@ -1570,4 +1831,43 @@ static void WallyHandleEndLinkBattle(void)
 
 static void WallyCmdEnd(void)
 {
+=======
+static void WallyHandleChooseItem(u32 battler)
+{
+    BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
+    gBattlerControllerFuncs[battler] = OpenBagAfterPaletteFade;
+    gBattlerInMenuId = battler;
+}
+
+// All of the other controllers use CRY_MODE_FAINT.
+// Wally's Pokémon during the tutorial is never intended to faint, so that's probably why it's different here.
+static void WallyHandleFaintingCry(u32 battler)
+{
+    u16 species = GetMonData(GetBattlerMon(battler), MON_DATA_SPECIES);
+
+    PlayCry_Normal(species, 25);
+    BtlController_Complete(battler);
+}
+
+static void WallyHandleIntroTrainerBallThrow(u32 battler)
+{
+    const u16 *trainerPal = gTrainerBacksprites[TRAINER_BACK_PIC_WALLY].palette.data;
+    BtlController_HandleIntroTrainerBallThrow(battler, 0xD6F8, trainerPal, 31, Intro_TryShinyAnimShowHealthbox);
+}
+
+static void WallyHandleDrawPartyStatusSummary(u32 battler)
+{
+    BtlController_HandleDrawPartyStatusSummary(battler, B_SIDE_PLAYER, FALSE);
+}
+
+static void WallyHandleEndLinkBattle(u32 battler)
+{
+    gBattleOutcome = gBattleResources->bufferA[battler][1];
+    FadeOutMapMusic(5);
+    BeginFastPaletteFade(3);
+    BtlController_Complete(battler);
+
+    if (!(gBattleTypeFlags & BATTLE_TYPE_IS_MASTER) && gBattleTypeFlags & BATTLE_TYPE_LINK)
+        gBattlerControllerFuncs[battler] = SetBattleEndCallbacks;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }

@@ -36,6 +36,11 @@ static u32 CB2_HandleCallExitInput(struct Pokenav_MatchCallMenu *);
 static u32 LoopedTask_BuildMatchCallList(s32);
 static bool32 ShouldDoNearbyMessage(void);
 
+<<<<<<< HEAD
+=======
+static const u8 gText_CallCantBeMadeHere[] = _("A call can't be made from here.");
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include "data/text/match_call_messages.h"
 
 static const u8 sMatchCallOptionsNoCheckPage[] =
@@ -261,7 +266,11 @@ static u32 LoopedTask_BuildMatchCallList(s32 taskState)
 bool32 IsRematchEntryRegistered(int rematchIndex)
 {
     if (rematchIndex < REMATCH_TABLE_ENTRIES)
+<<<<<<< HEAD
         return FlagGet(FLAG_MATCH_CALL_REGISTERED + rematchIndex);
+=======
+        return FlagGet(TRAINER_REGISTERED_FLAGS_START + rematchIndex);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     return FALSE;
 }
@@ -306,7 +315,11 @@ struct PokenavMatchCallEntry *GetMatchCallList(void)
     return state->matchCallEntries;
 }
 
+<<<<<<< HEAD
 u16 GetMatchCallMapSec(int index)
+=======
+mapsec_u16_t GetMatchCallMapSec(int index)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     struct Pokenav_MatchCallMenu *state = GetSubstructPtr(POKENAV_SUBSTRUCT_MATCH_CALL_MAIN);
     return state->matchCallEntries[index].mapSec;
@@ -314,6 +327,10 @@ u16 GetMatchCallMapSec(int index)
 
 bool32 ShouldDrawRematchPokeballIcon(int index)
 {
+<<<<<<< HEAD
+=======
+#if FREE_MATCH_CALL == FALSE
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     struct Pokenav_MatchCallMenu *state = GetSubstructPtr(POKENAV_SUBSTRUCT_MATCH_CALL_MAIN);
     if (!state->matchCallEntries[index].isSpecialTrainer)
         index = state->matchCallEntries[index].headerId;
@@ -324,6 +341,12 @@ bool32 ShouldDrawRematchPokeballIcon(int index)
         return FALSE;
 
     return gSaveBlock1Ptr->trainerRematches[index] != 0;
+<<<<<<< HEAD
+=======
+#else
+    return FALSE;
+#endif //FREE_MATCH_CALL
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 int GetMatchCallTrainerPic(int index)
@@ -333,7 +356,11 @@ int GetMatchCallTrainerPic(int index)
     if (!state->matchCallEntries[index].isSpecialTrainer)
     {
         index = GetTrainerIdxByRematchIdx(state->matchCallEntries[index].headerId);
+<<<<<<< HEAD
         return gTrainers[index].trainerPic;
+=======
+        return GetTrainerPicFromId(index);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
 
     headerId = state->matchCallEntries[index].headerId;
@@ -341,7 +368,11 @@ int GetMatchCallTrainerPic(int index)
     if (index != REMATCH_TABLE_ENTRIES)
     {
         index = GetTrainerIdxByRematchIdx(index);
+<<<<<<< HEAD
         return gTrainers[index].trainerPic;
+=======
+        return GetTrainerPicFromId(index);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
 
     index = MatchCall_GetOverrideFacilityClass(headerId);
@@ -403,9 +434,15 @@ void BufferMatchCallNameAndDesc(struct PokenavMatchCallEntry *matchCallEntry, u8
     if (!matchCallEntry->isSpecialTrainer)
     {
         int index = GetTrainerIdxByRematchIdx(matchCallEntry->headerId);
+<<<<<<< HEAD
         const struct Trainer *trainer = &gTrainers[index];
         int class = trainer->trainerClass;
         className = gTrainerClassNames[class];
+=======
+        const struct Trainer *trainer = GetTrainerStructFromId(index);
+        enum TrainerClassID class = trainer->trainerClass;
+        className = gTrainerClasses[class].name;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         trainerName = trainer->trainerName;
     }
     else
@@ -424,7 +461,11 @@ void BufferMatchCallNameAndDesc(struct PokenavMatchCallEntry *matchCallEntry, u8
     }
 }
 
+<<<<<<< HEAD
 u8 GetMatchTableMapSectionId(int rematchIndex)
+=======
+mapsec_u8_t GetMatchTableMapSectionId(int rematchIndex)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     int mapGroup = gRematchTable[rematchIndex].mapGroup;
     int mapNum = gRematchTable[rematchIndex].mapNum;
@@ -467,6 +508,10 @@ int GetIndexDeltaOfNextCheckPageUp(int index)
 
 static bool32 UNUSED HasRematchEntry(void)
 {
+<<<<<<< HEAD
+=======
+#if FREE_MATCH_CALL == FALSE
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     int i;
 
     for (i = 0; i < REMATCH_TABLE_ENTRIES; i++)
@@ -484,12 +529,20 @@ static bool32 UNUSED HasRematchEntry(void)
                 return TRUE;
         }
     }
+<<<<<<< HEAD
+=======
+#endif //FREE_MATCH_CALL
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     return FALSE;
 }
 
 static bool32 ShouldDoNearbyMessage(void)
 {
+<<<<<<< HEAD
+=======
+#if FREE_MATCH_CALL == FALSE
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     struct Pokenav_MatchCallMenu *state = GetSubstructPtr(POKENAV_SUBSTRUCT_MATCH_CALL_MAIN);
     int selection = PokenavList_GetSelectedIndex();
     if (!state->matchCallEntries[selection].isSpecialTrainer)
@@ -512,6 +565,10 @@ static bool32 ShouldDoNearbyMessage(void)
             }
         }
     }
+<<<<<<< HEAD
 
+=======
+#endif //FREE_MATCH_CALL
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     return FALSE;
 }

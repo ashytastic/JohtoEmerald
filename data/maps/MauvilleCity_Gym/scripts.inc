@@ -3,8 +3,13 @@ MauvilleCity_Gym_MapScripts::
 	.byte 0
 
 MauvilleCity_Gym_OnLoad:
+<<<<<<< HEAD
 	goto_if_set FLAG_DEFEATED_GOLDENROD_CITY_GYM, MauvilleCity_Gym_EventScript_DeactivatePuzzle
 	switch VAR_GARBAGEVAR
+=======
+	goto_if_set FLAG_DEFEATED_MAUVILLE_GYM, MauvilleCity_Gym_EventScript_DeactivatePuzzle
+	switch VAR_MAUVILLE_GYM_STATE
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	case 0, MauvilleCity_Gym_EventScript_UpdateBarriers
 	case 1, MauvilleCity_Gym_EventScript_Switch1Pressed
 	case 2, MauvilleCity_Gym_EventScript_Switch2Pressed
@@ -89,11 +94,19 @@ MauvilleCity_Gym_EventScript_WattsonDefeated::
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox MauvilleCity_Gym_Text_ExplainDynamoBadgeTakeThis, MSGBOX_DEFAULT
 	setvar VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 3
+<<<<<<< HEAD
 	clearflag FLAG_GARBAGEFLAG
 	setflag FLAG_DEFEATED_GOLDENROD_CITY_GYM
 	setflag FLAG_BADGE03_GET
 	addvar VAR_GARBAGEVAR, 1
 	call_if_eq VAR_GARBAGEVAR, 6, Common_EventScript_ReadyPetalburgGymForBattle
+=======
+	clearflag FLAG_HIDE_VERDANTURF_TOWN_SCOTT
+	setflag FLAG_DEFEATED_MAUVILLE_GYM
+	setflag FLAG_BADGE03_GET
+	addvar VAR_PETALBURG_GYM_STATE, 1
+	call_if_eq VAR_PETALBURG_GYM_STATE, 6, Common_EventScript_ReadyPetalburgGymForBattle
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setvar VAR_0x8008, 3
 	call Common_EventScript_SetGymTrainers
 	special MauvilleGymDeactivatePuzzle
@@ -138,36 +151,60 @@ MauvilleCity_Gym_EventScript_WattsonRematch::
 
 MauvilleCity_Gym_EventScript_Switch1::
 	lockall
+<<<<<<< HEAD
 	goto_if_set FLAG_DEFEATED_GOLDENROD_CITY_GYM, MauvilleCity_Gym_EventScript_SwitchDoNothing
 	goto_if_eq VAR_GARBAGEVAR, 1, MauvilleCity_Gym_EventScript_SwitchDoNothing
 	setvar VAR_GARBAGEVAR, 1
+=======
+	goto_if_set FLAG_DEFEATED_MAUVILLE_GYM, MauvilleCity_Gym_EventScript_SwitchDoNothing
+	goto_if_eq VAR_MAUVILLE_GYM_STATE, 1, MauvilleCity_Gym_EventScript_SwitchDoNothing
+	setvar VAR_MAUVILLE_GYM_STATE, 1
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setvar VAR_0x8004, 0
 	goto MauvilleCity_Gym_EventScript_PressFloorSwitch
 	end
 
 MauvilleCity_Gym_EventScript_Switch2::
 	lockall
+<<<<<<< HEAD
 	goto_if_set FLAG_DEFEATED_GOLDENROD_CITY_GYM, MauvilleCity_Gym_EventScript_SwitchDoNothing
 	goto_if_eq VAR_GARBAGEVAR, 2, MauvilleCity_Gym_EventScript_SwitchDoNothing
 	setvar VAR_GARBAGEVAR, 2
+=======
+	goto_if_set FLAG_DEFEATED_MAUVILLE_GYM, MauvilleCity_Gym_EventScript_SwitchDoNothing
+	goto_if_eq VAR_MAUVILLE_GYM_STATE, 2, MauvilleCity_Gym_EventScript_SwitchDoNothing
+	setvar VAR_MAUVILLE_GYM_STATE, 2
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setvar VAR_0x8004, 1
 	goto MauvilleCity_Gym_EventScript_PressFloorSwitch
 	end
 
 MauvilleCity_Gym_EventScript_Switch3::
 	lockall
+<<<<<<< HEAD
 	goto_if_set FLAG_DEFEATED_GOLDENROD_CITY_GYM, MauvilleCity_Gym_EventScript_SwitchDoNothing
 	goto_if_eq VAR_GARBAGEVAR, 3, MauvilleCity_Gym_EventScript_SwitchDoNothing
 	setvar VAR_GARBAGEVAR, 3
+=======
+	goto_if_set FLAG_DEFEATED_MAUVILLE_GYM, MauvilleCity_Gym_EventScript_SwitchDoNothing
+	goto_if_eq VAR_MAUVILLE_GYM_STATE, 3, MauvilleCity_Gym_EventScript_SwitchDoNothing
+	setvar VAR_MAUVILLE_GYM_STATE, 3
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setvar VAR_0x8004, 2
 	goto MauvilleCity_Gym_EventScript_PressFloorSwitch
 	end
 
 MauvilleCity_Gym_EventScript_Switch4::
 	lockall
+<<<<<<< HEAD
 	goto_if_set FLAG_DEFEATED_GOLDENROD_CITY_GYM, MauvilleCity_Gym_EventScript_SwitchDoNothing
 	goto_if_eq VAR_GARBAGEVAR, 4, MauvilleCity_Gym_EventScript_SwitchDoNothing
 	setvar VAR_GARBAGEVAR, 4
+=======
+	goto_if_set FLAG_DEFEATED_MAUVILLE_GYM, MauvilleCity_Gym_EventScript_SwitchDoNothing
+	goto_if_eq VAR_MAUVILLE_GYM_STATE, 4, MauvilleCity_Gym_EventScript_SwitchDoNothing
+	setvar VAR_MAUVILLE_GYM_STATE, 4
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setvar VAR_0x8004, 3
 	goto MauvilleCity_Gym_EventScript_PressFloorSwitch
 	end
@@ -217,14 +254,22 @@ MauvilleCity_Gym_EventScript_Vivian::
 	end
 
 MauvilleCity_Gym_EventScript_Angelo::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_CARLENE, MauvilleCity_Gym_Text_AngeloIntro, MauvilleCity_Gym_Text_AngeloDefeat
+=======
+	trainerbattle_single TRAINER_ANGELO, MauvilleCity_Gym_Text_AngeloIntro, MauvilleCity_Gym_Text_AngeloDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox MauvilleCity_Gym_Text_AngeloPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 MauvilleCity_Gym_EventScript_GymGuide::
 	lock
 	faceplayer
+<<<<<<< HEAD
 	goto_if_set FLAG_DEFEATED_GOLDENROD_CITY_GYM, MauvilleCity_Gym_EventScript_GymGuidePostVictory
+=======
+	goto_if_set FLAG_DEFEATED_MAUVILLE_GYM, MauvilleCity_Gym_EventScript_GymGuidePostVictory
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox MauvilleCity_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT
 	release
 	end

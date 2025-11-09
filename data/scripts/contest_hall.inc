@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .set LOCALID_MC, 1
 .set LOCALID_JUDGE, 2
 .set LOCALID_CONTESTANT_1, 3
@@ -14,6 +15,8 @@
 .set LOCALID_CONTESTANT_4, 14
 .set LOCALID_ARTIST, 15
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 @ Either ends or returns to EventScript_ContestReceptionist after submitting a contest entry
 LilycoveCity_ContestLobby_EventScript_SpeakToContestReceptionist::
 	lock
@@ -31,6 +34,10 @@ LilycoveCity_ContestLobby_EventScript_ReceptionWelcome::
 LilycoveCity_ContestLobby_EventScript_GivePokeblockCase::
 	msgbox LilycoveCity_ContestLobby_Text_ReceptionDontHavePokeblockCase, MSGBOX_DEFAULT
 	giveitem ITEM_POKEBLOCK_CASE
+<<<<<<< HEAD
+=======
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setflag FLAG_RECEIVED_POKEBLOCK_CASE
 	msgbox LilycoveCity_ContestLobby_Text_NowThatWeveClearedThatUp, MSGBOX_DEFAULT
 	return
@@ -194,7 +201,11 @@ LilycoveCity_ContestLobby_EventScript_EnterMon::
 	msgbox LilycoveCity_ContestLobby_Text_YourMonIsEntryNum4, MSGBOX_DEFAULT
 	closemessage
 	releaseall
+<<<<<<< HEAD
 	setvar VAR_GARBAGEVAR, 1
+=======
+	setvar VAR_CONTEST_HALL_STATE, 1
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	return
 
 ContestHall_EventScript_DoContest::
@@ -203,7 +214,11 @@ ContestHall_EventScript_DoContest::
 	lockall
 	applymovement LOCALID_CONTESTANT_4, ContestHall_Movement_Player4FaceUp
 	waitmovement 0
+<<<<<<< HEAD
 	applymovement LOCALID_MC, ContestHall_Movement_MCWalkDown
+=======
+	applymovement LOCALID_CONTEST_MC, ContestHall_Movement_MCWalkDown
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	releaseall
 	call ContestHall_EventScript_TryWaitForLink
@@ -217,7 +232,11 @@ ContestHall_EventScript_DoContest::
 	call ContestHall_EventScript_CongratulateWinner
 	call ContestHall_EventScript_AudienceLookAround
 	call ContestHall_EventScript_GiveWinnerPrize
+<<<<<<< HEAD
 	setvar VAR_GARBAGEVAR, 2
+=======
+	setvar VAR_CONTEST_HALL_STATE, 2
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	return
 
 ContestHall_EventScript_GetContestRankStringId::
@@ -279,7 +298,11 @@ ContestHall_EventScript_ContestGettingStarted::
 	bufferstdstring STR_VAR_3, VAR_0x8009
 	call ContestHall_EventScript_GettingStarted
 	lockall
+<<<<<<< HEAD
 	applymovement LOCALID_MC, ContestHall_Movement_MCBackUp
+=======
+	applymovement LOCALID_CONTEST_MC, ContestHall_Movement_MCBackUp
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	releaseall
 	return
@@ -384,7 +407,11 @@ ContestHall_EventScript_ShowContestMonPic::
 	releaseall
 	call ContestHall_EventScript_TryWaitForLink
 	call ContestHall_EventScript_CheckIfContestWithRSPlayer
+<<<<<<< HEAD
 	addobject LOCALID_POKEBALL
+=======
+	addobject LOCALID_CONTEST_POKEBALL
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	playse SE_LEDGE
 	lockall
 	applymovement VAR_0x800B, ContestHall_Movement_ContestantDelay32
@@ -413,6 +440,7 @@ ContestHall_EventScript_AudienceVote::
 	playse SE_M_ENCORE2
 	waitmessage
 	call ContestHall_EventScript_AudienceLookAround
+<<<<<<< HEAD
 	applymovement LOCALID_MC, ContestHall_Movement_MCFaceJudge2
 	waitmovement 0
 	applymovement LOCALID_JUDGE, ContestHall_Movement_JudgeFaceMC
@@ -420,6 +448,15 @@ ContestHall_EventScript_AudienceVote::
 	delay 20
 	applymovement LOCALID_MC, ContestHall_Movement_FaceContestants
 	applymovement LOCALID_JUDGE, ContestHall_Movement_FaceContestants
+=======
+	applymovement LOCALID_CONTEST_MC, ContestHall_Movement_MCFaceJudge2
+	waitmovement 0
+	applymovement LOCALID_CONTEST_JUDGE, ContestHall_Movement_JudgeFaceMC
+	waitmovement 0
+	delay 20
+	applymovement LOCALID_CONTEST_MC, ContestHall_Movement_FaceContestants
+	applymovement LOCALID_CONTEST_JUDGE, ContestHall_Movement_FaceContestants
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
@@ -459,6 +496,7 @@ ContestHall_EventScript_VotingUnderWayLink::
 
 ContestHall_EventScript_AudienceReactToContestant::
 	call ContestHall_EventScript_TryWaitForLink
+<<<<<<< HEAD
 	applymovement LOCALID_MC, ContestHall_Movement_AudienceMemberLookLeft
 	waitmovement 0
 	playse SE_M_ENCORE2
@@ -478,6 +516,27 @@ ContestHall_EventScript_AudienceReactToContestant::
 	waitmovement 0
 	applymovement LOCALID_MC, ContestHall_Movement_MCWalkInPlaceDown
 	applymovement LOCALID_JUDGE, ContestHall_Movement_JudgeLookAtMC
+=======
+	applymovement LOCALID_CONTEST_MC, ContestHall_Movement_AudienceMemberLookLeft
+	waitmovement 0
+	playse SE_M_ENCORE2
+	call ContestHall_EventScript_VObjectAudienceLookAround
+	applymovement LOCALID_CONTEST_AUDIENCE_5, ContestHall_Movement_AudienceMemberLookRight
+	applymovement LOCALID_CONTEST_AUDIENCE_2, ContestHall_Movement_AudienceMemberLookDown
+	applymovement LOCALID_CONTEST_AUDIENCE_3, ContestHall_Movement_AudienceMemberLookRight
+	waitmovement 0
+	applymovement LOCALID_CONTEST_MC, ContestHall_Movement_AudienceMemberLookRight
+	waitmovement 0
+	applymovement LOCALID_CONTEST_AUDIENCE_6, ContestHall_Movement_AudienceMemberLookLeft
+	applymovement LOCALID_CONTEST_AUDIENCE_7, ContestHall_Movement_AudienceMemberLookDown
+	applymovement LOCALID_CONTEST_AUDIENCE_1, ContestHall_Movement_AudienceMemberLookUp
+	applymovement LOCALID_CONTEST_AUDIENCE_4, ContestHall_Movement_AudienceMemberLookLeft
+	waitmovement 0
+	applymovement LOCALID_CONTEST_MC, ContestHall_Movement_MCLookAtJudge
+	waitmovement 0
+	applymovement LOCALID_CONTEST_MC, ContestHall_Movement_MCWalkInPlaceDown
+	applymovement LOCALID_CONTEST_JUDGE, ContestHall_Movement_JudgeLookAtMC
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	releaseall
 	call ContestHall_EventScript_TryWaitForLink
@@ -623,7 +682,11 @@ ContestHall_EventScript_Set8Hearts::
 
 ContestHall_EventScript_TryDisplayHeartAudienceMember1::
 	goto_if_eq VAR_TEMP_1, 1, ContestHall_EventScript_AudienceMember1AlreadyEmoted
+<<<<<<< HEAD
 	applymovement LOCALID_AUDIENCE_1, ContestHall_Movement_Heart
+=======
+	applymovement LOCALID_CONTEST_AUDIENCE_1, ContestHall_Movement_Heart
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	playse SE_PIN
 	delay 14
 	setvar VAR_TEMP_1, 1
@@ -635,7 +698,11 @@ ContestHall_EventScript_AudienceMember1AlreadyEmoted::
 
 ContestHall_EventScript_TryDisplayHeartAudienceMember2::
 	goto_if_eq VAR_TEMP_2, 1, ContestHall_EventScript_AudienceMember2AlreadyEmoted
+<<<<<<< HEAD
 	applymovement LOCALID_AUDIENCE_2, ContestHall_Movement_Heart
+=======
+	applymovement LOCALID_CONTEST_AUDIENCE_2, ContestHall_Movement_Heart
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	playse SE_PIN
 	delay 14
 	setvar VAR_TEMP_2, 1
@@ -647,7 +714,11 @@ ContestHall_EventScript_AudienceMember2AlreadyEmoted::
 
 ContestHall_EventScript_TryDisplayHeartAudienceMember3::
 	goto_if_eq VAR_TEMP_3, 1, ContestHall_EventScript_AudienceMember3AlreadyEmoted
+<<<<<<< HEAD
 	applymovement LOCALID_AUDIENCE_3, ContestHall_Movement_Heart
+=======
+	applymovement LOCALID_CONTEST_AUDIENCE_3, ContestHall_Movement_Heart
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	playse SE_PIN
 	delay 14
 	setvar VAR_TEMP_3, 1
@@ -659,7 +730,11 @@ ContestHall_EventScript_AudienceMember3AlreadyEmoted::
 
 ContestHall_EventScript_TryDisplayHeartAudienceMember4::
 	goto_if_eq VAR_TEMP_4, 1, ContestHall_EventScript_Audience4MemberAlreadyEmoted
+<<<<<<< HEAD
 	applymovement LOCALID_AUDIENCE_4, ContestHall_Movement_Heart
+=======
+	applymovement LOCALID_CONTEST_AUDIENCE_4, ContestHall_Movement_Heart
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	playse SE_PIN
 	delay 14
 	setvar VAR_TEMP_4, 1
@@ -671,7 +746,11 @@ ContestHall_EventScript_Audience4MemberAlreadyEmoted::
 
 ContestHall_EventScript_TryDisplayHeartAudienceMember5::
 	goto_if_eq VAR_TEMP_5, 1, ContestHall_EventScript_AudienceMember5AlreadyEmoted
+<<<<<<< HEAD
 	applymovement LOCALID_AUDIENCE_5, ContestHall_Movement_Heart
+=======
+	applymovement LOCALID_CONTEST_AUDIENCE_5, ContestHall_Movement_Heart
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	playse SE_PIN
 	delay 14
 	setvar VAR_TEMP_5, 1
@@ -683,7 +762,11 @@ ContestHall_EventScript_AudienceMember5AlreadyEmoted::
 
 ContestHall_EventScript_TryDisplayHeartAudienceMember6::
 	goto_if_eq VAR_TEMP_6, 1, ContestHall_EventScript_AudienceMember6AlreadyEmoted
+<<<<<<< HEAD
 	applymovement LOCALID_AUDIENCE_6, ContestHall_Movement_Heart
+=======
+	applymovement LOCALID_CONTEST_AUDIENCE_6, ContestHall_Movement_Heart
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	playse SE_PIN
 	delay 14
 	setvar VAR_TEMP_6, 1
@@ -695,7 +778,11 @@ ContestHall_EventScript_AudienceMember6AlreadyEmoted::
 
 ContestHall_EventScript_TryDisplayHeartAudienceMember7::
 	goto_if_eq VAR_TEMP_7, 1, ContestHall_EventScript_AudienceMember7AlreadyEmoted
+<<<<<<< HEAD
 	applymovement LOCALID_AUDIENCE_7, ContestHall_Movement_Heart
+=======
+	applymovement LOCALID_CONTEST_AUDIENCE_7, ContestHall_Movement_Heart
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	playse SE_PIN
 	delay 14
 	setvar VAR_TEMP_7, 1
@@ -707,7 +794,11 @@ ContestHall_EventScript_AudienceMember7AlreadyEmoted::
 
 ContestHall_EventScript_TryDisplayHeartAudienceMember8::
 	goto_if_eq VAR_TEMP_8, 1, ContestHall_EventScript_AudienceMember8AlreadyEmoted
+<<<<<<< HEAD
 	applymovement LOCALID_ARTIST, ContestHall_Movement_Heart
+=======
+	applymovement LOCALID_CONTEST_ARTIST, ContestHall_Movement_Heart
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	playse SE_PIN
 	delay 14
 	setvar VAR_TEMP_8, 1
@@ -720,7 +811,11 @@ ContestHall_EventScript_AudienceMember8AlreadyEmoted::
 ContestHall_EventScript_ContestantReturn::
 	closemessage
 	release
+<<<<<<< HEAD
 	removeobject LOCALID_POKEBALL
+=======
+	removeobject LOCALID_CONTEST_POKEBALL
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	special HideContestEntryMonPic
 	call ContestHall_EventScript_TryWaitForLink
 	switch VAR_0x8006
@@ -764,13 +859,22 @@ ContestHall_EventScript_Player4WalkBack::
 
 ContestHall_EventScript_DoContestAppeals::
 	lockall
+<<<<<<< HEAD
 	applymovement LOCALID_MC, ContestHall_Movement_FaceContestants2
+=======
+	applymovement LOCALID_CONTEST_MC, ContestHall_Movement_FaceContestants2
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	call ContestHall_EventScript_TryWaitForLink
 	call ContestHall_EventScript_LetsAppeal
 	waitmessage
+<<<<<<< HEAD
 	applymovement LOCALID_MC, ContestHall_Movement_WalkStageLeft
 	applymovement LOCALID_JUDGE, ContestHall_Movement_WalkStageRight
+=======
+	applymovement LOCALID_CONTEST_MC, ContestHall_Movement_WalkStageLeft
+	applymovement LOCALID_CONTEST_JUDGE, ContestHall_Movement_WalkStageRight
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	releaseall
 	call ContestHall_EventScript_TryWaitForLink
@@ -780,8 +884,13 @@ ContestHall_EventScript_DoContestAppeals::
 	special LinkContestTryShowWirelessIndicator
 	setvar VAR_TEMP_9, 0
 	lockall
+<<<<<<< HEAD
 	applymovement LOCALID_MC, ContestHall_Movement_WalkStageRight
 	applymovement LOCALID_JUDGE, ContestHall_Movement_WalkStageLeft
+=======
+	applymovement LOCALID_CONTEST_MC, ContestHall_Movement_WalkStageRight
+	applymovement LOCALID_CONTEST_JUDGE, ContestHall_Movement_WalkStageLeft
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	releaseall
 	return
@@ -817,13 +926,21 @@ ContestHall_EventScript_ContestResults::
 	call ContestHall_EventScript_TryWaitForLink
 	call ContestHall_EventScript_ThankYouForAppeals
 	call ContestHall_EventScript_TryWaitForLink
+<<<<<<< HEAD
 	applymovement LOCALID_MC, ContestHall_Movement_MCFaceJudge
+=======
+	applymovement LOCALID_CONTEST_MC, ContestHall_Movement_MCFaceJudge
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	call ContestHall_EventScript_JudgeLooksReady
 	call ContestHall_EventScript_TryWaitForLink
 	call ContestHall_EventScript_WeWillDeclareWinner
 	call ContestHall_EventScript_TryWaitForLink
+<<<<<<< HEAD
 	applymovement LOCALID_MC, ContestHall_Movement_FaceContestants
+=======
+	applymovement LOCALID_CONTEST_MC, ContestHall_Movement_FaceContestants
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	closemessage
 	releaseall
@@ -934,6 +1051,7 @@ ContestHall_EventScript_AudienceLookAround::
 	addvar VAR_TEMP_1, 1
 	lockall
 	call_if_gt VAR_CONTEST_TYPE, CONTEST_TYPE_NPC_NORMAL, ContestHall_EventScript_VObjectAudienceLookAround
+<<<<<<< HEAD
 	applymovement LOCALID_AUDIENCE_5, ContestHall_Movement_AudienceMemberLookRight
 	applymovement LOCALID_AUDIENCE_2, ContestHall_Movement_AudienceMemberLookDown
 	applymovement LOCALID_AUDIENCE_3, ContestHall_Movement_AudienceMemberLookRight
@@ -942,6 +1060,16 @@ ContestHall_EventScript_AudienceLookAround::
 	applymovement LOCALID_AUDIENCE_7, ContestHall_Movement_AudienceMemberLookDown
 	applymovement LOCALID_AUDIENCE_1, ContestHall_Movement_AudienceMemberLookUp
 	applymovement LOCALID_AUDIENCE_4, ContestHall_Movement_AudienceMemberLookLeft
+=======
+	applymovement LOCALID_CONTEST_AUDIENCE_5, ContestHall_Movement_AudienceMemberLookRight
+	applymovement LOCALID_CONTEST_AUDIENCE_2, ContestHall_Movement_AudienceMemberLookDown
+	applymovement LOCALID_CONTEST_AUDIENCE_3, ContestHall_Movement_AudienceMemberLookRight
+	delay 30
+	applymovement LOCALID_CONTEST_AUDIENCE_6, ContestHall_Movement_AudienceMemberLookLeft
+	applymovement LOCALID_CONTEST_AUDIENCE_7, ContestHall_Movement_AudienceMemberLookDown
+	applymovement LOCALID_CONTEST_AUDIENCE_1, ContestHall_Movement_AudienceMemberLookUp
+	applymovement LOCALID_CONTEST_AUDIENCE_4, ContestHall_Movement_AudienceMemberLookLeft
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto_if_ne VAR_TEMP_1, 4, ContestHall_EventScript_AudienceLookAround
 	delay 30
 	return

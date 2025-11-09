@@ -6,6 +6,7 @@ Route124_DivingTreasureHuntersHouse_OnTransition:
 	setflag FLAG_LANDMARK_HUNTERS_HOUSE
 	end
 
+<<<<<<< HEAD
 Route124_DivingTreasureHuntersHouse_TogekissEvo::
 	msgbox Route124_DivingTreasureHuntersHouse_TogekissEvo_Text, MSGBOX_NPC
 	end
@@ -16,6 +17,8 @@ Route124_DivingTreasureHuntersHouse_TogekissEvo_Text:
 	.string "That POKéMON is TOGETIC!\n" 
 	.string "I wish I had one…$"
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 Route124_DivingTreasureHuntersHouse_EventScript_TreasureHunter::
 	lock
 	faceplayer
@@ -229,17 +232,29 @@ Route124_DivingTreasureHuntersHouse_EventScript_ShardOptionsRYBG::
 
 Route124_DivingTreasureHuntersHouse_EventScript_TradeRedShard::
 	setvar VAR_0x8008, ITEM_RED_SHARD
+<<<<<<< HEAD
 	setvar VAR_0x8009, ITEM_SUN_STONE
+=======
+	setvar VAR_0x8009, ITEM_FIRE_STONE
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto Route124_DivingTreasureHuntersHouse_EventScript_TryTradeShard
 
 Route124_DivingTreasureHuntersHouse_EventScript_TradeYellowShard::
 	setvar VAR_0x8008, ITEM_YELLOW_SHARD
+<<<<<<< HEAD
 	setvar VAR_0x8009, ITEM_DEEP_SEA_TOOTH
+=======
+	setvar VAR_0x8009, ITEM_THUNDER_STONE
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto Route124_DivingTreasureHuntersHouse_EventScript_TryTradeShard
 
 Route124_DivingTreasureHuntersHouse_EventScript_TradeBlueShard::
 	setvar VAR_0x8008, ITEM_BLUE_SHARD
+<<<<<<< HEAD
 	setvar VAR_0x8009, ITEM_DEEP_SEA_SCALE
+=======
+	setvar VAR_0x8009, ITEM_WATER_STONE
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto Route124_DivingTreasureHuntersHouse_EventScript_TryTradeShard
 
 Route124_DivingTreasureHuntersHouse_EventScript_TradeGreenShard::

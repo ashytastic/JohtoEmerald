@@ -19,8 +19,11 @@ SSTidalRooms_EventScript_ExplainSnatch::
 	end
 
 SSTidalRooms_EventScript_Bed::
+<<<<<<< HEAD
 	specialvar VAR_RESULT, IsPokecenterChallengeActivated
 	goto_if_eq VAR_RESULT, TRUE, SSTidalRooms_EventScript_Bed_PokecenterChallenge
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	lockall
 	msgbox SSTidalRooms_Text_TakeRestOnBed, MSGBOX_DEFAULT
 	closemessage
@@ -29,6 +32,7 @@ SSTidalRooms_EventScript_Bed::
 	releaseall
 	end
 
+<<<<<<< HEAD
 SSTidalRooms_EventScript_Bed_PokecenterChallenge::
 	msgbox SSTidalRooms_Text_TakeRestOnBed_PokecenterChallenge, MSGBOX_DEFAULT
 	closemessage
@@ -36,6 +40,10 @@ SSTidalRooms_EventScript_Bed_PokecenterChallenge::
 
 SSTidalRooms_EventScript_Colton::
 	trainerbattle_single TRAINER_GRUNT_26, SSTidalRooms_Text_ColtonIntro, SSTidalRooms_Text_ColtonDefeat
+=======
+SSTidalRooms_EventScript_Colton::
+	trainerbattle_single TRAINER_COLTON, SSTidalRooms_Text_ColtonIntro, SSTidalRooms_Text_ColtonDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox SSTidalRooms_Text_ColtonPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -68,10 +76,13 @@ SSTidalRooms_EventScript_Naomi::
 	trainerbattle_single TRAINER_NAOMI, SSTidalRooms_Text_NaomiIntro, SSTidalRooms_Text_NaomiDefeat
 	msgbox SSTidalRooms_Text_NaomiPostBattle, MSGBOX_AUTOCLOSE
 	end
+<<<<<<< HEAD
 	
 SSTidalRooms_Text_TakeRestOnBed_PokecenterChallenge:
 	.string "Sorry, you are playing with\n"
 	.string "the POKéCENTER challenge!$"
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 SSTidalRooms_Text_TakeRestOnBed:
 	.string "There's a bed…\n"

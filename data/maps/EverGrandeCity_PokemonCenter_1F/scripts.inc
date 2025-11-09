@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 .set LOCALID_NURSE, 1
 .set LOCALID_SCOTT, 4
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 EverGrandeCity_PokemonCenter_1F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, EverGrandeCity_PokemonCenter_1F_OnTransition
 	map_script MAP_SCRIPT_ON_RESUME, CableClub_OnResume
@@ -13,11 +16,19 @@ EverGrandeCity_PokemonCenter_1F_OnTransition:
 
 EverGrandeCity_PokemonCenter_1F_EventScript_TryShowScott::
 	goto_if_unset FLAG_BADGE06_GET, Common_EventScript_NopReturn
+<<<<<<< HEAD
 	clearflag FLAG_GARBAGEFLAG
 	return
 
 EverGrandeCity_PokemonCenter_1F_EventScript_Nurse::
 	setvar VAR_0x800B, LOCALID_NURSE
+=======
+	clearflag FLAG_HIDE_EVER_GRANDE_POKEMON_CENTER_1F_SCOTT
+	return
+
+EverGrandeCity_PokemonCenter_1F_EventScript_Nurse::
+	setvar VAR_0x800B, LOCALID_EVER_GRANDE_NURSE
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call Common_EventScript_PkmnCenterNurse
 	waitmessage
 	waitbuttonpress
@@ -44,17 +55,29 @@ EverGrandeCity_PokemonCenter_1F_EventScript_Scott::
 	setflag FLAG_MET_SCOTT_IN_EVERGRANDE
 	playse SE_EXIT
 	waitse
+<<<<<<< HEAD
 	removeobject LOCALID_SCOTT
+=======
+	removeobject LOCALID_EVER_GRANDE_SCOTT
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	release
 	end
 
 EverGrandeCity_PokemonCenter_1F_EventScript_ScottExitNorth::
+<<<<<<< HEAD
 	applymovement LOCALID_SCOTT, EverGrandeCity_PokemonCenter_1F_Movement_ScottExitNorth
+=======
+	applymovement LOCALID_EVER_GRANDE_SCOTT, EverGrandeCity_PokemonCenter_1F_Movement_ScottExitNorth
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 EverGrandeCity_PokemonCenter_1F_EventScript_ScottExit::
+<<<<<<< HEAD
 	applymovement LOCALID_SCOTT, EverGrandeCity_PokemonCenter_1F_Movement_ScottExit
+=======
+	applymovement LOCALID_EVER_GRANDE_SCOTT, EverGrandeCity_PokemonCenter_1F_Movement_ScottExit
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
@@ -99,3 +122,7 @@ EverGrandeCity_PokemonCenter_1F_Text_ScottHappyForYou:
 	.string "I'll get in touch with you then.\p"
 	.string "Okay, {PLAYER}{KUN}.\n"
 	.string "Go for greatness!$"
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

@@ -38,8 +38,11 @@
 #include "title_screen.h"
 #include "window.h"
 #include "mystery_gift_menu.h"
+<<<<<<< HEAD
 #include "tx_randomizer_and_challenges.h"
 #include "constants/flags.h"
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 /*
  * Main menu state machine
@@ -212,13 +215,17 @@ static void Task_NewGameBirchSpeech_SlidePlatformAway(u8);
 static void Task_NewGameBirchSpeech_StartPlayerFadeIn(u8);
 static void Task_NewGameBirchSpeech_WaitForPlayerFadeIn(u8);
 static void Task_NewGameBirchSpeech_BoyOrGirl(u8);
+<<<<<<< HEAD
 static void Task_NewGameBirchSpeech_Difficulty(u8);
 static void Task_NewGameBirchSpeech_Challenge(u8);
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static void LoadMainMenuWindowFrameTiles(u8, u16);
 static void DrawMainMenuWindowBorder(const struct WindowTemplate *, u16);
 static void Task_HighlightSelectedMainMenuItem(u8);
 static void Task_NewGameBirchSpeech_WaitToShowGenderMenu(u8);
 static void Task_NewGameBirchSpeech_ChooseGender(u8);
+<<<<<<< HEAD
 static void Task_NewGameBirchSpeech_WaitToShowDifficultyMenu(u8);
 static void Task_NewGameBirchSpeech_ChooseDifficulty(u8);
 static void Task_NewGameBirchSpeech_WaitToShowChallengeMenu(u8);
@@ -229,6 +236,11 @@ static void NewGameBirchSpeech_ClearGenderWindow(u8, u8);
 static void NewGameBirchSpeech_ShowDifficultyMenu(void);
 static s8 NewGameBirchSpeech_ProcessDifficultyMenuInput(void);
 static void NewGameBirchSpeech_ClearDifficultyWindow(u8, u8);
+=======
+static void NewGameBirchSpeech_ShowGenderMenu(void);
+static s8 NewGameBirchSpeech_ProcessGenderMenuInput(void);
+static void NewGameBirchSpeech_ClearGenderWindow(u8, u8);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static void Task_NewGameBirchSpeech_WhatsYourName(u8);
 static void Task_NewGameBirchSpeech_SlideOutOldGenderSprite(u8);
 static void Task_NewGameBirchSpeech_SlideInNewGenderSprite(u8);
@@ -236,7 +248,10 @@ static void Task_NewGameBirchSpeech_WaitForWhatsYourNameToPrint(u8);
 static void Task_NewGameBirchSpeech_WaitPressBeforeNameChoice(u8);
 static void Task_NewGameBirchSpeech_StartNamingScreen(u8);
 static void CB2_NewGameBirchSpeech_ReturnFromNamingScreen(void);
+<<<<<<< HEAD
 static void CB2_NewGameBirchSpeech_ReturnFromTxRandomizerChallengesOptions(void);
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static void Task_NewGameBirchSpeech_CreateNameYesNo(u8);
 static void Task_NewGameBirchSpeech_ProcessNameYesNoMenu(u8);
 void CreateYesNoMenuParameterized(u8, u8, u16, u16, u8, u8);
@@ -249,7 +264,11 @@ static void SpriteCB_MovePlayerDownWhileShrinking(struct Sprite *);
 static void Task_NewGameBirchSpeech_WaitForPlayerShrink(u8);
 static void Task_NewGameBirchSpeech_FadePlayerToWhite(u8);
 static void Task_NewGameBirchSpeech_Cleanup(u8);
+<<<<<<< HEAD
 static void SpriteCB_Null();
+=======
+static void SpriteCB_Null(struct Sprite *);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static void Task_NewGameBirchSpeech_ReturnFromNamingScreenShowTextbox(u8);
 static void MainMenu_FormatSavegamePlayer(void);
 static void MainMenu_FormatSavegamePokedex(void);
@@ -264,10 +283,36 @@ static const u16 sBirchSpeechBgPals[][16] = {
     INCBIN_U16("graphics/birch_speech/bg1.gbapal")
 };
 
+<<<<<<< HEAD
 static const u32 sBirchSpeechShadowGfx[] = INCBIN_U32("graphics/birch_speech/shadow.4bpp.lz");
 static const u32 sBirchSpeechBgMap[] = INCBIN_U32("graphics/birch_speech/map.bin.lz");
 static const u16 sBirchSpeechBgGradientPal[] = INCBIN_U16("graphics/birch_speech/bg2.gbapal");
 static const u16 sBirchSpeechPlatformBlackPal[] = {RGB_BLACK, RGB_BLACK, RGB_BLACK, RGB_BLACK, RGB_BLACK, RGB_BLACK, RGB_BLACK, RGB_BLACK};
+=======
+static const u32 sBirchSpeechShadowGfx[] = INCBIN_U32("graphics/birch_speech/shadow.4bpp.smol");
+static const u32 sBirchSpeechBgMap[] = INCBIN_U32("graphics/birch_speech/map.bin.smolTM");
+static const u16 sBirchSpeechBgGradientPal[] = INCBIN_U16("graphics/birch_speech/bg2.gbapal");
+
+static const u8 gText_SaveFileCorrupted[] = _("The save file is corrupted. The\nprevious save file will be loaded.");
+static const u8 gText_SaveFileErased[] = _("The save file has been erased\ndue to corruption or damage.");
+static const u8 gJPText_No1MSubCircuit[] = _("1Mサブきばんが ささっていません！");
+static const u8 gText_BatteryRunDry[] = _("The internal battery has run dry.\nThe game can be played.\pHowever, clock-based events will\nno longer occur.");
+
+static const u8 gText_MainMenuNewGame[] = _("NEW GAME");
+static const u8 gText_MainMenuContinue[] = _("CONTINUE");
+static const u8 gText_MainMenuOption[] = _("OPTION");
+static const u8 gText_MainMenuMysteryGift[] = _("MYSTERY GIFT");
+static const u8 gText_MainMenuMysteryGift2[] = _("MYSTERY GIFT");
+static const u8 gText_MainMenuMysteryEvents[] = _("MYSTERY EVENTS");
+static const u8 gText_WirelessNotConnected[] = _("The Wireless Adapter is not\nconnected.");
+static const u8 gText_MysteryGiftCantUse[] = _("MYSTERY GIFT can't be used while\nthe Wireless Adapter is attached.");
+static const u8 gText_MysteryEventsCantUse[] = _("MYSTERY EVENTS can't be used while\nthe Wireless Adapter is attached.");
+
+static const u8 gText_ContinueMenuPlayer[] = _("PLAYER");
+static const u8 gText_ContinueMenuTime[] = _("TIME");
+static const u8 gText_ContinueMenuPokedex[] = _("POKéDEX");
+static const u8 gText_ContinueMenuBadges[] = _("BADGES");
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 #define MENU_LEFT 2
 #define MENU_TOP_WIN0 1
@@ -413,6 +458,7 @@ static const struct WindowTemplate sNewGameBirchSpeechTextWindows[] =
         .paletteNum = 15,
         .baseBlock = 0x85
     },
+<<<<<<< HEAD
     {
         .bg = 0,
         .tilemapLeft = 3,
@@ -431,6 +477,8 @@ static const struct WindowTemplate sNewGameBirchSpeechTextWindows[] =
         .paletteNum = 15,
         .baseBlock = 0x6D
     },
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     DUMMY_WIN_TEMPLATE
 };
 
@@ -484,6 +532,7 @@ static const union AffineAnimCmd *const sSpriteAffineAnimTable_PlayerShrink[] =
 };
 
 static const struct MenuAction sMenuActions_Gender[] = {
+<<<<<<< HEAD
     {gText_BirchBoy, {NULL}},
     {gText_BirchGirl, {NULL}}
 };
@@ -544,6 +593,56 @@ static const u8 *const sFemalePresetNames[] = {
     gText_DefaultNameHalie
     */
    gText_DefaultNameKris
+=======
+    {COMPOUND_STRING("BOY"), {NULL}},
+    {COMPOUND_STRING("GIRL"), {NULL}}
+};
+
+static const u8 *const sMalePresetNames[] = {
+    COMPOUND_STRING("STU"),
+    COMPOUND_STRING("MILTON"),
+    COMPOUND_STRING("TOM"),
+    COMPOUND_STRING("KENNY"),
+    COMPOUND_STRING("REID"),
+    COMPOUND_STRING("JUDE"),
+    COMPOUND_STRING("JAXSON"),
+    COMPOUND_STRING("EASTON"),
+    COMPOUND_STRING("WALKER"),
+    COMPOUND_STRING("TERU"),
+    COMPOUND_STRING("JOHNNY"),
+    COMPOUND_STRING("BRETT"),
+    COMPOUND_STRING("SETH"),
+    COMPOUND_STRING("TERRY"),
+    COMPOUND_STRING("CASEY"),
+    COMPOUND_STRING("DARREN"),
+    COMPOUND_STRING("LANDON"),
+    COMPOUND_STRING("COLLIN"),
+    COMPOUND_STRING("STANLEY"),
+    COMPOUND_STRING("QUINCY")
+};
+
+static const u8 *const sFemalePresetNames[] = {
+    COMPOUND_STRING("KIMMY"),
+    COMPOUND_STRING("TIARA"),
+    COMPOUND_STRING("BELLA"),
+    COMPOUND_STRING("JAYLA"),
+    COMPOUND_STRING("ALLIE"),
+    COMPOUND_STRING("LIANNA"),
+    COMPOUND_STRING("SARA"),
+    COMPOUND_STRING("MONICA"),
+    COMPOUND_STRING("CAMILA"),
+    COMPOUND_STRING("AUBREE"),
+    COMPOUND_STRING("RUTHIE"),
+    COMPOUND_STRING("HAZEL"),
+    COMPOUND_STRING("NADINE"),
+    COMPOUND_STRING("TANJA"),
+    COMPOUND_STRING("YASMIN"),
+    COMPOUND_STRING("NICOLA"),
+    COMPOUND_STRING("LILLIE"),
+    COMPOUND_STRING("TERRA"),
+    COMPOUND_STRING("LUCY"),
+    COMPOUND_STRING("HALIE")
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 // The number of male vs. female names is assumed to be the same.
@@ -570,6 +669,10 @@ enum
 };
 
 #define MAIN_MENU_BORDER_TILE   0x1D5
+<<<<<<< HEAD
+=======
+#define BIRCH_DLG_BASE_TILE_NUM 0xFC
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 static void CB2_MainMenu(void)
 {
@@ -760,10 +863,13 @@ static void Task_MainMenuCheckBattery(u8 taskId)
         {
             gTasks[taskId].func = Task_DisplayMainMenu;
         }
+<<<<<<< HEAD
         else if ((RtcGetErrorStatus() & RTC_ERR_FLAG_MASK) && (gSaveBlock1Ptr->tx_Features_RTCType == 1))
         {
             gTasks[taskId].func = Task_DisplayMainMenu;
         }
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         else
         {
             CreateMainMenuErrorWindow(gText_BatteryRunDry);
@@ -1308,6 +1414,7 @@ static void HighlightSelectedMainMenuItem(u8 menuType, u8 selectedMenuItem, s16 
 #define tBrendanSpriteId data[10]
 #define tMaySpriteId data[11]
 
+<<<<<<< HEAD
 static void CB2_NewGameBirchSpeech_ReturnFromTxRandomizerChallengesOptions(void)
 {
     u8 taskId;
@@ -1345,6 +1452,8 @@ static void CB2_NewGameBirchSpeech_ReturnFromTxRandomizerChallengesOptions(void)
     SetMainCallback2(CB2_MainMenu);
 }
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static void Task_NewGameBirchSpeech_Init(u8 taskId)
 {
     SetGpuReg(REG_OFFSET_DISPCNT, 0);
@@ -1358,10 +1467,17 @@ static void Task_NewGameBirchSpeech_Init(u8 taskId)
     SetGpuReg(REG_OFFSET_BLDALPHA, 0);
     SetGpuReg(REG_OFFSET_BLDY, 0);
 
+<<<<<<< HEAD
     LZ77UnCompVram(sBirchSpeechShadowGfx, (void *)VRAM);
     LZ77UnCompVram(sBirchSpeechBgMap, (void *)(BG_SCREEN_ADDR(7)));
     LoadPalette(sBirchSpeechBgPals, BG_PLTT_ID(0), 2 * PLTT_SIZE_4BPP);
     LoadPalette(sBirchSpeechPlatformBlackPal, BG_PLTT_ID(0) + 1, PLTT_SIZEOF(8));
+=======
+    DecompressDataWithHeaderVram(sBirchSpeechShadowGfx, (void *)VRAM);
+    DecompressDataWithHeaderVram(sBirchSpeechBgMap, (void *)(BG_SCREEN_ADDR(7)));
+    LoadPalette(sBirchSpeechBgPals, BG_PLTT_ID(0), 2 * PLTT_SIZE_4BPP);
+    LoadPalette(&sBirchSpeechBgGradientPal[8], BG_PLTT_ID(0) + 1, PLTT_SIZEOF(8));
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ScanlineEffect_Stop();
     ResetSpriteData();
     FreeAllSpritePalettes();
@@ -1373,7 +1489,11 @@ static void Task_NewGameBirchSpeech_Init(u8 taskId)
     gTasks[taskId].tPlayerSpriteId = SPRITE_NONE;
     gTasks[taskId].data[3] = 0xFF;
     gTasks[taskId].tTimer = 0xD8;
+<<<<<<< HEAD
     PlayBGM(MUS_HG_NEW_GAME);
+=======
+    PlayBGM(MUS_ROUTE122);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ShowBg(0);
     ShowBg(1);
 }
@@ -1413,7 +1533,11 @@ static void Task_NewGameBirchSpeech_WaitForSpriteFadeInWelcome(u8 taskId)
         {
             InitWindows(sNewGameBirchSpeechTextWindows);
             LoadMainMenuWindowFrameTiles(0, 0xF3);
+<<<<<<< HEAD
             LoadMessageBoxGfx(0, 0xFC, BG_PLTT_ID(15));
+=======
+            LoadMessageBoxGfx(0, BIRCH_DLG_BASE_TILE_NUM, BG_PLTT_ID(15));
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             NewGameBirchSpeech_ShowDialogueWindow(0, 1);
             PutWindowTilemap(0);
             CopyWindowToVram(0, COPYWIN_GFX);
@@ -1457,7 +1581,11 @@ static void Task_NewGameBirchSpeechSub_InitPokeBall(u8 taskId)
     gSprites[spriteId].invisible = FALSE;
     gSprites[spriteId].data[0] = 0;
 
+<<<<<<< HEAD
     CreatePokeballSpriteToReleaseMon(spriteId, gSprites[spriteId].oam.paletteNum, 112, 58, 0, 0, 32, PALETTES_BG, SPECIES_WOOPER);
+=======
+    CreatePokeballSpriteToReleaseMon(spriteId, gSprites[spriteId].oam.paletteNum, 112, 58, 0, 0, 32, PALETTES_BG, SPECIES_LOTAD);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gTasks[taskId].func = Task_NewGameBirchSpeechSub_WaitForLotad;
     gTasks[sBirchSpeechMainTaskId].tTimer = 0;
 }
@@ -1592,17 +1720,25 @@ static void Task_NewGameBirchSpeech_ChooseGender(u8 taskId)
             PlaySE(SE_SELECT);
             gSaveBlock2Ptr->playerGender = gender;
             NewGameBirchSpeech_ClearGenderWindow(1, 1);
+<<<<<<< HEAD
             //gTasks[taskId].func = Task_NewGameBirchSpeech_Difficulty;
             gSaveBlock2Ptr->optionsDifficulty = 1; //manually set difficulty normal
             gTasks[taskId].func = Task_NewGameBirchSpeech_Challenge;
+=======
+            gTasks[taskId].func = Task_NewGameBirchSpeech_WhatsYourName;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             break;
         case FEMALE:
             PlaySE(SE_SELECT);
             gSaveBlock2Ptr->playerGender = gender;
             NewGameBirchSpeech_ClearGenderWindow(1, 1);
+<<<<<<< HEAD
             //gTasks[taskId].func = Task_NewGameBirchSpeech_Difficulty;
             gSaveBlock2Ptr->optionsDifficulty = 1; //manually set difficulty normal
             gTasks[taskId].func = Task_NewGameBirchSpeech_Challenge;
+=======
+            gTasks[taskId].func = Task_NewGameBirchSpeech_WhatsYourName;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             break;
     }
     gender2 = Menu_GetCursorPos();
@@ -1658,6 +1794,7 @@ static void Task_NewGameBirchSpeech_SlideInNewGenderSprite(u8 taskId)
     }
 }
 
+<<<<<<< HEAD
 static void Task_NewGameBirchSpeech_Difficulty(u8 taskId) //difficulty
 {
     NewGameBirchSpeech_ClearWindow(0);
@@ -1731,6 +1868,8 @@ static void Task_NewGameBirchSpeech_ChooseChallenge(u8 taskId)
     }
 }
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static void Task_NewGameBirchSpeech_WhatsYourName(u8 taskId)
 {
     NewGameBirchSpeech_ClearWindow(0);
@@ -1742,8 +1881,12 @@ static void Task_NewGameBirchSpeech_WhatsYourName(u8 taskId)
 static void Task_NewGameBirchSpeech_WaitForWhatsYourNameToPrint(u8 taskId)
 {
     if (!RunTextPrintersAndIsPrinter0Active())
+<<<<<<< HEAD
         //gTasks[taskId].func = Task_NewGameBirchSpeech_WaitPressBeforeNameChoice;
         gTasks[taskId].func = Task_NewGameBirchSpeech_StartNamingScreen;
+=======
+        gTasks[taskId].func = Task_NewGameBirchSpeech_WaitPressBeforeNameChoice;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void Task_NewGameBirchSpeech_WaitPressBeforeNameChoice(u8 taskId)
@@ -1971,8 +2114,13 @@ static void CB2_NewGameBirchSpeech_ReturnFromNamingScreen(void)
     DmaFill32(3, 0, OAM, OAM_SIZE);
     DmaFill16(3, 0, PLTT, PLTT_SIZE);
     ResetPaletteFade();
+<<<<<<< HEAD
     LZ77UnCompVram(sBirchSpeechShadowGfx, (u8 *)VRAM);
     LZ77UnCompVram(sBirchSpeechBgMap, (u8 *)(BG_SCREEN_ADDR(7)));
+=======
+    DecompressDataWithHeaderVram(sBirchSpeechShadowGfx, (u8 *)VRAM);
+    DecompressDataWithHeaderVram(sBirchSpeechBgMap, (u8 *)(BG_SCREEN_ADDR(7)));
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     LoadPalette(sBirchSpeechBgPals, BG_PLTT_ID(0), 2 * PLTT_SIZE_4BPP);
     LoadPalette(&sBirchSpeechBgGradientPal[1], BG_PLTT_ID(0) + 1, PLTT_SIZEOF(8));
     ResetTasks();
@@ -2017,7 +2165,11 @@ static void CB2_NewGameBirchSpeech_ReturnFromNamingScreen(void)
     SetMainCallback2(CB2_MainMenu);
     InitWindows(sNewGameBirchSpeechTextWindows);
     LoadMainMenuWindowFrameTiles(0, 0xF3);
+<<<<<<< HEAD
     LoadMessageBoxGfx(0, 0xFC, BG_PLTT_ID(15));
+=======
+    LoadMessageBoxGfx(0, BIRCH_DLG_BASE_TILE_NUM, BG_PLTT_ID(15));
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     PutWindowTilemap(0);
     CopyWindowToVram(0, COPYWIN_FULL);
 }
@@ -2037,7 +2189,11 @@ static void SpriteCB_MovePlayerDownWhileShrinking(struct Sprite *sprite)
 
 static u8 NewGameBirchSpeech_CreateLotadSprite(u8 x, u8 y)
 {
+<<<<<<< HEAD
     return CreateMonPicSprite_Affine(SPECIES_WOOPER, SHINY_ODDS, 0, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
+=======
+    return CreateMonPicSprite_Affine(SPECIES_LOTAD, FALSE, 0, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void AddBirchSpeechObjects(u8 taskId)
@@ -2057,12 +2213,20 @@ static void AddBirchSpeechObjects(u8 taskId)
     gSprites[lotadSpriteId].oam.priority = 0;
     gSprites[lotadSpriteId].invisible = TRUE;
     gTasks[taskId].tLotadSpriteId = lotadSpriteId;
+<<<<<<< HEAD
     brendanSpriteId = CreateTrainerSprite(FacilityClassToPicIndex(FACILITY_CLASS_BRENDAN), 120, 60, 0, &gDecompressionBuffer[0]);
+=======
+    brendanSpriteId = CreateTrainerSprite(FacilityClassToPicIndex(FACILITY_CLASS_BRENDAN), 120, 60, 0, NULL);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gSprites[brendanSpriteId].callback = SpriteCB_Null;
     gSprites[brendanSpriteId].invisible = TRUE;
     gSprites[brendanSpriteId].oam.priority = 0;
     gTasks[taskId].tBrendanSpriteId = brendanSpriteId;
+<<<<<<< HEAD
     maySpriteId = CreateTrainerSprite(FacilityClassToPicIndex(FACILITY_CLASS_MAY), 120, 60, 0, &gDecompressionBuffer[TRAINER_PIC_SIZE]);
+=======
+    maySpriteId = CreateTrainerSprite(FacilityClassToPicIndex(FACILITY_CLASS_MAY), 120, 60, 0, NULL);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gSprites[maySpriteId].callback = SpriteCB_Null;
     gSprites[maySpriteId].invisible = TRUE;
     gSprites[maySpriteId].oam.priority = 0;
@@ -2264,6 +2428,7 @@ static s8 NewGameBirchSpeech_ProcessGenderMenuInput(void)
     return Menu_ProcessInputNoWrap();
 }
 
+<<<<<<< HEAD
 static void NewGameBirchSpeech_ShowDifficultyMenu(void)
 {
     DrawMainMenuWindowBorder(&sNewGameBirchSpeechTextWindows[3], 0xF3);
@@ -2279,6 +2444,8 @@ static s8 NewGameBirchSpeech_ProcessDifficultyMenuInput(void)
     return Menu_ProcessInputNoWrap();
 }
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 void NewGameBirchSpeech_SetDefaultPlayerName(u8 nameId)
 {
     const u8 *name;
@@ -2345,7 +2512,11 @@ static void MainMenu_FormatSavegamePokedex(void)
             dexCount = GetHoennPokedexCount(FLAG_GET_CAUGHT);
         StringExpandPlaceholders(gStringVar4, gText_ContinueMenuPokedex);
         AddTextPrinterParameterized3(2, FONT_NORMAL, 0, 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, gStringVar4);
+<<<<<<< HEAD
         ConvertIntToDecimalStringN(str, dexCount, STR_CONV_MODE_LEFT_ALIGN, 3);
+=======
+        ConvertIntToDecimalStringN(str, dexCount, STR_CONV_MODE_LEFT_ALIGN, 4);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         AddTextPrinterParameterized3(2, FONT_NORMAL, GetStringRightAlignXOffset(FONT_NORMAL, str, 100), 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, str);
     }
 }
@@ -2356,12 +2527,16 @@ static void MainMenu_FormatSavegameBadges(void)
     u8 badgeCount = 0;
     u32 i;
 
+<<<<<<< HEAD
     // First 8 badges (contiguous flags)
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     for (i = FLAG_BADGE01_GET; i < FLAG_BADGE01_GET + NUM_BADGES; i++)
     {
         if (FlagGet(i))
             badgeCount++;
     }
+<<<<<<< HEAD
 
     // Kanto 8 badges (non-contiguous flags)
     if (FlagGet(FLAG_DEFEATED_PEWTER_GYM))      badgeCount++;
@@ -2386,6 +2561,14 @@ static void MainMenu_FormatSavegameBadges(void)
 }
 
 
+=======
+    StringExpandPlaceholders(gStringVar4, gText_ContinueMenuBadges);
+    AddTextPrinterParameterized3(2, FONT_NORMAL, 0x6C, 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, gStringVar4);
+    ConvertIntToDecimalStringN(str, badgeCount, STR_CONV_MODE_LEADING_ZEROS, 1);
+    AddTextPrinterParameterized3(2, FONT_NORMAL, GetStringRightAlignXOffset(FONT_NORMAL, str, 0xD0), 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, str);
+}
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static void LoadMainMenuWindowFrameTiles(u8 bgId, u16 tileOffset)
 {
     LoadBgTiles(bgId, GetWindowFrameTilesPal(gSaveBlock2Ptr->optionsWindowFrameType)->tiles, 0x120, tileOffset);
@@ -2433,6 +2616,7 @@ static void NewGameBirchSpeech_ClearGenderWindow(u8 windowId, bool8 copyToVram)
         CopyWindowToVram(windowId, COPYWIN_FULL);
 }
 
+<<<<<<< HEAD
 static void NewGameBirchSpeech_ClearDifficultyWindowTilemap(u8 bg, u8 x, u8 y, u8 width, u8 height, u8 unused)
 {
     FillBgTilemapBufferRect(bg, 0, x + 255, y + 255, width + 2, height + 4, 2);
@@ -2447,6 +2631,8 @@ static void NewGameBirchSpeech_ClearDifficultyWindow(u8 windowId, bool8 copyToVr
         CopyWindowToVram(windowId, COPYWIN_FULL);
 }
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static void NewGameBirchSpeech_ClearWindow(u8 windowId)
 {
     u8 bgColor = GetFontAttribute(FONT_NORMAL, FONTATTR_COLOR_BACKGROUND);
@@ -2487,6 +2673,7 @@ static void NewGameBirchSpeech_ShowDialogueWindow(u8 windowId, u8 copyToVram)
 
 static void NewGameBirchSpeech_CreateDialogueWindowBorder(u8 bg, u8 x, u8 y, u8 width, u8 height, u8 palNum)
 {
+<<<<<<< HEAD
     FillBgTilemapBufferRect(bg, 0xFD,  x-2,       y-1, 1,       1, palNum);
     FillBgTilemapBufferRect(bg, 0xFF,  x-1,       y-1, 1,       1, palNum);
     FillBgTilemapBufferRect(bg, 0x100, x,         y-1, width,   1, palNum);
@@ -2501,6 +2688,22 @@ static void NewGameBirchSpeech_CreateDialogueWindowBorder(u8 bg, u8 x, u8 y, u8 
     FillBgTilemapBufferRect(bg, BG_TILE_V_FLIP(0x100), x,         y+height, width-1, 1, palNum);
     FillBgTilemapBufferRect(bg, BG_TILE_V_FLIP(0x101), x+width-1, y+height, 1,       1, palNum);
     FillBgTilemapBufferRect(bg, BG_TILE_V_FLIP(0x102), x+width,   y+height, 1,       1, palNum);
+=======
+    FillBgTilemapBufferRect(bg, BIRCH_DLG_BASE_TILE_NUM +  1, x-2,       y-1, 1,       1, palNum);
+    FillBgTilemapBufferRect(bg, BIRCH_DLG_BASE_TILE_NUM +  3, x-1,       y-1, 1,       1, palNum);
+    FillBgTilemapBufferRect(bg, BIRCH_DLG_BASE_TILE_NUM +  4, x,         y-1, width,   1, palNum);
+    FillBgTilemapBufferRect(bg, BIRCH_DLG_BASE_TILE_NUM +  5, x+width-1, y-1, 1,       1, palNum);
+    FillBgTilemapBufferRect(bg, BIRCH_DLG_BASE_TILE_NUM +  6, x+width,   y-1, 1,       1, palNum);
+    FillBgTilemapBufferRect(bg, BIRCH_DLG_BASE_TILE_NUM +  7, x-2,       y,   1,       5, palNum);
+    FillBgTilemapBufferRect(bg, BIRCH_DLG_BASE_TILE_NUM +  9, x-1,       y,   width+1, 5, palNum);
+    FillBgTilemapBufferRect(bg, BIRCH_DLG_BASE_TILE_NUM + 10, x+width,   y,   1,       5, palNum);
+
+    FillBgTilemapBufferRect(bg, BG_TILE_V_FLIP(BIRCH_DLG_BASE_TILE_NUM + 1), x-2,       y+height, 1,       1, palNum);
+    FillBgTilemapBufferRect(bg, BG_TILE_V_FLIP(BIRCH_DLG_BASE_TILE_NUM + 3), x-1,       y+height, 1,       1, palNum);
+    FillBgTilemapBufferRect(bg, BG_TILE_V_FLIP(BIRCH_DLG_BASE_TILE_NUM + 4), x,         y+height, width-1, 1, palNum);
+    FillBgTilemapBufferRect(bg, BG_TILE_V_FLIP(BIRCH_DLG_BASE_TILE_NUM + 5), x+width-1, y+height, 1,       1, palNum);
+    FillBgTilemapBufferRect(bg, BG_TILE_V_FLIP(BIRCH_DLG_BASE_TILE_NUM + 6), x+width,   y+height, 1,       1, palNum);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void Task_NewGameBirchSpeech_ReturnFromNamingScreenShowTextbox(u8 taskId)

@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 .set LOCALID_WALDAS_DAD, 6
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 RustboroCity_Flat1_2F_MapScripts::
 	.byte 0
 

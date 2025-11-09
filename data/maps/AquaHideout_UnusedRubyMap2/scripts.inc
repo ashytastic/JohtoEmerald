@@ -1,4 +1,5 @@
 AquaHideout_UnusedRubyMap2_MapScripts::
+<<<<<<< HEAD
 	map_script MAP_SCRIPT_ON_RESUME, AquaHideout_UnusedRubyMap2_OnResume
 	map_script MAP_SCRIPT_ON_LOAD, AquaHideout_UnusedRubyMap2_OnLoad
 	map_script MAP_SCRIPT_ON_TRANSITION, AquaHideout_UnusedRubyMap2_OnTransition
@@ -136,3 +137,7 @@ AquaHideout_UnusedRubyMap2_EventScript_RanFromRegieleki::
 	setvar VAR_0x8004, SPECIES_REGIELEKI
 	goto Common_EventScript_LegendaryFlewAway
 	end
+=======
+	.byte 0
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

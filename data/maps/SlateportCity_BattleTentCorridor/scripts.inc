@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 .set LOCALID_ATTENDANT, 1
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 SlateportCity_BattleTentCorridor_MapScripts::
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, SlateportCity_BattleTentCorridor_OnFrame
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, SlateportCity_BattleTentCorridor_OnWarp
@@ -14,10 +17,17 @@ SlateportCity_BattleTentCorridor_OnWarp:
 SlateportCity_BattleTentCorridor_EventScript_SetUpObjects::
 	setvar VAR_TEMP_1, 1
 	goto_if_ne VAR_0x8006, 1, SlateportCity_BattleTentCorridor_EventScript_TurnPlayerNorth
+<<<<<<< HEAD
 	setobjectxy LOCALID_ATTENDANT, 2, 2
 	turnobject LOCALID_ATTENDANT, DIR_SOUTH
 SlateportCity_BattleTentCorridor_EventScript_TurnPlayerNorth::
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+=======
+	setobjectxy LOCALID_SLATEPORT_TENT_CORRIDOR_ATTENDANT, 2, 2
+	turnobject LOCALID_SLATEPORT_TENT_CORRIDOR_ATTENDANT, DIR_SOUTH
+SlateportCity_BattleTentCorridor_EventScript_TurnPlayerNorth::
+	turnobject LOCALID_PLAYER, DIR_NORTH
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 SlateportCity_BattleTentCorridor_OnFrame:
@@ -27,8 +37,13 @@ SlateportCity_BattleTentCorridor_OnFrame:
 SlateportCity_BattleTentCorridor_EventScript_EnterCorridor::
 	goto_if_eq VAR_0x8006, 1, SlateportCity_BattleTentCorridor_EventScript_ReturnToRoomFromBattle
 	setvar VAR_TEMP_0, 1
+<<<<<<< HEAD
 	applymovement LOCALID_ATTENDANT, SlateportCity_BattleTentCorridor_Movement_AttendantEnter
 	applymovement OBJ_EVENT_ID_PLAYER, SlateportCity_BattleTentCorridor_Movement_PlayerEnter
+=======
+	applymovement LOCALID_SLATEPORT_TENT_CORRIDOR_ATTENDANT, SlateportCity_BattleTentCorridor_Movement_AttendantEnter
+	applymovement LOCALID_PLAYER, SlateportCity_BattleTentCorridor_Movement_PlayerEnter
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	goto_if_eq VAR_0x8006, 2, SlateportCity_BattleTentCorridor_EventScript_ResumeChallenge
 	slateporttent_generaterentalmons
@@ -40,12 +55,21 @@ SlateportCity_BattleTentCorridor_EventScript_EnterCorridor::
 SlateportCity_BattleTentCorridor_EventScript_EnterBattleRoom::
 	msgbox BattleFrontier_BattleFactoryPreBattleRoom_Text_RightThisWay, MSGBOX_DEFAULT
 	closemessage
+<<<<<<< HEAD
 	applymovement LOCALID_ATTENDANT, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	opendoor 2, 1
 	waitdooranim
 	applymovement LOCALID_ATTENDANT, SlateportCity_BattleTentCorridor_Movement_AttendantExit
 	applymovement OBJ_EVENT_ID_PLAYER, SlateportCity_BattleTentCorridor_Movement_PlayerExit
+=======
+	applymovement LOCALID_SLATEPORT_TENT_CORRIDOR_ATTENDANT, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	opendoor 2, 1
+	waitdooranim
+	applymovement LOCALID_SLATEPORT_TENT_CORRIDOR_ATTENDANT, SlateportCity_BattleTentCorridor_Movement_AttendantExit
+	applymovement LOCALID_PLAYER, SlateportCity_BattleTentCorridor_Movement_PlayerExit
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	closedoor 2, 1
 	waitdooranim

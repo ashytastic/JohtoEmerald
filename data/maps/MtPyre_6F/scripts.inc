@@ -23,7 +23,11 @@ MtPyre_6F_EventScript_RematchValerie::
 	end
 
 MtPyre_6F_EventScript_Cedric::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_GRUNT_8, MtPyre_6F_Text_CedricIntro, MtPyre_6F_Text_CedricDefeat
+=======
+	trainerbattle_single TRAINER_CEDRIC, MtPyre_6F_Text_CedricIntro, MtPyre_6F_Text_CedricDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox MtPyre_6F_Text_CedricPostBattle, MSGBOX_AUTOCLOSE
 	end
 

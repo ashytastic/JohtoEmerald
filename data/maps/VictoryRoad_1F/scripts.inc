@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .set LOCALID_WALLY_ENTRANCE, 4
 
 VictoryRoad_1F_MapScripts::
@@ -7,11 +8,19 @@ VictoryRoad_1F_MapScripts::
 
 VictoryRoad_1F_OnTransition:
 	callnative SetTimeBasedEncounters
+=======
+VictoryRoad_1F_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, VictoryRoad_1F_OnTransition
+	.byte 0
+
+VictoryRoad_1F_OnTransition:
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call_if_eq VAR_VICTORY_ROAD_1F_STATE, 1, VictoryRoad_1F_EventScript_SetEntranceWallyPos1
 	call_if_eq VAR_VICTORY_ROAD_1F_STATE, 2, VictoryRoad_1F_EventScript_SetEntranceWallyPos2
 	end
 
 VictoryRoad_1F_EventScript_SetEntranceWallyPos1::
+<<<<<<< HEAD
 	setobjectxyperm LOCALID_WALLY_ENTRANCE, 2, 24
 	setobjectmovementtype LOCALID_WALLY_ENTRANCE, MOVEMENT_TYPE_FACE_DOWN
 	return
@@ -19,13 +28,27 @@ VictoryRoad_1F_EventScript_SetEntranceWallyPos1::
 VictoryRoad_1F_EventScript_SetEntranceWallyPos2::
 	setobjectxyperm LOCALID_WALLY_ENTRANCE, 3, 24
 	setobjectmovementtype LOCALID_WALLY_ENTRANCE, MOVEMENT_TYPE_FACE_DOWN
+=======
+	setobjectxyperm LOCALID_VICTORY_ROAD_ENTRANCE_WALLY, 2, 24
+	setobjectmovementtype LOCALID_VICTORY_ROAD_ENTRANCE_WALLY, MOVEMENT_TYPE_FACE_DOWN
+	return
+
+VictoryRoad_1F_EventScript_SetEntranceWallyPos2::
+	setobjectxyperm LOCALID_VICTORY_ROAD_ENTRANCE_WALLY, 3, 24
+	setobjectmovementtype LOCALID_VICTORY_ROAD_ENTRANCE_WALLY, MOVEMENT_TYPE_FACE_DOWN
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	return
 
 VictoryRoad_1F_EventScript_WallyBattleTrigger1::
 	lockall
 	setvar VAR_0x8008, 1
+<<<<<<< HEAD
 	addobject LOCALID_WALLY_ENTRANCE
 	applymovement LOCALID_WALLY_ENTRANCE, VictoryRoad_1F_Movement_WallyApproachPlayer1
+=======
+	addobject LOCALID_VICTORY_ROAD_ENTRANCE_WALLY
+	applymovement LOCALID_VICTORY_ROAD_ENTRANCE_WALLY, VictoryRoad_1F_Movement_WallyApproachPlayer1
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	goto VictoryRoad_1F_EventScript_WallyEntranceBattle
 	end
@@ -33,20 +56,34 @@ VictoryRoad_1F_EventScript_WallyBattleTrigger1::
 VictoryRoad_1F_EventScript_WallyBattleTrigger2::
 	lockall
 	setvar VAR_0x8008, 2
+<<<<<<< HEAD
 	addobject LOCALID_WALLY_ENTRANCE
 	applymovement LOCALID_WALLY_ENTRANCE, VictoryRoad_1F_Movement_WallyApproachPlayer2
+=======
+	addobject LOCALID_VICTORY_ROAD_ENTRANCE_WALLY
+	applymovement LOCALID_VICTORY_ROAD_ENTRANCE_WALLY, VictoryRoad_1F_Movement_WallyApproachPlayer2
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	goto VictoryRoad_1F_EventScript_WallyEntranceBattle
 	end
 
 VictoryRoad_1F_EventScript_WallyEntranceBattle::
+<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
+=======
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	msgbox VictoryRoad_1F_Text_WallyNotGoingToLoseAnymore, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_WALLY_VR_1, VictoryRoad_1F_Text_WallyEntranceDefeat
 	msgbox VictoryRoad_1F_Text_WallyPostEntranceBattle, MSGBOX_DEFAULT
+<<<<<<< HEAD
 	clearflag FLAG_GARBAGEFLAG
 	copyobjectxytoperm LOCALID_WALLY_ENTRANCE
+=======
+	clearflag FLAG_HIDE_VICTORY_ROAD_ENTRANCE_WALLY
+	copyobjectxytoperm LOCALID_VICTORY_ROAD_ENTRANCE_WALLY
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setflag FLAG_DEFEATED_WALLY_VICTORY_ROAD
 	copyvar VAR_VICTORY_ROAD_1F_STATE, VAR_0x8008
 	releaseall

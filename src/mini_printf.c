@@ -35,8 +35,13 @@
 #include "mini_printf.h"
 #include "gba/types.h"
 #include "gba/defines.h"
+<<<<<<< HEAD
 #include "config.h"
 #include "characters.h"
+=======
+#include "config/general.h"
+#include "constants/characters.h"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include "string_util.h"
 
 #ifndef NDEBUG
@@ -86,6 +91,11 @@ static inline char mini_pchar_decode(char encoded)
         ret = '('; // opening parentheses
     else if (encoded == CHAR_RIGHT_PAREN)
         ret = ')'; // closing parentheses
+<<<<<<< HEAD
+=======
+    else if (encoded == CHAR_HYPHEN)
+        ret = '-'; // hyphen
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     return ret;
 }
 
@@ -102,8 +112,15 @@ static s32 _putsAscii(char *s, s32 len, void *buf)
     p0 = b->buffer;
 
     /* Copy to buffer */
+<<<<<<< HEAD
     for (i = 0; i < len; i++) {
         if(b->pbuffer == b->buffer + b->buffer_len - 1) {
+=======
+    for (i = 0; i < len; i++)
+    {
+        if(b->pbuffer == b->buffer + b->buffer_len - 1)
+        {
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             break;
         }
         *(b->pbuffer ++) = s[i];
@@ -125,11 +142,45 @@ static s32 _putsEncoded(char *s, s32 len, void *buf)
     p0 = b->buffer;
 
     /* Copy to buffer */
+<<<<<<< HEAD
     for (i = 0; i < len; i++) {
         if(b->pbuffer == b->buffer + b->buffer_len - 1) {
             break;
         }
         *(b->pbuffer ++) = mini_pchar_decode(s[i]);
+=======
+    for (i = 0; i < len; i++)
+    {
+        if(b->pbuffer == b->buffer + b->buffer_len - 1)
+        {
+            break;
+        }
+        if (s[i] == CHAR_NEWLINE)
+        {
+            *(b->pbuffer ++) = '\\';
+            *(b->pbuffer ++) = 'n';
+        }
+        else if (s[i] == CHAR_PROMPT_SCROLL)
+        {
+            *(b->pbuffer ++) = '\\';
+            *(b->pbuffer ++) = 'l';
+        }
+        else if (s[i] == CHAR_PROMPT_CLEAR)
+        {
+            *(b->pbuffer ++) = '\\';
+            *(b->pbuffer ++) = 'p';
+        }
+        else if (s[i] == CHAR_ELLIPSIS)
+        {
+            *(b->pbuffer ++) = '.';
+            *(b->pbuffer ++) = '.';
+            *(b->pbuffer ++) = '.';
+        }
+        else
+        {
+            *(b->pbuffer ++) = mini_pchar_decode(s[i]);
+        }
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
     *(b->pbuffer) = 0;
     return b->pbuffer - p0;
@@ -137,9 +188,15 @@ static s32 _putsEncoded(char *s, s32 len, void *buf)
 
 static s32 mini_strlen(const char *s)
 {
+<<<<<<< HEAD
 	s32 len = 0;
 	while (s[len] != '\0') len++;
 	return len;
+=======
+    s32 len = 0;
+    while (s[len] != '\0') len++;
+    return len;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static s32 mini_itoa(s32 value, u32 radix, s32 uppercase, bool32 unsig, char *buffer)
@@ -184,6 +241,7 @@ static s32 mini_itoa(s32 value, u32 radix, s32 uppercase, bool32 unsig, char *bu
     return len;
 }
 
+<<<<<<< HEAD
 static s32 mini_pad(char* ptr, s32 len, char pad_char, s32 pad_to, char *buffer)
 {
     s32 i;
@@ -192,6 +250,17 @@ static s32 mini_pad(char* ptr, s32 len, char pad_char, s32 pad_to, char *buffer)
     if(pad_to == 0)
         pad_to = len;
     if (len > pad_to) {
+=======
+static s32 mini_pad(char *ptr, s32 len, char pad_char, s32 pad_to, char *buffer)
+{
+    s32 i;
+    bool32 overflow = FALSE;
+    char *pbuffer = buffer;
+    if(pad_to == 0)
+        pad_to = len;
+    if (len > pad_to)
+    {
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         len = pad_to;
         overflow = TRUE;
     }
@@ -229,7 +298,11 @@ s32 mini_vsnprintf(char *buffer, u32 buffer_len, const char *fmt, va_list va)
     return b.pbuffer - b.buffer;
 }
 
+<<<<<<< HEAD
 s32 mini_vpprintf(void* buf, const char *fmt, va_list va)
+=======
+s32 mini_vpprintf(void *buf, const char *fmt, va_list va)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     char bf[24];
     char bf2[24];
@@ -243,7 +316,12 @@ s32 mini_vpprintf(void* buf, const char *fmt, va_list va)
         {
             len = 1;
             len = _putsAscii(&ch, len, buf);
+<<<<<<< HEAD
         } else
+=======
+        }
+        else
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         {
             char pad_char = ' ';
             s32 pad_to = 0;
@@ -279,7 +357,12 @@ s32 mini_vpprintf(void* buf, const char *fmt, va_list va)
                     if(l)
                     {
                         len = mini_itoa(va_arg(va, u32), 10, 0, (ch=='u'), bf2);
+<<<<<<< HEAD
                     } else
+=======
+                    }
+                    else
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                     {
                         if(ch == 'u')
                         {
@@ -321,7 +404,12 @@ s32 mini_vpprintf(void* buf, const char *fmt, va_list va)
                     {
                         len = mini_pad(ptr, len, pad_char, pad_to, bf);
                         len = _putsAscii(bf, len, buf);
+<<<<<<< HEAD
                     } else
+=======
+                    }
+                    else
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                     {
                         len = _putsAscii(ptr, len, buf);
                     }
@@ -333,7 +421,12 @@ s32 mini_vpprintf(void* buf, const char *fmt, va_list va)
                     {
                         len = mini_pad(ptr, len, pad_char, pad_to, bf);
                         len = _putsEncoded(bf, len, buf);
+<<<<<<< HEAD
                     } else
+=======
+                    }
+                    else
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                     {
                         len = _putsEncoded(ptr, len, buf);
                     }

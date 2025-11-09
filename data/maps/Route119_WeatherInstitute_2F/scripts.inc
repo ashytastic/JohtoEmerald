@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .set LOCALID_GRUNT_1, 1
 .set LOCALID_GRUNT_2, 2
 .set LOCALID_SHELLY, 3
@@ -5,6 +6,8 @@
 .set LOCALID_GRUNT_3, 7
 .set LOCALID_GRUNT_4, 8
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 Route119_WeatherInstitute_2F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route119_WeatherInstitute_2F_OnTransition
 	.byte 0
@@ -16,6 +19,7 @@ Route119_WeatherInstitute_2F_OnTransition:
 	end
 
 Route119_WeatherInstitute_2F_EventScript_SetScientistPosAquaHere::
+<<<<<<< HEAD
 	setobjectxyperm LOCALID_SCIENTIST, 1, 6
 	setobjectmovementtype LOCALID_SCIENTIST, MOVEMENT_TYPE_FACE_RIGHT
 	return
@@ -32,41 +36,84 @@ Route119_WeatherInstitute_2F_EventScript_SetScientistPosGameClear::
 
 Route119_WeatherInstitute_2F_EventScript_Grunt5::
 	trainerbattle_single TRAINER_BUGSY_1, Route119_WeatherInstitute_2F_Text_Grunt5Intro, Route119_WeatherInstitute_2F_Text_Grunt5Defeat
+=======
+	setobjectxyperm LOCALID_WEATHER_INSTITUTE_2F_SCIENTIST, 1, 6
+	setobjectmovementtype LOCALID_WEATHER_INSTITUTE_2F_SCIENTIST, MOVEMENT_TYPE_FACE_RIGHT
+	return
+
+Route119_WeatherInstitute_2F_EventScript_SetScientistPosAquaGone::
+	setobjectxyperm LOCALID_WEATHER_INSTITUTE_2F_SCIENTIST, 4, 6
+	setobjectmovementtype LOCALID_WEATHER_INSTITUTE_2F_SCIENTIST, MOVEMENT_TYPE_FACE_RIGHT
+	return
+
+Route119_WeatherInstitute_2F_EventScript_SetScientistPosGameClear::
+	setobjectxyperm LOCALID_WEATHER_INSTITUTE_2F_SCIENTIST, 2, 2
+	setobjectmovementtype LOCALID_WEATHER_INSTITUTE_2F_SCIENTIST, MOVEMENT_TYPE_FACE_UP
+	return
+
+Route119_WeatherInstitute_2F_EventScript_Grunt5::
+	trainerbattle_single TRAINER_GRUNT_WEATHER_INST_5, Route119_WeatherInstitute_2F_Text_Grunt5Intro, Route119_WeatherInstitute_2F_Text_Grunt5Defeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route119_WeatherInstitute_2F_Text_Grunt5PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route119_WeatherInstitute_2F_EventScript_Grunt2::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_ZUKI, Route119_WeatherInstitute_2F_Text_Grunt2Intro, Route119_WeatherInstitute_2F_Text_Grunt2Defeat
+=======
+	trainerbattle_single TRAINER_GRUNT_WEATHER_INST_2, Route119_WeatherInstitute_2F_Text_Grunt2Intro, Route119_WeatherInstitute_2F_Text_Grunt2Defeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route119_WeatherInstitute_2F_Text_Grunt2PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route119_WeatherInstitute_2F_EventScript_Grunt3::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_FALKNER_1, Route119_WeatherInstitute_2F_Text_Grunt3Intro, Route119_WeatherInstitute_2F_Text_Grunt3Defeat
+=======
+	trainerbattle_single TRAINER_GRUNT_WEATHER_INST_3, Route119_WeatherInstitute_2F_Text_Grunt3Intro, Route119_WeatherInstitute_2F_Text_Grunt3Defeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route119_WeatherInstitute_2F_Text_Grunt3PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route119_WeatherInstitute_2F_EventScript_Shelly::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_DEVIN, Route119_WeatherInstitute_2F_Text_ShellyIntro, Route119_WeatherInstitute_2F_Text_ShellyDefeat, Route119_WeatherInstitute_2F_EventScript_ShellyDefeated
+=======
+	trainerbattle_single TRAINER_SHELLY_WEATHER_INSTITUTE, Route119_WeatherInstitute_2F_Text_ShellyIntro, Route119_WeatherInstitute_2F_Text_ShellyDefeat, Route119_WeatherInstitute_2F_EventScript_ShellyDefeated
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route119_WeatherInstitute_2F_Text_ShellyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route119_WeatherInstitute_2F_EventScript_ShellyDefeated::
 	msgbox Route119_WeatherInstitute_2F_Text_ShellyPostBattle, MSGBOX_DEFAULT
 	closemessage
+<<<<<<< HEAD
 	addobject LOCALID_GRUNT_3
 	applymovement LOCALID_GRUNT_3, Route119_WeatherInstitute_2F_Movement_GruntApproachShelly
 	applymovement OBJ_EVENT_ID_PLAYER, Route119_WeatherInstitute_2F_Movement_ShovePlayerOutOfWay
+=======
+	addobject LOCALID_WEATHER_INSTITUTE_2F_GRUNT_3
+	applymovement LOCALID_WEATHER_INSTITUTE_2F_GRUNT_3, Route119_WeatherInstitute_2F_Movement_GruntApproachShelly
+	applymovement LOCALID_PLAYER, Route119_WeatherInstitute_2F_Movement_ShovePlayerOutOfWay
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	msgbox Route119_WeatherInstitute_2F_Text_TeamMagmaJustPassedBy, MSGBOX_DEFAULT
 	closemessage
 	playse SE_PIN
+<<<<<<< HEAD
 	applymovement LOCALID_SHELLY, Common_Movement_ExclamationMark
 	waitmovement 0
 	applymovement LOCALID_SHELLY, Common_Movement_Delay48
+=======
+	applymovement LOCALID_WEATHER_INSTITUTE_2F_SHELLY, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_WEATHER_INSTITUTE_2F_SHELLY, Common_Movement_Delay48
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	msgbox Route119_WeatherInstitute_2F_Text_WeHaveToHurryToMtPyre, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_WEATHER_INSTITUTE_STATE, 1
+<<<<<<< HEAD
 	clearflag FLAG_GARBAGEFLAG
 	fadedefaultbgm
 	fadescreen FADE_TO_BLACK
@@ -83,13 +130,36 @@ Route119_WeatherInstitute_2F_EventScript_ShellyDefeated::
 	applymovement LOCALID_SCIENTIST, Route119_WeatherInstitute_2F_Movement_ScientistApproachPlayer
 	waitmovement 0
 	copyobjectxytoperm LOCALID_SCIENTIST
+=======
+	clearflag FLAG_HIDE_WEATHER_INSTITUTE_2F_WORKERS
+	fadedefaultbgm
+	fadescreen FADE_TO_BLACK
+	setflag FLAG_HIDE_ROUTE_119_TEAM_AQUA
+	setflag FLAG_HIDE_WEATHER_INSTITUTE_2F_AQUA_GRUNT_M
+	removeobject LOCALID_WEATHER_INSTITUTE_2F_GRUNT_1
+	removeobject LOCALID_WEATHER_INSTITUTE_2F_GRUNT_2
+	removeobject LOCALID_WEATHER_INSTITUTE_2F_SHELLY
+	removeobject LOCALID_WEATHER_INSTITUTE_2F_GRUNT_4
+	removeobject LOCALID_WEATHER_INSTITUTE_2F_GRUNT_3
+	applymovement LOCALID_PLAYER, Route119_WeatherInstitute_2F_Movement_PlayerReturnToPosition
+	waitmovement 0
+	fadescreen FADE_FROM_BLACK
+	applymovement LOCALID_WEATHER_INSTITUTE_2F_SCIENTIST, Route119_WeatherInstitute_2F_Movement_ScientistApproachPlayer
+	waitmovement 0
+	copyobjectxytoperm LOCALID_WEATHER_INSTITUTE_2F_SCIENTIST
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto Route119_WeatherInstitute_2F_EventScript_ReceiveCastform
 	end
 
 Route119_WeatherInstitute_2F_EventScript_ReceiveCastform::
 	msgbox Route119_WeatherInstitute_2F_Text_ThanksPleaseTakePokemon, MSGBOX_DEFAULT
+<<<<<<< HEAD
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CASTFORM
 	givemon SPECIES_CASTFORM, 25, ITEM_MYSTIC_WATER
+=======
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CASTFORM_NORMAL
+	givemon SPECIES_CASTFORM_NORMAL, 25, ITEM_MYSTIC_WATER
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Route119_WeatherInstitute_2F_EventScript_ReceiveCastformParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Route119_WeatherInstitute_2F_EventScript_ReceiveCastformPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -97,8 +167,11 @@ Route119_WeatherInstitute_2F_EventScript_ReceiveCastform::
 
 Route119_WeatherInstitute_2F_EventScript_ReceiveCastformParty::
 	call Route119_WeatherInstitute_2F_EventScript_ReceivedCastformFanfare
+<<<<<<< HEAD
 	specialvar VAR_RESULT, IsNuzlockeNicknamingActive
 	goto_if_eq VAR_RESULT, TRUE, Route119_WeatherInstitute_2F_EventScript_ReceiveCastformParty_Nuzlocke
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, Route119_WeatherInstitute_2F_EventScript_ExplainCastform
 	call Common_EventScript_GetGiftMonPartySlot
@@ -106,6 +179,7 @@ Route119_WeatherInstitute_2F_EventScript_ReceiveCastformParty::
 	goto Route119_WeatherInstitute_2F_EventScript_ExplainCastform
 	end
 
+<<<<<<< HEAD
 Route119_WeatherInstitute_2F_EventScript_ReceiveCastformParty_Nuzlocke::
 	call Common_EventScript_GetGiftMonPartySlot
 	call Common_EventScript_NameReceivedPartyMon
@@ -116,17 +190,24 @@ Route119_WeatherInstitute_2F_EventScript_ReceiveCastformPC::
 	call Route119_WeatherInstitute_2F_EventScript_ReceivedCastformFanfare
 	specialvar VAR_RESULT, IsNuzlockeNicknamingActive
 	goto_if_eq VAR_RESULT, TRUE, Route119_WeatherInstitute_2F_EventScript_ReceiveCastformPC_Nuzlocke
+=======
+Route119_WeatherInstitute_2F_EventScript_ReceiveCastformPC::
+	call Route119_WeatherInstitute_2F_EventScript_ReceivedCastformFanfare
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, Route119_WeatherInstitute_2F_EventScript_SendCastformToPC
 	call Common_EventScript_NameReceivedBoxMon
 	goto Route119_WeatherInstitute_2F_EventScript_SendCastformToPC
 	end
 
+<<<<<<< HEAD
 Route119_WeatherInstitute_2F_EventScript_ReceiveCastformPC_Nuzlocke::
 	call Common_EventScript_NameReceivedBoxMon
 	goto Route119_WeatherInstitute_2F_EventScript_SendCastformToPC
 	end
 	
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 Route119_WeatherInstitute_2F_EventScript_SendCastformToPC::
 	call Common_EventScript_TransferredToPC
 	goto Route119_WeatherInstitute_2F_EventScript_ExplainCastform
@@ -137,7 +218,11 @@ Route119_WeatherInstitute_2F_EventScript_ReceivedCastformFanfare::
 	message Route119_WeatherInstitute_2F_Text_PlayerReceivedCastform
 	waitmessage
 	waitfanfare
+<<<<<<< HEAD
 	bufferspeciesname STR_VAR_1, SPECIES_CASTFORM
+=======
+	bufferspeciesname STR_VAR_1, SPECIES_CASTFORM_NORMAL
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	return
 
 Route119_WeatherInstitute_2F_EventScript_ExplainCastform::

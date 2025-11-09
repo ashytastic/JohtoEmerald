@@ -45,7 +45,11 @@ extern u32 *gTrainerHillVBlankCounter;
 
 void CallTrainerHillFunction(void);
 void ResetTrainerHillResults(void);
+<<<<<<< HEAD
 u8 GetTrainerHillOpponentClass(u16 trainerId);
+=======
+enum TrainerClassID GetTrainerHillOpponentClass(u16 trainerId);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 void GetTrainerHillTrainerName(u8 *dst, u16 trainerId);
 u8 GetTrainerHillTrainerFrontSpriteId(u16 trainerId);
 void InitTrainerHillBattleStruct(void);

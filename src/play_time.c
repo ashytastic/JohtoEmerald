@@ -1,6 +1,11 @@
 #include "global.h"
 #include "play_time.h"
+<<<<<<< HEAD
 #include "rtc_include.h"
+=======
+#include "fake_rtc.h"
+#include "field_player_avatar.h"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 enum
 {
@@ -40,15 +45,23 @@ void PlayTimeCounter_Update(void)
         return;
 
     gSaveBlock2Ptr->playTimeVBlanks++;
+<<<<<<< HEAD
+=======
+    UpdateSpinData();
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     if (gSaveBlock2Ptr->playTimeVBlanks < 60)
         return;
 
     gSaveBlock2Ptr->playTimeVBlanks = 0;
     gSaveBlock2Ptr->playTimeSeconds++;
+<<<<<<< HEAD
 
     if (gSaveBlock1Ptr->tx_Features_RTCType == 1)
         RtcAdvanceTime(0, 0, 24); //Every 1 second in real life, advance "rtc" by 0 hours, 0 minutes, 24 seconds
+=======
+    FakeRtc_TickTimeForward();
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     if (gSaveBlock2Ptr->playTimeSeconds < 60)
         return;

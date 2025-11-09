@@ -28,6 +28,7 @@
 void HandleCommonInclude(std::string filename, std::string sourcePath, std::string symOrderPath, std::string lang)
 {
     auto commonSymbols = GetCommonSymbols(sourcePath, filename);
+<<<<<<< HEAD
     std::size_t dotIndex;
 
     if (filename[0] == '*') {
@@ -76,6 +77,21 @@ void HandleCommonInclude(std::string filename, std::string sourcePath, std::stri
         }
 
         symFile.ExpectEmptyRestOfLine();
+=======
+
+    for (const auto& commonSym : commonSymbols)
+    {
+        unsigned long size = commonSym.second;
+
+        int alignment = 4;
+        if (size > 4)
+            alignment = 8;
+        if (size > 8)
+            alignment = 16;
+        printf(". = ALIGN(%d);\n", alignment);
+        printf("%s = .;\n", commonSym.first.c_str());
+        printf(". += 0x%lX;\n", size);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
 }
 

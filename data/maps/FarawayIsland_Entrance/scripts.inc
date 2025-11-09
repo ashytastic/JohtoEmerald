@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 .set LOCALID_SAILOR, 1
 .set LOCALID_SS_TIDAL, 2
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 FarawayIsland_Entrance_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, FarawayIsland_Entrance_OnTransition
 	.byte 0
@@ -29,10 +32,17 @@ FarawayIsland_Entrance_EventScript_Sailor::
 	applymovement VAR_LAST_TALKED, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	delay 30
+<<<<<<< HEAD
 	hideobjectat LOCALID_SAILOR, MAP_FARAWAY_ISLAND_ENTRANCE
 	setvar VAR_0x8004, LOCALID_SS_TIDAL
 	call Common_EventScript_FerryDepartIsland
 	warpsilent MAP_OLIVINE_CITY_PORT_INSIDE, 8, 16
+=======
+	hideobjectat LOCALID_FARAWAY_ISLAND_SAILOR, MAP_FARAWAY_ISLAND_ENTRANCE
+	setvar VAR_0x8004, LOCALID_FARAWAY_ISLAND_SS_TIDAL
+	call Common_EventScript_FerryDepartIsland
+	warp MAP_LILYCOVE_CITY_HARBOR, 8, 11
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitstate
 	release
 	end
@@ -43,6 +53,7 @@ FarawayIsland_Entrance_EventScript_AsYouLike::
 	end
 
 FarawayIsland_Entrance_EventScript_Sign::
+<<<<<<< HEAD
 	msgbox FarawayIsland_Entrance_Text_Sign2, MSGBOX_SIGN
 	closemessage
 	end
@@ -54,3 +65,8 @@ FarawayIsland_Entrance_Text_Sign2:
 	.string "sets foot here.. again..et it\l"
 	.string "be a kindhearted pers.. ..ith\l"
 	.string "that hope, I depar..$"
+=======
+	msgbox FarawayIsland_Entrance_Text_Sign, MSGBOX_SIGN
+	end
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

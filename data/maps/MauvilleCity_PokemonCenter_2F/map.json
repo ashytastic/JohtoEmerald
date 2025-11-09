@@ -3,7 +3,11 @@
   "name": "MauvilleCity_PokemonCenter_2F",
   "layout": "LAYOUT_POKEMON_CENTER_2F",
   "music": "MUS_POKE_CENTER",
+<<<<<<< HEAD
   "region_map_section": "MAPSEC_BLACKTHORN_CITY",
+=======
+  "region_map_section": "MAPSEC_MAUVILLE_CITY",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -12,10 +16,17 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+<<<<<<< HEAD
   "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_KURT",
+=======
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_TEALA",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 6,
       "y": 2,
       "elevation": 0,
@@ -28,7 +39,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_KURT",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_TEALA",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 2,
       "y": 2,
       "elevation": 3,
@@ -41,7 +56,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_KURT",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_TEALA",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 10,
       "y": 2,
       "elevation": 0,
@@ -78,6 +97,7 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MauvilleCity_PokemonCenter_2F_EventScript_Youngster",
       "flag": "0"
+<<<<<<< HEAD
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_EUSINE",
@@ -91,6 +111,8 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_DoWonderTrade",
       "flag": "0"
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "warp_events": [
@@ -116,10 +138,15 @@
       "dest_warp_id": "0"
     }
   ],
+<<<<<<< HEAD
   "coord_events": [
 
   ],
   "bg_events": [
 
   ]
+=======
+  "coord_events": [],
+  "bg_events": []
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }

@@ -1,8 +1,14 @@
 	.include "MPlayDef.s"
 
+<<<<<<< HEAD
 	.equ	se_m_harden_grp, voicegroup128
 	.equ	se_m_harden_pri, 4
 	.equ	se_m_harden_rev, 0
+=======
+	.equ	se_m_harden_grp, voicegroup_rs_sfx_2
+	.equ	se_m_harden_pri, 4
+	.equ	se_m_harden_rev, reverb_set+50
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.equ	se_m_harden_mvl, 127
 	.equ	se_m_harden_key, 0
 	.equ	se_m_harden_tbs, 1

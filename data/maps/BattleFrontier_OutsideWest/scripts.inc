@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .set LOCALID_SS_TIDAL, 2
 .set LOCALID_FERRY_ATTENDANT, 3
 .set LOCALID_MANIAC_1, 9
@@ -14,6 +15,13 @@ BattleFrontier_OutsideWest_MapScripts::
 
 BattleFrontier_OutsideWest_OnTransition:
 	callnative SetTimeBasedEncounters
+=======
+BattleFrontier_OutsideWest_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, BattleFrontier_OutsideWest_OnTransition
+	.byte 0
+
+BattleFrontier_OutsideWest_OnTransition:
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setvar VAR_BRAVO_TRAINER_BATTLE_TOWER_ON, 0
 	setflag FLAG_HIDE_BATTLE_TOWER_REPORTER
 	end
@@ -74,8 +82,13 @@ BattleFrontier_OutsideWest_EventScript_BoardFerry::
 	applymovement VAR_LAST_TALKED, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	delay 30
+<<<<<<< HEAD
 	hideobjectat LOCALID_FERRY_ATTENDANT, MAP_BATTLE_FRONTIER_OUTSIDE_WEST
 	setvar VAR_0x8004, LOCALID_SS_TIDAL
+=======
+	hideobjectat LOCALID_FRONTIER_FERRY_ATTENDANT, MAP_BATTLE_FRONTIER_OUTSIDE_WEST
+	setvar VAR_0x8004, LOCALID_FRONTIER_SS_TIDAL
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call Common_EventScript_FerryDepartIsland
 	return
 
@@ -115,7 +128,11 @@ BattleFrontier_OutsideWest_EventScript_Fisherman2::
 	faceplayer
 	message BattleFrontier_OutsideWest_Text_GotSeasickOnWayHere
 	waitmessage
+<<<<<<< HEAD
 	applymovement LOCALID_FISHERMAN_2, Common_Movement_FaceAwayPlayer
+=======
+	applymovement LOCALID_FRONTIER_FISHERMAN_2, Common_Movement_FaceAwayPlayer
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	waitbuttonpress
 	release
@@ -136,16 +153,28 @@ BattleFrontier_OutsideWest_EventScript_Maniac2::
 	end
 
 BattleFrontier_OutsideWest_EventScript_FactoryChallengersTalk::
+<<<<<<< HEAD
 	applymovement LOCALID_MANIAC_1, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	msgbox BattleFrontier_OutsideWest_Text_SureWeCanChallengeWithNoMons, MSGBOX_DEFAULT
 	applymovement LOCALID_MANIAC_2, Common_Movement_WalkInPlaceFasterLeft
+=======
+	applymovement LOCALID_FRONTIER_MANIAC_1, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	msgbox BattleFrontier_OutsideWest_Text_SureWeCanChallengeWithNoMons, MSGBOX_DEFAULT
+	applymovement LOCALID_FRONTIER_MANIAC_2, Common_Movement_WalkInPlaceFasterLeft
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	msgbox BattleFrontier_OutsideWest_Text_BigGuySaidIllLendYouMons, MSGBOX_DEFAULT
 	closemessage
 	delay 25
+<<<<<<< HEAD
 	applymovement LOCALID_MANIAC_1, Common_Movement_WalkInPlaceFasterUp
 	applymovement LOCALID_MANIAC_2, Common_Movement_WalkInPlaceFasterUp
+=======
+	applymovement LOCALID_FRONTIER_MANIAC_1, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_FRONTIER_MANIAC_2, Common_Movement_WalkInPlaceFasterUp
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	release
 	end
@@ -163,7 +192,11 @@ BattleFrontier_OutsideWest_EventScript_Camper::
 	end
 
 BattleFrontier_OutsideWest_EventScript_CamperFaceFactory::
+<<<<<<< HEAD
 	applymovement LOCALID_CAMPER, Common_Movement_WalkInPlaceFasterUp
+=======
+	applymovement LOCALID_FRONTIER_CAMPER, Common_Movement_WalkInPlaceFasterUp
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
@@ -184,22 +217,38 @@ BattleFrontier_OutsideWest_EventScript_Girl::
 	end
 
 BattleFrontier_OutsideWest_EventScript_GirlShudderNorth::
+<<<<<<< HEAD
 	applymovement LOCALID_GIRL, BattleFrontier_OutsideWest_Movement_GirlShudderNorth
+=======
+	applymovement LOCALID_FRONTIER_GIRL, BattleFrontier_OutsideWest_Movement_GirlShudderNorth
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 BattleFrontier_OutsideWest_EventScript_GirlShudderSouth::
+<<<<<<< HEAD
 	applymovement LOCALID_GIRL, BattleFrontier_OutsideWest_Movement_GirlShudderSouth
+=======
+	applymovement LOCALID_FRONTIER_GIRL, BattleFrontier_OutsideWest_Movement_GirlShudderSouth
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 BattleFrontier_OutsideWest_EventScript_GirlShudderWest::
+<<<<<<< HEAD
 	applymovement LOCALID_GIRL, BattleFrontier_OutsideWest_Movement_GirlShudderWest
+=======
+	applymovement LOCALID_FRONTIER_GIRL, BattleFrontier_OutsideWest_Movement_GirlShudderWest
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 BattleFrontier_OutsideWest_EventScript_GirlShudderEast::
+<<<<<<< HEAD
 	applymovement LOCALID_GIRL, BattleFrontier_OutsideWest_Movement_GirlShudderEast
+=======
+	applymovement LOCALID_FRONTIER_GIRL, BattleFrontier_OutsideWest_Movement_GirlShudderEast
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
@@ -300,7 +349,11 @@ BattleFrontier_OutsideWest_EventScript_Man4::
 	faceplayer
 	msgbox BattleFrontier_OutsideWest_Text_FansOverThereUsedToBeTrainers, MSGBOX_DEFAULT
 	closemessage
+<<<<<<< HEAD
 	applymovement LOCALID_MAN_4, Common_Movement_FaceOriginalDirection
+=======
+	applymovement LOCALID_FRONTIER_MAN_4, Common_Movement_FaceOriginalDirection
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	release
 	end

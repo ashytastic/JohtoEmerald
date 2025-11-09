@@ -784,7 +784,11 @@ static void AshGrassPerStepCallback(u8 taskId)
 // and hole metatiles, such as gTileset_MirageTower.
 static void SetCrackedFloorHoleMetatile(s16 x, s16 y)
 {
+<<<<<<< HEAD
     u16 metatileId = MapGridGetMetatileIdAt(x, y) == METATILE_IceCave_38_IcePath_CrackedFloor ? METATILE_IceCave_38_IcePath_CrackedFloorHole : METATILE_IceCave_38_IcePath_CrackedFloorHole;
+=======
+    u16 metatileId = MapGridGetMetatileIdAt(x, y) == METATILE_Cave_CrackedFloor ? METATILE_Cave_CrackedFloor_Hole : METATILE_Pacifidlog_SkyPillar_CrackedFloor_Hole;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     MapGridSetMetatileIdAt(x, y, metatileId);
     CurrentMapDrawMetatileAt(x, y);
 }

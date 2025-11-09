@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 gBirchDexRatingText_GoFindMrPokemon::
 	.string "PROF. ELM: Ah, {PLAYER}{KUN}!\p"
 	.string "Have you found MR. POKéMON's\n"
@@ -11,6 +12,10 @@ gBirchDexRatingText_Robbery::
 
 gBirchDexRatingText_AreYouCurious::
 	.string "PROF. ELM: Ah, {PLAYER}{KUN}!\p"
+=======
+gBirchDexRatingText_AreYouCurious::
+	.string "PROF. BIRCH: Ah, {PLAYER}{KUN}!\p"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.string "Are you curious about how your\n"
 	.string "POKéDEX is coming along?$"
 
@@ -77,9 +82,14 @@ gBirchDexRatingText_LessThan120::
 	.string "found using ROCK SMASH.$"
 
 gBirchDexRatingText_LessThan130::
+<<<<<<< HEAD
 	.string "I've heard of POKéMON that evolve\n"
 	.string "when they come to fully love their\l"
 	.string "TRAINERS.$"
+=======
+	.string "You should get some more POKéMON\n"
+	.string "by trading with others.$"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 gBirchDexRatingText_LessThan140::
 	.string "I've heard of POKéMON that evolve\n"
@@ -88,7 +98,11 @@ gBirchDexRatingText_LessThan140::
 
 gBirchDexRatingText_LessThan150::
 	.string "I had no idea that there were so\n"
+<<<<<<< HEAD
 	.string "many POKéMON species in the JOHTO\l"
+=======
+	.string "many POKéMON species in the HOENN\l"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.string "region.$"
 
 gBirchDexRatingText_LessThan160::
@@ -99,7 +113,11 @@ gBirchDexRatingText_LessThan160::
 
 gBirchDexRatingText_LessThan170::
 	.string "One can get a very good idea about\n"
+<<<<<<< HEAD
 	.string "the POKéMON of the JOHTO region\l"
+=======
+	.string "the POKéMON of the HOENN region\l"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.string "by looking through your POKéDEX.$"
 
 gBirchDexRatingText_LessThan180::
@@ -125,6 +143,7 @@ gBirchDexRatingText_OnANationwideBasis::
 	.string "On a nationwide basis…\p"
 	.string "You've seen {STR_VAR_1} POKéMON,\n"
 	.string "and you've caught {STR_VAR_2} POKéMON…$"
+<<<<<<< HEAD
 
 gBirchDexRatingText_CaughtAllNational::
 	.string "Hmhm…\n"
@@ -134,3 +153,5 @@ gBirchDexRatingText_CaughtAllNational::
 	.string "That's incredible, {PLAYER}!\p"
 	.string "You've completed the NATIONAL\n"
 	.string "POKéDEX! Congratulations!$"
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

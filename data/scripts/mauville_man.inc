@@ -18,7 +18,11 @@ MauvilleCity_PokemonCenter_1F_EventScript_Bard::
 	end
 
 MauvilleCity_PokemonCenter_1F_EventScript_PlaySong::
+<<<<<<< HEAD
 	setvar VAR_0x8004, 0
+=======
+	setvar VAR_0x8004, FALSE  @ Play his current song
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	special PlayBardSong
 	delay 60
 	special HasBardSongBeenChanged
@@ -45,7 +49,11 @@ MauvilleCity_PokemonCenter_1F_EventScript_WriteLyrics::
 	faceplayer
 	goto_if_eq VAR_RESULT, 0, MauvilleCity_PokemonCenter_1F_EventScript_DeclineWritingLyrics
 	msgbox MauvilleCity_PokemonCenter_1F_Text_LetMeSingItForYou, MSGBOX_DEFAULT
+<<<<<<< HEAD
 	setvar VAR_0x8004, 1
+=======
+	setvar VAR_0x8004, TRUE  @ Play the new song
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	special PlayBardSong
 	delay 60
 	msgbox MauvilleCity_PokemonCenter_1F_Text_ThatHowYouWantedSongToGo, MSGBOX_YESNO

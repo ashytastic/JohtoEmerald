@@ -3,7 +3,11 @@
   "name": "SlateportCity_OceanicMuseum_1F",
   "layout": "LAYOUT_SLATEPORT_CITY_OCEANIC_MUSEUM_1F",
   "music": "MUS_OCEANIC_MUSEUM",
+<<<<<<< HEAD
   "region_map_section": "MAPSEC_MAHOGANY_TOWN",
+=======
+  "region_map_section": "MAPSEC_SLATEPORT_CITY",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -12,7 +16,11 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+<<<<<<< HEAD
   "connections": 0,
+=======
+  "connections": null,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_BEAUTY",
@@ -28,7 +36,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 18,
       "y": 5,
       "elevation": 3,
@@ -38,10 +50,17 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SlateportCity_OceanicMuseum_1F_EventScript_MuseumGrunt3",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
+=======
+      "flag": "FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_AQUA_GRUNTS"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 12,
       "y": 2,
       "elevation": 3,
@@ -51,10 +70,17 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SlateportCity_OceanicMuseum_1F_EventScript_MuseumGrunt4",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
+=======
+      "flag": "FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_AQUA_GRUNTS"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 2,
       "y": 8,
       "elevation": 3,
@@ -64,10 +90,17 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SlateportCity_OceanicMuseum_1F_EventScript_MuseumGrunt2",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_F",
+=======
+      "flag": "FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_AQUA_GRUNTS"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_F",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 3,
       "y": 4,
       "elevation": 3,
@@ -77,10 +110,17 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SlateportCity_OceanicMuseum_1F_EventScript_MuseumGrunt1",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
+=======
+      "flag": "FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_AQUA_GRUNTS"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 14,
       "y": 4,
       "elevation": 3,
@@ -90,7 +130,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SlateportCity_OceanicMuseum_1F_EventScript_MuseumGrunt5",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
+=======
+      "flag": "FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_AQUA_GRUNTS"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BEAUTY",
@@ -106,7 +150,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 8,
       "y": 3,
       "elevation": 3,
@@ -116,10 +164,17 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SlateportCity_OceanicMuseum_1F_EventScript_MuseumGrunt6",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WORKER_F",
+=======
+      "flag": "FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_AQUA_GRUNTS"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 4,
       "y": 2,
       "elevation": 3,
@@ -129,10 +184,17 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SlateportCity_OceanicMuseum_1F_EventScript_MuseumPatron1",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SUPER_NERD",
+=======
+      "flag": "FLAG_HIDE_SLATEPORT_MUSEUM_POPULATION"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MANIAC",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 10,
       "y": 2,
       "elevation": 3,
@@ -142,10 +204,17 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SlateportCity_OceanicMuseum_1F_EventScript_MuseumPatron2",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ATTENDANT_M",
+=======
+      "flag": "FLAG_HIDE_SLATEPORT_MUSEUM_POPULATION"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKEFAN_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 17,
       "y": 7,
       "elevation": 3,
@@ -155,7 +224,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SlateportCity_OceanicMuseum_1F_EventScript_MuseumPatron3",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
+=======
+      "flag": "FLAG_HIDE_SLATEPORT_MUSEUM_POPULATION"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_GIRL",
@@ -168,10 +241,18 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SlateportCity_OceanicMuseum_1F_EventScript_MuseumPatron4",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
+=======
+      "flag": "FLAG_HIDE_SLATEPORT_MUSEUM_POPULATION"
+    },
+    {
+      "local_id": "LOCALID_OCEANIC_MUSEUM_FAMILIAR_GRUNT",
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 9,
       "y": 4,
       "elevation": 3,
@@ -181,10 +262,17 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SlateportCity_OceanicMuseum_1F_EventScript_FamiliarGrunt",
+<<<<<<< HEAD
       "flag": "FLAG_ITEM_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FIREBREATHER",
+=======
+      "flag": "FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_FAMILIAR_AQUA_GRUNT"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_REPORTER_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 7,
       "y": 4,
       "elevation": 3,
@@ -194,7 +282,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SlateportCity_OceanicMuseum_1F_EventScript_Reporter",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
+=======
+      "flag": "FLAG_HIDE_SLATEPORT_MUSEUM_POPULATION"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "warp_events": [

@@ -1,10 +1,14 @@
+<<<<<<< HEAD
 .set LOCALID_TWIN, 2
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 VerdanturfTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, VerdanturfTown_OnTransition
 	.byte 0
 
 VerdanturfTown_OnTransition:
+<<<<<<< HEAD
 	setflag FLAG_VISITED_OLIVINE_CITY
 	setvar VAR_GARBAGEVAR, 0
 	end
@@ -17,19 +21,33 @@ VerdanturfTown_LickyEvo_Text:
 	.string "LICKITUNG evolves by rolling around.\n"
 	.string "Try doing that!$"
 
+=======
+	setflag FLAG_VISITED_VERDANTURF_TOWN
+	setvar VAR_CONTEST_HALL_STATE, 0
+	end
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 VerdanturfTown_EventScript_Twin::
 	lock
 	faceplayer
 	goto_if_set FLAG_RUSTURF_TUNNEL_OPENED, VerdanturfTown_EventScript_TwinTunnelOpen
 	msgbox VerdanturfTown_Text_ManTryingToDigTunnel, MSGBOX_DEFAULT
+<<<<<<< HEAD
 	applymovement LOCALID_TWIN, Common_Movement_FaceOriginalDirection
+=======
+	applymovement LOCALID_VERDANTURF_TWIN, Common_Movement_FaceOriginalDirection
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	release
 	end
 
 VerdanturfTown_EventScript_TwinTunnelOpen::
 	msgbox VerdanturfTown_Text_ManDugTunnelForLove, MSGBOX_DEFAULT
+<<<<<<< HEAD
 	applymovement LOCALID_TWIN, Common_Movement_FaceOriginalDirection
+=======
+	applymovement LOCALID_VERDANTURF_TWIN, Common_Movement_FaceOriginalDirection
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	release
 	end

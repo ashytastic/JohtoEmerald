@@ -14,7 +14,11 @@ static EWRAM_DATA u16 sOtIdDigit = 0;
 static const u16 sLotteryPrizes[] =
 {
     ITEM_PP_UP,
+<<<<<<< HEAD
     ITEM_MACHO_BRACE,
+=======
+    ITEM_EXP_SHARE,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ITEM_MAX_REVIVE,
     ITEM_MASTER_BALL,
 };
@@ -23,9 +27,13 @@ static u8 GetMatchingDigits(u16, u16);
 
 void ResetLotteryCorner(void)
 {
+<<<<<<< HEAD
     u16 rand = Random();
 
     SetLotteryNumber((Random() << 16) | rand);
+=======
+    SetLotteryNumber(Random32());
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     VarSet(VAR_POKELOT_PRIZE_ITEM, 0);
 }
 
@@ -76,7 +84,13 @@ void PickLotteryCornerTicket(void)
             }
         }
         else // Pokémon are always arranged from populated spots first to unpopulated, so the moment a NONE species is found, that's the end of the list.
+<<<<<<< HEAD
             break;
+=======
+        {
+            break;
+        }
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
 
     for (i = 0; i < TOTAL_BOXES_COUNT; i++)
@@ -134,7 +148,13 @@ static u8 GetMatchingDigits(u16 winNumber, u16 otId)
             matchingDigits++;
         }
         else
+<<<<<<< HEAD
             break;
+=======
+        {
+            break;
+        }
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
     return matchingDigits;
 }

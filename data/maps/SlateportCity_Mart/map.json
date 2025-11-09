@@ -3,7 +3,11 @@
   "name": "SlateportCity_Mart",
   "layout": "LAYOUT_MART",
   "music": "MUS_POKE_MART",
+<<<<<<< HEAD
   "region_map_section": "MAPSEC_MAHOGANY_TOWN",
+=======
+  "region_map_section": "MAPSEC_SLATEPORT_CITY",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -12,10 +16,18 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+<<<<<<< HEAD
   "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_CLERK",
+=======
+  "connections": null,
+  "object_events": [
+    {
+      "local_id": "LOCALID_SLATEPORT_MART_CLERK",
+      "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 1,
       "y": 3,
       "elevation": 3,
@@ -41,7 +53,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_MAN",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 5,
       "y": 5,
       "elevation": 3,
@@ -52,6 +68,7 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SlateportCity_Mart_EventScript_Man",
       "flag": "0"
+<<<<<<< HEAD
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CLERK",
@@ -65,6 +82,8 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SlateportCity_Mart_EventScript_Clerk2",
       "flag": "0"
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "warp_events": [
@@ -83,10 +102,15 @@
       "dest_warp_id": "1"
     }
   ],
+<<<<<<< HEAD
   "coord_events": [
 
   ],
   "bg_events": [
 
   ]
+=======
+  "coord_events": [],
+  "bg_events": []
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }

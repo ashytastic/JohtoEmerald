@@ -23,6 +23,10 @@
 #include <cstdlib>
 #include <cstdio>
 #include <limits>
+<<<<<<< HEAD
+=======
+#include <cstdint>
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 namespace json11 {
 
@@ -33,7 +37,10 @@ using std::vector;
 using std::map;
 using std::make_shared;
 using std::initializer_list;
+<<<<<<< HEAD
 using std::move;
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 /* Helper for representing null - just a do-nothing struct, plus comparison
  * operators so the helpers in JsonValue work. We can't use nullptr_t because
@@ -149,7 +156,11 @@ protected:
 
     // Constructors
     explicit Value(const T &value) : m_value(value) {}
+<<<<<<< HEAD
     explicit Value(T &&value)      : m_value(move(value)) {}
+=======
+    explicit Value(T &&value)      : m_value(std::move(value)) {}
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     // Get type tag
     Json::Type type() const override {
@@ -196,7 +207,11 @@ class JsonString final : public Value<Json::STRING, string> {
     const string &string_value() const override { return m_value; }
 public:
     explicit JsonString(const string &value) : Value(value) {}
+<<<<<<< HEAD
     explicit JsonString(string &&value)      : Value(move(value)) {}
+=======
+    explicit JsonString(string &&value)      : Value(std::move(value)) {}
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 class JsonArray final : public Value<Json::ARRAY, Json::array> {
@@ -204,7 +219,11 @@ class JsonArray final : public Value<Json::ARRAY, Json::array> {
     const Json & operator[](size_t i) const override;
 public:
     explicit JsonArray(const Json::array &value) : Value(value) {}
+<<<<<<< HEAD
     explicit JsonArray(Json::array &&value)      : Value(move(value)) {}
+=======
+    explicit JsonArray(Json::array &&value)      : Value(std::move(value)) {}
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 class JsonObject final : public Value<Json::OBJECT, Json::object> {
@@ -212,7 +231,11 @@ class JsonObject final : public Value<Json::OBJECT, Json::object> {
     const Json & operator[](const string &key) const override;
 public:
     explicit JsonObject(const Json::object &value) : Value(value) {}
+<<<<<<< HEAD
     explicit JsonObject(Json::object &&value)      : Value(move(value)) {}
+=======
+    explicit JsonObject(Json::object &&value)      : Value(std::move(value)) {}
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 class JsonNull final : public Value<Json::NUL, NullStruct> {
@@ -254,12 +277,21 @@ Json::Json(double value)               : m_ptr(make_shared<JsonDouble>(value)) {
 Json::Json(int value)                  : m_ptr(make_shared<JsonInt>(value)) {}
 Json::Json(bool value)                 : m_ptr(value ? statics().t : statics().f) {}
 Json::Json(const string &value)        : m_ptr(make_shared<JsonString>(value)) {}
+<<<<<<< HEAD
 Json::Json(string &&value)             : m_ptr(make_shared<JsonString>(move(value))) {}
 Json::Json(const char * value)         : m_ptr(make_shared<JsonString>(value)) {}
 Json::Json(const Json::array &values)  : m_ptr(make_shared<JsonArray>(values)) {}
 Json::Json(Json::array &&values)       : m_ptr(make_shared<JsonArray>(move(values))) {}
 Json::Json(const Json::object &values) : m_ptr(make_shared<JsonObject>(values)) {}
 Json::Json(Json::object &&values)      : m_ptr(make_shared<JsonObject>(move(values))) {}
+=======
+Json::Json(string &&value)             : m_ptr(make_shared<JsonString>(std::move(value))) {}
+Json::Json(const char * value)         : m_ptr(make_shared<JsonString>(value)) {}
+Json::Json(const Json::array &values)  : m_ptr(make_shared<JsonArray>(values)) {}
+Json::Json(Json::array &&values)       : m_ptr(make_shared<JsonArray>(std::move(values))) {}
+Json::Json(const Json::object &values) : m_ptr(make_shared<JsonObject>(values)) {}
+Json::Json(Json::object &&values)      : m_ptr(make_shared<JsonObject>(std::move(values))) {}
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 /* * * * * * * * * * * * * * * * * * * *
  * Accessors
@@ -357,7 +389,11 @@ struct JsonParser final {
      * Mark this parse as failed.
      */
     Json fail(string &&msg) {
+<<<<<<< HEAD
         return fail(move(msg), Json());
+=======
+        return fail(std::move(msg), Json());
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
 
     template <typename T>

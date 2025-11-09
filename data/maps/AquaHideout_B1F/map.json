@@ -12,10 +12,17 @@
   "allow_running": false,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_AQUA",
+<<<<<<< HEAD
   "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
+=======
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 28,
       "y": 16,
       "elevation": 3,
@@ -25,10 +32,17 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "4",
       "script": "AquaHideout_B1F_EventScript_Grunt2",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
+=======
+      "flag": "FLAG_HIDE_AQUA_HIDEOUT_GRUNTS"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 6,
       "y": 6,
       "elevation": 3,
@@ -38,7 +52,11 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "5",
       "script": "AquaHideout_B1F_EventScript_Grunt3",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
+=======
+      "flag": "FLAG_HIDE_AQUA_HIDEOUT_GRUNTS"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -49,12 +67,21 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
+<<<<<<< HEAD
       "trainer_sight_or_berry_tree_id": "0",
       "script": "AquaHideout_B1F_EventScript_ItemMaxElixir",
       "flag": "FLAG_ITEM_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_F",
+=======
+      "trainer_sight_or_berry_tree_id": "ITEM_MAX_ELIXIR",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_AQUA_HIDEOUT_B1F_MAX_ELIXIR"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_F",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 20,
       "y": 18,
       "elevation": 3,
@@ -64,7 +91,11 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "4",
       "script": "AquaHideout_B1F_EventScript_Grunt5",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
+=======
+      "flag": "FLAG_HIDE_AQUA_HIDEOUT_GRUNTS"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -75,9 +106,15 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
+<<<<<<< HEAD
       "trainer_sight_or_berry_tree_id": "0",
       "script": "AquaHideout_B1F_EventScript_ItemMasterBall",
       "flag": "FLAG_GARBAGEFLAG"
+=======
+      "trainer_sight_or_berry_tree_id": "ITEM_MASTER_BALL",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_AQUA_HIDEOUT_B1F_MASTER_BALL"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -90,7 +127,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "AquaHideout_B1F_EventScript_Electrode1",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
+=======
+      "flag": "FLAG_HIDE_AQUA_HIDEOUT_B1F_ELECTRODE_1"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -101,9 +142,15 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
+<<<<<<< HEAD
       "trainer_sight_or_berry_tree_id": "0",
       "script": "AquaHideout_B1F_EventScript_ItemNugget",
       "flag": "FLAG_GARBAGEFLAG"
+=======
+      "trainer_sight_or_berry_tree_id": "ITEM_NUGGET",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_AQUA_HIDEOUT_B1F_NUGGET"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -116,10 +163,17 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "AquaHideout_B1F_EventScript_Electrode2",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_F",
+=======
+      "flag": "FLAG_HIDE_AQUA_HIDEOUT_B1F_ELECTRODE_2"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_F",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 28,
       "y": 21,
       "elevation": 3,
@@ -129,7 +183,11 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "4",
       "script": "AquaHideout_B1F_EventScript_Grunt7",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
+=======
+      "flag": "FLAG_HIDE_AQUA_HIDEOUT_GRUNTS"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "warp_events": [
@@ -309,10 +367,15 @@
       "dest_warp_id": "19"
     }
   ],
+<<<<<<< HEAD
   "coord_events": [
 
   ],
   "bg_events": [
 
   ]
+=======
+  "coord_events": [],
+  "bg_events": []
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }

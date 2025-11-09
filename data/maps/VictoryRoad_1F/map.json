@@ -12,10 +12,17 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+<<<<<<< HEAD
   "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN",
+=======
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 33,
       "y": 22,
       "elevation": 3,
@@ -28,7 +35,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_WORKER_F",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 6,
       "y": 15,
       "elevation": 4,
@@ -41,7 +52,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_MAN",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 27,
       "y": 34,
       "elevation": 3,
@@ -54,7 +69,12 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_SILVER",
+=======
+      "local_id": "LOCALID_VICTORY_ROAD_ENTRANCE_WALLY",
+      "graphics_id": "OBJ_EVENT_GFX_WALLY",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 12,
       "y": 25,
       "elevation": 4,
@@ -64,7 +84,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "VictoryRoad_1F_EventScript_EntranceWally",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
+=======
+      "flag": "FLAG_HIDE_VICTORY_ROAD_ENTRANCE_WALLY"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -75,9 +99,15 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
+<<<<<<< HEAD
       "trainer_sight_or_berry_tree_id": "0",
       "script": "VictoryRoad_1F_EventScript_ItemMaxElixir",
       "flag": "FLAG_ITEM_GARBAGEFLAG"
+=======
+      "trainer_sight_or_berry_tree_id": "ITEM_MAX_ELIXIR",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_VICTORY_ROAD_1F_MAX_ELIXIR"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -88,12 +118,21 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
+<<<<<<< HEAD
       "trainer_sight_or_berry_tree_id": "0",
       "script": "VictoryRoad_1F_EventScript_ItemPPUp",
       "flag": "FLAG_ITEM_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SILVER",
+=======
+      "trainer_sight_or_berry_tree_id": "ITEM_PP_UP",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_VICTORY_ROAD_1F_PP_UP"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WALLY",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 31,
       "y": 9,
       "elevation": 3,
@@ -103,10 +142,17 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "VictoryRoad_1F_EventScript_ExitWally",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WORKER_F",
+=======
+      "flag": "FLAG_HIDE_VICTORY_ROAD_EXIT_WALLY"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 29,
       "y": 17,
       "elevation": 3,
@@ -119,8 +165,13 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_MAN",
       "x": 33,
+=======
+      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+      "x": 32,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "y": 17,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",

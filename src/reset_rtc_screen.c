@@ -1,6 +1,10 @@
 #include "global.h"
 #include "reset_rtc_screen.h"
 #include "event_data.h"
+<<<<<<< HEAD
+=======
+#include "fake_rtc.h"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include "main.h"
 #include "menu.h"
 #include "palette.h"
@@ -41,7 +45,14 @@ enum {
 #define tWindowId  data[8]
 
 enum {
+<<<<<<< HEAD
     SELECTION_DAYS = 1,
+=======
+    SELECTION_DAYS_1000 = 1,
+    SELECTION_DAYS_100,
+    SELECTION_DAYS_10,
+    SELECTION_DAYS_1,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     SELECTION_HOURS,
     SELECTION_MINS,
     SELECTION_SECS,
@@ -49,11 +60,23 @@ enum {
     SELECTION_NONE
 };
 
+<<<<<<< HEAD
+=======
+enum {
+    WIN_TIME,
+    WIN_MSG,
+};
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 struct ResetRtcInputMap
 {
     /*0x0*/ u8 dataIndex;
     /*0x2*/ u16 minVal;
     /*0x4*/ u16 maxVal;
+<<<<<<< HEAD
+=======
+            u16 increment;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     /*0x6*/ u8 left;
     /*0x7*/ u8 right;
     /*0x8*/ u8 unk; // never read
@@ -79,7 +102,11 @@ static const struct BgTemplate sBgTemplates[] =
 
 static const struct WindowTemplate sWindowTemplates[] =
 {
+<<<<<<< HEAD
     {
+=======
+    [WIN_TIME] = {
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .bg = 0,
         .tilemapLeft = 1,
         .tilemapTop = 1,
@@ -88,7 +115,11 @@ static const struct WindowTemplate sWindowTemplates[] =
         .paletteNum = 15,
         .baseBlock = 0x155
     },
+<<<<<<< HEAD
     {
+=======
+    [WIN_MSG] = {
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .bg = 0,
         .tilemapLeft = 2,
         .tilemapTop = 15,
@@ -112,43 +143,104 @@ static const struct WindowTemplate sInputTimeWindow = {
 
 static const struct ResetRtcInputMap sInputMap[] =
 {
+<<<<<<< HEAD
     [SELECTION_DAYS - 1] = {
         .dataIndex = DATAIDX_DAYS,
         .minVal = 1,
         .maxVal = 9999,
+=======
+    [SELECTION_DAYS_1000 - 1] = {
+        .dataIndex = DATAIDX_DAYS,
+        .minVal = 1,
+        .maxVal = 9999,
+        .increment = 1000,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .left = 0,
         .right = 2,
         .unk = 0,
     },
+<<<<<<< HEAD
+=======
+    [SELECTION_DAYS_100 - 1] = {
+        .dataIndex = DATAIDX_DAYS,
+        .minVal = 1,
+        .maxVal = 9999,
+        .increment = 100,
+        .left = 1,
+        .right = 3,
+        .unk = 0,
+    },
+    [SELECTION_DAYS_10 - 1] = {
+        .dataIndex = DATAIDX_DAYS,
+        .minVal = 1,
+        .maxVal = 9999,
+        .increment = 10,
+        .left = 2,
+        .right = 4,
+        .unk = 0,
+    },
+    [SELECTION_DAYS_1 - 1] = {
+        .dataIndex = DATAIDX_DAYS,
+        .minVal = 1,
+        .maxVal = 9999,
+        .increment = 1,
+        .left = 3,
+        .right = 5,
+        .unk = 0,
+    },
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     [SELECTION_HOURS - 1] = {
         .dataIndex = DATAIDX_HOURS,
         .minVal = 0,
         .maxVal = 23,
+<<<<<<< HEAD
         .left = 1,
         .right = 3,
+=======
+        .increment = 1,
+        .left = 4,
+        .right = 6,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .unk = 0,
     },
     [SELECTION_MINS - 1] = {
         .dataIndex = DATAIDX_MINS,
         .minVal = 0,
         .maxVal = 59,
+<<<<<<< HEAD
         .left = 2,
         .right = 4,
+=======
+        .increment = 1,
+        .left = 5,
+        .right = 7,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .unk = 0,
     },
     [SELECTION_SECS - 1] = {
         .dataIndex = DATAIDX_SECS,
         .minVal = 0,
         .maxVal = 59,
+<<<<<<< HEAD
         .left = 3,
         .right = 5,
+=======
+        .increment = 1,
+        .left = 6,
+        .right = 8,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .unk = 0,
     },
     [SELECTION_CONFIRM - 1] = {
         .dataIndex = DATAIDX_CONFIRM,
         .minVal = 0,
         .maxVal = 0,
+<<<<<<< HEAD
         .left = 4,
+=======
+        .increment = 1,
+        .left = 7,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .right = 0,
         .unk = 6,
     },
@@ -181,7 +273,11 @@ static const struct SpriteFrameImage sPicTable_Arrow[] =
     obj_frame_tiles(sArrowRight_Gfx)
 };
 
+<<<<<<< HEAD
 const struct SpritePalette sSpritePalette_Arrow =
+=======
+const struct SpritePalette gSpritePalette_Arrow =
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     sArrow_Pal, PALTAG_ARROW
 };
@@ -217,7 +313,11 @@ static const union AnimCmd *const sAnims_Arrow[] =
     [ARROW_RIGHT] = sAnim_Arrow_Right,
 };
 
+<<<<<<< HEAD
 const struct SpriteTemplate sSpriteTemplate_Arrow =
+=======
+const struct SpriteTemplate gSpriteTemplate_Arrow =
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     .tileTag = TAG_NONE,
     .paletteTag = PALTAG_ARROW,
@@ -239,7 +339,32 @@ static void SpriteCB_Cursor_UpOrRight(struct Sprite *sprite)
         sprite->sState = state;
         switch (state)
         {
+<<<<<<< HEAD
         case SELECTION_DAYS:
+=======
+        case SELECTION_DAYS_1000:
+            sprite->invisible = FALSE;
+            sprite->animNum = ARROW_UP;
+            sprite->animDelayCounter = 0;
+            sprite->x = 35;
+            sprite->y = 68;
+            break;
+        case SELECTION_DAYS_100:
+            sprite->invisible = FALSE;
+            sprite->animNum = ARROW_UP;
+            sprite->animDelayCounter = 0;
+            sprite->x = 41;
+            sprite->y = 68;
+            break;
+        case SELECTION_DAYS_10:
+            sprite->invisible = FALSE;
+            sprite->animNum = ARROW_UP;
+            sprite->animDelayCounter = 0;
+            sprite->x = 47;
+            sprite->y = 68;
+            break;
+        case SELECTION_DAYS_1:
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             sprite->invisible = FALSE;
             sprite->animNum = ARROW_UP;
             sprite->animDelayCounter = 0;
@@ -289,7 +414,32 @@ static void SpriteCB_Cursor_Down(struct Sprite *sprite)
         sprite->sState = state;
         switch (state)
         {
+<<<<<<< HEAD
         case SELECTION_DAYS:
+=======
+        case SELECTION_DAYS_1000:
+            sprite->invisible = FALSE;
+            sprite->animNum = ARROW_DOWN;
+            sprite->animDelayCounter = 0;
+            sprite->x = 35;
+            sprite->y = 92;
+            break;
+        case SELECTION_DAYS_100:
+            sprite->invisible = FALSE;
+            sprite->animNum = ARROW_DOWN;
+            sprite->animDelayCounter = 0;
+            sprite->x = 41;
+            sprite->y = 92;
+            break;
+        case SELECTION_DAYS_10:
+            sprite->invisible = FALSE;
+            sprite->animNum = ARROW_DOWN;
+            sprite->animDelayCounter = 0;
+            sprite->x = 47;
+            sprite->y = 92;
+            break;
+        case SELECTION_DAYS_1:
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             sprite->invisible = FALSE;
             sprite->animNum = ARROW_DOWN;
             sprite->animDelayCounter = 0;
@@ -333,14 +483,24 @@ static void CreateCursor(u8 taskId)
 {
     u32 spriteId;
 
+<<<<<<< HEAD
     LoadSpritePalette(&sSpritePalette_Arrow);
 
     spriteId = CreateSpriteAtEnd(&sSpriteTemplate_Arrow, 53, 68, 0);
+=======
+    LoadSpritePalette(&gSpritePalette_Arrow);
+
+    spriteId = CreateSpriteAtEnd(&gSpriteTemplate_Arrow, 53, 68, 0);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gSprites[spriteId].callback = SpriteCB_Cursor_UpOrRight;
     gSprites[spriteId].sTaskId = taskId;
     gSprites[spriteId].sState = -1;
 
+<<<<<<< HEAD
     spriteId = CreateSpriteAtEnd(&sSpriteTemplate_Arrow, 53, 68, 0);
+=======
+    spriteId = CreateSpriteAtEnd(&gSpriteTemplate_Arrow, 53, 68, 0);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gSprites[spriteId].callback = SpriteCB_Cursor_Down;
     gSprites[spriteId].sTaskId = taskId;
     gSprites[spriteId].sState = -1;
@@ -348,7 +508,11 @@ static void CreateCursor(u8 taskId)
 
 static void FreeCursorPalette(void)
 {
+<<<<<<< HEAD
     FreeSpritePaletteByTag(sSpritePalette_Arrow.tag);
+=======
+    FreeSpritePaletteByTag(gSpritePalette_Arrow.tag);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void HideChooseTimeWindow(u8 windowId)
@@ -392,17 +556,29 @@ static void ShowChooseTimeWindow(u8 windowId, u16 days, u8 hours, u8 minutes, u8
     ScheduleBgCopyTilemapToVram(0);
 }
 
+<<<<<<< HEAD
 static bool32 MoveTimeUpDown(s16 *val, int minVal, int maxVal, u16 keys)
 {
     if (keys & DPAD_DOWN)
     {
         *val -= 1;
+=======
+static bool32 MoveTimeUpDown(s16 *val, int minVal, int maxVal, int increment, u16 keys)
+{
+    if (keys & DPAD_DOWN)
+    {
+        *val -= increment;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         if (*val < minVal)
             *val = maxVal;
     }
     else if (keys & DPAD_UP)
     {
+<<<<<<< HEAD
         *val += 1;
+=======
+        *val += increment;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         if (*val > maxVal)
             *val = minVal;
     }
@@ -489,7 +665,11 @@ static void Task_ResetRtc_HandleInput(u8 taskId)
             tSelection = SELECTION_NONE;
         }
     }
+<<<<<<< HEAD
     else if (MoveTimeUpDown(&data[selectionInfo->dataIndex], selectionInfo->minVal, selectionInfo->maxVal, JOY_REPEAT(DPAD_UP | DPAD_DOWN)))
+=======
+    else if (MoveTimeUpDown(&data[selectionInfo->dataIndex], selectionInfo->minVal, selectionInfo->maxVal, selectionInfo->increment, JOY_REPEAT(DPAD_UP | DPAD_DOWN)))
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     {
         PlaySE(SE_SELECT);
         PrintTime(tWindowId, 0, 1, tDays, tHours, tMinutes, tSeconds);
@@ -562,8 +742,13 @@ static void VBlankCB(void)
 
 static void ShowMessage(const u8 *str)
 {
+<<<<<<< HEAD
     DrawDialogFrameWithCustomTileAndPalette(1, FALSE, 0x200, 0xF);
     AddTextPrinterParameterized(1, FONT_NORMAL, str, 0, 1, 0, NULL);
+=======
+    DrawDialogFrameWithCustomTileAndPalette(WIN_MSG, FALSE, 0x200, 0xF);
+    AddTextPrinterParameterized(WIN_MSG, FONT_NORMAL, str, 0, 1, 0, NULL);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ScheduleBgCopyTilemapToVram(0);
 }
 
@@ -576,11 +761,19 @@ static void Task_ShowResetRtcPrompt(u8 taskId)
     switch (tState)
     {
     case 0:
+<<<<<<< HEAD
         DrawStdFrameWithCustomTileAndPalette(0, FALSE, 0x214, 0xE);
 
         AddTextPrinterParameterized(0, FONT_NORMAL, gText_PresentTime, 0, 1, TEXT_SKIP_DRAW, 0);
         PrintTime(
             0,
+=======
+        DrawStdFrameWithCustomTileAndPalette(WIN_TIME, FALSE, 0x214, 0xE);
+
+        AddTextPrinterParameterized(WIN_TIME, FONT_NORMAL, gText_PresentTime, 0, 1, TEXT_SKIP_DRAW, 0);
+        PrintTime(
+            WIN_TIME,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             0,
             17,
             gLocalTime.days,
@@ -588,9 +781,15 @@ static void Task_ShowResetRtcPrompt(u8 taskId)
             gLocalTime.minutes,
             gLocalTime.seconds);
 
+<<<<<<< HEAD
         AddTextPrinterParameterized(0, FONT_NORMAL, gText_PreviousTime, 0, 33, TEXT_SKIP_DRAW, 0);
         PrintTime(
             0,
+=======
+        AddTextPrinterParameterized(WIN_TIME, FONT_NORMAL, gText_PreviousTime, 0, 33, TEXT_SKIP_DRAW, 0);
+        PrintTime(
+            WIN_TIME,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             0,
             49,
             gSaveBlock2Ptr->lastBerryTreeUpdate.days,
@@ -599,7 +798,11 @@ static void Task_ShowResetRtcPrompt(u8 taskId)
             gSaveBlock2Ptr->lastBerryTreeUpdate.seconds);
 
         ShowMessage(gText_ResetRTCConfirmCancel);
+<<<<<<< HEAD
         CopyWindowToVram(0, COPYWIN_GFX);
+=======
+        CopyWindowToVram(WIN_TIME, COPYWIN_GFX);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         ScheduleBgCopyTilemapToVram(0);
         tState++;
     case 1:
@@ -666,7 +869,11 @@ static void Task_ResetRtcScreen(u8 taskId)
         // Wait for A or B press on prompt first
         if (gTasks[tSubTaskId].isActive != TRUE)
         {
+<<<<<<< HEAD
             ClearStdWindowAndFrameToTransparent(0, FALSE);
+=======
+            ClearStdWindowAndFrameToTransparent(WIN_TIME, FALSE);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             ShowMessage(gText_PleaseResetTime);
             gLocalTime = gSaveBlock2Ptr->lastBerryTreeUpdate;
             tSubTaskId = CreateTask(Task_ResetRtc_Init, 80);

@@ -3,7 +3,11 @@
   "name": "SlateportCity",
   "layout": "LAYOUT_SLATEPORT_CITY",
   "music": "MUS_SLATEPORT",
+<<<<<<< HEAD
   "region_map_section": "MAPSEC_ROUTE_26",
+=======
+  "region_map_section": "MAPSEC_SLATEPORT_CITY",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_CITY",
@@ -31,6 +35,10 @@
   ],
   "object_events": [
     {
+<<<<<<< HEAD
+=======
+      "local_id": "LOCALID_SLATEPORT_FAT_MAN",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
       "x": 21,
       "y": 11,
@@ -44,7 +52,12 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_BALDING_MAN",
+=======
+      "local_id": "LOCALID_SLATEPORT_MAN_1",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 34,
       "y": 29,
       "elevation": 3,
@@ -57,7 +70,12 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_POLICEMAN",
+=======
+      "local_id": "LOCALID_SLATEPORT_RICH_BOY",
+      "graphics_id": "OBJ_EVENT_GFX_RICH_BOY",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 5,
       "y": 13,
       "elevation": 3,
@@ -70,7 +88,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_LASS",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 26,
       "y": 29,
       "elevation": 3,
@@ -83,7 +105,12 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_F",
+=======
+      "local_id": "LOCALID_SLATEPORT_GRUNT_1",
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_F",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 31,
       "y": 27,
       "elevation": 3,
@@ -93,10 +120,18 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SlateportCity_EventScript_AquaGrunt1",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CHEF",
+=======
+      "flag": "FLAG_HIDE_SLATEPORT_CITY_TEAM_AQUA"
+    },
+    {
+      "local_id": "LOCALID_SLATEPORT_COOK",
+      "graphics_id": "OBJ_EVENT_GFX_COOK",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 5,
       "y": 43,
       "elevation": 3,
@@ -109,7 +144,12 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_ATTENDANT",
+=======
+      "local_id": "LOCALID_SLATEPORT_OLD_WOMAN",
+      "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 20,
       "y": 37,
       "elevation": 3,
@@ -122,6 +162,10 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
+=======
+      "local_id": "LOCALID_SLATEPORT_GIRL",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_GIRL_1",
       "x": 8,
       "y": 42,
@@ -135,7 +179,12 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_JUGGLER",
+=======
+      "local_id": "LOCALID_SLATEPORT_TY",
+      "graphics_id": "OBJ_EVENT_GFX_CAMERAMAN",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 29,
       "y": 13,
       "elevation": 3,
@@ -145,10 +194,18 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SlateportCity_EventScript_Ty",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SAGE",
+=======
+      "flag": "FLAG_HIDE_SLATEPORT_CITY_GABBY_AND_TY"
+    },
+    {
+      "local_id": "LOCALID_SLATEPORT_GABBY",
+      "graphics_id": "OBJ_EVENT_GFX_REPORTER_F",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 28,
       "y": 14,
       "elevation": 3,
@@ -158,10 +215,18 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SlateportCity_EventScript_Gabby",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_M",
+=======
+      "flag": "FLAG_HIDE_SLATEPORT_CITY_GABBY_AND_TY"
+    },
+    {
+      "local_id": "LOCALID_SLATEPORT_CAPT_STERN",
+      "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_1",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 28,
       "y": 13,
       "elevation": 3,
@@ -171,7 +236,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SlateportCity_EventScript_CaptStern",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
+=======
+      "flag": "FLAG_HIDE_SLATEPORT_CITY_CAPTAIN_STERN"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
@@ -200,7 +269,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_BILL",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_POKEFAN_F",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 9,
       "y": 50,
       "elevation": 3,
@@ -213,7 +286,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_MAN",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 16,
       "y": 46,
       "elevation": 3,
@@ -226,7 +303,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_SUPER_NERD",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_MANIAC",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 8,
       "y": 24,
       "elevation": 3,
@@ -239,7 +320,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_WORKER_F",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 15,
       "y": 31,
       "elevation": 3,
@@ -252,7 +337,12 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
+=======
+      "local_id": "LOCALID_SLATEPORT_GRUNT_2",
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 30,
       "y": 27,
       "elevation": 3,
@@ -262,10 +352,18 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SlateportCity_EventScript_AquaGrunt2",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
+=======
+      "flag": "FLAG_HIDE_SLATEPORT_CITY_TEAM_AQUA"
+    },
+    {
+      "local_id": "LOCALID_SLATEPORT_GRUNT_3",
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 29,
       "y": 27,
       "elevation": 3,
@@ -275,10 +373,17 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SlateportCity_EventScript_AquaGrunt3",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CLERK",
+=======
+      "flag": "FLAG_HIDE_SLATEPORT_CITY_TEAM_AQUA"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 6,
       "y": 38,
       "elevation": 3,
@@ -291,7 +396,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_CLERK",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 5,
       "y": 51,
       "elevation": 3,
@@ -304,7 +413,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_ROCKER",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_MAN_5",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 34,
       "y": 51,
       "elevation": 3,
@@ -317,7 +430,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_WORKER_F",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 4,
       "y": 47,
       "elevation": 3,
@@ -330,7 +447,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_CLERK",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 11,
       "y": 47,
       "elevation": 3,
@@ -340,10 +461,18 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SlateportCity_EventScript_PowerTMClerk",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ATTENDANT_M",
+=======
+      "flag": "FLAG_HIDE_SLATEPORT_CITY_TM_SALESMAN"
+    },
+    {
+      "local_id": "LOCALID_SLATEPORT_ENERGY_GURU",
+      "graphics_id": "OBJ_EVENT_GFX_POKEFAN_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 5,
       "y": 47,
       "elevation": 3,
@@ -356,7 +485,12 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
+=======
+      "local_id": "LOCALID_SLATEPORT_GRUNT_4",
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 22,
       "y": 27,
       "elevation": 3,
@@ -366,10 +500,18 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SlateportCity_EventScript_AquaGrunt4",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
+=======
+      "flag": "FLAG_HIDE_SLATEPORT_CITY_TEAM_AQUA"
+    },
+    {
+      "local_id": "LOCALID_SLATEPORT_GRUNT_5",
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 23,
       "y": 27,
       "elevation": 3,
@@ -379,10 +521,18 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SlateportCity_EventScript_AquaGrunt5",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
+=======
+      "flag": "FLAG_HIDE_SLATEPORT_CITY_TEAM_AQUA"
+    },
+    {
+      "local_id": "LOCALID_SLATEPORT_GRUNT_6",
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 24,
       "y": 27,
       "elevation": 3,
@@ -392,10 +542,18 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SlateportCity_EventScript_AquaGrunt6",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
+=======
+      "flag": "FLAG_HIDE_SLATEPORT_CITY_TEAM_AQUA"
+    },
+    {
+      "local_id": "LOCALID_SLATEPORT_GRUNT_7",
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 21,
       "y": 26,
       "elevation": 3,
@@ -405,10 +563,18 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SlateportCity_EventScript_AquaGrunt7",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
+=======
+      "flag": "FLAG_HIDE_SLATEPORT_CITY_TEAM_AQUA"
+    },
+    {
+      "local_id": "LOCALID_SLATEPORT_GRUNT_8",
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 20,
       "y": 26,
       "elevation": 3,
@@ -418,10 +584,18 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SlateportCity_EventScript_AquaGrunt8",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
+=======
+      "flag": "FLAG_HIDE_SLATEPORT_CITY_TEAM_AQUA"
+    },
+    {
+      "local_id": "LOCALID_SLATEPORT_GRUNT_9",
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 26,
       "y": 27,
       "elevation": 3,
@@ -431,10 +605,17 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SlateportCity_EventScript_AquaGrunt9",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
+=======
+      "flag": "FLAG_HIDE_SLATEPORT_CITY_TEAM_AQUA"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 28,
       "y": 27,
       "elevation": 3,
@@ -444,10 +625,18 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SlateportCity_EventScript_AquaGrunt10",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
+=======
+      "flag": "FLAG_HIDE_SLATEPORT_CITY_TEAM_AQUA"
+    },
+    {
+      "local_id": "LOCALID_SLATEPORT_GRUNT_11",
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 25,
       "y": 27,
       "elevation": 3,
@@ -457,10 +646,17 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SlateportCity_EventScript_AquaGrunt11",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BILL",
+=======
+      "flag": "FLAG_HIDE_SLATEPORT_CITY_TEAM_AQUA"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKEFAN_F",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 11,
       "y": 37,
       "elevation": 3,
@@ -473,7 +669,12 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_PROF_OAK",
+=======
+      "local_id": "LOCALID_SLATEPORT_SCOTT",
+      "graphics_id": "OBJ_EVENT_GFX_SCOTT",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 10,
       "y": 12,
       "elevation": 0,
@@ -483,6 +684,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
@@ -549,6 +751,9 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "0"
+=======
+      "flag": "FLAG_HIDE_SLATEPORT_CITY_SCOTT"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "warp_events": [
@@ -746,6 +951,7 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "SlateportCity_EventScript_BerryCrushRankingsSign"
     }
+<<<<<<< HEAD
   ],
   "heal_locations": [
     {
@@ -753,5 +959,7 @@
       "x": 19,
       "y": 20
 	}
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   ]
 }

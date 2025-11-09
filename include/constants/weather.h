@@ -19,6 +19,11 @@
 #define WEATHER_ABNORMAL                15  // The alternating weather during Groudon/Kyogre conflict
 #define WEATHER_ROUTE119_CYCLE          20
 #define WEATHER_ROUTE123_CYCLE          21
+<<<<<<< HEAD
+=======
+#define WEATHER_FOG                     22  // Aggregate of WEATHER_FOG_HORIZONTAL and WEATHER_FOG_DIAGONAL 
+#define WEATHER_COUNT                   23
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 // These are used in maps' coord_weather_event entries.
 // They are not a one-to-one mapping with the engine's

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @ VAR_LAST_TALKED would have made all these direct references unnecessary
 .set LOCALID_SMART_MC, 4
 .set LOCALID_SMART_JUDGE, 5
@@ -27,6 +28,12 @@
 .set LOCALID_CUTE_AUDIENCE_3, 30
 .set LOCALID_CUTE_AUDIENCE_2, 31
 
+=======
+@ All the LOCALID constants used in this file are essentially redundant.
+@ They're all used to have the NPC the player talked to turn back so they're facing
+@ their original direction (because they're watching/participating in the contests).
+@ They could all be substituted for VAR_LAST_TALKED.
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 LilycoveCity_ContestHall_MapScripts::
 	.byte 0
 

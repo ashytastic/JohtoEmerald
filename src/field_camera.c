@@ -12,7 +12,11 @@
 #include "sprite.h"
 #include "text.h"
 
+<<<<<<< HEAD
 EWRAM_DATA bool8 gUnusedBikeCameraAheadPanback = FALSE;
+=======
+//EWRAM_DATA bool8 gUnusedBikeCameraAheadPanback = FALSE;   //  Old EWRAM variable that was never set to anything other than false
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 struct FieldCameraOffset
 {
@@ -39,9 +43,15 @@ static s16 sVerticalCameraPan;
 static bool8 sBikeCameraPanFlag;
 static void (*sFieldCameraPanningCallback)(void);
 
+<<<<<<< HEAD
 struct CameraObject gFieldCamera;
 u16 gTotalCameraPixelOffsetY;
 u16 gTotalCameraPixelOffsetX;
+=======
+COMMON_DATA struct CameraObject gFieldCamera = {0};
+COMMON_DATA u16 gTotalCameraPixelOffsetY = 0;
+COMMON_DATA u16 gTotalCameraPixelOffsetX = 0;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 static void ResetCameraOffset(struct FieldCameraOffset *cameraOffset)
 {
@@ -231,7 +241,13 @@ static void DrawMetatileAt(const struct MapLayout *mapLayout, u16 offset, int x,
     if (metatileId > NUM_METATILES_TOTAL)
         metatileId = 0;
     if (metatileId < NUM_METATILES_IN_PRIMARY)
+<<<<<<< HEAD
         metatiles = mapLayout->primaryTileset->metatiles;
+=======
+    {
+        metatiles = mapLayout->primaryTileset->metatiles;
+    }
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     else
     {
         metatiles = mapLayout->secondaryTileset->metatiles;
@@ -331,8 +347,13 @@ static void CameraUpdateCallback(struct CameraObject *fieldCamera)
 {
     if (fieldCamera->spriteId != 0)
     {
+<<<<<<< HEAD
         fieldCamera->movementSpeedX = gSprites[fieldCamera->spriteId].data[2];
         fieldCamera->movementSpeedY = gSprites[fieldCamera->spriteId].data[3];
+=======
+        fieldCamera->movementSpeedX = gSprites[fieldCamera->spriteId].sCamera_MoveX;
+        fieldCamera->movementSpeedY = gSprites[fieldCamera->spriteId].sCamera_MoveY;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
 }
 
@@ -462,6 +483,14 @@ void UpdateCameraPanning(void)
 
 static void CameraPanningCB_PanAhead(void)
 {
+<<<<<<< HEAD
+=======
+    InstallCameraPanAheadCallback();
+    //  Old code kept for archival purposes
+    //  The else condition could never run since gUnusedBikeCameraAheadPanback was never set to TRUE
+    //  So the behavior should not change
+    /*
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     u8 var;
 
     if (gUnusedBikeCameraAheadPanback == FALSE)
@@ -502,4 +531,8 @@ static void CameraPanningCB_PanAhead(void)
             sVerticalCameraPan -= 2;
         }
     }
+<<<<<<< HEAD
+=======
+    */
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }

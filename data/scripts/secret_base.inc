@@ -28,7 +28,11 @@ SecretBase_EventScript_CheckEntrance::
 	special GetSecretBaseTypeInFrontOfPlayer
 	special CheckPlayerHasSecretBase
 	goto_if_eq VAR_RESULT, TRUE, SecretBase_EventScript_AlreadyHasSecretBase
+<<<<<<< HEAD
 	checkpartymove MOVE_SECRET_POWER
+=======
+	checkfieldmove FIELD_MOVE_SECRET_POWER
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setfieldeffectargument 0, VAR_RESULT
 	buffermovename STR_VAR_2, MOVE_SECRET_POWER
 	goto_if_eq VAR_0x8007, SECRET_BASE_RED_CAVE, SecretBase_EventScript_Cave
@@ -144,7 +148,11 @@ SecretBase_EventScript_InitSecretBase::
 	end
 
 SecretBase_EventScript_FirstEntrance::
+<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, SecretBase_Movement_EnterBase
+=======
+	applymovement LOCALID_PLAYER, SecretBase_Movement_EnterBase
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	setvar VAR_INIT_SECRET_BASE, 1
 	msgbox SecretBase_Text_WantToMakeYourSecretBaseHere, MSGBOX_YESNO
@@ -186,7 +194,11 @@ SecretBase_EventScript_EnterPlayersBase::
 	end
 
 SecretBase_EventScript_AlreadyHasSecretBase::
+<<<<<<< HEAD
 	checkpartymove MOVE_SECRET_POWER
+=======
+	checkfieldmove FIELD_MOVE_SECRET_POWER
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto_if_eq VAR_RESULT, PARTY_SIZE, SecretBase_EventScript_NoSecretPower
 	setfieldeffectargument 0, VAR_RESULT
 	setorcopyvar VAR_0x8004, VAR_RESULT

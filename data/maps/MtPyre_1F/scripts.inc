@@ -1,6 +1,7 @@
 MtPyre_1F_MapScripts::
 	.byte 0
 
+<<<<<<< HEAD
 MtPyre_1F_DusknoirMisdreavusEvo::
 	msgbox MtPyre_1F_DusknoirMisdreavusEvo_Text, MSGBOX_NPC
 	end
@@ -12,6 +13,8 @@ MtPyre_1F_DusknoirMisdreavusEvo_Text:
 	.string "What I do know is that MISDREAVUS\n"
 	.string "evolves if it holds it during the night.$"
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 MtPyre_1F_EventScript_CleanseTagWoman::
 	lock
 	faceplayer

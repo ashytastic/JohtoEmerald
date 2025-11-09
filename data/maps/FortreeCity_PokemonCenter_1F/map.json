@@ -12,9 +12,16 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+<<<<<<< HEAD
   "connections": 0,
   "object_events": [
     {
+=======
+  "connections": null,
+  "object_events": [
+    {
+      "local_id": "LOCALID_FORTREE_NURSE",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_NURSE",
       "x": 7,
       "y": 2,
@@ -41,7 +48,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_MAN",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 8,
       "y": 5,
       "elevation": 3,
@@ -54,7 +65,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_WORKER_M",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_BOY_3",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 2,
       "y": 3,
       "elevation": 3,
@@ -65,6 +80,7 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "FortreeCity_PokemonCenter_1F_EventScript_Boy",
       "flag": "0"
+<<<<<<< HEAD
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_2",
@@ -78,6 +94,8 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "FortreeCity_PokemonCenter_1F_RhyperiorEvo",
       "flag": "0"
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "warp_events": [
@@ -103,10 +121,15 @@
       "dest_warp_id": "0"
     }
   ],
+<<<<<<< HEAD
   "coord_events": [
 
   ],
   "bg_events": [
 
   ]
+=======
+  "coord_events": [],
+  "bg_events": []
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }

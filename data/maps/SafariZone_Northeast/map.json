@@ -26,7 +26,11 @@
   ],
   "object_events": [
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_WORKER_M",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_BOY_3",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 8,
       "y": 20,
       "elevation": 3,
@@ -39,7 +43,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 30,
       "y": 22,
       "elevation": 3,
@@ -65,7 +73,11 @@
       "flag": "FLAG_TEMP_15"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_1",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 13,
       "y": 35,
       "elevation": 0,
@@ -138,6 +150,7 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
+<<<<<<< HEAD
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SafariZone_Northeast_EventScript_ItemNugget",
       "flag": "FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_NUGGET"
@@ -162,6 +175,15 @@
   "coord_events": [
 
   ],
+=======
+      "trainer_sight_or_berry_tree_id": "ITEM_NUGGET",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_NUGGET"
+    }
+  ],
+  "warp_events": [],
+  "coord_events": [],
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "bg_events": [
     {
       "type": "hidden_item",

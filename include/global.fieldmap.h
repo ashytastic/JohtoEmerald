@@ -7,19 +7,50 @@
 #define MAPGRID_METATILE_ID_MASK 0x03FF // Bits 0-9
 #define MAPGRID_COLLISION_MASK   0x0C00 // Bits 10-11
 #define MAPGRID_ELEVATION_MASK   0xF000 // Bits 12-15
+<<<<<<< HEAD
 #define MAPGRID_COLLISION_SHIFT  10
 #define MAPGRID_ELEVATION_SHIFT  12
 
 // An undefined map grid block has all metatile id bits set and nothing else
 #define MAPGRID_UNDEFINED   MAPGRID_METATILE_ID_MASK
 
+=======
+#define MAPGRID_METATILE_ID_SHIFT 0
+#define MAPGRID_COLLISION_SHIFT  10
+#define MAPGRID_ELEVATION_SHIFT  12
+
+#define PACK_METATILE(metatileId) PACK(metatileId, MAPGRID_METATILE_ID_SHIFT, MAPGRID_METATILE_ID_MASK)
+#define PACK_COLLISION(collision) PACK(collision, MAPGRID_COLLISION_SHIFT, MAPGRID_COLLISION_MASK)
+#define PACK_ELEVATION(elevation) PACK(elevation, MAPGRID_ELEVATION_SHIFT, MAPGRID_ELEVATION_MASK)
+#define UNPACK_METATILE(data)  UNPACK(data, MAPGRID_METATILE_ID_SHIFT, MAPGRID_METATILE_ID_MASK)
+#define UNPACK_COLLISION(data) UNPACK(data, MAPGRID_COLLISION_SHIFT, MAPGRID_COLLISION_MASK)
+#define UNPACK_ELEVATION(data) UNPACK(data, MAPGRID_ELEVATION_SHIFT, MAPGRID_ELEVATION_MASK)
+
+// An undefined map grid block has all metatile id bits set and nothing else
+#define MAPGRID_UNDEFINED   MAPGRID_METATILE_ID_MASK
+
+// When setting impassability manually GF sets all the collision bits
+#define MAPGRID_IMPASSABLE  MAPGRID_COLLISION_MASK
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 // Masks/shifts for metatile attributes
 // Metatile attributes consist of an 8 bit behavior value, 4 unused bits, and a 4 bit layer type value
 // This is the data stored in each data/tilesets/*/*/metatile_attributes.bin file
 #define METATILE_ATTR_BEHAVIOR_MASK 0x00FF // Bits 0-7
 #define METATILE_ATTR_LAYER_MASK    0xF000 // Bits 12-15
+<<<<<<< HEAD
 #define METATILE_ATTR_LAYER_SHIFT   12
 
+=======
+#define METATILE_ATTR_BEHAVIOR_SHIFT 0
+#define METATILE_ATTR_LAYER_SHIFT   12
+
+#define PACK_BEHAVIOR(behavior) PACK(behavior, METATILE_ATTR_BEHAVIOR_SHIFT, METATILE_ATTR_BEHAVIOR_MASK)
+#define PACK_LAYER_TYPE(layerType) PACK(layerType, METATILE_ATTR_LAYER_SHIFT, METATILE_ATTR_LAYER_MASK)
+#define UNPACK_BEHAVIOR(data) UNPACK(data, METATILE_ATTR_BEHAVIOR_SHIFT, METATILE_ATTR_BEHAVIOR_MASK)
+#define UNPACK_LAYER_TYPE(data) UNPACK(data, METATILE_ATTR_LAYER_SHIFT, METATILE_ATTR_LAYER_MASK)
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 enum {
     METATILE_LAYER_TYPE_NORMAL,  // Metatile uses middle and top bg layers
     METATILE_LAYER_TYPE_COVERED, // Metatile uses bottom and middle bg layers
@@ -38,7 +69,11 @@ typedef void (*TilesetCB)(void);
 struct Tileset
 {
     /*0x00*/ u8 isCompressed:1;
+<<<<<<< HEAD
     /*0x00*/ u8 swapPalettes:7; // bitmask determining whether palette has an alternate, night-time palette
+=======
+    /*0x00*/ u8 swapPalettes:7; // Bitmask determining whether palette has an alternate, night-time palette
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     /*0x01*/ bool8 isSecondary;
     /*0x02*/ u8 lightPalettes; // Bitmask determining whether a palette should be time-blended as a light
     /*0x03*/ u8 customLightColor; // Bitmask determining which light palettes have custom light colors (color 15)
@@ -133,7 +168,11 @@ struct MapEvents
 struct MapConnection
 {
     u8 direction;
+<<<<<<< HEAD
     u32 offset;
+=======
+    s32 offset;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     u8 mapGroup;
     u8 mapNum;
 };
@@ -152,7 +191,11 @@ struct MapHeader
     /* 0x0C */ const struct MapConnections *connections;
     /* 0x10 */ u16 music;
     /* 0x12 */ u16 mapLayoutId;
+<<<<<<< HEAD
     /* 0x14 */ u8 regionMapSectionId;
+=======
+    /* 0x14 */ mapsec_u8_t regionMapSectionId;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     /* 0x15 */ u8 cave;
     /* 0x16 */ u8 weather;
     /* 0x17 */ u8 mapType;
@@ -198,8 +241,14 @@ struct ObjectEvent
              u32 fixedPriority:1;
              u32 hideReflection:1;
              u32 shiny:1; // OW mon shininess
+<<<<<<< HEAD
              u32 padding:3;
     /*0x04*/ u16 graphicsId; // 11 bits for species; high 5 bits for form
+=======
+             u32 jumpDone:1;
+             u32 padding:2;
+    /*0x04*/ u16 graphicsId; // 12 bits for species; high 4 bits for form
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     /*0x06*/ u8 movementType;
     /*0x07*/ u8 trainerType;
     /*0x08*/ u8 localId;
@@ -212,8 +261,16 @@ struct ObjectEvent
     /*0x14*/ struct Coords16 previousCoords;
     /*0x18*/ u16 facingDirection:4; // current direction?
              u16 movementDirection:4;
+<<<<<<< HEAD
              u16 rangeX:4;
              u16 rangeY:4;
+=======
+             struct __attribute__((packed))
+             {
+                u16 rangeX:4;
+                u16 rangeY:4;
+             } range;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     /*0x1A*/ u8 fieldEffectSpriteId;
     /*0x1B*/ u8 warpArrowSpriteId;
     /*0x1C*/ u8 movementActionId;
@@ -257,6 +314,10 @@ enum {
     PLAYER_AVATAR_STATE_FIELD_MOVE,
     PLAYER_AVATAR_STATE_FISHING,
     PLAYER_AVATAR_STATE_WATERING,
+<<<<<<< HEAD
+=======
+    PLAYER_AVATAR_STATE_VSSEEKER,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 #define PLAYER_AVATAR_FLAG_ON_FOOT      (1 << 0)
@@ -269,7 +330,11 @@ enum {
 #define PLAYER_AVATAR_FLAG_DASH         (1 << 7)
 
 #define PLAYER_AVATAR_FLAG_BIKE        (PLAYER_AVATAR_FLAG_MACH_BIKE | PLAYER_AVATAR_FLAG_ACRO_BIKE)
+<<<<<<< HEAD
 // Player avatar flags for which follower pokemon are hidden
+=======
+// Player avatar flags for which follower Pokémon are hidden
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #define FOLLOWER_INVISIBLE_FLAGS       (PLAYER_AVATAR_FLAG_SURFING | PLAYER_AVATAR_FLAG_UNDERWATER | \
                                         PLAYER_AVATAR_FLAG_BIKE | PLAYER_AVATAR_FLAG_FORCED_MOVE)
 
@@ -300,7 +365,11 @@ enum
     COLLISION_ISOLATED_HORIZONTAL_RAIL,
     COLLISION_VERTICAL_RAIL,
     COLLISION_HORIZONTAL_RAIL,
+<<<<<<< HEAD
     //sideways_stairs
+=======
+    COLLISION_STAIR_WARP,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     COLLISION_SIDEWAYS_STAIRS_TO_RIGHT,
     COLLISION_SIDEWAYS_STAIRS_TO_LEFT
 };
@@ -325,7 +394,12 @@ struct PlayerAvatar
 {
     /*0x00*/ u8 flags;
     /*0x01*/ u8 transitionFlags; // used to be named bike, but its definitely not that. seems to be some transition flags
+<<<<<<< HEAD
     /*0x02*/ u8 runningState; // this is a static running state. 00 is not moving, 01 is turn direction, 02 is moving.
+=======
+    /*0x02*/ u8 runningState:7; // this is a static running state. 00 is not moving, 01 is turn direction, 02 is moving.
+             u8 creeping:1;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     /*0x03*/ u8 tileTransitionState; // this is a transition running state: 00 is not moving, 01 is transition between tiles, 02 means you are on the frame in which you have centered on a tile but are about to keep moving, even if changing directions. 2 is also used for a ledge hop, since you are transitioning.
     /*0x04*/ u8 spriteId;
     /*0x05*/ u8 objectEventId;

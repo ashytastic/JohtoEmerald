@@ -9,14 +9,18 @@
 
 #define TAG_SMOKESCREEN 55019
 
+<<<<<<< HEAD
 #define PALTAG_SHADOW 55039
 #define GFXTAG_SHADOW 55129
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static void SpriteCB_SmokescreenImpactMain(struct Sprite *);
 static void SpriteCB_SmokescreenImpact(struct Sprite *);
 
 // The below data for smokescreen starts and ends with some data that belongs to battle_gfx_sfx_util.c
 
+<<<<<<< HEAD
 const u8 gBattlePalaceNatureToMoveTarget[NUM_NATURES] =
 {
     [NATURE_HARDY]   = PALACE_TARGET_STRONGER,
@@ -46,12 +50,18 @@ const u8 gBattlePalaceNatureToMoveTarget[NUM_NATURES] =
     [NATURE_QUIRKY]  = PALACE_TARGET_STRONGER,
 };
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static const struct CompressedSpriteSheet sSmokescreenImpactSpriteSheet =
 {
     .data = gSmokescreenImpactTiles, .size = 0x180, .tag = TAG_SMOKESCREEN
 };
 
+<<<<<<< HEAD
 static const struct CompressedSpritePalette sSmokescreenImpactSpritePalette =
+=======
+static const struct SpritePalette sSmokescreenImpactSpritePalette =
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     .data = gSmokescreenImpactPalette, .tag = TAG_SMOKESCREEN
 };
@@ -124,6 +134,7 @@ static const struct SpriteTemplate sSmokescreenImpactSpriteTemplate =
     .callback = SpriteCB_SmokescreenImpact
 };
 
+<<<<<<< HEAD
 const struct CompressedSpriteSheet gSpriteSheet_EnemyShadow =
 {
     .data = gEnemyMonShadow_Gfx, .size = 0x80, .tag = GFXTAG_SHADOW
@@ -157,6 +168,8 @@ const struct SpriteTemplate gSpriteTemplate_EnemyShadow =
     .callback = SpriteCB_SetInvisible
 };
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #define sActiveSprites data[0]
 #define sPersist       data[1]
 
@@ -171,7 +184,11 @@ u8 SmokescreenImpact(s16 x, s16 y, bool8 persist)
     if (GetSpriteTileStartByTag(sSmokescreenImpactSpriteSheet.tag) == 0xFFFF)
     {
         LoadCompressedSpriteSheetUsingHeap(&sSmokescreenImpactSpriteSheet);
+<<<<<<< HEAD
         LoadCompressedSpritePaletteUsingHeap(&sSmokescreenImpactSpritePalette);
+=======
+        LoadSpritePalette(&sSmokescreenImpactSpritePalette);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
 
     mainSpriteId = CreateInvisibleSpriteWithCallback(SpriteCB_SmokescreenImpactMain);

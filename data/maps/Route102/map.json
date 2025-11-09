@@ -3,7 +3,11 @@
   "name": "Route102",
   "layout": "LAYOUT_ROUTE102",
   "music": "MUS_ROUTE101",
+<<<<<<< HEAD
   "region_map_section": "MAPSEC_ROUTE_27",
+=======
+  "region_map_section": "MAPSEC_ROUTE_102",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_ROUTE",
@@ -65,7 +69,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_LASS",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 8,
       "y": 7,
       "elevation": 3,
@@ -78,7 +86,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_MR_FUJI",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 37,
       "y": 4,
       "elevation": 3,
@@ -99,9 +111,15 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
+<<<<<<< HEAD
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route102_EventScript_ItemPotion",
       "flag": "FLAG_ITEM_GARBAGEFLAG"
+=======
+      "trainer_sight_or_berry_tree_id": "ITEM_POTION",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_ROUTE_102_POTION"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
@@ -141,6 +159,7 @@
       "trainer_sight_or_berry_tree_id": "3",
       "script": "Route102_EventScript_Allen",
       "flag": "0"
+<<<<<<< HEAD
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
@@ -175,6 +194,12 @@
   "coord_events": [
 
   ],
+=======
+    }
+  ],
+  "warp_events": [],
+  "coord_events": [],
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "bg_events": [
     {
       "type": "sign",

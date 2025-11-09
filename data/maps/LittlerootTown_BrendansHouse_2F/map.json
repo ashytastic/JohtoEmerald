@@ -3,7 +3,11 @@
   "name": "LittlerootTown_BrendansHouse_2F",
   "layout": "LAYOUT_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F",
   "music": "MUS_LITTLEROOT",
+<<<<<<< HEAD
   "region_map_section": "MAPSEC_NEW_BARK_TOWN",
+=======
+  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -12,9 +16,16 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+<<<<<<< HEAD
   "connections": 0,
   "object_events": [
     {
+=======
+  "connections": null,
+  "object_events": [
+    {
+      "local_id": "LOCALID_RIVALS_HOUSE_2F_RIVAL",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL",
       "x": 7,
       "y": 1,
@@ -25,7 +36,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "RivalsHouse_2F_EventScript_Rival",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
+=======
+      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_BEDROOM"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
@@ -184,6 +199,10 @@
       "flag": "FLAG_DECORATION_12"
     },
     {
+<<<<<<< HEAD
+=======
+      "local_id": "LOCALID_PLAYERS_HOUSE_2F_MOM",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_MOM",
       "x": 7,
       "y": 1,
@@ -194,7 +213,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
+=======
+      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_BEDROOM_MOM"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -207,7 +230,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LittlerootTown_BrendansHouse_2F_EventScript_RivalsPokeBall",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
+=======
+      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F_POKE_BALL"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SWABLU_DOLL",
@@ -220,7 +247,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
+=======
+      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F_SWABLU_DOLL"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "warp_events": [
@@ -232,9 +263,13 @@
       "dest_warp_id": "2"
     }
   ],
+<<<<<<< HEAD
   "coord_events": [
 
   ],
+=======
+  "coord_events": [],
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "bg_events": [
     {
       "type": "sign",
@@ -255,7 +290,11 @@
     {
       "type": "sign",
       "x": 5,
+<<<<<<< HEAD
       "y": 0,
+=======
+      "y": 1,
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "LittlerootTown_BrendansHouse_2F_EventScript_WallClock"
@@ -268,6 +307,7 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "PlayersHouse_2F_EventScript_GameCube"
     }
+<<<<<<< HEAD
   ],
   "heal_locations": [
     {
@@ -275,5 +315,7 @@
       "x": 4,
       "y": 2
 	}
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   ]
 }

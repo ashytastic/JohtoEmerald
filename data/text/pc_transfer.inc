@@ -4,9 +4,15 @@ gText_PkmnTransferredSomeonesPC::
 	.string "It was placed in \n"
 	.string "BOX “{STR_VAR_1}.”$"
 
+<<<<<<< HEAD
 gText_PkmnTransferredBillsPC::
 	.string "{STR_VAR_2} was transferred to\n"
 	.string "BILL'S PC.\p"
+=======
+gText_PkmnTransferredLanettesPC::
+	.string "{STR_VAR_2} was transferred to\n"
+	.string "LANETTE'S PC.\p"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.string "It was placed in \n"
 	.string "BOX “{STR_VAR_1}.”$"
 
@@ -16,12 +22,27 @@ gText_PkmnTransferredSomeonesPCBoxFull::
 	.string "{STR_VAR_2} was transferred to\n"
 	.string "BOX “{STR_VAR_1}.”$"
 
+<<<<<<< HEAD
 gText_PkmnTransferredBillsPCBoxFull::
 	.string "BOX “{STR_VAR_3}” on\n"
 	.string "BILL'S PC was full.\p"
 	.string "{STR_VAR_2} was transferred to\n"
 	.string "BOX “{STR_VAR_1}.”$"
 
+=======
+gText_PkmnTransferredLanettesPCBoxFull::
+	.string "BOX “{STR_VAR_3}” on\n"
+	.string "LANETTE'S PC was full.\p"
+	.string "{STR_VAR_2} was transferred to\n"
+	.string "BOX “{STR_VAR_1}.”$"
+
+gText_PkmnSentToPCAfterCatch::
+	.string "{STR_VAR_2} was sent to\n"
+	.string "{B_PC_CREATOR_NAME} PC.\p"
+	.string "It was placed in \n"
+	.string "BOX “{STR_VAR_1}”.$"
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 gText_NoMoreRoomForPokemon::
 	.string "There's no more room for POKéMON!\p"
 	.string "The POKéMON BOXES are full and\n"

@@ -150,3 +150,18 @@
 	.4byte \sample
 	.byte 0xff, 0, 0xff, 0
 	.endm
+<<<<<<< HEAD
+=======
+
+	.macro cry_uncomp sample @ not compressed
+	.byte 0x0, 60, 0, 0
+	.4byte \sample
+	.byte 0xff, 0, 0xff, 0
+	.endm
+
+	.macro cry_reverse_uncomp sample @ not compressed
+	.byte 0x10, 60, 0, 0
+	.4byte \sample
+	.byte 0xff, 0, 0xff, 0
+	.endm
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

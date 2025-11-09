@@ -23,9 +23,15 @@ struct WonderGraphics
     u8 bodyTextPal:4;
     u8 footerTextPal:4; // Card only
     u8 stampShadowPal:4; // Card only
+<<<<<<< HEAD
     const u32 * tiles;
     const u32 * map;
     const u16 * pal;
+=======
+    const u32 *tiles;
+    const u32 *map;
+    const u16 *pal;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 //======================
@@ -52,7 +58,11 @@ struct WonderCardData
 {
     /*0000*/ struct WonderCard card;
     /*014c*/ struct WonderCardMetadata cardMetadata;
+<<<<<<< HEAD
     /*0170*/ const struct WonderGraphics * gfx;
+=======
+    /*0170*/ const struct WonderGraphics *gfx;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     /*0174*/ u8 enterExitState;
     /*0175*/ u8 statFooterWidth;
     /*0176*/ u16 windowIds[CARD_WIN_COUNT];
@@ -68,7 +78,11 @@ struct WonderCardData
     /*045C*/ u8 bgTilemapBuffer[0x1000];
 };
 
+<<<<<<< HEAD
 EWRAM_DATA static struct WonderCardData * sWonderCardData = NULL;
+=======
+EWRAM_DATA static struct WonderCardData *sWonderCardData = NULL;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 static void BufferCardText(void);
 static void DrawCardWindow(u8 whichWindow);
@@ -127,6 +141,7 @@ static const u16 sWonderCardBgPal5[]     = INCBIN_U16("graphics/wonder_card/bg5.
 static const u16 sWonderCardBgPal6[]     = INCBIN_U16("graphics/wonder_card/bg6.gbapal");
 static const u16 sWonderCardBgPal7[]     = INCBIN_U16("graphics/wonder_card/bg7.gbapal");
 static const u16 sWonderCardBgPal8[]     = INCBIN_U16("graphics/wonder_card/bg8.gbapal");
+<<<<<<< HEAD
 static const u32 sWonderCardBgGfx1[]     = INCBIN_U32("graphics/wonder_card/bg1.4bpp.lz");
 static const u32 sWonderCardBgTilemap1[] = INCBIN_U32("graphics/wonder_card/bg1.bin.lz");
 static const u32 sWonderCardBgGfx2[]     = INCBIN_U32("graphics/wonder_card/bg2.4bpp.lz");
@@ -137,6 +152,18 @@ static const u32 sWonderCardBgGfx7[]     = INCBIN_U32("graphics/wonder_card/bg7.
 static const u32 sWonderCardBgTilemap7[] = INCBIN_U32("graphics/wonder_card/bg7.bin.lz");
 static const u32 sWonderCardBgGfx8[]     = INCBIN_U32("graphics/wonder_card/bg8.4bpp.lz");
 static const u32 sWonderCardBgTilemap8[] = INCBIN_U32("graphics/wonder_card/bg8.bin.lz");
+=======
+static const u32 sWonderCardBgGfx1[]     = INCBIN_U32("graphics/wonder_card/bg1.4bpp.smol");
+static const u32 sWonderCardBgTilemap1[] = INCBIN_U32("graphics/wonder_card/bg1.bin.smolTM");
+static const u32 sWonderCardBgGfx2[]     = INCBIN_U32("graphics/wonder_card/bg2.4bpp.smol");
+static const u32 sWonderCardBgTilemap2[] = INCBIN_U32("graphics/wonder_card/bg2.bin.smolTM");
+static const u32 sWonderCardBgGfx3[]     = INCBIN_U32("graphics/wonder_card/bg3.4bpp.smol");
+static const u32 sWonderCardBgTilemap3[] = INCBIN_U32("graphics/wonder_card/bg3.bin.smolTM");
+static const u32 sWonderCardBgGfx7[]     = INCBIN_U32("graphics/wonder_card/bg7.4bpp.smol");
+static const u32 sWonderCardBgTilemap7[] = INCBIN_U32("graphics/wonder_card/bg7.bin.smolTM");
+static const u32 sWonderCardBgGfx8[]     = INCBIN_U32("graphics/wonder_card/bg8.4bpp.smol");
+static const u32 sWonderCardBgTilemap8[] = INCBIN_U32("graphics/wonder_card/bg8.bin.smolTM");
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static const u16 sStampShadowPal1[]      = INCBIN_U16("graphics/wonder_card/stamp_shadow_1.gbapal");
 static const u16 sStampShadowPal2[]      = INCBIN_U16("graphics/wonder_card/stamp_shadow_2.gbapal");
 static const u16 sStampShadowPal3[]      = INCBIN_U16("graphics/wonder_card/stamp_shadow_3.gbapal");
@@ -145,7 +172,11 @@ static const u16 sStampShadowPal5[]      = INCBIN_U16("graphics/wonder_card/stam
 static const u16 sStampShadowPal6[]      = INCBIN_U16("graphics/wonder_card/stamp_shadow_6.gbapal");
 static const u16 sStampShadowPal7[]      = INCBIN_U16("graphics/wonder_card/stamp_shadow_7.gbapal");
 static const u16 sStampShadowPal8[]      = INCBIN_U16("graphics/wonder_card/stamp_shadow_8.gbapal");
+<<<<<<< HEAD
 static const u32 sStampShadowGfx[]       = INCBIN_U32("graphics/wonder_card/stamp_shadow.4bpp.lz");
+=======
+static const u32 sStampShadowGfx[]       = INCBIN_U32("graphics/wonder_card/stamp_shadow.4bpp.smol");
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 static const struct CompressedSpriteSheet sSpriteSheet_StampShadow = {
     sStampShadowGfx, 0x100, TAG_STAMP_SHADOW
@@ -184,7 +215,11 @@ static const struct WonderGraphics sCardGraphics[NUM_WONDER_BGS] = {
     {.titleTextPal = 1, .bodyTextPal = 0, .footerTextPal = 0, .stampShadowPal = 7, .tiles = sWonderCardBgGfx8, .map = sWonderCardBgTilemap8, .pal = sWonderCardBgPal8}
 };
 
+<<<<<<< HEAD
 bool32 WonderCard_Init(struct WonderCard * card, struct WonderCardMetadata * metadata)
+=======
+bool32 WonderCard_Init(struct WonderCard *card, struct WonderCardMetadata *metadata)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     if (card == NULL || metadata == NULL)
         return FALSE;
@@ -243,7 +278,11 @@ s32 WonderCard_Enter(void)
         LoadPalette(GetTextWindowPalette(1), BG_PLTT_ID(2), PLTT_SIZE_4BPP);
         gPaletteFade.bufferTransferDisabled = TRUE;
         LoadPalette(sWonderCardData->gfx->pal, BG_PLTT_ID(1), PLTT_SIZE_4BPP);
+<<<<<<< HEAD
         LZ77UnCompWram(sWonderCardData->gfx->map, sWonderCardData->bgTilemapBuffer);
+=======
+        DecompressDataWithHeaderWram(sWonderCardData->gfx->map, sWonderCardData->bgTilemapBuffer);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         CopyRectToBgTilemapBufferRect(2, sWonderCardData->bgTilemapBuffer, 0, 0, DISPLAY_TILE_WIDTH, DISPLAY_TILE_HEIGHT, 0, 0, DISPLAY_TILE_WIDTH, DISPLAY_TILE_HEIGHT, 1, 0x008, 0);
         CopyBgTilemapBufferToVram(2);
         break;
@@ -310,7 +349,11 @@ s32 WonderCard_Exit(bool32 useCancel)
         FreeMonIconPalettes();
         break;
     case 5:
+<<<<<<< HEAD
         PrintMysteryGiftOrEReaderTopMenu(gGiftIsFromEReader, useCancel);
+=======
+        PrintMysteryGiftOrEReaderHeader(gGiftIsFromEReader, useCancel);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         CopyBgTilemapBufferToVram(0);
         BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
         break;
@@ -490,7 +533,11 @@ static void CreateCardSprites(void)
     // Create icon sprite
     if (sWonderCardData->cardMetadata.iconSpecies != SPECIES_NONE)
     {
+<<<<<<< HEAD
         sWonderCardData->monIconSpriteId = CreateMonIconNoPersonality(GetIconSpeciesNoPersonality(sWonderCardData->cardMetadata.iconSpecies), SpriteCallbackDummy, 220, 20, 0, FALSE);
+=======
+        sWonderCardData->monIconSpriteId = CreateMonIconNoPersonality(GetIconSpeciesNoPersonality(sWonderCardData->cardMetadata.iconSpecies), SpriteCallbackDummy, 220, 20, 0);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         gSprites[sWonderCardData->monIconSpriteId].oam.priority = 2;
     }
 
@@ -508,7 +555,11 @@ static void CreateCardSprites(void)
                 sWonderCardData->stampSpriteIds[i][1] = CreateMonIconNoPersonality(GetIconSpeciesNoPersonality(sWonderCardData->cardMetadata.stampData[STAMP_SPECIES][i]),
                                                                                SpriteCallbackDummy,
                                                                                216 - 32 * i,
+<<<<<<< HEAD
                                                                                136, 0, 0);
+=======
+                                                                               136, 0);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         }
     }
 }
@@ -551,7 +602,11 @@ enum {
 struct WonderNewsData
 {
     /*0000*/ struct WonderNews news;
+<<<<<<< HEAD
     /*01bc*/ const struct WonderGraphics * gfx;
+=======
+    /*01bc*/ const struct WonderGraphics *gfx;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     /*01c0*/ u8 arrowsRemoved:1;
              u8 enterExitState:7;
     /*01c1*/ u8 arrowTaskId;
@@ -569,7 +624,11 @@ struct WonderNewsData
     /*03a4*/ u8 bgTilemapBuffer[0x1000];
 };
 
+<<<<<<< HEAD
 EWRAM_DATA static struct WonderNewsData * sWonderNewsData = NULL;
+=======
+EWRAM_DATA static struct WonderNewsData *sWonderNewsData = NULL;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 static void BufferNewsText(void);
 static void DrawNewsWindows(void);
@@ -618,6 +677,7 @@ static const struct ScrollArrowsTemplate sNews_ArrowsTemplate = {
 static const u16 sWonderNewsPal1[]     = INCBIN_U16("graphics/wonder_news/bg1.gbapal");
 static const u16 sWonderNewsPal7[]     = INCBIN_U16("graphics/wonder_news/bg7.gbapal");
 static const u16 sWonderNewsPal8[]     = INCBIN_U16("graphics/wonder_news/bg8.gbapal");
+<<<<<<< HEAD
 static const u32 sWonderNewsGfx1[]     = INCBIN_U32("graphics/wonder_news/bg1.4bpp.lz");
 static const u32 sWonderNewsTilemap1[] = INCBIN_U32("graphics/wonder_news/bg1.bin.lz");
 static const u32 sWonderNewsGfx2[]     = INCBIN_U32("graphics/wonder_news/bg2.4bpp.lz");
@@ -628,6 +688,18 @@ static const u32 sWonderNewsGfx7[]     = INCBIN_U32("graphics/wonder_news/bg7.4b
 static const u32 sWonderNewsTilemap7[] = INCBIN_U32("graphics/wonder_news/bg7.bin.lz");
 static const u32 sWonderNewsGfx8[]     = INCBIN_U32("graphics/wonder_news/bg8.4bpp.lz");
 static const u32 sWonderNewsTilemap8[] = INCBIN_U32("graphics/wonder_news/bg8.bin.lz");
+=======
+static const u32 sWonderNewsGfx1[]     = INCBIN_U32("graphics/wonder_news/bg1.4bpp.smol");
+static const u32 sWonderNewsTilemap1[] = INCBIN_U32("graphics/wonder_news/bg1.bin.smolTM");
+static const u32 sWonderNewsGfx2[]     = INCBIN_U32("graphics/wonder_news/bg2.4bpp.smol");
+static const u32 sWonderNewsTilemap2[] = INCBIN_U32("graphics/wonder_news/bg2.bin.smolTM");
+static const u32 sWonderNewsGfx3[]     = INCBIN_U32("graphics/wonder_news/bg3.4bpp.smol");
+static const u32 sWonderNewsTilemap3[] = INCBIN_U32("graphics/wonder_news/bg3.bin.smolTM");
+static const u32 sWonderNewsGfx7[]     = INCBIN_U32("graphics/wonder_news/bg7.4bpp.smol");
+static const u32 sWonderNewsTilemap7[] = INCBIN_U32("graphics/wonder_news/bg7.bin.smolTM");
+static const u32 sWonderNewsGfx8[]     = INCBIN_U32("graphics/wonder_news/bg8.4bpp.smol");
+static const u32 sWonderNewsTilemap8[] = INCBIN_U32("graphics/wonder_news/bg8.bin.smolTM");
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 static const struct WonderGraphics sNewsGraphics[NUM_WONDER_BGS] = {
     {.titleTextPal = 1, .bodyTextPal = 0, .tiles = sWonderNewsGfx1, .map = sWonderNewsTilemap1, .pal = sWonderNewsPal1},
@@ -640,7 +712,11 @@ static const struct WonderGraphics sNewsGraphics[NUM_WONDER_BGS] = {
     {.titleTextPal = 1, .bodyTextPal = 0, .tiles = sWonderNewsGfx8, .map = sWonderNewsTilemap8, .pal = sWonderNewsPal8}
 };
 
+<<<<<<< HEAD
 bool32 WonderNews_Init(const struct WonderNews * news)
+=======
+bool32 WonderNews_Init(const struct WonderNews *news)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     if (news == NULL)
         return FALSE;
@@ -706,7 +782,11 @@ s32 WonderNews_Enter(void)
         LoadPalette(GetTextWindowPalette(1), BG_PLTT_ID(2), PLTT_SIZE_4BPP);
         gPaletteFade.bufferTransferDisabled = TRUE;
         LoadPalette(sWonderNewsData->gfx->pal, BG_PLTT_ID(1), PLTT_SIZE_4BPP);
+<<<<<<< HEAD
         LZ77UnCompWram(sWonderNewsData->gfx->map, sWonderNewsData->bgTilemapBuffer);
+=======
+        DecompressDataWithHeaderWram(sWonderNewsData->gfx->map, sWonderNewsData->bgTilemapBuffer);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         CopyRectToBgTilemapBufferRect(1, sWonderNewsData->bgTilemapBuffer, 0, 0, DISPLAY_TILE_WIDTH, 3, 0, 0, DISPLAY_TILE_WIDTH, 3, 1, 8, 0);
         CopyRectToBgTilemapBufferRect(3, sWonderNewsData->bgTilemapBuffer, 0, 3, DISPLAY_TILE_WIDTH, 3 + DISPLAY_TILE_HEIGHT, 0, 3, DISPLAY_TILE_WIDTH, 3 + DISPLAY_TILE_HEIGHT, 1, 8, 0);
         CopyBgTilemapBufferToVram(1);
@@ -785,7 +865,11 @@ s32 WonderNews_Exit(bool32 useCancel)
         }
         break;
     case 5:
+<<<<<<< HEAD
         PrintMysteryGiftOrEReaderTopMenu(gGiftIsFromEReader, useCancel);
+=======
+        PrintMysteryGiftOrEReaderHeader(gGiftIsFromEReader, useCancel);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         MG_DrawCheckerboardPattern(3);
         CopyBgTilemapBufferToVram(0);
         CopyBgTilemapBufferToVram(3);

@@ -12,9 +12,16 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+<<<<<<< HEAD
   "connections": 0,
   "object_events": [
     {
+=======
+  "connections": null,
+  "object_events": [
+    {
+      "local_id": "LOCALID_LILYCOVE_NURSE",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_NURSE",
       "x": 7,
       "y": 2,
@@ -28,7 +35,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_MR_FUJI",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 10,
       "y": 7,
       "elevation": 3,
@@ -41,7 +52,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_SUPER_NERD",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_MANIAC",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 11,
       "y": 8,
       "elevation": 3,
@@ -54,6 +69,10 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
+=======
+      "local_id": "LOCALID_LILYCOVE_LADY",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
       "x": 1,
       "y": 3,
@@ -67,6 +86,10 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
+=======
+      "local_id": "LOCALID_LILYCOVE_LADYS_MON",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_VAR_1",
       "x": 2,
       "y": 3,
@@ -77,7 +100,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LilycoveCity_PokemonCenter_1F_EventScript_ContestLadyMon",
+<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
+=======
+      "flag": "FLAG_HIDE_LILYCOVE_POKEMON_CENTER_CONTEST_LADY_MON"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "warp_events": [
@@ -103,10 +130,15 @@
       "dest_warp_id": "0"
     }
   ],
+<<<<<<< HEAD
   "coord_events": [
 
   ],
   "bg_events": [
 
   ]
+=======
+  "coord_events": [],
+  "bg_events": []
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }

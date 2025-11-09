@@ -61,9 +61,15 @@ void LZ77UnCompWram(const u32 *src, void *dest);
 
 void LZ77UnCompVram(const u32 *src, void *dest);
 
+<<<<<<< HEAD
 void RLUnCompWram(const void *src, void *dest);
 
 void RLUnCompVram(const void *src, void *dest);
+=======
+void RLUnCompWram(const u32 *src, void *dest);
+
+void RLUnCompVram(const u32 *src, void *dest);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 int MultiBoot(struct MultiBootParam *mp);
 

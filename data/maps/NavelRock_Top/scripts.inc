@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 .set LOCALID_HO_OH, 1
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 NavelRock_Top_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, NavelRock_Top_OnTransition
 	map_script MAP_SCRIPT_ON_RESUME, NavelRock_Top_OnResume
@@ -29,7 +32,11 @@ NavelRock_Top_OnResume:
 NavelRock_Top_EventScript_TryRemoveHoOh::
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
+<<<<<<< HEAD
 	removeobject LOCALID_HO_OH
+=======
+	removeobject LOCALID_NAVEL_ROCK_HO_OH
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	return
 
 NavelRock_Top_EventScript_HoOh::
@@ -39,8 +46,13 @@ NavelRock_Top_EventScript_HoOh::
 	setvar VAR_0x8004, 3  @ num loops
 	setvar VAR_0x8005, 35 @ delay
 	special LoopWingFlapSE
+<<<<<<< HEAD
 	applymovement LOCALID_HO_OH, NavelRock_Top_Movement_HoOhAppear
 	applymovement OBJ_EVENT_ID_CAMERA, NavelRock_Top_Movement_CameraPanUp
+=======
+	applymovement LOCALID_NAVEL_ROCK_HO_OH, NavelRock_Top_Movement_HoOhAppear
+	applymovement LOCALID_CAMERA, NavelRock_Top_Movement_CameraPanUp
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	delay 50
 	setweather WEATHER_NONE
@@ -53,8 +65,13 @@ NavelRock_Top_EventScript_HoOh::
 	setvar VAR_0x8004, 3  @ num loops
 	setvar VAR_0x8005, 35 @ delay
 	special LoopWingFlapSE
+<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_CAMERA, NavelRock_Top_Movement_CameraPanDown
 	applymovement LOCALID_HO_OH, NavelRock_Top_Movement_HoOhApproach
+=======
+	applymovement LOCALID_CAMERA, NavelRock_Top_Movement_CameraPanDown
+	applymovement LOCALID_NAVEL_ROCK_HO_OH, NavelRock_Top_Movement_HoOhApproach
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	special RemoveCameraObject
 	seteventmon SPECIES_HO_OH, 70
@@ -62,12 +79,17 @@ NavelRock_Top_EventScript_HoOh::
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+<<<<<<< HEAD
 	setvar VAR_LAST_TALKED, LOCALID_HO_OH
+=======
+	setvar VAR_LAST_TALKED, LOCALID_NAVEL_ROCK_HO_OH
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, NavelRock_Top_EventScript_DefeatedHoOh
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, NavelRock_Top_EventScript_RanFromHoOh
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, NavelRock_Top_EventScript_RanFromHoOh
 	setflag FLAG_CAUGHT_HO_OH
+<<<<<<< HEAD
 	setvar VAR_COMPLETED_HO_OH, 1
 	call_if_set FLAG_EXTRA_LEGENDARIES, NavelRock_Top_Enable_Kanto_Legendaries
 	releaseall
@@ -88,13 +110,24 @@ NavelRock_Top_EventScript_DefeatedHoOh::
 	call_if_set FLAG_EXTRA_LEGENDARIES, NavelRock_Top_Enable_Kanto_Legendaries
 	setvar VAR_0x8004, SPECIES_HO_OH
 	setvar VAR_COMPLETED_HO_OH, 1
+=======
+	releaseall
+	end
+
+NavelRock_Top_EventScript_DefeatedHoOh::
+	setflag FLAG_DEFEATED_HO_OH
+	setvar VAR_0x8004, SPECIES_HO_OH
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto Common_EventScript_LegendaryFlewAway
 	end
 
 NavelRock_Top_EventScript_RanFromHoOh::
 	setvar VAR_0x8004, SPECIES_HO_OH
 	goto Common_EventScript_LegendaryFlewAway
+<<<<<<< HEAD
 	setvar VAR_COMPLETED_HO_OH, 1
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 NavelRock_Top_Movement_CameraPanUp:

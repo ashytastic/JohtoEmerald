@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .set LOCALID_VICTOR, 1
 .set LOCALID_VICTORIA, 2
 .set LOCALID_VIVI, 3
@@ -6,17 +7,25 @@
 
 @ Note: LOCALID_ROUTE111_PLAYER_FALLING is a local id for this map used elsewhere. It's defined in event_objects.h
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 Route111_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, Route111_OnLoad
 	map_script MAP_SCRIPT_ON_TRANSITION, Route111_OnTransition
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, Route111_OnWarp
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route111_OnFrame
+<<<<<<< HEAD
 	map_script MAP_SCRIPT_ON_RESUME, SetTimeEncounters
 	.byte 0
 
 Route111_OnLoad:
 	clearflag FLAG_LIMIT_TO_50
 	calculatemonstats
+=======
+	.byte 0
+
+Route111_OnLoad:
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call_if_unset FLAG_REGI_DOORS_OPENED, Route111_EventScript_CloseDesertRuins
 	call_if_eq VAR_MIRAGE_TOWER_STATE, 1, Route111_EventScript_ShowTemporaryMirageTower
 	end
@@ -49,7 +58,10 @@ Route111_EventScript_ShowTemporaryMirageTower::
 	return
 
 Route111_OnTransition:
+<<<<<<< HEAD
 	callnative SetTimeBasedEncounters
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setvar VAR_TRAINER_HILL_IS_ACTIVE, 0
 	special SetMirageTowerVisibility
 	call_if_unset FLAG_MIRAGE_TOWER_VISIBLE, Route111_EventScript_SetLayoutNoMirageTower
@@ -87,10 +99,17 @@ Route111_EventScript_EndCheckSetSandstorm::
 	return
 
 Route111_EventScript_SetWinstratesNotDefeated::
+<<<<<<< HEAD
 	clearflag FLAG_GARBAGEFLAG
 	setflag FLAG_GARBAGEFLAG
 	setflag FLAG_GARBAGEFLAG
 	setflag FLAG_GARBAGEFLAG
+=======
+	clearflag FLAG_HIDE_ROUTE_111_VICTOR_WINSTRATE
+	setflag FLAG_HIDE_ROUTE_111_VICTORIA_WINSTRATE
+	setflag FLAG_HIDE_ROUTE_111_VIVI_WINSTRATE
+	setflag FLAG_HIDE_ROUTE_111_VICKY_WINSTRATE
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	cleartrainerflag TRAINER_VICTOR
 	cleartrainerflag TRAINER_VICTORIA
 	cleartrainerflag TRAINER_VIVI
@@ -109,7 +128,11 @@ Route111_OnWarp:
 	.2byte 0
 
 Route111_EventScript_HidePlayerForMirageTower::
+<<<<<<< HEAD
 	hideobjectat OBJ_EVENT_ID_PLAYER, MAP_LITTLEROOT_TOWN
+=======
+	hideobjectat LOCALID_PLAYER, MAP_LITTLEROOT_TOWN
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 Route111_OnFrame:
@@ -125,17 +148,28 @@ Route111_EventScript_MirageTowerDisappear::
 	addobject LOCALID_ROUTE111_PLAYER_FALLING
 	special StartPlayerDescendMirageTower
 	waitstate
+<<<<<<< HEAD
 	showobjectat OBJ_EVENT_ID_PLAYER, MAP_LITTLEROOT_TOWN
 	removeobject LOCALID_ROUTE111_PLAYER_FALLING
 	delay 16
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+=======
+	showobjectat LOCALID_PLAYER, MAP_LITTLEROOT_TOWN
+	removeobject LOCALID_ROUTE111_PLAYER_FALLING
+	delay 16
+	turnobject LOCALID_PLAYER, DIR_NORTH
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	delay 16
 	special StartMirageTowerDisintegration
 	waitstate
 	special StartMirageTowerFossilFallAndSink
 	waitstate
 	setvar VAR_MIRAGE_TOWER_STATE, 2
+<<<<<<< HEAD
 	clearflag FLAG_GARBAGEFLAG
+=======
+	clearflag FLAG_HIDE_DESERT_UNDERPASS_FOSSIL
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto_if_set FLAG_CHOSE_CLAW_FOSSIL, Route111_EventScript_RootFossilDisappeared
 	msgbox Route111_Text_ClawFossilDisappeared, MSGBOX_DEFAULT
 	releaseall
@@ -220,22 +254,38 @@ Route111_EventScript_PreventRouteAccess::
 	end
 
 Route111_EventScript_PushUpFromRoute::
+<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, Route111_Movement_PushUpFromRoute
+=======
+	applymovement LOCALID_PLAYER, Route111_Movement_PushUpFromRoute
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 Route111_EventScript_PushDownFromRoute::
+<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, Route111_Movement_PushDownFromRoute
+=======
+	applymovement LOCALID_PLAYER, Route111_Movement_PushDownFromRoute
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 Route111_EventScript_PushLeftFromRoute::
+<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, Route111_Movement_PushLeftFromRoute
+=======
+	applymovement LOCALID_PLAYER, Route111_Movement_PushLeftFromRoute
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 Route111_EventScript_PushRightFromRoute::
+<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, Route111_Movement_PushRightFromRoute
+=======
+	applymovement LOCALID_PLAYER, Route111_Movement_PushRightFromRoute
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
@@ -281,11 +331,16 @@ Route111_EventScript_Victor::
 Route111_EventScript_BattleWinstrates::
 	msgbox Route111_Text_VictorIntro, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_VICTOR, Route111_Text_VictorDefeat
+<<<<<<< HEAD
 	applymovement LOCALID_VICTOR, Common_Movement_WalkInPlaceFasterUp
+=======
+	applymovement LOCALID_ROUTE111_VICTOR, Common_Movement_WalkInPlaceFasterUp
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	call Route111_EventScript_OpenWinstrateDoor
 	msgbox Route111_Text_VictorPostBattle, MSGBOX_DEFAULT
 	closemessage
+<<<<<<< HEAD
 	applymovement LOCALID_VICTOR, Route111_Movement_WinstrateEnterHouse
 	waitmovement 0
 	removeobject LOCALID_VICTOR
@@ -295,15 +350,31 @@ Route111_EventScript_BattleWinstrates::
 	call Route111_EventScript_OpenWinstrateDoor
 	addobject LOCALID_VICTORIA
 	applymovement LOCALID_VICTORIA, Route111_Movement_WinstrateExitHouse
+=======
+	applymovement LOCALID_ROUTE111_VICTOR, Route111_Movement_WinstrateEnterHouse
+	waitmovement 0
+	removeobject LOCALID_ROUTE111_VICTOR
+	call Route111_EventScript_CloseWinstrateDoor
+	applymovement LOCALID_PLAYER, Route111_Movement_WaitForNextWinstrate
+	waitmovement 0
+	call Route111_EventScript_OpenWinstrateDoor
+	addobject LOCALID_ROUTE111_VICTORIA
+	applymovement LOCALID_ROUTE111_VICTORIA, Route111_Movement_WinstrateExitHouse
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	call Route111_EventScript_CloseWinstrateDoor
 	msgbox Route111_Text_VictoriaIntro, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_VICTORIA, Route111_Text_VictoriaDefeat
+<<<<<<< HEAD
 	applymovement LOCALID_VICTORIA, Common_Movement_WalkInPlaceFasterUp
+=======
+	applymovement LOCALID_ROUTE111_VICTORIA, Common_Movement_WalkInPlaceFasterUp
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	call Route111_EventScript_OpenWinstrateDoor
 	msgbox Route111_Text_VictoriaPostBattle, MSGBOX_DEFAULT
 	closemessage
+<<<<<<< HEAD
 	applymovement LOCALID_VICTORIA, Route111_Movement_WinstrateEnterHouse
 	waitmovement 0
 	removeobject LOCALID_VICTORIA
@@ -313,15 +384,31 @@ Route111_EventScript_BattleWinstrates::
 	call Route111_EventScript_OpenWinstrateDoor
 	addobject LOCALID_VIVI
 	applymovement LOCALID_VIVI, Route111_Movement_WinstrateExitHouse
+=======
+	applymovement LOCALID_ROUTE111_VICTORIA, Route111_Movement_WinstrateEnterHouse
+	waitmovement 0
+	removeobject LOCALID_ROUTE111_VICTORIA
+	call Route111_EventScript_CloseWinstrateDoor
+	applymovement LOCALID_PLAYER, Route111_Movement_WaitForNextWinstrate
+	waitmovement 0
+	call Route111_EventScript_OpenWinstrateDoor
+	addobject LOCALID_ROUTE111_VIVI
+	applymovement LOCALID_ROUTE111_VIVI, Route111_Movement_WinstrateExitHouse
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	call Route111_EventScript_CloseWinstrateDoor
 	msgbox Route111_Text_ViviIntro, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_VIVI, Route111_Text_ViviDefeat
+<<<<<<< HEAD
 	applymovement LOCALID_VIVI, Common_Movement_WalkInPlaceFasterUp
+=======
+	applymovement LOCALID_ROUTE111_VIVI, Common_Movement_WalkInPlaceFasterUp
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	call Route111_EventScript_OpenWinstrateDoor
 	msgbox Route111_Text_ViviPostBattle, MSGBOX_DEFAULT
 	closemessage
+<<<<<<< HEAD
 	applymovement LOCALID_VIVI, Route111_Movement_WinstrateEnterHouse
 	waitmovement 0
 	removeobject LOCALID_VIVI
@@ -331,18 +418,38 @@ Route111_EventScript_BattleWinstrates::
 	call Route111_EventScript_OpenWinstrateDoor
 	addobject LOCALID_VICKY
 	applymovement LOCALID_VICKY, Route111_Movement_WinstrateExitHouse
+=======
+	applymovement LOCALID_ROUTE111_VIVI, Route111_Movement_WinstrateEnterHouse
+	waitmovement 0
+	removeobject LOCALID_ROUTE111_VIVI
+	call Route111_EventScript_CloseWinstrateDoor
+	applymovement LOCALID_PLAYER, Route111_Movement_WaitForNextWinstrate
+	waitmovement 0
+	call Route111_EventScript_OpenWinstrateDoor
+	addobject LOCALID_ROUTE111_VICKY
+	applymovement LOCALID_ROUTE111_VICKY, Route111_Movement_WinstrateExitHouse
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	call Route111_EventScript_CloseWinstrateDoor
 	msgbox Route111_Text_VickyIntro, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_VICKY, Route111_Text_VickyDefeat
 	msgbox Route111_Text_VickyPostBattle, MSGBOX_DEFAULT
 	closemessage
+<<<<<<< HEAD
 	applymovement LOCALID_VICKY, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	call Route111_EventScript_OpenWinstrateDoor
 	applymovement LOCALID_VICKY, Route111_Movement_WinstrateEnterHouse
 	waitmovement 0
 	removeobject LOCALID_VICKY
+=======
+	applymovement LOCALID_ROUTE111_VICKY, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	call Route111_EventScript_OpenWinstrateDoor
+	applymovement LOCALID_ROUTE111_VICKY, Route111_Movement_WinstrateEnterHouse
+	waitmovement 0
+	removeobject LOCALID_ROUTE111_VICKY
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call Route111_EventScript_CloseWinstrateDoor
 	release
 	end
@@ -431,17 +538,29 @@ Route111_EventScript_HikerMirageTowerVisible::
 
 Route111_EventScript_RockSmashTipFatMan::
 	lockall
+<<<<<<< HEAD
 	applymovement LOCALID_ROCK_SMASH_MAN, Common_Movement_FacePlayer
 	waitmovement 0
 	msgbox Route111_Text_MauvilleUncleToldMeToTakeRockSmash, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_ROCK_SMASH_MAN, Common_Movement_FaceOriginalDirection
+=======
+	applymovement LOCALID_ROUTE111_ROCK_SMASH_MAN, Common_Movement_FacePlayer
+	waitmovement 0
+	msgbox Route111_Text_MauvilleUncleToldMeToTakeRockSmash, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_ROUTE111_ROCK_SMASH_MAN, Common_Movement_FaceOriginalDirection
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	releaseall
 	end
 
 Route111_EventScript_Drew::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_KOJI, Route111_Text_DrewIntro, Route111_Text_DrewDefeat
+=======
+	trainerbattle_single TRAINER_DREW, Route111_Text_DrewIntro, Route111_Text_DrewDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route111_Text_DrewPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -451,17 +570,29 @@ Route111_EventScript_Heidi::
 	end
 
 Route111_EventScript_Beau::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_DANIEL, Route111_Text_BeauIntro, Route111_Text_BeauDefeat
+=======
+	trainerbattle_single TRAINER_BEAU, Route111_Text_BeauIntro, Route111_Text_BeauDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route111_Text_BeauPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route111_EventScript_Becky::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_DARIN, Route111_Text_BeckyIntro, Route111_Text_BeckyDefeat
+=======
+	trainerbattle_single TRAINER_BECKY, Route111_Text_BeckyIntro, Route111_Text_BeckyDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route111_Text_BeckyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route111_EventScript_Dusty::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_KRISE, Route111_Text_DustyIntro, Route111_Text_DustyDefeat, Route111_EventScript_RegisterDusty
+=======
+	trainerbattle_single TRAINER_DUSTY_1, Route111_Text_DustyIntro, Route111_Text_DustyDefeat, Route111_EventScript_RegisterDusty
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route111_EventScript_RematchDusty
 	msgbox Route111_Text_DustyPostBattle, MSGBOX_DEFAULT
@@ -472,12 +603,20 @@ Route111_EventScript_RegisterDusty::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route111_Text_DustyRegister, MSGBOX_DEFAULT
+<<<<<<< HEAD
 	register_matchcall TRAINER_KRISE
+=======
+	register_matchcall TRAINER_DUSTY_1
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	release
 	end
 
 Route111_EventScript_RematchDusty::
+<<<<<<< HEAD
 	trainerbattle_rematch TRAINER_KRISE, Route111_Text_DustyRematchIntro, Route111_Text_DustyRematchDefeat
+=======
+	trainerbattle_rematch TRAINER_DUSTY_1, Route111_Text_DustyRematchIntro, Route111_Text_DustyRematchDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route111_Text_DustyPostRematch, MSGBOX_AUTOCLOSE
 	end
 
@@ -492,7 +631,11 @@ Route111_EventScript_Irene::
 	end
 
 Route111_EventScript_Daisuke::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_JED, Route111_Text_DaisukeIntro, Route111_Text_DaisukeDefeat
+=======
+	trainerbattle_single TRAINER_DAISUKE, Route111_Text_DaisukeIntro, Route111_Text_DaisukeDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route111_Text_DaisukePostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -518,7 +661,11 @@ Route111_EventScript_RematchWilton::
 	end
 
 Route111_EventScript_Brooke::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_EMMA, Route111_Text_BrookeIntro, Route111_Text_BrookeDefeat, Route111_EventScript_RegisterBrooke
+=======
+	trainerbattle_single TRAINER_BROOKE_1, Route111_Text_BrookeIntro, Route111_Text_BrookeDefeat, Route111_EventScript_RegisterBrooke
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route111_EventScript_RematchBrooke
 	msgbox Route111_Text_BrookePostBattle, MSGBOX_DEFAULT
@@ -529,17 +676,29 @@ Route111_EventScript_RegisterBrooke::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route111_Text_BrookeRegister, MSGBOX_DEFAULT
+<<<<<<< HEAD
 	register_matchcall TRAINER_EMMA
+=======
+	register_matchcall TRAINER_BROOKE_1
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	release
 	end
 
 Route111_EventScript_RematchBrooke::
+<<<<<<< HEAD
 	trainerbattle_rematch TRAINER_EMMA, Route111_Text_BrookeRematchIntro, Route111_Text_BrookeRematchDefeat
+=======
+	trainerbattle_rematch TRAINER_BROOKE_1, Route111_Text_BrookeRematchIntro, Route111_Text_BrookeRematchDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route111_Text_BrookePostRematch, MSGBOX_AUTOCLOSE
 	end
 
 Route111_EventScript_Hayden::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_PRYCE_1_3, Route111_Text_HaydenIntro, Route111_Text_HaydenDefeat
+=======
+	trainerbattle_single TRAINER_HAYDEN, Route111_Text_HaydenIntro, Route111_Text_HaydenDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route111_Text_HaydenPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -554,12 +713,20 @@ Route111_EventScript_Tyron::
 	end
 
 Route111_EventScript_Celina::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_GRUNT_10, Route111_Text_CelinaIntro, Route111_Text_CelinaDefeat
+=======
+	trainerbattle_single TRAINER_CELINA, Route111_Text_CelinaIntro, Route111_Text_CelinaDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route111_Text_CelinaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route111_EventScript_Celia::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_GRUNT_9, Route111_Text_CeliaIntro, Route111_Text_CeliaDefeat
+=======
+	trainerbattle_single TRAINER_CELIA, Route111_Text_CeliaIntro, Route111_Text_CeliaDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route111_Text_CeliaPostBattle, MSGBOX_AUTOCLOSE
 	end
 

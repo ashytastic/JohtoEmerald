@@ -21,7 +21,11 @@
   ],
   "object_events": [
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_BOY",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_BOY_2",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 26,
       "y": 38,
       "elevation": 0,
@@ -34,6 +38,10 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
+=======
+      "local_id": "LOCALID_FRONTIER_SS_TIDAL",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_SS_TIDAL",
       "x": 20,
       "y": 70,
@@ -47,6 +55,10 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
+=======
+      "local_id": "LOCALID_FRONTIER_FERRY_ATTENDANT",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_BEAUTY",
       "x": 19,
       "y": 68,
@@ -60,7 +72,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 26,
       "y": 20,
       "elevation": 0,
@@ -73,7 +89,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_MAN",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 27,
       "y": 30,
       "elevation": 0,
@@ -86,7 +106,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_WORKER_F",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 33,
       "y": 41,
       "elevation": 0,
@@ -125,7 +149,12 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_SUPER_NERD",
+=======
+      "local_id": "LOCALID_FRONTIER_MANIAC_1",
+      "graphics_id": "OBJ_EVENT_GFX_MANIAC",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 13,
       "y": 44,
       "elevation": 0,
@@ -138,7 +167,12 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_SUPER_NERD",
+=======
+      "local_id": "LOCALID_FRONTIER_MANIAC_2",
+      "graphics_id": "OBJ_EVENT_GFX_MANIAC",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 14,
       "y": 44,
       "elevation": 0,
@@ -151,7 +185,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_ROCKER",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_MAN_5",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 23,
       "y": 47,
       "elevation": 0,
@@ -164,6 +202,10 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
+=======
+      "local_id": "LOCALID_FRONTIER_GIRL",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_GIRL_1",
       "x": 38,
       "y": 27,
@@ -177,7 +219,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_F",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 45,
       "y": 18,
       "elevation": 0,
@@ -190,6 +236,10 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
+=======
+      "local_id": "LOCALID_FRONTIER_CAMPER",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
       "x": 9,
       "y": 47,
@@ -203,7 +253,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_LASS",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 35,
       "y": 5,
       "elevation": 0,
@@ -216,7 +270,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_GYM_GUY",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_MAN_2",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 11,
       "y": 66,
       "elevation": 0,
@@ -229,7 +287,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_FISHER",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 31,
       "y": 31,
       "elevation": 0,
@@ -242,7 +304,12 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_FISHER",
+=======
+      "local_id": "LOCALID_FRONTIER_FISHERMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 42,
       "y": 48,
       "elevation": 0,
@@ -281,7 +348,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_MR_FUJI",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 12,
       "y": 10,
       "elevation": 0,
@@ -294,7 +365,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_2",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 11,
       "y": 10,
       "elevation": 0,
@@ -307,7 +382,12 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_M",
+=======
+      "local_id": "LOCALID_FRONTIER_MAN_4",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_4",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 8,
       "y": 5,
       "elevation": 0,
@@ -320,7 +400,11 @@
       "flag": "0"
     },
     {
+<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_BILL",
+=======
+      "graphics_id": "OBJ_EVENT_GFX_POKEFAN_F",
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 4,
       "y": 26,
       "elevation": 0,
@@ -331,6 +415,7 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "BattleFrontier_OutsideWest_EventScript_PokefanF",
       "flag": "0"
+<<<<<<< HEAD
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
@@ -500,6 +585,8 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "0"
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "warp_events": [
@@ -581,9 +668,13 @@
       "dest_warp_id": "0"
     }
   ],
+<<<<<<< HEAD
   "coord_events": [
 
   ],
+=======
+  "coord_events": [],
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "bg_events": [
     {
       "type": "sign",

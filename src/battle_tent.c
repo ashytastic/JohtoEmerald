@@ -127,18 +127,32 @@ static void SetVerdanturfTentPrize(void)
 
 static void SetVerdanturfTentTrainerGfx(void)
 {
+<<<<<<< HEAD
     gTrainerBattleOpponent_A = (u32)((Random() % 255) * 5) / 64;
     SetBattleFacilityTrainerGfxId(gTrainerBattleOpponent_A, 0);
+=======
+    TRAINER_BATTLE_PARAM.opponentA = (u32)((Random() % 255) * 5) / 64;
+    SetBattleFacilityTrainerGfxId(TRAINER_BATTLE_PARAM.opponentA, 0);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void BufferVerdanturfTentTrainerIntro(void)
 {
+<<<<<<< HEAD
     if (gTrainerBattleOpponent_A < FRONTIER_TRAINERS_COUNT)
         FrontierSpeechToString(gFacilityTrainers[gTrainerBattleOpponent_A].speechBefore);
+=======
+    if (TRAINER_BATTLE_PARAM.opponentA < FRONTIER_TRAINERS_COUNT)
+        FrontierSpeechToString(gFacilityTrainers[TRAINER_BATTLE_PARAM.opponentA].speechBefore);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void SaveVerdanturfTentChallenge(void)
 {
+<<<<<<< HEAD
+=======
+    ClearEnemyPartyAfterChallenge();
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gSaveBlock2Ptr->frontier.challengeStatus = gSpecialVar_0x8005;
     VarSet(VAR_TEMP_CHALLENGE_STATUS, 0);
     gSaveBlock2Ptr->frontier.challengePaused = TRUE;
@@ -189,6 +203,10 @@ static void SetFallarborTentPrize(void)
 
 static void SaveFallarborTentChallenge(void)
 {
+<<<<<<< HEAD
+=======
+    ClearEnemyPartyAfterChallenge();
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gSaveBlock2Ptr->frontier.challengeStatus = gSpecialVar_0x8005;
     VarSet(VAR_TEMP_CHALLENGE_STATUS, 0);
     gSaveBlock2Ptr->frontier.challengePaused = TRUE;
@@ -216,7 +234,11 @@ static void GiveFallarborTentPrize(void)
 
 static void BufferFallarborTentTrainerName(void)
 {
+<<<<<<< HEAD
     GetFrontierTrainerName(gStringVar1, gTrainerBattleOpponent_A);
+=======
+    GetFrontierTrainerName(gStringVar1, TRAINER_BATTLE_PARAM.opponentA);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 void CallSlateportTentFunction(void)
@@ -244,6 +266,10 @@ static void SetSlateportTentPrize(void)
 
 static void SaveSlateportTentChallenge(void)
 {
+<<<<<<< HEAD
+=======
+    ClearEnemyPartyAfterChallenge();
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gSaveBlock2Ptr->frontier.challengeStatus = gSpecialVar_0x8005;
     VarSet(VAR_TEMP_CHALLENGE_STATUS, 0);
     gSaveBlock2Ptr->frontier.challengePaused = TRUE;
@@ -282,7 +308,11 @@ static void SwapRentalMons(void)
 
 bool8 InSlateportBattleTent(void)
 {
+<<<<<<< HEAD
     return gMapHeader.regionMapSectionId == MAPSEC_MAHOGANY_TOWN
+=======
+    return gMapHeader.regionMapSectionId == MAPSEC_SLATEPORT_CITY
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
            && (gMapHeader.mapLayoutId == LAYOUT_BATTLE_TENT_CORRIDOR || gMapHeader.mapLayoutId == LAYOUT_BATTLE_TENT_BATTLE_ROOM);
 }
 
@@ -304,10 +334,14 @@ static void GenerateInitialRentalMons(void)
         monIds[i] = 0;
         heldItems[i] = 0;
     }
+<<<<<<< HEAD
     if (gSaveBlock2Ptr->optionStyle == 1) //off
         gFacilityTrainerMons = gSlateportBattleTentMons;
     else if (gSaveBlock2Ptr->optionStyle == 0) //on
         gFacilityTrainerMons = gSlateportBattleTentMonsSplit;
+=======
+    gFacilityTrainerMons = gSlateportBattleTentMons;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     currSpecies = SPECIES_NONE;
     i = 0;
     while (i != PARTY_SIZE)
@@ -332,7 +366,11 @@ static void GenerateInitialRentalMons(void)
         // Cannot have two same held items.
         for (j = firstMonId; j < i + firstMonId; j++)
         {
+<<<<<<< HEAD
             if (heldItems[j] != 0 && heldItems[j] == gBattleFrontierHeldItems[gFacilityTrainerMons[monSetId].itemTableId])
+=======
+            if (heldItems[j] != 0 && heldItems[j] == gFacilityTrainerMons[monSetId].heldItem)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             {
                 if (gFacilityTrainerMons[monSetId].species == currSpecies)
                     currSpecies = SPECIES_NONE;
@@ -344,7 +382,11 @@ static void GenerateInitialRentalMons(void)
 
         gSaveBlock2Ptr->frontier.rentalMons[i].monId = monSetId;
         species[i] = gFacilityTrainerMons[monSetId].species;
+<<<<<<< HEAD
         heldItems[i] = gBattleFrontierHeldItems[gFacilityTrainerMons[monSetId].itemTableId];
+=======
+        heldItems[i] = gFacilityTrainerMons[monSetId].heldItem;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         monIds[i] = monSetId;
         i++;
     }
@@ -360,10 +402,14 @@ static void GenerateOpponentMons(void)
     s32 numMons = 0;
 
     gFacilityTrainers = gSlateportBattleTentTrainers;
+<<<<<<< HEAD
     if (gSaveBlock2Ptr->optionStyle == 1) //off
         gFacilityTrainerMons = gSlateportBattleTentMons;
     else if (gSaveBlock2Ptr->optionStyle == 0) //on
         gFacilityTrainerMons = gSlateportBattleTentMonsSplit;
+=======
+    gFacilityTrainerMons = gSlateportBattleTentMons;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     while (1)
     {
@@ -378,8 +424,13 @@ static void GenerateOpponentMons(void)
             }
         } while (i != gSaveBlock2Ptr->frontier.curChallengeBattleNum);
 
+<<<<<<< HEAD
         gTrainerBattleOpponent_A = trainerId;
         monSet = gFacilityTrainers[gTrainerBattleOpponent_A].monSet;
+=======
+        TRAINER_BATTLE_PARAM.opponentA = trainerId;
+        monSet = gFacilityTrainers[TRAINER_BATTLE_PARAM.opponentA].monSet;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         while (monSet[numMons] != 0xFFFF)
             numMons++;
         if (numMons > 8)
@@ -388,9 +439,15 @@ static void GenerateOpponentMons(void)
     }
 
     if (gSaveBlock2Ptr->frontier.curChallengeBattleNum < TENT_STAGES_PER_CHALLENGE - 1)
+<<<<<<< HEAD
         gSaveBlock2Ptr->frontier.trainerIds[gSaveBlock2Ptr->frontier.curChallengeBattleNum] = gTrainerBattleOpponent_A;
 
     monSet = gFacilityTrainers[gTrainerBattleOpponent_A].monSet;
+=======
+        gSaveBlock2Ptr->frontier.trainerIds[gSaveBlock2Ptr->frontier.curChallengeBattleNum] = TRAINER_BATTLE_PARAM.opponentA;
+
+    monSet = gFacilityTrainers[TRAINER_BATTLE_PARAM.opponentA].monSet;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     i = 0;
     while (i != FRONTIER_PARTY_SIZE)
     {
@@ -417,7 +474,11 @@ static void GenerateOpponentMons(void)
         // Ensure held items don't repeat on the opponent's team
         for (k = 0; k < i; k++)
         {
+<<<<<<< HEAD
             if (heldItems[k] != ITEM_NONE && heldItems[k] == gBattleFrontierHeldItems[gFacilityTrainerMons[sRandMonId].itemTableId])
+=======
+            if (heldItems[k] != ITEM_NONE && heldItems[k] == gFacilityTrainerMons[sRandMonId].heldItem)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 break;
         }
         if (k != i)
@@ -425,7 +486,11 @@ static void GenerateOpponentMons(void)
 
         // Successful selection
         species[i] = gFacilityTrainerMons[sRandMonId].species;
+<<<<<<< HEAD
         heldItems[i] = gBattleFrontierHeldItems[gFacilityTrainerMons[sRandMonId].itemTableId];
+=======
+        heldItems[i] = gFacilityTrainerMons[sRandMonId].heldItem;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         gFrontierTempParty[i] = sRandMonId;
         i++;
     }

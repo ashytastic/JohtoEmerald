@@ -6,6 +6,7 @@ FallarborTown_Mart_EventScript_Clerk::
 	faceplayer
 	message gText_HowMayIServeYou
 	waitmessage
+<<<<<<< HEAD
 	pokemart 0
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
@@ -16,6 +17,8 @@ FallarborTown_Mart_EventScript_Clerk2::
 	faceplayer
 	message gText_HowMayIServeYou
 	waitmessage
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	pokemart FallarborTown_Mart_Pokemart
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
@@ -23,6 +26,7 @@ FallarborTown_Mart_EventScript_Clerk2::
 
 	.align 2
 FallarborTown_Mart_Pokemart:
+<<<<<<< HEAD
 	.2byte ITEM_X_SPECIAL
 	.2byte ITEM_X_SPEED
 	.2byte ITEM_X_ATTACK
@@ -32,6 +36,21 @@ FallarborTown_Mart_Pokemart:
 	.2byte ITEM_NONE
 	release
 	end
+=======
+	.2byte ITEM_GREAT_BALL
+	.2byte ITEM_SUPER_POTION
+	.2byte ITEM_ANTIDOTE
+	.2byte ITEM_PARALYZE_HEAL
+	.2byte ITEM_ESCAPE_ROPE
+	.2byte ITEM_SUPER_REPEL
+	.2byte ITEM_X_SP_ATK
+	.2byte ITEM_X_SPEED
+	.2byte ITEM_X_ATTACK
+	.2byte ITEM_X_DEFENSE
+	.2byte ITEM_DIRE_HIT
+	.2byte ITEM_GUARD_SPEC
+	pokemartlistend
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 FallarborTown_Mart_EventScript_Woman::
 	msgbox FallarborTown_Mart_Text_DecidingSkittyEvolve, MSGBOX_NPC

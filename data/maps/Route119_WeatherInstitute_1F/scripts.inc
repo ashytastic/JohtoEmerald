@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 .set LOCALID_LITTLE_BOY, 5
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 Route119_WeatherInstitute_1F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route119_WeatherInstitute_1F_OnTransition
 	.byte 0
@@ -9,8 +12,13 @@ Route119_WeatherInstitute_1F_OnTransition:
 	end
 
 Route119_WeatherInstitute_1F_EventScript_SetLittleBoyPos::
+<<<<<<< HEAD
 	setobjectxyperm LOCALID_LITTLE_BOY, 0, 5
 	setobjectmovementtype LOCALID_LITTLE_BOY, MOVEMENT_TYPE_FACE_RIGHT
+=======
+	setobjectxyperm LOCALID_WEATHER_INSTITUTE_LITTLE_BOY, 0, 5
+	setobjectmovementtype LOCALID_WEATHER_INSTITUTE_LITTLE_BOY, MOVEMENT_TYPE_FACE_RIGHT
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	return
 
 Route119_WeatherInstitute_1F_EventScript_LittleBoy::
@@ -53,8 +61,11 @@ Route119_WeatherInstitute_1F_EventScript_InstituteWorker2::
 	end
 
 Route119_WeatherInstitute_1F_EventScript_Bed::
+<<<<<<< HEAD
 	specialvar VAR_RESULT, IsPokecenterChallengeActivated
 	goto_if_eq VAR_RESULT, TRUE, Route119_WeatherInstitute_1F_EventScript_Bed_PokecenterChallenge
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	lockall
 	msgbox Route119_WeatherInstitute_1F_Text_TakeRestInBed, MSGBOX_DEFAULT
 	closemessage
@@ -62,6 +73,7 @@ Route119_WeatherInstitute_1F_EventScript_Bed::
 	releaseall
 	end
 
+<<<<<<< HEAD
 Route119_WeatherInstitute_1F_EventScript_Bed_PokecenterChallenge::
 	msgbox Route119_WeatherInstitute_1F_Text_TakeRestInBed_PokecenterChallenge, MSGBOX_DEFAULT
 	closemessage
@@ -69,11 +81,19 @@ Route119_WeatherInstitute_1F_EventScript_Bed_PokecenterChallenge::
 
 Route119_WeatherInstitute_1F_EventScript_Grunt1::
 	trainerbattle_single TRAINER_ZEKE, Route119_WeatherInstitute_1F_Text_Grunt1Intro, Route119_WeatherInstitute_1F_Text_Grunt1Defeat
+=======
+Route119_WeatherInstitute_1F_EventScript_Grunt1::
+	trainerbattle_single TRAINER_GRUNT_WEATHER_INST_1, Route119_WeatherInstitute_1F_Text_Grunt1Intro, Route119_WeatherInstitute_1F_Text_Grunt1Defeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route119_WeatherInstitute_1F_Text_Grunt1PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route119_WeatherInstitute_1F_EventScript_Grunt4::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_FALKNER_2, Route119_WeatherInstitute_1F_Text_Grunt4Intro, Route119_WeatherInstitute_1F_Text_Grunt4Defeat
+=======
+	trainerbattle_single TRAINER_GRUNT_WEATHER_INST_4, Route119_WeatherInstitute_1F_Text_Grunt4Intro, Route119_WeatherInstitute_1F_Text_Grunt4Defeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route119_WeatherInstitute_1F_Text_Grunt4PostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -140,6 +160,9 @@ Route119_WeatherInstitute_1F_Text_TakeRestInBed:
 	.string "There's a bed…\n"
 	.string "Let's take a rest.$"
 
+<<<<<<< HEAD
 Route119_WeatherInstitute_1F_Text_TakeRestInBed_PokecenterChallenge:
 	.string "Sorry, you are playing with\n"
 	.string "the POKéCENTER challenge!$"
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

@@ -321,8 +321,13 @@ static u8 GetValidMewMoveDirection(u8 ignoredDir)
 void UpdateFarawayIslandStepCounter(void)
 {
     u16 steps = VarGet(VAR_FARAWAY_ISLAND_STEP_COUNTER);
+<<<<<<< HEAD
     if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(FARAWAY_ISLAND_INTERIOR)
      && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(FARAWAY_ISLAND_INTERIOR))
+=======
+    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_FARAWAY_ISLAND_INTERIOR)
+     && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_FARAWAY_ISLAND_INTERIOR))
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     {
         steps++;
         if (steps >= 9999)
@@ -334,8 +339,13 @@ void UpdateFarawayIslandStepCounter(void)
 
 bool8 ObjectEventIsFarawayIslandMew(struct ObjectEvent *objectEvent)
 {
+<<<<<<< HEAD
     if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(FARAWAY_ISLAND_INTERIOR)
      && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(FARAWAY_ISLAND_INTERIOR))
+=======
+    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_FARAWAY_ISLAND_INTERIOR)
+     && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_FARAWAY_ISLAND_INTERIOR))
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     {
         if (objectEvent->graphicsId == OBJ_EVENT_GFX_MEW)
             return TRUE;
@@ -346,8 +356,13 @@ bool8 ObjectEventIsFarawayIslandMew(struct ObjectEvent *objectEvent)
 
 bool8 IsMewPlayingHideAndSeek(void)
 {
+<<<<<<< HEAD
     if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(FARAWAY_ISLAND_INTERIOR)
      && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(FARAWAY_ISLAND_INTERIOR))
+=======
+    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_FARAWAY_ISLAND_INTERIOR)
+     && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_FARAWAY_ISLAND_INTERIOR))
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     {
         if (FlagGet(FLAG_CAUGHT_MEW) != TRUE && FlagGet(FLAG_HIDE_MEW) != TRUE)
             return TRUE;
@@ -386,10 +401,17 @@ void SetMewAboveGrass(void)
         // Mew emerging from grass when found
         // Also do field effect for grass shaking as it emerges
         VarSet(VAR_FARAWAY_ISLAND_STEP_COUNTER, 0xFFFF);
+<<<<<<< HEAD
         mew->fixedPriority = 0;
         gSprites[mew->spriteId].subspriteMode = SUBSPRITES_IGNORE_PRIORITY;
         if (gSpecialVar_Facing != DIR_NORTH)
             gSprites[mew->spriteId].subpriority = 0;
+=======
+        mew->fixedPriority = 1;
+        gSprites[mew->spriteId].subspriteMode = SUBSPRITES_IGNORE_PRIORITY;
+        if (gSpecialVar_Facing != DIR_NORTH)
+            gSprites[mew->spriteId].subpriority = 1;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
         LoadSpritePalette(&gSpritePalette_GeneralFieldEffect1);
         UpdateSpritePaletteWithWeather(IndexOfSpritePaletteTag(gSpritePalette_GeneralFieldEffect1.tag), FALSE);
@@ -402,7 +424,11 @@ void SetMewAboveGrass(void)
         {
             struct Sprite *sprite = &gSprites[sGrassSpriteId];
             sprite->coordOffsetEnabled = 1;
+<<<<<<< HEAD
             sprite->oam.priority = 0;
+=======
+            sprite->oam.priority = 2;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             sprite->callback = SpriteCallbackDummy;
         }
     }

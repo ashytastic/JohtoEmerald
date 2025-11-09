@@ -1,19 +1,31 @@
+<<<<<<< HEAD
 .set LOCALID_RIVAL_ON_BIKE, 7
 .set LOCALID_RIVAL, 8
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 LavaridgeTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, LavaridgeTown_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, LavaridgeTown_OnFrame
 	.byte 0
 
 LavaridgeTown_OnTransition:
+<<<<<<< HEAD
 	setflag FLAG_VISITED_GOLDENROD_CITY
+=======
+	setflag FLAG_VISITED_LAVARIDGE_TOWN
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call_if_set FLAG_WHITEOUT_TO_LAVARIDGE, LavaridgeTown_EventScript_ClearLavaridgeWhiteOut
 	call_if_set FLAG_DEFEATED_EVIL_TEAM_MT_CHIMNEY, LavaridgeTown_EventScript_ShowMtChimneyTrainers
 	call Common_EventScript_SetupRivalGfxId
 	call Common_EventScript_SetupRivalOnBikeGfxId
+<<<<<<< HEAD
 	call_if_eq VAR_GARBAGEVAR, 1, LavaridgeTown_EventScript_CheckSetRivalPos
 	call_if_eq VAR_GARBAGEVAR, 1, LavaridgeTown_EventScript_HideMapNamePopup
+=======
+	call_if_eq VAR_LAVARIDGE_TOWN_STATE, 1, LavaridgeTown_EventScript_CheckSetRivalPos
+	call_if_eq VAR_LAVARIDGE_TOWN_STATE, 1, LavaridgeTown_EventScript_HideMapNamePopup
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 LavaridgeTown_EventScript_ClearLavaridgeWhiteOut::
@@ -26,6 +38,7 @@ LavaridgeTown_EventScript_CheckSetRivalPos::
 	return
 
 LavaridgeTown_EventScript_SetRivalPos::
+<<<<<<< HEAD
 	setobjectxyperm LOCALID_RIVAL, 11, 9
 	setobjectxyperm LOCALID_RIVAL_ON_BIKE, 9, 8
 	setobjectmovementtype LOCALID_RIVAL_ON_BIKE, MOVEMENT_TYPE_FACE_UP
@@ -34,6 +47,16 @@ LavaridgeTown_EventScript_SetRivalPos::
 
 LavaridgeTown_EventScript_ShowMtChimneyTrainers::
 	clearflag FLAG_GARBAGEFLAG
+=======
+	setobjectxyperm LOCALID_LAVARIDGE_RIVAL, 11, 9
+	setobjectxyperm LOCALID_LAVARIDGE_RIVAL_ON_BIKE, 9, 8
+	setobjectmovementtype LOCALID_LAVARIDGE_RIVAL_ON_BIKE, MOVEMENT_TYPE_FACE_UP
+	clearflag FLAG_HIDE_LAVARIDGE_TOWN_RIVAL
+	return
+
+LavaridgeTown_EventScript_ShowMtChimneyTrainers::
+	clearflag FLAG_HIDE_MT_CHIMNEY_TRAINERS
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	return
 
 LavaridgeTown_EventScript_HideMapNamePopup::
@@ -41,7 +64,11 @@ LavaridgeTown_EventScript_HideMapNamePopup::
 	return
 
 LavaridgeTown_OnFrame:
+<<<<<<< HEAD
 	map_script_2 VAR_GARBAGEVAR, 1, LavaridgeTown_EventScript_RivalGiveGoGoggles
+=======
+	map_script_2 VAR_LAVARIDGE_TOWN_STATE, 1, LavaridgeTown_EventScript_RivalGiveGoGoggles
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.2byte 0
 
 LavaridgeTown_EventScript_RivalGiveGoGoggles::
@@ -78,6 +105,7 @@ LavaridgeTown_EventScript_BrendanGiveGoGoggles::
 
 LavaridgeTown_EventScript_RivalExit::
 	closemessage
+<<<<<<< HEAD
 	removeobject LOCALID_RIVAL
 	addobject LOCALID_RIVAL_ON_BIKE
 	delay 30
@@ -85,6 +113,15 @@ LavaridgeTown_EventScript_RivalExit::
 	call_if_ne VAR_0x8008, 9, LavaridgeTown_EventScript_RivalExit2
 	removeobject LOCALID_RIVAL_ON_BIKE
 	setvar VAR_GARBAGEVAR, 2
+=======
+	removeobject LOCALID_LAVARIDGE_RIVAL
+	addobject LOCALID_LAVARIDGE_RIVAL_ON_BIKE
+	delay 30
+	call_if_eq VAR_0x8008, 9, LavaridgeTown_EventScript_RivalExit1
+	call_if_ne VAR_0x8008, 9, LavaridgeTown_EventScript_RivalExit2
+	removeobject LOCALID_LAVARIDGE_RIVAL_ON_BIKE
+	setvar VAR_LAVARIDGE_TOWN_STATE, 2
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	savebgm MUS_DUMMY
 	fadedefaultbgm
@@ -100,18 +137,28 @@ LavaridgeTown_EventScript_PlayBrendanMusic::
 	return
 
 LavaridgeTown_EventScript_RivalNoticePlayer::
+<<<<<<< HEAD
 	applymovement LOCALID_RIVAL, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	playse SE_PIN
 	applymovement LOCALID_RIVAL, Common_Movement_ExclamationMark
 	waitmovement 0
 	applymovement LOCALID_RIVAL, Common_Movement_Delay48
+=======
+	applymovement LOCALID_LAVARIDGE_RIVAL, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	playse SE_PIN
+	applymovement LOCALID_LAVARIDGE_RIVAL, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_LAVARIDGE_RIVAL, Common_Movement_Delay48
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 LavaridgeTown_EventScript_RivalExitHerbShop::
 	opendoor 12, 15
 	waitdooranim
+<<<<<<< HEAD
 	addobject LOCALID_RIVAL
 	applymovement LOCALID_RIVAL, LavaridgeTown_Movement_RivalExitHerbShop
 	waitmovement 0
@@ -125,27 +172,59 @@ LavaridgeTown_EventScript_RivalExitHerbShop::
 	applymovement LOCALID_RIVAL, Common_Movement_Delay48
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+=======
+	addobject LOCALID_LAVARIDGE_RIVAL
+	applymovement LOCALID_LAVARIDGE_RIVAL, LavaridgeTown_Movement_RivalExitHerbShop
+	waitmovement 0
+	closedoor 12, 15
+	waitdooranim
+	applymovement LOCALID_LAVARIDGE_RIVAL, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
+	playse SE_PIN
+	applymovement LOCALID_LAVARIDGE_RIVAL, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_LAVARIDGE_RIVAL, Common_Movement_Delay48
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 LavaridgeTown_EventScript_RivalApproachPlayer1::
+<<<<<<< HEAD
 	applymovement LOCALID_RIVAL, LavaridgeTown_Movement_RivalApproachPlayer1
+=======
+	applymovement LOCALID_LAVARIDGE_RIVAL, LavaridgeTown_Movement_RivalApproachPlayer1
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 LavaridgeTown_EventScript_RivalApproachPlayer2::
+<<<<<<< HEAD
 	applymovement LOCALID_RIVAL, LavaridgeTown_Movement_RivalApproachPlayer2
+=======
+	applymovement LOCALID_LAVARIDGE_RIVAL, LavaridgeTown_Movement_RivalApproachPlayer2
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 LavaridgeTown_EventScript_RivalExit1::
+<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, LavaridgeTown_Movement_PlayerWatchRivalExit
 	applymovement LOCALID_RIVAL_ON_BIKE, LavaridgeTown_Movement_RivalExit1
+=======
+	applymovement LOCALID_PLAYER, LavaridgeTown_Movement_PlayerWatchRivalExit
+	applymovement LOCALID_LAVARIDGE_RIVAL_ON_BIKE, LavaridgeTown_Movement_RivalExit1
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 LavaridgeTown_EventScript_RivalExit2::
+<<<<<<< HEAD
 	applymovement LOCALID_RIVAL_ON_BIKE, LavaridgeTown_Movement_RivalExit2
+=======
+	applymovement LOCALID_LAVARIDGE_RIVAL_ON_BIKE, LavaridgeTown_Movement_RivalExit2
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
@@ -296,8 +375,11 @@ LavaridgeTown_Text_MayExplainGoGogglesChallengeDad:
 	.string "want to lose to me, I bet!\p"
 	.string "{PLAYER}{KUN}, I think I should challenge\n"
 	.string "your dad in PETALBURG GYM.\p"
+<<<<<<< HEAD
 	.string "Oh yeah, and you should check the\n"
 	.string "NATURE MINTS in the FLOWERSHOP!\p"
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.string "See you again!$"
 
 LavaridgeTown_Text_BrendanNiceBadgesTakeThis:
@@ -320,8 +402,11 @@ LavaridgeTown_Text_BrendanExplainGoGogglesChallengeDad:
 	.string "the GYM LEADER of PETALBURG.\p"
 	.string "Unlike you, {PLAYER}, your dad looks like\n"
 	.string "he really is tough.\p"
+<<<<<<< HEAD
 	.string "Oh, and go check the NATURE\n"
 	.string "MINTS in the FLOWERSHOP!\p"
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.string "See you around!$"
 
 LavaridgeTown_Text_HaveEggWillYouTakeIt:

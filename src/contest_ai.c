@@ -326,8 +326,13 @@ u8 ContestAI_GetActionToUse(void)
     {
         // Randomly choose a move index. If it's the move
         // with the highest (or tied highest) score, return
+<<<<<<< HEAD
         u8 moveIdx = MOD(Random(), MAX_MON_MOVES);
         u8 score = eContestAI.moveScores[moveIdx];
+=======
+        u8 moveIndex = MOD(Random(), MAX_MON_MOVES);
+        u8 score = eContestAI.moveScores[moveIndex];
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         int i;
         for (i = 0; i < MAX_MON_MOVES; i++)
         {
@@ -335,7 +340,11 @@ u8 ContestAI_GetActionToUse(void)
                 break;
         }
         if (i == MAX_MON_MOVES)
+<<<<<<< HEAD
             return moveIdx;
+=======
+            return moveIndex;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
 }
 
@@ -758,7 +767,11 @@ static void ContestAICmd_get_move_effect(void)
 {
     u16 move = gContestMons[eContestAI.contestantId].moves[eContestAI.nextMoveIndex];
 
+<<<<<<< HEAD
     eContestAI.scriptResult = gContestMoves[move].effect;
+=======
+    eContestAI.scriptResult = GetMoveContestEffect(move);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gAIScriptPtr += 1;
 }
 
@@ -786,7 +799,11 @@ static void ContestAICmd_get_move_effect_type(void)
 {
     u16 move = gContestMons[eContestAI.contestantId].moves[eContestAI.nextMoveIndex];
 
+<<<<<<< HEAD
     eContestAI.scriptResult = gContestEffects[gContestMoves[move].effect].effectType;
+=======
+    eContestAI.scriptResult = gContestEffects[GetMoveContestEffect(move)].effectType;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gAIScriptPtr += 1;
 }
 
@@ -814,12 +831,20 @@ static void ContestAICmd_check_most_appealing_move(void)
 {
     int i;
     u16 move = gContestMons[eContestAI.contestantId].moves[eContestAI.nextMoveIndex];
+<<<<<<< HEAD
     u8 appeal = gContestEffects[gContestMoves[move].effect].appeal;
+=======
+    u8 appeal = gContestEffects[GetMoveContestEffect(move)].appeal;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         u16 newMove = gContestMons[eContestAI.contestantId].moves[i];
+<<<<<<< HEAD
         if (newMove != 0 && appeal < gContestEffects[gContestMoves[newMove].effect].appeal)
+=======
+        if (newMove != 0 && appeal < gContestEffects[GetMoveContestEffect(newMove)].appeal)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             break;
     }
 
@@ -845,12 +870,20 @@ static void ContestAICmd_check_most_jamming_move(void)
 {
     int i;
     u16 move = gContestMons[eContestAI.contestantId].moves[eContestAI.nextMoveIndex];
+<<<<<<< HEAD
     u8 jam = gContestEffects[gContestMoves[move].effect].jam;
+=======
+    u8 jam = gContestEffects[GetMoveContestEffect(move)].jam;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         u16 newMove = gContestMons[eContestAI.contestantId].moves[i];
+<<<<<<< HEAD
         if (newMove != MOVE_NONE && jam < gContestEffects[gContestMoves[newMove].effect].jam)
+=======
+        if (newMove != MOVE_NONE && jam < gContestEffects[GetMoveContestEffect(newMove)].jam)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             break;
     }
 
@@ -876,7 +909,11 @@ static void ContestAICmd_get_num_move_hearts(void)
 {
     u16 move = gContestMons[eContestAI.contestantId].moves[eContestAI.nextMoveIndex];
 
+<<<<<<< HEAD
     eContestAI.scriptResult = gContestEffects[gContestMoves[move].effect].appeal / 10;
+=======
+    eContestAI.scriptResult = gContestEffects[GetMoveContestEffect(move)].appeal / 10;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gAIScriptPtr += 1;
 }
 
@@ -924,7 +961,11 @@ static void ContestAICmd_get_num_move_jam_hearts(void)
 {
     u16 move = gContestMons[eContestAI.contestantId].moves[eContestAI.nextMoveIndex];
 
+<<<<<<< HEAD
     eContestAI.scriptResult = gContestEffects[gContestMoves[move].effect].jam / 10;
+=======
+    eContestAI.scriptResult = gContestEffects[GetMoveContestEffect(move)].jam / 10;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gAIScriptPtr += 1;
 }
 
@@ -1203,7 +1244,11 @@ static void ContestAICmd_get_used_combo_starter(void)
     u8 contestant = GetContestantIdByTurn(gAIScriptPtr[1]);
 
     if (IsContestantAllowedToCombo(contestant))
+<<<<<<< HEAD
         result = gContestMoves[eContestantStatus[contestant].prevMove].comboStarterId ? TRUE : FALSE;
+=======
+        result = GetMoveContestComboStarter(eContestantStatus[contestant].prevMove) ? TRUE : FALSE;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     eContestAI.scriptResult = result;
     gAIScriptPtr += 2;
@@ -1409,7 +1454,11 @@ static void ContestAICmd_get_used_moves_effect(void)
     u8 round = gAIScriptPtr[2];
     u16 move = eContest.moveHistory[round][contestant];
 
+<<<<<<< HEAD
     eContestAI.scriptResult = gContestMoves[move].effect;
+=======
+    eContestAI.scriptResult = GetMoveContestEffect(move);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gAIScriptPtr += 3;
 }
 
@@ -1509,7 +1558,11 @@ static void ContestAICmd_get_used_moves_effect_type(void)
     u8 round = gAIScriptPtr[2];
     u16 move = eContest.moveHistory[round][contestant];
 
+<<<<<<< HEAD
     eContestAI.scriptResult = gContestEffects[gContestMoves[move].effect].effectType;
+=======
+    eContestAI.scriptResult = gContestEffects[GetMoveContestEffect(move)].effectType;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gAIScriptPtr += 3;
 }
 
@@ -1748,7 +1801,11 @@ static void ContestAICmd_check_user_has_move(void)
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         #ifdef BUGFIX
+<<<<<<< HEAD
         u16 move = gContestMoves[gContestMons[eContestAI.contestantId].moves[i]].effect;
+=======
+        u16 move = GetMoveContestEffect(gContestMons[eContestAI.contestantId].moves[i]);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         #else
         u16 move = gContestMons[eContestAI.contestantId].moves[i];
         #endif

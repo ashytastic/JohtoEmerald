@@ -15,7 +15,11 @@ struct RfuSIO32Id
     u16 lastId;
 };
 
+<<<<<<< HEAD
 struct RfuSIO32Id gRfuSIO32Id;
+=======
+COMMON_DATA struct RfuSIO32Id gRfuSIO32Id = {0};
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 static const u16 Sio32ConnectionData[] = { 0x494e, 0x544e, 0x4e45, 0x4f44 }; // NINTENDO
 static const char Sio32IDLib_Var[] = "Sio32ID_030820";
@@ -24,7 +28,11 @@ s32 AgbRFU_checkID(u8 maxTries)
 {
     u16 ieBak;
     vu16 *regTMCNTL;
+<<<<<<< HEAD
     s32 id;
+=======
+    s32 id = 0;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     // Interrupts must be enabled
     if (REG_IME == 0)
@@ -145,7 +153,13 @@ static void Sio32IDIntr(void)
                 }
             }
             else
+<<<<<<< HEAD
                 gRfuSIO32Id.lastId = regSIODATA32;
+=======
+            {
+                gRfuSIO32Id.lastId = regSIODATA32;
+            }
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         }
         else
         {

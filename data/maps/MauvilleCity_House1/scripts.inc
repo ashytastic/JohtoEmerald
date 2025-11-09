@@ -8,7 +8,11 @@ MauvilleCity_House1_EventScript_RockSmashDude::
 	msgbox MauvilleCity_House1_Text_ImRockSmashDudeTakeThis, MSGBOX_DEFAULT
 	giveitem ITEM_HM_ROCK_SMASH
 	setflag FLAG_RECEIVED_HM_ROCK_SMASH
+<<<<<<< HEAD
 	setflag FLAG_GARBAGEFLAG
+=======
+	setflag FLAG_HIDE_ROUTE_111_ROCK_SMASH_TIP_GUY
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox MauvilleCity_House1_Text_ExplainRockSmash, MSGBOX_DEFAULT
 	release
 	end

@@ -4,12 +4,18 @@ Route113_MapScripts::
 	.byte 0
 
 Route113_OnResume:
+<<<<<<< HEAD
 	callnative SetTimeBasedEncounters
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setstepcallback STEP_CB_ASH
 	end
 
 Route113_OnTransition:
+<<<<<<< HEAD
 	callnative SetTimeBasedEncounters
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	clearflag FLAG_FORCE_MIRAGE_TOWER_VISIBLE
 	call Route113_EventScript_CheckSetAshWeather
 	end
@@ -49,12 +55,20 @@ Route113_EventScript_TrainerTipsRegisterKeyItems::
 	end
 
 Route113_EventScript_Jaylen::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_RIVAL_TOTODILE_3, Route113_Text_JaylenIntro, Route113_Text_JaylenDefeat
+=======
+	trainerbattle_single TRAINER_JAYLEN, Route113_Text_JaylenIntro, Route113_Text_JaylenDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route113_Text_JaylenPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route113_EventScript_Dillon::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_KENNETH, Route113_Text_DillonIntro, Route113_Text_DillonDefeat
+=======
+	trainerbattle_single TRAINER_DILLON, Route113_Text_DillonIntro, Route113_Text_DillonDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route113_Text_DillonPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -121,7 +135,11 @@ Route113_EventScript_Sophie::
 	end
 
 Route113_EventScript_Coby::
+<<<<<<< HEAD
 	trainerbattle_single TRAINER_GRUNT_25, Route113_Text_CobyIntro, Route113_Text_CobyDefeat
+=======
+	trainerbattle_single TRAINER_COBY, Route113_Text_CobyIntro, Route113_Text_CobyDefeat
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route113_Text_CobyPostBattle, MSGBOX_AUTOCLOSE
 	end
 

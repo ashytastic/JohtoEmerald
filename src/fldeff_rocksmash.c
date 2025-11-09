@@ -16,7 +16,10 @@
 #include "constants/event_object_movement.h"
 #include "constants/event_objects.h"
 #include "constants/field_effects.h"
+<<<<<<< HEAD
 #include "constants/map_types.h"
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include "constants/songs.h"
 
 static void Task_DoFieldMove_Init(u8 taskId);
@@ -120,7 +123,11 @@ static void Task_DoFieldMove_RunFunc(u8 taskId)
 
 // Called when Rock Smash is used from the party menu
 // For interacting with a smashable rock in the field, see EventScript_RockSmash
+<<<<<<< HEAD
 bool8 SetUpFieldMove_RockSmash(void)
+=======
+bool32 SetUpFieldMove_RockSmash(void)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     // In Ruby and Sapphire, Regirock's tomb is opened by using Strength. In Emerald,
     // it is opened by using Rock Smash.

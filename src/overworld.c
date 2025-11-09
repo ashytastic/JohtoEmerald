@@ -6,12 +6,24 @@
 #include "bg.h"
 #include "cable_club.h"
 #include "clock.h"
+<<<<<<< HEAD
 #include "event_data.h"
 #include "event_object_movement.h"
 #include "event_scripts.h"
 #include "field_camera.h"
 #include "field_control_avatar.h"
 #include "field_effect.h"
+=======
+#include "dexnav.h"
+#include "event_data.h"
+#include "event_object_movement.h"
+#include "event_scripts.h"
+#include "fake_rtc.h"
+#include "field_camera.h"
+#include "field_control_avatar.h"
+#include "field_effect.h"
+#include "field_effect_helpers.h"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include "field_message_box.h"
 #include "field_player_avatar.h"
 #include "field_screen_effect.h"
@@ -21,9 +33,18 @@
 #include "field_weather.h"
 #include "fieldmap.h"
 #include "fldeff.h"
+<<<<<<< HEAD
 #include "gpu_regs.h"
 #include "heal_location.h"
 #include "io_reg.h"
+=======
+#include "follower_npc.h"
+#include "gpu_regs.h"
+#include "heal_location.h"
+#include "io_reg.h"
+#include "item.h"
+#include "item_icon.h"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include "link.h"
 #include "link_rfu.h"
 #include "load_save.h"
@@ -51,6 +72,10 @@
 #include "secret_base.h"
 #include "sound.h"
 #include "start_menu.h"
+<<<<<<< HEAD
+=======
+#include "string_util.h"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include "task.h"
 #include "tileset_anims.h"
 #include "time_events.h"
@@ -59,19 +84,33 @@
 #include "tv.h"
 #include "scanline_effect.h"
 #include "wild_encounter.h"
+<<<<<<< HEAD
 #include "frontier_util.h"
 #include "constants/abilities.h"
 #include "constants/layouts.h"
 #include "constants/map_types.h"
+=======
+#include "vs_seeker.h"
+#include "frontier_util.h"
+#include "constants/abilities.h"
+#include "constants/event_object_movement.h"
+#include "constants/event_objects.h"
+#include "constants/layouts.h"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include "constants/region_map_sections.h"
 #include "constants/songs.h"
 #include "constants/trainer_hill.h"
 #include "constants/weather.h"
+<<<<<<< HEAD
 #include "tx_randomizer_and_challenges.h"
 #include "pokemon_storage_system.h" //tx_randomizer_and_challenges
 #include "item.h"
 #include "constants/items.h"
 #include "bug_contest.h"
+=======
+
+STATIC_ASSERT((B_FLAG_FOLLOWERS_DISABLED == 0 || OW_FOLLOWERS_ENABLED), FollowersFlagAssignedWithoutEnablingThem);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 struct CableClubPlayer
 {
@@ -137,7 +176,11 @@ static void UpdateAllLinkPlayers(u16 *, s32);
 static u8 FlipVerticalAndClearForced(u8, u8);
 static u8 LinkPlayerGetCollision(u8, u8, s16, s16);
 static void CreateLinkPlayerSprite(u8, u8);
+<<<<<<< HEAD
 static void GetLinkPlayerCoords(u8, u16 *, u16 *);
+=======
+static void GetLinkPlayerCoords(u8, s16 *, s16 *);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static u8 GetLinkPlayerFacingDirection(u8);
 static u8 GetLinkPlayerElevation(u8);
 static u8 GetLinkPlayerIdAt(s16, s16);
@@ -173,10 +216,16 @@ static void SetKeyInterceptCallback(u16 (*func)(u32));
 static void SetFieldVBlankCallback(void);
 static void FieldClearVBlankHBlankCallbacks(void);
 static void TransitionMapMusic(void);
+<<<<<<< HEAD
 static u8 GetAdjustedInitialTransitionFlags(struct InitialPlayerAvatarState *, u16, u8);
 static u8 GetAdjustedInitialDirection(struct InitialPlayerAvatarState *, u8, u16, u8);
 static u16 GetCenterScreenMetatileBehavior(void);
 static bool8 CanLearnFlashInParty(void);
+=======
+static u8 GetAdjustedInitialTransitionFlags(struct InitialPlayerAvatarState *playerStruct, u16 metatileBehavior, enum MapType mapType);
+static u8 GetAdjustedInitialDirection(struct InitialPlayerAvatarState *playerStruct, u8 transitionFlags, u16 metatileBehavior, enum MapType mapType);
+static u16 GetCenterScreenMetatileBehavior(void);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 static void *sUnusedOverworldCallback;
 static u8 sPlayerLinkStates[MAX_LINK_PLAYERS];
@@ -187,6 +236,7 @@ static u16 (*sPlayerKeyInterceptCallback)(u32);
 static bool8 sReceivingFromLink;
 static u8 sRfuKeepAliveTimer;
 
+<<<<<<< HEAD
 u16 *gOverworldTilemapBuffer_Bg2;
 u16 *gOverworldTilemapBuffer_Bg1;
 u16 *gOverworldTilemapBuffer_Bg3;
@@ -199,6 +249,20 @@ u8 gFieldLinkPlayerCount;
 u8 gTimeOfDay;
 struct TimeBlendSettings currentTimeBlend;
 u16 gTimeUpdateCounter; // playTimeVBlanks will eventually overflow, so this is used to update TOD
+=======
+COMMON_DATA u16 *gOverworldTilemapBuffer_Bg2 = NULL;
+COMMON_DATA u16 *gOverworldTilemapBuffer_Bg1 = NULL;
+COMMON_DATA u16 *gOverworldTilemapBuffer_Bg3 = NULL;
+COMMON_DATA u16 gHeldKeyCodeToSend = 0;
+COMMON_DATA void (*gFieldCallback)(void) = NULL;
+COMMON_DATA bool8 (*gFieldCallback2)(void) = NULL;
+COMMON_DATA u8 gLocalLinkPlayerId = 0; // This is our player id in a multiplayer mode.
+COMMON_DATA u8 gFieldLinkPlayerCount = 0;
+
+u8 gTimeOfDay;
+struct TimeBlendSettings gTimeBlend;
+s16 gTimeUpdateCounter; // playTimeVBlanks will eventually overflow, so this is used to update TOD
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 // EWRAM vars
 EWRAM_DATA static u8 sObjectEventLoadFlag = 0;
@@ -206,6 +270,7 @@ EWRAM_DATA struct WarpData gLastUsedWarp = {0};
 EWRAM_DATA static struct WarpData sWarpDestination = {0};  // new warp position
 EWRAM_DATA static struct WarpData sFixedDiveWarp = {0};
 EWRAM_DATA static struct WarpData sFixedHoleWarp = {0};
+<<<<<<< HEAD
 EWRAM_DATA static u16 sLastMapSectionId = 0;
 EWRAM_DATA static struct InitialPlayerAvatarState sInitialPlayerAvatarState = {0};
 EWRAM_DATA static u16 sAmbientCrySpecies = 0;
@@ -216,6 +281,20 @@ static const struct WarpData sDummyWarpData =
 {
     .mapGroup = MAP_GROUP(UNDEFINED),
     .mapNum = MAP_NUM(UNDEFINED),
+=======
+EWRAM_DATA static mapsec_u16_t sLastMapSectionId = 0;
+EWRAM_DATA static struct InitialPlayerAvatarState sInitialPlayerAvatarState = {0};
+EWRAM_DATA static u16 sAmbientCrySpecies = 0;
+EWRAM_DATA static bool8 sIsAmbientCryWaterMon = FALSE;
+EWRAM_DATA static u8 sHoursOverride = 0; // used to override apparent time of day hours
+EWRAM_DATA struct LinkPlayerObjectEvent gLinkPlayerObjectEvents[4] = {0};
+EWRAM_DATA bool8 gExitStairsMovementDisabled = FALSE;
+
+static const struct WarpData sDummyWarpData =
+{
+    .mapGroup = MAP_GROUP(MAP_UNDEFINED),
+    .mapNum = MAP_NUM(MAP_UNDEFINED),
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     .warpId = WARP_ID_NONE,
     .x = -1,
     .y = -1,
@@ -369,6 +448,7 @@ static void (*const sMovementStatusHandler[])(struct LinkPlayerObjectEvent *, st
 // code
 void DoWhiteOut(void)
 {
+<<<<<<< HEAD
     if (IsNuzlockeActive()) //tx_randomizer_and_challenges
     {
         if (GetFirstBoxPokemon() == IN_BOX_COUNT * TOTAL_BOXES_COUNT)
@@ -378,6 +458,9 @@ void DoWhiteOut(void)
     //SetMoney(&gSaveBlock1Ptr->money, GetMoney(&gSaveBlock1Ptr->money) / 2);
     if (IsNuzlockeActive()) //tx_randomizer_and_challenges
         MoveFirstBoxPokemon();
+=======
+    RunScriptImmediately(EventScript_WhiteOut);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     HealPlayerParty();
     Overworld_ResetStateAfterWhiteOut();
     SetWarpDestinationToLastHealLocation();
@@ -415,6 +498,36 @@ void Overworld_ResetStateAfterDigEscRope(void)
     FlagClear(FLAG_SYS_USE_FLASH);
 }
 
+<<<<<<< HEAD
+=======
+#if B_RESET_FLAGS_VARS_AFTER_WHITEOUT  == TRUE
+void Overworld_ResetBattleFlagsAndVars(void)
+{
+    #if B_VAR_STARTING_STATUS != 0
+        VarSet(B_VAR_STARTING_STATUS, 0);
+    #endif
+
+    #if B_VAR_STARTING_STATUS_TIMER != 0
+        VarSet(B_VAR_STARTING_STATUS_TIMER, 0);
+    #endif
+
+    #if B_VAR_WILD_AI_FLAGS != 0
+        VarSet(B_VAR_WILD_AI_FLAGS,0);
+    #endif
+
+    FlagClear(B_FLAG_INVERSE_BATTLE);
+    FlagClear(B_FLAG_FORCE_DOUBLE_WILD);
+    FlagClear(B_SMART_WILD_AI_FLAG);
+    FlagClear(B_FLAG_NO_BAG_USE);
+    FlagClear(B_FLAG_NO_CATCHING);
+    FlagClear(B_FLAG_NO_RUNNING);
+    FlagClear(B_FLAG_DYNAMAX_BATTLE);
+    FlagClear(B_FLAG_SKY_BATTLE);
+    FlagClear(B_FLAG_NO_WHITEOUT);
+}
+#endif
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static void Overworld_ResetStateAfterWhiteOut(void)
 {
     ResetInitialPlayerAvatarState();
@@ -423,6 +536,11 @@ static void Overworld_ResetStateAfterWhiteOut(void)
     FlagClear(FLAG_SYS_SAFARI_MODE);
     FlagClear(FLAG_SYS_USE_STRENGTH);
     FlagClear(FLAG_SYS_USE_FLASH);
+<<<<<<< HEAD
+=======
+    if (B_RESET_FLAGS_VARS_AFTER_WHITEOUT == TRUE)
+        Overworld_ResetBattleFlagsAndVars();
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     // If you were defeated by Kyogre/Groudon and the step counter has
     // maxed out, end the abnormal weather.
     if (VarGet(VAR_SHOULD_END_ABNORMAL_WEATHER) == 1)
@@ -430,6 +548,10 @@ static void Overworld_ResetStateAfterWhiteOut(void)
         VarSet(VAR_SHOULD_END_ABNORMAL_WEATHER, 0);
         VarSet(VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_NONE);
     }
+<<<<<<< HEAD
+=======
+    FollowerNPC_TryRemoveFollowerOnWhiteOut();
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void UpdateMiscOverworldStates(void)
@@ -438,7 +560,11 @@ static void UpdateMiscOverworldStates(void)
     ChooseAmbientCrySpecies();
     ResetCyclingRoadChallengeData();
     UpdateLocationHistoryForRoamer();
+<<<<<<< HEAD
     RoamerMoveToOtherLocationSet();
+=======
+    MoveAllRoamersToOtherLocationSets();
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 void ResetGameStats(void)
@@ -548,12 +674,18 @@ static void InitMapView(void)
     InitTilesetAnimations();
 }
 
+<<<<<<< HEAD
 const struct MapLayout *GetMapLayout(void)
 {
     u16 mapLayoutId = gSaveBlock1Ptr->mapLayoutId;
     if (mapLayoutId)
         return gMapLayouts[mapLayoutId - 1];
     return NULL;
+=======
+const struct MapLayout *GetMapLayout(u16 mapLayoutId)
+{
+    return gMapLayouts[mapLayoutId - 1];
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 void ApplyCurrentWarp(void)
@@ -581,9 +713,15 @@ static void SetWarpData(struct WarpData *warp, s8 mapGroup, s8 mapNum, s8 warpId
 
 static bool32 IsDummyWarp(struct WarpData *warp)
 {
+<<<<<<< HEAD
     if (warp->mapGroup != (s8)MAP_GROUP(UNDEFINED))
         return FALSE;
     else if (warp->mapNum != (s8)MAP_NUM(UNDEFINED))
+=======
+    if (warp->mapGroup != (s8)MAP_GROUP(MAP_UNDEFINED))
+        return FALSE;
+    else if (warp->mapNum != (s8)MAP_NUM(MAP_UNDEFINED))
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         return FALSE;
     else if (warp->warpId != WARP_ID_NONE)
         return FALSE;
@@ -610,13 +748,21 @@ static void LoadCurrentMapData(void)
     sLastMapSectionId = gMapHeader.regionMapSectionId;
     gMapHeader = *Overworld_GetMapHeaderByGroupAndId(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum);
     gSaveBlock1Ptr->mapLayoutId = gMapHeader.mapLayoutId;
+<<<<<<< HEAD
     gMapHeader.mapLayout = GetMapLayout();
+=======
+    gMapHeader.mapLayout = GetMapLayout(gMapHeader.mapLayoutId);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void LoadSaveblockMapHeader(void)
 {
     gMapHeader = *Overworld_GetMapHeaderByGroupAndId(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum);
+<<<<<<< HEAD
     gMapHeader.mapLayout = GetMapLayout();
+=======
+    gMapHeader.mapLayout = GetMapLayout(gSaveBlock1Ptr->mapLayoutId);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void SetPlayerCoordsFromWarp(void)
@@ -681,9 +827,25 @@ void SetWarpDestinationToHealLocation(u8 healLocationId)
         SetWarpDestination(healLocation->mapGroup, healLocation->mapNum, WARP_ID_NONE, healLocation->x, healLocation->y);
 }
 
+<<<<<<< HEAD
 void SetWarpDestinationToLastHealLocation(void)
 {
     sWarpDestination = gSaveBlock1Ptr->lastHealLocation;
+=======
+static bool32 IsWhiteoutCutscene(void)
+{
+    if (OW_WHITEOUT_CUTSCENE < GEN_4)
+        return FALSE;
+    return GetHealNpcLocalId(GetHealLocationIndexByWarpData(&gSaveBlock1Ptr->lastHealLocation)) > 0;
+}
+
+void SetWarpDestinationToLastHealLocation(void)
+{
+    if (IsWhiteoutCutscene())
+        SetWhiteoutRespawnWarpAndHealerNPC(&sWarpDestination);
+    else
+        sWarpDestination = gSaveBlock1Ptr->lastHealLocation;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 void SetLastHealLocationWarp(u8 healLocationId)
@@ -695,8 +857,13 @@ void SetLastHealLocationWarp(u8 healLocationId)
 
 void UpdateEscapeWarp(s16 x, s16 y)
 {
+<<<<<<< HEAD
     u8 currMapType = GetCurrentMapType();
     u8 destMapType = GetMapTypeByGroupAndId(sWarpDestination.mapGroup, sWarpDestination.mapNum);
+=======
+    enum MapType currMapType = GetCurrentMapType();
+    enum MapType destMapType = GetMapTypeByGroupAndId(sWarpDestination.mapGroup, sWarpDestination.mapNum);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (IsMapTypeOutdoors(currMapType) && IsMapTypeOutdoors(destMapType) != TRUE)
         SetEscapeWarp(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum, WARP_ID_NONE, x - MAP_OFFSET, y - MAP_OFFSET + 1);
 }
@@ -802,8 +969,11 @@ bool8 SetDiveWarpDive(u16 x, u16 y)
 
 void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
 {
+<<<<<<< HEAD
     s32 paletteIndex;
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     SetWarpDestination(mapGroup, mapNum, WARP_ID_NONE, -1, -1);
 
     // Dont transition map music between BF Outside West/East
@@ -815,9 +985,22 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
     LoadObjEventTemplatesFromHeader();
     TrySetMapSaveWarpStatus();
     ClearTempFieldEventData();
+<<<<<<< HEAD
     ResetCyclingRoadChallengeData();
     RestartWildEncounterImmunitySteps();
     TryUpdateRandomTrainerRematches(mapGroup, mapNum);
+=======
+    ResetDexNavSearch();
+    ResetCyclingRoadChallengeData();
+    RestartWildEncounterImmunitySteps();
+#if FREE_MATCH_CALL == FALSE
+    TryUpdateRandomTrainerRematches(mapGroup, mapNum);
+#endif //FREE_MATCH_CALL
+
+if (I_VS_SEEKER_CHARGING != 0)
+    MapResetTrainerRematches(mapGroup, mapNum);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     DoTimeBasedEvents();
     SetSavedWeatherFromCurrMapHeader();
     ChooseAmbientCrySpecies();
@@ -832,13 +1015,31 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
 
     InitSecondaryTilesetAnimation();
     UpdateLocationHistoryForRoamer();
+<<<<<<< HEAD
     RoamerMove();
+=======
+    MoveAllRoamers();
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     DoCurrentWeather();
     ResetFieldTasksArgs();
     RunOnResumeMapScript();
 
+<<<<<<< HEAD
     if (gMapHeader.regionMapSectionId != sLastMapSectionId)
         ShowMapNamePopup();
+=======
+    if (OW_HIDE_REPEAT_MAP_POPUP)
+    {
+        if (gMapHeader.regionMapSectionId != sLastMapSectionId)
+            ShowMapNamePopup();
+    }
+    else
+    {
+        if (gMapHeader.regionMapSectionId != MAPSEC_BATTLE_FRONTIER
+         || gMapHeader.regionMapSectionId != sLastMapSectionId)
+            ShowMapNamePopup();
+    }
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void LoadMapFromWarp(bool32 a1)
@@ -863,9 +1064,24 @@ static void LoadMapFromWarp(bool32 a1)
     CheckLeftFriendsSecretBase();
     TrySetMapSaveWarpStatus();
     ClearTempFieldEventData();
+<<<<<<< HEAD
     ResetCyclingRoadChallengeData();
     RestartWildEncounterImmunitySteps();
     TryUpdateRandomTrainerRematches(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum);
+=======
+    ResetDexNavSearch();
+    // reset hours override on every warp
+    sHoursOverride = 0;
+    ResetCyclingRoadChallengeData();
+    RestartWildEncounterImmunitySteps();
+#if FREE_MATCH_CALL == FALSE
+    TryUpdateRandomTrainerRematches(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum);
+#endif //FREE_MATCH_CALL
+
+if (I_VS_SEEKER_CHARGING != 0)
+     MapResetTrainerRematches(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum);
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (a1 != TRUE)
         DoTimeBasedEvents();
     SetSavedWeatherFromCurrMapHeader();
@@ -876,7 +1092,12 @@ static void LoadMapFromWarp(bool32 a1)
     Overworld_ClearSavedMusic();
     RunOnTransitionMapScript();
     UpdateLocationHistoryForRoamer();
+<<<<<<< HEAD
     RoamerMoveToOtherLocationSet();
+=======
+    MoveAllRoamersToOtherLocationSets();
+    gChainFishingDexNavStreak = 0;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PYRAMID_FLOOR)
         InitBattlePyramidMap(FALSE);
     else if (InTrainerHill())
@@ -916,7 +1137,11 @@ void StoreInitialPlayerAvatarState(void)
 static struct InitialPlayerAvatarState *GetInitialPlayerAvatarState(void)
 {
     struct InitialPlayerAvatarState playerStruct;
+<<<<<<< HEAD
     u8 mapType = GetCurrentMapType();
+=======
+    enum MapType mapType = GetCurrentMapType();
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     u16 metatileBehavior = GetCenterScreenMetatileBehavior();
     u8 transitionFlags = GetAdjustedInitialTransitionFlags(&sInitialPlayerAvatarState, metatileBehavior, mapType);
     playerStruct.transitionFlags = transitionFlags;
@@ -925,7 +1150,11 @@ static struct InitialPlayerAvatarState *GetInitialPlayerAvatarState(void)
     return &sInitialPlayerAvatarState;
 }
 
+<<<<<<< HEAD
 static u8 GetAdjustedInitialTransitionFlags(struct InitialPlayerAvatarState *playerStruct, u16 metatileBehavior, u8 mapType)
+=======
+static u8 GetAdjustedInitialTransitionFlags(struct InitialPlayerAvatarState *playerStruct, u16 metatileBehavior, enum MapType mapType)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     if (mapType != MAP_TYPE_INDOOR && FlagGet(FLAG_SYS_CRUISE_MODE))
         return PLAYER_AVATAR_FLAG_ON_FOOT;
@@ -943,7 +1172,11 @@ static u8 GetAdjustedInitialTransitionFlags(struct InitialPlayerAvatarState *pla
         return PLAYER_AVATAR_FLAG_ACRO_BIKE;
 }
 
+<<<<<<< HEAD
 static u8 GetAdjustedInitialDirection(struct InitialPlayerAvatarState *playerStruct, u8 transitionFlags, u16 metatileBehavior, u8 mapType)
+=======
+static u8 GetAdjustedInitialDirection(struct InitialPlayerAvatarState *playerStruct, u8 transitionFlags, u16 metatileBehavior, enum MapType mapType)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     if (FlagGet(FLAG_SYS_CRUISE_MODE) && mapType == MAP_TYPE_OCEAN_ROUTE)
         return DIR_EAST;
@@ -959,6 +1192,13 @@ static u8 GetAdjustedInitialDirection(struct InitialPlayerAvatarState *playerStr
         return DIR_EAST;
     else if (MetatileBehavior_IsEastArrowWarp(metatileBehavior) == TRUE)
         return DIR_WEST;
+<<<<<<< HEAD
+=======
+    else if (MetatileBehavior_IsDirectionalUpRightStairWarp(metatileBehavior) == TRUE || MetatileBehavior_IsDirectionalDownRightStairWarp(metatileBehavior) == TRUE)
+        return DIR_WEST;
+    else if (MetatileBehavior_IsDirectionalUpLeftStairWarp(metatileBehavior) == TRUE || MetatileBehavior_IsDirectionalDownLeftStairWarp(metatileBehavior) == TRUE)
+        return DIR_EAST;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     else if ((playerStruct->transitionFlags == PLAYER_AVATAR_FLAG_UNDERWATER  && transitionFlags == PLAYER_AVATAR_FLAG_SURFING)
           || (playerStruct->transitionFlags == PLAYER_AVATAR_FLAG_SURFING && transitionFlags == PLAYER_AVATAR_FLAG_UNDERWATER))
         return playerStruct->direction;
@@ -981,6 +1221,7 @@ bool32 Overworld_IsBikingAllowed(void)
         return TRUE;
 }
 
+<<<<<<< HEAD
 static bool8 CanLearnFlashInParty(void)
 {
     u8 i;
@@ -993,14 +1234,19 @@ static bool8 CanLearnFlashInParty(void)
     }
     return FALSE;
 }
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 // Flash level of 0 is fully bright
 // Flash level of 1 is the largest flash radius
 // Flash level of 7 is the smallest flash radius
 // Flash level of 8 is fully black
 void SetDefaultFlashLevel(void)
 {
+<<<<<<< HEAD
     //if (CheckBagHasItem(ITEM_HM05_FLASH ,1) && CanLearnFlashInParty())
     //    FlagSet(FLAG_SYS_USE_FLASH);
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (!gMapHeader.cave)
         gSaveBlock1Ptr->flashLevel = 0;
     else if (FlagGet(FLAG_SYS_USE_FLASH))
@@ -1024,7 +1270,11 @@ u8 GetFlashLevel(void)
 void SetCurrentMapLayout(u16 mapLayoutId)
 {
     gSaveBlock1Ptr->mapLayoutId = mapLayoutId;
+<<<<<<< HEAD
     gMapHeader.mapLayout = GetMapLayout();
+=======
+    gMapHeader.mapLayout = GetMapLayout(mapLayoutId);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 void SetObjectEventLoadFlag(u8 flag)
@@ -1046,6 +1296,7 @@ static bool16 ShouldLegendaryMusicPlayAtLocation(struct WarpData *warp)
     {
         switch (warp->mapNum)
         {
+<<<<<<< HEAD
         case MAP_NUM(LILYCOVE_CITY):
         case MAP_NUM(MOSSDEEP_CITY):
         case MAP_NUM(SOOTOPOLIS_CITY):
@@ -1064,6 +1315,26 @@ static bool16 ShouldLegendaryMusicPlayAtLocation(struct WarpData *warp)
             case MAP_NUM(ROUTE129):
             case MAP_NUM(ROUTE130):
             case MAP_NUM(ROUTE131):
+=======
+        case MAP_NUM(MAP_LILYCOVE_CITY):
+        case MAP_NUM(MAP_MOSSDEEP_CITY):
+        case MAP_NUM(MAP_SOOTOPOLIS_CITY):
+        case MAP_NUM(MAP_EVER_GRANDE_CITY):
+        case MAP_NUM(MAP_ROUTE124):
+        case MAP_NUM(MAP_ROUTE125):
+        case MAP_NUM(MAP_ROUTE126):
+        case MAP_NUM(MAP_ROUTE127):
+        case MAP_NUM(MAP_ROUTE128):
+            return TRUE;
+        default:
+            if (VarGet(VAR_SOOTOPOLIS_CITY_STATE) < 4)
+                return FALSE;
+            switch (warp->mapNum)
+            {
+            case MAP_NUM(MAP_ROUTE129):
+            case MAP_NUM(MAP_ROUTE130):
+            case MAP_NUM(MAP_ROUTE131):
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 return TRUE;
             }
         }
@@ -1075,9 +1346,15 @@ static bool16 NoMusicInSotopolisWithLegendaries(struct WarpData *warp)
 {
     if (VarGet(VAR_SKY_PILLAR_STATE) != 1)
         return FALSE;
+<<<<<<< HEAD
     else if (warp->mapGroup != MAP_GROUP(SOOTOPOLIS_CITY))
         return FALSE;
     else if (warp->mapNum == MAP_NUM(SOOTOPOLIS_CITY))
+=======
+    else if (warp->mapGroup != MAP_GROUP(MAP_SOOTOPOLIS_CITY))
+        return FALSE;
+    else if (warp->mapNum == MAP_NUM(MAP_SOOTOPOLIS_CITY))
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         return TRUE;
     else
         return FALSE;
@@ -1087,10 +1364,17 @@ static bool16 IsInfiltratedWeatherInstitute(struct WarpData *warp)
 {
     if (VarGet(VAR_WEATHER_INSTITUTE_STATE))
         return FALSE;
+<<<<<<< HEAD
     else if (warp->mapGroup != MAP_GROUP(ROUTE119_WEATHER_INSTITUTE_1F))
         return FALSE;
     else if (warp->mapNum == MAP_NUM(ROUTE119_WEATHER_INSTITUTE_1F)
      || warp->mapNum == MAP_NUM(ROUTE119_WEATHER_INSTITUTE_2F))
+=======
+    else if (warp->mapGroup != MAP_GROUP(MAP_ROUTE119_WEATHER_INSTITUTE_1F))
+        return FALSE;
+    else if (warp->mapNum == MAP_NUM(MAP_ROUTE119_WEATHER_INSTITUTE_1F)
+     || warp->mapNum == MAP_NUM(MAP_ROUTE119_WEATHER_INSTITUTE_2F))
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         return TRUE;
     else
         return FALSE;
@@ -1098,6 +1382,7 @@ static bool16 IsInfiltratedWeatherInstitute(struct WarpData *warp)
 
 static bool16 IsInflitratedSpaceCenter(struct WarpData *warp)
 {
+<<<<<<< HEAD
     if (VarGet(VAR_GARBAGEVAR) == 0)
         return FALSE;
     else if (VarGet(VAR_GARBAGEVAR) > 2)
@@ -1106,6 +1391,16 @@ static bool16 IsInflitratedSpaceCenter(struct WarpData *warp)
         return FALSE;
     else if (warp->mapNum == MAP_NUM(MOSSDEEP_CITY_SPACE_CENTER_1F)
      || warp->mapNum == MAP_NUM(MOSSDEEP_CITY_SPACE_CENTER_2F))
+=======
+    if (VarGet(VAR_MOSSDEEP_CITY_STATE) == 0)
+        return FALSE;
+    else if (VarGet(VAR_MOSSDEEP_CITY_STATE) > 2)
+        return FALSE;
+    else if (warp->mapGroup != MAP_GROUP(MAP_MOSSDEEP_CITY_SPACE_CENTER_1F))
+        return FALSE;
+    else if (warp->mapNum == MAP_NUM(MAP_MOSSDEEP_CITY_SPACE_CENTER_1F)
+     || warp->mapNum == MAP_NUM(MAP_MOSSDEEP_CITY_SPACE_CENTER_2F))
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         return TRUE;
     return FALSE;
 }
@@ -1129,8 +1424,13 @@ u16 GetCurrLocationDefaultMusic(void)
     u16 music;
 
     // Play the desert music only when the sandstorm is active on Route 111.
+<<<<<<< HEAD
     if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE111)
      && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE111)
+=======
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE111)
+     && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE111)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
      && GetSavedWeather() == WEATHER_SANDSTORM)
         return MUS_DESERT;
 
@@ -1157,8 +1457,13 @@ u16 GetWarpDestinationMusic(void)
     }
     else
     {
+<<<<<<< HEAD
         if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAUVILLE_CITY)
          && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAUVILLE_CITY))
+=======
+        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_MAUVILLE_CITY)
+         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_MAUVILLE_CITY))
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             return MUS_ROUTE110;
         else
             return MUS_ROUTE119;
@@ -1170,13 +1475,17 @@ void Overworld_ResetMapMusic(void)
     ResetMapMusic();
 }
 
+<<<<<<< HEAD
 #define IS_MAP(mapGroupId, mapNumId) \
     (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(mapGroupId) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(mapNumId))
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 void Overworld_PlaySpecialMapMusic(void)
 {
     u16 music = GetCurrLocationDefaultMusic();
 
+<<<<<<< HEAD
     // Inject Rocket Takeover override logic
     if (VarGet(VAR_MAHOGANY_TOWN_STATE) == 16)
     {
@@ -1195,22 +1504,33 @@ void Overworld_PlaySpecialMapMusic(void)
     }
 
     /* REMOVED SURF MUSIC
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (music != MUS_ABNORMAL_WEATHER && music != MUS_NONE)
     {
         if (gSaveBlock1Ptr->savedMusic)
             music = gSaveBlock1Ptr->savedMusic;
         else if (GetCurrentMapType() == MAP_TYPE_UNDERWATER)
             music = MUS_UNDERWATER;
+<<<<<<< HEAD
         else if ((TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING)) && (gSaveBlock2Ptr->optionsSurfMusic == 0))
             music = MUS_SURF;
     }
     */
+=======
+        else if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
+            music = MUS_SURF;
+    }
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     if (music != GetCurrentMapMusic())
         PlayNewMapMusic(music);
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 void Overworld_SetSavedMusic(u16 songNum)
 {
     gSaveBlock1Ptr->savedMusic = songNum;
@@ -1227,6 +1547,7 @@ static void TransitionMapMusic(void)
     {
         u16 newMusic = GetWarpDestinationMusic();
         u16 currentMusic = GetCurrentMapMusic();
+<<<<<<< HEAD
         /*REMOVED SURF MUSIC AGAIN
         if (newMusic != MUS_ABNORMAL_WEATHER && newMusic != MUS_NONE)
         {
@@ -1236,6 +1557,15 @@ static void TransitionMapMusic(void)
                 newMusic = MUS_SURF;
         }
         */
+=======
+        if (newMusic != MUS_ABNORMAL_WEATHER && newMusic != MUS_NONE)
+        {
+            if (currentMusic == MUS_UNDERWATER || currentMusic == MUS_SURF)
+                return;
+            if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
+                newMusic = MUS_SURF;
+        }
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         if (newMusic != currentMusic)
         {
             if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_MACH_BIKE | PLAYER_AVATAR_FLAG_ACRO_BIKE))
@@ -1275,6 +1605,7 @@ void TryFadeOutOldMapMusic(void)
     u16 warpMusic = GetWarpDestinationMusic();
     if (FlagGet(FLAG_DONT_TRANSITION_MUSIC) != TRUE && warpMusic != GetCurrentMapMusic())
     {
+<<<<<<< HEAD
         if ((currentMusic == MUS_SURF
             && gSaveBlock2Ptr->optionsSurfMusic == 0
             && VarGet(VAR_SKY_PILLAR_STATE) == 2
@@ -1292,6 +1623,16 @@ void TryFadeOutOldMapMusic(void)
             && sWarpDestination.mapNum == MAP_NUM(SOOTOPOLIS_CITY)
             && sWarpDestination.x == 29
             && sWarpDestination.y == 53))
+=======
+        if (currentMusic == MUS_SURF
+            && VarGet(VAR_SKY_PILLAR_STATE) == 2
+            && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SOOTOPOLIS_CITY)
+            && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_SOOTOPOLIS_CITY)
+            && sWarpDestination.mapGroup == MAP_GROUP(MAP_SOOTOPOLIS_CITY)
+            && sWarpDestination.mapNum == MAP_NUM(MAP_SOOTOPOLIS_CITY)
+            && sWarpDestination.x == 29
+            && sWarpDestination.y == 53)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             return;
         FadeOutMapMusic(GetMapMusicFadeoutSpeed());
     }
@@ -1381,8 +1722,13 @@ void UpdateAmbientCry(s16 *state, u16 *delayCounter)
 
 static void ChooseAmbientCrySpecies(void)
 {
+<<<<<<< HEAD
     if ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE130)
      && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE130))
+=======
+    if ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE130)
+     && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE130))
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
      && !IsMirageIslandPresent())
     {
         // Only play water Pokémon cries on this route
@@ -1396,27 +1742,47 @@ static void ChooseAmbientCrySpecies(void)
     }
 }
 
+<<<<<<< HEAD
 u8 GetMapTypeByGroupAndId(s8 mapGroup, s8 mapNum)
+=======
+enum MapType GetMapTypeByGroupAndId(s8 mapGroup, s8 mapNum)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     return Overworld_GetMapHeaderByGroupAndId(mapGroup, mapNum)->mapType;
 }
 
+<<<<<<< HEAD
 u8 GetMapTypeByWarpData(struct WarpData *warp)
+=======
+enum MapType GetMapTypeByWarpData(struct WarpData *warp)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     return GetMapTypeByGroupAndId(warp->mapGroup, warp->mapNum);
 }
 
+<<<<<<< HEAD
 u8 GetCurrentMapType(void)
+=======
+enum MapType GetCurrentMapType(void)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     return GetMapTypeByWarpData(&gSaveBlock1Ptr->location);
 }
 
+<<<<<<< HEAD
 u8 GetLastUsedWarpMapType(void)
+=======
+enum MapType GetLastUsedWarpMapType(void)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     return GetMapTypeByWarpData(&gLastUsedWarp);
 }
 
+<<<<<<< HEAD
 bool8 IsMapTypeOutdoors(u8 mapType)
+=======
+bool8 IsMapTypeOutdoors(enum MapType mapType)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     if (mapType == MAP_TYPE_ROUTE
      || mapType == MAP_TYPE_TOWN
@@ -1428,7 +1794,11 @@ bool8 IsMapTypeOutdoors(u8 mapType)
         return FALSE;
 }
 
+<<<<<<< HEAD
 bool8 Overworld_MapTypeAllowsTeleportAndFly(u8 mapType)
+=======
+bool8 Overworld_MapTypeAllowsTeleportAndFly(enum MapType mapType)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     if (mapType == MAP_TYPE_ROUTE
      || mapType == MAP_TYPE_TOWN
@@ -1439,7 +1809,11 @@ bool8 Overworld_MapTypeAllowsTeleportAndFly(u8 mapType)
         return FALSE;
 }
 
+<<<<<<< HEAD
 bool8 IsMapTypeIndoors(u8 mapType)
+=======
+bool8 IsMapTypeIndoors(enum MapType mapType)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     if (mapType == MAP_TYPE_INDOOR
      || mapType == MAP_TYPE_SECRET_BASE)
@@ -1448,16 +1822,25 @@ bool8 IsMapTypeIndoors(u8 mapType)
         return FALSE;
 }
 
+<<<<<<< HEAD
 u8 GetSavedWarpRegionMapSectionId(void)
+=======
+mapsec_u8_t GetSavedWarpRegionMapSectionId(void)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     return Overworld_GetMapHeaderByGroupAndId(gSaveBlock1Ptr->dynamicWarp.mapGroup, gSaveBlock1Ptr->dynamicWarp.mapNum)->regionMapSectionId;
 }
 
+<<<<<<< HEAD
 u8 GetCurrentRegionMapSectionId(void)
+=======
+mapsec_u8_t GetCurrentRegionMapSectionId(void)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     return Overworld_GetMapHeaderByGroupAndId(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum)->regionMapSectionId;
 }
 
+<<<<<<< HEAD
 u8 NuzlockeGetCurrentRegionMapSectionId(void) //tx_randomizer_and_challenges @Kurausukun
 {
     u8 regionMapSectionId = GetCurrentRegionMapSectionId();
@@ -1489,6 +1872,9 @@ u8 NuzlockeGetCurrentRegionMapSectionId(void) //tx_randomizer_and_challenges @Ku
 }
 
 u8 GetCurrentMapBattleScene(void)
+=======
+enum MapBattleScene GetCurrentMapBattleScene(void)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     return Overworld_GetMapHeaderByGroupAndId(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum)->battleType;
 }
@@ -1537,6 +1923,10 @@ static void DoCB1_Overworld(u16 newKeys, u16 heldKeys)
     UpdatePlayerAvatarTransitionState();
     FieldClearPlayerInput(&inputStruct);
     FieldGetPlayerInput(&inputStruct, newKeys, heldKeys);
+<<<<<<< HEAD
+=======
+    CancelSignPostMessageBox(&inputStruct);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (!ArePlayerFieldControlsLocked())
     {
         if (ProcessPlayerFieldInput(&inputStruct) == 1)
@@ -1549,6 +1939,12 @@ static void DoCB1_Overworld(u16 newKeys, u16 heldKeys)
             PlayerStep(inputStruct.dpadDirection, newKeys, heldKeys);
         }
     }
+<<<<<<< HEAD
+=======
+    // If stop running but keep holding B -> fix follower frame.
+    if (PlayerHasFollowerNPC() && (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ON_FOOT) && IsPlayerStandingStill())
+        ObjectEventSetHeldMovement(&gObjectEvents[GetFollowerNPCObjectId()], GetFaceDirectionAnimNum(gObjectEvents[GetFollowerNPCObjectId()].facingDirection));
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 void CB1_Overworld(void)
@@ -1561,6 +1957,7 @@ void CB1_Overworld(void)
 
 const struct BlendSettings gTimeOfDayBlend[] =
 {
+<<<<<<< HEAD
   [TIME_OF_DAY_NIGHT] = {.coeff = 10, .blendColor = TINT_NIGHT, .isTint = TRUE},
   [TIME_OF_DAY_TWILIGHT] = {.coeff = 4, .blendColor = 0xA8B0E0, .isTint = TRUE},
   [TIME_OF_DAY_DAY] = {.coeff = 0, .blendColor = 0},
@@ -1649,6 +2046,97 @@ bool8 MapHasNaturalLight(u8 mapType) { // Whether a map type is naturally lit/ou
 
 // Update & mix day / night bg palettes (into unfaded)
 void UpdateAltBgPalettes(u16 palettes) {
+=======
+    [TIME_MORNING] = {.coeff = 4,  .blendColor = 0xA8B0E0,   .isTint = TRUE},
+    [TIME_DAY]     = {.coeff = 0,  .blendColor = 0,          .isTint = FALSE},
+    [TIME_EVENING] = {.coeff = 4,  .blendColor = 0xA8B0E0,   .isTint = TRUE},
+    [TIME_NIGHT]   = {.coeff = 10, .blendColor = TINT_NIGHT, .isTint = TRUE},
+};
+
+#define DEFAULT_WEIGHT 256
+#define TIME_BLEND_WEIGHT(begin, end) (DEFAULT_WEIGHT - SAFE_DIV((DEFAULT_WEIGHT * ((hours - begin) * MINUTES_PER_HOUR + minutes)), ((end - begin) * MINUTES_PER_HOUR)))
+
+#define MORNING_HOUR_MIDDLE (MORNING_HOUR_BEGIN + ((MORNING_HOUR_END - MORNING_HOUR_BEGIN) / 2))
+
+void UpdateTimeOfDay(void)
+{
+    s32 hours, minutes;
+    RtcCalcLocalTime();
+    hours = sHoursOverride ? sHoursOverride : gLocalTime.hours;
+    minutes = sHoursOverride ? 0 : gLocalTime.minutes;
+
+    if (IsBetweenHours(hours, MORNING_HOUR_BEGIN, MORNING_HOUR_MIDDLE)) // night->morning
+    {
+        gTimeBlend.startBlend = gTimeOfDayBlend[TIME_NIGHT];
+        gTimeBlend.endBlend = gTimeOfDayBlend[TIME_MORNING];
+        gTimeBlend.weight = TIME_BLEND_WEIGHT(MORNING_HOUR_BEGIN, MORNING_HOUR_MIDDLE);
+        gTimeBlend.altWeight = (DEFAULT_WEIGHT - gTimeBlend.weight) / 2;
+        gTimeOfDay = TIME_MORNING;
+    }
+    else if (IsBetweenHours(hours, MORNING_HOUR_MIDDLE, MORNING_HOUR_END)) // morning->day
+    {
+        gTimeBlend.startBlend = gTimeOfDayBlend[TIME_MORNING];
+        gTimeBlend.endBlend = gTimeOfDayBlend[TIME_DAY];
+        gTimeBlend.weight = TIME_BLEND_WEIGHT(MORNING_HOUR_MIDDLE, MORNING_HOUR_END);
+        gTimeBlend.altWeight = (DEFAULT_WEIGHT - gTimeBlend.weight) / 2 + (DEFAULT_WEIGHT / 2);
+        gTimeOfDay = TIME_MORNING;
+    }
+    else if (IsBetweenHours(hours, EVENING_HOUR_BEGIN, EVENING_HOUR_END)) // evening
+    {
+        gTimeBlend.startBlend = gTimeOfDayBlend[TIME_DAY];
+        gTimeBlend.endBlend = gTimeOfDayBlend[TIME_EVENING];
+        gTimeBlend.weight = TIME_BLEND_WEIGHT(EVENING_HOUR_BEGIN, EVENING_HOUR_END);
+        gTimeBlend.altWeight = gTimeBlend.weight / 2 + (DEFAULT_WEIGHT / 2);
+        gTimeOfDay = TIME_EVENING;
+    }
+    else if (IsBetweenHours(hours, NIGHT_HOUR_BEGIN, NIGHT_HOUR_BEGIN + 1)) // evening->night
+    {
+        gTimeBlend.startBlend = gTimeOfDayBlend[TIME_EVENING];
+        gTimeBlend.endBlend = gTimeOfDayBlend[TIME_NIGHT];
+        gTimeBlend.weight = TIME_BLEND_WEIGHT(NIGHT_HOUR_BEGIN, NIGHT_HOUR_BEGIN + 1);
+        gTimeBlend.altWeight = gTimeBlend.weight / 2;
+        gTimeOfDay = TIME_NIGHT;
+    }
+    else if (IsBetweenHours(hours, NIGHT_HOUR_BEGIN, NIGHT_HOUR_END)) // night
+    {
+        gTimeBlend.weight = DEFAULT_WEIGHT;
+        gTimeBlend.altWeight = 0;
+        gTimeBlend.startBlend = gTimeBlend.endBlend = gTimeOfDayBlend[TIME_NIGHT];
+        gTimeOfDay = TIME_NIGHT;
+    }
+    else // day
+    {
+        gTimeBlend.weight = gTimeBlend.altWeight = DEFAULT_WEIGHT;
+        gTimeBlend.startBlend = gTimeBlend.endBlend = gTimeOfDayBlend[TIME_DAY];
+        gTimeOfDay = TIME_DAY;
+    }
+}
+
+#undef MORNING_HOUR_MIDDLE
+#undef TIME_BLEND_WEIGHT
+#undef DEFAULT_WEIGHT
+
+// Whether a map type is naturally lit/outside
+bool32 MapHasNaturalLight(u8 mapType)
+{
+    return (OW_ENABLE_DNS
+         && (mapType == MAP_TYPE_TOWN
+          || mapType == MAP_TYPE_CITY
+          || mapType == MAP_TYPE_ROUTE
+          || mapType == MAP_TYPE_OCEAN_ROUTE));
+}
+
+bool32 CurrentMapHasShadows(void)
+{
+    // Add all conditionals here for maps that shouldn't have shadows
+    // By default only cave maps are excluded from having shadows under object events
+    return (gMapHeader.mapType != MAP_TYPE_UNDERGROUND);
+}
+
+// Update & mix day / night bg palettes (into unfaded)
+void UpdateAltBgPalettes(u16 palettes)
+{
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     const struct Tileset *primary = gMapHeader.mapLayout->primaryTileset;
     const struct Tileset *secondary = gMapHeader.mapLayout->secondaryTileset;
     u32 i = 1;
@@ -1656,6 +2144,7 @@ void UpdateAltBgPalettes(u16 palettes) {
         return;
     palettes &= ~((1 << NUM_PALS_IN_PRIMARY) - 1) | primary->swapPalettes;
     palettes &= ((1 << NUM_PALS_IN_PRIMARY) - 1) | (secondary->swapPalettes << NUM_PALS_IN_PRIMARY);
+<<<<<<< HEAD
     palettes &= 0x1FFE; // don't blend palette 0, [13,15]
     palettes >>= 1; // start at palette 1
     if (!palettes)
@@ -1666,12 +2155,27 @@ void UpdateAltBgPalettes(u16 palettes) {
                 AvgPaletteWeighted(&((u16*)primary->palettes)[i*16], &((u16*)primary->palettes)[((i+9)%16)*16], gPlttBufferUnfaded + i * 16, currentTimeBlend.altWeight);
             else
                 AvgPaletteWeighted(&((u16*)secondary->palettes)[i*16], &((u16*)secondary->palettes)[((i+9)%16)*16], gPlttBufferUnfaded + i * 16, currentTimeBlend.altWeight);
+=======
+    palettes &= PALETTES_MAP ^ (1 << 0); // don't blend palette 0, [13,15]
+    palettes >>= 1; // start at palette 1
+    if (!palettes)
+        return;
+    while (palettes)
+    {
+        if (palettes & 1)
+        {
+            if (i < NUM_PALS_IN_PRIMARY)
+                AvgPaletteWeighted(&((u16 *)primary->palettes)[i * 16], &((u16 *)primary->palettes)[((i + 9) % 16) * 16], gPlttBufferUnfaded + i * 16, gTimeBlend.altWeight);
+            else
+                AvgPaletteWeighted(&((u16 *)secondary->palettes)[i * 16], &((u16 *)secondary->palettes)[((i + 9) % 16) * 16], gPlttBufferUnfaded + i * 16, gTimeBlend.altWeight);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         }
         i++;
         palettes >>= 1;
     }
 }
 
+<<<<<<< HEAD
 void UpdatePalettesWithTime(u32 palettes) {
   if (MapHasNaturalLight(gMapHeader.mapType)) {
     u32 i;
@@ -1707,6 +2211,33 @@ u8 UpdateSpritePaletteWithTime(u8 paletteNum) {
       currentTimeBlend.weight);
   }
   return paletteNum;
+=======
+void UpdatePalettesWithTime(u32 palettes)
+{
+    if (!MapHasNaturalLight(gMapHeader.mapType))
+        return;
+    u32 i;
+    u32 mask = 1 << 16;
+    if (palettes >= (1 << 16))
+        for (i = 0; i < 16; i++, mask <<= 1)
+        {
+            if (IS_BLEND_IMMUNE_TAG(GetSpritePaletteTagByPaletteNum(i)))
+                palettes &= ~(mask);
+        }
+
+    palettes &= PALETTES_MAP | PALETTES_OBJECTS; // Don't blend UI pals
+    if (!palettes)
+        return;
+    TimeMixPalettes(palettes, gPlttBufferUnfaded, gPlttBufferFaded, &gTimeBlend.startBlend, &gTimeBlend.endBlend, gTimeBlend.weight);
+}
+
+u8 UpdateSpritePaletteWithTime(u8 paletteNum)
+{
+    if (MapHasNaturalLight(gMapHeader.mapType)
+     && !IS_BLEND_IMMUNE_TAG(GetSpritePaletteTagByPaletteNum(paletteNum)))
+        TimeMixPalettes(1, &gPlttBufferUnfaded[OBJ_PLTT_ID(paletteNum)], &gPlttBufferFaded[OBJ_PLTT_ID(paletteNum)], &gTimeBlend.startBlend, &gTimeBlend.endBlend, gTimeBlend.weight);
+    return paletteNum;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void OverworldBasic(void)
@@ -1721,6 +2252,7 @@ static void OverworldBasic(void)
     UpdateTilesetAnimations();
     DoScheduledBgTilemapCopiesToVram();
     // Every minute if no palette fade is active, update TOD blending as needed
+<<<<<<< HEAD
     if (!gPaletteFade.active && ++gTimeUpdateCounter >= 3600) {
       struct TimeBlendSettings cachedBlend = {
         .time0 = currentTimeBlend.time0,
@@ -1735,6 +2267,22 @@ static void OverworldBasic(void)
            UpdateAltBgPalettes(PALETTES_BG);
            UpdatePalettesWithTime(PALETTES_ALL);
        }
+=======
+    if (!gPaletteFade.active && --gTimeUpdateCounter <= 0)
+    {
+        struct TimeBlendSettings cachedBlend = gTimeBlend;
+        u32 *bld0 = (u32*)&cachedBlend;
+        u32 *bld1 = (u32*)&gTimeBlend;
+        gTimeUpdateCounter = (SECONDS_PER_MINUTE * 60 / FakeRtc_GetSecondsRatio());
+        UpdateTimeOfDay();
+        FormChangeTimeUpdate();
+        if (bld0[0] != bld1[0]
+         || bld0[1] != bld1[1]
+         || bld0[2] != bld1[2])
+        {
+           ApplyWeatherColorMapIfIdle(gWeatherPtr->colorMapIndex);
+        }
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
 }
 
@@ -1750,7 +2298,12 @@ void CB2_Overworld(void)
     if (fading)
         SetVBlankCallback(NULL);
     OverworldBasic();
+<<<<<<< HEAD
     if (fading) {
+=======
+    if (fading)
+    {
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         SetFieldVBlankCallback();
         return;
     }
@@ -1804,12 +2357,24 @@ void CB2_NewGame(void)
     PlayTimeCounter_Start();
     ScriptContext_Init();
     UnlockPlayerFieldControls();
+<<<<<<< HEAD
     //gFieldCallback = ExecuteTruckSequence;
     //gFieldCallback2 = NULL;
+=======
+    gFieldCallback = ExecuteTruckSequence;
+    gFieldCallback2 = NULL;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     DoMapLoadLoop(&gMain.state);
     SetFieldVBlankCallback();
     SetMainCallback1(CB1_Overworld);
     SetMainCallback2(CB2_Overworld);
+<<<<<<< HEAD
+=======
+#if OW_USE_FAKE_RTC
+    // Wall clock now track local time so we set it to 10AM to match initial wall clock time
+    RtcCalcLocalTimeOffset(0, 10, 0, 0);
+#endif
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 void CB2_WhiteOut(void)
@@ -1820,18 +2385,30 @@ void CB2_WhiteOut(void)
     {
         FieldClearVBlankHBlankCallbacks();
         StopMapMusic();
+<<<<<<< HEAD
         if (gSaveBlock1Ptr->tx_Challenges_NuzlockeHardcore && !FlagGet(FLAG_IS_CHAMPION)) //tx_randomizer_and_challenges
         {
             ClearSaveData();
             DoSoftReset();
         }
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         ResetSafariZoneFlag_();
         DoWhiteOut();
         ResetInitialPlayerAvatarState();
         ScriptContext_Init();
         UnlockPlayerFieldControls();
+<<<<<<< HEAD
         gFieldCallback = FieldCB_WarpExitFadeFromBlack;
         state = 0;
+=======
+        if (IsWhiteoutCutscene())
+            gFieldCallback = FieldCB_RushInjuredPokemonToCenter;
+        else
+            gFieldCallback = FieldCB_WarpExitFadeFromBlack;
+        state = 0;
+        SetFollowerNPCData(FNPC_DATA_SURF_BLOB, FNPC_SURF_BLOB_NONE);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         DoMapLoadLoop(&state);
         SetFieldVBlankCallback();
         SetMainCallback1(CB1_Overworld);
@@ -1839,6 +2416,7 @@ void CB2_WhiteOut(void)
     }
 }
 
+<<<<<<< HEAD
 void CB2_EndRoamerBattle(void){
     
 }
@@ -1870,6 +2448,8 @@ void CB2_BugContestWhiteOut(void){
     }
 }
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 void CB2_LoadMap(void)
 {
     FieldClearVBlankHBlankCallbacks();
@@ -1936,6 +2516,7 @@ void CB2_ReturnToField(void)
     }
 }
 
+<<<<<<< HEAD
 void CB2_ReturnToField_SaveChallengesData(void)
 {
     if (IsOverworldLinkActive() == TRUE)
@@ -1951,6 +2532,8 @@ void CB2_ReturnToField_SaveChallengesData(void)
     }
 }
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static void CB2_ReturnToFieldLocal(void)
 {
     if (ReturnToFieldLocal(&gMain.state))
@@ -2051,6 +2634,10 @@ void CB2_ContinueSavedGame(void)
     PlayTimeCounter_Start();
     ScriptContext_Init();
     UnlockPlayerFieldControls();
+<<<<<<< HEAD
+=======
+    gExitStairsMovementDisabled = TRUE;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     InitMatchCallCounters();
     if (UseContinueGameWarp() == TRUE)
     {
@@ -2136,6 +2723,10 @@ static bool32 LoadMapInStepsLink(u8 *state)
         (*state)++;
         break;
     case 1:
+<<<<<<< HEAD
+=======
+        gExitStairsMovementDisabled = FALSE;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         LoadMapFromWarp(TRUE);
         (*state)++;
         break;
@@ -2283,7 +2874,11 @@ static bool32 ReturnToFieldLocal(u8 *state)
         ResetScreenForMapLoad();
         ResumeMap(FALSE);
         InitObjectEventsReturnToField();
+<<<<<<< HEAD
         if (gFieldCallback == FieldCallback_Fly)
+=======
+        if (gFieldCallback == FieldCallback_UseFly)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             RemoveFollowingPokemon();
         else
             UpdateFollowingPokemon();
@@ -2293,6 +2888,10 @@ static bool32 ReturnToFieldLocal(u8 *state)
     case 1:
         InitViewGraphics();
         TryLoadTrainerHillEReaderPalette();
+<<<<<<< HEAD
+=======
+        FollowerNPC_BindToSurfBlobOnReloadScreen();
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         (*state)++;
         break;
     case 2:
@@ -2491,6 +3090,10 @@ static void InitObjectEventsLocal(void)
     SetPlayerAvatarTransitionFlags(player->transitionFlags);
     ResetInitialPlayerAvatarState();
     TrySpawnObjectEvents(0, 0);
+<<<<<<< HEAD
+=======
+    FollowerNPC_HandleSprite();
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     UpdateFollowingPokemon();
     TryRunOnWarpIntoMapScript();
 }
@@ -3249,7 +3852,11 @@ static void ZeroObjectEvent(struct ObjectEvent *objEvent)
 // conflict with the usual Event Object struct, thus the definitions.
 #define linkGender(obj) obj->singleMovementActive
 // not even one can reference *byte* aligned bitfield members...
+<<<<<<< HEAD
 #define linkDirection(obj) ((u8 *)obj)[offsetof(typeof(*obj), fieldEffectSpriteId) - 1] // -> rangeX
+=======
+#define linkDirection(obj) ((u8 *)obj)[offsetof(typeof(*obj), range)] // -> rangeX
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 static void SpawnLinkPlayerObjectEvent(u8 linkPlayerId, s16 x, s16 y, u8 gender)
 {
@@ -3313,7 +3920,11 @@ static u8 GetSpriteForLinkedPlayer(u8 linkPlayerId)
     return objEvent->spriteId;
 }
 
+<<<<<<< HEAD
 static void GetLinkPlayerCoords(u8 linkPlayerId, u16 *x, u16 *y)
+=======
+static void GetLinkPlayerCoords(u8 linkPlayerId, s16 *x, s16 *y)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     u8 objEventId = gLinkPlayerObjectEvents[linkPlayerId].objEventId;
     struct ObjectEvent *objEvent = &gObjectEvents[objEventId];
@@ -3368,7 +3979,11 @@ static void SetPlayerFacingDirection(u8 linkPlayerId, u8 facing)
     {
         if (facing > FACING_FORCED_RIGHT)
         {
+<<<<<<< HEAD
             objEvent->triggerGroundEffectsOnMove = 1;
+=======
+            objEvent->triggerGroundEffectsOnMove = TRUE;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         }
         else
         {
@@ -3517,7 +4132,13 @@ static void CreateLinkPlayerSprite(u8 linkPlayerId, u8 gameVersion)
         sprite = &gSprites[objEvent->spriteId];
         sprite->coordOffsetEnabled = TRUE;
         sprite->data[0] = linkPlayerId;
+<<<<<<< HEAD
         objEvent->triggerGroundEffectsOnMove = 0;
+=======
+        objEvent->triggerGroundEffectsOnMove = FALSE;
+        objEvent->localId = OBJ_EVENT_ID_DYNAMIC_BASE + linkPlayerId;
+        SetUpShadow(objEvent);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
 }
 
@@ -3542,3 +4163,225 @@ static void SpriteCB_LinkPlayer(struct Sprite *sprite)
         sprite->data[7]++;
     }
 }
+<<<<<<< HEAD
+=======
+
+// ----------------
+// Item Header Descriptions
+// Item Description Header
+
+#define ITEM_ICON_X     26
+#define ITEM_ICON_Y     24
+#define ITEM_TAG        0x2722 //same as money label
+
+bool8 GetSetItemObtained(u16 item, enum ItemObtainFlags caseId)
+{
+#if OW_SHOW_ITEM_DESCRIPTIONS == OW_ITEM_DESCRIPTIONS_FIRST_TIME
+    u8 index = item / 8;
+    u8 bit = item % 8;
+    u8 mask = 1 << bit;
+    switch (caseId)
+    {
+    case FLAG_GET_ITEM_OBTAINED:
+        return gSaveBlock3Ptr->itemFlags[index] & mask;
+    case FLAG_SET_ITEM_OBTAINED:
+        gSaveBlock3Ptr->itemFlags[index] |= mask;
+        return TRUE;
+    }
+#endif
+    return FALSE;
+}
+
+EWRAM_DATA static u8 sHeaderBoxWindowId = 0;
+EWRAM_DATA u8 sItemIconSpriteId = 0;
+EWRAM_DATA u8 sItemIconSpriteId2 = 0;
+
+static void ShowItemIconSprite(u16 item, bool8 firstTime, bool8 flash);
+static void DestroyItemIconSprite(void);
+
+static u8 ReformatItemDescription(u16 item, u8 *dest)
+{
+    u8 count = 0;
+    u8 numLines = 1;
+    u8 maxChars = 32;
+    u8 *desc = (u8 *)GetItemDescription(item);
+
+    while (*desc != EOS)
+    {
+        if (count >= maxChars)
+        {
+            while (*desc != CHAR_SPACE && *desc != CHAR_NEWLINE)
+            {
+                *dest = *desc;  //finish word
+                dest++;
+                desc++;
+            }
+
+            *dest = CHAR_NEWLINE;
+            count = 0;
+            numLines++;
+            dest++;
+            desc++;
+            continue;
+        }
+
+        *dest = *desc;
+        if (*desc == CHAR_NEWLINE)
+        {
+            *dest = CHAR_SPACE;
+        }
+
+        dest++;
+        desc++;
+        count++;
+    }
+
+    // finish string
+    *dest = EOS;
+    return numLines;
+}
+
+void ScriptShowItemDescription(struct ScriptContext *ctx)
+{
+    if (OW_SHOW_ITEM_DESCRIPTIONS == OW_ITEM_DESCRIPTIONS_OFF)
+    {
+        (void) ScriptReadByte(ctx);
+        return;
+    }
+
+    u8 headerType = ScriptReadByte(ctx);
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+    struct WindowTemplate template;
+    u16 item = gSpecialVar_0x8006;
+    u8 textY;
+    u8 *dst;
+    bool8 handleFlash = FALSE;
+
+    if (GetFlashLevel() > 0 || InBattlePyramid_())
+        handleFlash = TRUE;
+
+    if (headerType == 1) // berry
+        dst = gStringVar3;
+    else
+        dst = gStringVar1;
+
+    if (GetSetItemObtained(item, FLAG_GET_ITEM_OBTAINED))
+    {
+        ShowItemIconSprite(item, FALSE, handleFlash);
+        return; //no box if item obtained previously
+    }
+
+    SetWindowTemplateFields(&template, 0, 1, 1, 28, 3, 15, 8);
+    sHeaderBoxWindowId = AddWindow(&template);
+    FillWindowPixelBuffer(sHeaderBoxWindowId, PIXEL_FILL(0));
+    PutWindowTilemap(sHeaderBoxWindowId);
+    CopyWindowToVram(sHeaderBoxWindowId, 3);
+    SetStandardWindowBorderStyle(sHeaderBoxWindowId, FALSE);
+    DrawStdFrameWithCustomTileAndPalette(sHeaderBoxWindowId, FALSE, 0x214, 14);
+
+    if (ReformatItemDescription(item, dst) == 1)
+        textY = 4;
+    else
+        textY = 0;
+
+    ShowItemIconSprite(item, TRUE, handleFlash);
+    AddTextPrinterParameterized(sHeaderBoxWindowId, 0, dst, ITEM_ICON_X + 2, textY, 0, NULL);
+}
+
+void ScriptHideItemDescription(struct ScriptContext *ctx)
+{
+    if (OW_SHOW_ITEM_DESCRIPTIONS == OW_ITEM_DESCRIPTIONS_OFF)
+        return;
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE | SCREFF_HARDWARE);
+
+    DestroyItemIconSprite();
+
+    if (!GetSetItemObtained(gSpecialVar_0x8006, FLAG_GET_ITEM_OBTAINED))
+    {
+        //header box only exists if haven't seen item before
+        GetSetItemObtained(gSpecialVar_0x8006, FLAG_SET_ITEM_OBTAINED);
+        ClearStdWindowAndFrameToTransparent(sHeaderBoxWindowId, FALSE);
+        CopyWindowToVram(sHeaderBoxWindowId, 3);
+        RemoveWindow(sHeaderBoxWindowId);
+    }
+}
+
+static void ShowItemIconSprite(u16 item, bool8 firstTime, bool8 flash)
+{
+    s16 x = 0, y = 0;
+    u8 iconSpriteId;
+    u8 spriteId2 = MAX_SPRITES;
+
+    if (flash)
+    {
+        SetGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_OBJWIN_ON);
+        SetGpuRegBits(REG_OFFSET_WINOUT, WINOUT_WINOBJ_OBJ);
+    }
+
+    iconSpriteId = AddItemIconSprite(ITEM_TAG, ITEM_TAG, item);
+    if (flash)
+        spriteId2 = AddItemIconSprite(ITEM_TAG, ITEM_TAG, item);
+    if (iconSpriteId != MAX_SPRITES)
+    {
+        if (!firstTime)
+        {
+            //show in message box
+            x = 213;
+            y = 140;
+        }
+        else
+        {
+            // show in header box
+            x = ITEM_ICON_X;
+            y = ITEM_ICON_Y;
+        }
+
+        gSprites[iconSpriteId].x2 = x;
+        gSprites[iconSpriteId].y2 = y;
+        gSprites[iconSpriteId].oam.priority = 0;
+    }
+
+    if (spriteId2 != MAX_SPRITES)
+    {
+        gSprites[spriteId2].x2 = x;
+        gSprites[spriteId2].y2 = y;
+        gSprites[spriteId2].oam.priority = 0;
+        gSprites[spriteId2].oam.objMode = ST_OAM_OBJ_WINDOW;
+        sItemIconSpriteId2 = spriteId2;
+    }
+
+    sItemIconSpriteId = iconSpriteId;
+}
+
+static void DestroyItemIconSprite(void)
+{
+    FreeSpriteTilesByTag(ITEM_TAG);
+    FreeSpritePaletteByTag(ITEM_TAG);
+    FreeSpriteOamMatrix(&gSprites[sItemIconSpriteId]);
+    DestroySprite(&gSprites[sItemIconSpriteId]);
+
+    if ((GetFlashLevel() > 0 || InBattlePyramid_()) && sItemIconSpriteId2 != MAX_SPRITES)
+    {
+        FreeSpriteOamMatrix(&gSprites[sItemIconSpriteId2]);
+        DestroySprite(&gSprites[sItemIconSpriteId2]);
+    }
+}
+
+// returns old sHoursOverride
+u16 SetTimeOfDay(u16 hours)
+{
+    u16 oldHours = sHoursOverride;
+    sHoursOverride = hours;
+    gTimeUpdateCounter = 0;
+    return oldHours;
+}
+
+bool8 ScrFunc_settimeofday(struct ScriptContext *ctx)
+{
+    SetTimeOfDay(ScriptReadByte(ctx));
+    return FALSE;
+}
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

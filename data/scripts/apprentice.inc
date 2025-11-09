@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 .set LOCALID_APPRENTICE, 6
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 BattleFrontier_BattleTowerLobby_EventScript_Apprentice::
 	lock
 	faceplayer

@@ -312,7 +312,11 @@ void Task_HandlePorthole(u8 taskId)
     case IDLE_CHECK:
         if (JOY_NEW(A_BUTTON))
             data[1] = 1;
+<<<<<<< HEAD
         if (!ScriptMovement_IsObjectMovementFinished(OBJ_EVENT_ID_PLAYER, location->mapNum, location->mapGroup))
+=======
+        if (!ScriptMovement_IsObjectMovementFinished(LOCALID_PLAYER, location->mapNum, location->mapGroup))
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             return;
         if (CountSSTidalStep(1) == TRUE)
         {
@@ -334,12 +338,20 @@ void Task_HandlePorthole(u8 taskId)
 
         if (*cruiseState == SS_TIDAL_DEPART_SLATEPORT)
         {
+<<<<<<< HEAD
             ScriptMovement_StartObjectMovementScript(OBJ_EVENT_ID_PLAYER, location->mapNum, location->mapGroup, sSSTidalSailEastMovementScript);
+=======
+            ScriptMovement_StartObjectMovementScript(LOCALID_PLAYER, location->mapNum, location->mapGroup, sSSTidalSailEastMovementScript);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             data[0] = IDLE_CHECK;
         }
         else
         {
+<<<<<<< HEAD
             ScriptMovement_StartObjectMovementScript(OBJ_EVENT_ID_PLAYER, location->mapNum, location->mapGroup, sSSTidalSailWestMovementScript);
+=======
+            ScriptMovement_StartObjectMovementScript(LOCALID_PLAYER, location->mapNum, location->mapGroup, sSSTidalSailWestMovementScript);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             data[0] = IDLE_CHECK;
         }
         break;

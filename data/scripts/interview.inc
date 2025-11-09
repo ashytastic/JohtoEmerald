@@ -213,7 +213,11 @@ LilycoveCity_ContestLobby_EventScript_AlreadyInterviewed::
 	end
 
 LilycoveCity_ContestLobby_EventScript_TryShowContestReporter::
+<<<<<<< HEAD
 	goto_if_ne VAR_GARBAGEVAR, 2, LilycoveCity_ContestLobby_EventScript_DontShowContestReporter
+=======
+	goto_if_ne VAR_CONTEST_HALL_STATE, 2, LilycoveCity_ContestLobby_EventScript_DontShowContestReporter
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setvar VAR_0x8005, TVSHOW_BRAVO_TRAINER_POKEMON_PROFILE
 	special InterviewBefore
 	goto_if_eq VAR_RESULT, TRUE, LilycoveCity_ContestLobby_EventScript_DontShowContestReporter
@@ -227,7 +231,11 @@ LilycoveCity_ContestLobby_EventScript_TryShowContestReporter::
 	end
 
 LilycoveCity_ContestLobby_EventScript_ShowContestReporter::
+<<<<<<< HEAD
 	clearflag FLAG_GARBAGEFLAG
+=======
+	clearflag FLAG_HIDE_LILYCOVE_CONTEST_HALL_REPORTER
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	return
 
 LilycoveCity_ContestLobby_EventScript_DontShowContestReporter::

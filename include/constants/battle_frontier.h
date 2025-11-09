@@ -41,26 +41,41 @@
 #define SPECIAL_BATTLE_ARENA 5
 #define SPECIAL_BATTLE_FACTORY 6
 #define SPECIAL_BATTLE_PIKE_SINGLE 7
+<<<<<<< HEAD
 #define SPECIAL_BATTLE_LANCE 8
 #define SPECIAL_BATTLE_PIKE_DOUBLE 9
 #define SPECIAL_BATTLE_PYRAMID 10
+=======
+#define SPECIAL_BATTLE_PIKE_DOUBLE 8
+#define SPECIAL_BATTLE_PYRAMID 9
+#define SPECIAL_BATTLE_MULTI 10
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 #define MAX_BATTLE_FRONTIER_POINTS 9999
 #define MAX_STREAK 9999
 
+<<<<<<< HEAD
 #define FRONTIER_MAX_LEVEL_50   100
 #define FRONTIER_MIN_LEVEL_OPEN 50
 #define FRONTIER_MAX_LEVEL_OPEN 100
+=======
+#define FRONTIER_MAX_LEVEL_50   50
+#define FRONTIER_MIN_LEVEL_OPEN 60
+#define FRONTIER_MAX_LEVEL_OPEN MAX_LEVEL
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 // This is the default number of battles (or floors, in Battle Pyramid) per challenge.
 // There are 2 facilities that differ: Battle Dome (DOME_ROUNDS_COUNT) and Battle Pike (NUM_PIKE_ROOMS).
 #define FRONTIER_STAGES_PER_CHALLENGE 7
 
+<<<<<<< HEAD
 // Every time you complete 7 battles, the Battle Frontier challenge repeats. After 7 repeats, the Battle
 // Frontier uses trainer IDs that always come from the last, hardest range, which is the same for both
 // trainer ID tables.
 #define FRONTIER_REPEAT_CHALLENGES_START_HARDEST_RANGE 7
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 // These sets of facility ids would be redundant if the order was consistent
 // The order is important for this set so that all the non-link records can be continuous
 #define RANKING_HALL_TOWER_SINGLES   0
@@ -121,6 +136,10 @@
 #define EXCHANGE_CORNER_VITAMIN_CLERK    2
 #define EXCHANGE_CORNER_HOLD_ITEM_CLERK  3
 
+<<<<<<< HEAD
+=======
+// unused
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #define F_EV_SPREAD_HP         (1 << 0)
 #define F_EV_SPREAD_ATTACK     (1 << 1)
 #define F_EV_SPREAD_DEFENSE    (1 << 2)
@@ -128,6 +147,7 @@
 #define F_EV_SPREAD_SP_ATTACK  (1 << 4)
 #define F_EV_SPREAD_SP_DEFENSE (1 << 5)
 
+<<<<<<< HEAD
 #define BATTLE_FRONTIER_ITEM_NONE           0
 #define BATTLE_FRONTIER_ITEM_KINGS_ROCK     1
 #define BATTLE_FRONTIER_ITEM_SITRUS_BERRY   2
@@ -192,5 +212,9 @@
 #define BATTLE_FRONTIER_ITEM_LUCKY_PUNCH    61
 #define BATTLE_FRONTIER_ITEM_GANLON_BERRY   62
 #define BATTLE_FRONTIER_ITEM_FAIRY_GEM      63
+=======
+// CreateFacilityMonFlags
+#define FLAG_FRONTIER_MON_FACTORY       (1 << 0)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 #endif // GUARD_CONSTANTS_BATTLE_FRONTIER_H

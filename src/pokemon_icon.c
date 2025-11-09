@@ -2,12 +2,20 @@
 #include "graphics.h"
 #include "mail.h"
 #include "palette.h"
+<<<<<<< HEAD
 #include "pokemon_icon.h"
 #include "sprite.h"
 
 #define POKE_ICON_BASE_PAL_TAG 56000
 
 #define INVALID_ICON_SPECIES SPECIES_OLD_UNOWN_J // Oddly specific, used when an icon should be a ?. Any of the 'old unown' would work
+=======
+#include "pokemon_sprite_visualizer.h"
+#include "pokemon_icon.h"
+#include "sprite.h"
+#include "data.h"
+#include "constants/pokemon_icon.h"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 struct MonIconSpriteTemplate
 {
@@ -22,6 +30,7 @@ struct MonIconSpriteTemplate
 static u8 CreateMonIconSprite(struct MonIconSpriteTemplate *, s16, s16, u8);
 static void FreeAndDestroyMonIconSprite_(struct Sprite *sprite);
 
+<<<<<<< HEAD
 const u8 *const gMonIconTable[] =
 {
     [SPECIES_NONE] = gMonIcon_Bulbasaur,
@@ -1014,14 +1023,19 @@ const u8 gMonIconPaletteIndices[] =
     //[SPECIES_UNUSED_SPACE10] = 0,
 };
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 const struct SpritePalette gMonIconPaletteTable[] =
 {
     { gMonIconPalettes[0], POKE_ICON_BASE_PAL_TAG + 0 },
     { gMonIconPalettes[1], POKE_ICON_BASE_PAL_TAG + 1 },
     { gMonIconPalettes[2], POKE_ICON_BASE_PAL_TAG + 2 },
+<<<<<<< HEAD
 
 // There are only 3 actual palettes. The following are unused
 // and don't point to valid data.
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     { gMonIconPalettes[3], POKE_ICON_BASE_PAL_TAG + 3 },
     { gMonIconPalettes[4], POKE_ICON_BASE_PAL_TAG + 4 },
     { gMonIconPalettes[5], POKE_ICON_BASE_PAL_TAG + 5 },
@@ -1130,12 +1144,17 @@ static const u16 sSpriteImageSizes[3][4] =
     },
 };
 
+<<<<<<< HEAD
 u8 CreateMonIcon(u16 species, void (*callback)(struct Sprite *), s16 x, s16 y, u8 subpriority, u32 personality, bool32 handleDeoxys)
+=======
+u8 CreateMonIcon(u16 species, void (*callback)(struct Sprite *), s16 x, s16 y, u8 subpriority, u32 personality)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     u8 spriteId;
     struct MonIconSpriteTemplate iconTemplate =
     {
         .oam = &sMonIconOamData,
+<<<<<<< HEAD
         .image = GetMonIconPtr(species, personality, handleDeoxys),
         .anims = sMonIconAnims,
         .affineAnims = sMonIconAffineAnims,
@@ -1145,6 +1164,22 @@ u8 CreateMonIcon(u16 species, void (*callback)(struct Sprite *), s16 x, s16 y, u
 
     if (species > NUM_SPECIES)
         iconTemplate.paletteTag = POKE_ICON_BASE_PAL_TAG;
+=======
+        .image = GetMonIconPtr(species, personality),
+        .anims = sMonIconAnims,
+        .affineAnims = sMonIconAffineAnims,
+        .callback = callback,
+        .paletteTag = POKE_ICON_BASE_PAL_TAG + gSpeciesInfo[species].iconPalIndex,
+    };
+    species = SanitizeSpeciesId(species);
+
+    if (species > NUM_SPECIES)
+        iconTemplate.paletteTag = POKE_ICON_BASE_PAL_TAG;
+#if P_GENDER_DIFFERENCES
+    else if (gSpeciesInfo[species].iconSpriteFemale != NULL && IsPersonalityFemale(species, personality))
+        iconTemplate.paletteTag = POKE_ICON_BASE_PAL_TAG + gSpeciesInfo[species].iconPalIndexFemale;
+#endif
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     spriteId = CreateMonIconSprite(&iconTemplate, x, y, subpriority);
 
@@ -1153,7 +1188,12 @@ u8 CreateMonIcon(u16 species, void (*callback)(struct Sprite *), s16 x, s16 y, u
     return spriteId;
 }
 
+<<<<<<< HEAD
 u8 CreateMonIconNoPersonality(u16 species, void (*callback)(struct Sprite *), s16 x, s16 y, u8 subpriority, bool32 handleDeoxys)
+=======
+
+u8 CreateMonIconNoPersonality(u16 species, void (*callback)(struct Sprite *), s16 x, s16 y, u8 subpriority)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     u8 spriteId;
     struct MonIconSpriteTemplate iconTemplate =
@@ -1163,10 +1203,17 @@ u8 CreateMonIconNoPersonality(u16 species, void (*callback)(struct Sprite *), s1
         .anims = sMonIconAnims,
         .affineAnims = sMonIconAffineAnims,
         .callback = callback,
+<<<<<<< HEAD
         .paletteTag = POKE_ICON_BASE_PAL_TAG + gMonIconPaletteIndices[species],
     };
 
     iconTemplate.image = GetMonIconTiles(species, handleDeoxys);
+=======
+        .paletteTag = POKE_ICON_BASE_PAL_TAG + gSpeciesInfo[species].iconPalIndex,
+    };
+
+    iconTemplate.image = GetMonIconTiles(species, 0);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     spriteId = CreateMonIconSprite(&iconTemplate, x, y, subpriority);
 
     UpdateMonIconFrame(&gSprites[spriteId]);
@@ -1176,6 +1223,7 @@ u8 CreateMonIconNoPersonality(u16 species, void (*callback)(struct Sprite *), s1
 
 u16 GetIconSpecies(u16 species, u32 personality)
 {
+<<<<<<< HEAD
     u16 result;
 
     if (species == SPECIES_UNOWN)
@@ -1196,6 +1244,12 @@ u16 GetIconSpecies(u16 species, u32 personality)
     }
 
     return result;
+=======
+    species = SanitizeSpeciesId(species);
+    if (species == SPECIES_UNOWN)
+        species = GetUnownSpeciesId(personality);
+    return species;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 u16 GetUnownLetterByPersonality(u32 personality)
@@ -1208,6 +1262,7 @@ u16 GetUnownLetterByPersonality(u32 personality)
 
 u16 GetIconSpeciesNoPersonality(u16 species)
 {
+<<<<<<< HEAD
     u16 value;
 
     if (MailSpeciesToSpecies(species, &value) == SPECIES_UNOWN)
@@ -1229,6 +1284,18 @@ u16 GetIconSpeciesNoPersonality(u16 species)
 const u8 *GetMonIconPtr(u16 species, u32 personality, bool32 handleDeoxys)
 {
     return GetMonIconTiles(GetIconSpecies(species, personality), handleDeoxys);
+=======
+    species = SanitizeSpeciesId(species);
+
+    if (MailSpeciesToSpecies(species, &species) == SPECIES_UNOWN)
+        return species += SPECIES_UNOWN_B; // TODO
+    return GetIconSpecies(species, 0);
+}
+
+const u8 *GetMonIconPtr(u16 species, u32 personality)
+{
+    return GetMonIconTiles(GetIconSpecies(species, personality), personality);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 void FreeAndDestroyMonIconSprite(struct Sprite *sprite)
@@ -1247,16 +1314,38 @@ void LoadMonIconPalettes(void)
 void SafeLoadMonIconPalette(u16 species)
 {
     u8 palIndex;
+<<<<<<< HEAD
     if (species > NUM_SPECIES)
         species = INVALID_ICON_SPECIES;
     palIndex = gMonIconPaletteIndices[species];
+=======
+    palIndex = gSpeciesInfo[SanitizeSpeciesId(species)].iconPalIndex;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (IndexOfSpritePaletteTag(gMonIconPaletteTable[palIndex].tag) == 0xFF)
         LoadSpritePalette(&gMonIconPaletteTable[palIndex]);
 }
 
 void LoadMonIconPalette(u16 species)
 {
+<<<<<<< HEAD
     u8 palIndex = gMonIconPaletteIndices[species];
+=======
+    u8 palIndex = gSpeciesInfo[SanitizeSpeciesId(species)].iconPalIndex;
+    if (IndexOfSpritePaletteTag(gMonIconPaletteTable[palIndex].tag) == 0xFF)
+        LoadSpritePalette(&gMonIconPaletteTable[palIndex]);
+}
+
+void LoadMonIconPalettePersonality(u16 species, u32 personality)
+{
+    u8 palIndex;
+    species = SanitizeSpeciesId(species);
+#if P_GENDER_DIFFERENCES
+    if (gSpeciesInfo[species].iconSpriteFemale != NULL && IsPersonalityFemale(species, personality))
+        palIndex = gSpeciesInfo[species].iconPalIndexFemale;
+    else
+#endif
+        palIndex = gSpeciesInfo[species].iconPalIndex;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (IndexOfSpritePaletteTag(gMonIconPaletteTable[palIndex].tag) == 0xFF)
         LoadSpritePalette(&gMonIconPaletteTable[palIndex]);
 }
@@ -1272,16 +1361,24 @@ void FreeMonIconPalettes(void)
 void SafeFreeMonIconPalette(u16 species)
 {
     u8 palIndex;
+<<<<<<< HEAD
     if (species > NUM_SPECIES)
         species = INVALID_ICON_SPECIES;
     palIndex = gMonIconPaletteIndices[species];
+=======
+    palIndex = gSpeciesInfo[SanitizeSpeciesId(species)].iconPalIndex;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     FreeSpritePaletteByTag(gMonIconPaletteTable[palIndex].tag);
 }
 
 void FreeMonIconPalette(u16 species)
 {
     u8 palIndex;
+<<<<<<< HEAD
     palIndex = gMonIconPaletteIndices[species];
+=======
+    palIndex = gSpeciesInfo[SanitizeSpeciesId(species)].iconPalIndex;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     FreeSpritePaletteByTag(gMonIconPaletteTable[palIndex].tag);
 }
 
@@ -1290,6 +1387,7 @@ void SpriteCB_MonIcon(struct Sprite *sprite)
     UpdateMonIconFrame(sprite);
 }
 
+<<<<<<< HEAD
 const u8 *GetMonIconTiles(u16 species, bool32 handleDeoxys)
 {
     const u8 *iconSprite = gMonIconTable[species];
@@ -1297,6 +1395,25 @@ const u8 *GetMonIconTiles(u16 species, bool32 handleDeoxys)
     {
         iconSprite = (const u8 *)(0x400 + (u32)iconSprite); // use the specific Deoxys form icon (Speed in this case)
     }
+=======
+const u8 *GetMonIconTiles(u16 species, u32 personality)
+{
+    const u8 *iconSprite;
+
+    if (species > NUM_SPECIES)
+        species = SPECIES_NONE;
+
+#if P_GENDER_DIFFERENCES
+    if (gSpeciesInfo[species].iconSpriteFemale != NULL && IsPersonalityFemale(species, personality))
+        iconSprite = gSpeciesInfo[species].iconSpriteFemale;
+    else
+#endif
+    if (gSpeciesInfo[species].iconSprite != NULL)
+        iconSprite = gSpeciesInfo[species].iconSprite;
+    else
+        iconSprite = gSpeciesInfo[SPECIES_NONE].iconSprite;
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     return iconSprite;
 }
 
@@ -1315,21 +1432,33 @@ void TryLoadAllMonIconPalettesAtOffset(u16 offset)
 
 u8 GetValidMonIconPalIndex(u16 species)
 {
+<<<<<<< HEAD
     if (species > NUM_SPECIES)
         species = INVALID_ICON_SPECIES;
     return gMonIconPaletteIndices[species];
+=======
+    return gSpeciesInfo[SanitizeSpeciesId(species)].iconPalIndex;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 u8 GetMonIconPaletteIndexFromSpecies(u16 species)
 {
+<<<<<<< HEAD
     return gMonIconPaletteIndices[species];
+=======
+    return gSpeciesInfo[SanitizeSpeciesId(species)].iconPalIndex;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 const u16 *GetValidMonIconPalettePtr(u16 species)
 {
+<<<<<<< HEAD
     if (species > NUM_SPECIES)
         species = INVALID_ICON_SPECIES;
     return gMonIconPaletteTable[gMonIconPaletteIndices[species]].data;
+=======
+    return gMonIconPaletteTable[gSpeciesInfo[SanitizeSpeciesId(species)].iconPalIndex].data;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 u8 UpdateMonIconFrame(struct Sprite *sprite)

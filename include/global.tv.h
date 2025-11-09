@@ -82,7 +82,11 @@ typedef union // size = 0x24
         /*0x00*/ u8 kind;
         /*0x01*/ bool8 active;
         /*0x02*/ u16 species;
+<<<<<<< HEAD
         /*0x04*/ u8 pokemonName[POKEMON_NAME_LENGTH + 1];
+=======
+        /*0x04*/ u8 pokemonName[VANILLA_POKEMON_NAME_LENGTH + 1];
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         /*0x0F*/ u8 trainerName[PLAYER_NAME_LENGTH + 1];
         /*0x17*/ u8 unused[3];
         /*0x1A*/ u8 random;
@@ -98,7 +102,11 @@ typedef union // size = 0x24
         /*0x01*/ bool8 active;
         /*0x02*/ u16 species;
         /*0x04*/ u16 words[2];
+<<<<<<< HEAD
         /*0x08*/ u8 pokemonNickname[POKEMON_NAME_LENGTH + 1];
+=======
+        /*0x08*/ u8 pokemonNickname[VANILLA_POKEMON_NAME_LENGTH + 1];
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         /*0x13*/ u8 contestCategory:3;
                  u8 contestRank:2;
                  u8 contestResult:2;
@@ -196,7 +204,11 @@ typedef union // size = 0x24
         /*0x01*/ bool8 active;
         /*0x02*/ u8 playerName[PLAYER_NAME_LENGTH + 1];
         /*0x0A*/ u8 contestCategory;
+<<<<<<< HEAD
         /*0x0B*/ u8 nickname[POKEMON_NAME_LENGTH + 1];
+=======
+        /*0x0B*/ u8 nickname[VANILLA_POKEMON_NAME_LENGTH + 1];
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         /*0x16*/ u8 pokeblockState;
         /*0x17*/ u8 language;
         /*0x18*/ u8 pokemonNameLanguage;
@@ -209,7 +221,11 @@ typedef union // size = 0x24
         /*0x01*/ bool8 active;
         /*0x02*/ u8 language;
         /*0x03*/ u8 language2;
+<<<<<<< HEAD
         /*0x04*/ u8 nickname[POKEMON_NAME_LENGTH + 1];
+=======
+        /*0x04*/ u8 nickname[VANILLA_POKEMON_NAME_LENGTH + 1];
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         /*0x0F*/ u8 ball;
         /*0x10*/ u16 species;
         /*0x12*/ u8 nBallsUsed;
@@ -226,7 +242,11 @@ typedef union // size = 0x24
         /*0x04*/ u8 filler_04[2];
         /*0x06*/ u16 itemIds[SMARTSHOPPER_NUM_ITEMS];
         /*0x0C*/ u16 itemAmounts[SMARTSHOPPER_NUM_ITEMS];
+<<<<<<< HEAD
         /*0x12*/ u8 shopLocation;
+=======
+        /*0x12*/ mapsec_u8_t shopLocation;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         /*0x13*/ u8 playerName[PLAYER_NAME_LENGTH + 1];
         /*0x1B*/ //u8 padding;
     } smartshopperShow;
@@ -241,7 +261,11 @@ typedef union // size = 0x24
         /*0x0E*/ u16 species2;
         /*0x10*/ u8 nBallsUsed;
         /*0x11*/ u8 outcome;
+<<<<<<< HEAD
         /*0x12*/ u8 location;
+=======
+        /*0x12*/ mapsec_u8_t location;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         /*0x13*/ u8 playerName[PLAYER_NAME_LENGTH + 1];
         /*0x1B*/ //u8 padding;
     } pokemonTodayFailed;
@@ -267,7 +291,11 @@ typedef union // size = 0x24
         /*0x04*/ u16 caughtPoke;
         /*0x06*/ u16 steps;
         /*0x08*/ u16 species;
+<<<<<<< HEAD
         /*0x0A*/ u8 location;
+=======
+        /*0x0A*/ mapsec_u8_t location;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         /*0x0B*/ u8 language;
         /*0x0C*/ u8 filler_0C[7];
         /*0x13*/ u8 playerName[PLAYER_NAME_LENGTH + 1];
@@ -282,7 +310,11 @@ typedef union // size = 0x24
         /*0x04*/ u8 badgeCount;
         /*0x05*/ u8 nSilverSymbols;
         /*0x06*/ u8 nGoldSymbols;
+<<<<<<< HEAD
         /*0x07*/ u8 location;
+=======
+        /*0x07*/ mapsec_u8_t location;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         /*0x08*/ u16 battlePoints;
         /*0x0A*/ u16 mapLayoutId;
         /*0x0C*/ u8 language;
@@ -309,7 +341,11 @@ typedef union // size = 0x24
         /*0x00*/ u8 kind;
         /*0x01*/ bool8 active;
         /*0x02*/ u16 item;
+<<<<<<< HEAD
         /*0x04*/ u8 location;
+=======
+        /*0x04*/ mapsec_u8_t location;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         /*0x05*/ u8 language;
         /*0x06*/ u16 mapLayoutId;
         /*0x08*/ u8 filler_08[11];
@@ -336,7 +372,11 @@ typedef union // size = 0x24
         /*0x00*/ u8 kind;
         /*0x01*/ bool8 active;
         /*0x02*/ u16 lastOpponentSpecies;
+<<<<<<< HEAD
         /*0x04*/ u8 location;
+=======
+        /*0x04*/ mapsec_u8_t location;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         /*0x05*/ u8 outcome;
         /*0x06*/ u16 caughtMonBall;
         /*0x08*/ u16 balls;
@@ -409,7 +449,11 @@ typedef union // size = 0x24
         /*0x01*/ bool8 active;
         /*0x02*/ u8 nRibbons;
         /*0x03*/ u8 selectedRibbon;
+<<<<<<< HEAD
         /*0x04*/ u8 nickname[POKEMON_NAME_LENGTH + 1];
+=======
+        /*0x04*/ u8 nickname[VANILLA_POKEMON_NAME_LENGTH + 1];
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         /*0x0F*/ u8 language;
         /*0x10*/ u8 pokemonNameLanguage;
         /*0x11*/ u8 filler_12[2];
@@ -505,7 +549,11 @@ struct GabbyAndTyData
     /*2BA6*/ u16 mon2;
     /*2BA8*/ u16 lastMove;
     /*2BAA*/ u16 quote[1];
+<<<<<<< HEAD
     /*2BAC*/ u8 mapnum;
+=======
+    /*2BAC*/ mapsec_u8_t mapnum;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     /*2BAD*/ u8 battleNum;
     /*2BAE*/ u8 battleTookMoreThanOneTurn:1;
              u8 playerLostAMon:1;

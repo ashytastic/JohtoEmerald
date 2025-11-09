@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 .set LOCALID_ATTENDANT, 1
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 VerdanturfTown_BattleTentLobby_MapScripts::
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, VerdanturfTown_BattleTentLobby_OnFrame
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, VerdanturfTown_BattleTentLobby_OnWarp
@@ -11,7 +14,11 @@ VerdanturfTown_BattleTentLobby_OnWarp:
 
 VerdanturfTown_BattleTentLobby_EventScript_TurnPlayerNorth::
 	setvar VAR_TEMP_1, 1
+<<<<<<< HEAD
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+=======
+	turnobject LOCALID_PLAYER, DIR_NORTH
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 VerdanturfTown_BattleTentLobby_OnFrame:
@@ -129,7 +136,10 @@ VerdanturfTown_BattleTentLobby_EventScript_TryEnterChallenge::
 	frontier_set FRONTIER_DATA_LVL_MODE, FRONTIER_LVL_TENT
 	msgbox VerdanturfTown_BattleTentLobby_Text_SelectThreeMons, MSGBOX_DEFAULT
 	fadescreen FADE_TO_BLACK
+<<<<<<< HEAD
 	callnative RemoveFollowingPokemon
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setvar VAR_0x8004, 1
 	setvar VAR_0x8005, FRONTIER_PARTY_SIZE
 	special ChoosePartyForBattleFrontier
@@ -194,6 +204,7 @@ VerdanturfTown_BattleTentLobby_EventScript_EndCancelChallenge::
 	end
 
 VerdanturfTown_BattleTentLobby_EventScript_WalkToDoor::
+<<<<<<< HEAD
 	applymovement LOCALID_ATTENDANT, VerdanturfTown_BattleTentLobby_Movement_WalkToDoor
 	applymovement OBJ_EVENT_ID_PLAYER, VerdanturfTown_BattleTentLobby_Movement_WalkToDoor
 	waitmovement 0
@@ -201,6 +212,15 @@ VerdanturfTown_BattleTentLobby_EventScript_WalkToDoor::
 	waitdooranim
 	applymovement LOCALID_ATTENDANT, VerdanturfTown_BattleTentLobby_Movement_AttendantEnterDoor
 	applymovement OBJ_EVENT_ID_PLAYER, VerdanturfTown_BattleTentLobby_Movement_PlayerEnterDoor
+=======
+	applymovement LOCALID_VERDANTURF_TENT_ATTENDANT, VerdanturfTown_BattleTentLobby_Movement_WalkToDoor
+	applymovement LOCALID_PLAYER, VerdanturfTown_BattleTentLobby_Movement_WalkToDoor
+	waitmovement 0
+	opendoor 6, 1
+	waitdooranim
+	applymovement LOCALID_VERDANTURF_TENT_ATTENDANT, VerdanturfTown_BattleTentLobby_Movement_AttendantEnterDoor
+	applymovement LOCALID_PLAYER, VerdanturfTown_BattleTentLobby_Movement_PlayerEnterDoor
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	closedoor 6, 1
 	waitdooranim

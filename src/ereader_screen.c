@@ -18,6 +18,7 @@
 struct EReaderTaskData
 {
     u16 timer;
+<<<<<<< HEAD
     u16 unused1;
     u16 unused2;
     u16 unused3;
@@ -29,6 +30,12 @@ struct EReaderTaskData
     u8 unused7;
     u8 status;
     u8 *unusedBuffer;
+=======
+    u8 state;
+    u8 textState;
+    u8 status;
+    u8 *buffer;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 struct EReaderData
@@ -40,7 +47,11 @@ struct EReaderData
 
 static void Task_EReader(u8);
 
+<<<<<<< HEAD
 struct EReaderData gEReaderData;
+=======
+COMMON_DATA struct EReaderData gEReaderData = {0};
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 extern const u8 gMultiBootProgram_EReader_Start[];
 extern const u8 gMultiBootProgram_EReader_End[];
@@ -98,7 +109,10 @@ static u8 EReader_Transfer(struct EReaderData *eReader)
 
 static void OpenEReaderLink(void)
 {
+<<<<<<< HEAD
     memset(gDecompressionBuffer, 0, 0x2000);
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gLinkType = LINKTYPE_EREADER_EM;
     OpenLink();
     SetSuppressLinkErrorMessage(TRUE);
@@ -251,6 +265,7 @@ void CreateEReaderTask(void)
     data = (struct EReaderTaskData *)gTasks[taskId].data;
     data->state = 0;
     data->textState = 0;
+<<<<<<< HEAD
     data->unused4 = 0;
     data->unused5 = 0;
     data->unused6 = 0;
@@ -261,6 +276,11 @@ void CreateEReaderTask(void)
     data->unused3 = 0;
     data->status = 0;
     data->unusedBuffer = AllocZeroed(CLIENT_MAX_MSG_SIZE);
+=======
+    data->timer = 0;
+    data->status = 0;
+    data->buffer = AllocZeroed(0x2000);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void ResetTimer(u16 *timer)
@@ -343,7 +363,11 @@ static void Task_EReader(u8 taskId)
     case ER_STATE_MSG_SELECT_CONNECT:
         if (PrintMysteryGiftMenuMessage(&data->textState, gJPText_SelectConnectFromEReaderMenu))
         {
+<<<<<<< HEAD
             AddTextPrinterToWindow1(gJPText_SelectConnectWithGBA);
+=======
+            MG_AddMessageTextPrinter(gJPText_SelectConnectWithGBA);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             ResetTimer(&data->timer);
             data->state = ER_STATE_MSG_SELECT_CONNECT_WAIT;
         }
@@ -397,7 +421,11 @@ static void Task_EReader(u8 taskId)
             data->state = ER_STATE_MSG_SELECT_CONNECT;
         break;
     case ER_STATE_CONNECTING:
+<<<<<<< HEAD
         AddTextPrinterToWindow1(gJPText_Connecting);
+=======
+        MG_AddMessageTextPrinter(gJPText_Connecting);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         // XXX: This (u32 *) cast is discarding the const qualifier from gMultiBootProgram_EReader_Start
         EReader_Load(&gEReaderData, gMultiBootProgram_EReader_End - gMultiBootProgram_EReader_Start, (u32 *)gMultiBootProgram_EReader_Start);
         data->state = ER_STATE_TRANSFER;
@@ -416,7 +444,11 @@ static void Task_EReader(u8 taskId)
         else if (data->status == TRANSFER_SUCCESS)
         {
             ResetTimer(&data->timer);
+<<<<<<< HEAD
             AddTextPrinterToWindow1(gJPText_PleaseWaitAMoment);
+=======
+            MG_AddMessageTextPrinter(gJPText_PleaseWaitAMoment);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             data->state = ER_STATE_TRANSFER_SUCCESS;
         }
         else // TRANSFER_CANCELED
@@ -430,7 +462,11 @@ static void Task_EReader(u8 taskId)
         break;
     case ER_STATE_LOAD_CARD_START:
         OpenEReaderLink();
+<<<<<<< HEAD
         AddTextPrinterToWindow1(gJPText_AllowEReaderToLoadCard);
+=======
+        MG_AddMessageTextPrinter(gJPText_AllowEReaderToLoadCard);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         data->state = ER_STATE_LOAD_CARD;
         break;
     case ER_STATE_LOAD_CARD:
@@ -439,7 +475,11 @@ static void Task_EReader(u8 taskId)
         case RECV_ACTIVE:
             break;
         case RECV_SUCCESS:
+<<<<<<< HEAD
             AddTextPrinterToWindow1(gJPText_Connecting);
+=======
+            MG_AddMessageTextPrinter(gJPText_Connecting);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             data->state = ER_STATE_WAIT_RECV_CARD;
             break;
         case RECV_CANCELED:
@@ -471,7 +511,11 @@ static void Task_EReader(u8 taskId)
         }
         break;
     case ER_STATE_VALIDATE_CARD:
+<<<<<<< HEAD
         data->status = ValidateTrainerHillData((struct EReaderTrainerHillSet *)gDecompressionBuffer);
+=======
+        data->status = ValidateTrainerHillData((struct EReaderTrainerHillSet *)data->buffer);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         SetCloseLinkCallbackAndType(data->status);
         data->state = ER_STATE_WAIT_DISCONNECT;
         break;
@@ -485,9 +529,15 @@ static void Task_EReader(u8 taskId)
         }
         break;
     case ER_STATE_SAVE:
+<<<<<<< HEAD
         if (TryWriteTrainerHill((struct EReaderTrainerHillSet *)&gDecompressionBuffer))
         {
             AddTextPrinterToWindow1(gJPText_ConnectionComplete);
+=======
+        if (TryWriteTrainerHill((struct EReaderTrainerHillSet *)data->buffer))
+        {
+            MG_AddMessageTextPrinter(gJPText_ConnectionComplete);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             ResetTimer(&data->timer);
             data->state = ER_STATE_SUCCESS_MSG;
         }
@@ -499,7 +549,11 @@ static void Task_EReader(u8 taskId)
     case ER_STATE_SUCCESS_MSG:
         if (UpdateTimer(&data->timer, 120))
         {
+<<<<<<< HEAD
             AddTextPrinterToWindow1(gJPText_NewTrainerHasComeToHoenn);
+=======
+            MG_AddMessageTextPrinter(gJPText_NewTrainerHasComeToHoenn);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             PlayFanfare(MUS_OBTAIN_ITEM);
             data->state = ER_STATE_SUCCESS_END;
         }
@@ -525,7 +579,11 @@ static void Task_EReader(u8 taskId)
             data->state = ER_STATE_START;
         break;
     case ER_STATE_END:
+<<<<<<< HEAD
         Free(data->unusedBuffer);
+=======
+        Free(data->buffer);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         DestroyTask(taskId);
         SetMainCallback2(MainCB_FreeAllBuffersAndReturnToInitTitleScreen);
         break;

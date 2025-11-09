@@ -135,12 +135,20 @@ static const struct SpriteTemplate sSpriteTemplate_CutGrass =
 };
 
 // code
+<<<<<<< HEAD
 bool8 SetUpFieldMove_Cut(void)
+=======
+bool32 SetUpFieldMove_Cut(void)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     s16 x, y;
     u8 i, j;
     u8 tileBehavior;
+<<<<<<< HEAD
     u8 userAbility;
+=======
+    u16 userAbility;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     bool8 cutTiles[CUT_NORMAL_AREA];
     bool8 ret;
 
@@ -277,8 +285,13 @@ bool8 SetUpFieldMove_Cut(void)
 
 static void FieldCallback_CutGrass(void)
 {
+<<<<<<< HEAD
     FieldEffectStart(FLDEFF_USE_CUT_ON_GRASS);
     gFieldEffectArguments[0] = GetCursorSelectionMonId();
+=======
+    gFieldEffectArguments[0] = GetCursorSelectionMonId();
+    ScriptContext_SetupScript(EventScript_UseCutGrass);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 bool8 FldEff_UseCutOnGrass(void)

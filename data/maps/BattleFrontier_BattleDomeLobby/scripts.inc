@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 .set LOCALID_ATTENDANT_SINGLES, 1
 .set LOCALID_ATTENDANT_DOUBLES, 6
 
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 BattleFrontier_BattleDomeLobby_MapScripts::
 	map_script MAP_SCRIPT_ON_RESUME, BattleFrontier_BattleDomeLobby_OnResume
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, BattleFrontier_BattleDomeLobby_OnFrame
@@ -17,7 +20,11 @@ BattleFrontier_BattleDomeLobby_OnWarp:
 
 BattleFrontier_BattleDomeLobby_EventScript_TurnPlayerNorth::
 	setvar VAR_TEMP_1, 1
+<<<<<<< HEAD
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+=======
+	turnobject LOCALID_PLAYER, DIR_NORTH
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 BattleFrontier_BattleDomeLobby_OnFrame:
@@ -235,14 +242,22 @@ BattleFrontier_BattleDomeLobby_EventScript_EndCancelChallenge::
 BattleFrontier_BattleDomeLobby_EventScript_WalkToDoor::
 	call_if_eq VAR_FRONTIER_BATTLE_MODE, FRONTIER_MODE_SINGLES, BattleFrontier_BattleDomeLobby_EventScript_SinglesAttendantWalkToDoor
 	call_if_eq VAR_FRONTIER_BATTLE_MODE, FRONTIER_MODE_DOUBLES, BattleFrontier_BattleDomeLobby_EventScript_DoublesAttendantWalkToDoor
+<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, BattleFrontier_BattleDomeLobby_Movement_WalkToDoor
+=======
+	applymovement LOCALID_PLAYER, BattleFrontier_BattleDomeLobby_Movement_WalkToDoor
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	call_if_eq VAR_FRONTIER_BATTLE_MODE, FRONTIER_MODE_SINGLES, BattleFrontier_BattleDomeLobby_EventScript_OpenSinglesDoor
 	call_if_eq VAR_FRONTIER_BATTLE_MODE, FRONTIER_MODE_DOUBLES, BattleFrontier_BattleDomeLobby_EventScript_OpenDoublesDoor
 	waitdooranim
 	call_if_eq VAR_FRONTIER_BATTLE_MODE, FRONTIER_MODE_SINGLES, BattleFrontier_BattleDomeLobby_EventScript_SinglesAttendantEnterDoor
 	call_if_eq VAR_FRONTIER_BATTLE_MODE, FRONTIER_MODE_DOUBLES, BattleFrontier_BattleDomeLobby_EventScript_DoublesAttendantEnterDoor
+<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, BattleFrontier_BattleDomeLobby_Movement_PlayerEnterDoor
+=======
+	applymovement LOCALID_PLAYER, BattleFrontier_BattleDomeLobby_Movement_PlayerEnterDoor
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	call_if_eq VAR_FRONTIER_BATTLE_MODE, FRONTIER_MODE_SINGLES, BattleFrontier_BattleDomeLobby_EventScript_CloseSinglesDoor
 	call_if_eq VAR_FRONTIER_BATTLE_MODE, FRONTIER_MODE_DOUBLES, BattleFrontier_BattleDomeLobby_EventScript_CloseDoublesDoor
@@ -250,6 +265,7 @@ BattleFrontier_BattleDomeLobby_EventScript_WalkToDoor::
 	return
 
 BattleFrontier_BattleDomeLobby_EventScript_SinglesAttendantWalkToDoor::
+<<<<<<< HEAD
 	applymovement LOCALID_ATTENDANT_SINGLES, BattleFrontier_BattleDomeLobby_Movement_WalkToDoor
 	return
 
@@ -263,6 +279,21 @@ BattleFrontier_BattleDomeLobby_EventScript_SinglesAttendantEnterDoor::
 
 BattleFrontier_BattleDomeLobby_EventScript_DoublesAttendantEnterDoor::
 	applymovement LOCALID_ATTENDANT_DOUBLES, BattleFrontier_BattleDomeLobby_Movement_AttendantEnterDoor
+=======
+	applymovement LOCALID_DOME_ATTENDANT_SINGLES, BattleFrontier_BattleDomeLobby_Movement_WalkToDoor
+	return
+
+BattleFrontier_BattleDomeLobby_EventScript_DoublesAttendantWalkToDoor::
+	applymovement LOCALID_DOME_ATTENDANT_DOUBLES, BattleFrontier_BattleDomeLobby_Movement_WalkToDoor
+	return
+
+BattleFrontier_BattleDomeLobby_EventScript_SinglesAttendantEnterDoor::
+	applymovement LOCALID_DOME_ATTENDANT_SINGLES, BattleFrontier_BattleDomeLobby_Movement_AttendantEnterDoor
+	return
+
+BattleFrontier_BattleDomeLobby_EventScript_DoublesAttendantEnterDoor::
+	applymovement LOCALID_DOME_ATTENDANT_DOUBLES, BattleFrontier_BattleDomeLobby_Movement_AttendantEnterDoor
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	return
 
 BattleFrontier_BattleDomeLobby_EventScript_WelcomeSingles::
@@ -477,7 +508,11 @@ BattleFrontier_BattleDomeLobby_Text_OkayToSaveBeforeChallenge:
 
 BattleFrontier_BattleDomeLobby_Text_WhichLevelMode:
 	.string "The tournament offers two levels\n"
+<<<<<<< HEAD
 	.string "of challenge, NORMAL and HARD.\l"
+=======
+	.string "of challenge, Level 50 and Open Level.\l"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.string "Which is your choice?$"
 
 BattleFrontier_BattleDomeLobby_Text_SelectThreeMons:
@@ -589,11 +624,19 @@ BattleFrontier_BattleDomeLobby_Text_PrevTourneyResultsDoublesLv50:
 
 BattleFrontier_BattleDomeLobby_Text_PrevTourneyResultsSinglesLvOpen:
 	.string "They're the results of the last\n"
+<<<<<<< HEAD
 	.string "NORMAL Level SINGLE BATTLE Tournament.$"
 
 BattleFrontier_BattleDomeLobby_Text_PrevTourneyResultsDoublesLvOpen:
 	.string "They're the results of the last\n"
 	.string "HARD Level DOUBLE BATTLE Tournament.$"
+=======
+	.string "Open Level SINGLE BATTLE Tournament.$"
+
+BattleFrontier_BattleDomeLobby_Text_PrevTourneyResultsDoublesLvOpen:
+	.string "They're the results of the last\n"
+	.string "Open Level DOUBLE BATTLE Tournament.$"
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 BattleFrontier_BattleDomeLobby_Text_LastWinnerWasTough:
 	.string "Did you see it?\n"

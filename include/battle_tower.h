@@ -1,6 +1,11 @@
 #ifndef GUARD_BATTLE_TOWER_H
 #define GUARD_BATTLE_TOWER_H
 
+<<<<<<< HEAD
+=======
+#include "data.h"
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 struct RSBattleTowerRecord
 {
     /*0x00*/ u8 lvlMode; // 0 = level 50, 1 = level 100
@@ -24,6 +29,7 @@ struct BattleFrontierTrainer
     const u16 *monSet;
 };
 
+<<<<<<< HEAD
 struct FacilityMon
 {
     u16 species;
@@ -43,6 +49,15 @@ extern const struct FacilityMon gBattleFrontierMonsSplit[];
 extern const struct BattleFrontierTrainer gBattleFrontierTrainers[];
 extern const struct FacilityMon gSlateportBattleTentMons[];
 extern const struct FacilityMon gSlateportBattleTentMonsSplit[];
+=======
+extern const u8 gTowerMaleFacilityClasses[30];
+extern const u16 gTowerMaleTrainerGfxIds[30];
+extern const u8 gTowerFemaleFacilityClasses[20];
+extern const u16 gTowerFemaleTrainerGfxIds[20];
+extern const struct TrainerMon gBattleFrontierMons[];
+extern const struct BattleFrontierTrainer gBattleFrontierTrainers[];
+extern const struct TrainerMon gSlateportBattleTentMons[];
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 extern const struct BattleFrontierTrainer gSlateportBattleTentTrainers[];
 
 // Temporary storage for monIds of the opponent team
@@ -50,7 +65,11 @@ extern const struct BattleFrontierTrainer gSlateportBattleTentTrainers[];
 extern u16 gFrontierTempParty[];
 
 extern const struct BattleFrontierTrainer *gFacilityTrainers;
+<<<<<<< HEAD
 extern const struct FacilityMon *gFacilityTrainerMons;
+=======
+extern const struct TrainerMon *gFacilityTrainerMons;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 void CallBattleTowerFunc(void);
 u16 GetRandomScaledFrontierTrainerId(u8 challengeNum, u8 battleNum);
@@ -59,7 +78,11 @@ void SetEReaderTrainerGfxId(void);
 u16 GetBattleFacilityTrainerGfxId(u16 trainerId);
 void PutNewBattleTowerRecord(struct EmeraldBattleTowerRecord *newRecordEm);
 u8 GetFrontierTrainerFrontSpriteId(u16 trainerId);
+<<<<<<< HEAD
 u8 GetFrontierOpponentClass(u16 trainerId);
+=======
+enum TrainerClassID GetFrontierOpponentClass(u16 trainerId);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 void GetFrontierTrainerName(u8 *dst, u16 trainerId);
 void FillFrontierTrainerParty(u8 monsCount);
 void FillFrontierTrainersParties(u8 monsCount);
@@ -70,7 +93,11 @@ void CalcEmeraldBattleTowerChecksum(struct EmeraldBattleTowerRecord *record);
 void CalcRubyBattleTowerChecksum(struct RSBattleTowerRecord *record);
 u16 GetCurrentBattleTowerWinStreak(u8 lvlMode, u8 battleMode);
 u8 GetEreaderTrainerFrontSpriteId(void);
+<<<<<<< HEAD
 u8 GetEreaderTrainerClassId(void);
+=======
+enum TrainerClassID GetEreaderTrainerClassId(void);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 void GetEreaderTrainerName(u8 *dst);
 void ValidateEReaderTrainer(void);
 void ClearEReaderTrainer(struct BattleTowerEReaderTrainer *ereaderTrainer);
@@ -86,5 +113,10 @@ s32 GetHighestLevelInPlayerParty(void);
 u16 FacilityClassToGraphicsId(u8 facilityClass);
 bool32 ValidateBattleTowerRecord(u8 recordId); // unused
 void TrySetLinkBattleTowerEnemyPartyLevel(void);
+<<<<<<< HEAD
+=======
+void CreateFacilityMon(const struct TrainerMon *fmon, u16 level, u8 fixedIV, u32 otID, u32 flags, struct Pokemon *dst);
+void FillPartnerParty(u16 trainerId);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 #endif //GUARD_BATTLE_TOWER_H

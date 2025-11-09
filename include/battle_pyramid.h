@@ -1,13 +1,22 @@
 #ifndef GUARD_BATTLE_PYRAMID_H
 #define GUARD_BATTLE_PYRAMID_H
 
+<<<<<<< HEAD
+=======
+#include "constants/battle_pyramid.h"
+
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 void CallBattlePyramidFunction(void);
 u16 LocalIdToPyramidTrainerId(u8 localId);
 bool8 GetBattlePyramidTrainerFlag(u8 eventId);
 void MarkApproachingPyramidTrainersAsBattled(void);
 void GenerateBattlePyramidWildMon(void);
 u8 GetPyramidRunMultiplier(void);
+<<<<<<< HEAD
 u8 InBattlePyramid(void);
+=======
+u8 CurrentBattlePyramidLocation(void);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 bool8 InBattlePyramid_(void);
 void PausePyramidChallenge(void);
 void SoftResetInBattlePyramid(void);
@@ -15,7 +24,11 @@ void CopyPyramidTrainerSpeechBefore(u16 trainerId);
 void CopyPyramidTrainerWinSpeech(u16 trainerId);
 void CopyPyramidTrainerLoseSpeech(u16 trainerId);
 u8 GetTrainerEncounterMusicIdInBattlePyramid(u16 trainerId);
+<<<<<<< HEAD
 void GenerateBattlePyramidFloorLayout(u16 *mapArg, bool8 setPlayerPosition);
+=======
+void GenerateBattlePyramidFloorLayout(u16 *backupMapData, bool8 setPlayerPosition);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 void LoadBattlePyramidObjectEventTemplates(void);
 void LoadBattlePyramidFloorObjectEventScripts(void);
 u8 GetNumBattlePyramidObjectEvents(void);

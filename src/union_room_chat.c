@@ -155,7 +155,11 @@ struct UnionRoomChat
 
 struct UnionRoomChatDisplay_Subtask
 {
+<<<<<<< HEAD
     bool32 (* callback)(u8 *);
+=======
+    bool32 (*callback)(u8 *);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     bool8 active;
     u8 state;
 };
@@ -189,7 +193,11 @@ struct UnionRoomChatSprites
 struct SubtaskInfo
 {
     u16 idx;
+<<<<<<< HEAD
     bool32 (* callback)(u8 *);
+=======
+    bool32 (*callback)(u8 *);
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 struct MessageWindowInfo
@@ -335,7 +343,11 @@ static const u8 sKeyboardPageMaxRow[UNION_ROOM_KB_PAGE_COUNT] =
     [UNION_ROOM_KB_PAGE_REGISTER] = 9
 };
 
+<<<<<<< HEAD
 static const u8 sCaseToggleTable[256] = {
+=======
+const u8 gCaseToggleTable[256] = {
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     [CHAR_A] = CHAR_a,
     [CHAR_B] = CHAR_b,
     [CHAR_C] = CHAR_c,
@@ -752,10 +764,17 @@ static const struct MenuAction sKeyboardPageTitleTexts[UNION_ROOM_KB_PAGE_COUNT 
 };
 
 static const u16 sUnionRoomChatInterfacePal[] = INCBIN_U16("graphics/union_room_chat/interface.gbapal");
+<<<<<<< HEAD
 static const u32 sKeyboardCursorTiles[] = INCBIN_U32("graphics/union_room_chat/keyboard_cursor.4bpp.lz");
 static const u32 sTextEntryCursorTiles[] = INCBIN_U32("graphics/union_room_chat/text_entry_cursor.4bpp.lz");
 static const u32 sTextEntryArrowTiles[] = INCBIN_U32("graphics/union_room_chat/text_entry_arrow.4bpp.lz");
 static const u32 sRButtonGfxTiles[] = INCBIN_U32("graphics/union_room_chat/r_button.4bpp.lz");
+=======
+static const u32 sKeyboardCursorTiles[] = INCBIN_U32("graphics/union_room_chat/keyboard_cursor.4bpp.smol");
+static const u32 sTextEntryCursorTiles[] = INCBIN_U32("graphics/union_room_chat/text_entry_cursor.4bpp.smol");
+static const u32 sTextEntryArrowTiles[] = INCBIN_U32("graphics/union_room_chat/text_entry_arrow.4bpp.smol");
+static const u32 sRButtonGfxTiles[] = INCBIN_U32("graphics/union_room_chat/r_button.4bpp.smol");
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 static const struct CompressedSpriteSheet sSpriteSheets[] = {
     {.data = sKeyboardCursorTiles,         .size = 0x1000, .tag = GFXTAG_KEYBOARD_CURSOR},
@@ -913,7 +932,13 @@ void EnterUnionRoomChat(void)
 
 static void InitUnionRoomChat(struct UnionRoomChat *chat)
 {
+<<<<<<< HEAD
     int i;
+=======
+#if FREE_UNION_ROOM_CHAT == FALSE
+    int i;
+#endif //FREE_UNION_ROOM_CHAT
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     chat->funcId = CHAT_FUNC_JOIN;
     chat->funcState = 0;
@@ -929,8 +954,15 @@ static void InitUnionRoomChat(struct UnionRoomChat *chat)
     chat->exitType = CHAT_EXIT_NONE;
     chat->changedRegisteredTexts = FALSE;
     PrepareSendBuffer_Null(chat->sendMessageBuffer);
+<<<<<<< HEAD
     for (i = 0; i < UNION_ROOM_KB_ROW_COUNT; i++)
         StringCopy(chat->registeredTexts[i], gSaveBlock1Ptr->registeredTexts[i]);
+=======
+#if FREE_UNION_ROOM_CHAT == FALSE
+    for (i = 0; i < UNION_ROOM_KB_ROW_COUNT; i++)
+        StringCopy(chat->registeredTexts[i], gSaveBlock1Ptr->registeredTexts[i]);
+#endif //FREE_UNION_ROOM_CHAT
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void FreeUnionRoomChat(void)
@@ -1734,7 +1766,11 @@ static void SwitchCaseOfLastMessageCharacter(void)
     str = GetLastCharOfMessagePtr();
     if (*str != CHAR_EXTRA_SYMBOL)
     {
+<<<<<<< HEAD
         character = sCaseToggleTable[*str];
+=======
+        character = gCaseToggleTable[*str];
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         if (character)
             *str = character;
     }
@@ -1764,9 +1800,17 @@ static void ResetMessageEntryBuffer(void)
 
 static void SaveRegisteredTexts(void)
 {
+<<<<<<< HEAD
     int i;
     for (i = 0; i < UNION_ROOM_KB_ROW_COUNT; i++)
         StringCopy(gSaveBlock1Ptr->registeredTexts[i], sChat->registeredTexts[i]);
+=======
+#if FREE_UNION_ROOM_CHAT == FALSE
+    int i;
+    for (i = 0; i < UNION_ROOM_KB_ROW_COUNT; i++)
+        StringCopy(gSaveBlock1Ptr->registeredTexts[i], sChat->registeredTexts[i]);
+#endif //FREE_UNION_ROOM_CHAT
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static u8 *GetRegisteredTextByRow(int row)
@@ -1953,7 +1997,11 @@ static u8 *GetLimitedMessageStartPtr(void)
     for (i = 0; i < numChars; i++)
     {
         if (*str == CHAR_EXTRA_SYMBOL)
+<<<<<<< HEAD
             *str++;
+=======
+            str++;
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
         str++;
     }
@@ -1997,7 +2045,11 @@ static int GetShouldShowCaseToggleIcon(void)
 {
     u8 *str = GetLastCharOfMessagePtr();
     u32 character = *str;
+<<<<<<< HEAD
     if (character > EOS || sCaseToggleTable[character] == character || sCaseToggleTable[character] == CHAR_SPACE)
+=======
+    if (character > EOS || gCaseToggleTable[character] == character || gCaseToggleTable[character] == CHAR_SPACE)
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         return 3; // Don't show
     else
         return 0; // Show
@@ -2010,6 +2062,10 @@ static u8 *GetChatHostName(void)
 
 void InitUnionRoomChatRegisteredTexts(void)
 {
+<<<<<<< HEAD
+=======
+#if FREE_UNION_ROOM_CHAT == FALSE
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     StringCopy(gSaveBlock1Ptr->registeredTexts[0], gText_Hello);
     StringCopy(gSaveBlock1Ptr->registeredTexts[1], gText_Pokemon2);
     StringCopy(gSaveBlock1Ptr->registeredTexts[2], gText_Trade);
@@ -2020,6 +2076,10 @@ void InitUnionRoomChatRegisteredTexts(void)
     StringCopy(gSaveBlock1Ptr->registeredTexts[7], gText_YaySmileEmoji);
     StringCopy(gSaveBlock1Ptr->registeredTexts[8], gText_ThankYou);
     StringCopy(gSaveBlock1Ptr->registeredTexts[9], gText_ByeBye);
+<<<<<<< HEAD
+=======
+#endif //FREE_UNION_ROOM_CHAT
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 #define tState               data[0]
@@ -3115,9 +3175,12 @@ static void DrawKeyboardWindow(void)
 static void LoadTextEntryWindow(void)
 {
     int i;
+<<<<<<< HEAD
     u8 unused[2];
     unused[0] = 0;
     unused[1] = 0xFF;
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     // Pointless, cleared below. The tiles are nonsense anyway, see LoadChatWindowGfx.
     for (i = 0; i < MAX_MESSAGE_LENGTH; i++)
@@ -3318,4 +3381,8 @@ static void UpdateRButtonLabel(void)
         }
     }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

@@ -8,7 +8,10 @@ NewMauville_Inside_OnResume:
 	call_if_eq VAR_TEMP_1, 1, NewMauville_Inside_EventScript_SetBarrierStateBlueButton
 	call_if_eq VAR_TEMP_2, 1, NewMauville_Inside_EventScript_SetBarrierStateGreenButton
 	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, NewMauville_Inside_EventScript_TryRemoveVoltorb
+<<<<<<< HEAD
 	callnative SetTimeBasedEncounters
+=======
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 NewMauville_Inside_EventScript_TryRemoveVoltorb::
@@ -18,15 +21,21 @@ NewMauville_Inside_EventScript_TryRemoveVoltorb::
 	return
 
 NewMauville_Inside_OnTransition:
+<<<<<<< HEAD
 	goto_if_set FLAG_UNLOCK_DOGS, NewMauville_Inside_SwitchToModern
 	setvar VAR_TEMP_1, 0
 	setvar VAR_TEMP_2, 0
 	callnative SetTimeBasedEncounters
+=======
+	setvar VAR_TEMP_1, 0
+	setvar VAR_TEMP_2, 0
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call_if_unset FLAG_DEFEATED_VOLTORB_1_NEW_MAUVILLE, NewMauville_Inside_EventScript_ShowVoltorb1
 	call_if_unset FLAG_DEFEATED_VOLTORB_2_NEW_MAUVILLE, NewMauville_Inside_EventScript_ShowVoltorb2
 	call_if_unset FLAG_DEFEATED_VOLTORB_3_NEW_MAUVILLE, NewMauville_Inside_EventScript_ShowVoltorb3
 	end
 
+<<<<<<< HEAD
 NewMauville_Inside_SwitchToModern::
 	setmaplayoutindex LAYOUT_NEW_MAUVILLE_INSIDE_MODERN
 	goto_if_set FLAG_DEFEATED_RAIKOU, MagmaHideout_End
@@ -44,6 +53,18 @@ NewMauville_Inside_EventScript_ShowVoltorb2::
 
 NewMauville_Inside_EventScript_ShowVoltorb3::
 	clearflag FLAG_GARBAGEFLAG
+=======
+NewMauville_Inside_EventScript_ShowVoltorb1::
+	clearflag FLAG_HIDE_NEW_MAUVILLE_VOLTORB_1
+	return
+
+NewMauville_Inside_EventScript_ShowVoltorb2::
+	clearflag FLAG_HIDE_NEW_MAUVILLE_VOLTORB_2
+	return
+
+NewMauville_Inside_EventScript_ShowVoltorb3::
+	clearflag FLAG_HIDE_NEW_MAUVILLE_VOLTORB_3
+>>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	return
 
 NewMauville_Inside_OnLoad:
