@@ -1,9 +1,5 @@
 gText_FollowerLovesYou::
-<<<<<<< HEAD
   .string "{STR_VAR_1} is regarding you with\nadoration!$"
-=======
-	.string "{STR_VAR_1} is regarding you with\nadoration!$"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 gText_FollowerLostInThought::
 	.string "{STR_VAR_1} seems lost in thought.$"
@@ -14,7 +10,6 @@ gText_FollowerDefault::
 gText_WantsToFly::
 	.string "{STR_VAR_1} looks up at the\nsky restlessly.\pWould you like to use FLY?$"
 
-<<<<<<< HEAD
 .macro playfirstmoncry
 callfunc ScrFunc_playfirstmoncry
 .endm
@@ -30,28 +25,18 @@ callfunc ScrFunc_emote
 .byte \id
 .endm
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 EventScript_Follower::
 	lock
 	bufferlivemonnickname 0
 	playfirstmoncry
-<<<<<<< HEAD
 	callfunc ScrFunc_getfolloweraction
-=======
-	getfolloweraction
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 EventScript_FollowerEnd::
 	waitfieldeffect FLDEFF_EMOTE
 	release
 	end
 
 EventScript_FollowerLovesYou::
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_FOLLOWER ContestHall_Movement_Heart
-=======
-	applymovement OBJ_EVENT_ID_FOLLOWER, ContestHall_Movement_Heart
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement OBJ_EVENT_ID_FOLLOWER
 	waitmoncry
 	msgbox gText_FollowerLovesYou, MSGBOX_DEFAULT
@@ -69,11 +54,7 @@ EventScript_FollowerGenericSkipFace:
 
 EventScript_FollowerJump::
 	faceplayer
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_FOLLOWER FollowerSplashMovement
-=======
-	applymovement OBJ_EVENT_ID_FOLLOWER, FollowerSplashMovement
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement OBJ_EVENT_ID_FOLLOWER
 	waitfieldeffect FLDEFF_EMOTE
 	message 0x0
@@ -413,75 +394,43 @@ EventScript_FollowerIsShivering::
 	goto EventScript_FollowerGeneric
 
 ShiverVertical:
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_FOLLOWER FollowerShiverVerticalMovement
-=======
-	applymovement OBJ_EVENT_ID_FOLLOWER, FollowerShiverVerticalMovement
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement OBJ_EVENT_ID_FOLLOWER
 	return
 
 ShiverHorizontal:
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_FOLLOWER FollowerShiverHorizontalMovement
-=======
-	applymovement OBJ_EVENT_ID_FOLLOWER, FollowerShiverHorizontalMovement
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement OBJ_EVENT_ID_FOLLOWER
 	return
 
 EventScript_FollowerNostalgia::
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_FOLLOWER FollowerNostalgiaMovement
-=======
-	applymovement OBJ_EVENT_ID_FOLLOWER, FollowerNostalgiaMovement
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement OBJ_EVENT_ID_FOLLOWER
 	goto EventScript_FollowerGeneric
 
 EventScript_FollowerHopping::
 	faceplayer
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_FOLLOWER FollowerSkippingMovement
-=======
-	applymovement OBJ_EVENT_ID_FOLLOWER, FollowerSkippingMovement
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement OBJ_EVENT_ID_FOLLOWER
 	goto EventScript_FollowerGeneric
 
 JumpOnN:
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_FOLLOWER FollowerJumpOnPlayerNorth
-=======
-	applymovement OBJ_EVENT_ID_FOLLOWER, FollowerJumpOnPlayerNorth
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement OBJ_EVENT_ID_FOLLOWER
 	return
 
 JumpOnS:
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_FOLLOWER FollowerJumpOnPlayerSouth
-=======
-	applymovement OBJ_EVENT_ID_FOLLOWER, FollowerJumpOnPlayerSouth
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement OBJ_EVENT_ID_FOLLOWER
 	return
 
 JumpOnE:
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_FOLLOWER FollowerJumpOnPlayerEast
-=======
-	applymovement OBJ_EVENT_ID_FOLLOWER, FollowerJumpOnPlayerEast
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement OBJ_EVENT_ID_FOLLOWER
 	return
 
 JumpOnW:
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_FOLLOWER FollowerJumpOnPlayerWest
-=======
-	applymovement OBJ_EVENT_ID_FOLLOWER, FollowerJumpOnPlayerWest
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement OBJ_EVENT_ID_FOLLOWER
 	return
 
@@ -498,38 +447,22 @@ EventScript_FollowerJumpOnPlayer::
 	goto EventScript_FollowerGeneric
 
 CuddleN:
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_FOLLOWER FollowerCuddlingNorth
-=======
-	applymovement OBJ_EVENT_ID_FOLLOWER, FollowerCuddlingNorth
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement OBJ_EVENT_ID_FOLLOWER
 	return
 
 CuddleS:
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_FOLLOWER FollowerCuddlingSouth
-=======
-	applymovement OBJ_EVENT_ID_FOLLOWER, FollowerCuddlingSouth
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement OBJ_EVENT_ID_FOLLOWER
 	return
 
 CuddleE:
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_FOLLOWER FollowerCuddlingEast
-=======
-	applymovement OBJ_EVENT_ID_FOLLOWER, FollowerCuddlingEast
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement OBJ_EVENT_ID_FOLLOWER
 	return
 
 CuddleW:
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_FOLLOWER FollowerCuddlingWest
-=======
-	applymovement OBJ_EVENT_ID_FOLLOWER, FollowerCuddlingWest
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement OBJ_EVENT_ID_FOLLOWER
 	return
 

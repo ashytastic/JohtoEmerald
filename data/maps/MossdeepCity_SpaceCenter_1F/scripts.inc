@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .set LOCALID_SCIENTIST_1, 1
 .set LOCALID_SCIENTIST_2, 2
 .set LOCALID_SAILOR, 3
@@ -6,15 +5,12 @@
 .set LOCALID_WOMAN, 5
 .set LOCALID_STAIR_GRUNT, 9
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 MossdeepCity_SpaceCenter_1F_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, MossdeepCity_SpaceCenter_1F_OnLoad
 	map_script MAP_SCRIPT_ON_TRANSITION, MossdeepCity_SpaceCenter_1F_OnTransition
 	.byte 0
 
 MossdeepCity_SpaceCenter_1F_OnTransition:
-<<<<<<< HEAD
 	clearflag FLAG_ROCKETHIDEOUT2_BATTLE
 	goto_if_eq VAR_GARBAGEVAR, 2, MossdeepCity_SpaceCenter_1F_EventScript_MoveObjectsForTeamMagma
 	end
@@ -40,49 +36,15 @@ MossdeepCity_SpaceCenter_1F_EventScript_MoveStairGuardLeft::
 
 MossdeepCity_SpaceCenter_1F_EventScript_MoveStairGuardDown::
 	setobjectxyperm LOCALID_STAIR_GRUNT, 13, 3
-=======
-	goto_if_eq VAR_MOSSDEEP_CITY_STATE, 2, MossdeepCity_SpaceCenter_1F_EventScript_MoveObjectsForTeamMagma
-	end
-
-MossdeepCity_SpaceCenter_1F_EventScript_MoveObjectsForTeamMagma::
-	setobjectxyperm LOCALID_SPACE_CENTER_1F_SAILOR, 1, 9
-	setobjectmovementtype LOCALID_SPACE_CENTER_1F_SAILOR, MOVEMENT_TYPE_FACE_RIGHT
-	setobjectxyperm LOCALID_SPACE_CENTER_1F_WOMAN, 0, 8
-	setobjectmovementtype LOCALID_SPACE_CENTER_1F_WOMAN, MOVEMENT_TYPE_FACE_RIGHT
-	setobjectxyperm LOCALID_SPACE_CENTER_1F_OLD_MAN, 1, 6
-	setobjectmovementtype LOCALID_SPACE_CENTER_1F_OLD_MAN, MOVEMENT_TYPE_FACE_RIGHT
-	setobjectxyperm LOCALID_SPACE_CENTER_1F_SCIENTIST_1, 3, 4
-	setobjectmovementtype LOCALID_SPACE_CENTER_1F_SCIENTIST_1, MOVEMENT_TYPE_FACE_RIGHT
-	setobjectmovementtype LOCALID_SPACE_CENTER_1F_SCIENTIST_2, MOVEMENT_TYPE_FACE_RIGHT
-	goto_if_eq VAR_MOSSDEEP_SPACE_CENTER_STAIR_GUARD_STATE, 1, MossdeepCity_SpaceCenter_1F_EventScript_MoveStairGuardLeft
-	goto_if_eq VAR_MOSSDEEP_SPACE_CENTER_STAIR_GUARD_STATE, 2, MossdeepCity_SpaceCenter_1F_EventScript_MoveStairGuardDown
-	goto_if_eq VAR_MOSSDEEP_SPACE_CENTER_STAIR_GUARD_STATE, 3, MossdeepCity_SpaceCenter_1F_EventScript_MoveStairGuardRight
-	end
-
-MossdeepCity_SpaceCenter_1F_EventScript_MoveStairGuardLeft::
-	setobjectxyperm LOCALID_SPACE_CENTER_1F_STAIR_GRUNT, 12, 2
-	end
-
-MossdeepCity_SpaceCenter_1F_EventScript_MoveStairGuardDown::
-	setobjectxyperm LOCALID_SPACE_CENTER_1F_STAIR_GRUNT, 13, 3
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 @ Functionally unused. See comment on MossdeepCity_SpaceCenter_1F_EventScript_MoveGruntFromStairsEast
 MossdeepCity_SpaceCenter_1F_EventScript_MoveStairGuardRight::
-<<<<<<< HEAD
 	setobjectxyperm LOCALID_STAIR_GRUNT, 14, 2
 	end
 
 MossdeepCity_SpaceCenter_1F_OnLoad:
 	goto_if_le VAR_GARBAGEVAR, 2, MossdeepCity_SpaceCenter_1F_EventScript_SetMagmaNote
-=======
-	setobjectxyperm LOCALID_SPACE_CENTER_1F_STAIR_GRUNT, 14, 2
-	end
-
-MossdeepCity_SpaceCenter_1F_OnLoad:
-	goto_if_le VAR_MOSSDEEP_CITY_STATE, 2, MossdeepCity_SpaceCenter_1F_EventScript_SetMagmaNote
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 MossdeepCity_SpaceCenter_1F_EventScript_SetMagmaNote::
@@ -92,11 +54,7 @@ MossdeepCity_SpaceCenter_1F_EventScript_SetMagmaNote::
 MossdeepCity_SpaceCenter_1F_EventScript_RocketLaunchCounter::
 	lock
 	faceplayer
-<<<<<<< HEAD
 	goto_if_eq VAR_GARBAGEVAR, 2, MossdeepCity_SpaceCenter_1F_EventScript_RocketLaunchCounterMagma
-=======
-	goto_if_eq VAR_MOSSDEEP_CITY_STATE, 2, MossdeepCity_SpaceCenter_1F_EventScript_RocketLaunchCounterMagma
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	dotimebasedevents
 	specialvar VAR_RESULT, GetWeekCount
 	buffernumberstring STR_VAR_1, VAR_RESULT
@@ -139,11 +97,7 @@ MossdeepCity_SpaceCenter_1F_EventScript_ShowLaunchNumberMagma::
 MossdeepCity_SpaceCenter_1F_EventScript_Scientist::
 	lock
 	faceplayer
-<<<<<<< HEAD
 	goto_if_eq VAR_GARBAGEVAR, 2, MossdeepCity_SpaceCenter_1F_EventScript_ScientistMagma
-=======
-	goto_if_eq VAR_MOSSDEEP_CITY_STATE, 2, MossdeepCity_SpaceCenter_1F_EventScript_ScientistMagma
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox MossdeepCity_SpaceCenter_1F_Text_RocketLaunchDemandsPerfection, MSGBOX_DEFAULT
 	release
 	end
@@ -158,11 +112,7 @@ MossdeepCity_SpaceCenter_1F_EventScript_ScientistMagma::
 MossdeepCity_SpaceCenter_1F_EventScript_SunStoneMan::
 	lock
 	faceplayer
-<<<<<<< HEAD
 	goto_if_eq VAR_GARBAGEVAR, 2, MossdeepCity_SpaceCenter_1F_EventScript_SunStoneManMagma
-=======
-	goto_if_eq VAR_MOSSDEEP_CITY_STATE, 2, MossdeepCity_SpaceCenter_1F_EventScript_SunStoneManMagma
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto_if_set FLAG_RECEIVED_SUN_STONE_MOSSDEEP, MossdeepCity_SpaceCenter_1F_EventScript_GaveSunStone
 	msgbox MossdeepCity_SpaceCenter_1F_Text_FoundThisYouCanHaveIt, MSGBOX_DEFAULT
 	giveitem ITEM_SUN_STONE
@@ -200,13 +150,8 @@ MossdeepCity_SpaceCenter_1F_EventScript_Woman::
 	lock
 	faceplayer
 	goto_if_set FLAG_SYS_GAME_CLEAR, MossdeepCity_SpaceCenter_1F_EventScript_WomanNormal
-<<<<<<< HEAD
 	goto_if_eq VAR_GARBAGEVAR, 2, MossdeepCity_SpaceCenter_1F_EventScript_WomanMagma
 	goto_if_lt VAR_GARBAGEVAR, 2, MossdeepCity_SpaceCenter_1F_EventScript_WomanNormal
-=======
-	goto_if_eq VAR_MOSSDEEP_CITY_STATE, 2, MossdeepCity_SpaceCenter_1F_EventScript_WomanMagma
-	goto_if_lt VAR_MOSSDEEP_CITY_STATE, 2, MossdeepCity_SpaceCenter_1F_EventScript_WomanNormal
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto MossdeepCity_SpaceCenter_1F_EventScript_WomanMagma
 	end
 
@@ -224,13 +169,8 @@ MossdeepCity_SpaceCenter_1F_EventScript_OldMan::
 	lock
 	faceplayer
 	goto_if_set FLAG_SYS_GAME_CLEAR, MossdeepCity_SpaceCenter_1F_EventScript_OldManNormal
-<<<<<<< HEAD
 	goto_if_eq VAR_GARBAGEVAR, 2, MossdeepCity_SpaceCenter_1F_EventScript_OldManMagma
 	goto_if_lt VAR_GARBAGEVAR, 2, MossdeepCity_SpaceCenter_1F_EventScript_OldManNormal
-=======
-	goto_if_eq VAR_MOSSDEEP_CITY_STATE, 2, MossdeepCity_SpaceCenter_1F_EventScript_OldManMagma
-	goto_if_lt VAR_MOSSDEEP_CITY_STATE, 2, MossdeepCity_SpaceCenter_1F_EventScript_OldManNormal
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto MossdeepCity_SpaceCenter_1F_EventScript_OldManMagma
 	end
 
@@ -266,29 +206,17 @@ MossdeepCity_SpaceCenter_1F_EventScript_MagmaNote::
 	end
 
 MossdeepCity_SpaceCenter_1F_EventScript_Grunt3::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_WALT, MossdeepCity_SpaceCenter_1F_Text_Grunt3Intro, MossdeepCity_SpaceCenter_1F_Text_Grunt3Defeat
-=======
-	trainerbattle_single TRAINER_GRUNT_SPACE_CENTER_3, MossdeepCity_SpaceCenter_1F_Text_Grunt3Intro, MossdeepCity_SpaceCenter_1F_Text_Grunt3Defeat
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox MossdeepCity_SpaceCenter_1F_Text_Grunt3PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 MossdeepCity_SpaceCenter_1F_EventScript_Grunt1::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_VERONICA, MossdeepCity_SpaceCenter_1F_Text_Grunt1Intro, MossdeepCity_SpaceCenter_1F_Text_Grunt1Defeat
-=======
-	trainerbattle_single TRAINER_GRUNT_SPACE_CENTER_1, MossdeepCity_SpaceCenter_1F_Text_Grunt1Intro, MossdeepCity_SpaceCenter_1F_Text_Grunt1Defeat
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox MossdeepCity_SpaceCenter_1F_Text_Grunt1PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 MossdeepCity_SpaceCenter_1F_EventScript_Grunt4::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_WALTER, MossdeepCity_SpaceCenter_1F_Text_Grunt4Intro, MossdeepCity_SpaceCenter_1F_Text_Grunt4Defeat
-=======
-	trainerbattle_single TRAINER_GRUNT_SPACE_CENTER_4, MossdeepCity_SpaceCenter_1F_Text_Grunt4Intro, MossdeepCity_SpaceCenter_1F_Text_Grunt4Defeat
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox MossdeepCity_SpaceCenter_1F_Text_Grunt4PostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -297,15 +225,9 @@ MossdeepCity_SpaceCenter_1F_EventScript_Grunt2::
 	faceplayer
 	goto_if_set FLAG_DEFEATED_GRUNT_SPACE_CENTER_1F, MossdeepCity_SpaceCenter_1F_EventScript_Grunt2Defeated
 	msgbox MossdeepCity_SpaceCenter_1F_Text_Grunt2Intro, MSGBOX_DEFAULT
-<<<<<<< HEAD
 	trainerbattle_no_intro TRAINER_WAI, MossdeepCity_SpaceCenter_1F_Text_Grunt2Defeat
 	setflag FLAG_DEFEATED_GRUNT_SPACE_CENTER_1F
 	copyobjectxytoperm LOCALID_STAIR_GRUNT
-=======
-	trainerbattle_no_intro TRAINER_GRUNT_SPACE_CENTER_2, MossdeepCity_SpaceCenter_1F_Text_Grunt2Defeat
-	setflag FLAG_DEFEATED_GRUNT_SPACE_CENTER_1F
-	copyobjectxytoperm LOCALID_SPACE_CENTER_1F_STAIR_GRUNT
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	switch VAR_FACING
 	case DIR_WEST, MossdeepCity_SpaceCenter_1F_EventScript_MoveGruntFromStairsWest
 #ifdef BUGFIX
@@ -313,15 +235,9 @@ MossdeepCity_SpaceCenter_1F_EventScript_Grunt2::
 #else
 	case DIR_WEST, MossdeepCity_SpaceCenter_1F_EventScript_MoveGruntFromStairsEast
 #endif
-<<<<<<< HEAD
 	applymovement LOCALID_STAIR_GRUNT, MossdeepCity_SpaceCenter_1F_Movement_MoveGruntFromStairs
 	waitmovement 0
 	setvar VAR_GARBAGEVAR, 2
-=======
-	applymovement LOCALID_SPACE_CENTER_1F_STAIR_GRUNT, MossdeepCity_SpaceCenter_1F_Movement_MoveGruntFromStairs
-	waitmovement 0
-	setvar VAR_MOSSDEEP_SPACE_CENTER_STAIR_GUARD_STATE, 2
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	release
 	end
 
@@ -331,32 +247,18 @@ MossdeepCity_SpaceCenter_1F_EventScript_Grunt2Defeated::
 	end
 
 MossdeepCity_SpaceCenter_1F_EventScript_MoveGruntFromStairsWest::
-<<<<<<< HEAD
 	applymovement LOCALID_STAIR_GRUNT, MossdeepCity_SpaceCenter_1F_Movement_MoveGruntFromStairsWest
 	waitmovement 0
 	setvar VAR_GARBAGEVAR, 1
-=======
-	applymovement LOCALID_SPACE_CENTER_1F_STAIR_GRUNT, MossdeepCity_SpaceCenter_1F_Movement_MoveGruntFromStairsWest
-	waitmovement 0
-	setvar VAR_MOSSDEEP_SPACE_CENTER_STAIR_GUARD_STATE, 1
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	release
 	end
 
 @ Functionally unused by mistake. The movement is handled anyway after the switch (see above)
-<<<<<<< HEAD
 @ This also means VAR_GARBAGEVAR can never be 3
 MossdeepCity_SpaceCenter_1F_EventScript_MoveGruntFromStairsEast::
 	applymovement LOCALID_STAIR_GRUNT, MossdeepCity_SpaceCenter_1F_Movement_MoveGruntFromStairsEast
 	waitmovement 0
 	setvar VAR_GARBAGEVAR, 3
-=======
-@ This also means VAR_MOSSDEEP_SPACE_CENTER_STAIR_GUARD_STATE can never be 3
-MossdeepCity_SpaceCenter_1F_EventScript_MoveGruntFromStairsEast::
-	applymovement LOCALID_SPACE_CENTER_1F_STAIR_GRUNT, MossdeepCity_SpaceCenter_1F_Movement_MoveGruntFromStairsEast
-	waitmovement 0
-	setvar VAR_MOSSDEEP_SPACE_CENTER_STAIR_GUARD_STATE, 3
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	release
 	end
 

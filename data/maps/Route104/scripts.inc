@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @ NOTE: Route 104's sail to Dewford script references local IDs from Dewford's map.
 @  These are labeled in DewfordTown/scripts.inc
 .set LOCALID_RIVAL, 34
@@ -11,15 +10,6 @@ Route104_MapScripts::
 
 Route104_OnFrame:
 	map_script_2 VAR_GARBAGEVAR, 1, Route104_EventScript_StartSailToDewford
-=======
-Route104_MapScripts::
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route104_OnFrame
-	map_script MAP_SCRIPT_ON_TRANSITION, Route104_OnTransition
-	.byte 0
-
-Route104_OnFrame:
-	map_script_2 VAR_BOARD_BRINEY_BOAT_STATE, 1, Route104_EventScript_StartSailToDewford
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.2byte 0
 
 Route104_EventScript_StartSailToDewford::
@@ -31,16 +21,12 @@ Route104_OnTransition:
 	call Common_EventScript_SetupRivalGfxId
 	call Route104_EventScript_TrySetRivalPos
 	call Route104_EventScript_ShowOrHideWhiteHerbFlorist
-<<<<<<< HEAD
 	callnative SetTimeBasedEncounters
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 Route104_EventScript_ShowOrHideWhiteHerbFlorist::
 	goto_if_unset FLAG_MET_PRETTY_PETAL_SHOP_OWNER, Route104_EventScript_HideWhiteHerbFlorist
 	goto_if_unset FLAG_BADGE03_GET, Route104_EventScript_HideWhiteHerbFlorist
-<<<<<<< HEAD
 	clearflag FLAG_GARBAGEFLAG
 	return
 
@@ -53,20 +39,6 @@ Route104_EventScript_TrySetRivalPos::
 	goto_if_set FLAG_MET_RIVAL_RUSTBORO, Route104_EventScript_DontSetRivalPos
 	goto_if_unset FLAG_REGISTER_RIVAL_POKENAV, Route104_EventScript_DontSetRivalPos
 	setobjectxyperm LOCALID_RIVAL, 17, 52
-=======
-	clearflag FLAG_HIDE_ROUTE_104_WHITE_HERB_FLORIST
-	return
-
-Route104_EventScript_HideWhiteHerbFlorist::
-	setflag FLAG_HIDE_ROUTE_104_WHITE_HERB_FLORIST
-	return
-
-Route104_EventScript_TrySetRivalPos::
-	goto_if_ge VAR_BOARD_BRINEY_BOAT_STATE, 1, Route104_EventScript_DontSetRivalPos
-	goto_if_set FLAG_MET_RIVAL_RUSTBORO, Route104_EventScript_DontSetRivalPos
-	goto_if_unset FLAG_REGISTER_RIVAL_POKENAV, Route104_EventScript_DontSetRivalPos
-	setobjectxyperm LOCALID_ROUTE104_RIVAL, 17, 52
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	return
 
 Route104_EventScript_DontSetRivalPos::
@@ -75,17 +47,12 @@ Route104_EventScript_DontSetRivalPos::
 Route104_EventScript_Rival::
 	lockall
 	setvar VAR_0x8008, 1
-<<<<<<< HEAD
 	applymovement LOCALID_RIVAL, Common_Movement_FacePlayer
-=======
-	applymovement LOCALID_ROUTE104_RIVAL, Common_Movement_FacePlayer
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	goto Route104_EventScript_RivalEncounter
 
 Route104_EventScript_RivalTrigger::
 	lockall
-<<<<<<< HEAD
 	setflag FLAG_GARBAGEFLAG
 	setvar VAR_GARBAGEVAR, 8
 	setvar VAR_GARBAGEVAR, 2
@@ -97,33 +64,14 @@ Route104_EventScript_RivalTrigger::
 	applymovement OBJ_EVENT_ID_PLAYER, Route104_Movement_PlayerBackUp
 	waitmovement 0
 	applymovement LOCALID_RIVAL, Route104_Movement_RivalExitBrineysCottage
-=======
-	setflag FLAG_HIDE_RUSTBORO_CITY_RIVAL
-	setvar VAR_RUSTBORO_CITY_STATE, 8
-	setvar VAR_ROUTE104_STATE, 2
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
-	waitmovement 0
-	delay 10
-	addobject LOCALID_ROUTE104_RIVAL
-	clearflag FLAG_HIDE_ROUTE_104_RIVAL
-	applymovement LOCALID_PLAYER, Route104_Movement_PlayerBackUp
-	waitmovement 0
-	applymovement LOCALID_ROUTE104_RIVAL, Route104_Movement_RivalExitBrineysCottage
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	delay 20
 	setvar VAR_0x8008, 0
 	call RustboroCity_EventScript_PlayRivalMusic
 	playse SE_PIN
-<<<<<<< HEAD
 	applymovement LOCALID_RIVAL, Common_Movement_ExclamationMark
 	waitmovement 0
 	applymovement LOCALID_RIVAL, Common_Movement_Delay48
-=======
-	applymovement LOCALID_ROUTE104_RIVAL, Common_Movement_ExclamationMark
-	waitmovement 0
-	applymovement LOCALID_ROUTE104_RIVAL, Common_Movement_Delay48
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	goto Route104_EventScript_RivalEncounter
 
@@ -161,7 +109,6 @@ Route104_EventScript_MayEncounter::
 	closemessage
 	delay 30
 	setflag FLAG_ENABLE_RIVAL_MATCH_CALL
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, Route104_Movement_PlayerFaceRival
 	applymovement LOCALID_RIVAL, Route104_Movement_RivalWalkSlowLeft
 	msgbox Route104_Text_MayHowsYourPokedex, MSGBOX_DEFAULT
@@ -170,16 +117,6 @@ Route104_EventScript_MayEncounter::
 	applymovement LOCALID_RIVAL, Route104_Movement_RivalApproachPlayer
 	waitmovement 0
 	copyobjectxytoperm LOCALID_RIVAL
-=======
-	applymovement LOCALID_PLAYER, Route104_Movement_PlayerFaceRival
-	applymovement LOCALID_ROUTE104_RIVAL, Route104_Movement_RivalWalkSlowLeft
-	msgbox Route104_Text_MayHowsYourPokedex, MSGBOX_DEFAULT
-	closemessage
-	waitmovement 0
-	applymovement LOCALID_ROUTE104_RIVAL, Route104_Movement_RivalApproachPlayer
-	waitmovement 0
-	copyobjectxytoperm LOCALID_ROUTE104_RIVAL
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route104_Text_MayMinesDecentLetsBattle, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, Route104_EventScript_BattleMay
 	msgbox Route104_Text_MayHaventRaisedPokemon, MSGBOX_DEFAULT
@@ -258,7 +195,6 @@ Route104_EventScript_BrendanEncounter::
 	closemessage
 	delay 30
 	setflag FLAG_ENABLE_RIVAL_MATCH_CALL
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, Route104_Movement_PlayerFaceRival
 	applymovement LOCALID_RIVAL, Route104_Movement_RivalWalkSlowLeft
 	msgbox Route104_Text_BrendanHowsYourPokedex, MSGBOX_DEFAULT
@@ -267,16 +203,6 @@ Route104_EventScript_BrendanEncounter::
 	applymovement LOCALID_RIVAL, Route104_Movement_RivalApproachPlayer
 	waitmovement 0
 	copyobjectxytoperm LOCALID_RIVAL
-=======
-	applymovement LOCALID_PLAYER, Route104_Movement_PlayerFaceRival
-	applymovement LOCALID_ROUTE104_RIVAL, Route104_Movement_RivalWalkSlowLeft
-	msgbox Route104_Text_BrendanHowsYourPokedex, MSGBOX_DEFAULT
-	closemessage
-	waitmovement 0
-	applymovement LOCALID_ROUTE104_RIVAL, Route104_Movement_RivalApproachPlayer
-	waitmovement 0
-	copyobjectxytoperm LOCALID_ROUTE104_RIVAL
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route104_Text_BrendanDoingGreatLetsBattle, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, Route104_EventScript_BattleBrendan
 	msgbox Route104_Text_BrendanNoConfidence, MSGBOX_DEFAULT
@@ -414,15 +340,12 @@ Route104_EventScript_Boy2::
 	end
 
 Route104_EventScript_ReceivedBulletSeed::
-<<<<<<< HEAD
 	goto_if_set FLAG_FINITE_TMS, Route104_EventScript_ReceivedBulletSeedFinite
 	msgbox Route104_Text_TMsCanBeReused, MSGBOX_DEFAULT
 	release
 	end
 
 Route104_EventScript_ReceivedBulletSeedFinite::
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route104_Text_TMsAreOneTimeUse, MSGBOX_DEFAULT
 	release
 	end
@@ -432,7 +355,6 @@ Route104_EventScript_Girl2::
 	end
 
 Route104_EventScript_SailToDewford::
-<<<<<<< HEAD
 	setobjectsubpriority LOCALID_BRINEY_R104, MAP_ROUTE104, 0
 	setobjectsubpriority OBJ_EVENT_ID_PLAYER, MAP_ROUTE104, 0
 	applymovement LOCALID_BRINEY_R104, Route104_Movement_BrineyBoardBoat
@@ -441,40 +363,20 @@ Route104_EventScript_SailToDewford::
 	applymovement OBJ_EVENT_ID_PLAYER, Route104_Movement_PlayerBoardBoat
 	waitmovement 0
 	hideobjectat OBJ_EVENT_ID_PLAYER, MAP_ROUTE104
-=======
-	setobjectsubpriority LOCALID_ROUTE104_BRINEY, MAP_ROUTE104, 0
-	setobjectsubpriority LOCALID_PLAYER, MAP_ROUTE104, 0
-	applymovement LOCALID_ROUTE104_BRINEY, Route104_Movement_BrineyBoardBoat
-	waitmovement 0
-	removeobject LOCALID_ROUTE104_BRINEY
-	applymovement LOCALID_PLAYER, Route104_Movement_PlayerBoardBoat
-	waitmovement 0
-	hideobjectat LOCALID_PLAYER, MAP_ROUTE104
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call Common_EventScript_PlayBrineysBoatMusic
 	goto_if_set FLAG_ENABLE_NORMAN_MATCH_CALL, Route104_EventScript_SailToDewfordNoCall
 	goto_if_unset FLAG_ENABLE_NORMAN_MATCH_CALL, Route104_EventScript_SailToDewfordDadCalls
 	end
 
 Route104_EventScript_SailToDewfordNoCall::
-<<<<<<< HEAD
 	applymovement LOCALID_BOAT_R104, Route104_Movement_SailToDewford
 	applymovement OBJ_EVENT_ID_PLAYER, Route104_Movement_SailToDewford
-=======
-	applymovement LOCALID_ROUTE104_BOAT, Route104_Movement_SailToDewford
-	applymovement LOCALID_PLAYER, Route104_Movement_SailToDewford
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	goto Route104_EventScript_ArriveInDewford
 
 Route104_EventScript_SailToDewfordDadCalls::
-<<<<<<< HEAD
 	applymovement LOCALID_BOAT_R104, Route104_Movement_SailToDewfordBeforeDadCalls
 	applymovement OBJ_EVENT_ID_PLAYER, Route104_Movement_SailToDewfordBeforeDadCalls
-=======
-	applymovement LOCALID_ROUTE104_BOAT, Route104_Movement_SailToDewfordBeforeDadCalls
-	applymovement LOCALID_PLAYER, Route104_Movement_SailToDewfordBeforeDadCalls
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	pokenavcall Route104_Text_DadPokenavCall
 	waitmessage
@@ -485,21 +387,14 @@ Route104_EventScript_SailToDewfordDadCalls::
 	closemessage
 	delay 30
 	setflag FLAG_ENABLE_NORMAN_MATCH_CALL
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, Route104_Movement_SailToDewfordAfterDadCalls
 	applymovement LOCALID_BOAT_R104, Route104_Movement_SailToDewfordAfterDadCalls, MAP_ROUTE104
 	waitmovement LOCALID_BOAT_R104, MAP_ROUTE104
-=======
-	applymovement LOCALID_PLAYER, Route104_Movement_SailToDewfordAfterDadCalls
-	applymovement LOCALID_ROUTE104_BOAT, Route104_Movement_SailToDewfordAfterDadCalls, MAP_ROUTE104
-	waitmovement LOCALID_ROUTE104_BOAT, MAP_ROUTE104
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	goto Route104_EventScript_ArriveInDewford
 
 Route104_EventScript_ArriveInDewford::
 	delay 50
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, Route104_Movement_PlayerExitBoat
 	waitmovement 0
 	call Common_EventScript_StopBrineysBoatMusic
@@ -522,30 +417,6 @@ Route104_EventScript_ArriveInDewford::
 	resetobjectsubpriority LOCALID_BRINEY_DEWFORD, MAP_DEWFORD_TOWN
 	copyobjectxytoperm LOCALID_BRINEY_DEWFORD
 	setvar VAR_GARBAGEVAR, 0
-=======
-	applymovement LOCALID_PLAYER, Route104_Movement_PlayerExitBoat
-	waitmovement 0
-	call Common_EventScript_StopBrineysBoatMusic
-	showobjectat LOCALID_PLAYER, MAP_DEWFORD_TOWN
-	applymovement LOCALID_PLAYER, Route104_Movement_PlayerMoveForBriney
-	waitmovement 0
-	setobjectxyperm LOCALID_DEWFORD_BRINEY, 12, 8
-	addobject LOCALID_DEWFORD_BRINEY
-	setobjectsubpriority LOCALID_DEWFORD_BRINEY, MAP_DEWFORD_TOWN, 0
-	clearflag FLAG_HIDE_MR_BRINEY_DEWFORD_TOWN
-	applymovement LOCALID_DEWFORD_BRINEY, Route104_Movement_BrineyExitBoat
-	waitmovement 0
-	addobject LOCALID_DEWFORD_BOAT
-	clearflag FLAG_HIDE_MR_BRINEY_BOAT_DEWFORD_TOWN
-	call Common_EventScript_StopBrineysBoatMusic
-	setflag FLAG_HIDE_ROUTE_104_MR_BRINEY_BOAT
-	hideobjectat LOCALID_ROUTE104_BOAT, MAP_ROUTE104
-	copyvar VAR_BRINEY_LOCATION, VAR_0x8008
-	resetobjectsubpriority LOCALID_PLAYER, MAP_ROUTE104
-	resetobjectsubpriority LOCALID_DEWFORD_BRINEY, MAP_DEWFORD_TOWN
-	copyobjectxytoperm LOCALID_DEWFORD_BRINEY
-	setvar VAR_BOARD_BRINEY_BOAT_STATE, 0
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto_if_unset FLAG_DELIVERED_STEVEN_LETTER, Route104_EventScript_DeliverLetterReminder
 	goto_if_set FLAG_DELIVERED_STEVEN_LETTER, Route104_EventScript_LandedInDewford
 	end
@@ -994,17 +865,10 @@ Route104_EventScript_Billy::
 	end
 
 Route104_EventScript_Haley::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_WHITNEY_1, Route104_Text_HaleyIntro, Route104_Text_HaleyDefeat, Route104_EventScript_TryRegisterHaleyAfterBattle
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route104_EventScript_RematchHaley
 	setvar VAR_0x8004, TRAINER_WHITNEY_1
-=======
-	trainerbattle_single TRAINER_HALEY_1, Route104_Text_HaleyIntro, Route104_Text_HaleyDefeat, Route104_EventScript_TryRegisterHaleyAfterBattle
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, Route104_EventScript_RematchHaley
-	setvar VAR_0x8004, TRAINER_HALEY_1
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	specialvar VAR_RESULT, IsTrainerRegistered
 	goto_if_eq VAR_RESULT, FALSE, Route104_EventScript_TryRegisterHaley
 	msgbox Route104_Text_HaleyPostBattle, MSGBOX_DEFAULT
@@ -1020,11 +884,7 @@ Route104_EventScript_TryRegisterHaleyAfterBattle::
 
 Route104_EventScript_RegisterHaleyAfterBattle::
 	msgbox Route104_Text_HaleyRegister2, MSGBOX_DEFAULT
-<<<<<<< HEAD
 	register_matchcall TRAINER_WHITNEY_1
-=======
-	register_matchcall TRAINER_HALEY_1
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	release
 	end
 
@@ -1036,20 +896,12 @@ Route104_EventScript_TryRegisterHaley::
 
 Route104_EventScript_RegisterHaley::
 	msgbox Route104_Text_HaleyRegister1, MSGBOX_DEFAULT
-<<<<<<< HEAD
 	register_matchcall TRAINER_WHITNEY_1
-=======
-	register_matchcall TRAINER_HALEY_1
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	release
 	end
 
 Route104_EventScript_RematchHaley::
-<<<<<<< HEAD
 	trainerbattle_rematch TRAINER_WHITNEY_1, Route104_Text_HaleyRematchIntro, Route104_Text_HaleyRematchDefeat
-=======
-	trainerbattle_rematch TRAINER_HALEY_1, Route104_Text_HaleyRematchIntro, Route104_Text_HaleyRematchDefeat
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route104_Text_HaleyPostRematch, MSGBOX_AUTOCLOSE
 	end
 
@@ -1095,17 +947,10 @@ Route104_EventScript_RematchWinston::
 	end
 
 Route104_EventScript_Cindy::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_GRUNT_18, Route104_Text_CindyIntro, Route104_Text_CindyDefeat, Route104_EventScript_TryRegisterCindyAfterBattle
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route104_EventScript_RematchCindy
 	setvar VAR_0x8004, TRAINER_GRUNT_18
-=======
-	trainerbattle_single TRAINER_CINDY_1, Route104_Text_CindyIntro, Route104_Text_CindyDefeat, Route104_EventScript_TryRegisterCindyAfterBattle
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, Route104_EventScript_RematchCindy
-	setvar VAR_0x8004, TRAINER_CINDY_1
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	specialvar VAR_RESULT, IsTrainerRegistered
 	goto_if_eq VAR_RESULT, FALSE, Route104_EventScript_TryRegisterCindy
 	msgbox Route104_Text_CindyPostBattle, MSGBOX_DEFAULT
@@ -1121,11 +966,7 @@ Route104_EventScript_TryRegisterCindyAfterBattle::
 
 Route104_EventScript_RegisterCindyAfterBattle::
 	msgbox Route104_Text_CindyRegister2, MSGBOX_DEFAULT
-<<<<<<< HEAD
 	register_matchcall TRAINER_GRUNT_18
-=======
-	register_matchcall TRAINER_CINDY_1
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	release
 	end
 
@@ -1137,51 +978,31 @@ Route104_EventScript_TryRegisterCindy::
 
 Route104_EventScript_RegisterCindy::
 	msgbox Route104_Text_CindyRegister1, MSGBOX_DEFAULT
-<<<<<<< HEAD
 	register_matchcall TRAINER_GRUNT_18
-=======
-	register_matchcall TRAINER_CINDY_1
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	release
 	end
 
 Route104_EventScript_RematchCindy::
-<<<<<<< HEAD
 	trainerbattle_rematch TRAINER_GRUNT_18, Route104_Text_CindyRematchIntro, Route104_Text_CindyRematchDefeat
-=======
-	trainerbattle_rematch TRAINER_CINDY_1, Route104_Text_CindyRematchIntro, Route104_Text_CindyRematchDefeat
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route104_Text_CindyPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 Route104_EventScript_Gina::
-<<<<<<< HEAD
 	trainerbattle_double TRAINER_RUTH, Route104_Text_GinaIntro, Route104_Text_GinaDefeat, Route104_Text_GinaNotEnoughMons
-=======
-	trainerbattle_double TRAINER_GINA_AND_MIA_1, Route104_Text_GinaIntro, Route104_Text_GinaDefeat, Route104_Text_GinaNotEnoughMons
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	special GetPlayerBigGuyGirlString
 	msgbox Route104_Text_GinaPostBattle, MSGBOX_DEFAULT
 	release
 	end
 
 Route104_EventScript_Mia::
-<<<<<<< HEAD
 	trainerbattle_double TRAINER_RUTH, Route104_Text_MiaIntro, Route104_Text_MiaDefeat, Route104_Text_MiaNotEnoughMons
-=======
-	trainerbattle_double TRAINER_GINA_AND_MIA_1, Route104_Text_MiaIntro, Route104_Text_MiaDefeat, Route104_Text_MiaNotEnoughMons
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	special GetPlayerBigGuyGirlString
 	msgbox Route104_Text_MiaPostBattle, MSGBOX_DEFAULT
 	release
 	end
 
 Route104_EventScript_Darian::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_JIMMY, Route104_Text_DarianIntro, Route104_Text_DarianDefeat
-=======
-	trainerbattle_single TRAINER_DARIAN, Route104_Text_DarianIntro, Route104_Text_DarianDefeat
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route104_Text_DarianPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -1229,13 +1050,10 @@ Route104_Text_TMsAreOneTimeUse:
 	.string "Once you use it, it's gone.\n"
 	.string "Think twice before using it!$"
 
-<<<<<<< HEAD
 Route104_Text_TMsCanBeReused:
 	.string "By the way, a TM, TECHNICAL MACHINE,\n"
 	.string "can be used as many times as you want!$"
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 Route104_Text_DontNeedThisTakeIt:
 	.string "This FLOWER SHOP started selling\n"
 	.string "saplings recently.\p"

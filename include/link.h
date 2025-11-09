@@ -233,11 +233,7 @@ struct Link
 
 struct BlockRequest
 {
-<<<<<<< HEAD
     void * address;
-=======
-    void *address;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     u32 size;
 };
 
@@ -259,16 +255,11 @@ bool8 IsWirelessAdapterConnected(void);
 void Task_DestroySelf(u8 taskId);
 void OpenLink(void);
 void CloseLink(void);
-<<<<<<< HEAD
 u16 LinkMain2(const u16 *);
-=======
-u16 LinkMain2(const u16 *heldKeys);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 void ClearLinkCallback(void);
 void ClearLinkCallback_2(void);
 u8 GetLinkPlayerCount(void);
 void OpenLinkTimed(void);
-<<<<<<< HEAD
 u8 GetLinkPlayerDataExchangeStatusTimed(int lower, int upper);
 bool8 IsLinkPlayerDataExchangeComplete(void);
 u32 GetLinkPlayerTrainerId(u8);
@@ -279,18 +270,6 @@ bool8 SendBlock(u8, const void *, u16);
 u8 GetBlockReceivedStatus(void);
 void ResetBlockReceivedFlags(void);
 void ResetBlockReceivedFlag(u8);
-=======
-u8 GetLinkPlayerDataExchangeStatusTimed(int minPlayers, int maxPlayers);
-bool8 IsLinkPlayerDataExchangeComplete(void);
-u32 GetLinkPlayerTrainerId(u8 who);
-void ResetLinkPlayers(void);
-u8 GetMultiplayerId(void);
-u8 BitmaskAllOtherLinkPlayers(void);
-bool8 SendBlock(u8 unused, const void *src, u16 size);
-u8 GetBlockReceivedStatus(void);
-void ResetBlockReceivedFlags(void);
-void ResetBlockReceivedFlag(u8 who);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 u8 GetLinkPlayerCount_2(void);
 bool8 IsLinkMaster(void);
 void CB2_LinkError(void);
@@ -314,11 +293,7 @@ bool8 HandleLinkConnection(void);
 void SetLinkDebugValues(u32 seed, u32 flags);
 void SetBerryBlenderLinkCallback(void);
 void SetSuppressLinkErrorMessage(bool8 flag);
-<<<<<<< HEAD
 void ConvertLinkPlayerName(struct LinkPlayer *linkPlayer);
-=======
-void ConvertLinkPlayerName(struct LinkPlayer *player);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 void ClearSavedLinkPlayers(void);
 void SetLinkErrorBuffer(u32 status, u8 lastSendQueueCount, u8 lastRecvQueueCount, bool8 disconnected);
 void LocalLinkPlayerToBlock(void);
@@ -356,17 +331,10 @@ extern u16 gLinkSavedIme;
 extern struct LinkPlayer gLocalLinkPlayer;
 
 bool32 Link_AnyPartnersPlayingRubyOrSapphire(void);
-<<<<<<< HEAD
 bool32 LinkDummy_Return2(void);
 void SetLocalLinkPlayerId(u8);
 u8 GetSavedPlayerCount(void);
 bool8 SendBlockRequest(u8 type);
-=======
-u32 LinkDummy_Return2(void);
-void SetLocalLinkPlayerId(u8 playerId);
-u8 GetSavedPlayerCount(void);
-bool8 SendBlockRequest(u8 blockReqType);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 u8 GetLinkPlayerCountAsBitFlags(void);
 u8 GetSavedLinkPlayerCountAsBitFlags(void);
 void SetCloseLinkCallbackHandleJP(void);
@@ -376,9 +344,5 @@ bool8 DoesLinkPlayerCountMatchSaved(void);
 void SetCloseLinkCallbackAndType(u16 type);
 bool32 IsSendingKeysToLink(void);
 u32 GetLinkRecvQueueLength(void);
-<<<<<<< HEAD
-=======
-bool32 ShouldCheckForUnionRoom(void);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 #endif // GUARD_LINK_H

@@ -1,25 +1,17 @@
-<<<<<<< HEAD
 .set LOCALID_BRINEY, 1
 .set LOCALID_PEEKO, 2
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 Route104_MrBrineysHouse_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route104_MrBrineysHouse_OnTransition
 	.byte 0
 
 Route104_MrBrineysHouse_OnTransition:
 	setflag FLAG_LANDMARK_MR_BRINEY_HOUSE
-<<<<<<< HEAD
 	call_if_eq VAR_GARBAGEVAR, 1, Route104_MrBrineysHouse_EventScript_SetBrineyPeekoPos
-=======
-	call_if_eq VAR_BRINEY_HOUSE_STATE, 1, Route104_MrBrineysHouse_EventScript_SetBrineyPeekoPos
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call_if_set FLAG_RECEIVED_POKENAV, Route104_MrBrineysHouse_EventScript_HideRustboroRival
 	end
 
 Route104_MrBrineysHouse_EventScript_HideRustboroRival::
-<<<<<<< HEAD
 	setflag FLAG_GARBAGEFLAG
 	return
 
@@ -28,16 +20,6 @@ Route104_MrBrineysHouse_EventScript_SetBrineyPeekoPos::
 	setobjectmovementtype LOCALID_BRINEY, MOVEMENT_TYPE_WALK_SEQUENCE_DOWN_LEFT_UP_RIGHT
 	setobjectxyperm LOCALID_PEEKO, 9, 6
 	setobjectmovementtype LOCALID_PEEKO, MOVEMENT_TYPE_WALK_SEQUENCE_LEFT_UP_RIGHT_DOWN
-=======
-	setflag FLAG_HIDE_RUSTBORO_CITY_RIVAL
-	return
-
-Route104_MrBrineysHouse_EventScript_SetBrineyPeekoPos::
-	setobjectxyperm LOCALID_BRINEYS_HOUSE_BRINEY, 9, 3
-	setobjectmovementtype LOCALID_BRINEYS_HOUSE_BRINEY, MOVEMENT_TYPE_WALK_SEQUENCE_DOWN_LEFT_UP_RIGHT
-	setobjectxyperm LOCALID_BRINEYS_HOUSE_PEEKO, 9, 6
-	setobjectmovementtype LOCALID_BRINEYS_HOUSE_PEEKO, MOVEMENT_TYPE_WALK_SEQUENCE_LEFT_UP_RIGHT_DOWN
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	return
 
 Route104_MrBrineysHouse_EventScript_Briney::
@@ -92,7 +74,6 @@ Route104_MrBrineysHouse_EventScript_DeclineSailing::
 Route104_MrBrineysHouse_EventScript_SailToDewford::
 	msgbox Route104_MrBrineysHouse_Text_SetSailForDewford, MSGBOX_DEFAULT
 	call EventScript_BackupMrBrineyLocation
-<<<<<<< HEAD
 	setvar VAR_GARBAGEVAR, 1
 	clearflag FLAG_GARBAGEFLAG
 	setflag FLAG_GARBAGEFLAG
@@ -100,15 +81,6 @@ Route104_MrBrineysHouse_EventScript_SailToDewford::
 	setvar VAR_GARBAGEVAR, 8
 	setvar VAR_GARBAGEVAR, 2
 	setflag FLAG_GARBAGEFLAG
-=======
-	setvar VAR_BOARD_BRINEY_BOAT_STATE, 1
-	clearflag FLAG_HIDE_ROUTE_104_MR_BRINEY
-	setflag FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY
-	setflag FLAG_HIDE_BRINEYS_HOUSE_PEEKO
-	setvar VAR_RUSTBORO_CITY_STATE, 8
-	setvar VAR_ROUTE104_STATE, 2
-	setflag FLAG_HIDE_RUSTBORO_CITY_RIVAL
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setflag FLAG_HIDE_ROUTE_104_RIVAL
 	warp MAP_ROUTE104, 13, 51
 	waitstate

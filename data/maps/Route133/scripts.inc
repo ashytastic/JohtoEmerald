@@ -1,9 +1,6 @@
 Route133_MapScripts::
-<<<<<<< HEAD
 	map_script MAP_SCRIPT_ON_TRANSITION, SetTimeEncounters
 	map_script MAP_SCRIPT_ON_RESUME, SetTimeEncounters
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.byte 0
 
 Route133_EventScript_Franklin::
@@ -27,11 +24,7 @@ Route133_EventScript_Warren::
 	end
 
 Route133_EventScript_Beck::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_DANNY, Route133_Text_BeckIntro, Route133_Text_BeckDefeat
-=======
-	trainerbattle_single TRAINER_BECK, Route133_Text_BeckIntro, Route133_Text_BeckDefeat
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route133_Text_BeckPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -41,11 +34,7 @@ Route133_EventScript_Mollie::
 	end
 
 Route133_EventScript_Conor::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_GRUNT_27, Route133_Text_ConorIntro, Route133_Text_ConorDefeat
-=======
-	trainerbattle_single TRAINER_CONOR, Route133_Text_ConorIntro, Route133_Text_ConorDefeat
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route133_Text_ConorPostBattle, MSGBOX_AUTOCLOSE
 	end
 

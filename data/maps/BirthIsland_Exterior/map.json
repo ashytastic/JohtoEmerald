@@ -12,16 +12,9 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-<<<<<<< HEAD
   "connections": 0,
   "object_events": [
     {
-=======
-  "connections": null,
-  "object_events": [
-    {
-      "local_id": "LOCALID_BIRTH_ISLAND_EXTERIOR_ROCK",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_DEOXYS_TRIANGLE",
       "x": 15,
       "y": 12,
@@ -35,10 +28,6 @@
       "flag": "FLAG_HIDE_BIRTH_ISLAND_DEOXYS_TRIANGLE"
     },
     {
-<<<<<<< HEAD
-=======
-      "local_id": "LOCALID_BIRTH_ISLAND_DEOXYS",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_DEOXYS",
       "x": 15,
       "y": 3,
@@ -50,7 +39,6 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
       "flag": "FLAG_HIDE_DEOXYS"
-<<<<<<< HEAD
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SS_TIDAL",
@@ -77,25 +65,17 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "FarawayIsland_Entrance_EventScript_Sailor",
       "flag": "0"
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "warp_events": [
     {
-<<<<<<< HEAD
       "x": 8,
       "y": 19,
-=======
-      "x": 15,
-      "y": 24,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "elevation": 0,
       "dest_map": "MAP_BIRTH_ISLAND_HARBOR",
       "dest_warp_id": "0"
     }
   ],
-<<<<<<< HEAD
   "coord_events": [
 
   ],
@@ -133,8 +113,4 @@
       "script": "ChangeDeoxysForm"
     }
   ]
-=======
-  "coord_events": [],
-  "bg_events": []
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }

@@ -95,14 +95,11 @@ Route123_BerryMastersHouse_Text_YoureDeservingOfBerry:
 	.string "and hand them out to everyone.\p"
 	.string "You're deserving of one!$"
 
-<<<<<<< HEAD
 Route123_BerryMastersHouse_Text_YoureDeservingOfMulch:
 	.string "GROWTH MULCH can be used to grow any\n"
 	.string "BERRY tree instantly. Try using it\l"
 	.string "on today's BERRY!$"
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 Route123_BerryMastersHouse_Text_WhyBeStingyTakeAnother:
 	.string "Why be stingy?\n"
 	.string "Take another!$"
@@ -200,16 +197,10 @@ Route104_PrettyPetalFlowerShop_Text_ImGrowingFlowers:
 	.string "It's for you!$"
 
 Route104_PrettyPetalFlowerShop_Text_MachineMixesBerries:
-<<<<<<< HEAD
 	.string "A POKéMON can eat a BERRY to heal,\n"
 	.string "or you can make a POKéMON hold it.\p"
 	.string "In a faraway region I visited,\n"
 	.string "they had a machine that mixes\l"
-=======
-	.string "You can plant a BERRY and grow it big,\n"
-	.string "or you can make a POKéMON hold it.\p"
-	.string "But now they have a machine that mixes\n"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.string "up different BERRIES and makes candies\l"
 	.string "for POKéMON.\p"
 	.string "I want some candy, too.$"

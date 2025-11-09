@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const struct ContestMove gContestMoves[MOVES_COUNT] =
 {
     [MOVE_NONE] = {0},
@@ -2926,8 +2925,6 @@ const struct ContestMove gContestMoves[MOVES_COUNT] =
     },
 };
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 const struct ContestEffect gContestEffects[] =
 {
     [CONTEST_EFFECT_HIGHLY_APPEALING] =
@@ -3220,7 +3217,6 @@ const struct ContestEffect gContestEffects[] =
     },
 };
 
-<<<<<<< HEAD
 // A lookup table with TRUE for each combo starter ID and FALSE for ID 0,
 // which means "not a combo starter move".
 const bool8 gComboStarterLookupTable[] =
@@ -3290,8 +3286,6 @@ const bool8 gComboStarterLookupTable[] =
     TRUE
 };
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 void (*const gContestEffectFuncs[])(void) =
 {
     ContestEffect_HighlyAppealing,

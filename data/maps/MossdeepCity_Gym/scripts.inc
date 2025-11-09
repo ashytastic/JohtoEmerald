@@ -67,7 +67,6 @@ MossdeepCity_Gym_EventScript_TateAndLizaDefeated::
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox MossdeepCity_Gym_Text_ExplainMindBadgeTakeThis, MSGBOX_DEFAULT
-<<<<<<< HEAD
 	setflag FLAG_DEFEATED_MAHOGANY_TOWN_GYM
 	setflag FLAG_BADGE07_GET
 	setflag FLAG_GARBAGEFLAG
@@ -83,23 +82,6 @@ MossdeepCity_Gym_EventScript_TateAndLizaDefeated::
 	setvar VAR_GARBAGEVAR, 1
 	setflag FLAG_GARBAGEFLAG
 	setvar VAR_GARBAGEVAR, 1
-=======
-	setflag FLAG_DEFEATED_MOSSDEEP_GYM
-	setflag FLAG_BADGE07_GET
-	setflag FLAG_HIDE_AQUA_HIDEOUT_GRUNTS
-	clearflag FLAG_HIDE_SLATEPORT_CITY_STERNS_SHIPYARD_MR_BRINEY
-	clearflag FLAG_UNKNOWN_0x393
-	setvar VAR_0x8008, 7
-	call Common_EventScript_SetGymTrainers
-	clearflag FLAG_HIDE_SLATEPORT_CITY_HARBOR_PATRONS
-	clearflag FLAG_HIDE_MOSSDEEP_CITY_TEAM_MAGMA
-	clearflag FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_1F_TEAM_MAGMA
-	clearflag FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_2F_TEAM_MAGMA
-	clearflag FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_2F_STEVEN
-	setvar VAR_MOSSDEEP_CITY_STATE, 1
-	setflag FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_1F_STEVEN
-	setvar VAR_MOSSDEEP_SPACE_CENTER_STATE, 1
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call MossdeepCity_Gym_EventScript_GiveCalmMind
 	closemessage
 	delay 30
@@ -137,11 +119,7 @@ MossdeepCity_Gym_EventScript_Switch1::
 	lockall
 	goto_if_set FLAG_MOSSDEEP_GYM_SWITCH_1, MossdeepCity_Gym_EventScript_ClearSwitch1
 	setflag FLAG_MOSSDEEP_GYM_SWITCH_1
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, MossdeepCity_Gym_Movement_WaitAfterSwitchUse
-=======
-	applymovement LOCALID_PLAYER, MossdeepCity_Gym_Movement_WaitAfterSwitchUse
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	setmetatile 5, 5, METATILE_RSMossdeepGym_RedArrow_Right, FALSE
 	setmetatile 2, 7, METATILE_RSMossdeepGym_Switch_Down, TRUE
@@ -156,11 +134,7 @@ MossdeepCity_Gym_EventScript_DrawMapAfterSwitchUsed::
 
 MossdeepCity_Gym_EventScript_ClearSwitch1::
 	clearflag FLAG_MOSSDEEP_GYM_SWITCH_1
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, MossdeepCity_Gym_Movement_WaitAfterSwitchUse
-=======
-	applymovement LOCALID_PLAYER, MossdeepCity_Gym_Movement_WaitAfterSwitchUse
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	setmetatile 5, 5, METATILE_RSMossdeepGym_RedArrow_Left, FALSE
 	setmetatile 2, 7, METATILE_RSMossdeepGym_Switch_Up, TRUE
@@ -171,11 +145,7 @@ MossdeepCity_Gym_EventScript_Switch2::
 	lockall
 	goto_if_set FLAG_MOSSDEEP_GYM_SWITCH_2, MossdeepCity_Gym_EventScript_ClearSwitch2
 	setflag FLAG_MOSSDEEP_GYM_SWITCH_2
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, MossdeepCity_Gym_Movement_WaitAfterSwitchUse
-=======
-	applymovement LOCALID_PLAYER, MossdeepCity_Gym_Movement_WaitAfterSwitchUse
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	setmetatile 8, 14, METATILE_RSMossdeepGym_RedArrow_Right, FALSE
 	setmetatile 8, 10, METATILE_RSMossdeepGym_Switch_Down, TRUE
@@ -184,11 +154,7 @@ MossdeepCity_Gym_EventScript_Switch2::
 
 MossdeepCity_Gym_EventScript_ClearSwitch2::
 	clearflag FLAG_MOSSDEEP_GYM_SWITCH_2
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, MossdeepCity_Gym_Movement_WaitAfterSwitchUse
-=======
-	applymovement LOCALID_PLAYER, MossdeepCity_Gym_Movement_WaitAfterSwitchUse
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	setmetatile 8, 14, METATILE_RSMossdeepGym_RedArrow_Down, FALSE
 	setmetatile 8, 10, METATILE_RSMossdeepGym_Switch_Up, TRUE
@@ -199,11 +165,7 @@ MossdeepCity_Gym_EventScript_Switch3::
 	lockall
 	goto_if_set FLAG_MOSSDEEP_GYM_SWITCH_3, MossdeepCity_Gym_EventScript_ClearSwitch3
 	setflag FLAG_MOSSDEEP_GYM_SWITCH_3
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, MossdeepCity_Gym_Movement_WaitAfterSwitchUse
-=======
-	applymovement LOCALID_PLAYER, MossdeepCity_Gym_Movement_WaitAfterSwitchUse
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	setmetatile 15, 17, METATILE_RSMossdeepGym_RedArrow_Left, FALSE
 	setmetatile 17, 15, METATILE_RSMossdeepGym_Switch_Down, TRUE
@@ -212,11 +174,7 @@ MossdeepCity_Gym_EventScript_Switch3::
 
 MossdeepCity_Gym_EventScript_ClearSwitch3::
 	clearflag FLAG_MOSSDEEP_GYM_SWITCH_3
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, MossdeepCity_Gym_Movement_WaitAfterSwitchUse
-=======
-	applymovement LOCALID_PLAYER, MossdeepCity_Gym_Movement_WaitAfterSwitchUse
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	setmetatile 15, 17, METATILE_RSMossdeepGym_RedArrow_Right, FALSE
 	setmetatile 17, 15, METATILE_RSMossdeepGym_Switch_Up, TRUE
@@ -227,11 +185,7 @@ MossdeepCity_Gym_EventScript_Switch4::
 	lockall
 	goto_if_set FLAG_MOSSDEEP_GYM_SWITCH_4, MossdeepCity_Gym_EventScript_ClearSwitch4
 	setflag FLAG_MOSSDEEP_GYM_SWITCH_4
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, MossdeepCity_Gym_Movement_WaitAfterSwitchUse
-=======
-	applymovement LOCALID_PLAYER, MossdeepCity_Gym_Movement_WaitAfterSwitchUse
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	setmetatile 1, 23, METATILE_RSMossdeepGym_RedArrow_Up, FALSE
 	setmetatile 5, 24, METATILE_RSMossdeepGym_Switch_Down, TRUE
@@ -240,11 +194,7 @@ MossdeepCity_Gym_EventScript_Switch4::
 
 MossdeepCity_Gym_EventScript_ClearSwitch4::
 	clearflag FLAG_MOSSDEEP_GYM_SWITCH_4
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, MossdeepCity_Gym_Movement_WaitAfterSwitchUse
-=======
-	applymovement LOCALID_PLAYER, MossdeepCity_Gym_Movement_WaitAfterSwitchUse
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	setmetatile 1, 23, METATILE_RSMossdeepGym_RedArrow_Right, FALSE
 	setmetatile 5, 24, METATILE_RSMossdeepGym_Switch_Up, TRUE
@@ -274,11 +224,7 @@ MossdeepCity_Gym_EventScript_Blake::
 	end
 
 MossdeepCity_Gym_EventScript_Hannah::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_PRYCE_2, MossdeepCity_Gym_Text_HannahIntro, MossdeepCity_Gym_Text_HannahDefeat
-=======
-	trainerbattle_single TRAINER_HANNAH, MossdeepCity_Gym_Text_HannahIntro, MossdeepCity_Gym_Text_HannahDefeat
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox MossdeepCity_Gym_Text_HannahPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -325,11 +271,7 @@ MossdeepCity_Gym_EventScript_Kathleen::
 MossdeepCity_Gym_EventScript_GymGuide::
 	lock
 	faceplayer
-<<<<<<< HEAD
 	goto_if_set FLAG_DEFEATED_MAHOGANY_TOWN_GYM, MossdeepCity_Gym_EventScript_GymGuidePostVictory
-=======
-	goto_if_set FLAG_DEFEATED_MOSSDEEP_GYM, MossdeepCity_Gym_EventScript_GymGuidePostVictory
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox MossdeepCity_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT
 	release
 	end

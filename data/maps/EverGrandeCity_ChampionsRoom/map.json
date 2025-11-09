@@ -3,11 +3,7 @@
   "name": "EverGrandeCity_ChampionsRoom",
   "layout": "LAYOUT_EVER_GRANDE_CITY_CHAMPIONS_ROOM",
   "music": "MUS_VICTORY_ROAD",
-<<<<<<< HEAD
   "region_map_section": "MAPSEC_INDIGO_PLATEAU",
-=======
-  "region_map_section": "MAPSEC_EVER_GRANDE_CITY",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -16,18 +12,10 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-<<<<<<< HEAD
   "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_LANCE",
-=======
-  "connections": null,
-  "object_events": [
-    {
-      "local_id": "LOCALID_CHAMPIONS_ROOM_WALLACE",
-      "graphics_id": "OBJ_EVENT_GFX_WALLACE",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 6,
       "y": 5,
       "elevation": 3,
@@ -40,10 +28,6 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
-=======
-      "local_id": "LOCALID_CHAMPIONS_ROOM_RIVAL",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
       "x": 6,
       "y": 12,
@@ -54,18 +38,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PROF_ELM",
-=======
-      "flag": "FLAG_HIDE_CHAMPIONS_ROOM_RIVAL"
-    },
-    {
-      "local_id": "LOCALID_CHAMPIONS_ROOM_BIRCH",
-      "graphics_id": "OBJ_EVENT_GFX_PROF_BIRCH",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 6,
       "y": 12,
       "elevation": 3,
@@ -75,11 +51,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
-=======
-      "flag": "FLAG_HIDE_CHAMPIONS_ROOM_BIRCH"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "warp_events": [
@@ -98,15 +70,10 @@
       "dest_warp_id": "0"
     }
   ],
-<<<<<<< HEAD
   "coord_events": [
 
   ],
   "bg_events": [
 
   ]
-=======
-  "coord_events": [],
-  "bg_events": []
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }

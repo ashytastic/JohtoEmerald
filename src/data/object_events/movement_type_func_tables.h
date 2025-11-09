@@ -2,11 +2,7 @@ u8 (*const gMovementTypeFuncs_WanderAround[])(struct ObjectEvent *, struct Sprit
     MovementType_WanderAround_Step0,
     MovementType_WanderAround_Step1,
     MovementType_WanderAround_Step2,
-<<<<<<< HEAD
     MovementType_WanderAround_Step3,
-=======
-    MovementType_Wander_Step3,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     MovementType_WanderAround_Step4,
     MovementType_WanderAround_Step5,
     MovementType_WanderAround_Step6,
@@ -40,11 +36,7 @@ u8 (*const gMovementTypeFuncs_WanderUpAndDown[])(struct ObjectEvent *, struct Sp
     MovementType_WanderUpAndDown_Step0,
     MovementType_WanderUpAndDown_Step1,
     MovementType_WanderUpAndDown_Step2,
-<<<<<<< HEAD
     MovementType_WanderUpAndDown_Step3,
-=======
-    MovementType_Wander_Step3,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     MovementType_WanderUpAndDown_Step4,
     MovementType_WanderUpAndDown_Step5,
     MovementType_WanderUpAndDown_Step6,
@@ -56,11 +48,7 @@ u8 (*const gMovementTypeFuncs_WanderLeftAndRight[])(struct ObjectEvent *, struct
     MovementType_WanderLeftAndRight_Step0,
     MovementType_WanderLeftAndRight_Step1,
     MovementType_WanderLeftAndRight_Step2,
-<<<<<<< HEAD
     MovementType_WanderLeftAndRight_Step3,
-=======
-    MovementType_Wander_Step3,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     MovementType_WanderLeftAndRight_Step4,
     MovementType_WanderLeftAndRight_Step5,
     MovementType_WanderLeftAndRight_Step6,
@@ -184,7 +172,6 @@ u8 (*const gMovementTypeFuncs_RotateCounterclockwise[])(struct ObjectEvent *, st
     MovementType_RotateCounterclockwise_Step2,
     MovementType_RotateCounterclockwise_Step3,
 };
-<<<<<<< HEAD
 //HnS tower beam
 u8 (*const gMovementTypeFuncs_TowerBeam[])(struct ObjectEvent *, struct Sprite *) = {
     MovementType_TowerBeam_Step0,
@@ -195,8 +182,6 @@ u8 (*const gMovementTypeFuncs_TowerBeam[])(struct ObjectEvent *, struct Sprite *
 };
 
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 const u8 gCounterclockwiseDirections[] = {DIR_SOUTH, DIR_EAST, DIR_WEST, DIR_SOUTH, DIR_NORTH};
 

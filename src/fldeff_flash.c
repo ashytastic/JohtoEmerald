@@ -1,9 +1,5 @@
 #include "global.h"
 #include "braille_puzzles.h"
-<<<<<<< HEAD
-=======
-#include "decompress.h"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include "event_data.h"
 #include "event_scripts.h"
 #include "field_effect.h"
@@ -18,10 +14,7 @@
 #include "sprite.h"
 #include "task.h"
 #include "constants/songs.h"
-<<<<<<< HEAD
 #include "constants/map_types.h"
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 struct FlashStruct
 {
@@ -72,19 +65,11 @@ static const u16 sCaveTransitionPalette_White[] = INCBIN_U16("graphics/cave_tran
 static const u16 sCaveTransitionPalette_Black[] = INCBIN_U16("graphics/cave_transition/black.gbapal");
 
 static const u16 sCaveTransitionPalette_Enter[] = INCBIN_U16("graphics/cave_transition/enter.gbapal");
-<<<<<<< HEAD
 static const u16 sCaveTransitionPalette_Exit[] = INCBIN_U16("graphics/cave_transition/exit.gbapal");
 static const u32 sCaveTransitionTilemap[] = INCBIN_U32("graphics/cave_transition/tilemap.bin.lz");
 static const u32 sCaveTransitionTiles[] = INCBIN_U32("graphics/cave_transition/tiles.4bpp.lz");
 
 bool8 SetUpFieldMove_Flash(void)
-=======
-
-static const u32 sCaveTransitionTilemap[] = INCBIN_U32("graphics/cave_transition/tilemap.bin.smolTM");
-static const u32 sCaveTransitionTiles[] = INCBIN_U32("graphics/cave_transition/tiles.4bpp.smol");
-
-bool32 SetUpFieldMove_Flash(void)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     // In Ruby and Sapphire, Registeel's tomb is opened by using Fly. In Emerald,
     // Flash is used instead.
@@ -169,13 +154,8 @@ void CB2_DoChangeMap(void)
 static bool8 TryDoMapTransition(void)
 {
     u8 i;
-<<<<<<< HEAD
     u8 fromType = GetLastUsedWarpMapType();
     u8 toType = GetCurrentMapType();
-=======
-    enum MapType fromType = GetLastUsedWarpMapType();
-    enum MapType toType = GetCurrentMapType();
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     for (i = 0; sTransitionTypes[i].fromType; i++)
     {
@@ -236,17 +216,10 @@ static void Task_ExitCaveTransition1(u8 taskId)
 static void Task_ExitCaveTransition2(u8 taskId)
 {
     SetGpuReg(REG_OFFSET_DISPCNT, 0);
-<<<<<<< HEAD
     LZ77UnCompVram(sCaveTransitionTiles, (void *)(VRAM + 0xC000));
     LZ77UnCompVram(sCaveTransitionTilemap, (void *)(VRAM + 0xF800));
     LoadPalette(sCaveTransitionPalette_White, BG_PLTT_ID(14), PLTT_SIZE_4BPP);
     LoadPalette(sCaveTransitionPalette_Exit, BG_PLTT_ID(14), PLTT_SIZEOF(8));
-=======
-    DecompressDataWithHeaderVram(sCaveTransitionTiles, (void *)(VRAM + 0xC000));
-    DecompressDataWithHeaderVram(sCaveTransitionTilemap, (void *)(VRAM + 0xF800));
-    LoadPalette(sCaveTransitionPalette_White, BG_PLTT_ID(14), PLTT_SIZE_4BPP);
-    LoadPalette(&sCaveTransitionPalette_Enter[8], BG_PLTT_ID(14), PLTT_SIZEOF(8));
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG0
                                 | BLDCNT_EFFECT_BLEND
                                 | BLDCNT_TGT2_BG1
@@ -276,11 +249,7 @@ static void Task_ExitCaveTransition3(u8 taskId)
     u16 blend = count + 0x1000;
 
     SetGpuReg(REG_OFFSET_BLDALPHA, blend);
-<<<<<<< HEAD
     if (count <= 0x10)
-=======
-    if (count <= 16)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     {
         gTasks[taskId].data[1]++;
     }
@@ -301,11 +270,7 @@ static void Task_ExitCaveTransition4(u8 taskId)
     if (count < 8)
     {
         gTasks[taskId].data[2]++;
-<<<<<<< HEAD
         LoadPalette(&sCaveTransitionPalette_Exit[count], BG_PLTT_ID(14), sizeof(sCaveTransitionPalette_Exit) - PLTT_SIZEOF(count));
-=======
-        LoadPalette(&sCaveTransitionPalette_Enter[8 + count], BG_PLTT_ID(14), PLTT_SIZEOF(8) - PLTT_SIZEOF(count));
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
     else
     {
@@ -336,13 +301,8 @@ static void Task_EnterCaveTransition1(u8 taskId)
 static void Task_EnterCaveTransition2(u8 taskId)
 {
     SetGpuReg(REG_OFFSET_DISPCNT, 0);
-<<<<<<< HEAD
     LZ77UnCompVram(sCaveTransitionTiles, (void *)(VRAM + 0xC000));
     LZ77UnCompVram(sCaveTransitionTilemap, (void *)(VRAM + 0xF800));
-=======
-    DecompressDataWithHeaderVram(sCaveTransitionTiles, (void *)(VRAM + 0xC000));
-    DecompressDataWithHeaderVram(sCaveTransitionTilemap, (void *)(VRAM + 0xF800));
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     SetGpuReg(REG_OFFSET_BLDCNT, 0);
     SetGpuReg(REG_OFFSET_BLDALPHA, 0);
     SetGpuReg(REG_OFFSET_BLDY, 0);

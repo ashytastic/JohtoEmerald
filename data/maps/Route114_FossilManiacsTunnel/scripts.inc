@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 .set LOCALID_FOSSIL_MANIAC, 1
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 Route114_FossilManiacsTunnel_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route114_FossilManiacsTunnel_OnTransition
 	map_script MAP_SCRIPT_ON_LOAD, Route114_FossilManiacsTunnel_OnLoad
@@ -29,11 +26,7 @@ Route114_FossilManiacsTunnel_EventScript_CloseDesertUnderpass::
 Route114_FossilManiacsTunnel_EventScript_ManiacMentionCaveIn::
 	lockall
 	applymovement LOCALID_FOSSIL_MANIAC, Common_Movement_WalkInPlaceFasterUp
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
-=======
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	msgbox Route114_FossilManiacsTunnel_Text_NotSafeThatWay, MSGBOX_DEFAULT
 	setvar VAR_FOSSIL_MANIAC_STATE, 2

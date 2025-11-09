@@ -1,21 +1,11 @@
 #ifndef GUARD_SAVE_H
 #define GUARD_SAVE_H
 
-<<<<<<< HEAD
 // Each 4 KiB flash sector contains 3968 bytes of actual data followed by a 128 byte footer.
 // Only 12 bytes of the footer are used.
 #define SECTOR_DATA_SIZE 4084
 #define SECTOR_FOOTER_SIZE 12
 #define SECTOR_SIZE (SECTOR_DATA_SIZE + SECTOR_FOOTER_SIZE)
-=======
-#include "main.h"
-
-// Each 4 KiB flash sector contains 3968 bytes of actual data followed by 116 bytes of SaveBlock3 and then 12 bytes of footer.
-#define SECTOR_DATA_SIZE 3968
-#define SAVE_BLOCK_3_CHUNK_SIZE 116
-#define SECTOR_FOOTER_SIZE 12
-#define SECTOR_SIZE (SECTOR_DATA_SIZE + SAVE_BLOCK_3_CHUNK_SIZE + SECTOR_FOOTER_SIZE)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 #define NUM_SAVE_SLOTS 2
 
@@ -49,15 +39,12 @@
 // indicate that no specific sector should be used.
 #define FULL_SAVE_SLOT 0xFFFF
 
-<<<<<<< HEAD
 // A random number to identify that the save data has a valid version number
 #define SAVE_MAGIC_NUM 0xE8F828BC
 
 // The current save version, increment if the save data structure changes, including the pokmeon struct
 #define SAVE_VERSION 2 //most recently updated in patch 10 to add some flags for future additions
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 // SetDamagedSectorBits states
 enum
 {
@@ -88,11 +75,7 @@ struct SaveSectorLocation
 struct SaveSector
 {
     u8 data[SECTOR_DATA_SIZE];
-<<<<<<< HEAD
     u8 unused[SECTOR_FOOTER_SIZE - 12]; // Unused portion of the footer
-=======
-    u8 saveBlock3Chunk[SAVE_BLOCK_3_CHUNK_SIZE];
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     u16 id;
     u16 checksum;
     u32 signature;
@@ -110,11 +93,7 @@ extern u32 gSaveCounter;
 extern struct SaveSector *gFastSaveSector;
 extern u16 gIncrementalSectorId;
 extern u16 gSaveFileStatus;
-<<<<<<< HEAD
 extern void (*gGameContinueCallback)(void);
-=======
-extern MainCallback gGameContinueCallback;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 extern struct SaveSectorLocation gRamSaveSectorLocations[];
 
 extern struct SaveSector gSaveDataBuffer;

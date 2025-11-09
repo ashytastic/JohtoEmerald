@@ -4,11 +4,7 @@
 #define VARS_START 0x4000
 
 // temporary vars
-<<<<<<< HEAD
 // The first 0x10 vars are are temporary--they are cleared every time a map is loaded.
-=======
-// The first 0x10 vars are temporary--they are cleared every time a map is loaded.
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #define TEMP_VARS_START            0x4000
 #define VAR_TEMP_0                 (TEMP_VARS_START + 0x0)
 #define VAR_TEMP_1                 (TEMP_VARS_START + 0x1)
@@ -99,7 +95,6 @@
 #define VAR_POKELOT_RND1                                 0x404B
 #define VAR_POKELOT_RND2                                 0x404C
 #define VAR_POKELOT_PRIZE_PLACE                          0x404D
-<<<<<<< HEAD
 #define VAR_REPEL_LAST_USED                              0x404E
 #define VAR_LOTAD_SIZE_RECORD                            0x404F
 #define VAR_NEWBARK_TOWN_STATE                           0x4050 //Hns Vars start here. 0 = havent set clock, 1 = convo with mom, 2 = talk to elm, 3 = go to mr pokemon, 4 = go to mom again, 5 = done. 6 = First time beating league, 7 = done.
@@ -157,70 +152,10 @@
 #define VAR_ICE_PATH_STATE                               0x4084 //0 = meet kimono, 1 = done
 #define VAR_SSAQUA_STATE                                 0x4085 // 0 = talk to olivine sailor, 1 = encounter grandfather, 2 = find sleeping sailor, 3 = find sailor, 4 = find girl, 5 = receive arrival message, 6 = talk to exit sailor, 7 = done
 #define VAR_CLEFAIRY_DOLL_STATE                          0x4086
-=======
-#define VAR_UNUSED_0x404E                                0x404E // Unused Var
-#define VAR_LOTAD_SIZE_RECORD                            0x404F
-#define VAR_LITTLEROOT_TOWN_STATE                        0x4050
-#define VAR_OLDALE_TOWN_STATE                            0x4051
-#define VAR_DEWFORD_TOWN_STATE                           0x4052 // Unused Var
-#define VAR_LAVARIDGE_TOWN_STATE                         0x4053
-#define VAR_CURRENT_SECRET_BASE                          0x4054 // was probably allocated for VAR_FALLARBOR_TOWN_STATE at one point
-#define VAR_VERDANTURF_TOWN_STATE                        0x4055 // Unused Var
-#define VAR_PACIFIDLOG_TOWN_STATE                        0x4056 // Unused Var
-#define VAR_PETALBURG_CITY_STATE                         0x4057
-#define VAR_SLATEPORT_CITY_STATE                         0x4058
-#define VAR_MAUVILLE_CITY_STATE                          0x4059 // Unused Var
-#define VAR_RUSTBORO_CITY_STATE                          0x405A
-#define VAR_FORTREE_CITY_STATE                           0x405B // Unused Var
-#define VAR_LILYCOVE_CITY_STATE                          0x405C // Unused Var
-#define VAR_MOSSDEEP_CITY_STATE                          0x405D
-#define VAR_SOOTOPOLIS_CITY_STATE                        0x405E
-#define VAR_EVER_GRANDE_CITY_STATE                       0x405F // Unused Var
-#define VAR_ROUTE101_STATE                               0x4060
-#define VAR_ROUTE102_STATE                               0x4061 // Unused Var
-#define VAR_ROUTE103_STATE                               0x4062 // Unused Var
-#define VAR_ROUTE104_STATE                               0x4063
-#define VAR_ROUTE105_STATE                               0x4064 // Unused Var
-#define VAR_ROUTE106_STATE                               0x4065 // Unused Var
-#define VAR_ROUTE107_STATE                               0x4066 // Unused Var
-#define VAR_ROUTE108_STATE                               0x4067 // Unused Var
-#define VAR_ROUTE109_STATE                               0x4068 // Unused Var
-#define VAR_ROUTE110_STATE                               0x4069
-#define VAR_ROUTE111_STATE                               0x406A // Unused Var
-#define VAR_ROUTE112_STATE                               0x406B // Unused Var
-#define VAR_ROUTE113_STATE                               0x406C // Unused Var
-#define VAR_ROUTE114_STATE                               0x406D // Unused Var
-#define VAR_ROUTE115_STATE                               0x406E // Unused Var
-#define VAR_ROUTE116_STATE                               0x406F
-#define VAR_ROUTE117_STATE                               0x4070 // Unused Var
-#define VAR_ROUTE118_STATE                               0x4071
-#define VAR_ROUTE119_STATE                               0x4072
-#define VAR_ROUTE120_STATE                               0x4073 // Unused Var
-#define VAR_ROUTE121_STATE                               0x4074
-#define VAR_ROUTE122_STATE                               0x4075 // Unused Var
-#define VAR_ROUTE123_STATE                               0x4076 // Unused Var
-#define VAR_ROUTE124_STATE                               0x4077 // Unused Var
-#define VAR_ROUTE125_STATE                               0x4078 // Unused Var
-#define VAR_ROUTE126_STATE                               0x4079 // Unused Var
-#define VAR_ROUTE127_STATE                               0x407A // Unused Var
-#define VAR_ROUTE128_STATE                               0x407B
-#define VAR_ROUTE129_STATE                               0x407C // Unused Var
-#define VAR_ROUTE130_STATE                               0x407D // Unused Var
-#define VAR_ROUTE131_STATE                               0x407E // Unused Var
-#define VAR_ROUTE132_STATE                               0x407F // Unused Var
-#define VAR_ROUTE133_STATE                               0x4080 // Unused Var
-#define VAR_ROUTE134_STATE                               0x4081 // Unused Var
-#define VAR_LITTLEROOT_HOUSES_STATE_MAY                  0x4082
-#define VAR_UNUSED_0x4083                                0x4083 // Unused Var
-#define VAR_BIRCH_LAB_STATE                              0x4084
-#define VAR_PETALBURG_GYM_STATE                          0x4085 // 0-1: Wally tutorial, 2-6: 0-4 badges, 7: Defeated Norman, 8: Rematch Norman
-#define VAR_CONTEST_HALL_STATE                           0x4086
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #define VAR_CABLE_CLUB_STATE                             0x4087
 #define VAR_CONTEST_TYPE                                 0x4088
 #define VAR_SECRET_BASE_INITIALIZED                      0x4089
 #define VAR_CONTEST_PRIZE_PICKUP                         0x408A
-<<<<<<< HEAD
 #define VAR_FAN_CLUB_GUY                                 0x408B // Unused Var
 #define VAR_FAN_CLUB_CLEFAIRY                            0x408C //0 = goto copycat, 1 = goto fanclub, 2 = goto copycat, 3 = done
 #define VAR_KANTO_ROCKET_STORY_STATE                     0x408D //0 = goto powerplant, 1 = powerplant cop, 2 = goto cerulean gym, 3 = goto bridge, 4 = battle rocket, 5 = retrieve part, 6 = return part, 7 = done.
@@ -244,42 +179,13 @@
 #define VAR_UNUSED_HNS_VAR7                              0x409F// HnS Vars end
 #define VAR_SLATEPORT_HARBOR_STATE                       0x40A0
 #define VAR_UNUSED_0x40A1                                0x40A1 
-=======
-#define VAR_UNUSED_0x408B                                0x408B // Unused Var
-#define VAR_LITTLEROOT_HOUSES_STATE_BRENDAN              0x408C
-#define VAR_LITTLEROOT_RIVAL_STATE                       0x408D
-#define VAR_BOARD_BRINEY_BOAT_STATE                      0x408E
-#define VAR_DEVON_CORP_3F_STATE                          0x408F
-#define VAR_BRINEY_HOUSE_STATE                           0x4090
-#define VAR_UNUSED_0x4091                                0x4091 // Unused Var
-#define VAR_LITTLEROOT_INTRO_STATE                       0x4092
-#define VAR_MAUVILLE_GYM_STATE                           0x4093
-#define VAR_LILYCOVE_MUSEUM_2F_STATE                     0x4094
-#define VAR_LILYCOVE_FAN_CLUB_STATE                      0x4095
-#define VAR_BRINEY_LOCATION                              0x4096
-#define VAR_INIT_SECRET_BASE                             0x4097
-#define VAR_PETALBURG_WOODS_STATE                        0x4098
-#define VAR_LILYCOVE_CONTEST_LOBBY_STATE                 0x4099
-#define VAR_RUSTURF_TUNNEL_STATE                         0x409A
-#define VAR_UNUSED_0x409B                                0x409B // Unused Var
-#define VAR_ELITE_4_STATE                                0x409C
-#define VAR_UNUSED_0x409D                                0x409D // Unused Var
-#define VAR_MOSSDEEP_SPACE_CENTER_STAIR_GUARD_STATE      0x409E
-#define VAR_MOSSDEEP_SPACE_CENTER_STATE                  0x409F
-#define VAR_SLATEPORT_HARBOR_STATE                       0x40A0
-#define VAR_UNUSED_0x40A1                                0x40A1 // Unused var
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #define VAR_SEAFLOOR_CAVERN_STATE                        0x40A2
 #define VAR_CABLE_CAR_STATION_STATE                      0x40A3
 #define VAR_SAFARI_ZONE_STATE                            0x40A4  // 0: In or out of SZ, 1: Player exiting SZ, 2: Player entering SZ
 #define VAR_TRICK_HOUSE_BEING_WATCHED_STATE              0x40A5
 #define VAR_TRICK_HOUSE_FOUND_TRICK_MASTER               0x40A6
 #define VAR_TRICK_HOUSE_ENTRANCE_STATE                   0x40A7
-<<<<<<< HEAD
 #define VAR_UNUSED_0x40A8                                0x40A8 
-=======
-#define VAR_UNUSED_0x40A8                                0x40A8 // Unused Var
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #define VAR_CYCLING_CHALLENGE_STATE                      0x40A9
 #define VAR_SLATEPORT_MUSEUM_1F_STATE                    0x40AA
 #define VAR_TRICK_HOUSE_PUZZLE_1_STATE                   0x40AB
@@ -340,11 +246,7 @@
 #define VAR_GIFT_UNUSED_5                                0x40E2 // Var is written to, but never read
 #define VAR_GIFT_UNUSED_6                                0x40E3 // Var is written to, but never read
 #define VAR_GIFT_UNUSED_7                                0x40E4 // var is written to, but never read
-<<<<<<< HEAD
 #define VAR_DEBUG_OPTIONS                                0x40E5
-=======
-#define VAR_UNUSED_0x40E5                                0x40E5 // Unused Var
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #define VAR_DAILY_SLOTS                                  0x40E6
 #define VAR_DAILY_WILDS                                  0x40E7
 #define VAR_DAILY_BLENDER                                0x40E8
@@ -362,7 +264,6 @@
 #define VAR_ROXANNE_CALL_STEP_COUNTER                    0x40F4
 #define VAR_SCOTT_BF_CALL_STEP_COUNTER                   0x40F5
 #define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER             0x40F6
-<<<<<<< HEAD
 #define VAR_SUICUNE_EVENT                                0x40F7
 #define VAR_ENTEI_EVENT                                  0x40F8
 #define VAR_RAIKOU_EVENT                                 0x40F9
@@ -372,17 +273,6 @@
 #define VAR_SURF_MON_SLOT                                0x40FD // Added new VAR for Surfing Overworld Sprites - Holds Surfing Party Mon index
 #define VAR_FREEZE_SURF_BLOB                             0x40FE // Added new VAR for Surfing Overworld Sprites - Set on surf init to stop blob overlay being offset incorrectly
 #define VAR_GARBAGEVAR                                0x40FF // Used to replace little root state
-=======
-#define VAR_UNUSED_0x40F7                                0x40F7 // Unused Var
-#define VAR_UNUSED_0x40F8                                0x40F8 // Unused Var
-#define VAR_UNUSED_0x40F9                                0x40F9 // Unused Var
-#define VAR_UNUSED_0x40FA                                0x40FA // Unused Var
-#define VAR_UNUSED_0x40FB                                0x40FB // Unused Var
-#define VAR_UNUSED_0x40FC                                0x40FC // Unused Var
-#define VAR_UNUSED_0x40FD                                0x40FD // Unused Var
-#define VAR_UNUSED_0x40FE                                0x40FE // Unused Var
-#define VAR_UNUSED_0x40FF                                0x40FF // Unused Var
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 #define VARS_END                                         0x40FF
 #define VARS_COUNT                                       (VARS_END - VARS_START + 1)
@@ -411,11 +301,7 @@
 #define VAR_MON_BOX_ID                0x8012
 #define VAR_MON_BOX_POS               0x8013
 #define VAR_UNUSED_0x8014             0x8014
-<<<<<<< HEAD
 #define VAR_TRAINER_BATTLE_OPPONENT_A 0x8015 // Alias of gTrainerBattleOpponent_A
-=======
-#define VAR_TRAINER_BATTLE_OPPONENT_A 0x8015 // Alias of TRAINER_BATTLE_PARAM.opponentA
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 #define SPECIAL_VARS_END              0x8015
 
@@ -438,19 +324,4 @@
 
 #define VAR_TEMP_TRANSFERRED_SPECIES  VAR_TEMP_1
 
-<<<<<<< HEAD
-=======
-#if TESTING
-#define TESTING_VARS_START                  0x9000
-#define TESTING_VAR_DIFFICULTY              (TESTING_VARS_START + 0x0)
-#define TESTING_VAR_STARTING_STATUS         (TESTING_VARS_START + 0x1)
-#define TESTING_VAR_STARTING_STATUS_TIMER   (TESTING_VARS_START + 0x2)
-#define TESTING_VAR_UNUSED_3                (TESTING_VARS_START + 0x3)
-#define TESTING_VAR_UNUSED_4                (TESTING_VARS_START + 0x4)
-#define TESTING_VAR_UNUSED_5                (TESTING_VARS_START + 0x5)
-#define TESTING_VAR_UNUSED_6                (TESTING_VARS_START + 0x6)
-#define TESTING_VAR_UNUSED_7                (TESTING_VARS_START + 0x7)
-#endif // TESTING
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #endif // GUARD_CONSTANTS_VARS_H

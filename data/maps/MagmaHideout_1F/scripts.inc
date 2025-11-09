@@ -4,7 +4,6 @@ MagmaHideout_1F_MapScripts::
 
 MagmaHideout_1F_OnTransition:
 	setvar VAR_JAGGED_PASS_ASH_WEATHER, 0
-<<<<<<< HEAD
 	goto_if_set FLAG_DEFEATED_ENTEI, MagmaHideout_End
 	goto_if_set FLAG_UNLOCK_DOGS, MagmaHideout_Entei_CryFaint
 	end
@@ -15,8 +14,6 @@ MagmaHideout_Entei_CryFaint::
 	end
 
 MagmaHideout_End::
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 MagmaHideout_1F_EventScript_Grunt1::
@@ -25,11 +22,7 @@ MagmaHideout_1F_EventScript_Grunt1::
 	end
 
 MagmaHideout_1F_EventScript_Grunt2::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_RICHARDO, MagmaHideout_1F_Text_Grunt2Intro, MagmaHideout_1F_Text_Grunt2Defeat
-=======
-	trainerbattle_single TRAINER_GRUNT_MAGMA_HIDEOUT_2, MagmaHideout_1F_Text_Grunt2Intro, MagmaHideout_1F_Text_Grunt2Defeat
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox MagmaHideout_1F_Text_Grunt2PostBattle, MSGBOX_AUTOCLOSE
 	end
 

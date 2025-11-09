@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 #include "global.h"
 
@@ -119,10 +118,6 @@ extern const u8 gText_StoodOutAsMuchAsMon[];
 extern const u8 gText_JammedAppealsMadeEvenLessNoticeable[];
 extern const u8 gText_EveryonesAppealsMadeSame[];
 
-=======
-#include "global.h"
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 // sAppealResultTexts
 extern const u8 gText_BecameMoreConsciousOfOtherMons[];
 extern const u8 gText_MonCantMakeAnAppealAfterThis[];
@@ -187,7 +182,6 @@ extern const u8 gText_BadConditionResultedInWeakAppeal[];
 extern const u8 gText_MonWasUnaffected[];
 extern const u8 gText_AttractedCrowdsAttention[];
 
-<<<<<<< HEAD
 // sContestConditions
 extern const u8 gText_Contest_Coolness[];
 extern const u8 gText_Contest_Beauty[];
@@ -203,8 +197,6 @@ extern const u8 gText_SmartMove[];
 extern const u8 gText_ToughMove[];
 extern const u8 gText_3QuestionMarks[];
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 // Misc, used directly
 extern const u8 gText_MonAppealedWithMove[];
 extern const u8 gText_MonCantAppealNextTurn[];
@@ -225,7 +217,6 @@ extern const u8 gText_Contest_Fear[];
 extern const u8 gText_AppealNumWhichMoveWillBePlayed[];
 extern const u8 gText_AppealNumButItCantParticipate[];
 
-<<<<<<< HEAD
 const u8 *const gContestEffectDescriptionPointers[] =
 {
     [CONTEST_EFFECT_HIGHLY_APPEALING]                      = gText_HighlyAppealingMove,
@@ -362,8 +353,6 @@ static const u8 *const sRoundResultTexts[] =
     gText_EveryonesAppealsMadeSame
 };
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static const u8 *const sAppealResultTexts[] =
 {
     [CONTEST_STRING_MORE_CONSCIOUS]            = gText_BecameMoreConsciousOfOtherMons,
@@ -429,7 +418,6 @@ static const u8 *const sAppealResultTexts[] =
     [CONTEST_STRING_UNAFFECTED]                = gText_MonWasUnaffected,
     [CONTEST_STRING_ATTRACTED_ATTENTION]       = gText_AttractedCrowdsAttention
 };
-<<<<<<< HEAD
 
 static const u8 *const sContestConditions[] =
 {
@@ -449,5 +437,3 @@ static const u8 *const sInvalidContestMoveNames[] =
     [CONTEST_CATEGORY_TOUGH]   = gText_ToughMove,
     [CONTEST_CATEGORIES_COUNT] = gText_3QuestionMarks
 };
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

@@ -1,9 +1,6 @@
 AbandonedShip_Rooms2_1F_MapScripts::
-<<<<<<< HEAD
 	map_script MAP_SCRIPT_ON_TRANSITION, SetTimeEncounters
 	map_script MAP_SCRIPT_ON_RESUME, SetTimeEncounters
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.byte 0
 
 AbandonedShip_Rooms2_1F_EventScript_Dan::
@@ -50,11 +47,7 @@ AbandonedShip_Rooms2_1F_EventScript_Jani::
 	end
 
 AbandonedShip_Rooms2_1F_EventScript_Garrison::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_RUSS, AbandonedShip_Rooms2_1F_Text_GarrisonIntro, AbandonedShip_Rooms2_1F_Text_GarrisonDefeat
-=======
-	trainerbattle_single TRAINER_GARRISON, AbandonedShip_Rooms2_1F_Text_GarrisonIntro, AbandonedShip_Rooms2_1F_Text_GarrisonDefeat
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox AbandonedShip_Rooms2_1F_Text_GarrisonPostBattle, MSGBOX_AUTOCLOSE
 	end
 

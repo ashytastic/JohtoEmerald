@@ -30,7 +30,6 @@ gText_TheDecorWasTransferredToThePC::
 	.string "The {STR_VAR_2} was transferred\n"
 	.string "to the PC.$"
 
-<<<<<<< HEAD
 gText_PutItemInPC::
 	.string "{PLAYER} put away the {STR_VAR_2}\n"
 	.string "in the PC since bag is full.$"
@@ -38,10 +37,3 @@ gText_PutItemInPC::
 gText_TooBadBagAndPCAreFull::
 	.string "Too bad!\n"
 	.string "The BAG and PC are full…$"
-=======
-gText_ObtainedTheItems::
-	.string "Obtained {STR_VAR_1} {STR_VAR_2}!$"
-
-gText_PlayerFoundItems::
-	.string "{PLAYER} found {STR_VAR_1} {STR_VAR_2}!$"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

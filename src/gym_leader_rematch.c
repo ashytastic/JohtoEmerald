@@ -5,13 +5,7 @@
 #include "gym_leader_rematch.h"
 
 static void UpdateGymLeaderRematchFromArray(const u16 *data, size_t size, u32 maxRematch);
-<<<<<<< HEAD
 static s32 GetRematchIndex(u32 trainerIdx);
-=======
-#if FREE_MATCH_CALL == FALSE
-static s32 GetRematchIndex(u32 trainerIdx);
-#endif //FREE_MATCH_CALL
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 static const u16 GymLeaderRematches_AfterNewMauville[] = {
     REMATCH_ROXANNE,
@@ -37,11 +31,7 @@ static const u16 GymLeaderRematches_BeforeNewMauville[] = {
 
 void UpdateGymLeaderRematch(void)
 {
-<<<<<<< HEAD
     if (FlagGet(FLAG_SYS_GAME_CLEAR) && (Random() % 100) <= 50)
-=======
-    if (FlagGet(FLAG_SYS_GAME_CLEAR) && (Random() % 100) <= 30)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     {
         if (FlagGet(FLAG_WATTSON_REMATCH_AVAILABLE))
             UpdateGymLeaderRematchFromArray(GymLeaderRematches_AfterNewMauville, ARRAY_COUNT(GymLeaderRematches_AfterNewMauville), 5);
@@ -52,18 +42,10 @@ void UpdateGymLeaderRematch(void)
 
 static void UpdateGymLeaderRematchFromArray(const u16 *data, size_t size, u32 maxRematch)
 {
-<<<<<<< HEAD
-=======
-#if FREE_MATCH_CALL == FALSE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     s32 whichLeader = 0;
     s32 lowestRematchIndex = 5;
     u32 i;
     s32 rematchIndex;
-<<<<<<< HEAD
-=======
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     for (i = 0; i < size; i++)
     {
         if (!gSaveBlock1Ptr->trainerRematches[data[i]])
@@ -107,15 +89,8 @@ static void UpdateGymLeaderRematchFromArray(const u16 *data, size_t size, u32 ma
             }
         }
     }
-<<<<<<< HEAD
 }
 
-=======
-#endif //FREE_MATCH_CALL
-}
-
-#if FREE_MATCH_CALL == FALSE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static s32 GetRematchIndex(u32 trainerIdx)
 {
     s32 i;
@@ -128,7 +103,3 @@ static s32 GetRematchIndex(u32 trainerIdx)
     }
     return 5;
 }
-<<<<<<< HEAD
-=======
-#endif //FREE_MATCH_CALL
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

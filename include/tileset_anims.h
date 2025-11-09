@@ -7,10 +7,7 @@ void UpdateTilesetAnimations(void);
 void TransferTilesetAnimsBuffer(void);
 
 void InitTilesetAnim_General(void);
-<<<<<<< HEAD
 void InitTilesetAnim_HoennGeneral(void);
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 void InitTilesetAnim_Petalburg(void);
 void InitTilesetAnim_Rustboro(void);
 void InitTilesetAnim_Dewford(void);
@@ -35,13 +32,10 @@ void InitTilesetAnim_MauvilleGym(void);
 void InitTilesetAnim_EliteFour(void);
 void InitTilesetAnim_BattleDome(void);
 void InitTilesetAnim_BattlePyramid(void);
-<<<<<<< HEAD
 void InitTilesetAnim_CeladonCity(void);
 void InitTilesetAnim_SilphCo(void);
 void InitTilesetAnim_NationalPark(void);
 void InitTilesetAnim_ecruteak_theater(void);
 void InitTilesetAnim_AzaleaTown_Gym(void);
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 #endif // GUARD_TILESET_ANIMS_H

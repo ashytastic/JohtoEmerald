@@ -26,10 +26,6 @@
 
 void PrintAgbHeader();
 void PrintAgbTrack(std::vector<Event>& events);
-<<<<<<< HEAD
-=======
-void PrintAgbTrackLoop(std::vector<Event>& events, int trackLoops);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 void PrintAgbFooter();
 
 extern int g_agbTrack;

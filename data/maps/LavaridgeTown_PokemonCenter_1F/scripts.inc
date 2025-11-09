@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 .set LOCALID_NURSE, 1
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 LavaridgeTown_PokemonCenter_1F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, LavaridgeTown_PokemonCenter_1F_OnTransition
 	map_script MAP_SCRIPT_ON_RESUME, CableClub_OnResume
@@ -14,11 +11,7 @@ LavaridgeTown_PokemonCenter_1F_OnTransition:
 	end
 
 LavaridgeTown_PokemonCenter_1F_EventScript_Nurse::
-<<<<<<< HEAD
 	setvar VAR_0x800B, LOCALID_NURSE
-=======
-	setvar VAR_0x800B, LOCALID_LAVARIDGE_NURSE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call Common_EventScript_PkmnCenterNurse
 	waitmessage
 	waitbuttonpress

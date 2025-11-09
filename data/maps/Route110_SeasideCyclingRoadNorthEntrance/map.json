@@ -3,11 +3,7 @@
   "name": "Route110_SeasideCyclingRoadNorthEntrance",
   "layout": "LAYOUT_ROUTE110_SEASIDE_CYCLING_ROAD_ENTRANCE",
   "music": "MUS_SLATEPORT",
-<<<<<<< HEAD
   "region_map_section": "MAPSEC_ROUTE_35",
-=======
-  "region_map_section": "MAPSEC_ROUTE_110",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -19,11 +15,7 @@
   "connections": null,
   "object_events": [
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_CLERK",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 7,
       "y": 2,
       "elevation": 3,
@@ -42,44 +34,28 @@
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_ROUTE110",
-<<<<<<< HEAD
       "dest_warp_id": "4"
-=======
-      "dest_warp_id": "2"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "x": 2,
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_ROUTE110",
-<<<<<<< HEAD
       "dest_warp_id": "4"
-=======
-      "dest_warp_id": "2"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "x": 12,
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_ROUTE110",
-<<<<<<< HEAD
       "dest_warp_id": "5"
-=======
-      "dest_warp_id": "3"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "x": 13,
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_ROUTE110",
-<<<<<<< HEAD
       "dest_warp_id": "5"
-=======
-      "dest_warp_id": "3"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "coord_events": [

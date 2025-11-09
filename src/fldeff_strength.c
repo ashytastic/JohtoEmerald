@@ -15,11 +15,7 @@ static void FieldCallback_Strength(void);
 static void StartStrengthFieldEffect(void);
 
 // text
-<<<<<<< HEAD
 bool8 SetUpFieldMove_Strength(void)
-=======
-bool32 SetUpFieldMove_Strength(void)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     if (CheckObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_PUSHABLE_BOULDER) == TRUE)
     {

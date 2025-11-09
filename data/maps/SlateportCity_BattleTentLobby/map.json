@@ -3,11 +3,7 @@
   "name": "SlateportCity_BattleTentLobby",
   "layout": "LAYOUT_BATTLE_TENT_LOBBY",
   "music": "MUS_B_TOWER_RS",
-<<<<<<< HEAD
   "region_map_section": "MAPSEC_MAHOGANY_TOWN",
-=======
-  "region_map_section": "MAPSEC_SLATEPORT_CITY",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -16,18 +12,10 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-<<<<<<< HEAD
   "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_M",
-=======
-  "connections": null,
-  "object_events": [
-    {
-      "local_id": "LOCALID_SLATEPORT_TENT_ATTENDANT",
-      "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_1",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 6,
       "y": 5,
       "elevation": 3,
@@ -53,11 +41,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_MAN",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 3,
       "y": 7,
       "elevation": 3,
@@ -112,13 +96,9 @@
       "dest_warp_id": "3"
     }
   ],
-<<<<<<< HEAD
   "coord_events": [
 
   ],
-=======
-  "coord_events": [],
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "bg_events": [
     {
       "type": "sign",

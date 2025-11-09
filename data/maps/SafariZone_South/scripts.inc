@@ -1,15 +1,9 @@
-<<<<<<< HEAD
 .set LOCALID_ATTENDANT, 1
 
 SafariZone_South_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, SafariZone_South_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, SafariZone_South_OnFrame
 	map_script MAP_SCRIPT_ON_RESUME, SetTimeEncounters
-=======
-SafariZone_South_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, SafariZone_South_OnTransition
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, SafariZone_South_OnFrame
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.byte 0
 
 SafariZone_South_OnFrame:
@@ -18,37 +12,22 @@ SafariZone_South_OnFrame:
 
 SafariZone_South_EventScript_EnterSafariZone::
 	lockall
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, SafariZone_South_Movement_PlayerEnter
 	waitmovement 0
 	applymovement LOCALID_ATTENDANT, SafariZone_South_Movement_ExitAttendantBlockDoor
 	waitmovement 0
 	setobjectxyperm LOCALID_ATTENDANT, 32, 34
-=======
-	applymovement LOCALID_PLAYER, SafariZone_South_Movement_PlayerEnter
-	waitmovement 0
-	applymovement LOCALID_SAFARI_EXIT_ATTENDANT, SafariZone_South_Movement_ExitAttendantBlockDoor
-	waitmovement 0
-	setobjectxyperm LOCALID_SAFARI_EXIT_ATTENDANT, 32, 34
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setvar VAR_SAFARI_ZONE_STATE, 0
 	releaseall
 	end
 
 SafariZone_South_OnTransition:
-<<<<<<< HEAD
 	callnative SetTimeBasedEncounters
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call_if_eq VAR_SAFARI_ZONE_STATE, 2, SafariZone_South_EventScript_SetExitAttendantAside
 	end
 
 SafariZone_South_EventScript_SetExitAttendantAside::
-<<<<<<< HEAD
 	setobjectxyperm LOCALID_ATTENDANT, 31, 34
-=======
-	setobjectxyperm LOCALID_SAFARI_EXIT_ATTENDANT, 31, 34
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	return
 
 SafariZone_South_Movement_PlayerEnter:
@@ -97,29 +76,17 @@ SafariZone_South_EventScript_ExitEarly::
 	end
 
 SafariZone_South_EventScript_ExitEarlyNorth::
-<<<<<<< HEAD
 	applymovement LOCALID_ATTENDANT, SafariZone_South_Movement_MoveExitAttendantNorth
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, SafariZone_South_Movement_PlayerExitNorth
-=======
-	applymovement LOCALID_SAFARI_EXIT_ATTENDANT, SafariZone_South_Movement_MoveExitAttendantNorth
-	waitmovement 0
-	applymovement LOCALID_PLAYER, SafariZone_South_Movement_PlayerExitNorth
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	goto SafariZone_South_EventScript_Exit
 	end
 
 SafariZone_South_EventScript_ExitEarlyEast::
-<<<<<<< HEAD
 	applymovement LOCALID_ATTENDANT, SafariZone_South_Movement_MoveExitAttendantEast
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, SafariZone_South_Movement_PlayerExitEast
-=======
-	applymovement LOCALID_SAFARI_EXIT_ATTENDANT, SafariZone_South_Movement_MoveExitAttendantEast
-	waitmovement 0
-	applymovement LOCALID_PLAYER, SafariZone_South_Movement_PlayerExitEast
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	goto SafariZone_South_EventScript_Exit
 	end
@@ -127,11 +94,7 @@ SafariZone_South_EventScript_ExitEarlyEast::
 SafariZone_South_EventScript_Exit::
 	setvar VAR_SAFARI_ZONE_STATE, 1
 	special ExitSafariMode
-<<<<<<< HEAD
 	warpdoor MAP_ROUTE121_SAFARI_ZONE_GATE_SAFARI_ZONE_ENTRANCE, 2, 5
-=======
-	warpdoor MAP_ROUTE121_SAFARI_ZONE_ENTRANCE, 2, 5
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitstate
 	end
 

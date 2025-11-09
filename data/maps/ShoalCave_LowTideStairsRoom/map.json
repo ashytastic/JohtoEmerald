@@ -12,11 +12,7 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-<<<<<<< HEAD
   "connections": 0,
-=======
-  "connections": null,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -27,15 +23,9 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-<<<<<<< HEAD
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ShoalCave_LowTideStairsRoom_EventScript_ItemIceHeal",
       "flag": "FLAG_ITEM_GARBAGEFLAG"
-=======
-      "trainer_sight_or_berry_tree_id": "ITEM_ICE_HEAL",
-      "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_SHOAL_CAVE_STAIRS_ROOM_ICE_HEAL"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "warp_events": [
@@ -54,13 +44,9 @@
       "dest_warp_id": "2"
     }
   ],
-<<<<<<< HEAD
   "coord_events": [
 
   ],
-=======
-  "coord_events": [],
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "bg_events": [
     {
       "type": "sign",

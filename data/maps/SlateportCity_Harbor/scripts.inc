@@ -1,12 +1,9 @@
-<<<<<<< HEAD
 .set LOCALID_CAPT_STERN, 4
 .set LOCALID_SS_TIDAL, 5
 .set LOCALID_GRUNT, 6
 .set LOCALID_ARCHIE, 7
 .set LOCALID_SUBMARINE, 8
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 SlateportCity_Harbor_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, SlateportCity_Harbor_OnTransition
 	.byte 0
@@ -19,24 +16,14 @@ SlateportCity_Harbor_OnTransition:
 	end
 
 SlateportCity_Harbor_EventScript_ShowSSTidal::
-<<<<<<< HEAD
 	clearflag FLAG_GARBAGEFLAG
-=======
-	clearflag FLAG_HIDE_SLATEPORT_CITY_HARBOR_SS_TIDAL
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	return
 
 SlateportCity_Harbor_EventScript_ReadyAquaEscapeScene::
 	savebgm MUS_ENCOUNTER_AQUA
-<<<<<<< HEAD
 	setobjectxyperm LOCALID_CAPT_STERN, 12, 13
 	setobjectmovementtype LOCALID_CAPT_STERN, MOVEMENT_TYPE_FACE_LEFT
 	setflag FLAG_GARBAGEFLAG
-=======
-	setobjectxyperm LOCALID_SLATEPORT_HARBOR_CAPT_STERN, 12, 13
-	setobjectmovementtype LOCALID_SLATEPORT_HARBOR_CAPT_STERN, MOVEMENT_TYPE_FACE_LEFT
-	setflag FLAG_HIDE_SLATEPORT_CITY_HARBOR_PATRONS
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	return
 
 SlateportCity_Harbor_EventScript_AquaEscapeTrigger0::
@@ -60,17 +47,12 @@ SlateportCity_Harbor_EventScript_AquaEscapeTrigger2::
 SlateportCity_Harbor_EventScript_AquaEscapeTrigger3::
 	lockall
 	setvar VAR_0x8008, 3
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, SlateportCity_Harbor_Movement_PlayerWalkUp
-=======
-	applymovement LOCALID_PLAYER, SlateportCity_Harbor_Movement_PlayerWalkUp
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	goto SlateportCity_Harbor_EventScript_AquaEscapeScene
 	end
 
 SlateportCity_Harbor_EventScript_AquaEscapeScene::
-<<<<<<< HEAD
 	applymovement LOCALID_ARCHIE, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	applymovement LOCALID_GRUNT, Common_Movement_WalkInPlaceFasterDown
@@ -88,81 +70,37 @@ SlateportCity_Harbor_EventScript_AquaEscapeScene::
 	setvar VAR_SLATEPORT_HARBOR_STATE, 2
 	setflag FLAG_MET_TEAM_AQUA_HARBOR
 	setflag FLAG_GARBAGEFLAG
-=======
-	applymovement LOCALID_SLATEPORT_HARBOR_ARCHIE, Common_Movement_WalkInPlaceFasterDown
-	waitmovement 0
-	applymovement LOCALID_SLATEPORT_HARBOR_GRUNT, Common_Movement_WalkInPlaceFasterDown
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
-	waitmovement 0
-	msgbox SlateportCity_Harbor_Text_ArchieYouAgainHideoutInLilycove, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_SLATEPORT_HARBOR_GRUNT, SlateportCity_Harbor_Movement_AquaBoardSub
-	applymovement LOCALID_SLATEPORT_HARBOR_ARCHIE, SlateportCity_Harbor_Movement_AquaBoardSub
-	applymovement LOCALID_SLATEPORT_HARBOR_SUBMARINE, SlateportCity_Harbor_Movement_SubmarineExit
-	waitmovement 0
-	removeobject LOCALID_SLATEPORT_HARBOR_GRUNT
-	removeobject LOCALID_SLATEPORT_HARBOR_ARCHIE
-	removeobject LOCALID_SLATEPORT_HARBOR_SUBMARINE
-	setvar VAR_SLATEPORT_HARBOR_STATE, 2
-	setflag FLAG_MET_TEAM_AQUA_HARBOR
-	setflag FLAG_HIDE_LILYCOVE_MOTEL_SCOTT
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call_if_eq VAR_0x8008, 0, SlateportCity_Harbor_EventScript_SternApproachPlayer0
 	call_if_eq VAR_0x8008, 1, SlateportCity_Harbor_EventScript_SternApproachPlayer1
 	call_if_eq VAR_0x8008, 2, SlateportCity_Harbor_EventScript_SternApproachPlayer
 	call_if_eq VAR_0x8008, 3, SlateportCity_Harbor_EventScript_SternApproachPlayer
 	msgbox SlateportCity_Harbor_Text_CaptSternWhyStealMySubmarine, MSGBOX_DEFAULT
 	closemessage
-<<<<<<< HEAD
 	setflag FLAG_GARBAGEFLAG
 	setflag FLAG_GARBAGEFLAG
 	copyobjectxytoperm LOCALID_CAPT_STERN
 	setobjectmovementtype LOCALID_CAPT_STERN, MOVEMENT_TYPE_FACE_RIGHT
-=======
-	setflag FLAG_HIDE_AQUA_HIDEOUT_1F_GRUNT_1_BLOCKING_ENTRANCE
-	setflag FLAG_HIDE_AQUA_HIDEOUT_1F_GRUNT_2_BLOCKING_ENTRANCE
-	copyobjectxytoperm LOCALID_SLATEPORT_HARBOR_CAPT_STERN
-	setobjectmovementtype LOCALID_SLATEPORT_HARBOR_CAPT_STERN, MOVEMENT_TYPE_FACE_RIGHT
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	releaseall
 	end
 
 SlateportCity_Harbor_EventScript_SternApproachPlayer0::
-<<<<<<< HEAD
 	applymovement LOCALID_CAPT_STERN, SlateportCity_Harbor_Movement_SternApproachPlayer0
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
-=======
-	applymovement LOCALID_SLATEPORT_HARBOR_CAPT_STERN, SlateportCity_Harbor_Movement_SternApproachPlayer0
-	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 SlateportCity_Harbor_EventScript_SternApproachPlayer1::
-<<<<<<< HEAD
 	applymovement LOCALID_CAPT_STERN, SlateportCity_Harbor_Movement_SternApproachPlayer1
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
-=======
-	applymovement LOCALID_SLATEPORT_HARBOR_CAPT_STERN, SlateportCity_Harbor_Movement_SternApproachPlayer1
-	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 SlateportCity_Harbor_EventScript_SternApproachPlayer::
-<<<<<<< HEAD
 	applymovement LOCALID_CAPT_STERN, SlateportCity_Harbor_Movement_SternApproachPlayer
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
-=======
-	applymovement LOCALID_SLATEPORT_HARBOR_CAPT_STERN, SlateportCity_Harbor_Movement_SternApproachPlayer
-	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
@@ -296,13 +234,8 @@ SlateportCity_Harbor_EventScript_BoardFerry::
 	call_if_eq VAR_FACING, DIR_NORTH, SlateportCity_Harbor_EventScript_BoardFerryNorth
 	call_if_eq VAR_FACING, DIR_EAST, SlateportCity_Harbor_EventScript_BoardFerryEast
 	delay 30
-<<<<<<< HEAD
 	hideobjectat OBJ_EVENT_ID_PLAYER, 0
 	setvar VAR_0x8004, LOCALID_SS_TIDAL
-=======
-	hideplayer
-	setvar VAR_0x8004, LOCALID_SLATEPORT_HARBOR_SS_TIDAL
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call Common_EventScript_FerryDepart
 	return
 
@@ -312,20 +245,12 @@ SlateportCity_Harbor_EventScript_CancelDestinationSelect::
 	end
 
 SlateportCity_Harbor_EventScript_BoardFerryEast::
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, SlateportCity_Harbor_Movement_BoardFerryEast
-=======
-	applymovement LOCALID_PLAYER, SlateportCity_Harbor_Movement_BoardFerryEast
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 SlateportCity_Harbor_EventScript_BoardFerryNorth::
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, SlateportCity_Harbor_Movement_BoardFerryNorth
-=======
-	applymovement LOCALID_PLAYER, SlateportCity_Harbor_Movement_BoardFerryNorth
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 

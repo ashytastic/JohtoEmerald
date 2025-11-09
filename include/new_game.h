@@ -12,10 +12,7 @@ void CopyTrainerId(u8 *dst, u8 *src);
 void NewGameInitData(void);
 void ResetMenuAndMonGlobals(void);
 void Sav2_ClearSetDefault(void);
-<<<<<<< HEAD
 void CheckIfChallengesAreActive(void);
 void CheckIfRandomizerIsActive(void);
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 #endif // GUARD_NEW_GAME_H

@@ -17,7 +17,6 @@
 // This allows them to have idle animations. Cursors prior to this are simply printed text.
 #define CURSOR_OBJECT_START CURSOR_RED_OUTLINE
 
-<<<<<<< HEAD
 struct UnkIndicatorsStruct
 {
     u8 field_0;
@@ -41,8 +40,6 @@ struct UnkIndicatorsStruct
     u8 field_17_1:2;
 };
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 struct ScrollIndicatorPair
 {
     u8 field_0;
@@ -73,10 +70,7 @@ struct RedArrowCursor
 
 // this file's functions
 static u8 ListMenuInitInternal(struct ListMenuTemplate *listMenuTemplate, u16 scrollOffset, u16 selectedRow);
-<<<<<<< HEAD
 static bool8 ListMenuChangeSelection(struct ListMenu *list, bool8 updateCursorAndCallCallback, u8 count, bool8 movingDown);
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static void ListMenuPrintEntries(struct ListMenu *list, u16 startIndex, u16 yOffset, u16 count);
 static void ListMenuDrawCursor(struct ListMenu *list);
 static void ListMenuCallSelectionChangedCallback(struct ListMenu *list, u8 onInit);
@@ -105,11 +99,7 @@ static EWRAM_DATA struct {
 EWRAM_DATA struct ScrollArrowsTemplate gTempScrollArrowTemplate = {0};
 
 // IWRAM common
-<<<<<<< HEAD
 struct {
-=======
-COMMON_DATA struct {
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     u8 cursorPal:4;
     u8 fillValue:4;
     u8 cursorShadowPal:4;
@@ -117,15 +107,9 @@ COMMON_DATA struct {
     u8 field_2_2:6; // unused
     u8 fontId:7;
     bool8 enabled:1;
-<<<<<<< HEAD
 } gListMenuOverride;
 
 struct ListMenuTemplate gMultiuseListMenuTemplate;
-=======
-} gListMenuOverride = {0};
-
-COMMON_DATA struct ListMenuTemplate gMultiuseListMenuTemplate = {0};
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 // const rom data
 static const struct
@@ -322,15 +306,9 @@ static const struct SpriteTemplate sSpriteTemplate_RedArrowCursor =
 };
 
 static const u16 sRedInterface_Pal[]    = INCBIN_U16("graphics/interface/red.gbapal"); // Shared by all of the below gfx
-<<<<<<< HEAD
 static const u32 sScrollIndicator_Gfx[] = INCBIN_U32("graphics/interface/scroll_indicator.4bpp.lz");
 static const u32 sOutlineCursor_Gfx[]   = INCBIN_U32("graphics/interface/outline_cursor.4bpp.lz");
 static const u32 sArrowCursor_Gfx[]     = INCBIN_U32("graphics/interface/arrow_cursor.4bpp.lz");
-=======
-static const u32 sScrollIndicator_Gfx[] = INCBIN_U32("graphics/interface/scroll_indicator.4bpp.smol");
-static const u32 sOutlineCursor_Gfx[]   = INCBIN_U32("graphics/interface/outline_cursor.4bpp.smol");
-static const u32 sArrowCursor_Gfx[]     = INCBIN_U32("graphics/interface/arrow_cursor.4bpp.smol");
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 // code
 static void ListMenuDummyTask(u8 taskId)
@@ -623,21 +601,11 @@ static void ListMenuPrint(struct ListMenu *list, const u8 *str, u8 x, u8 y)
     u8 colors[3];
     if (gListMenuOverride.enabled)
     {
-<<<<<<< HEAD
-=======
-        u32 fontId = gListMenuOverride.fontId;
-        if (list->template.textNarrowWidth)
-            fontId = GetFontIdToFit(str, fontId, gListMenuOverride.lettersSpacing, list->template.textNarrowWidth);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         colors[0] = gListMenuOverride.fillValue;
         colors[1] = gListMenuOverride.cursorPal;
         colors[2] = gListMenuOverride.cursorShadowPal;
         AddTextPrinterParameterized4(list->template.windowId,
-<<<<<<< HEAD
                                      gListMenuOverride.fontId,
-=======
-                                     fontId,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                                      x, y,
                                      gListMenuOverride.lettersSpacing,
                                      0, colors, TEXT_SKIP_DRAW, str);
@@ -646,21 +614,11 @@ static void ListMenuPrint(struct ListMenu *list, const u8 *str, u8 x, u8 y)
     }
     else
     {
-<<<<<<< HEAD
-=======
-        u32 fontId = list->template.fontId;
-        if (list->template.textNarrowWidth)
-            fontId = GetFontIdToFit(str, fontId, list->template.lettersSpacing, list->template.textNarrowWidth);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         colors[0] = list->template.fillValue;
         colors[1] = list->template.cursorPal;
         colors[2] = list->template.cursorShadowPal;
         AddTextPrinterParameterized4(list->template.windowId,
-<<<<<<< HEAD
                                      list->template.fontId,
-=======
-                                     fontId,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                                      x, y,
                                      list->template.lettersSpacing,
                                      0, colors, TEXT_SKIP_DRAW, str);
@@ -720,11 +678,8 @@ static void ListMenuDrawCursor(struct ListMenu *list)
     }
 }
 
-<<<<<<< HEAD
 #undef TASK_NONE
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static u8 ListMenuAddCursorObject(struct ListMenu *list, u32 cursorObjId)
 {
     struct CursorStruct cursor;
@@ -882,11 +837,7 @@ static void ListMenuScroll(struct ListMenu *list, u8 count, bool8 movingDown)
     }
 }
 
-<<<<<<< HEAD
 static bool8 ListMenuChangeSelection(struct ListMenu *list, bool8 updateCursorAndCallCallback, u8 count, bool8 movingDown)
-=======
-bool8 ListMenuChangeSelectionFull(struct ListMenu *list, bool32 updateCursor, bool32 callCallback, u8 count, bool8 movingDown)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     u16 oldSelectedRow;
     u8 selectionChange, i, cursorCount;
@@ -906,11 +857,7 @@ bool8 ListMenuChangeSelectionFull(struct ListMenu *list, bool32 updateCursor, bo
         } while (list->template.items[list->scrollOffset + list->selectedRow].id == LIST_HEADER);
     }
 
-<<<<<<< HEAD
     if (updateCursorAndCallCallback)
-=======
-    if (updateCursor)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     {
         switch (selectionChange)
         {
@@ -920,12 +867,7 @@ bool8 ListMenuChangeSelectionFull(struct ListMenu *list, bool32 updateCursor, bo
         case 1:
             ListMenuErasePrintedCursor(list, oldSelectedRow);
             ListMenuDrawCursor(list);
-<<<<<<< HEAD
             ListMenuCallSelectionChangedCallback(list, FALSE);
-=======
-            if (callCallback)
-                ListMenuCallSelectionChangedCallback(list, FALSE);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             CopyWindowToVram(list->template.windowId, COPYWIN_GFX);
             break;
         case 2:
@@ -933,12 +875,7 @@ bool8 ListMenuChangeSelectionFull(struct ListMenu *list, bool32 updateCursor, bo
             ListMenuErasePrintedCursor(list, oldSelectedRow);
             ListMenuScroll(list, cursorCount, movingDown);
             ListMenuDrawCursor(list);
-<<<<<<< HEAD
             ListMenuCallSelectionChangedCallback(list, FALSE);
-=======
-            if (callCallback)
-                ListMenuCallSelectionChangedCallback(list, FALSE);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             CopyWindowToVram(list->template.windowId, COPYWIN_GFX);
             break;
         }
@@ -947,14 +884,6 @@ bool8 ListMenuChangeSelectionFull(struct ListMenu *list, bool32 updateCursor, bo
     return FALSE;
 }
 
-<<<<<<< HEAD
-=======
-bool8 ListMenuChangeSelection(struct ListMenu *list, bool8 updateCursorAndCallCallback, u8 count, bool8 movingDown)
-{
-    return ListMenuChangeSelectionFull(list, updateCursorAndCallCallback, updateCursorAndCallCallback, count, movingDown);
-}
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static void ListMenuCallSelectionChangedCallback(struct ListMenu *list, u8 onInit)
 {
     if (list->template.moveCursorFunc != NULL)
@@ -977,7 +906,6 @@ void ListMenuDefaultCursorMoveFunc(s32 itemIndex, bool8 onInit, struct ListMenu 
 }
 
 // unused
-<<<<<<< HEAD
 s32 ListMenuGetUnkIndicatorsStructFields(u8 taskId, u8 field)
 {
     struct UnkIndicatorsStruct *data = (void *) gTasks[taskId].data;
@@ -1017,53 +945,11 @@ s32 ListMenuGetUnkIndicatorsStructFields(u8 taskId, u8 field)
         return data->field_17_0;
     case 16:
         return data->field_17_1;
-=======
-s32 ListMenuGetTemplateField(u8 taskId, u8 field)
-{
-    struct ListMenu *data = (void *) gTasks[taskId].data;
-
-    switch (field)
-    {
-    case LISTFIELD_MOVECURSORFUNC:
-    case LISTFIELD_MOVECURSORFUNC2:
-        return (s32)(data->template.moveCursorFunc);
-    case LISTFIELD_TOTALITEMS:
-        return data->template.totalItems;
-    case LISTFIELD_MAXSHOWED:
-        return data->template.maxShowed;
-    case LISTFIELD_WINDOWID:
-        return data->template.windowId;
-    case LISTFIELD_HEADERX:
-        return data->template.header_X;
-    case LISTFIELD_ITEMX:
-        return data->template.item_X;
-    case LISTFIELD_CURSORX:
-        return data->template.cursor_X;
-    case LISTFIELD_UPTEXTY:
-        return data->template.upText_Y;
-    case LISTFIELD_CURSORPAL:
-        return data->template.cursorPal;
-    case LISTFIELD_FILLVALUE:
-        return data->template.fillValue;
-    case LISTFIELD_CURSORSHADOWPAL:
-        return data->template.cursorShadowPal;
-    case LISTFIELD_LETTERSPACING:
-        return data->template.lettersSpacing;
-    case LISTFIELD_ITEMVERTICALPADDING:
-        return data->template.itemVerticalPadding;
-    case LISTFIELD_SCROLLMULTIPLE:
-        return data->template.scrollMultiple;
-    case LISTFIELD_FONTID:
-        return data->template.fontId;
-    case LISTFIELD_CURSORKIND:
-        return data->template.cursorKind;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     default:
         return -1;
     }
 }
 
-<<<<<<< HEAD
 void ListMenuSetUnkIndicatorsStructField(u8 taskId, u8 field, s32 value)
 {
     struct UnkIndicatorsStruct *data = (void *) &gTasks[taskId].data;
@@ -1118,62 +1004,6 @@ void ListMenuSetUnkIndicatorsStructField(u8 taskId, u8 field, s32 value)
         break;
     case 16:
         data->field_17_1 = value;
-=======
-void ListMenuSetTemplateField(u8 taskId, u8 field, s32 value)
-{
-    struct ListMenu *data = (void *) &gTasks[taskId].data;
-
-    switch (field)
-    {
-    case LISTFIELD_MOVECURSORFUNC:
-    case LISTFIELD_MOVECURSORFUNC2:
-        data->template.moveCursorFunc = (void *)value;
-        break;
-    case LISTFIELD_TOTALITEMS:
-        data->template.totalItems = value;
-        break;
-    case LISTFIELD_MAXSHOWED:
-        data->template.maxShowed = value;
-        break;
-    case LISTFIELD_WINDOWID:
-        data->template.windowId = value;
-        break;
-    case LISTFIELD_HEADERX:
-        data->template.header_X = value;
-        break;
-    case LISTFIELD_ITEMX:
-        data->template.item_X = value;
-        break;
-    case LISTFIELD_CURSORX:
-        data->template.cursor_X = value;
-        break;
-    case LISTFIELD_UPTEXTY:
-        data->template.upText_Y = value;
-        break;
-    case LISTFIELD_CURSORPAL:
-        data->template.cursorPal = value;
-        break;
-    case LISTFIELD_FILLVALUE:
-        data->template.fillValue = value;
-        break;
-    case LISTFIELD_CURSORSHADOWPAL:
-        data->template.cursorShadowPal = value;
-        break;
-    case LISTFIELD_LETTERSPACING:
-        data->template.lettersSpacing = value;
-        break;
-    case LISTFIELD_ITEMVERTICALPADDING:
-        data->template.itemVerticalPadding = value;
-        break;
-    case LISTFIELD_SCROLLMULTIPLE:
-        data->template.scrollMultiple = value;
-        break;
-    case LISTFIELD_FONTID:
-        data->template.fontId = value;
-        break;
-    case LISTFIELD_CURSORKIND:
-        data->template.cursorKind = value;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         break;
     }
 }

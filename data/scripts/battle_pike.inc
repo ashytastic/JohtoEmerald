@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 @ Note: LOCALIDs shared with BattleFrontier_BattlePikeRoomNormal
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 BattleFrontier_BattlePikeRoom_MapScripts:
 	map_script MAP_SCRIPT_ON_TRANSITION, BattleFrontier_BattlePikeRoom_OnTransition
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, BattleFrontier_BattlePikeRoom_OnWarp
@@ -21,7 +18,6 @@ BattleFrontier_BattlePikeRoom_OnTransition:
 	end
 
 BattleFrontier_BattlePikeRoomNormal_EventScript_SetDoubleBattleObjPos::
-<<<<<<< HEAD
 	setobjectxyperm LOCALID_OBJ_0, 2, 5
 	setobjectxyperm LOCALID_OBJ_1, 6, 5
 	end
@@ -44,30 +40,6 @@ BattleFrontier_BattlePikeRoomNormal_EventScript_SetNPCRoomObjPos::
 BattleFrontier_BattlePikeRoomNormal_EventScript_SetBrainRoomObjPos::
 	setobjectxyperm LOCALID_OBJ_0, 4, 3
 	setobjectxyperm LOCALID_OBJ_1, 4, 4
-=======
-	setobjectxyperm LOCALID_PIKE_ROOM_NPC_1, 2, 5
-	setobjectxyperm LOCALID_PIKE_ROOM_NPC_2, 6, 5
-	end
-
-BattleFrontier_BattlePikeRoomNormal_EventScript_SetTwoObjectRoomPos::
-	setobjectxyperm LOCALID_PIKE_ROOM_NPC_1, 4, 4
-	setobjectxyperm LOCALID_PIKE_ROOM_NPC_2, 3, 4
-	end
-
-BattleFrontier_BattlePikeRoomNormal_EventScript_SetOneObjectRoomPos::
-	setobjectxyperm LOCALID_PIKE_ROOM_NPC_1, 4, 4
-	setobjectxyperm LOCALID_PIKE_ROOM_NPC_2, 0, 0
-	end
-
-BattleFrontier_BattlePikeRoomNormal_EventScript_SetNPCRoomObjPos::
-	setobjectxyperm LOCALID_PIKE_ROOM_NPC_1, 5, 5
-	setobjectxyperm LOCALID_PIKE_ROOM_NPC_2, 0, 0
-	end
-
-BattleFrontier_BattlePikeRoomNormal_EventScript_SetBrainRoomObjPos::
-	setobjectxyperm LOCALID_PIKE_ROOM_NPC_1, 4, 3
-	setobjectxyperm LOCALID_PIKE_ROOM_NPC_2, 4, 4
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 BattleFrontier_BattlePikeRoom_OnWarp:
@@ -82,35 +54,20 @@ BattleFrontier_BattlePikeRoomNormal_EventScript_InitRoomObjects::
 	goto_if_eq VAR_RESULT, PIKE_ROOM_HARD_BATTLE, BattleFrontier_BattlePikeRoomNormal_EventScript_InitTwoObjectRoom
 	goto_if_eq VAR_RESULT, PIKE_ROOM_DOUBLE_BATTLE, BattleFrontier_BattlePikeRoomNormal_EventScript_InitTwoObjectRoom
 	goto_if_eq VAR_RESULT, PIKE_ROOM_BRAIN, BattleFrontier_BattlePikeRoomNormal_EventScript_InitBrainRoomObjects
-<<<<<<< HEAD
 	hideobjectat LOCALID_OBJ_1, MAP_BATTLE_FRONTIER_BATTLE_PIKE_ROOM_NORMAL
 	setvar VAR_TEMP_4, 1
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
-=======
-	hideobjectat LOCALID_PIKE_ROOM_NPC_2, MAP_BATTLE_FRONTIER_BATTLE_PIKE_ROOM_NORMAL
-	setvar VAR_TEMP_4, 1
-	turnobject LOCALID_PLAYER, DIR_NORTH
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 BattleFrontier_BattlePikeRoomNormal_EventScript_InitTwoObjectRoom::
 	setvar VAR_TEMP_4, 1
-<<<<<<< HEAD
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
-=======
-	turnobject LOCALID_PLAYER, DIR_NORTH
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 BattleFrontier_BattlePikeRoomNormal_EventScript_InitBrainRoomObjects::
 	setvar VAR_TEMP_4, 1
-<<<<<<< HEAD
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
 	hideobjectat LOCALID_OBJ_0, MAP_BATTLE_FRONTIER_BATTLE_PIKE_ROOM_NORMAL  @ Pike Queen hidden initially
-=======
-	turnobject LOCALID_PLAYER, DIR_NORTH
-	hideobjectat LOCALID_PIKE_ROOM_NPC_1, MAP_BATTLE_FRONTIER_BATTLE_PIKE_ROOM_NORMAL  @ Pike Queen hidden initially
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 BattleFrontier_BattlePikeThreePathRoom_EventScript_LeftRoomWarp::
@@ -129,10 +86,6 @@ BattleFrontier_BattlePikeThreePathRoom_EventScript_RightRoomWarp::
 	end
 
 BattleFrontier_BattlePikeThreePathRoom_EventScript_RoomWarp::
-<<<<<<< HEAD
-=======
-	clearflag FLAG_SAFE_FOLLOWER_MOVEMENT
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	pike_get PIKE_DATA_WIN_STREAK
 	addvar VAR_RESULT, 1
 	pike_set PIKE_DATA_WIN_STREAK, VAR_RESULT
@@ -154,11 +107,7 @@ BattleFrontier_BattlePikeThreePathRoom_EventScript_RoomWarp::
 	end
 
 BattleFrontier_BattlePikeThreePathRoom_EventScript_WarpNPCRoom::
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, BattleFrontier_BattlePikeRoom_Movement_HidePlayer
-=======
-	applymovement LOCALID_PLAYER, BattleFrontier_BattlePikeRoom_Movement_HidePlayer
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	call BattleFrontier_BattlePike_EventScript_CloseCurtain
 	warpsilent MAP_BATTLE_FRONTIER_BATTLE_PIKE_ROOM_NORMAL, 4, 7
@@ -166,11 +115,7 @@ BattleFrontier_BattlePikeThreePathRoom_EventScript_WarpNPCRoom::
 	end
 
 BattleFrontier_BattlePikeThreePathRoom_EventScript_WarpWildMonRoom::
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, BattleFrontier_BattlePikeRoom_Movement_HidePlayer
-=======
-	applymovement LOCALID_PLAYER, BattleFrontier_BattlePikeRoom_Movement_HidePlayer
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	call BattleFrontier_BattlePike_EventScript_CloseCurtain
 	warpsilent MAP_BATTLE_FRONTIER_BATTLE_PIKE_ROOM_WILD_MONS, 4, 19
@@ -230,22 +175,14 @@ BattleFrontier_BattlePikeRoom_EventScript_EnableHealing::
 	return
 
 BattleFrontier_BattlePikeRoom_EventScript_WarpToFinalRoom::
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, BattleFrontier_BattlePikeRoom_Movement_HidePlayer
-=======
-	applymovement LOCALID_PLAYER, BattleFrontier_BattlePikeRoom_Movement_HidePlayer
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	call BattleFrontier_BattlePike_EventScript_CloseCurtain
 	warpsilent MAP_BATTLE_FRONTIER_BATTLE_PIKE_ROOM_FINAL, 2, 7
 	return
 
 BattleFrontier_BattlePikeRoom_EventScript_WarpToThreePathRoom::
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, BattleFrontier_BattlePikeRoom_Movement_HidePlayer
-=======
-	applymovement LOCALID_PLAYER, BattleFrontier_BattlePikeRoom_Movement_HidePlayer
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	call BattleFrontier_BattlePike_EventScript_CloseCurtain
 	warpsilent MAP_BATTLE_FRONTIER_BATTLE_PIKE_THREE_PATH_ROOM, 6, 10

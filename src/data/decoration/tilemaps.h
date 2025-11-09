@@ -171,11 +171,7 @@ static const u8 sDecorTilemap_3x2_X[] = {
     0x06, 0x07, 0x06, 0x07, 0x06, 0x07
 };
 
-<<<<<<< HEAD
 #define DECORSIZE(width, height)((width) * (height) * 4)
-=======
-#define DECORSIZE(width, height) ((width) * (height) * 4)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 static const struct {
     const u8 *tiles;

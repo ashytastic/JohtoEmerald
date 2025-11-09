@@ -5,7 +5,6 @@
 #define TRADE_PARTNER 1
 
 // In-game Trade IDs
-<<<<<<< HEAD
 #define INGAME_TRADE_SEEDOT 0
 #define INGAME_TRADE_ONIX 1
 #define INGAME_TRADE_HORSEA 2
@@ -19,15 +18,6 @@
 #define INGAME_TRADE_BELDUM 10
 #define INGAME_TRADE_BONSLY 11
 #define INGAME_TRADE_STEELIX 12
-=======
-enum InGameTradeID
-{
-    INGAME_TRADE_SEEDOT,
-    INGAME_TRADE_PLUSLE,
-    INGAME_TRADE_HORSEA,
-    INGAME_TRADE_MEOWTH,
-};
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 // Return values for CanTradeSelectedMon and CanSpinTradeMon
 #define CAN_TRADE_MON              0
@@ -51,13 +41,8 @@ enum InGameTradeID
 #define UR_TRADE_MSG_NONE                         0
 #define UR_TRADE_MSG_NOT_MON_PARTNER_WANTS        1
 #define UR_TRADE_MSG_NOT_EGG                      2
-<<<<<<< HEAD
 #define UR_TRADE_MSG_MON_CANT_BE_TRADED_1         3
 #define UR_TRADE_MSG_MON_CANT_BE_TRADED_2         4
-=======
-#define UR_TRADE_MSG_MON_CANT_BE_TRADED_NOW       3
-#define UR_TRADE_MSG_MON_CANT_BE_TRADED           4
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #define UR_TRADE_MSG_PARTNERS_MON_CANT_BE_TRADED  5
 #define UR_TRADE_MSG_EGG_CANT_BE_TRADED           6
 #define UR_TRADE_MSG_PARTNER_CANT_ACCEPT_MON      7
@@ -65,16 +50,9 @@ enum InGameTradeID
 #define UR_TRADE_MSG_CANT_TRADE_WITH_PARTNER_2    9
 
 // Return values for CanRegisterMonForTradingBoard
-<<<<<<< HEAD
 #define CAN_REGISTER_MON   0
 #define CANT_REGISTER_MON  1
 #define CANT_REGISTER_EGG  2
-=======
-#define CAN_REGISTER_MON      0
-#define CANT_REGISTER_MON_NOW 1
-#define CANT_REGISTER_MON     2
-#define CANT_REGISTER_EGG     3
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 
 #endif //GUARD_CONSTANTS_TRADE_H

@@ -24,18 +24,13 @@
 #include "constants/mauville_old_man.h"
 
 static void InitGiddyTaleList(void);
-<<<<<<< HEAD
 static void StartBardSong(bool8 useTemporaryLyrics);
-=======
-static void StartBardSong(bool8 useNewSongLyrics);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static void Task_BardSong(u8 taskId);
 static void StorytellerSetup(void);
 static void Storyteller_ResetFlag(void);
 
 static u8 sSelectedStory;
 
-<<<<<<< HEAD
 struct BardSong gBardSong;
 
 static EWRAM_DATA u16 sUnknownBardRelated = 0;
@@ -43,15 +38,6 @@ static EWRAM_DATA struct MauvilleManStoryteller * sStorytellerPtr = NULL;
 static EWRAM_DATA u8 sStorytellerWindowId = 0;
 
 static const u16 sDefaultBardSongLyrics[BARD_SONG_LENGTH] = {
-=======
-COMMON_DATA struct BardSong gBardSong = {0};
-
-static EWRAM_DATA u16 sUnusedPitchTableIndex = 0;
-static EWRAM_DATA struct MauvilleManStoryteller *sStorytellerPtr = NULL;
-static EWRAM_DATA u8 sStorytellerWindowId = 0;
-
-static const u16 sDefaultBardSongLyrics[NUM_BARD_SONG_WORDS] = {
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     EC_WORD_SHAKE,
     EC_WORD_IT,
     EC_WORD_DO,
@@ -60,11 +46,7 @@ static const u16 sDefaultBardSongLyrics[NUM_BARD_SONG_WORDS] = {
     EC_WORD_DANCE
 };
 
-<<<<<<< HEAD
 static const u8 * const sGiddyAdjectives[] = {
-=======
-static const u8 *const sGiddyAdjectives[] = {
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     GiddyText_SoPretty,
     GiddyText_SoDarling,
     GiddyText_SoRelaxed,
@@ -78,11 +60,7 @@ static const u8 *const sGiddyAdjectives[] = {
 // Non-random lines Giddy can say. Not all are strictly
 // questions, but most are, and the player will receive
 // a Yes/No prompt afterwards regardless.
-<<<<<<< HEAD
 static const u8 * const sGiddyQuestions[GIDDY_MAX_QUESTIONS] = {
-=======
-static const u8 *const sGiddyQuestions[GIDDY_MAX_QUESTIONS] = {
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     GiddyText_ISoWantToGoOnAVacation,
     GiddyText_IBoughtCrayonsWith120Colors,
     GiddyText_WouldntItBeNiceIfWeCouldFloat,
@@ -101,11 +79,7 @@ static void SetupBard(void)
     bard->id = MAUVILLE_MAN_BARD;
     bard->hasChangedSong = FALSE;
     bard->language = gGameLanguage;
-<<<<<<< HEAD
     for (i = 0; i < BARD_SONG_LENGTH; i++)
-=======
-    for (i = 0; i < NUM_BARD_SONG_WORDS; i++)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         bard->songLyrics[i] = sDefaultBardSongLyrics[i];
 }
 
@@ -189,18 +163,12 @@ void SaveBardSongLyrics(void)
     for (i = 0; i < TRAINER_ID_LENGTH; i++)
         bard->playerTrainerId[i] = gSaveBlock2Ptr->playerTrainerId[i];
 
-<<<<<<< HEAD
     for (i = 0; i < BARD_SONG_LENGTH; i++)
         bard->songLyrics[i] = bard->temporaryLyrics[i];
-=======
-    for (i = 0; i < NUM_BARD_SONG_WORDS; i++)
-        bard->songLyrics[i] = bard->newSongLyrics[i];
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     bard->hasChangedSong = TRUE;
 }
 
-<<<<<<< HEAD
 // Copies lyrics into gStringVar4
 static void PrepareSongText(void)
 {
@@ -213,29 +181,6 @@ static void PrepareSongText(void)
     // Put three words on each line
     for (lineNum = 0; lineNum < 2; lineNum++)
     {
-=======
-// Copies lyrics into gStringVar4.
-// gSpecialVar_0x8004 is used in these functions to indicate which song should be played.
-// If it's set to 0 the Bard's current song should be played, otherwise the new user-provided song should be played.
-// Its set in the scripts right before 'PlayBardSong' is called.
-static void PrepareSongText(void)
-{
-    struct MauvilleManBard *bard = &gSaveBlock1Ptr->oldMan.bard;
-    u16 *lyrics = !gSpecialVar_0x8004 ? bard->songLyrics : bard->newSongLyrics;
-    u8 *wordEnd = gStringVar4;
-    u8 *str = wordEnd;
-    u16 paragraphNum;
-
-    // Easy chat "words" aren't strictly single words, e.g. EC_WORD_MATCH_UP is the string "MATCH UP".
-    // The bard song needs to know when it's at the end of an easy chat word and not just at a space in
-    // the middle of one, so the loop below will replace spaces in each easy chat word with CHAR_BARD_WORD_DELIMIT.
-    // When it comes time to print the song's text all the CHAR_BARD_WORD_DELIMIT will get replaced with CHAR_SPACE.
-    //
-    // The song text will be displayed in two paragraphs, each containing 3 easy chat words (2 on the first line and 1 on the second).
-    for (paragraphNum = 0; paragraphNum < 2; paragraphNum++)
-    {
-        // Line 1, 1st word
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         wordEnd = CopyEasyChatWord(wordEnd, *(lyrics++));
         while (wordEnd != str)
         {
@@ -247,10 +192,6 @@ static void PrepareSongText(void)
         str++;
         *(wordEnd++) = CHAR_SPACE;
 
-<<<<<<< HEAD
-=======
-        // Line 1, 2nd word
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         wordEnd = CopyEasyChatWord(wordEnd, *(lyrics++));
         while (wordEnd != str)
         {
@@ -262,10 +203,6 @@ static void PrepareSongText(void)
         str++;
         *(wordEnd++) = CHAR_NEWLINE;
 
-<<<<<<< HEAD
-=======
-        // Line 2, 1st word
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         wordEnd = CopyEasyChatWord(wordEnd, *(lyrics++));
         while (wordEnd != str)
         {
@@ -274,15 +211,8 @@ static void PrepareSongText(void)
             str++;
         }
 
-<<<<<<< HEAD
         if (lineNum == 0)
         {
-=======
-        if (paragraphNum == 0)
-        {
-            // Erase the 1st paragraph for displaying the 2nd.
-            // The == 0 check assumes there are only 2 paragraphs.
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             *(wordEnd++) = EXT_CTRL_CODE_BEGIN;
             *(wordEnd++) = EXT_CTRL_CODE_FILL_WINDOW;
         }
@@ -390,15 +320,11 @@ static void InitGiddyTaleList(void)
     // Shuffle question list
     for (i = 0; i < GIDDY_MAX_QUESTIONS; i++)
         giddy->questionList[i] = i;
-<<<<<<< HEAD
     for (i = 0; i < GIDDY_MAX_QUESTIONS; i++)
     {
         var = Random() % (i + 1);
         SWAP(giddy->questionList[i], giddy->questionList[var], temp);
     }
-=======
-    Shuffle(giddy->questionList, GIDDY_MAX_QUESTIONS, sizeof(giddy->questionList[0]));
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     // Count total number of words in above word groups
     totalWords = 0;
@@ -495,7 +421,6 @@ enum {
 #define tWordState          data[1]
 #define tDelay              data[2]
 #define tCharIndex          data[3]
-<<<<<<< HEAD
 #define tCurrWord           data[4]
 #define tUseTemporaryLyrics data[5]
 
@@ -507,21 +432,6 @@ static void StartBardSong(bool8 useTemporaryLyrics)
     u8 taskId = CreateTask(Task_BardSong, 80);
 
     gTasks[taskId].tUseTemporaryLyrics = useTemporaryLyrics;
-=======
-#define tLyricsIndex        data[4]
-#define tUseNewSongLyrics   data[5]
-
-// Takes a 16-bit easy chat word value and returns a value 0-4 (i.e. a value less than NUM_BARD_PITCH_TABLES_PER_SIZE).
-// The relationship between the easy chat word and the chosen pitch table is essentially arbitrary.
-// This value will be used twice; once for an unused variable, and again to select a pitch table in CalcWordSounds.
-#define WORD_TO_PITCH_TABLE_INDEX(a) ( MOD(a, (NUM_BARD_PITCH_TABLES_PER_SIZE-1)) + (((a) >> 3) & 1) )
-
-static void StartBardSong(bool8 useNewSongLyrics)
-{
-    u8 taskId = CreateTask(Task_BardSong, 80);
-
-    gTasks[taskId].tUseNewSongLyrics = useNewSongLyrics;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void EnableTextPrinters(void)
@@ -529,20 +439,12 @@ static void EnableTextPrinters(void)
     gDisableTextPrinters = FALSE;
 }
 
-<<<<<<< HEAD
 static void DisableTextPrinters(struct TextPrinterTemplate * printer, u16 renderCmd)
-=======
-static void DisableTextPrinters(struct TextPrinterTemplate *printer, u16 renderCmd)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     gDisableTextPrinters = TRUE;
 }
 
-<<<<<<< HEAD
 static void DrawSongTextWindow(const u8 * str)
-=======
-static void DrawSongTextWindow(const u8 *str)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     DrawDialogueFrame(0, FALSE);
     AddTextPrinterParameterized(0, FONT_NORMAL, str, 0, 1, 1, DisableTextPrinters);
@@ -550,21 +452,6 @@ static void DrawSongTextWindow(const u8 *str)
     CopyWindowToVram(0, COPYWIN_FULL);
 }
 
-<<<<<<< HEAD
-=======
-#define BARD_SONG_BASE_VOLUME 0x100
-#define BARD_SONG_BASE_PITCH  0x200
-
-enum {
-    SOUND_STATE_START,
-    SOUND_STATE_PLAY,
-    SOUND_STATE_SET_BASE,
-    SOUND_STATE_END,
-    SOUND_STATE_WAIT,
-};
-
-// Sing one frame of the bard's song. 'task' is a pointer to Task_BardSong, which handles changing the states in here.
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static void BardSing(struct Task *task, struct BardSong *song)
 {
     switch (task->tState)
@@ -576,7 +463,6 @@ static void BardSing(struct Task *task, struct BardSong *song)
         s32 i;
 
         // Copy lyrics
-<<<<<<< HEAD
         if (gSpecialVar_0x8004 == 0)
             lyrics = bard->songLyrics;
         else
@@ -600,42 +486,12 @@ static void BardSing(struct Task *task, struct BardSong *song)
         {
             song->state = 3;
             song->phonemeTimer = 2;
-=======
-        if (!gSpecialVar_0x8004)
-            lyrics = bard->songLyrics;
-        else
-            lyrics = bard->newSongLyrics;
-
-        for (i = 0; i < NUM_BARD_SONG_WORDS; i++)
-            song->lyrics[i] = lyrics[i];
-
-        song->lyricsIndex = 0;
-        break;
-    }
-    case BARD_STATE_GET_WORD:
-    {
-        u16 easyChatWord = song->lyrics[song->lyricsIndex];
-        song->soundTemplates = GetWordSoundTemplates(easyChatWord);
-        CalcWordSounds(song, WORD_TO_PITCH_TABLE_INDEX(easyChatWord));
-        song->lyricsIndex++;
-        if (song->soundTemplates[0].songId != PHONEME_ID_NONE)
-        {
-            // Word has valid sounds, begin playing.
-            song->state = SOUND_STATE_START;
-        }
-        else
-        {
-            // Word has no valid sounds, skip to the end.
-            song->state = SOUND_STATE_END;
-            song->timer = 2;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         }
         break;
     }
     case BARD_STATE_HANDLE_WORD:
     case BARD_STATE_WAIT_WORD:
     {
-<<<<<<< HEAD
         const struct BardSound *sound = &song->sound[song->currPhoneme];
 
         switch (song->state)
@@ -661,42 +517,6 @@ static void BardSing(struct Task *task, struct BardSong *song)
             }
             break;
         case 1:
-=======
-        const struct BardSoundTemplate *template = &song->soundTemplates[song->soundIndex];
-
-        switch (song->state)
-        {
-        case SOUND_STATE_START:
-            song->timer = song->sounds[song->soundIndex].length;
-            if (template->songId < NUM_PHONEME_SONGS)
-            {
-                // Phoneme "songs" come in triplets of PH_*_BLEND, PH_*_HELD, and PH_*_SOLO.
-                // The division then multiplication by 3 below is rounding any value from one of these triplets to a PH_*_HELD.
-                // This means the actual song files for any phoneme other than PH_*_HELD won't be played here, and the only difference
-                // when specifying a PH_*_BLEND or PH_*_SOLO in the songId will be the length of the sound, determined by 'sPhonemeLengths'.
-                u8 phonemeTripletId = template->songId / 3;
-                m4aSongNumStart((FIRST_PHONEME_SONG + 1) + phonemeTripletId * 3);
-            }
-            song->state = SOUND_STATE_SET_BASE;
-            song->timer--;
-            break;
-        case SOUND_STATE_SET_BASE:
-            song->state = SOUND_STATE_PLAY;
-            if (template->songId < NUM_PHONEME_SONGS)
-            {
-                // Adjust the song volume for the current phoneme.
-                // In practice no phonemes use this, so volume here will always be BARD_SONG_BASE_VOLUME.
-                song->volume = BARD_SONG_BASE_VOLUME + template->volume * 16;
-                m4aMPlayVolumeControl(&gMPlayInfo_SE2, TRACKS_ALL, song->volume);
-
-                // Adjust the song pitch for the current phoneme.
-                song->pitch = BARD_SONG_BASE_PITCH + song->sounds[song->soundIndex].pitch;
-                m4aMPlayPitchControl(&gMPlayInfo_SE2, TRACKS_ALL, song->pitch);
-            }
-            break;
-        case SOUND_STATE_PLAY:
-            // Modulate the volume and pitch to make it sound a little more like singing.
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             if (song->voiceInflection > 10)
                 song->volume -= 2;
             if (song->voiceInflection & 1)
@@ -706,7 +526,6 @@ static void BardSing(struct Task *task, struct BardSong *song)
             m4aMPlayVolumeControl(&gMPlayInfo_SE2, TRACKS_ALL, song->volume);
             m4aMPlayPitchControl(&gMPlayInfo_SE2, TRACKS_ALL, song->pitch);
             song->voiceInflection++;
-<<<<<<< HEAD
             song->phonemeTimer--;
             if (song->phonemeTimer == 0)
             {
@@ -732,39 +551,6 @@ static void BardSing(struct Task *task, struct BardSong *song)
     }
         break;
     case BARD_STATE_PAUSE:
-=======
-
-            song->timer--;
-            if (song->timer == 0)
-            {
-                if (++song->soundIndex != MAX_BARD_SOUNDS_PER_WORD && song->soundTemplates[song->soundIndex].songId != PHONEME_ID_NONE)
-                {
-                    // There are more sounds to play for this word, return to the start.
-                    song->state = SOUND_STATE_START;
-                }
-                else
-                {
-                    // We've reached the final sound for this word, stop playing.
-                    song->state = SOUND_STATE_END;
-                    song->timer = 2;
-                }
-            }
-            break;
-        case SOUND_STATE_END:
-            // Delay, then stop playing the phoneme.
-            if (--song->timer == 0)
-            {
-                m4aMPlayStop(&gMPlayInfo_SE2);
-                song->state = SOUND_STATE_WAIT; // We'll remain stuck at this sound state until Task_BardSong changes states from HANDLE_WORD/WAIT_WORD
-            }
-            break;
-        }
-        break;
-    }
-    case BARD_STATE_PAUSE:
-    case BARD_STATE_WAIT_BGM:
-        // Non-singing states.
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         break;
     }
 }
@@ -783,11 +569,7 @@ static void Task_BardSong(u8 taskId)
         task->tWordState = 0;
         task->tDelay = 0;
         task->tCharIndex = 0;
-<<<<<<< HEAD
         task->tCurrWord = 0;
-=======
-        task->tLyricsIndex = 0;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         FadeOutBGMTemporarily(4);
         task->tState = BARD_STATE_WAIT_BGM;
         break;
@@ -811,28 +593,15 @@ static void Task_BardSong(u8 taskId)
             wordLen++;
         }
 
-<<<<<<< HEAD
         if (!task->tUseTemporaryLyrics)
             sUnknownBardRelated = MACRO2(bard->songLyrics[task->tCurrWord]);
         else
             sUnknownBardRelated = MACRO2(bard->temporaryLyrics[task->tCurrWord]);
-=======
-        // sUnusedPitchTableIndex is never read. For debugging perhaps, or one of the other languages.
-        if (!task->tUseNewSongLyrics)
-            sUnusedPitchTableIndex = WORD_TO_PITCH_TABLE_INDEX(bard->songLyrics[task->tLyricsIndex]);
-        else
-            sUnusedPitchTableIndex = WORD_TO_PITCH_TABLE_INDEX(bard->newSongLyrics[task->tLyricsIndex]);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
         gBardSong.length /= wordLen;
         if (gBardSong.length <= 0)
             gBardSong.length = 1;
-<<<<<<< HEAD
         task->tCurrWord++;
-=======
-
-        task->tLyricsIndex++;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
         if (task->tDelay == 0)
         {
@@ -864,11 +633,7 @@ static void Task_BardSong(u8 taskId)
         }
         else if (gStringVar4[task->tCharIndex] == CHAR_SPACE)
         {
-<<<<<<< HEAD
             // Handle space
-=======
-            // End of easy chat word, move on to the next one.
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             EnableTextPrinters();
             task->tCharIndex++;
             task->tState = BARD_STATE_GET_WORD;
@@ -884,24 +649,14 @@ static void Task_BardSong(u8 taskId)
         else if (gStringVar4[task->tCharIndex] == EXT_CTRL_CODE_BEGIN)
         {
             // Handle ctrl code
-<<<<<<< HEAD
-=======
-            // The only expected ctrl codes are those for clearing the end of the paragraph,
-            // so this assumes there's a new word coming and does a short delay before the next paragraph.
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             task->tCharIndex += 2;  // skip over control codes
             task->tState = BARD_STATE_GET_WORD;
             task->tDelay = 8;
         }
         else if (gStringVar4[task->tCharIndex] == CHAR_BARD_WORD_DELIMIT)
         {
-<<<<<<< HEAD
             // Handle word boundary
             gStringVar4[task->tCharIndex] = CHAR_SPACE;  // Replace with a real space
-=======
-            // Space within the current easy chat word (see PrepareSongText), just replace it with a real space.
-            gStringVar4[task->tCharIndex] = CHAR_SPACE;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             EnableTextPrinters();
             task->tCharIndex++;
             task->tDelay = 0;
@@ -940,20 +695,12 @@ static void Task_BardSong(u8 taskId)
 
 void SetMauvilleOldManObjEventGfx(void)
 {
-<<<<<<< HEAD
     VarSet(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_BLAINE);
-=======
-    VarSet(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_BARD);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 // Language fixers?
 
-<<<<<<< HEAD
 void SanitizeMauvilleOldManForRuby(union OldMan * oldMan)
-=======
-void SanitizeMauvilleOldManForRuby(union OldMan *oldMan)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     s32 i;
     u8 playerName[PLAYER_NAME_LENGTH + 1];
@@ -962,11 +709,7 @@ void SanitizeMauvilleOldManForRuby(union OldMan *oldMan)
     {
     case MAUVILLE_MAN_TRADER:
     {
-<<<<<<< HEAD
         struct MauvilleOldManTrader * trader = &oldMan->trader;
-=======
-        struct MauvilleOldManTrader *trader = &oldMan->trader;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         for (i = 0; i < NUM_TRADER_ITEMS; i++)
         {
             if (trader->language[i] == LANGUAGE_JAPANESE)
@@ -976,11 +719,7 @@ void SanitizeMauvilleOldManForRuby(union OldMan *oldMan)
     }
     case MAUVILLE_MAN_STORYTELLER:
     {
-<<<<<<< HEAD
         struct MauvilleManStoryteller * storyteller = &oldMan->storyteller;
-=======
-        struct MauvilleManStoryteller *storyteller = &oldMan->storyteller;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         for (i = 0; i < NUM_STORYTELLER_TALES; i++)
         {
             if (storyteller->gameStatIDs[i] != 0)
@@ -1001,11 +740,7 @@ void SanitizeMauvilleOldManForRuby(union OldMan *oldMan)
     }
 }
 
-<<<<<<< HEAD
 static void UNUSED SetMauvilleOldManLanguage(union OldMan * oldMan, u32 language1, u32 language2, u32 language3)
-=======
-static void UNUSED SetMauvilleOldManLanguage(union OldMan *oldMan, u32 language1, u32 language2, u32 language3)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     s32 i;
 
@@ -1013,11 +748,7 @@ static void UNUSED SetMauvilleOldManLanguage(union OldMan *oldMan, u32 language1
     {
     case MAUVILLE_MAN_TRADER:
     {
-<<<<<<< HEAD
         struct MauvilleOldManTrader * trader = &oldMan->trader;
-=======
-        struct MauvilleOldManTrader *trader = &oldMan->trader;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
         for (i = 0; i < NUM_TRADER_ITEMS; i++)
         {
@@ -1030,11 +761,7 @@ static void UNUSED SetMauvilleOldManLanguage(union OldMan *oldMan, u32 language1
     break;
     case MAUVILLE_MAN_STORYTELLER:
     {
-<<<<<<< HEAD
         struct MauvilleManStoryteller * storyteller = &oldMan->storyteller;
-=======
-        struct MauvilleManStoryteller *storyteller = &oldMan->storyteller;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
         for (i = 0; i < NUM_STORYTELLER_TALES; i++)
         {
@@ -1047,11 +774,7 @@ static void UNUSED SetMauvilleOldManLanguage(union OldMan *oldMan, u32 language1
     break;
     case MAUVILLE_MAN_BARD:
     {
-<<<<<<< HEAD
         struct MauvilleManBard * bard = &oldMan->bard;
-=======
-        struct MauvilleManBard *bard = &oldMan->bard;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
         if (language3 == LANGUAGE_JAPANESE)
             bard->language = language1;
@@ -1061,11 +784,7 @@ static void UNUSED SetMauvilleOldManLanguage(union OldMan *oldMan, u32 language1
     break;
     case MAUVILLE_MAN_HIPSTER:
     {
-<<<<<<< HEAD
         struct MauvilleManHipster * hipster = &oldMan->hipster;
-=======
-        struct MauvilleManHipster *hipster = &oldMan->hipster;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
         if (language3 == LANGUAGE_JAPANESE)
             hipster->language = language1;
@@ -1075,11 +794,7 @@ static void UNUSED SetMauvilleOldManLanguage(union OldMan *oldMan, u32 language1
     break;
     case MAUVILLE_MAN_GIDDY:
     {
-<<<<<<< HEAD
         struct MauvilleManGiddy * giddy = &oldMan->giddy;
-=======
-        struct MauvilleManGiddy *giddy = &oldMan->giddy;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
         if (language3 == LANGUAGE_JAPANESE)
             giddy->language = language1;
@@ -1090,21 +805,13 @@ static void UNUSED SetMauvilleOldManLanguage(union OldMan *oldMan, u32 language1
     }
 }
 
-<<<<<<< HEAD
 void SanitizeReceivedEmeraldOldMan(union OldMan * oldMan, u32 version, u32 language)
-=======
-void SanitizeReceivedEmeraldOldMan(union OldMan *oldMan, u32 version, u32 language)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     u8 playerName[PLAYER_NAME_LENGTH + 1];
     s32 i;
     if (oldMan->common.id == MAUVILLE_MAN_STORYTELLER && language == LANGUAGE_JAPANESE)
     {
-<<<<<<< HEAD
         struct MauvilleManStoryteller * storyteller = &oldMan->storyteller;
-=======
-        struct MauvilleManStoryteller *storyteller = &oldMan->storyteller;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
         for (i = 0; i < NUM_STORYTELLER_TALES; i++)
         {
@@ -1121,11 +828,7 @@ void SanitizeReceivedEmeraldOldMan(union OldMan *oldMan, u32 version, u32 langua
     }
 }
 
-<<<<<<< HEAD
 void SanitizeReceivedRubyOldMan(union OldMan * oldMan, u32 version, u32 language)
-=======
-void SanitizeReceivedRubyOldMan(union OldMan *oldMan, u32 version, u32 language)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     bool32 isRuby = (version == VERSION_SAPPHIRE || version == VERSION_RUBY);
 
@@ -1133,35 +836,21 @@ void SanitizeReceivedRubyOldMan(union OldMan *oldMan, u32 version, u32 language)
     {
     case MAUVILLE_MAN_TRADER:
     {
-<<<<<<< HEAD
         struct MauvilleOldManTrader * trader = &oldMan->trader;
-=======
-        struct MauvilleOldManTrader *trader = &oldMan->trader;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         s32 i;
 
         if (isRuby)
         {
             for (i = 0; i < NUM_TRADER_ITEMS; i++)
             {
-<<<<<<< HEAD
                 u8 * str = trader->playerNames[i];
-=======
-                u8 *str = trader->playerNames[i];
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 if (str[0] == EXT_CTRL_CODE_BEGIN && str[1] == EXT_CTRL_CODE_JPN)
                 {
                     StripExtCtrlCodes(str);
                     trader->language[i] = LANGUAGE_JAPANESE;
                 }
                 else
-<<<<<<< HEAD
                     trader->language[i] = language;
-=======
-                {
-                    trader->language[i] = language;
-                }
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             }
         }
         else
@@ -1179,11 +868,7 @@ void SanitizeReceivedRubyOldMan(union OldMan *oldMan, u32 version, u32 language)
     case MAUVILLE_MAN_STORYTELLER:
     {
 
-<<<<<<< HEAD
         struct MauvilleManStoryteller * storyteller = &oldMan->storyteller;
-=======
-        struct MauvilleManStoryteller *storyteller = &oldMan->storyteller;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         s32 i;
 
         if (isRuby)
@@ -1198,11 +883,7 @@ void SanitizeReceivedRubyOldMan(union OldMan *oldMan, u32 version, u32 language)
     break;
     case MAUVILLE_MAN_BARD:
     {
-<<<<<<< HEAD
         struct MauvilleManBard * bard = &oldMan->bard;
-=======
-        struct MauvilleManBard *bard = &oldMan->bard;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
         if (isRuby)
         {
@@ -1212,11 +893,7 @@ void SanitizeReceivedRubyOldMan(union OldMan *oldMan, u32 version, u32 language)
     break;
     case MAUVILLE_MAN_HIPSTER:
     {
-<<<<<<< HEAD
         struct MauvilleManHipster * hipster = &oldMan->hipster;
-=======
-        struct MauvilleManHipster *hipster = &oldMan->hipster;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
         if (isRuby)
         {
@@ -1226,11 +903,7 @@ void SanitizeReceivedRubyOldMan(union OldMan *oldMan, u32 version, u32 language)
     break;
     case MAUVILLE_MAN_GIDDY:
     {
-<<<<<<< HEAD
         struct MauvilleManGiddy * giddy = &oldMan->giddy;
-=======
-        struct MauvilleManGiddy *giddy = &oldMan->giddy;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
         if (isRuby)
         {
@@ -1574,15 +1247,9 @@ static void GetStoryByStattellerPlayerName(u32 player, void *dst)
     memcpy(dst, name, PLAYER_NAME_LENGTH);
 }
 
-<<<<<<< HEAD
 static void StorytellerSetPlayerName(u32 player, const u8 * src)
 {
     u8 * name = sStorytellerPtr->trainerNames[player];
-=======
-static void StorytellerSetPlayerName(u32 player, const u8 *src)
-{
-    u8 *name = sStorytellerPtr->trainerNames[player];
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     memset(name, EOS, PLAYER_NAME_LENGTH);
     memcpy(name, src, PLAYER_NAME_LENGTH);
 }
@@ -1598,7 +1265,6 @@ static void StorytellerRecordNewStat(u32 player, u32 stat)
     sStorytellerPtr->language[player] = gGameLanguage;
 }
 
-<<<<<<< HEAD
 static void ScrambleStatList(u8 * arr, s32 count)
 {
     s32 i;
@@ -1614,18 +1280,12 @@ static void ScrambleStatList(u8 * arr, s32 count)
     }
 }
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static bool8 StorytellerInitializeRandomStat(void)
 {
     u8 storyIds[sNumStories];
     s32 i, j;
 
-<<<<<<< HEAD
     ScrambleStatList(storyIds, sNumStories);
-=======
-    Shuffle(storyIds, sNumStories, sizeof(storyIds[0]));
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     for (i = 0; i < sNumStories; i++)
     {
         u8 stat = sStorytellerStories[storyIds[i]].stat;
@@ -1767,7 +1427,4 @@ bool8 Script_StorytellerInitializeRandomStat(void)
     sStorytellerPtr = &gSaveBlock1Ptr->oldMan.storyteller;
     return StorytellerInitializeRandomStat();
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

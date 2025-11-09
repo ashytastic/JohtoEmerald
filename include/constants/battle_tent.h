@@ -1,11 +1,7 @@
 #ifndef GUARD_CONSTANTS_BATTLE_TENT_H
 #define GUARD_CONSTANTS_BATTLE_TENT_H
 
-<<<<<<< HEAD
 #define TENT_MIN_LEVEL 1
-=======
-#define TENT_MIN_LEVEL 30
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 // The number of battles in each Battle Tent challenge.
 // Battle Tent equivalent of FRONTIER_STAGES_PER_CHALLENGE.

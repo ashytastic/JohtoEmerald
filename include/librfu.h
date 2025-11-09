@@ -316,15 +316,7 @@ struct STWIStatus
     u8 recoveryCount;
     u8 unk_16;
     u8 unk_17;
-<<<<<<< HEAD
     void (*callbackM)();
-=======
-#if __STDC_VERSION__ < 202311L
-    void (*callbackM)();
-#else
-    void (*callbackM)(...);
-#endif
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     void (*callbackS)(u16);
     void (*callbackID)(void);
     union RfuPacket *txPacket;
@@ -523,11 +515,7 @@ void rfu_REQ_endSearchParent(void);
 void rfu_REQ_startConnectParent(u16 pid);
 void rfu_REQ_pollConnectParent(void);
 void rfu_REQ_endConnectParent(void);
-<<<<<<< HEAD
 u16 rfu_getConnectParentStatus(u8 *status,u8 *connectSlotNo);
-=======
-u16 rfu_getConnectParentStatus(u8 *status, u8 *connectSlotNo);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     // Restore link from child device
 void rfu_REQ_CHILD_startConnectRecovery(u8 bmRecoverySlot);
 void rfu_REQ_CHILD_pollConnectRecovery(void);
@@ -619,11 +607,7 @@ void STWI_send_DataRxREQ(void);
 void STWI_send_MS_ChangeREQ(void);
 void STWI_send_StopModeREQ(void);
 void STWI_send_SystemStatusREQ(void);
-<<<<<<< HEAD
 void STWI_send_GameConfigREQ(const u8 *serial_uname, const u8 *gname);
-=======
-void STWI_send_GameConfigREQ(const u8 *serial_gname, const u8 *uname);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 void STWI_send_ResetREQ(void);
 void STWI_send_LinkStatusREQ(void);
 void STWI_send_VersionStatusREQ(void);

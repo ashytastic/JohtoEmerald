@@ -103,22 +103,13 @@ struct __attribute__((packed, aligned(2))) RfuGameData
 {
     struct RfuGameCompatibilityData compatibility;
     u8 partnerInfo[RFU_CHILD_MAX];
-<<<<<<< HEAD
     u16 tradeSpecies:10;
     u16 tradeType:6;
-=======
-    u16 tradeSpecies;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     u8 activity:7;
     u8 startedActivity:1;
     u8 playerGender:1;
     u8 tradeLevel:7;
-<<<<<<< HEAD
     u8 filler;
-=======
-    u8 tradeType:6;
-    u8 filler:2;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 // Constants for getting/setting information in 'partnerInfo' of RfuGameData.
@@ -277,11 +268,7 @@ void RfuVSync(void);
 void RfuSetIgnoreError(bool32 enable);
 u8 RfuGetStatus(void);
 struct RfuGameData *GetHostRfuGameData(void);
-<<<<<<< HEAD
 void UpdateGameData_GroupLockedIn(u8 startedActivity);
-=======
-void UpdateGameData_GroupLockedIn(bool8 startedActivity);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 void RfuSetErrorParams(u32 errorInfo);
 void RfuSetStatus(u8 status, u16 errorInfo);
 u8 Rfu_SetLinkRecovery(bool32 enable);
@@ -333,13 +320,8 @@ void RfuRecvQueue_Reset(struct RfuRecvQueue *queue);
 void RfuSendQueue_Reset(struct RfuSendQueue *queue);
 void RfuRecvQueue_Enqueue(struct RfuRecvQueue *queue, u8 *data);
 void RfuSendQueue_Enqueue(struct RfuSendQueue *queue, u8 *data);
-<<<<<<< HEAD
 bool8 RfuRecvQueue_Dequeue(struct RfuRecvQueue *queue, u8 *dest);
 bool8 RfuSendQueue_Dequeue(struct RfuSendQueue *queue, u8 *dest);
-=======
-bool8 RfuRecvQueue_Dequeue(struct RfuRecvQueue *queue, u8 *src);
-bool8 RfuSendQueue_Dequeue(struct RfuSendQueue *queue, u8 *src);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 void RfuBackupQueue_Enqueue(struct RfuBackupQueue *queue, const u8 *data);
 bool8 RfuBackupQueue_Dequeue(struct RfuBackupQueue *queue, u8 *src);
 void InitHostRfuGameData(struct RfuGameData *data, u8 activity, bool32 startedActivity, s32 partnerInfo);

@@ -2,10 +2,7 @@ Route105_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, Route105_OnLoad
 	map_script MAP_SCRIPT_ON_TRANSITION, Route105_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route105_OnFrame
-<<<<<<< HEAD
 	map_script MAP_SCRIPT_ON_RESUME, SetTimeEncounters
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.byte 0
 
 Route105_OnLoad:
@@ -20,10 +17,7 @@ Route105_CloseRegiEntrance::
 	return
 
 Route105_OnTransition:
-<<<<<<< HEAD
 	callnative SetTimeBasedEncounters
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call_if_eq VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_HideMapNamePopup
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_105_NORTH, AbnormalWeather_StartKyogreWeather
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_105_SOUTH, AbnormalWeather_StartKyogreWeather
@@ -34,11 +28,7 @@ Route105_OnFrame:
 	.2byte 0
 
 Route105_EventScript_Foster::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_RAYMOND, Route105_Text_FosterIntro, Route105_Text_FosterDefeated
-=======
-	trainerbattle_single TRAINER_FOSTER, Route105_Text_FosterIntro, Route105_Text_FosterDefeated
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route105_Text_FosterPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -48,11 +38,7 @@ Route105_EventScript_Luis::
 	end
 
 Route105_EventScript_Dominik::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_KENNY, Route105_Text_DominikIntro, Route105_Text_DominikDefeated
-=======
-	trainerbattle_single TRAINER_DOMINIK, Route105_Text_DominikIntro, Route105_Text_DominikDefeated
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route105_Text_DominikPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -62,11 +48,7 @@ Route105_EventScript_Beverly::
 	end
 
 Route105_EventScript_Imani::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_CHUCK_1_2, Route105_Text_ImaniIntro, Route105_Text_ImaniDefeated
-=======
-	trainerbattle_single TRAINER_IMANI, Route105_Text_ImaniIntro, Route105_Text_ImaniDefeated
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route105_Text_ImaniPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -76,11 +58,7 @@ Route105_EventScript_Josue::
 	end
 
 Route105_EventScript_Andres::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_BRIANA, Route105_Text_AndresIntro, Route105_Text_AndresDefeated, Route105_EventScript_AndresRegisterMatchCallAfterBattle
-=======
-	trainerbattle_single TRAINER_ANDRES_1, Route105_Text_AndresIntro, Route105_Text_AndresDefeated, Route105_EventScript_AndresRegisterMatchCallAfterBattle
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route105_EventScript_AndresRematch
 	msgbox Route105_Text_AndresPostBattle, MSGBOX_DEFAULT
@@ -91,20 +69,12 @@ Route105_EventScript_AndresRegisterMatchCallAfterBattle::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route105_Text_AndresRegister, MSGBOX_DEFAULT
-<<<<<<< HEAD
 	register_matchcall TRAINER_BRIANA
-=======
-	register_matchcall TRAINER_ANDRES_1
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	release
 	end
 
 Route105_EventScript_AndresRematch::
-<<<<<<< HEAD
 	trainerbattle_rematch TRAINER_BRIANA, Route105_Text_AndresRematchIntro, Route105_Text_AndresRematchDefeated
-=======
-	trainerbattle_rematch TRAINER_ANDRES_1, Route105_Text_AndresRematchIntro, Route105_Text_AndresRematchDefeated
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route105_Text_AndresRematchPostBattle, MSGBOX_AUTOCLOSE
 	end
 

@@ -1,7 +1,6 @@
 #ifndef GUARD_BARD_MUSIC_H
 #define GUARD_BARD_MUSIC_H
 
-<<<<<<< HEAD
 struct BardSound
 {
     /*0x00*/ u8 songLengthId;
@@ -15,35 +14,10 @@ struct BardPhoneme
 {
     /*0x00*/ u16 length;
     /*0x02*/ u16 pitch;
-=======
-// The maximum number of BardSoundTemplates/BardSounds there can be for each easy chat word.
-#define MAX_BARD_SOUNDS_PER_WORD 6
-
-// The number of pitch tables there are for each pitch table size (see sPitchTables).
-#define NUM_BARD_PITCH_TABLES_PER_SIZE 5
-
-// This struct describes which phoneme song to play for the sound, and whether to
-// make any adjustments to its length or volume. Very few sounds make any adjustments.
-struct BardSoundTemplate
-{
-    u8 songId;
-    s8 lengthAdjustment;
-    u16 unused; // Only set on EC_WORD_WAAAH, and never read.
-    s16 volume;
-};
-
-// This is the length and pitch to play the phoneme song at.
-// These will be calculated in 'CalcWordSounds'.
-struct BardSound
-{
-    u16 length;
-    u16 pitch;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 struct BardSong
 {
-<<<<<<< HEAD
     /*0x00*/ u8 currWord;
     /*0x01*/ u8 currPhoneme;
     /*0x02*/ u8 phonemeTimer;
@@ -55,30 +29,11 @@ struct BardSong
     /*0x0C*/ u16 lyrics[6];
     /*0x18*/ struct BardPhoneme phonemes[6];
     /*0x30*/ const struct BardSound *sound;
-=======
-    u8 lyricsIndex;
-    u8 soundIndex;
-    u8 timer;
-    u8 state;
-    s16 length; // Length of the sound for the word currently being sung (i.e. the sum of 'length' in all the current word's phonemes).
-    u16 volume;
-    s16 pitch;
-    s16 voiceInflection;
-    u16 lyrics[NUM_BARD_SONG_WORDS];
-    struct BardSound sounds[MAX_BARD_SOUNDS_PER_WORD];
-    const struct BardSoundTemplate *soundTemplates;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 extern const u16 gNumBardWords_Species;
 extern const u16 gNumBardWords_Moves;
-<<<<<<< HEAD
 const struct BardSound *GetWordSounds(u16 word);
 void GetWordPhonemes(struct BardSong *song, u16 word);
-=======
-
-const struct BardSoundTemplate *GetWordSoundTemplates(u16 easyChatWord);
-void CalcWordSounds(struct BardSong *song, u16 pitchTableIndex);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 #endif //GUARD_BARD_MUSIC_H

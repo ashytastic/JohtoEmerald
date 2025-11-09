@@ -1,13 +1,9 @@
-<<<<<<< HEAD
 .set LOCALID_ROOT_FOSSIL, 1
 .set LOCALID_CLAW_FOSSIL, 2
 
 MirageTower_4F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, SetTimeEncounters
 	map_script MAP_SCRIPT_ON_RESUME, SetTimeEncounters
-=======
-MirageTower_4F_MapScripts::
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.byte 0
 
 MirageTower_4F_EventScript_RootFossil::
@@ -16,18 +12,10 @@ MirageTower_4F_EventScript_RootFossil::
 	msgbox MirageTower_4F_Text_TakeRootFossil, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, MirageTower_4F_EventScript_LeaveRootFossil
 	giveitem ITEM_ROOT_FOSSIL
-<<<<<<< HEAD
 	closemessage
 	setflag FLAG_GARBAGEFLAG
 	setflag FLAG_ITEM_GARBAGEFLAG
 	removeobject LOCALID_ROOT_FOSSIL
-=======
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-	closemessage
-	setflag FLAG_HIDE_MIRAGE_TOWER_ROOT_FOSSIL
-	setflag FLAG_HIDE_MIRAGE_TOWER_CLAW_FOSSIL
-	removeobject LOCALID_MIRAGE_ROOT_FOSSIL
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	delay 30
 	setflag FLAG_CHOSE_ROOT_FOSSIL
 	goto MirageTower_4F_EventScript_CollapseMirageTower
@@ -44,18 +32,10 @@ MirageTower_4F_EventScript_ClawFossil::
 	msgbox MirageTower_4F_Text_TakeClawFossil, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, MirageTower_4F_EventScript_LeaveClawFossil
 	giveitem ITEM_CLAW_FOSSIL
-<<<<<<< HEAD
 	closemessage
 	setflag FLAG_ITEM_GARBAGEFLAG
 	setflag FLAG_GARBAGEFLAG
 	removeobject LOCALID_CLAW_FOSSIL
-=======
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-	closemessage
-	setflag FLAG_HIDE_MIRAGE_TOWER_CLAW_FOSSIL
-	setflag FLAG_HIDE_MIRAGE_TOWER_ROOT_FOSSIL
-	removeobject LOCALID_MIRAGE_CLAW_FOSSIL
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	delay 30
 	setflag FLAG_CHOSE_CLAW_FOSSIL
 	goto MirageTower_4F_EventScript_CollapseMirageTower

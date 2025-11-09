@@ -34,29 +34,16 @@ struct MysteryGiftLink
     u16 sendCounter;
     u16 sendCRC;
     u16 sendSize;
-<<<<<<< HEAD
     void * recvBuffer;
     const void * sendBuffer;
-=======
-    void *recvBuffer;
-    const void *sendBuffer;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     u32 (*recvFunc)(struct MysteryGiftLink *);
     u32 (*sendFunc)(struct MysteryGiftLink *);
 };
 
-<<<<<<< HEAD
 void MysteryGiftLink_Init(struct MysteryGiftLink * link, u32 sendPlayerId, u32 recvPlayerId);
 void MysteryGiftLink_InitSend(struct MysteryGiftLink * link, u32 ident, const void * src, u32 size);
 bool32 MysteryGiftLink_Recv(struct MysteryGiftLink * link);
 bool32 MysteryGiftLink_Send(struct MysteryGiftLink * link);
 void MysteryGiftLink_InitRecv(struct MysteryGiftLink * link, u32 ident, void * dest);
-=======
-void MysteryGiftLink_Init(struct MysteryGiftLink *link, u32 sendPlayerId, u32 recvPlayerId);
-void MysteryGiftLink_InitSend(struct MysteryGiftLink *link, u32 ident, const void *src, u32 size);
-u32 MysteryGiftLink_Recv(struct MysteryGiftLink *link);
-u32 MysteryGiftLink_Send(struct MysteryGiftLink *link);
-void MysteryGiftLink_InitRecv(struct MysteryGiftLink *link, u32 ident, void *dest);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 #endif //GUARD_MYSTERY_GIFT_LINK_H

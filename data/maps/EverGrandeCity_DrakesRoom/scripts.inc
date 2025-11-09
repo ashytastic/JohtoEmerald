@@ -10,40 +10,23 @@ EverGrandeCity_DrakesRoom_OnWarp:
 	.2byte 0
 
 EverGrandeCity_DrakesRoom_EventScript_PlayerTurnNorth::
-<<<<<<< HEAD
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
 	end
 
 EverGrandeCity_DrakesRoom_OnFrame:
 	map_script_2 VAR_GARBAGEVAR, 3, EverGrandeCity_DrakesRoom_EventScript_WalkInCloseDoor
-=======
-	turnobject LOCALID_PLAYER, DIR_NORTH
-	end
-
-EverGrandeCity_DrakesRoom_OnFrame:
-	map_script_2 VAR_ELITE_4_STATE, 3, EverGrandeCity_DrakesRoom_EventScript_WalkInCloseDoor
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.2byte 0
 
 EverGrandeCity_DrakesRoom_EventScript_WalkInCloseDoor::
 	lockall
 	call PokemonLeague_EliteFour_EventScript_WalkInCloseDoor
-<<<<<<< HEAD
 	setvar VAR_GARBAGEVAR, 4
-=======
-	setvar VAR_ELITE_4_STATE, 4
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	releaseall
 	end
 
 EverGrandeCity_DrakesRoom_OnLoad:
-<<<<<<< HEAD
 	call_if_set FLAG_DEFEATED_ELITE_4_KAREN, EverGrandeCity_DrakesRoom_EventScript_ResetAdvanceToNextRoom
 	call_if_eq VAR_GARBAGEVAR, 4, EverGrandeCity_DrakesRoom_EventScript_CloseDoor
-=======
-	call_if_set FLAG_DEFEATED_ELITE_4_DRAKE, EverGrandeCity_DrakesRoom_EventScript_ResetAdvanceToNextRoom
-	call_if_eq VAR_ELITE_4_STATE, 4, EverGrandeCity_DrakesRoom_EventScript_CloseDoor
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 EverGrandeCity_DrakesRoom_EventScript_ResetAdvanceToNextRoom::
@@ -57,7 +40,6 @@ EverGrandeCity_DrakesRoom_EventScript_CloseDoor::
 EverGrandeCity_DrakesRoom_EventScript_Drake::
 	lock
 	faceplayer
-<<<<<<< HEAD
 	goto_if_set FLAG_DEFEATED_ELITE_4_KAREN, EverGrandeCity_DrakesRoom_EventScript_PostBattleSpeech
 	goto_if_set FLAG_DRAKE_REMATCH, EverGrandeCity_DrakesRoom_EventScript_DrakeRematch
 	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
@@ -70,12 +52,6 @@ EverGrandeCity_DrakesRoom_EventScript_DrakeRematch::
 	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
 	msgbox EverGrandeCity_DrakesRoom_Text_IntroSpeech2, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_KIP2, EverGrandeCity_DrakesRoom_Text_Defeat2
-=======
-	goto_if_set FLAG_DEFEATED_ELITE_4_DRAKE, EverGrandeCity_DrakesRoom_EventScript_PostBattleSpeech
-	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
-	msgbox EverGrandeCity_DrakesRoom_Text_IntroSpeech, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_DRAKE, EverGrandeCity_DrakesRoom_Text_Defeat
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto EverGrandeCity_DrakesRoom_EventScript_Defeated
 	end
 
@@ -87,11 +63,7 @@ EverGrandeCity_DrakesRoom_EventScript_PostBattleSpeech::
 EverGrandeCity_DrakesRoom_EventScript_Defeated::
 	setvar VAR_0x8004, FANCOUNTER_DEFEATED_DRAKE
 	special Script_TryGainNewFanFromCounter
-<<<<<<< HEAD
 	setflag FLAG_DEFEATED_ELITE_4_KAREN
-=======
-	setflag FLAG_DEFEATED_ELITE_4_DRAKE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
 	msgbox EverGrandeCity_DrakesRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
 	release
@@ -110,7 +82,6 @@ EverGrandeCity_DrakesRoom_Text_IntroSpeech:
 	.string "If you don't, then you will never\n"
 	.string "prevail over me!$"
 
-<<<<<<< HEAD
 EverGrandeCity_DrakesRoom_Text_IntroSpeech2:
 	.string "I am the last of the POKéMON LEAGUE\n"
 	.string "ELITE FOUR, DRAKE the DRAGON master!\p"
@@ -131,11 +102,6 @@ EverGrandeCity_DrakesRoom_Text_Defeat2:
 	.string "Amazing. Superb.\n"
 	.string "You really are the best.$"
 
-=======
-EverGrandeCity_DrakesRoom_Text_Defeat:
-	.string "Superb, it should be said.$"
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 EverGrandeCity_DrakesRoom_Text_PostBattleSpeech:
 	.string "You deserve every credit for coming\n"
 	.string "this far as a TRAINER of POKéMON.\p"

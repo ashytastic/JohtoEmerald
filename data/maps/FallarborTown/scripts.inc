@@ -3,13 +3,8 @@ FallarborTown_MapScripts::
 	.byte 0
 
 FallarborTown_OnTransition:
-<<<<<<< HEAD
 	setflag FLAG_VISITED_ECRUTEAK_CITY
 	setvar VAR_GARBAGEVAR, 0
-=======
-	setflag FLAG_VISITED_FALLARBOR_TOWN
-	setvar VAR_CONTEST_HALL_STATE, 0
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	clearflag FLAG_CONTEST_SKETCH_CREATED
 	end
 

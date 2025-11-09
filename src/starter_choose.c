@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 #include "constants/species.h"
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include "global.h"
 #include "bg.h"
 #include "data.h"
@@ -27,11 +24,8 @@
 #include "window.h"
 #include "constants/songs.h"
 #include "constants/rgb.h"
-<<<<<<< HEAD
 #include "tx_randomizer_and_challenges.h"
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 #define STARTER_MON_COUNT   3
 
@@ -63,7 +57,6 @@ static u16 sStarterLabelWindowId;
 const u16 gBirchBagGrass_Pal[] = INCBIN_U16("graphics/starter_choose/tiles.gbapal");
 static const u16 sPokeballSelection_Pal[] = INCBIN_U16("graphics/starter_choose/pokeball_selection.gbapal");
 static const u16 sStarterCircle_Pal[] = INCBIN_U16("graphics/starter_choose/starter_circle.gbapal");
-<<<<<<< HEAD
 const u32 gBirchBagTilemap[] = INCBIN_U32("graphics/starter_choose/birch_bag.bin.lz");
 const u32 gBirchGrassTilemap[] = INCBIN_U32("graphics/starter_choose/birch_grass.bin.lz");
 const u32 gBirchBagGrass_Gfx[] = INCBIN_U32("graphics/starter_choose/tiles.4bpp.lz");
@@ -71,13 +64,6 @@ const u32 gPokeballSelection_Gfx[] = INCBIN_U32("graphics/starter_choose/pokebal
 static const u32 sStarterCircle_Gfx[] = INCBIN_U32("graphics/starter_choose/starter_circle.4bpp.lz");
 
 EWRAM_DATA static u16 sStarterList[3] = {0};
-=======
-const u32 gBirchBagTilemap[] = INCBIN_U32("graphics/starter_choose/birch_bag.bin.smolTM");
-const u32 gBirchGrassTilemap[] = INCBIN_U32("graphics/starter_choose/birch_grass.bin.smolTM");
-const u32 gBirchBagGrass_Gfx[] = INCBIN_U32("graphics/starter_choose/tiles.4bpp.smol");
-const u32 gPokeballSelection_Gfx[] = INCBIN_U32("graphics/starter_choose/pokeball_selection.4bpp.smol");
-static const u32 sStarterCircle_Gfx[] = INCBIN_U32("graphics/starter_choose/starter_circle.4bpp.smol");
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 static const struct WindowTemplate sWindowTemplates[] =
 {
@@ -131,15 +117,9 @@ static const u8 sStarterLabelCoords[STARTER_MON_COUNT][2] =
 
 static const u16 sStarterMon[STARTER_MON_COUNT] =
 {
-<<<<<<< HEAD
     SPECIES_CHIKORITA,
     SPECIES_CYNDAQUIL,
     SPECIES_TOTODILE,
-=======
-    SPECIES_TREECKO,
-    SPECIES_TORCHIC,
-    SPECIES_MUDKIP,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 static const struct BgTemplate sBgTemplates[3] =
@@ -273,30 +253,18 @@ static const union AnimCmd sAnim_StarterCircle[] =
     ANIMCMD_END,
 };
 
-<<<<<<< HEAD
 static const union AnimCmd * const sAnims_Hand[] =
-=======
-static const union AnimCmd *const sAnims_Hand[] =
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     sAnim_Hand,
 };
 
-<<<<<<< HEAD
 static const union AnimCmd * const sAnims_Pokeball[] =
-=======
-static const union AnimCmd *const sAnims_Pokeball[] =
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     sAnim_Pokeball_Still,
     sAnim_Pokeball_Moving,
 };
 
-<<<<<<< HEAD
 static const union AnimCmd * const sAnims_StarterCircle[] =
-=======
-static const union AnimCmd *const sAnims_StarterCircle[] =
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     sAnim_StarterCircle,
 };
@@ -315,13 +283,8 @@ static const union AffineAnimCmd sAffineAnim_StarterCircle[] =
     AFFINEANIMCMD_END,
 };
 
-<<<<<<< HEAD
 static const union AffineAnimCmd * const sAffineAnims_StarterPokemon = {sAffineAnim_StarterPokemon};
 static const union AffineAnimCmd * const sAffineAnims_StarterCircle[] = {sAffineAnim_StarterCircle};
-=======
-static const union AffineAnimCmd *const sAffineAnims_StarterPokemon = {sAffineAnim_StarterPokemon};
-static const union AffineAnimCmd *const sAffineAnims_StarterCircle[] = {sAffineAnim_StarterCircle};
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 static const struct CompressedSpriteSheet sSpriteSheet_PokeballSelect[] =
 {
@@ -392,7 +355,6 @@ static const struct SpriteTemplate sSpriteTemplate_StarterCircle =
 // .text
 u16 GetStarterPokemon(u16 chosenStarterId)
 {
-<<<<<<< HEAD
     //tx_randomizer_and_challenges
     u16 mon = sStarterMon[chosenStarterId];
     u16 i;
@@ -418,11 +380,6 @@ u16 GetStarterPokemon(u16 chosenStarterId)
     #endif
 
     return mon;
-=======
-    if (chosenStarterId > STARTER_MON_COUNT)
-        chosenStarterId = 0;
-    return sStarterMon[chosenStarterId];
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void VblankCB_StarterChoose(void)
@@ -467,15 +424,9 @@ void CB2_ChooseStarter(void)
     DmaFill32(3, 0, OAM, OAM_SIZE);
     DmaFill16(3, 0, PLTT, PLTT_SIZE);
 
-<<<<<<< HEAD
     LZ77UnCompVram(gBirchBagGrass_Gfx, (void *)VRAM);
     LZ77UnCompVram(gBirchBagTilemap, (void *)(BG_SCREEN_ADDR(6)));
     LZ77UnCompVram(gBirchGrassTilemap, (void *)(BG_SCREEN_ADDR(7)));
-=======
-    DecompressDataWithHeaderVram(gBirchBagGrass_Gfx, (void *)VRAM);
-    DecompressDataWithHeaderVram(gBirchBagTilemap, (void *)(BG_SCREEN_ADDR(6)));
-    DecompressDataWithHeaderVram(gBirchGrassTilemap, (void *)(BG_SCREEN_ADDR(7)));
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     ResetBgsAndClearDma3BusyFlags(0);
     InitBgsFromTemplates(0, sBgTemplates, ARRAY_COUNT(sBgTemplates));
@@ -652,13 +603,8 @@ static void CreateStarterPokemonLabel(u8 selection)
     u8 labelLeft, labelRight, labelTop, labelBottom;
 
     u16 species = GetStarterPokemon(selection);
-<<<<<<< HEAD
     CopyMonCategoryText(SpeciesToNationalPokedexNum(species), categoryText);
     speciesName = gSpeciesNames[species];
-=======
-    CopyMonCategoryText(species, categoryText);
-    speciesName = GetSpeciesName(species);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     winTemplate = sWindowTemplate_StarterLabel;
     winTemplate.tilemapLeft = sStarterLabelCoords[selection][0];
@@ -711,7 +657,6 @@ static u8 CreatePokemonFrontSprite(u16 species, u8 x, u8 y)
 {
     u8 spriteId;
 
-<<<<<<< HEAD
     if (gSaveBlock1Ptr->tx_Features_ShinyChance == 0) // 1/8192
     {
         spriteId = CreateMonPicSprite_Affine(species, SHINY_ODDS, 0, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
@@ -742,11 +687,6 @@ static u8 CreatePokemonFrontSprite(u16 species, u8 x, u8 y)
         gSprites[spriteId].oam.priority = 0;
         return spriteId;
     }
-=======
-    spriteId = CreateMonPicSprite_Affine(species, FALSE, 0, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
-    gSprites[spriteId].oam.priority = 0;
-    return spriteId;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void SpriteCB_SelectionHand(struct Sprite *sprite)

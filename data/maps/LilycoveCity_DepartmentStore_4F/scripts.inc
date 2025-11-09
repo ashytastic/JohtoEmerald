@@ -29,13 +29,9 @@ LilycoveCity_DepartmentStore_4F_Pokemart_AttackTMs:
 	.2byte ITEM_TM_THUNDER
 	.2byte ITEM_TM_BLIZZARD
 	.2byte ITEM_TM_HYPER_BEAM
-<<<<<<< HEAD
 	.2byte ITEM_NONE
 	release
 	end
-=======
-	pokemartlistend
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 LilycoveCity_DepartmentStore_4F_EventScript_ClerkRight::
 	lock
@@ -53,13 +49,9 @@ LilycoveCity_DepartmentStore_4F_Pokemart_DefenseTMs:
 	.2byte ITEM_TM_SAFEGUARD
 	.2byte ITEM_TM_REFLECT
 	.2byte ITEM_TM_LIGHT_SCREEN
-<<<<<<< HEAD
 	.2byte ITEM_NONE
 	release
 	end
-=======
-	pokemartlistend
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 LilycoveCity_DepartmentStore_4F_Text_AttackOrDefenseTM:
 	.string "Hmm…\p"

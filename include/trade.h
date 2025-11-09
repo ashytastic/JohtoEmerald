@@ -7,10 +7,6 @@
 extern struct Mail gTradeMail[PARTY_SIZE];
 extern u8 gSelectedTradeMonPositions[2];
 
-<<<<<<< HEAD
-=======
-extern const u16 gTradePlatform_Tilemap[];
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 extern const struct WindowTemplate gTradeEvolutionSceneYesNoWindowTemplate;
 
 s32 GetGameProgressForLinkTrade(void);
@@ -18,18 +14,10 @@ void CB2_StartCreateTradeMenu(void);
 void CB2_LinkTrade(void);
 int CanRegisterMonForTradingBoard(struct RfuGameCompatibilityData player, u16 species2, u16 species, bool8 isModernFatefulEncounter);
 int GetUnionRoomTradeMessageId(struct RfuGameCompatibilityData player, struct RfuGameCompatibilityData partner, u16 playerSpecies2, u16 partnerSpecies, u8 requestedType, u16 playerSpecies, bool8 isModernFatefulEncounter);
-<<<<<<< HEAD
 int CanSpinTradeMon(struct Pokemon *, u16);
 void InitTradeSequenceBgGpuRegs(void);
 void LinkTradeDrawWindow(void);
 void LoadTradeAnimGfx(void);
 void DrawTextOnTradeWindow(u8, const u8 *, u8);
-=======
-int CanSpinTradeMon(struct Pokemon *mon, u16 monIdx);
-void InitTradeSequenceBgGpuRegs(void);
-void LinkTradeDrawWindow(void);
-void LoadTradeAnimGfx(void);
-void DrawTextOnTradeWindow(u8 windowId, const u8 *str, u8 speed);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 #endif //GUARD_TRADE_H

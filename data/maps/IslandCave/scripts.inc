@@ -88,10 +88,7 @@ IslandCave_EventScript_ClearSteps::
 	return
 
 IslandCave_EventScript_Regice::
-<<<<<<< HEAD
 	bufferspeciesname 0, SPECIES_REGICE
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	lock
 	faceplayer
 	waitse
@@ -100,17 +97,11 @@ IslandCave_EventScript_Regice::
 	waitmoncry
 	setwildbattle SPECIES_REGICE, 40
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
-<<<<<<< HEAD
 	call_if_set FLAG_DIFFICULTY_HARD, IslandCave_EventScript_Regice_Stats
 	special StartRegiBattle
 	waitstate
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	calculatemonstats
-=======
-	special StartRegiBattle
-	waitstate
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, IslandCave_EventScript_DefeatedRegice
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, IslandCave_EventScript_RanFromRegice
@@ -119,7 +110,6 @@ IslandCave_EventScript_Regice::
 	release
 	end
 
-<<<<<<< HEAD
 IslandCave_EventScript_Regice_Stats::
 	setvar VAR_0x8000, 500 @HP
 	setvar VAR_0x8006, 999 @SP.DEF
@@ -127,8 +117,6 @@ IslandCave_EventScript_Regice_Stats::
 	special SetSpDefStat
 	return
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 IslandCave_EventScript_DefeatedRegice::
 	setflag FLAG_DEFEATED_REGICE
 	goto Common_EventScript_RemoveStaticPokemon

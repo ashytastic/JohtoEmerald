@@ -4,11 +4,7 @@
 	.equiv ID_NUMBER, 0x68736d53
 
 	.equiv PCM_DMA_BUF_SIZE, 1584
-<<<<<<< HEAD
 	.equiv MAX_DIRECTSOUND_CHANNELS, 15
-=======
-	.equiv MAX_DIRECTSOUND_CHANNELS, 12
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 	.equiv C_V, 0x40
 

@@ -1,17 +1,10 @@
-<<<<<<< HEAD
 #include <string.h>
 #include "gba/m4a_internal.h"
-=======
-#include "global.h"
-#include "gba/m4a_internal.h"
-#include "global.h"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 extern const u8 gCgb3Vol[];
 
 #define BSS_CODE __attribute__((section(".bss.code")))
 
-<<<<<<< HEAD
 BSS_CODE ALIGNED(4) char SoundMainRAM_Buffer[0xB40] = {0};
 BSS_CODE ALIGNED(4) u32 hq_buffer_ptr[0x130] = {0};
 
@@ -27,20 +20,6 @@ struct MusicPlayerInfo gMPlayInfo_SE1;
 struct MusicPlayerInfo gMPlayInfo_SE2;
 struct MusicPlayerInfo gMPlayInfo_SE3;
 u8 gMPlayMemAccArea[0x10];
-=======
-COMMON_DATA struct SoundInfo gSoundInfo = {0};
-COMMON_DATA struct PokemonCrySong gPokemonCrySongs[MAX_POKEMON_CRIES] = {0};
-COMMON_DATA struct MusicPlayerInfo gPokemonCryMusicPlayers[MAX_POKEMON_CRIES] = {0};
-COMMON_DATA struct MusicPlayerInfo gMPlayInfo_BGM = {0};
-COMMON_DATA MPlayFunc gMPlayJumpTable[36] = {0};
-COMMON_DATA struct CgbChannel gCgbChans[4] = {0};
-COMMON_DATA struct MusicPlayerInfo gMPlayInfo_SE1 = {0};
-COMMON_DATA struct MusicPlayerInfo gMPlayInfo_SE2 = {0};
-COMMON_DATA struct MusicPlayerTrack gPokemonCryTracks[MAX_POKEMON_CRIES * 2] = {0};
-COMMON_DATA struct PokemonCrySong gPokemonCrySong = {0};
-COMMON_DATA u8 gMPlayMemAccArea[0x10] = {0};
-COMMON_DATA struct MusicPlayerInfo gMPlayInfo_SE3 = {0};
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 u32 MidiKeyToFreq(struct WaveData *wav, u8 key, u8 fineAdjust)
 {
@@ -93,7 +72,6 @@ void m4aSoundInit(void)
 {
     s32 i;
 
-<<<<<<< HEAD
     CpuCopy32((void *)((s32)SoundMainRAM & ~1), SoundMainRAM_Buffer, sizeof(SoundMainRAM_Buffer));
 
     SoundInit(&gSoundInfo);
@@ -102,14 +80,6 @@ void m4aSoundInit(void)
                | SOUND_MODE_FREQ_18157
                | (12 << SOUND_MODE_MASVOL_SHIFT)
                | (15 << SOUND_MODE_MAXCHN_SHIFT));
-=======
-    SoundInit(&gSoundInfo);
-    MPlayExtender(gCgbChans);
-    m4aSoundMode(SOUND_MODE_DA_BIT_8
-               | SOUND_MODE_FREQ_13379
-               | (12 << SOUND_MODE_MASVOL_SHIFT)
-               | (5 << SOUND_MODE_MAXCHN_SHIFT));
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     for (i = 0; i < NUM_MUSIC_PLAYERS; i++)
     {
@@ -314,10 +284,6 @@ void MPlayExtender(struct CgbChannel *cgbChans)
 
     soundInfo->ident++;
 
-<<<<<<< HEAD
-=======
-#if __STDC_VERSION__ < 202311L
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gMPlayJumpTable[8] = ply_memacc;
     gMPlayJumpTable[17] = ply_lfos;
     gMPlayJumpTable[19] = ply_mod;
@@ -327,20 +293,6 @@ void MPlayExtender(struct CgbChannel *cgbChans)
     gMPlayJumpTable[31] = TrackStop;
     gMPlayJumpTable[32] = FadeOutBody;
     gMPlayJumpTable[33] = TrkVolPitSet;
-<<<<<<< HEAD
-=======
-#else
-    gMPlayJumpTable[8] = (void (*)(...))ply_memacc;
-    gMPlayJumpTable[17] = (void (*)(...))ply_lfos;
-    gMPlayJumpTable[19] = (void (*)(...))ply_mod;
-    gMPlayJumpTable[28] = (void (*)(...))ply_xcmd;
-    gMPlayJumpTable[29] = (void (*)(...))ply_endtie;
-    gMPlayJumpTable[30] = (void (*)(...))SampleFreqSet;
-    gMPlayJumpTable[31] = (void (*)(...))TrackStop;
-    gMPlayJumpTable[32] = (void (*)(...))FadeOutBody;
-    gMPlayJumpTable[33] = (void (*)(...))TrkVolPitSet;
-#endif
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     soundInfo->cgbChans = cgbChans;
     soundInfo->CgbSound = CgbSound;
@@ -369,29 +321,13 @@ void MusicPlayerJumpTableCopy(void)
 
 void ClearChain(void *x)
 {
-<<<<<<< HEAD
     void (*func)(void *) = *(&gMPlayJumpTable[34]);
-=======
-#if __STDC_VERSION__ < 202311L
-    void (*func)(void *) = *(&gMPlayJumpTable[34]);
-#else
-    void (*func)(...) = *(&gMPlayJumpTable[34]);
-#endif
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     func(x);
 }
 
 void Clear64byte(void *x)
 {
-<<<<<<< HEAD
     void (*func)(void *) = *(&gMPlayJumpTable[35]);
-=======
-#if __STDC_VERSION__ < 202311L
-    void (*func)(void *) = *(&gMPlayJumpTable[35]);
-#else
-    void (*func)(...) = *(&gMPlayJumpTable[35]);
-#endif
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     func(x);
 }
 

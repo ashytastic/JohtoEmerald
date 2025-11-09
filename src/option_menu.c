@@ -1,10 +1,7 @@
 #include "global.h"
 #include "option_menu.h"
 #include "bg.h"
-<<<<<<< HEAD
 #include "event_data.h"
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include "gpu_regs.h"
 #include "international_string_util.h"
 #include "main.h"
@@ -13,49 +10,34 @@
 #include "scanline_effect.h"
 #include "sprite.h"
 #include "strings.h"
-<<<<<<< HEAD
 #include "sound.h"
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include "task.h"
 #include "text.h"
 #include "text_window.h"
 #include "window.h"
 #include "gba/m4a_internal.h"
 #include "constants/rgb.h"
-<<<<<<< HEAD
 #include "constants/songs.h"
 #include "event_data.h"
 #include "option_plus_menu.h"
 
 #define useOptionPlusMenu TRUE
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 #define tMenuSelection data[0]
 #define tTextSpeed data[1]
 #define tBattleSceneOff data[2]
 #define tBattleStyle data[3]
-<<<<<<< HEAD
 #define tAutorun data[4]
 #define tSound data[5]
 #define tButtonMode data[6]
 #define tWindowFrameType data[7]
-=======
-#define tSound data[4]
-#define tButtonMode data[5]
-#define tWindowFrameType data[6]
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 enum
 {
     MENUITEM_TEXTSPEED,
     MENUITEM_BATTLESCENE,
     MENUITEM_BATTLESTYLE,
-<<<<<<< HEAD
     MENUITEM_AUTORUN,
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     MENUITEM_SOUND,
     MENUITEM_BUTTONMODE,
     MENUITEM_FRAMETYPE,
@@ -69,7 +51,6 @@ enum
     WIN_OPTIONS
 };
 
-<<<<<<< HEAD
 #define YPOS_TEXTSPEED    (MENUITEM_TEXTSPEED * 13)
 #define YPOS_BATTLESCENE  (MENUITEM_BATTLESCENE * 13)
 #define YPOS_BATTLESTYLE  (MENUITEM_BATTLESTYLE * 13)
@@ -77,14 +58,6 @@ enum
 #define YPOS_SOUND        (MENUITEM_SOUND * 13)
 #define YPOS_BUTTONMODE   (MENUITEM_BUTTONMODE * 13)
 #define YPOS_FRAMETYPE    (MENUITEM_FRAMETYPE * 13)
-=======
-#define YPOS_TEXTSPEED    (MENUITEM_TEXTSPEED * 16)
-#define YPOS_BATTLESCENE  (MENUITEM_BATTLESCENE * 16)
-#define YPOS_BATTLESTYLE  (MENUITEM_BATTLESTYLE * 16)
-#define YPOS_SOUND        (MENUITEM_SOUND * 16)
-#define YPOS_BUTTONMODE   (MENUITEM_BUTTONMODE * 16)
-#define YPOS_FRAMETYPE    (MENUITEM_FRAMETYPE * 16)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 static void Task_OptionMenuFadeIn(u8 taskId);
 static void Task_OptionMenuProcessInput(u8 taskId);
@@ -101,11 +74,8 @@ static u8 Sound_ProcessInput(u8 selection);
 static void Sound_DrawChoices(u8 selection);
 static u8 FrameType_ProcessInput(u8 selection);
 static void FrameType_DrawChoices(u8 selection);
-<<<<<<< HEAD
 static u8   Autorun_ProcessInput(u8 selection);
 static void Autorun_DrawChoices(u8 selection);
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static u8 ButtonMode_ProcessInput(u8 selection);
 static void ButtonMode_DrawChoices(u8 selection);
 static void DrawHeaderText(void);
@@ -123,10 +93,7 @@ static const u8 *const sOptionMenuItemsNames[MENUITEM_COUNT] =
     [MENUITEM_TEXTSPEED]   = gText_TextSpeed,
     [MENUITEM_BATTLESCENE] = gText_BattleScene,
     [MENUITEM_BATTLESTYLE] = gText_BattleStyle,
-<<<<<<< HEAD
     [MENUITEM_AUTORUN]     = gText_Autorun,
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     [MENUITEM_SOUND]       = gText_Sound,
     [MENUITEM_BUTTONMODE]  = gText_ButtonMode,
     [MENUITEM_FRAMETYPE]   = gText_Frame,
@@ -197,15 +164,12 @@ static void VBlankCB(void)
 
 void CB2_InitOptionMenu(void)
 {
-<<<<<<< HEAD
     if (useOptionPlusMenu)
     {
         CB2_InitOptionPlusMenu();
         return;
     }
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     switch (gMain.state)
     {
     default:
@@ -286,10 +250,7 @@ void CB2_InitOptionMenu(void)
         gTasks[taskId].tTextSpeed = gSaveBlock2Ptr->optionsTextSpeed;
         gTasks[taskId].tBattleSceneOff = gSaveBlock2Ptr->optionsBattleSceneOff;
         gTasks[taskId].tBattleStyle = gSaveBlock2Ptr->optionsBattleStyle;
-<<<<<<< HEAD
         //gTasks[taskId].tAutorun = gSaveBlock2Ptr->optionsautoRun;
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         gTasks[taskId].tSound = gSaveBlock2Ptr->optionsSound;
         gTasks[taskId].tButtonMode = gSaveBlock2Ptr->optionsButtonMode;
         gTasks[taskId].tWindowFrameType = gSaveBlock2Ptr->optionsWindowFrameType;
@@ -297,10 +258,7 @@ void CB2_InitOptionMenu(void)
         TextSpeed_DrawChoices(gTasks[taskId].tTextSpeed);
         BattleScene_DrawChoices(gTasks[taskId].tBattleSceneOff);
         BattleStyle_DrawChoices(gTasks[taskId].tBattleStyle);
-<<<<<<< HEAD
         Autorun_DrawChoices(gTasks[taskId].tAutorun);
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         Sound_DrawChoices(gTasks[taskId].tSound);
         ButtonMode_DrawChoices(gTasks[taskId].tButtonMode);
         FrameType_DrawChoices(gTasks[taskId].tWindowFrameType);
@@ -378,7 +336,6 @@ static void Task_OptionMenuProcessInput(u8 taskId)
             if (previousOption != gTasks[taskId].tBattleStyle)
                 BattleStyle_DrawChoices(gTasks[taskId].tBattleStyle);
             break;
-<<<<<<< HEAD
         case MENUITEM_AUTORUN:
             previousOption = gTasks[taskId].tAutorun;
             gTasks[taskId].tAutorun = Autorun_ProcessInput(gTasks[taskId].tAutorun);
@@ -386,8 +343,6 @@ static void Task_OptionMenuProcessInput(u8 taskId)
             if (previousOption != gTasks[taskId].tAutorun)
                 Autorun_DrawChoices(gTasks[taskId].tAutorun);
             break;
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         case MENUITEM_SOUND:
             previousOption = gTasks[taskId].tSound;
             gTasks[taskId].tSound = Sound_ProcessInput(gTasks[taskId].tSound);
@@ -447,11 +402,7 @@ static void Task_OptionMenuFadeOut(u8 taskId)
 static void HighlightOptionMenuItem(u8 index)
 {
     SetGpuReg(REG_OFFSET_WIN0H, WIN_RANGE(16, DISPLAY_WIDTH - 16));
-<<<<<<< HEAD
     SetGpuReg(REG_OFFSET_WIN0V, WIN_RANGE(index * 13 + 40, index * 13 + 56));
-=======
-    SetGpuReg(REG_OFFSET_WIN0V, WIN_RANGE(index * 16 + 40, index * 16 + 56));
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void DrawOptionMenuChoice(const u8 *text, u8 x, u8 y, u8 style)
@@ -469,11 +420,7 @@ static void DrawOptionMenuChoice(const u8 *text, u8 x, u8 y, u8 style)
     }
 
     dst[i] = EOS;
-<<<<<<< HEAD
     AddTextPrinterParameterized(WIN_OPTIONS, FONT_SHORT, dst, x, y + 1, TEXT_SKIP_DRAW, NULL);
-=======
-    AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, dst, x, y + 1, TEXT_SKIP_DRAW, NULL);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static u8 TextSpeed_ProcessInput(u8 selection)
@@ -511,25 +458,15 @@ static void TextSpeed_DrawChoices(u8 selection)
 
     DrawOptionMenuChoice(gText_TextSpeedSlow, 104, YPOS_TEXTSPEED, styles[0]);
 
-<<<<<<< HEAD
     widthSlow = GetStringWidth(FONT_SHORT, gText_TextSpeedSlow, 0);
     widthMid = GetStringWidth(FONT_SHORT, gText_TextSpeedMid, 0);
     widthFast = GetStringWidth(FONT_SHORT, gText_TextSpeedFast, 0);
-=======
-    widthSlow = GetStringWidth(FONT_NORMAL, gText_TextSpeedSlow, 0);
-    widthMid = GetStringWidth(FONT_NORMAL, gText_TextSpeedMid, 0);
-    widthFast = GetStringWidth(FONT_NORMAL, gText_TextSpeedFast, 0);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     widthMid -= 94;
     xMid = (widthSlow - widthMid - widthFast) / 2 + 104;
     DrawOptionMenuChoice(gText_TextSpeedMid, xMid, YPOS_TEXTSPEED, styles[1]);
 
-<<<<<<< HEAD
     DrawOptionMenuChoice(gText_TextSpeedFast, GetStringRightAlignXOffset(FONT_SHORT, gText_TextSpeedFast, 198), YPOS_TEXTSPEED, styles[2]);
-=======
-    DrawOptionMenuChoice(gText_TextSpeedFast, GetStringRightAlignXOffset(FONT_NORMAL, gText_TextSpeedFast, 198), YPOS_TEXTSPEED, styles[2]);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static u8 BattleScene_ProcessInput(u8 selection)
@@ -552,17 +489,12 @@ static void BattleScene_DrawChoices(u8 selection)
     styles[selection] = 1;
 
     DrawOptionMenuChoice(gText_BattleSceneOn, 104, YPOS_BATTLESCENE, styles[0]);
-<<<<<<< HEAD
     DrawOptionMenuChoice(gText_BattleSceneOff, GetStringRightAlignXOffset(FONT_SHORT, gText_BattleSceneOff, 198), YPOS_BATTLESCENE, styles[1]);
-=======
-    DrawOptionMenuChoice(gText_BattleSceneOff, GetStringRightAlignXOffset(FONT_NORMAL, gText_BattleSceneOff, 198), YPOS_BATTLESCENE, styles[1]);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static u8 BattleStyle_ProcessInput(u8 selection)
 {
     if (JOY_NEW(DPAD_LEFT | DPAD_RIGHT))
-<<<<<<< HEAD
         if (gSaveBlock2Ptr->optionsDifficulty == 2)
         {
             PlaySE(SE_FAILURE);
@@ -572,12 +504,6 @@ static u8 BattleStyle_ProcessInput(u8 selection)
             selection ^= 1;
             sArrowPressed = TRUE;
         }
-=======
-    {
-        selection ^= 1;
-        sArrowPressed = TRUE;
-    }
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     return selection;
 }
@@ -591,7 +517,6 @@ static void BattleStyle_DrawChoices(u8 selection)
     styles[selection] = 1;
 
     DrawOptionMenuChoice(gText_BattleStyleShift, 104, YPOS_BATTLESTYLE, styles[0]);
-<<<<<<< HEAD
     DrawOptionMenuChoice(gText_BattleStyleSet, GetStringRightAlignXOffset(FONT_SHORT, gText_BattleStyleSet, 198), YPOS_BATTLESTYLE, styles[1]);
 }
 
@@ -625,9 +550,6 @@ static void Autorun_DrawChoices(u8 selection)
 
     DrawOptionMenuChoice(gText_AutorunOff, 104, YPOS_AUTORUN, styles[0]);
     DrawOptionMenuChoice(gText_AutorunOn, GetStringRightAlignXOffset(FONT_SHORT, gText_BattleStyleSet, 198), YPOS_AUTORUN, styles[1]);
-=======
-    DrawOptionMenuChoice(gText_BattleStyleSet, GetStringRightAlignXOffset(FONT_NORMAL, gText_BattleStyleSet, 198), YPOS_BATTLESTYLE, styles[1]);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static u8 Sound_ProcessInput(u8 selection)
@@ -651,11 +573,7 @@ static void Sound_DrawChoices(u8 selection)
     styles[selection] = 1;
 
     DrawOptionMenuChoice(gText_SoundMono, 104, YPOS_SOUND, styles[0]);
-<<<<<<< HEAD
     DrawOptionMenuChoice(gText_SoundStereo, GetStringRightAlignXOffset(FONT_SHORT, gText_SoundStereo, 198), YPOS_SOUND, styles[1]);
-=======
-    DrawOptionMenuChoice(gText_SoundStereo, GetStringRightAlignXOffset(FONT_NORMAL, gText_SoundStereo, 198), YPOS_SOUND, styles[1]);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static u8 FrameType_ProcessInput(u8 selection)
@@ -687,11 +605,7 @@ static u8 FrameType_ProcessInput(u8 selection)
 
 static void FrameType_DrawChoices(u8 selection)
 {
-<<<<<<< HEAD
     u8 text[16];
-=======
-    u8 text[16] = {EOS};
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     u8 n = selection + 1;
     u16 i;
 
@@ -755,35 +669,21 @@ static void ButtonMode_DrawChoices(u8 selection)
 
     DrawOptionMenuChoice(gText_ButtonTypeNormal, 104, YPOS_BUTTONMODE, styles[0]);
 
-<<<<<<< HEAD
     widthNormal = GetStringWidth(FONT_SHORT, gText_ButtonTypeNormal, 0);
     widthLR = GetStringWidth(FONT_SHORT, gText_ButtonTypeLR, 0);
     widthLA = GetStringWidth(FONT_SHORT, gText_ButtonTypeLEqualsA, 0);
-=======
-    widthNormal = GetStringWidth(FONT_NORMAL, gText_ButtonTypeNormal, 0);
-    widthLR = GetStringWidth(FONT_NORMAL, gText_ButtonTypeLR, 0);
-    widthLA = GetStringWidth(FONT_NORMAL, gText_ButtonTypeLEqualsA, 0);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     widthLR -= 94;
     xLR = (widthNormal - widthLR - widthLA) / 2 + 104;
     DrawOptionMenuChoice(gText_ButtonTypeLR, xLR, YPOS_BUTTONMODE, styles[1]);
 
-<<<<<<< HEAD
     DrawOptionMenuChoice(gText_ButtonTypeLEqualsA, GetStringRightAlignXOffset(FONT_SHORT, gText_ButtonTypeLEqualsA, 198), YPOS_BUTTONMODE, styles[2]);
-=======
-    DrawOptionMenuChoice(gText_ButtonTypeLEqualsA, GetStringRightAlignXOffset(FONT_NORMAL, gText_ButtonTypeLEqualsA, 198), YPOS_BUTTONMODE, styles[2]);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void DrawHeaderText(void)
 {
     FillWindowPixelBuffer(WIN_HEADER, PIXEL_FILL(1));
-<<<<<<< HEAD
     AddTextPrinterParameterized(WIN_HEADER, FONT_SHORT, gText_Option, 8, 1, TEXT_SKIP_DRAW, NULL);
-=======
-    AddTextPrinterParameterized(WIN_HEADER, FONT_NORMAL, gText_Option, 8, 1, TEXT_SKIP_DRAW, NULL);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     CopyWindowToVram(WIN_HEADER, COPYWIN_FULL);
 }
 
@@ -793,11 +693,7 @@ static void DrawOptionMenuTexts(void)
 
     FillWindowPixelBuffer(WIN_OPTIONS, PIXEL_FILL(1));
     for (i = 0; i < MENUITEM_COUNT; i++)
-<<<<<<< HEAD
         AddTextPrinterParameterized(WIN_OPTIONS, FONT_SHORT, sOptionMenuItemsNames[i], 8, (i * 13) + 1, TEXT_SKIP_DRAW, NULL);
-=======
-        AddTextPrinterParameterized(WIN_OPTIONS, FONT_NORMAL, sOptionMenuItemsNames[i], 8, (i * 16) + 1, TEXT_SKIP_DRAW, NULL);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
 }
 

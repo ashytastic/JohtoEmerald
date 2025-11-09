@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 .set LOCALID_CURATOR, 2
 .set LOCALID_ARTIST_2, 8
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 LilycoveCity_LilycoveMuseum_1F_MapScripts::
 	.byte 0
 
@@ -13,11 +10,7 @@ LilycoveCity_LilycoveMuseum_1F_EventScript_Greeter::
 
 LilycoveCity_LilycoveMuseum_1F_EventScript_Curator::
 	lockall
-<<<<<<< HEAD
 	applymovement LOCALID_CURATOR, Common_Movement_FacePlayer
-=======
-	applymovement LOCALID_MUSEUM_1F_CURATOR, Common_Movement_FacePlayer
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	message LilycoveCity_LilycoveMuseum_1F_Text_ImCuratorHaveYouViewedOurPaintings
 	waitmessage
 	multichoice 20, 8, MULTI_VIEWED_PAINTINGS, TRUE
@@ -42,15 +35,9 @@ LilycoveCity_LilycoveMuseum_1F_EventScript_NotInterested::
 
 LilycoveCity_LilycoveMuseum_1F_EventScript_InterestedInPaintings::
 	msgbox LilycoveCity_LilycoveMuseum_1F_Text_ExcellentCanYouComeWithMe, MSGBOX_SIGN
-<<<<<<< HEAD
 	applymovement LOCALID_CURATOR, LilycoveCity_LilycoveMuseum_1F_Movement_CuratorEnterStairs
 	waitmovement 0
 	removeobject LOCALID_CURATOR
-=======
-	applymovement LOCALID_MUSEUM_1F_CURATOR, LilycoveCity_LilycoveMuseum_1F_Movement_CuratorEnterStairs
-	waitmovement 0
-	removeobject LOCALID_MUSEUM_1F_CURATOR
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	switch VAR_FACING
 	case DIR_NORTH, LilycoveCity_LilycoveMuseum_1F_EventScript_FollowCuratorNorth
 	case DIR_WEST, LilycoveCity_LilycoveMuseum_1F_EventScript_FollowCuratorWest
@@ -59,11 +46,7 @@ LilycoveCity_LilycoveMuseum_1F_EventScript_InterestedInPaintings::
 
 LilycoveCity_LilycoveMuseum_1F_EventScript_FollowCuratorNorth::
 	lockall
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, LilycoveCity_LilycoveMuseum_1F_Movement_FollowCuratorNorth
-=======
-	applymovement LOCALID_PLAYER, LilycoveCity_LilycoveMuseum_1F_Movement_FollowCuratorNorth
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	warp MAP_LILYCOVE_CITY_LILYCOVE_MUSEUM_2F, 11, 8
 	waitstate
@@ -71,11 +54,7 @@ LilycoveCity_LilycoveMuseum_1F_EventScript_FollowCuratorNorth::
 
 LilycoveCity_LilycoveMuseum_1F_EventScript_FollowCuratorWest::
 	lockall
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, LilycoveCity_LilycoveMuseum_1F_Movement_FollowCuratorWest
-=======
-	applymovement LOCALID_PLAYER, LilycoveCity_LilycoveMuseum_1F_Movement_FollowCuratorWest
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	warp MAP_LILYCOVE_CITY_LILYCOVE_MUSEUM_2F, 11, 8
 	waitstate
@@ -83,11 +62,7 @@ LilycoveCity_LilycoveMuseum_1F_EventScript_FollowCuratorWest::
 
 LilycoveCity_LilycoveMuseum_1F_EventScript_FollowCuratorEast::
 	lockall
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, LilycoveCity_LilycoveMuseum_1F_Movement_FollowCuratorEast
-=======
-	applymovement LOCALID_PLAYER, LilycoveCity_LilycoveMuseum_1F_Movement_FollowCuratorEast
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	warp MAP_LILYCOVE_CITY_LILYCOVE_MUSEUM_2F, 11, 8
 	waitstate
@@ -177,11 +152,7 @@ LilycoveCity_LilycoveMuseum_1F_EventScript_Artist2::
 	faceplayer
 	msgbox LilycoveCity_LilycoveMuseum_1F_Text_AimToSeeGreatPaintings, MSGBOX_DEFAULT
 	closemessage
-<<<<<<< HEAD
 	applymovement LOCALID_ARTIST_2, Common_Movement_FaceOriginalDirection
-=======
-	applymovement LOCALID_MUSEUM_1F_ARTIST_2, Common_Movement_FaceOriginalDirection
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	release
 	end

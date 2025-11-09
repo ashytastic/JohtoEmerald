@@ -1,11 +1,8 @@
-<<<<<<< HEAD
 .set LOCALID_ATTENDANT, 1
 .set LOCALID_NURSE, 2
 .set LOCALID_GIRL, 4
 .set LOCALID_MAN, 5
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 TrainerHill_Entrance_MapScripts::
 	map_script MAP_SCRIPT_ON_RESUME, TrainerHill_Entrance_OnResume
 	map_script MAP_SCRIPT_ON_RETURN_TO_FIELD, TrainerHill_Entrance_OnReturn
@@ -28,30 +25,20 @@ TrainerHill_Entrance_OnResume:
 	setvar VAR_TEMP_0, 0
 	trainerhill_getusingereader
 	goto_if_eq VAR_RESULT, FALSE, TrainerHill_Entrance_EventScript_TryFaceAttendant  @ VAR_RESULT always FALSE here
-<<<<<<< HEAD
 	setobjectxy OBJ_EVENT_ID_PLAYER, 9, 6
 	applymovement OBJ_EVENT_ID_PLAYER, TrainerHill_Entrance_Movement_PlayerFaceAttendant
-=======
-	setobjectxy LOCALID_PLAYER, 9, 6
-	applymovement LOCALID_PLAYER, TrainerHill_Entrance_Movement_PlayerFaceAttendant
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 TrainerHill_Entrance_EventScript_TryFaceAttendant::
 	trainerhill_getwon
 	goto_if_eq VAR_RESULT, TRUE, TrainerHill_Entrance_EventScript_PlayerDontFaceAttendant
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, TrainerHill_Entrance_Movement_PlayerFaceAttendant
-=======
-	applymovement LOCALID_PLAYER, TrainerHill_Entrance_Movement_PlayerFaceAttendant
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 TrainerHill_Entrance_EventScript_PlayerDontFaceAttendant::
 	end
 
 TrainerHill_Entrance_OnReturn:
-<<<<<<< HEAD
 	addobject LOCALID_NURSE
 	addobject LOCALID_ATTENDANT
 	addobject LOCALID_MAN
@@ -61,15 +48,6 @@ TrainerHill_Entrance_OnReturn:
 TrainerHill_Entrance_OnLoad:
 	setflag FLAG_LIMIT_TO_50
 	calculatemonstats
-=======
-	addobject LOCALID_TRAINER_HILL_NURSE
-	addobject LOCALID_TRAINER_HILL_ATTENDANT
-	addobject LOCALID_TRAINER_HILL_MAN
-	addobject LOCALID_TRAINER_HILL_GIRL
-	end
-
-TrainerHill_Entrance_OnLoad:
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call_if_eq VAR_TEMP_D, 17, TrainerHill_Entrance_EventScript_OpenCounterDoor
 	end
 
@@ -86,11 +64,7 @@ TrainerHill_Entrance_OnFrame:
 
 TrainerHill_Entrance_EventScript_ExitElevator::
 	lockall
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, TrainerHill_Entrance_Movement_PlayerExitElevator
-=======
-	applymovement LOCALID_PLAYER, TrainerHill_Entrance_Movement_PlayerExitElevator
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	setmetatile 17, 10, METATILE_TrainerHill_CounterDoor, TRUE
 	special DrawWholeMapView
@@ -110,29 +84,17 @@ TrainerHill_Entrance_EventScript_ExitChallenge::
 
 TrainerHill_Entrance_EventScript_ExitChallengeLost::
 	lockall
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, TrainerHill_Entrance_Movement_PlayerFaceAttendant
-=======
-	applymovement LOCALID_PLAYER, TrainerHill_Entrance_Movement_PlayerFaceAttendant
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox TrainerHill_Entrance_Text_TooBadTremendousEffort, MSGBOX_DEFAULT
 	goto TrainerHill_Entrance_EventScript_PlayerExitChallenge
 
 TrainerHill_Entrance_EventScript_ExitChallengeECard::
 	lockall
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, TrainerHill_Entrance_Movement_PlayerFaceAttendant
 	msgbox TrainerHill_Entrance_Text_MovedReceptionHereForSwitch, MSGBOX_DEFAULT
 TrainerHill_Entrance_EventScript_PlayerExitChallenge::
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, TrainerHill_Entrance_Movement_PushPlayerBackFromCounter
-=======
-	applymovement LOCALID_PLAYER, TrainerHill_Entrance_Movement_PlayerFaceAttendant
-	msgbox TrainerHill_Entrance_Text_MovedReceptionHereForSwitch, MSGBOX_DEFAULT
-TrainerHill_Entrance_EventScript_PlayerExitChallenge::
-	closemessage
-	applymovement LOCALID_PLAYER, TrainerHill_Entrance_Movement_PushPlayerBackFromCounter
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	setvar VAR_TRAINER_HILL_IS_ACTIVE, 0
 	special HealPlayerParty
@@ -142,11 +104,7 @@ TrainerHill_Entrance_EventScript_EndExitChallenge::
 	end
 
 TrainerHill_Entrance_EventScript_Nurse::
-<<<<<<< HEAD
 	setvar VAR_0x800B, LOCALID_NURSE
-=======
-	setvar VAR_0x800B, LOCALID_TRAINER_HILL_NURSE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call Common_EventScript_PkmnCenterNurse
 	waitmessage
 	waitbuttonpress
@@ -169,11 +127,7 @@ TrainerHill_Entrance_EventScript_AttendantEnd::
 
 TrainerHill_Entrance_EventScript_EntryTrigger::
 	lockall
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, TrainerHill_Entrance_Movement_PlayerFaceAttendant
-=======
-	applymovement LOCALID_PLAYER, TrainerHill_Entrance_Movement_PlayerFaceAttendant
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto_if_unset FLAG_SYS_GAME_CLEAR, TrainerHill_Entrance_EventScript_Closed
 	msgbox TrainerHill_Entrance_Text_WelcomeToTrainerHill, MSGBOX_DEFAULT
 	trainerhill_getsaved
@@ -220,11 +174,7 @@ TrainerHill_Entrance_EventScript_CancelEntry::
 	setvar VAR_TEMP_5, 0
 	msgbox TrainerHill_Entrance_Text_PleaseVisitUsAgain, MSGBOX_DEFAULT
 	closemessage
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, TrainerHill_Entrance_Movement_PushPlayerBackFromCounter
-=======
-	applymovement LOCALID_PLAYER, TrainerHill_Entrance_Movement_PushPlayerBackFromCounter
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	releaseall
 	end
@@ -246,11 +196,7 @@ TrainerHill_Entrance_EventScript_SaveFailed::
 TrainerHill_Entrance_EventScript_Closed::
 	msgbox TrainerHill_Entrance_Text_StillGettingReady, MSGBOX_DEFAULT
 	closemessage
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, TrainerHill_Entrance_Movement_PushPlayerBackFromCounter
-=======
-	applymovement LOCALID_PLAYER, TrainerHill_Entrance_Movement_PushPlayerBackFromCounter
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	releaseall
 	end
@@ -304,17 +250,12 @@ TrainerHill_Entrance_EventScript_Clerk::
 	faceplayer
 	message gText_HowMayIServeYou
 	waitmessage
-<<<<<<< HEAD
 	@goto_if_set FLAG_SYS_GAME_CLEAR, TrainerHill_Entrance_EventScript_ExpandedPokemart
-=======
-	goto_if_set FLAG_SYS_GAME_CLEAR, TrainerHill_Entrance_EventScript_ExpandedPokemart
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	pokemart TrainerHill_Entrance_Pokemart_Basic
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
 
-<<<<<<< HEAD
 TrainerHill_Entrance_EventScript_Clerk2::
 	lock
 	faceplayer
@@ -356,44 +297,6 @@ TrainerHill_Entrance_Pokemart_Basic:
 @	.2byte ITEM_NONE
 @	release
 @	end
-=======
-	.align 2
-TrainerHill_Entrance_Pokemart_Basic:
-	.2byte ITEM_SUPER_POTION
-	.2byte ITEM_ANTIDOTE
-	.2byte ITEM_PARALYZE_HEAL
-	.2byte ITEM_AWAKENING
-	.2byte ITEM_X_SPEED
-	.2byte ITEM_X_SP_ATK
-	.2byte ITEM_X_ATTACK
-	.2byte ITEM_X_DEFENSE
-	.2byte ITEM_DIRE_HIT
-	.2byte ITEM_GUARD_SPEC
-	.2byte ITEM_X_ACCURACY
-	pokemartlistend
-
-TrainerHill_Entrance_EventScript_ExpandedPokemart::
-	pokemart TrainerHill_Entrance_Pokemart_Expanded
-	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
-	release
-	end
-
-	.align 2
-TrainerHill_Entrance_Pokemart_Expanded:
-	.2byte ITEM_HYPER_POTION
-	.2byte ITEM_MAX_POTION
-	.2byte ITEM_FULL_RESTORE
-	.2byte ITEM_FULL_HEAL
-	.2byte ITEM_REVIVE
-	.2byte ITEM_X_SPEED
-	.2byte ITEM_X_SP_ATK
-	.2byte ITEM_X_ATTACK
-	.2byte ITEM_X_DEFENSE
-	.2byte ITEM_DIRE_HIT
-	.2byte ITEM_GUARD_SPEC
-	.2byte ITEM_X_ACCURACY
-	pokemartlistend
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 TrainerHill_Entrance_Text_StillGettingReady:
 	.string "This is the TRAINER HILL where\n"

@@ -3,11 +3,7 @@
   "name": "MeteorFalls_B1F_1R",
   "layout": "LAYOUT_METEOR_FALLS_B1F_1R",
   "music": "MUS_CAVE_OF_ORIGIN",
-<<<<<<< HEAD
   "region_map_section": "MAPSEC_EMBEDDED_TOWER",
-=======
-  "region_map_section": "MAPSEC_METEOR_FALLS",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_UNDERGROUND",
@@ -16,15 +12,10 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-<<<<<<< HEAD
   "connections": 0,
   "object_events": [
 
   ],
-=======
-  "connections": null,
-  "object_events": [],
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "warp_events": [
     {
       "x": 5,
@@ -69,15 +60,10 @@
       "dest_warp_id": "4"
     }
   ],
-<<<<<<< HEAD
   "coord_events": [
 
   ],
   "bg_events": [
 
   ]
-=======
-  "coord_events": [],
-  "bg_events": []
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }

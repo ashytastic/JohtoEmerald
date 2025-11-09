@@ -12,31 +12,14 @@
 #include "text.h"
 #include "menu.h"
 #include "m4a.h"
-<<<<<<< HEAD
 #include "constants/rgb.h"
 
-=======
-#include "decompress.h"
-#include "constants/rgb.h"
-
-enum {
-    WIN_TITLE,          // "Berry Program Update" header on the first screen
-    WIN_MSG_BODY,
-    WIN_GAME_NAMES,     // The labels under the GBA graphics on the link screen
-    WIN_TURN_OFF_TITLE, // "Ruby/Sapphire" at the top of the "turn off the power" screen
-};
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 struct {
     u8 state;
     u8 curScene;
     u16 timer;
     struct MultiBootParam mb;
-<<<<<<< HEAD
 } static * sBerryFix;
-=======
-} static *sBerryFix;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 static void BerryFix_Main(void);
 static void BerryFix_GpuSet(void);
@@ -88,11 +71,7 @@ static const struct BgTemplate sBerryFixBgTemplates[] = {
 };
 
 static const struct WindowTemplate sBerryFixWindowTemplates[] = {
-<<<<<<< HEAD
     {
-=======
-    [WIN_TITLE] = {
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .bg = 0,
         .tilemapLeft = 2,
         .tilemapTop = 4,
@@ -101,11 +80,7 @@ static const struct WindowTemplate sBerryFixWindowTemplates[] = {
         .paletteNum = 15,
         .baseBlock = 1
     },
-<<<<<<< HEAD
     {
-=======
-    [WIN_MSG_BODY] = {
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .bg = 0,
         .tilemapLeft = 1,
         .tilemapTop = 11,
@@ -114,11 +89,7 @@ static const struct WindowTemplate sBerryFixWindowTemplates[] = {
         .paletteNum = 15,
         .baseBlock = 53
     },
-<<<<<<< HEAD
     {
-=======
-    [WIN_GAME_NAMES] = {
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .bg = 0,
         .tilemapLeft = 0,
         .tilemapTop = 8,
@@ -127,11 +98,7 @@ static const struct WindowTemplate sBerryFixWindowTemplates[] = {
         .paletteNum = 15,
         .baseBlock = 277
     },
-<<<<<<< HEAD
     {
-=======
-    [WIN_TURN_OFF_TITLE] = {
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .bg = 0,
         .tilemapLeft = 8,
         .tilemapTop = 0,
@@ -244,19 +211,11 @@ static void BerryFix_Main(void)
             sBerryFix->state = MAINSTATE_BEGIN;
             break;
         case MAINSTATE_BEGIN:
-<<<<<<< HEAD
             if (TryScene(SCENE_BEGIN) && (JOY_NEW(A_BUTTON)))
                 sBerryFix->state = MAINSTATE_CONNECT;
             break;
         case MAINSTATE_CONNECT:
             if (TryScene(SCENE_ENSURE_CONNECT) && (JOY_NEW(A_BUTTON)))
-=======
-            if (TryScene(SCENE_BEGIN) && JOY_NEW(A_BUTTON))
-                sBerryFix->state = MAINSTATE_CONNECT;
-            break;
-        case MAINSTATE_CONNECT:
-            if (TryScene(SCENE_ENSURE_CONNECT) && JOY_NEW(A_BUTTON))
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 sBerryFix->state = MAINSTATE_INIT_MULTIBOOT;
             break;
         case MAINSTATE_INIT_MULTIBOOT:
@@ -334,7 +293,6 @@ static void BerryFix_GpuSet(void)
 
     DmaCopy32(3, sText_Pal, BG_PLTT + PLTT_OFFSET_4BPP(15), sizeof(sText_Pal));
     SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_1D_MAP);
-<<<<<<< HEAD
     FillWindowPixelBuffer(2, PIXEL_FILL(0));
     FillWindowPixelBuffer(3, PIXEL_FILL(0));
     FillWindowPixelBuffer(0, PIXEL_FILL(10));
@@ -358,31 +316,6 @@ static void BerryFix_GpuSet(void)
     CopyWindowToVram(2, COPYWIN_GFX);
     CopyWindowToVram(3, COPYWIN_GFX);
     CopyWindowToVram(0, COPYWIN_GFX);
-=======
-    FillWindowPixelBuffer(WIN_GAME_NAMES, PIXEL_FILL(0));
-    FillWindowPixelBuffer(WIN_TURN_OFF_TITLE, PIXEL_FILL(0));
-    FillWindowPixelBuffer(WIN_TITLE, PIXEL_FILL(10));
-
-    width = GetStringWidth(FONT_SMALL, sText_Emerald, 0);
-    left = (120 - width) / 2;
-    AddTextPrinterParameterized3(WIN_GAME_NAMES, FONT_SMALL, left, 3, sGameTitleTextColors, TEXT_SKIP_DRAW, sText_Emerald);
-
-    width = GetStringWidth(FONT_SMALL, sText_RubySapphire, 0);
-    left = (120 - width) / 2 + 120;
-    AddTextPrinterParameterized3(WIN_GAME_NAMES, FONT_SMALL, left, 3, sGameTitleTextColors, TEXT_SKIP_DRAW, sText_RubySapphire);
-
-    width = GetStringWidth(FONT_SMALL, sText_RubySapphire, 0);
-    left = (112 - width) / 2;
-    AddTextPrinterParameterized3(WIN_TURN_OFF_TITLE, FONT_SMALL, left, 0, sGameTitleTextColors, TEXT_SKIP_DRAW, sText_RubySapphire);
-
-    width = GetStringWidth(FONT_NORMAL, sText_BerryProgramUpdate, 0);
-    left = (208 - width) / 2;
-    AddTextPrinterParameterized3(WIN_TITLE, FONT_NORMAL, left, 2, sBerryProgramTextColors, TEXT_SKIP_DRAW, sText_BerryProgramUpdate);
-
-    CopyWindowToVram(WIN_GAME_NAMES, COPYWIN_GFX);
-    CopyWindowToVram(WIN_TURN_OFF_TITLE, COPYWIN_GFX);
-    CopyWindowToVram(WIN_TITLE, COPYWIN_GFX);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static int BerryFix_TrySetScene(int scene)
@@ -406,24 +339,16 @@ static int BerryFix_TrySetScene(int scene)
 static void BerryFix_SetScene(int scene)
 {
     FillBgTilemapBufferRect_Palette0(0, 0, 0, 0, 32, 32);
-<<<<<<< HEAD
     FillWindowPixelBuffer(1, PIXEL_FILL(10));
     AddTextPrinterParameterized3(1, FONT_NORMAL, 0, 0, sBerryProgramTextColors, TEXT_SKIP_DRAW, sBerryProgramTexts[scene]);
     PutWindowTilemap(1);
     CopyWindowToVram(1, COPYWIN_GFX);
-=======
-    FillWindowPixelBuffer(WIN_MSG_BODY, PIXEL_FILL(10));
-    AddTextPrinterParameterized3(WIN_MSG_BODY, FONT_NORMAL, 0, 0, sBerryProgramTextColors, TEXT_SKIP_DRAW, sBerryProgramTexts[scene]);
-    PutWindowTilemap(WIN_MSG_BODY);
-    CopyWindowToVram(WIN_MSG_BODY, COPYWIN_GFX);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     switch (scene)
     {
     case SCENE_ENSURE_CONNECT:
     case SCENE_TRANSMITTING:
     case SCENE_FOLLOW_INSTRUCT:
     case SCENE_TRANSMIT_FAILED:
-<<<<<<< HEAD
         PutWindowTilemap(2);
         break;
     case SCENE_TURN_OFF_POWER:
@@ -436,20 +361,6 @@ static void BerryFix_SetScene(int scene)
     CopyBgTilemapBufferToVram(0);
     LZ77UnCompVram(sBerryFixGraphics[scene].gfx, (void *)BG_CHAR_ADDR(1));
     LZ77UnCompVram(sBerryFixGraphics[scene].tilemap, (void *)BG_SCREEN_ADDR(31));
-=======
-        PutWindowTilemap(WIN_GAME_NAMES);
-        break;
-    case SCENE_TURN_OFF_POWER:
-        PutWindowTilemap(WIN_TURN_OFF_TITLE);
-        break;
-    case SCENE_BEGIN:
-        PutWindowTilemap(WIN_TITLE);
-        break;
-    }
-    CopyBgTilemapBufferToVram(0);
-    DecompressDataWithHeaderVram(sBerryFixGraphics[scene].gfx, (void *)BG_CHAR_ADDR(1));
-    DecompressDataWithHeaderVram(sBerryFixGraphics[scene].tilemap, (void *)BG_SCREEN_ADDR(31));
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     // These palettes range in size from 32-48 colors, so the below is interpreting whatever
     // follows the palette (by default, the corresponding tiles) as the remaining 80-96.
     CpuCopy32(sBerryFixGraphics[scene].palette, (void *)BG_PLTT, PLTT_SIZEOF(128));

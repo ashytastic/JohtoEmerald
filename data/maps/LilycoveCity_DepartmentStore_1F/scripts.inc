@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 .set LOCALID_LOTTERY_CLERK, 2
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 LilycoveCity_DepartmentStore_1F_MapScripts::
 	.byte 0
 
@@ -25,7 +22,6 @@ LilycoveCity_DepartmentStore_1F_EventScript_LotteryClerk::
 	copyvar VAR_0x8008, VAR_RESULT
 	special BufferLottoTicketNumber
 	msgbox LilycoveCity_DepartmentStore_1F_Text_TicketNumberIsXPleaseWait, MSGBOX_DEFAULT
-<<<<<<< HEAD
 	applymovement 4, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	playse SE_PC_ON
@@ -35,17 +31,6 @@ LilycoveCity_DepartmentStore_1F_EventScript_LotteryClerk::
 	@special EndLotteryCornerComputerEffect
 	delay 10
 	applymovement 4, Common_Movement_FacePlayer
-=======
-	applymovement LOCALID_LOTTERY_CLERK, Common_Movement_WalkInPlaceFasterRight
-	waitmovement 0
-	playse SE_PC_ON
-	special DoLotteryCornerComputerEffect
-	special PickLotteryCornerTicket
-	delay 220
-	special EndLotteryCornerComputerEffect
-	delay 10
-	applymovement LOCALID_LOTTERY_CLERK, Common_Movement_FacePlayer
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	goto_if_eq VAR_0x8004, 0, LilycoveCity_DepartmentStore_1F_EventScript_NoMatch
 	incrementgamestat GAME_STAT_WON_POKEMON_LOTTERY
@@ -155,7 +140,6 @@ LilycoveCity_DepartmentStore_1F_EventScript_FloorNamesSign::
 	msgbox LilycoveCity_DepartmentStore_1F_Text_FloorNamesSign, MSGBOX_SIGN
 	end
 
-<<<<<<< HEAD
 LilycoveCity_DepartmentStore_1F_TraderWoman::
 	msgbox LilycoveCity_DepartmentStore_1F_TraderWoman_Text, MSGBOX_NPC
 	end
@@ -266,8 +250,6 @@ LilycoveCity_DepartmentStore_1F_TraderWoman_Text:
 	.string "Thank you for using DEVON\n"
 	.string "CORP. products!$"
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 LilycoveCity_DepartmentStore_1F_Text_WelcomeToDeptStore:
 	.string "Welcome to LILYCOVE DEPARTMENT STORE.$"
 

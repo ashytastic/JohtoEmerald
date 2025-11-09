@@ -13,106 +13,47 @@
 
 static EWRAM_DATA bool32 sStatsEnabled = FALSE;
 
-<<<<<<< HEAD
 static void ClearSavedWonderNewsMetadata(void);
 static void ClearSavedWonderNews(void);
-=======
-#if FREE_MYSTERY_GIFT == FALSE
-static void ClearSavedWonderNewsMetadata(void);
-#endif //FREE_MYSTERY_GIFT
-static void ClearSavedWonderNews(void);
-#if FREE_MYSTERY_GIFT == FALSE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static void ClearSavedWonderCard(void);
 static bool32 ValidateWonderNews(const struct WonderNews *);
 static bool32 ValidateWonderCard(const struct WonderCard *);
 static void ClearSavedWonderCardMetadata(void);
 static void ClearSavedTrainerIds(void);
 static void IncrementCardStatForNewTrainer(u32, u32, u32 *, int);
-<<<<<<< HEAD
-=======
-#endif //FREE_MYSTERY_GIFT
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 #define CALC_CRC(data) CalcCRC16WithTable((void *)&(data), sizeof(data))
 
 void ClearMysteryGift(void)
 {
-<<<<<<< HEAD
     CpuFill32(0, &gSaveBlock1Ptr->mysteryGift, sizeof(gSaveBlock1Ptr->mysteryGift));
     ClearSavedWonderNewsMetadata(); // Clear is redundant, WonderNews_Reset would be sufficient
-=======
-#if FREE_MYSTERY_GIFT == FALSE
-    CpuFill32(0, &gSaveBlock1Ptr->mysteryGift, sizeof(gSaveBlock1Ptr->mysteryGift));
-    ClearSavedWonderNewsMetadata(); // Clear is redundant, WonderNews_Reset would be sufficient
-#endif //FREE_MYSTERY_GIFT
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     InitQuestionnaireWords();
 }
 
 struct WonderNews *GetSavedWonderNews(void)
 {
-<<<<<<< HEAD
     return &gSaveBlock1Ptr->mysteryGift.news;
-=======
-#if FREE_MYSTERY_GIFT == FALSE
-    return &gSaveBlock1Ptr->mysteryGift.news;
-#else
-    return NULL;
-#endif //FREE_MYSTERY_GIFT
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 struct WonderCard *GetSavedWonderCard(void)
 {
-<<<<<<< HEAD
     return &gSaveBlock1Ptr->mysteryGift.card;
-=======
-#if FREE_MYSTERY_GIFT == FALSE
-    return &gSaveBlock1Ptr->mysteryGift.card;
-#else
-    return NULL;
-#endif //FREE_MYSTERY_GIFT
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 struct WonderCardMetadata *GetSavedWonderCardMetadata(void)
 {
-<<<<<<< HEAD
     return &gSaveBlock1Ptr->mysteryGift.cardMetadata;
-=======
-#if FREE_MYSTERY_GIFT == FALSE
-    return &gSaveBlock1Ptr->mysteryGift.cardMetadata;
-#else
-    return NULL;
-#endif //FREE_MYSTERY_GIFT
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 struct WonderNewsMetadata *GetSavedWonderNewsMetadata(void)
 {
-<<<<<<< HEAD
     return &gSaveBlock1Ptr->mysteryGift.newsMetadata;
-=======
-#if FREE_MYSTERY_GIFT == FALSE
-    return &gSaveBlock1Ptr->mysteryGift.newsMetadata;
-#else
-    return NULL;
-#endif //FREE_MYSTERY_GIFT
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 u16 *GetQuestionnaireWordsPtr(void)
 {
-<<<<<<< HEAD
     return gSaveBlock1Ptr->mysteryGift.questionnaireWords;
-=======
-#if FREE_MYSTERY_GIFT == FALSE
-    return gSaveBlock1Ptr->mysteryGift.questionnaireWords;
-#else
-    return NULL;
-#endif //FREE_MYSTERY_GIFT
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 // Equivalent to ClearSavedWonderCardAndRelated, but nothing else to clear
@@ -123,10 +64,6 @@ void ClearSavedWonderNewsAndRelated(void)
 
 bool32 SaveWonderNews(const struct WonderNews *news)
 {
-<<<<<<< HEAD
-=======
-#if FREE_MYSTERY_GIFT == FALSE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (!ValidateWonderNews(news))
         return FALSE;
 
@@ -134,37 +71,18 @@ bool32 SaveWonderNews(const struct WonderNews *news)
     gSaveBlock1Ptr->mysteryGift.news = *news;
     gSaveBlock1Ptr->mysteryGift.newsCrc = CALC_CRC(gSaveBlock1Ptr->mysteryGift.news);
     return TRUE;
-<<<<<<< HEAD
-=======
-#else
-    return FALSE;
-#endif //FREE_MYSTERY_GIFT
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 bool32 ValidateSavedWonderNews(void)
 {
-<<<<<<< HEAD
-=======
-#if FREE_MYSTERY_GIFT == FALSE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (CALC_CRC(gSaveBlock1Ptr->mysteryGift.news) != gSaveBlock1Ptr->mysteryGift.newsCrc)
         return FALSE;
     if (!ValidateWonderNews(&gSaveBlock1Ptr->mysteryGift.news))
         return FALSE;
 
     return TRUE;
-<<<<<<< HEAD
 }
 
-=======
-#else
-    return FALSE;
-#endif //FREE_MYSTERY_GIFT
-}
-
-#if FREE_MYSTERY_GIFT == FALSE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static bool32 ValidateWonderNews(const struct WonderNews *news)
 {
     if (news->id == 0)
@@ -172,62 +90,30 @@ static bool32 ValidateWonderNews(const struct WonderNews *news)
 
     return TRUE;
 }
-<<<<<<< HEAD
 
 bool32 IsSendingSavedWonderNewsAllowed(void)
 {
-=======
-#endif //FREE_MYSTERY_GIFT
-
-bool32 IsSendingSavedWonderNewsAllowed(void)
-{
-#if FREE_MYSTERY_GIFT == FALSE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     const struct WonderNews *news = &gSaveBlock1Ptr->mysteryGift.news;
     if (news->sendType == SEND_TYPE_DISALLOWED)
         return FALSE;
 
     return TRUE;
-<<<<<<< HEAD
-=======
-#else
-    return FALSE;
-#endif //FREE_MYSTERY_GIFT
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void ClearSavedWonderNews(void)
 {
-<<<<<<< HEAD
     CpuFill32(0, GetSavedWonderNews(), sizeof(gSaveBlock1Ptr->mysteryGift.news));
     gSaveBlock1Ptr->mysteryGift.newsCrc = 0;
 }
 
-=======
-#if FREE_MYSTERY_GIFT == FALSE
-    CpuFill32(0, GetSavedWonderNews(), sizeof(gSaveBlock1Ptr->mysteryGift.news));
-    gSaveBlock1Ptr->mysteryGift.newsCrc = 0;
-#endif //FREE_MYSTERY_GIFT
-}
-
-#if FREE_MYSTERY_GIFT == FALSE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static void ClearSavedWonderNewsMetadata(void)
 {
     CpuFill32(0, GetSavedWonderNewsMetadata(), sizeof(gSaveBlock1Ptr->mysteryGift.newsMetadata));
     WonderNews_Reset();
 }
-<<<<<<< HEAD
 
 bool32 IsWonderNewsSameAsSaved(const u8 *news)
 {
-=======
-#endif //FREE_MYSTERY_GIFT
-
-bool32 IsWonderNewsSameAsSaved(const u8 *news)
-{
-#if FREE_MYSTERY_GIFT == FALSE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     const u8 *savedNews = (const u8 *)&gSaveBlock1Ptr->mysteryGift.news;
     u32 i;
     if (!ValidateSavedWonderNews())
@@ -240,42 +126,21 @@ bool32 IsWonderNewsSameAsSaved(const u8 *news)
     }
 
     return TRUE;
-<<<<<<< HEAD
-=======
-#else
-    return FALSE;
-#endif //FREE_MYSTERY_GIFT
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 void ClearSavedWonderCardAndRelated(void)
 {
-<<<<<<< HEAD
-=======
-#if FREE_MYSTERY_GIFT == FALSE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ClearSavedWonderCard();
     ClearSavedWonderCardMetadata();
     ClearSavedTrainerIds();
     ClearRamScript();
     ClearMysteryGiftFlags();
     ClearMysteryGiftVars();
-<<<<<<< HEAD
     ClearEReaderTrainer(&gSaveBlock2Ptr->frontier.ereaderTrainer);
-=======
-#endif //FREE_MYSTERY_GIFT
-#if FREE_BATTLE_TOWER_E_READER == FALSE
-    ClearEReaderTrainer(&gSaveBlock2Ptr->frontier.ereaderTrainer);
-#endif //FREE_BATTLE_TOWER_E_READER
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 bool32 SaveWonderCard(const struct WonderCard *card)
 {
-<<<<<<< HEAD
-=======
-#if FREE_MYSTERY_GIFT == FALSE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     struct WonderCardMetadata *metadata;
     if (!ValidateWonderCard(card))
         return FALSE;
@@ -286,20 +151,10 @@ bool32 SaveWonderCard(const struct WonderCard *card)
     metadata = &gSaveBlock1Ptr->mysteryGift.cardMetadata;
     metadata->iconSpecies = (&gSaveBlock1Ptr->mysteryGift.card)->iconSpecies;
     return TRUE;
-<<<<<<< HEAD
-=======
-#else
-    return FALSE;
-#endif //FREE_MYSTERY_GIFT
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 bool32 ValidateSavedWonderCard(void)
 {
-<<<<<<< HEAD
-=======
-#if FREE_MYSTERY_GIFT == FALSE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (gSaveBlock1Ptr->mysteryGift.cardCrc != CALC_CRC(gSaveBlock1Ptr->mysteryGift.card))
         return FALSE;
     if (!ValidateWonderCard(&gSaveBlock1Ptr->mysteryGift.card))
@@ -308,17 +163,8 @@ bool32 ValidateSavedWonderCard(void)
         return FALSE;
 
     return TRUE;
-<<<<<<< HEAD
 }
 
-=======
-#else
-    return FALSE;
-#endif //FREE_MYSTERY_GIFT
-}
-
-#if FREE_MYSTERY_GIFT == FALSE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static bool32 ValidateWonderCard(const struct WonderCard *card)
 {
     if (card->flagId == 0)
@@ -336,33 +182,16 @@ static bool32 ValidateWonderCard(const struct WonderCard *card)
 
     return TRUE;
 }
-<<<<<<< HEAD
 
 bool32 IsSendingSavedWonderCardAllowed(void)
 {
-=======
-#endif //FREE_MYSTERY_GIFT
-
-bool32 IsSendingSavedWonderCardAllowed(void)
-{
-#if FREE_MYSTERY_GIFT == FALSE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     const struct WonderCard *card = &gSaveBlock1Ptr->mysteryGift.card;
     if (card->sendType == SEND_TYPE_DISALLOWED)
         return FALSE;
 
     return TRUE;
-<<<<<<< HEAD
 }
 
-=======
-#else
-    return FALSE;
-#endif //FREE_MYSTERY_GIFT
-}
-
-#if FREE_MYSTERY_GIFT == FALSE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static void ClearSavedWonderCard(void)
 {
     CpuFill32(0, &gSaveBlock1Ptr->mysteryGift.card, sizeof(gSaveBlock1Ptr->mysteryGift.card));
@@ -374,22 +203,11 @@ static void ClearSavedWonderCardMetadata(void)
     CpuFill32(0, GetSavedWonderCardMetadata(), sizeof(gSaveBlock1Ptr->mysteryGift.cardMetadata));
     gSaveBlock1Ptr->mysteryGift.cardMetadataCrc = 0;
 }
-<<<<<<< HEAD
 
 u16 GetWonderCardFlagID(void)
 {
     if (ValidateSavedWonderCard())
         return gSaveBlock1Ptr->mysteryGift.card.flagId;
-=======
-#endif //FREE_MYSTERY_GIFT
-
-u16 GetWonderCardFlagID(void)
-{
-#if FREE_MYSTERY_GIFT == FALSE
-    if (ValidateSavedWonderCard())
-        return gSaveBlock1Ptr->mysteryGift.card.flagId;
-#endif //FREE_MYSTERY_GIFT
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     return 0;
 }
@@ -472,10 +290,6 @@ static bool32 IsStampInMetadata(const struct WonderCardMetadata *metadata, const
     return FALSE;
 }
 
-<<<<<<< HEAD
-=======
-#if FREE_MYSTERY_GIFT == FALSE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static bool32 ValidateStamp(const u16 *stamp)
 {
     if (stamp[STAMP_ID] == 0)
@@ -499,17 +313,9 @@ static int GetNumStampsInSavedCard(void)
 
     return GetNumStampsInMetadata(&gSaveBlock1Ptr->mysteryGift.cardMetadata, card->maxStamps);
 }
-<<<<<<< HEAD
 
 bool32 MysteryGift_TrySaveStamp(const u16 *stamp)
 {
-=======
-#endif //FREE_MYSTERY_GIFT
-
-bool32 MysteryGift_TrySaveStamp(const u16 *stamp)
-{
-#if FREE_MYSTERY_GIFT == FALSE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     struct WonderCard *card = &gSaveBlock1Ptr->mysteryGift.card;
     int maxStamps = card->maxStamps;
     int i;
@@ -529,10 +335,6 @@ bool32 MysteryGift_TrySaveStamp(const u16 *stamp)
             return TRUE;
         }
     }
-<<<<<<< HEAD
-=======
-#endif //FREE_MYSTERY_GIFT
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     return FALSE;
 }
@@ -543,10 +345,6 @@ bool32 MysteryGift_TrySaveStamp(const u16 *stamp)
 
 void MysteryGift_LoadLinkGameData(struct MysteryGiftLinkGameData *data, bool32 isWonderNews)
 {
-<<<<<<< HEAD
-=======
-#if FREE_MYSTERY_GIFT == FALSE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     int i;
     CpuFill32(0, data, sizeof(*data));
     data->validationVar = GAME_DATA_VALID_VAR;
@@ -587,10 +385,6 @@ void MysteryGift_LoadLinkGameData(struct MysteryGiftLinkGameData *data, bool32 i
 
     memcpy(data->romHeaderGameCode, RomHeaderGameCode, GAME_CODE_LENGTH);
     data->romHeaderSoftwareVersion = RomHeaderSoftwareVersion;
-<<<<<<< HEAD
-=======
-#endif //FREE_MYSTERY_GIFT
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 bool32 MysteryGift_ValidateLinkGameData(const struct MysteryGiftLinkGameData *data, bool32 isWonderNews)
@@ -689,10 +483,6 @@ u16 MysteryGift_GetCardStatFromLinkData(const struct MysteryGiftLinkGameData *da
     }
 }
 
-<<<<<<< HEAD
-=======
-#if FREE_MYSTERY_GIFT == FALSE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static void IncrementCardStat(u32 statType)
 {
     struct WonderCard *card = &gSaveBlock1Ptr->mysteryGift.card;
@@ -725,17 +515,9 @@ static void IncrementCardStat(u32 statType)
         }
     }
 }
-<<<<<<< HEAD
 
 u16 MysteryGift_GetCardStat(u32 stat)
 {
-=======
-#endif //FREE_MYSTERY_GIFT
-
-u16 MysteryGift_GetCardStat(u32 stat)
-{
-#if FREE_MYSTERY_GIFT == FALSE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     switch (stat)
     {
     case CARD_STAT_BATTLES_WON:
@@ -783,10 +565,6 @@ u16 MysteryGift_GetCardStat(u32 stat)
         break;
     }
     }
-<<<<<<< HEAD
-=======
-#endif //FREE_MYSTERY_GIFT
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     AGB_ASSERT(0);
     return 0;
@@ -806,15 +584,8 @@ bool32 MysteryGift_TryEnableStatsByFlagId(u16 flagId)
     if (!ValidateSavedWonderCard())
         return FALSE;
 
-<<<<<<< HEAD
     if (gSaveBlock1Ptr->mysteryGift.card.flagId != flagId)
         return FALSE;
-=======
-#if FREE_MYSTERY_GIFT == FALSE
-    if (gSaveBlock1Ptr->mysteryGift.card.flagId != flagId)
-        return FALSE;
-#endif //FREE_MYSTERY_GIFT
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     sStatsEnabled = TRUE;
     return TRUE;
@@ -822,10 +593,6 @@ bool32 MysteryGift_TryEnableStatsByFlagId(u16 flagId)
 
 void MysteryGift_TryIncrementStat(u32 stat, u32 trainerId)
 {
-<<<<<<< HEAD
-=======
-#if FREE_MYSTERY_GIFT == FALSE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (sStatsEnabled)
     {
         switch (stat)
@@ -853,15 +620,8 @@ void MysteryGift_TryIncrementStat(u32 stat, u32 trainerId)
             break;
         }
     }
-<<<<<<< HEAD
 }
 
-=======
-#endif //FREE_MYSTERY_GIFT
-}
-
-#if FREE_MYSTERY_GIFT == FALSE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static void ClearSavedTrainerIds(void)
 {
     CpuFill32(0, gSaveBlock1Ptr->mysteryGift.trainerIds, sizeof(gSaveBlock1Ptr->mysteryGift.trainerIds));
@@ -904,7 +664,3 @@ static void IncrementCardStatForNewTrainer(u32 stat, u32 trainerId, u32 *trainer
     if (RecordTrainerId(trainerId, trainerIds, size))
         IncrementCardStat(stat);
 }
-<<<<<<< HEAD
-=======
-#endif //FREE_MYSTERY_GIFT
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

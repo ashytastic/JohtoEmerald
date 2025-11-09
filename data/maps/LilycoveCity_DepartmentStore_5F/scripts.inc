@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 .set LOCALID_WOMAN, 7
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 LilycoveCity_DepartmentStore_5F_MapScripts::
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, LilycoveCity_DepartmentStore_5F_OnWarp
 	.byte 0
@@ -10,7 +7,6 @@ LilycoveCity_DepartmentStore_5F_MapScripts::
 @ During the abnormal weather from Kyogre/Groudon awakening the dept store rooftop is inaccessible
 @ Likely done to avoid dealing with showing the weather. Technically the rooftop is indoors
 LilycoveCity_DepartmentStore_5F_OnWarp:
-<<<<<<< HEAD
 	map_script_2 VAR_GARBAGEVAR, 1, LilycoveCity_DepartmentStore_5F_EventScript_BlockRoofStairs
 	map_script_2 VAR_GARBAGEVAR, 2, LilycoveCity_DepartmentStore_5F_EventScript_BlockRoofStairs
 	map_script_2 VAR_GARBAGEVAR, 3, LilycoveCity_DepartmentStore_5F_EventScript_BlockRoofStairs
@@ -19,16 +15,6 @@ LilycoveCity_DepartmentStore_5F_OnWarp:
 LilycoveCity_DepartmentStore_5F_EventScript_BlockRoofStairs::
 	setobjectxy LOCALID_WOMAN, 16, 2
 	turnobject LOCALID_WOMAN, DIR_NORTH
-=======
-	map_script_2 VAR_SOOTOPOLIS_CITY_STATE, 1, LilycoveCity_DepartmentStore_5F_EventScript_BlockRoofStairs
-	map_script_2 VAR_SOOTOPOLIS_CITY_STATE, 2, LilycoveCity_DepartmentStore_5F_EventScript_BlockRoofStairs
-	map_script_2 VAR_SOOTOPOLIS_CITY_STATE, 3, LilycoveCity_DepartmentStore_5F_EventScript_BlockRoofStairs
-	.2byte 0
-
-LilycoveCity_DepartmentStore_5F_EventScript_BlockRoofStairs::
-	setobjectxy LOCALID_DEPARTMENT_STORE_STAIRS_WOMAN, 16, 2
-	turnobject LOCALID_DEPARTMENT_STORE_STAIRS_WOMAN, DIR_NORTH
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 LilycoveCity_DepartmentStore_5F_EventScript_ClerkFarLeft::
@@ -55,13 +41,9 @@ LilycoveCity_DepartmentStore_5F_Pokemart_Dolls:
 	.2byte DECOR_SKITTY_DOLL
 	.2byte DECOR_SWABLU_DOLL
 	.2byte DECOR_GULPIN_DOLL
-<<<<<<< HEAD
 	.2byte DECOR_NONE
 	release
 	end
-=======
-	pokemartlistend
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 LilycoveCity_DepartmentStore_5F_EventScript_ClerkMidLeft::
 	lock
@@ -84,13 +66,9 @@ LilycoveCity_DepartmentStore_5F_Pokemart_Cushions:
 	.2byte DECOR_GRASS_CUSHION
 	.2byte DECOR_FIRE_CUSHION
 	.2byte DECOR_WATER_CUSHION
-<<<<<<< HEAD
 	.2byte DECOR_NONE
 	release
 	end
-=======
-	pokemartlistend
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 LilycoveCity_DepartmentStore_5F_EventScript_ClerkMidRight::
 	lock
@@ -113,13 +91,9 @@ LilycoveCity_DepartmentStore_5F_Pokemart_Posters:
 	.2byte DECOR_LONG_POSTER
 	.2byte DECOR_SEA_POSTER
 	.2byte DECOR_SKY_POSTER
-<<<<<<< HEAD
 	.2byte DECOR_NONE
 	release
 	end
-=======
-	pokemartlistend
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 LilycoveCity_DepartmentStore_5F_EventScript_ClerkFarRight::
 	lock
@@ -133,10 +107,7 @@ LilycoveCity_DepartmentStore_5F_EventScript_ClerkFarRight::
 
 	.align 2
 LilycoveCity_DepartmentStore_5F_Pokemart_Mats:
-<<<<<<< HEAD
 	.2byte DECOR_SOLID_BOARD
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.2byte DECOR_SURF_MAT
 	.2byte DECOR_THUNDER_MAT
 	.2byte DECOR_FIRE_BLAST_MAT
@@ -147,13 +118,9 @@ LilycoveCity_DepartmentStore_5F_Pokemart_Mats:
 	.2byte DECOR_GLITTER_MAT
 	.2byte DECOR_JUMP_MAT
 	.2byte DECOR_SPIN_MAT
-<<<<<<< HEAD
 	.2byte DECOR_NONE
 	release
 	end
-=======
-	pokemartlistend
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 LilycoveCity_DepartmentStore_5F_EventScript_PokefanF::
 	msgbox LilycoveCity_DepartmentStore_5F_Text_PlaceFullOfCuteDolls, MSGBOX_NPC
@@ -161,17 +128,10 @@ LilycoveCity_DepartmentStore_5F_EventScript_PokefanF::
 
 LilycoveCity_DepartmentStore_5F_EventScript_Woman::
 	lockall
-<<<<<<< HEAD
 	applymovement LOCALID_WOMAN, Common_Movement_FacePlayer
 	waitmovement 0
 	goto_if_eq VAR_GARBAGEVAR, 0, LilycoveCity_DepartmentStore_5F_EventScript_WomanNormal
 	goto_if_ge VAR_GARBAGEVAR, 4, LilycoveCity_DepartmentStore_5F_EventScript_WomanNormal
-=======
-	applymovement LOCALID_DEPARTMENT_STORE_STAIRS_WOMAN, Common_Movement_FacePlayer
-	waitmovement 0
-	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 0, LilycoveCity_DepartmentStore_5F_EventScript_WomanNormal
-	goto_if_ge VAR_SOOTOPOLIS_CITY_STATE, 4, LilycoveCity_DepartmentStore_5F_EventScript_WomanNormal
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto LilycoveCity_DepartmentStore_5F_EventScript_WomanLegendaryWeather
 	end
 
@@ -184,11 +144,7 @@ LilycoveCity_DepartmentStore_5F_EventScript_WomanNormal::
 LilycoveCity_DepartmentStore_5F_EventScript_WomanLegendaryWeather::
 	msgbox LilycoveCity_DepartmentStore_5F_Text_ClosedRooftopForWeather, MSGBOX_DEFAULT
 	closemessage
-<<<<<<< HEAD
 	applymovement LOCALID_WOMAN, Common_Movement_WalkInPlaceFasterUp
-=======
-	applymovement LOCALID_DEPARTMENT_STORE_STAIRS_WOMAN, Common_Movement_WalkInPlaceFasterUp
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	releaseall
 	end

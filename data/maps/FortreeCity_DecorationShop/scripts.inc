@@ -29,13 +29,9 @@ FortreeCity_DecorationShop_PokemartDecor_Desks:
 	.2byte DECOR_BRICK_DESK
 	.2byte DECOR_CAMP_DESK
 	.2byte DECOR_HARD_DESK
-<<<<<<< HEAD
 	.2byte DECOR_NONE
 	release
 	end
-=======
-	pokemartlistend
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 FortreeCity_DecorationShop_EventScript_ClerkChairs::
 	lock
@@ -57,13 +53,9 @@ FortreeCity_DecorationShop_PokemartDecor_Chairs:
 	.2byte DECOR_BRICK_CHAIR
 	.2byte DECOR_CAMP_CHAIR
 	.2byte DECOR_HARD_CHAIR
-<<<<<<< HEAD
 	.2byte DECOR_NONE
 	release
 	end
-=======
-	pokemartlistend
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 FortreeCity_DecorationShop_Text_MerchandiseSentToPC:
 	.string "Merchandise you buy here is sent to\n"

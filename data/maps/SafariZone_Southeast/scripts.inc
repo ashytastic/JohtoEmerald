@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .set LOCALID_MANTYKEMAN, 7
 
 SafariZone_Southeast_MapScripts::
@@ -38,9 +37,4 @@ SafariZone_Southeast_MantykeEvo_Text2:
 	.string "so it was using WATER PULSE!\l"
 	.string "Nature is beautiful!$"
 
-=======
-SafariZone_Southeast_MapScripts::
-	.byte 0
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 @ Event scripts for SafariZone_Southeast are in SafariZone_South/scripts.inc

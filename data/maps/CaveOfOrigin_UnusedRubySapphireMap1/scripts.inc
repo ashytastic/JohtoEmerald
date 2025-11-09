@@ -1,5 +1,4 @@
 CaveOfOrigin_UnusedRubySapphireMap1_MapScripts::
-<<<<<<< HEAD
 	map_script MAP_SCRIPT_ON_LOAD, CaveOfOrigin_UnusedRubySapphireMap1_OnLoad
 	map_script MAP_SCRIPT_ON_TRANSITION, SetTimeEncounters
 	map_script MAP_SCRIPT_ON_RESUME, SetTimeEncounters
@@ -67,11 +66,3 @@ CaveOfOrigin_UnusedRubySapphireMap1_Scientist3_Text:
 
 CaveOfOrigin_UnusedRubySapphireMap1_Kirlia_Text:
 	.string "KIRI: Kir!$"
-=======
-	map_script MAP_SCRIPT_ON_TRANSITION, CaveOfOrigin_UnusedRubySapphireMap1_OnTransition
-	.byte 0
-
-CaveOfOrigin_UnusedRubySapphireMap1_OnTransition:
-	call_if_set FLAG_UNUSED_RS_LEGENDARY_BATTLE_DONE, CaveOfOrigin_EventScript_DisableTriggers
-	end
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

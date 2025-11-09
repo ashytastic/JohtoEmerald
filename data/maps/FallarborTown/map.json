@@ -3,11 +3,7 @@
   "name": "FallarborTown",
   "layout": "LAYOUT_FALLARBOR_TOWN",
   "music": "MUS_FALLARBOR",
-<<<<<<< HEAD
   "region_map_section": "MAPSEC_ROUTE_26",
-=======
-  "region_map_section": "MAPSEC_FALLARBOR_TOWN",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_TOWN",
@@ -43,11 +39,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 11,
       "y": 9,
       "elevation": 3,
@@ -83,7 +75,6 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "FallarborTown_EventScript_Azurill",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
@@ -124,9 +115,6 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "0"
-=======
-      "flag": "FLAG_HIDE_FALLARBOR_AZURILL"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "warp_events": [
@@ -166,13 +154,9 @@
       "dest_warp_id": "0"
     }
   ],
-<<<<<<< HEAD
   "coord_events": [
 
   ],
-=======
-  "coord_events": [],
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "bg_events": [
     {
       "type": "sign",
@@ -238,7 +222,6 @@
       "item": "ITEM_NUGGET",
       "flag": "FLAG_HIDDEN_ITEM_FALLARBOR_TOWN_NUGGET"
     }
-<<<<<<< HEAD
   ],
   "heal_locations": [
     {
@@ -246,7 +229,5 @@
       "x": 14,
       "y": 8
 	}
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   ]
 }

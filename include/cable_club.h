@@ -4,11 +4,7 @@
 #include "task.h"
 #include "constants/cable_club.h"
 
-<<<<<<< HEAD
 void CreateTask_EnterCableClubSeat(TaskFunc taskFunc);
-=======
-void CreateTask_EnterCableClubSeat(TaskFunc followupFunc);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 u8 CreateTask_ReestablishCableClubLink(void);
 void CB2_ReturnFromCableClubBattle(void);
 bool32 AreBattleTowerLinkSpeciesSame(u16 *speciesList1, u16 *speciesList2);

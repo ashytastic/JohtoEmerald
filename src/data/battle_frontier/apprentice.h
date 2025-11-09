@@ -298,11 +298,7 @@ const struct ApprenticeTrainer gApprentices[NUM_APPRENTICES] =
 {
     {
         .name = {_("サダヒロ"), _("ALANN"), _("ALAIN"), _("ADELFO"), _("CLAUS"), _("TEO")},
-<<<<<<< HEAD
         .otId = 0xBDC9,
-=======
-        .otId = 48585,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .facilityClass = FACILITY_CLASS_BUG_CATCHER,
         .species = {SPECIES_BEAUTIFLY, SPECIES_DUSTOX, SPECIES_ILLUMISE, SPECIES_SHIFTRY, SPECIES_BRELOOM, SPECIES_NINJASK, SPECIES_SHEDINJA, SPECIES_PINSIR, SPECIES_HERACROSS, SPECIES_VOLBEAT},
         .id = 0,
@@ -310,11 +306,7 @@ const struct ApprenticeTrainer gApprentices[NUM_APPRENTICES] =
     },
     {
         .name = {_("ヒロオ"), _("LIONEL"), _("LIONEL"), _("CAIO"), _("LUDWIG"), _("LEO")},
-<<<<<<< HEAD
         .otId = 0xCF09,
-=======
-        .otId = 53001,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .facilityClass = FACILITY_CLASS_YOUNGSTER,
         .species = {SPECIES_SWELLOW, SPECIES_SWALOT, SPECIES_SHUCKLE, SPECIES_MANECTRIC, SPECIES_TORKOAL, SPECIES_HARIYAMA, SPECIES_MIGHTYENA, SPECIES_LUDICOLO, SPECIES_CRAWDAUNT, SPECIES_WHISCASH},
         .id = 1,
@@ -322,11 +314,7 @@ const struct ApprenticeTrainer gApprentices[NUM_APPRENTICES] =
     },
     {
         .name = {_("ケイジ"), _("SONNY"), _("HERVE"), _("FEDRO"), _("WENZEL"), _("SANTI")},
-<<<<<<< HEAD
         .otId = 0x2E34,
-=======
-        .otId = 11828,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .facilityClass = FACILITY_CLASS_SCHOOL_KID_M,
         .species = {SPECIES_LINOONE, SPECIES_MIGHTYENA, SPECIES_WHISCASH, SPECIES_ZANGOOSE, SPECIES_SEVIPER, SPECIES_NINETALES, SPECIES_KECLEON, SPECIES_SHUCKLE, SPECIES_MANECTRIC, SPECIES_MACHAMP},
         .id = 2,
@@ -334,11 +322,7 @@ const struct ApprenticeTrainer gApprentices[NUM_APPRENTICES] =
     },
     {
         .name = {_("ユラ"), _("LAYLA"), _("LAYLA"), _("ASTRID"), _("SONJA"), _("LOLA")},
-<<<<<<< HEAD
         .otId = 0x84EF,
-=======
-        .otId = 34031,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .facilityClass = FACILITY_CLASS_LASS,
         .species = {SPECIES_SWALOT, SPECIES_XATU, SPECIES_ALTARIA, SPECIES_GOLDUCK, SPECIES_FLYGON, SPECIES_ALAKAZAM, SPECIES_GARDEVOIR, SPECIES_WAILORD, SPECIES_GRUMPIG, SPECIES_MIGHTYENA},
         .id = 3,
@@ -346,11 +330,7 @@ const struct ApprenticeTrainer gApprentices[NUM_APPRENTICES] =
     },
     {
         .name = {_("ヨウカ"), _("MACY"), _("AMELIE"), _("CLEO"), _("MARIA"), _("ELISA")},
-<<<<<<< HEAD
         .otId = 0x1E43,
-=======
-        .otId = 7747,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .facilityClass = FACILITY_CLASS_SCHOOL_KID_F,
         .species = {SPECIES_WIGGLYTUFF, SPECIES_LINOONE, SPECIES_KINGDRA, SPECIES_DELCATTY, SPECIES_RAICHU, SPECIES_FEAROW, SPECIES_STARMIE, SPECIES_MEDICHAM, SPECIES_SHIFTRY, SPECIES_BEAUTIFLY},
         .id = 4,
@@ -358,11 +338,7 @@ const struct ApprenticeTrainer gApprentices[NUM_APPRENTICES] =
     },
     {
         .name = {_("ヤスシ"), _("DONTE"), _("BRAHIM"), _("GLAUCO"), _("JOSEF"), _("ROQUE")},
-<<<<<<< HEAD
         .otId = 0x379F,
-=======
-        .otId = 14239,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .facilityClass = FACILITY_CLASS_RUNNING_TRIATHLETE_M,
         .species = {SPECIES_STARMIE, SPECIES_DODRIO, SPECIES_AGGRON, SPECIES_MAGNETON, SPECIES_MACHAMP, SPECIES_ARMALDO, SPECIES_HERACROSS, SPECIES_NOSEPASS, SPECIES_EXPLOUD, SPECIES_MIGHTYENA},
         .id = 5,
@@ -370,11 +346,7 @@ const struct ApprenticeTrainer gApprentices[NUM_APPRENTICES] =
     },
     {
         .name = {_("ミサオ"), _("AMIRA"), _("LAURE"), _("DAFNE"), _("AMELIE"), _("LARA")},
-<<<<<<< HEAD
         .otId = 0xF555,
-=======
-        .otId = 62805,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .facilityClass = FACILITY_CLASS_RUNNING_TRIATHLETE_F,
         .species = {SPECIES_STARMIE, SPECIES_DODRIO, SPECIES_MAGNETON, SPECIES_MEDICHAM, SPECIES_MIGHTYENA, SPECIES_GLALIE, SPECIES_GOLEM, SPECIES_ELECTRODE, SPECIES_PELIPPER, SPECIES_SHARPEDO},
         .id = 6,
@@ -382,11 +354,7 @@ const struct ApprenticeTrainer gApprentices[NUM_APPRENTICES] =
     },
     {
         .name = {_("カズサ"), _("KALI"), _("JODIE"), _("ILENIA"), _("KARO"), _("ELSA")},
-<<<<<<< HEAD
         .otId = 0x8D26,
-=======
-        .otId = 36134,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .facilityClass = FACILITY_CLASS_BEAUTY,
         .species = {SPECIES_NINETALES, SPECIES_ALAKAZAM, SPECIES_SCEPTILE, SPECIES_SALAMENCE, SPECIES_GOLDUCK, SPECIES_MAWILE, SPECIES_WEEZING, SPECIES_LANTURN, SPECIES_GARDEVOIR, SPECIES_MILOTIC},
         .id = 7,
@@ -394,11 +362,7 @@ const struct ApprenticeTrainer gApprentices[NUM_APPRENTICES] =
     },
     {
         .name = {_("スミレ"), _("ANNIE"), _("ANNIE"), _("IMELDA"), _("INES"), _("ROSA")},
-<<<<<<< HEAD
         .otId = 0x800C,
-=======
-        .otId = 32780,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .facilityClass = FACILITY_CLASS_AROMA_LADY,
         .species = {SPECIES_SCEPTILE, SPECIES_VILEPLUME, SPECIES_BELLOSSOM, SPECIES_ROSELIA, SPECIES_CORSOLA, SPECIES_FLYGON, SPECIES_BRELOOM, SPECIES_MILOTIC, SPECIES_ALTARIA, SPECIES_CRADILY},
         .id = 8,
@@ -406,11 +370,7 @@ const struct ApprenticeTrainer gApprentices[NUM_APPRENTICES] =
     },
     {
         .name = {_("アキノリ"), _("DILLEN"), _("RENE"), _("INDRO"), _("DETLEF"), _("PEDRO")},
-<<<<<<< HEAD
         .otId = 0x469f,
-=======
-        .otId = 18079,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .facilityClass = FACILITY_CLASS_HIKER,
         .species = {SPECIES_SKARMORY, SPECIES_GOLEM, SPECIES_BLAZIKEN, SPECIES_CAMERUPT, SPECIES_DONPHAN, SPECIES_MUK, SPECIES_SALAMENCE, SPECIES_TROPIUS, SPECIES_SOLROCK, SPECIES_RHYDON},
         .id = 9,
@@ -418,11 +378,7 @@ const struct ApprenticeTrainer gApprentices[NUM_APPRENTICES] =
     },
     {
         .name = {_("トウゾウ"), _("DALLAS"), _("BRUNO"), _("LEARCO"), _("ANSGAR"), _("MANOLO")},
-<<<<<<< HEAD
         .otId = 0x71FC,
-=======
-        .otId = 29180,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .facilityClass = FACILITY_CLASS_FISHERMAN,
         .species = {SPECIES_SEAKING, SPECIES_STARMIE, SPECIES_GOLDUCK, SPECIES_TENTACRUEL, SPECIES_OCTILLERY, SPECIES_GOREBYSS, SPECIES_GLALIE, SPECIES_WAILORD, SPECIES_SHARPEDO, SPECIES_KINGDRA},
         .id = 10,
@@ -430,11 +386,7 @@ const struct ApprenticeTrainer gApprentices[NUM_APPRENTICES] =
     },
     {
         .name = {_("セイヤ"), _("FRANK"), _("FRANK"), _("OLINDO"), _("FRANK"), _("MAURO")},
-<<<<<<< HEAD
         .otId = 0xA39E,
-=======
-        .otId = 41886,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .facilityClass = FACILITY_CLASS_SAILOR,
         .species = {SPECIES_QUAGSIRE, SPECIES_STARMIE, SPECIES_PELIPPER, SPECIES_CRAWDAUNT, SPECIES_WAILORD, SPECIES_GYARADOS, SPECIES_SWAMPERT, SPECIES_LANTURN, SPECIES_WHISCASH, SPECIES_SHUCKLE},
         .id = 11,
@@ -442,11 +394,7 @@ const struct ApprenticeTrainer gApprentices[NUM_APPRENTICES] =
     },
     {
         .name = {_("リュウジ"), _("LAMONT"), _("XAV"), _("ORFEO"), _("JÜRGEN"), _("JORGE")},
-<<<<<<< HEAD
         .otId = 0xE590,
-=======
-        .otId = 58768,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .facilityClass = FACILITY_CLASS_GUITARIST,
         .species = {SPECIES_ABSOL, SPECIES_CROBAT, SPECIES_EXPLOUD, SPECIES_MAGNETON, SPECIES_SHARPEDO, SPECIES_MANECTRIC, SPECIES_METAGROSS, SPECIES_ELECTRODE, SPECIES_NOSEPASS, SPECIES_WEEZING},
         .id = 12,
@@ -454,11 +402,7 @@ const struct ApprenticeTrainer gApprentices[NUM_APPRENTICES] =
     },
     {
         .name = {_("カツアキ"), _("TYRESE"), _("ANDY"), _("PARIDE"), _("DAVID"), _("CHICHO")},
-<<<<<<< HEAD
         .otId = 0xD018,
-=======
-        .otId = 53272,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .facilityClass = FACILITY_CLASS_BLACK_BELT,
         .species = {SPECIES_BLAZIKEN, SPECIES_GOLEM, SPECIES_MACHAMP, SPECIES_RHYDON, SPECIES_HARIYAMA, SPECIES_AGGRON, SPECIES_MEDICHAM, SPECIES_ZANGOOSE, SPECIES_VIGOROTH, SPECIES_SLAKING},
         .id = 13,
@@ -466,11 +410,7 @@ const struct ApprenticeTrainer gApprentices[NUM_APPRENTICES] =
     },
     {
         .name = {_("トシミツ"), _("DANTE"), _("DANTE"), _("RAOUL"), _("LOTHAR"), _("PABLO")},
-<<<<<<< HEAD
         .otId = 0xBC75,
-=======
-        .otId = 48245,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .facilityClass = FACILITY_CLASS_RUIN_MANIAC,
         .species = {SPECIES_SCEPTILE, SPECIES_SANDSLASH, SPECIES_FLYGON, SPECIES_CLAYDOL, SPECIES_ARMALDO, SPECIES_CROBAT, SPECIES_CRADILY, SPECIES_SOLROCK, SPECIES_LUNATONE, SPECIES_GOLEM},
         .id = 14,
@@ -478,11 +418,7 @@ const struct ApprenticeTrainer gApprentices[NUM_APPRENTICES] =
     },
     {
         .name = {_("ローウェン"), _("ARTURO"), _("ARTURO"), _("ROMOLO"), _("BRIAN"), _("ARTURO")},
-<<<<<<< HEAD
         .otId = 0xFA02,
-=======
-        .otId = 64002,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .facilityClass = FACILITY_CLASS_GENTLEMAN,
         .species = {SPECIES_ABSOL, SPECIES_MIGHTYENA, SPECIES_ALAKAZAM, SPECIES_BANETTE, SPECIES_NINETALES, SPECIES_CLAYDOL, SPECIES_MUK, SPECIES_SALAMENCE, SPECIES_WALREIN, SPECIES_DUSCLOPS},
         .id = 15,
@@ -632,7 +568,6 @@ static const u8 *const sApprenticeChallengeTexts[NUM_APPRENTICES] =
     gText_ApprenticeChallenge15,
 };
 
-<<<<<<< HEAD
 // Unclear what the criteria are for valid moves
 // Notably, a large percentage of multi-strike moves are not valid
 static const bool8 sValidApprenticeMoves[MOVES_COUNT] =
@@ -1007,8 +942,6 @@ static const bool8 sValidApprenticeMoves[MOVES_COUNT] =
     [MOVE_POISON_JAB] = TRUE,
 };
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 // The possible questions to ask after the initial 3 WHICH MON questions. Retrieved from here and shuffled
 // WHAT_ITEM has max 3 occurrences, one for each party member
 // WHICH_MOVE has max 5 occurrences, defined as NUM_WHICH_MOVE_QUESTIONS
@@ -1028,11 +961,7 @@ static const u8 sQuestionPossibilities[MAX_APPRENTICE_QUESTIONS] =
     QUESTION_ID_WIN_SPEECH
 };
 
-<<<<<<< HEAD
 static void (* const sApprenticeFunctions[])(void) =
-=======
-static void (*const sApprenticeFunctions[])(void) =
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     [APPRENTICE_FUNC_GAVE_LVLMODE]        = Script_GivenApprenticeLvlMode,
     [APPRENTICE_FUNC_SET_LVLMODE]         = Script_SetApprenticeLvlMode,

@@ -100,11 +100,7 @@ void FreeRotatingTilePuzzle(void)
 
     TRY_FREE_AND_SET_NULL(sRotatingTilePuzzle);
 
-<<<<<<< HEAD
     id = GetObjectEventIdByLocalIdAndMap(OBJ_EVENT_ID_PLAYER, 0, 0);
-=======
-    id = GetObjectEventIdByLocalIdAndMap(LOCALID_PLAYER, 0, 0);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ObjectEventClearHeldMovementIfFinished(&gObjectEvents[id]);
     ScriptMovement_UnfreezeObjectEvents();
 }
@@ -113,11 +109,7 @@ u16 MoveRotatingTileObjects(u8 puzzleNumber)
 {
     u8 i;
     struct ObjectEventTemplate *objectEvents = gSaveBlock1Ptr->objectEventTemplates;
-<<<<<<< HEAD
     u16 localId = 0;
-=======
-    u16 localId = LOCALID_NONE;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     for (i = 0; i < OBJECT_EVENT_TEMPLATES_COUNT; i++)
     {

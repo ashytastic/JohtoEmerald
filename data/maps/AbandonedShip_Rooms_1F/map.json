@@ -12,11 +12,7 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-<<<<<<< HEAD
   "connections": 0,
-=======
-  "connections": null,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
@@ -40,15 +36,9 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-<<<<<<< HEAD
       "trainer_sight_or_berry_tree_id": "0",
       "script": "AbandonedShip_Rooms_1F_EventScript_ItemHarborMail",
       "flag": "FLAG_ITEM_GARBAGEFLAG"
-=======
-      "trainer_sight_or_berry_tree_id": "ITEM_HARBOR_MAIL",
-      "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ABANDONED_SHIP_ROOMS_1F_HARBOR_MAIL"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BEAUTY",
@@ -121,15 +111,10 @@
       "dest_warp_id": "5"
     }
   ],
-<<<<<<< HEAD
   "coord_events": [
 
   ],
   "bg_events": [
 
   ]
-=======
-  "coord_events": [],
-  "bg_events": []
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }

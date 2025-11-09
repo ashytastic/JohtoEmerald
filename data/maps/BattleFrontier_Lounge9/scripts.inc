@@ -1,7 +1,6 @@
 BattleFrontier_Lounge9_MapScripts::
 	.byte 0
 
-<<<<<<< HEAD
 BattleFrontier_Lounge9_Heal::
 	specialvar VAR_RESULT, IsPokecenterChallengeActivated
 	goto_if_eq VAR_RESULT, TRUE, SSTidalRooms_EventScript_Bed_PokecenterChallenge
@@ -686,5 +685,3 @@ BattleFrontier_Lounge9_Ability_Text_NoChampion:
 	.string "I can't work today.\p"
 	.string "Come again later!$"
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

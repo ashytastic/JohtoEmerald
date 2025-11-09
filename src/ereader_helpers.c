@@ -146,11 +146,7 @@ static const struct TrainerHillTrainer sTrainerHillTrainerTemplates_JP[] = {
             [3] = {
                 .species = SPECIES_CACTURNE,
                 .heldItem = ITEM_QUICK_CLAW,
-<<<<<<< HEAD
                 .moves = { MOVE_GIGA_DRAIN, MOVE_FAINT_ATTACK, MOVE_THUNDER_PUNCH, MOVE_GROWTH },
-=======
-                .moves = { MOVE_GIGA_DRAIN, MOVE_FEINT_ATTACK, MOVE_THUNDER_PUNCH, MOVE_GROWTH },
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 .hpEV = 55,
                 .attackEV = 0,
                 .defenseEV = 100,
@@ -379,21 +375,10 @@ static const struct TrainerHillTrainer sTrainerHillTrainerTemplates_JP[] = {
 
 static u8 GetTrainerHillUnkVal(void)
 {
-<<<<<<< HEAD
     return (gSaveBlock1Ptr->trainerHill.unused + 1) % 256;
 }
 
 static bool32 ValidateTrainerChecksum(struct EReaderTrainerHillTrainer * hillTrainer)
-=======
-#if FREE_TRAINER_HILL == FALSE
-    return (gSaveBlock1Ptr->trainerHill.unused + 1) % 256;
-#else
-    return 0;
-#endif //FREE_TRAINER_HILL
-}
-
-static bool32 ValidateTrainerChecksum(struct EReaderTrainerHillTrainer *hillTrainer)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     int checksum = CalcByteArraySum((u8 *)hillTrainer, offsetof(typeof(*hillTrainer), checksum));
     if (checksum != hillTrainer->checksum)
@@ -402,11 +387,7 @@ static bool32 ValidateTrainerChecksum(struct EReaderTrainerHillTrainer *hillTrai
     return TRUE;
 }
 
-<<<<<<< HEAD
 bool8 ValidateTrainerHillData(struct EReaderTrainerHillSet * hillSet)
-=======
-bool8 ValidateTrainerHillData(struct EReaderTrainerHillSet *hillSet)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     u32 i;
     u32 checksum;
@@ -445,11 +426,7 @@ static bool32 ValidateTrainerHillChecksum(struct EReaderTrainerHillSet *hillSet)
     return TRUE;
 }
 
-<<<<<<< HEAD
 static bool32 TryWriteTrainerHill_Internal(struct EReaderTrainerHillSet * hillSet, struct TrainerHillChallenge * challenge)
-=======
-static bool32 TryWriteTrainerHill_Internal(struct EReaderTrainerHillSet *hillSet, struct TrainerHillChallenge *challenge)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     int i;
 
@@ -488,11 +465,7 @@ static bool32 TryWriteTrainerHill_Internal(struct EReaderTrainerHillSet *hillSet
     return TRUE;
 }
 
-<<<<<<< HEAD
 bool32 TryWriteTrainerHill(struct EReaderTrainerHillSet * hillSet)
-=======
-bool32 TryWriteTrainerHill(struct EReaderTrainerHillSet *hillSet)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     void *buffer = AllocZeroed(SECTOR_SIZE);
     bool32 result = TryWriteTrainerHill_Internal(hillSet, buffer);
@@ -500,11 +473,7 @@ bool32 TryWriteTrainerHill(struct EReaderTrainerHillSet *hillSet)
     return result;
 }
 
-<<<<<<< HEAD
 static bool32 TryReadTrainerHill_Internal(struct EReaderTrainerHillSet * dest, u8 * buffer)
-=======
-static bool32 TryReadTrainerHill_Internal(struct EReaderTrainerHillSet *dest, u8 *buffer)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     if (TryReadSpecialSaveSector(SECTOR_ID_TRAINER_HILL, buffer) != SAVE_STATUS_OK)
         return FALSE;
@@ -516,11 +485,7 @@ static bool32 TryReadTrainerHill_Internal(struct EReaderTrainerHillSet *dest, u8
     return TRUE;
 }
 
-<<<<<<< HEAD
 static bool32 TryReadTrainerHill(struct EReaderTrainerHillSet * hillSet)
-=======
-static bool32 TryReadTrainerHill(struct EReaderTrainerHillSet *hillSet)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     u8 *buffer = AllocZeroed(SECTOR_SIZE);
     bool32 result = TryReadTrainerHill_Internal(hillSet, buffer);
@@ -536,11 +501,7 @@ bool32 ReadTrainerHillAndValidate(void)
     return result;
 }
 
-<<<<<<< HEAD
 int EReader_Send(int size, const void * src)
-=======
-int EReader_Send(int size, const void *src)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     int result;
     int sendStatus;
@@ -581,11 +542,7 @@ int EReader_Send(int size, const void *src)
     return result;
 }
 
-<<<<<<< HEAD
 int EReader_Recv(void * dest)
-=======
-int EReader_Recv(void *dest)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     int result;
     int recvStatus;
@@ -662,11 +619,7 @@ static void OpenSerial32(void)
     sCounter2 = 0;
 }
 
-<<<<<<< HEAD
 int EReaderHandleTransfer(u8 mode, size_t size, const void * data, void * recvBuffer)
-=======
-int EReaderHandleTransfer(u8 mode, size_t size, const void *data, void *recvBuffer)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     switch (sSendRecvMgr.state)
     {
@@ -708,7 +661,6 @@ int EReaderHandleTransfer(u8 mode, size_t size, const void *data, void *recvBuff
 
             if (sSendRecvMgr.xferState != EREADER_XFER_CHK)
             {
-<<<<<<< HEAD
                 if (sSendRecvMgr.isParent && sCounter1 > 2)
                 {
                     EnableSio();
@@ -719,10 +671,6 @@ int EReaderHandleTransfer(u8 mode, size_t size, const void *data, void *recvBuff
                     EnableSio();
                     sSendRecvMgr.xferState = EREADER_XFER_CHK;
                 }
-=======
-                EnableSio();
-                sSendRecvMgr.xferState = EREADER_XFER_CHK;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             }
         }
         break;
@@ -764,11 +712,7 @@ static u16 DetermineSendRecvState(u8 mode)
     return resp;
 }
 
-<<<<<<< HEAD
 static void SetUpTransferManager(size_t size, const void * data, void * recvBuffer)
-=======
-static void SetUpTransferManager(size_t size, const void *data, void *recvBuffer)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     if (sSendRecvMgr.isParent)
     {

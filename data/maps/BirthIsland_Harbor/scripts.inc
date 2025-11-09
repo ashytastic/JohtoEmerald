@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 .set LOCALID_SAILOR, 1
 .set LOCALID_SS_TIDAL, 2
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 BirthIsland_Harbor_MapScripts::
 	.byte 0
 
@@ -17,13 +14,8 @@ BirthIsland_Harbor_EventScript_Sailor::
 	applymovement VAR_LAST_TALKED, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	delay 30
-<<<<<<< HEAD
 	hideobjectat LOCALID_SAILOR, MAP_BIRTH_ISLAND_HARBOR
 	setvar VAR_0x8004, LOCALID_SS_TIDAL
-=======
-	hideobjectat LOCALID_BIRTH_ISLAND_SAILOR, MAP_BIRTH_ISLAND_HARBOR
-	setvar VAR_0x8004, LOCALID_BIRTH_ISLAND_SS_TIDAL
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call Common_EventScript_FerryDepartIsland
 	warp MAP_LILYCOVE_CITY_HARBOR, 8, 11
 	waitstate

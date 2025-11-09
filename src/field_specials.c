@@ -1,8 +1,4 @@
 #include "global.h"
-<<<<<<< HEAD
-=======
-#include "debug.h"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include "malloc.h"
 #include "battle.h"
 #include "battle_tower.h"
@@ -22,7 +18,6 @@
 #include "field_weather.h"
 #include "graphics.h"
 #include "international_string_util.h"
-<<<<<<< HEAD
 #include "item_icon.h"
 #include "link.h"
 #include "list_menu.h"
@@ -33,22 +28,6 @@
 #include "overworld.h"
 #include "party_menu.h"
 #include "pokeblock.h"
-=======
-#include "item.h"
-#include "item_icon.h"
-#include "link.h"
-#include "list_menu.h"
-#include "load_save.h"
-#include "main.h"
-#include "match_call.h"
-#include "menu.h"
-#include "metatile_behavior.h"
-#include "mystery_gift.h"
-#include "overworld.h"
-#include "party_menu.h"
-#include "pokeblock.h"
-#include "pokedex.h"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include "pokemon.h"
 #include "pokemon_storage_system.h"
 #include "random.h"
@@ -63,10 +42,6 @@
 #include "strings.h"
 #include "task.h"
 #include "text.h"
-<<<<<<< HEAD
-=======
-#include "tilesets.h"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include "tv.h"
 #include "wallclock.h"
 #include "window.h"
@@ -80,10 +55,7 @@
 #include "constants/field_specials.h"
 #include "constants/items.h"
 #include "constants/heal_locations.h"
-<<<<<<< HEAD
 #include "constants/map_types.h"
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include "constants/mystery_gift.h"
 #include "constants/slot_machine.h"
 #include "constants/songs.h"
@@ -92,18 +64,11 @@
 #include "constants/battle_frontier.h"
 #include "constants/weather.h"
 #include "constants/metatile_labels.h"
-<<<<<<< HEAD
 #include "palette.h"
 #include "constants/metatile_behaviors.h"
 #include "item.h"
 #include "item_menu.h"
 #include "constants/rgb.h"
-=======
-#include "constants/rgb.h"
-#include "palette.h"
-#include "battle_util.h"
-#include "naming_screen.h"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 #define TAG_ITEM_ICON 5500
 
@@ -114,10 +79,7 @@
 #define ELEVATOR_WINDOW_HEIGHT 3
 #define ELEVATOR_LIGHT_STAGES  3
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 EWRAM_DATA bool8 gBikeCyclingChallenge = FALSE;
 EWRAM_DATA u8 gBikeCollisions = 0;
 static EWRAM_DATA u32 sBikeCyclingTimer = 0;
@@ -127,11 +89,7 @@ static EWRAM_DATA u8 sTutorMoveAndElevatorWindowId = 0;
 static EWRAM_DATA u16 sLilycoveDeptStore_NeverRead = 0;
 static EWRAM_DATA u16 sLilycoveDeptStore_DefaultFloorChoice = 0;
 static EWRAM_DATA struct ListMenuItem *sScrollableMultichoice_ListMenuItem = NULL;
-<<<<<<< HEAD
 static EWRAM_DATA u16 sScrollableMultichoice_ScrollOffset = 0;
-=======
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static EWRAM_DATA u16 sFrontierExchangeCorner_NeverRead = 0;
 static EWRAM_DATA u8 sScrollableMultichoice_ItemSpriteId = 0;
 static EWRAM_DATA u8 sBattlePointsWindowId = 0;
@@ -139,12 +97,7 @@ static EWRAM_DATA u8 sFrontierExchangeCorner_ItemIconWindowId = 0;
 static EWRAM_DATA u8 sPCBoxToSendMon = 0;
 static EWRAM_DATA u32 sBattleTowerMultiBattleTypeFlags = 0;
 
-<<<<<<< HEAD
 struct ListMenuTemplate gScrollableMultichoice_ListMenuTemplate;
-=======
-COMMON_DATA struct ListMenuTemplate gScrollableMultichoice_ListMenuTemplate = {0};
-EWRAM_DATA u16 gScrollableMultichoice_ScrollOffset = 0;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 void TryLoseFansFromPlayTime(void);
 void SetPlayerGotFirstFans(void);
@@ -188,26 +141,9 @@ static void Task_CloseBattlePikeCurtain(u8);
 static u8 DidPlayerGetFirstFans(void);
 static void SetInitialFansOfPlayer(void);
 static u16 PlayerGainRandomTrainerFan(void);
-<<<<<<< HEAD
 static void BufferFanClubTrainerName_(struct LinkBattleRecords *, u8, u8);
 static void Task_RunPokemonLeagueLightingEffect(u8 taskId);
 static void Task_CancelPokemonLeagueLightingEffect(u8 taskId);
-=======
-#if FREE_LINK_BATTLE_RECORDS == FALSE
-static void BufferFanClubTrainerName_(struct LinkBattleRecords *, u8, u8);
-#else
-static void BufferFanClubTrainerName_(u8 whichLinkTrainer, u8 whichNPCTrainer);
-#endif //FREE_LINK_BATTLE_RECORDS
-
-static const u8 sText_BigGuy[] = _("Big guy");
-static const u8 sText_BigGirl[] = _("Big girl");
-static const u8 sText_Son[] = _("son");
-static const u8 sText_Daughter[] = _("daughter");
-static const u8 sText_99TimesPlus[] = _("99 times +");
-static const u8 sText_1MinutePlus[] = _("1 minute +");
-static const u8 sText_SpaceSeconds[] = _(" seconds");
-static const u8 sText_SpaceTimes[] = _(" time(s)");
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 void Special_ShowDiploma(void)
 {
@@ -252,19 +188,11 @@ static void DetermineCyclingRoadResults(u32 numFrames, u8 numBikeCollisions)
     if (numBikeCollisions < 100)
     {
         ConvertIntToDecimalStringN(gStringVar1, numBikeCollisions, STR_CONV_MODE_LEFT_ALIGN, 2);
-<<<<<<< HEAD
         StringAppend(gStringVar1, gText_SpaceTimes);
     }
     else
     {
         StringCopy(gStringVar1, gText_99TimesPlus);
-=======
-        StringAppend(gStringVar1, sText_SpaceTimes);
-    }
-    else
-    {
-        StringCopy(gStringVar1, sText_99TimesPlus);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
 
     if (numFrames < 3600)
@@ -272,19 +200,11 @@ static void DetermineCyclingRoadResults(u32 numFrames, u8 numBikeCollisions)
         ConvertIntToDecimalStringN(gStringVar2, numFrames / 60, STR_CONV_MODE_RIGHT_ALIGN, 2);
         gStringVar2[2] = CHAR_DEC_SEPARATOR;
         ConvertIntToDecimalStringN(&gStringVar2[3], ((numFrames % 60) * 100) / 60, STR_CONV_MODE_LEADING_ZEROS, 2);
-<<<<<<< HEAD
         StringAppend(gStringVar2, gText_SpaceSeconds);
     }
     else
     {
         StringCopy(gStringVar2, gText_1MinutePlus);
-=======
-        StringAppend(gStringVar2, sText_SpaceSeconds);
-    }
-    else
-    {
-        StringCopy(gStringVar2, sText_1MinutePlus);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
 
     result = 0;
@@ -350,11 +270,7 @@ u16 GetRecordedCyclingRoadResults(void)
 
 void UpdateCyclingRoadState(void)
 {
-<<<<<<< HEAD
     if (gLastUsedWarp.mapNum == MAP_NUM(ROUTE110_SEASIDE_CYCLING_ROAD_SOUTH_ENTRANCE) && gLastUsedWarp.mapGroup == MAP_GROUP(ROUTE110_SEASIDE_CYCLING_ROAD_SOUTH_ENTRANCE))
-=======
-    if (gLastUsedWarp.mapNum == MAP_NUM(MAP_ROUTE110_SEASIDE_CYCLING_ROAD_NORTH_ENTRANCE) && gLastUsedWarp.mapGroup == MAP_GROUP(MAP_ROUTE110_SEASIDE_CYCLING_ROAD_NORTH_ENTRANCE))
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         return;
 
     if (VarGet(VAR_CYCLING_CHALLENGE_STATE) == 2 || VarGet(VAR_CYCLING_CHALLENGE_STATE) == 3)
@@ -404,67 +320,39 @@ u8 GetSSTidalLocation(s8 *mapGroup, s8 *mapNum, s16 *x, s16 *y)
     case SS_TIDAL_DEPART_SLATEPORT:
         if (*varCruiseStepCount < 60)
         {
-<<<<<<< HEAD
             *mapNum = MAP_NUM(ROUTE134);
-=======
-            *mapNum = MAP_NUM(MAP_ROUTE134);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             *x = *varCruiseStepCount + 19;
         }
         else if (*varCruiseStepCount < 140)
         {
-<<<<<<< HEAD
             *mapNum = MAP_NUM(ROUTE133);
-=======
-            *mapNum = MAP_NUM(MAP_ROUTE133);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             *x = *varCruiseStepCount - 60;
         }
         else
         {
-<<<<<<< HEAD
             *mapNum = MAP_NUM(ROUTE132);
-=======
-            *mapNum = MAP_NUM(MAP_ROUTE132);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             *x = *varCruiseStepCount - 140;
         }
         break;
     case SS_TIDAL_HALFWAY_SLATEPORT:
         if (*varCruiseStepCount < 66)
         {
-<<<<<<< HEAD
             *mapNum = MAP_NUM(ROUTE132);
-=======
-            *mapNum = MAP_NUM(MAP_ROUTE132);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             *x = 65 - *varCruiseStepCount;
         }
         else if (*varCruiseStepCount < 146)
         {
-<<<<<<< HEAD
             *mapNum = MAP_NUM(ROUTE133);
-=======
-            *mapNum = MAP_NUM(MAP_ROUTE133);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             *x = 145 - *varCruiseStepCount;
         }
         else
         {
-<<<<<<< HEAD
             *mapNum = MAP_NUM(ROUTE134);
-=======
-            *mapNum = MAP_NUM(MAP_ROUTE134);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             *x = 224 - *varCruiseStepCount;
         }
         break;
     }
-<<<<<<< HEAD
     *mapGroup = MAP_GROUP(ROUTE132);
-=======
-    *mapGroup = MAP_GROUP(MAP_ROUTE132);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     *y = 20;
     return SS_TIDAL_LOCATION_CURRENTS;
 }
@@ -682,13 +570,8 @@ void SpawnLinkPartnerObjectEvent(void)
                     linkSpriteId = OBJ_EVENT_GFX_RIVAL_MAY_NORMAL;
                 break;
             }
-<<<<<<< HEAD
             SpawnSpecialObjectEventParameterized(linkSpriteId, movementTypes[j], 240 - i, coordOffsets[j][0] + x + MAP_OFFSET, coordOffsets[j][1] + y + MAP_OFFSET, 0);
             LoadLinkPartnerObjectEventSpritePalette(linkSpriteId, 240 - i, i);
-=======
-            SpawnSpecialObjectEventParameterized(linkSpriteId, movementTypes[j], LOCALID_BERRY_BLENDER_PLAYER_END - i, coordOffsets[j][0] + x + MAP_OFFSET, coordOffsets[j][1] + y + MAP_OFFSET, 0);
-            LoadLinkPartnerObjectEventSpritePalette(linkSpriteId, LOCALID_BERRY_BLENDER_PLAYER_END - i, i);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             j++;
             if (j == MAX_LINK_PLAYERS)
                 j = 0;
@@ -783,17 +666,10 @@ void MauvilleGymSetDefaultBarriers(void)
                 MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH2_On);
                 break;
             case METATILE_MauvilleGym_GreenBeamH3_Off:
-<<<<<<< HEAD
                 MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH3_On | MAPGRID_COLLISION_MASK);
                 break;
             case METATILE_MauvilleGym_GreenBeamH4_Off:
                 MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH4_On | MAPGRID_COLLISION_MASK);
-=======
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH3_On | MAPGRID_IMPASSABLE);
-                break;
-            case METATILE_MauvilleGym_GreenBeamH4_Off:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH4_On | MAPGRID_IMPASSABLE);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 break;
             case METATILE_MauvilleGym_RedBeamH1_On:
                 MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH1_Off);
@@ -814,7 +690,6 @@ void MauvilleGymSetDefaultBarriers(void)
                 MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH2_On);
                 break;
             case METATILE_MauvilleGym_RedBeamH3_Off:
-<<<<<<< HEAD
                 MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH3_On | MAPGRID_COLLISION_MASK);
                 break;
             case METATILE_MauvilleGym_RedBeamH4_Off:
@@ -822,31 +697,17 @@ void MauvilleGymSetDefaultBarriers(void)
                 break;
             case METATILE_MauvilleGym_GreenBeamV1_On:
                 MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_PoleBottom_On | MAPGRID_COLLISION_MASK);
-=======
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH3_On | MAPGRID_IMPASSABLE);
-                break;
-            case METATILE_MauvilleGym_RedBeamH4_Off:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH4_On | MAPGRID_IMPASSABLE);
-                break;
-            case METATILE_MauvilleGym_GreenBeamV1_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_PoleBottom_On | MAPGRID_IMPASSABLE);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 break;
             case METATILE_MauvilleGym_GreenBeamV2_On:
                 MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_FloorTile);
                 break;
             case METATILE_MauvilleGym_RedBeamV1_On:
-<<<<<<< HEAD
                 MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_PoleBottom_Off | MAPGRID_COLLISION_MASK);
-=======
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_PoleBottom_Off | MAPGRID_IMPASSABLE);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 break;
             case METATILE_MauvilleGym_RedBeamV2_On:
                 MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_FloorTile);
                 break;
             case METATILE_MauvilleGym_PoleBottom_On:
-<<<<<<< HEAD
                 MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamV1_On | MAPGRID_COLLISION_MASK);
                 break;
             case METATILE_MauvilleGym_FloorTile:
@@ -860,21 +721,6 @@ void MauvilleGymSetDefaultBarriers(void)
                 break;
             case METATILE_MauvilleGym_PoleTop_Off:
                 MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_PoleTop_On | MAPGRID_COLLISION_MASK);
-=======
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamV1_On | MAPGRID_IMPASSABLE);
-                break;
-            case METATILE_MauvilleGym_FloorTile:
-                if (MapGridGetMetatileIdAt(x, y - 1) == METATILE_MauvilleGym_GreenBeamV1_On)
-                    MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamV2_On | MAPGRID_IMPASSABLE);
-                else
-                    MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamV2_On | MAPGRID_IMPASSABLE);
-                break;
-            case METATILE_MauvilleGym_PoleBottom_Off:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamV1_On | MAPGRID_IMPASSABLE);
-                break;
-            case METATILE_MauvilleGym_PoleTop_Off:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_PoleTop_On | MAPGRID_IMPASSABLE);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 break;
             case METATILE_MauvilleGym_PoleTop_On:
                 MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_PoleTop_Off);
@@ -925,17 +771,10 @@ void MauvilleGymDeactivatePuzzle(void)
                 MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH4_Off);
                 break;
             case METATILE_MauvilleGym_GreenBeamV1_On:
-<<<<<<< HEAD
                 MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_PoleBottom_On | MAPGRID_COLLISION_MASK);
                 break;
             case METATILE_MauvilleGym_RedBeamV1_On:
                 MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_PoleBottom_Off | MAPGRID_COLLISION_MASK);
-=======
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_PoleBottom_On | MAPGRID_IMPASSABLE);
-                break;
-            case METATILE_MauvilleGym_RedBeamV1_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_PoleBottom_Off | MAPGRID_IMPASSABLE);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 break;
             case METATILE_MauvilleGym_GreenBeamV2_On:
             case METATILE_MauvilleGym_RedBeamV2_On:
@@ -1044,13 +883,8 @@ static void PetalburgGymSetDoorMetatiles(u8 roomNumber, u16 metatileId)
     }
     for (i = 0; i < nDoors; i++)
     {
-<<<<<<< HEAD
         MapGridSetMetatileIdAt(doorCoordsX[i] + MAP_OFFSET, doorCoordsY[i] + MAP_OFFSET, metatileId | MAPGRID_COLLISION_MASK);
         MapGridSetMetatileIdAt(doorCoordsX[i] + MAP_OFFSET, doorCoordsY[i] + MAP_OFFSET + 1, (metatileId + METATILE_ROW_WIDTH) | MAPGRID_COLLISION_MASK);
-=======
-        MapGridSetMetatileIdAt(doorCoordsX[i] + MAP_OFFSET, doorCoordsY[i] + MAP_OFFSET, metatileId | MAPGRID_IMPASSABLE);
-        MapGridSetMetatileIdAt(doorCoordsX[i] + MAP_OFFSET, doorCoordsY[i] + MAP_OFFSET + 1, (metatileId + METATILE_ROW_WIDTH) | MAPGRID_IMPASSABLE);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
     DrawWholeMapView();
 }
@@ -1079,29 +913,17 @@ u8 GetPlayerTrainerIdOnesDigit(void)
 void GetPlayerBigGuyGirlString(void)
 {
     if (gSaveBlock2Ptr->playerGender == MALE)
-<<<<<<< HEAD
         StringCopy(gStringVar1, gText_BigGuy);
     else
         StringCopy(gStringVar1, gText_BigGirl);
-=======
-        StringCopy(gStringVar1, sText_BigGuy);
-    else
-        StringCopy(gStringVar1, sText_BigGirl);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 void GetRivalSonDaughterString(void)
 {
     if (gSaveBlock2Ptr->playerGender == MALE)
-<<<<<<< HEAD
         StringCopy(gStringVar1, gText_Daughter);
     else
         StringCopy(gStringVar1, gText_Son);
-=======
-        StringCopy(gStringVar1, sText_Daughter);
-    else
-        StringCopy(gStringVar1, sText_Son);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 u8 GetBattleOutcome(void)
@@ -1112,15 +934,9 @@ u8 GetBattleOutcome(void)
 void CableCarWarp(void)
 {
     if (gSpecialVar_0x8004 != 0)
-<<<<<<< HEAD
         SetWarpDestination(MAP_GROUP(ROUTE112_CABLE_CAR_STATION), MAP_NUM(ROUTE112_CABLE_CAR_STATION), WARP_ID_NONE, 6, 4);
     else
         SetWarpDestination(MAP_GROUP(MT_CHIMNEY_CABLE_CAR_STATION), MAP_NUM(MT_CHIMNEY_CABLE_CAR_STATION), WARP_ID_NONE, 6, 4);
-=======
-        SetWarpDestination(MAP_GROUP(MAP_ROUTE112_CABLE_CAR_STATION), MAP_NUM(MAP_ROUTE112_CABLE_CAR_STATION), WARP_ID_NONE, 6, 4);
-    else
-        SetWarpDestination(MAP_GROUP(MAP_MT_CHIMNEY_CABLE_CAR_STATION), MAP_NUM(MAP_MT_CHIMNEY_CABLE_CAR_STATION), WARP_ID_NONE, 6, 4);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 void SetHiddenItemFlag(void)
@@ -1139,7 +955,6 @@ u16 GetWeekCount(void)
 
 u8 GetLeadMonFriendshipScore(void)
 {
-<<<<<<< HEAD
     struct Pokemon *pokemon = &gPlayerParty[GetLeadMonIndex()];
     if (GetMonData(pokemon, MON_DATA_FRIENDSHIP) == MAX_FRIENDSHIP)
         return FRIENDSHIP_MAX;
@@ -1155,9 +970,6 @@ u8 GetLeadMonFriendshipScore(void)
         return FRIENDSHIP_1_TO_49;
 
     return FRIENDSHIP_NONE;
-=======
-    return GetMonFriendshipScore(&gPlayerParty[GetLeadMonIndex()]);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void CB2_FieldShowRegionMap(void)
@@ -1170,34 +982,6 @@ void FieldShowRegionMap(void)
     SetMainCallback2(CB2_FieldShowRegionMap);
 }
 
-<<<<<<< HEAD
-=======
-static bool32 IsBuildingPCTile(u32 tileId)
-{
-    return (MetatileBehavior_IsPC(UNPACK_BEHAVIOR(GetMetatileAttributesById(tileId))));
-}
-
-static bool32 IsPlayerHousePCTile(u32 tileId)
-{
-    return gMapHeader.mapLayout->secondaryTileset == &gTileset_BrendansMaysHouse
-        && (tileId == METATILE_BrendansMaysHouse_BrendanPC_On
-            || tileId == METATILE_BrendansMaysHouse_BrendanPC_Off
-            || tileId == METATILE_BrendansMaysHouse_MayPC_On
-            || tileId == METATILE_BrendansMaysHouse_MayPC_Off);
-}
-
-static bool8 IsPlayerInFrontOfPC(void)
-{
-    s16 x, y;
-    u32 tileInFront;
-
-    GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
-    tileInFront = MapGridGetMetatileIdAt(x, y);
-
-    return IsBuildingPCTile(tileInFront) || IsPlayerHousePCTile(tileInFront);
-}
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 // Task data for Task_PCTurnOnEffect and Task_LotteryCornerComputerEffect
 #define tPaused       data[0] // Never set
 #define tTaskId       data[1]
@@ -1208,11 +992,7 @@ static bool8 IsPlayerInFrontOfPC(void)
 // For this special, gSpecialVar_0x8004 is expected to be some PC_LOCATION_* value.
 void DoPCTurnOnEffect(void)
 {
-<<<<<<< HEAD
     if (FuncIsActiveTask(Task_PCTurnOnEffect) != TRUE)
-=======
-    if (FuncIsActiveTask(Task_PCTurnOnEffect) != TRUE && IsPlayerInFrontOfPC() == TRUE)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     {
         u8 taskId = CreateTask(Task_PCTurnOnEffect, 8);
         gTasks[taskId].tPaused = FALSE;
@@ -1293,11 +1073,7 @@ static void PCTurnOnEffect_SetMetatile(s16 isScreenOn, s8 dx, s8 dy)
         else if (gSpecialVar_0x8004 == PC_LOCATION_MAYS_HOUSE)
             metatileId = METATILE_BrendansMaysHouse_MayPC_On;
     }
-<<<<<<< HEAD
     MapGridSetMetatileIdAt(gSaveBlock1Ptr->pos.x + dx + MAP_OFFSET, gSaveBlock1Ptr->pos.y + dy + MAP_OFFSET, metatileId | MAPGRID_COLLISION_MASK);
-=======
-    MapGridSetMetatileIdAt(gSaveBlock1Ptr->pos.x + dx + MAP_OFFSET, gSaveBlock1Ptr->pos.y + dy + MAP_OFFSET, metatileId | MAPGRID_IMPASSABLE);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 // For this special, gSpecialVar_0x8004 is expected to be some PC_LOCATION_* value.
@@ -1314,12 +1090,6 @@ static void PCTurnOffEffect(void)
 
     // Get where the PC should be, depending on where the player is looking.
     u8 playerDirection = GetPlayerFacingDirection();
-<<<<<<< HEAD
-=======
-
-    if (IsPlayerInFrontOfPC() == FALSE)
-        return;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     switch (playerDirection)
     {
     case DIR_NORTH:
@@ -1343,11 +1113,7 @@ static void PCTurnOffEffect(void)
     else if (gSpecialVar_0x8004 == PC_LOCATION_MAYS_HOUSE)
         metatileId = METATILE_BrendansMaysHouse_MayPC_Off;
 
-<<<<<<< HEAD
     MapGridSetMetatileIdAt(gSaveBlock1Ptr->pos.x + dx + MAP_OFFSET, gSaveBlock1Ptr->pos.y + dy + MAP_OFFSET, metatileId | MAPGRID_COLLISION_MASK);
-=======
-    MapGridSetMetatileIdAt(gSaveBlock1Ptr->pos.x + dx + MAP_OFFSET, gSaveBlock1Ptr->pos.y + dy + MAP_OFFSET, metatileId | MAPGRID_IMPASSABLE);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     DrawWholeMapView();
 }
 
@@ -1379,24 +1145,14 @@ static void LotteryCornerComputerEffect(struct Task *task)
         if (task->tIsScreenOn)
         {
             // Screen is on, set it off
-<<<<<<< HEAD
             MapGridSetMetatileIdAt(11 + MAP_OFFSET, 1 + MAP_OFFSET, METATILE_Shop_Laptop1_Normal | MAPGRID_COLLISION_MASK);
             MapGridSetMetatileIdAt(11 + MAP_OFFSET, 2 + MAP_OFFSET, METATILE_Shop_Laptop2_Normal | MAPGRID_COLLISION_MASK);
-=======
-            MapGridSetMetatileIdAt(11 + MAP_OFFSET, 1 + MAP_OFFSET, METATILE_Shop_Laptop1_Normal | MAPGRID_IMPASSABLE);
-            MapGridSetMetatileIdAt(11 + MAP_OFFSET, 2 + MAP_OFFSET, METATILE_Shop_Laptop2_Normal | MAPGRID_IMPASSABLE);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         }
         else
         {
             // Screen is off, set it on
-<<<<<<< HEAD
             MapGridSetMetatileIdAt(11 + MAP_OFFSET, 1 + MAP_OFFSET, METATILE_Shop_Laptop1_Flash | MAPGRID_COLLISION_MASK);
             MapGridSetMetatileIdAt(11 + MAP_OFFSET, 2 + MAP_OFFSET, METATILE_Shop_Laptop2_Flash | MAPGRID_COLLISION_MASK);
-=======
-            MapGridSetMetatileIdAt(11 + MAP_OFFSET, 1 + MAP_OFFSET, METATILE_Shop_Laptop1_Flash | MAPGRID_IMPASSABLE);
-            MapGridSetMetatileIdAt(11 + MAP_OFFSET, 2 + MAP_OFFSET, METATILE_Shop_Laptop2_Flash | MAPGRID_IMPASSABLE);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         }
         DrawWholeMapView();
 
@@ -1411,13 +1167,8 @@ static void LotteryCornerComputerEffect(struct Task *task)
 
 void EndLotteryCornerComputerEffect(void)
 {
-<<<<<<< HEAD
     MapGridSetMetatileIdAt(11 + MAP_OFFSET, 1 + MAP_OFFSET, METATILE_Shop_Laptop1_Normal | MAPGRID_COLLISION_MASK);
     MapGridSetMetatileIdAt(11 + MAP_OFFSET, 2 + MAP_OFFSET, METATILE_Shop_Laptop2_Normal | MAPGRID_COLLISION_MASK);
-=======
-    MapGridSetMetatileIdAt(11 + MAP_OFFSET, 1 + MAP_OFFSET, METATILE_Shop_Laptop1_Normal | MAPGRID_IMPASSABLE);
-    MapGridSetMetatileIdAt(11 + MAP_OFFSET, 2 + MAP_OFFSET, METATILE_Shop_Laptop2_Normal | MAPGRID_IMPASSABLE);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     DrawWholeMapView();
 }
 
@@ -1494,11 +1245,7 @@ void IsGrassTypeInParty(void)
         if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
         {
             species = GetMonData(pokemon, MON_DATA_SPECIES);
-<<<<<<< HEAD
             if (GetTypeBySpecies(species, 1) == TYPE_GRASS || GetTypeBySpecies(species, 2) == TYPE_GRASS) //tx_randomizer_and_challenges
-=======
-            if (GetSpeciesType(species, 0) == TYPE_GRASS || GetSpeciesType(species, 1) == TYPE_GRASS)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             {
                 gSpecialVar_Result = TRUE;
                 return;
@@ -1510,15 +1257,9 @@ void IsGrassTypeInParty(void)
 
 void SpawnCameraObject(void)
 {
-<<<<<<< HEAD
     u8 obj = SpawnSpecialObjectEventParameterized(OBJ_EVENT_GFX_MR_FUJI,
                                                   MOVEMENT_TYPE_FACE_DOWN,
                                                   OBJ_EVENT_ID_CAMERA,
-=======
-    u8 obj = SpawnSpecialObjectEventParameterized(OBJ_EVENT_GFX_BOY_1,
-                                                  MOVEMENT_TYPE_FACE_DOWN,
-                                                  LOCALID_CAMERA,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                                                   gSaveBlock1Ptr->pos.x + MAP_OFFSET,
                                                   gSaveBlock1Ptr->pos.y + MAP_OFFSET,
                                                   3); // elevation
@@ -1529,20 +1270,12 @@ void SpawnCameraObject(void)
 void RemoveCameraObject(void)
 {
     CameraObjectSetFollowedSpriteId(GetPlayerAvatarSpriteId());
-<<<<<<< HEAD
     RemoveObjectEventByLocalIdAndMap(OBJ_EVENT_ID_CAMERA, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
-=======
-    RemoveObjectEventByLocalIdAndMap(LOCALID_CAMERA, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 u8 GetPokeblockNameByMonNature(void)
 {
-<<<<<<< HEAD
     return CopyMonFavoritePokeblockName(GetNature(&gPlayerParty[GetLeadMonIndex()], FALSE), gStringVar1);
-=======
-    return CopyMonFavoritePokeblockName(GetNature(&gPlayerParty[GetLeadMonIndex()]), gStringVar1);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 void GetSecretBaseNearbyMapName(void)
@@ -1672,7 +1405,6 @@ bool8 Special_AreLeadMonEVsMaxedOut(void)
 u8 TryUpdateRusturfTunnelState(void)
 {
     if (!FlagGet(FLAG_RUSTURF_TUNNEL_OPENED)
-<<<<<<< HEAD
         && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(RUSTURF_TUNNEL)
         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(RUSTURF_TUNNEL))
     {
@@ -1684,19 +1416,6 @@ u8 TryUpdateRusturfTunnelState(void)
         else if (FlagGet(FLAG_GARBAGEFLAG))
         {
             VarSet(VAR_GARBAGEVAR, 5);
-=======
-        && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_RUSTURF_TUNNEL)
-        && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_RUSTURF_TUNNEL))
-    {
-        if (FlagGet(FLAG_HIDE_RUSTURF_TUNNEL_ROCK_1))
-        {
-            VarSet(VAR_RUSTURF_TUNNEL_STATE, 4);
-            return TRUE;
-        }
-        else if (FlagGet(FLAG_HIDE_RUSTURF_TUNNEL_ROCK_2))
-        {
-            VarSet(VAR_RUSTURF_TUNNEL_STATE, 5);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             return TRUE;
         }
     }
@@ -1711,11 +1430,7 @@ void SetShoalItemFlag(u16 unused)
 void LoadWallyZigzagoon(void)
 {
     u16 monData;
-<<<<<<< HEAD
     CreateMon(&gPlayerParty[0], SPECIES_RATTATA, 7, USE_RANDOM_IVS, FALSE, 0, OT_ID_PLAYER_ID, 0);
-=======
-    CreateMon(&gPlayerParty[0], SPECIES_ZIGZAGOON, 7, USE_RANDOM_IVS, FALSE, 0, OT_ID_PLAYER_ID, 0);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     monData = TRUE;
     SetMonData(&gPlayerParty[0], MON_DATA_ABILITY_NUM, &monData);
     monData = MOVE_TACKLE;
@@ -1929,15 +1644,9 @@ u16 GetMysteryGiftCardStat(void)
 
 bool8 BufferTMHMMoveName(void)
 {
-<<<<<<< HEAD
     if (gSpecialVar_0x8004 >= ITEM_TM01 && gSpecialVar_0x8004 <= ITEM_HM08)
     {
         StringCopy(gStringVar2, gMoveNames[ItemIdToBattleMoveId(gSpecialVar_0x8004)]);
-=======
-    if (gItemsInfo[gSpecialVar_0x8004].pocket == POCKET_TM_HM)
-    {
-        StringCopy(gStringVar2, GetMoveName(ItemIdToBattleMoveId(gSpecialVar_0x8004)));
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         return TRUE;
     }
 
@@ -1960,13 +1669,8 @@ bool8 IsBadEggInParty(void)
 
 bool8 InMultiPartnerRoom(void)
 {
-<<<<<<< HEAD
     if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(BATTLE_FRONTIER_BATTLE_TOWER_MULTI_PARTNER_ROOM)
         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(BATTLE_FRONTIER_BATTLE_TOWER_MULTI_PARTNER_ROOM) &&
-=======
-    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_BATTLE_FRONTIER_BATTLE_TOWER_MULTI_PARTNER_ROOM)
-        && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_BATTLE_FRONTIER_BATTLE_TOWER_MULTI_PARTNER_ROOM) &&
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         VarGet(VAR_FRONTIER_BATTLE_MODE) == FRONTIER_MODE_MULTIS)
         return TRUE;
     return FALSE;
@@ -2052,7 +1756,6 @@ void SetDeptStoreFloor(void)
     u8 deptStoreFloor;
     switch (gSaveBlock1Ptr->dynamicWarp.mapNum)
     {
-<<<<<<< HEAD
     case MAP_NUM(LILYCOVE_CITY_DEPARTMENT_STORE_1F):
         deptStoreFloor = DEPT_STORE_FLOORNUM_1F;
         break;
@@ -2069,24 +1772,6 @@ void SetDeptStoreFloor(void)
         deptStoreFloor = DEPT_STORE_FLOORNUM_5F;
         break;
     case MAP_NUM(LILYCOVE_CITY_DEPARTMENT_STORE_ROOFTOP):
-=======
-    case MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_1F):
-        deptStoreFloor = DEPT_STORE_FLOORNUM_1F;
-        break;
-    case MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_2F):
-        deptStoreFloor = DEPT_STORE_FLOORNUM_2F;
-        break;
-    case MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_3F):
-        deptStoreFloor = DEPT_STORE_FLOORNUM_3F;
-        break;
-    case MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_4F):
-        deptStoreFloor = DEPT_STORE_FLOORNUM_4F;
-        break;
-    case MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_5F):
-        deptStoreFloor = DEPT_STORE_FLOORNUM_5F;
-        break;
-    case MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_ROOFTOP):
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         deptStoreFloor = DEPT_STORE_FLOORNUM_ROOFTOP;
         break;
     default:
@@ -2101,7 +1786,6 @@ u16 GetDeptStoreDefaultFloorChoice(void)
     sLilycoveDeptStore_NeverRead = 0;
     sLilycoveDeptStore_DefaultFloorChoice = 0;
 
-<<<<<<< HEAD
     if (gSaveBlock1Ptr->dynamicWarp.mapGroup == MAP_GROUP(LILYCOVE_CITY_DEPARTMENT_STORE_1F))
     {
         switch (gSaveBlock1Ptr->dynamicWarp.mapNum)
@@ -2123,29 +1807,6 @@ u16 GetDeptStoreDefaultFloorChoice(void)
             sLilycoveDeptStore_DefaultFloorChoice = 3;
             break;
         case MAP_NUM(LILYCOVE_CITY_DEPARTMENT_STORE_1F):
-=======
-    if (gSaveBlock1Ptr->dynamicWarp.mapGroup == MAP_GROUP(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_1F))
-    {
-        switch (gSaveBlock1Ptr->dynamicWarp.mapNum)
-        {
-        case MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_5F):
-            sLilycoveDeptStore_NeverRead = 0;
-            sLilycoveDeptStore_DefaultFloorChoice = 0;
-            break;
-        case MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_4F):
-            sLilycoveDeptStore_NeverRead = 0;
-            sLilycoveDeptStore_DefaultFloorChoice = 1;
-            break;
-        case MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_3F):
-            sLilycoveDeptStore_NeverRead = 0;
-            sLilycoveDeptStore_DefaultFloorChoice = 2;
-            break;
-        case MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_2F):
-            sLilycoveDeptStore_NeverRead = 0;
-            sLilycoveDeptStore_DefaultFloorChoice = 3;
-            break;
-        case MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_1F):
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             sLilycoveDeptStore_NeverRead = 0;
             sLilycoveDeptStore_DefaultFloorChoice = 4;
             break;
@@ -2287,11 +1948,7 @@ static void Task_MoveElevatorWindowLights(u8 taskId)
             for (y = 0; y < ELEVATOR_WINDOW_HEIGHT; y++)
             {
                 for (x = 0; x < ELEVATOR_WINDOW_WIDTH; x++)
-<<<<<<< HEAD
                     MapGridSetMetatileIdAt(x + MAP_OFFSET + 1, y + MAP_OFFSET, sElevatorWindowTiles_Ascending[y][tMoveCounter % ELEVATOR_LIGHT_STAGES] | MAPGRID_COLLISION_MASK);
-=======
-                    MapGridSetMetatileIdAt(x + MAP_OFFSET + 1, y + MAP_OFFSET, sElevatorWindowTiles_Ascending[y][tMoveCounter % ELEVATOR_LIGHT_STAGES] | MAPGRID_IMPASSABLE);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             }
         }
         else
@@ -2300,11 +1957,7 @@ static void Task_MoveElevatorWindowLights(u8 taskId)
             for (y = 0; y < ELEVATOR_WINDOW_HEIGHT; y++)
             {
                 for (x = 0; x < ELEVATOR_WINDOW_WIDTH; x++)
-<<<<<<< HEAD
                     MapGridSetMetatileIdAt(x + MAP_OFFSET + 1, y + MAP_OFFSET, sElevatorWindowTiles_Descending[y][tMoveCounter % ELEVATOR_LIGHT_STAGES] | MAPGRID_COLLISION_MASK);
-=======
-                    MapGridSetMetatileIdAt(x + MAP_OFFSET + 1, y + MAP_OFFSET, sElevatorWindowTiles_Descending[y][tMoveCounter % ELEVATOR_LIGHT_STAGES] | MAPGRID_IMPASSABLE);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             }
         }
         DrawWholeMapView();
@@ -2397,7 +2050,6 @@ bool8 UsedPokemonCenterWarp(void)
 }
 
 bool32 PlayerNotAtTrainerHillEntrance(void)
-<<<<<<< HEAD
 {/* //broken so I commented it out.
     if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(TRAINER_HILL_ENTRANCE) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(TRAINER_HILL_ENTRANCE))
         return FALSE;
@@ -2405,13 +2057,6 @@ bool32 PlayerNotAtTrainerHillEntrance(void)
     return TRUE;
     */
    return FALSE;
-=======
-{
-    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_TRAINER_HILL_ENTRANCE) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_TRAINER_HILL_ENTRANCE))
-        return FALSE;
-
-    return TRUE;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 void UpdateFrontierManiac(u16 daysSince)
@@ -2559,11 +2204,6 @@ void ShowFrontierManiacMessage(void)
         else
             winStreak = gSaveBlock2Ptr->frontier.pyramidWinStreaks[FRONTIER_LVL_OPEN];
         break;
-<<<<<<< HEAD
-=======
-    default:
-        return;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
 
     for (i = 0; i < FRONTIER_MANIAC_MESSAGE_COUNT - 1 && sFrontierManiacStreakThresholds[facility][i] < winStreak; i++);
@@ -2729,7 +2369,6 @@ void ShowScrollableMultichoice(void)
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
         break;
-<<<<<<< HEAD
     case SCROLL_MULTI_BF_MOVE_TUTOR_3:
         task->tMaxItemsOnScreen = 4;
         task->tNumItems = 4;
@@ -2740,8 +2379,6 @@ void ShowScrollableMultichoice(void)
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
         break;
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     case SCROLL_MULTI_SS_TIDAL_DESTINATION:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
         task->tNumItems = 7;
@@ -2777,7 +2414,6 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
     },
     [SCROLL_MULTI_GLASS_WORKSHOP_VENDOR] =
     {
-<<<<<<< HEAD
         gText_BlueFlute,
         gText_YellowFlute,
         gText_RedFlute,
@@ -2785,20 +2421,10 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_BlackFlute,
         gText_PrettyChair,
         gText_PrettyDesk,
-=======
-        COMPOUND_STRING("BLUE FLUTE"),
-        COMPOUND_STRING("YELLOW FLUTE"),
-        COMPOUND_STRING("RED FLUTE"),
-        COMPOUND_STRING("WHITE FLUTE"),
-        COMPOUND_STRING("BLACK FLUTE"),
-        COMPOUND_STRING("PRETTY CHAIR"),
-        COMPOUND_STRING("PRETTY DESK"),
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         gText_Exit
     },
     [SCROLL_MULTI_POKEMON_FAN_CLUB_RATER] =
     {
-<<<<<<< HEAD
         gText_0Pts,
         gText_10Pts,
         gText_20Pts,
@@ -2824,74 +2450,29 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_CyndaquilDoll80BP,
         gText_ChikoritaDoll80BP,
         gText_TotodileDoll80BP,
-=======
-        COMPOUND_STRING("0 pts"),
-        COMPOUND_STRING("10 pts"),
-        COMPOUND_STRING("20 pts"),
-        COMPOUND_STRING("30 pts"),
-        COMPOUND_STRING("40 pts"),
-        COMPOUND_STRING("50 pts"),
-        COMPOUND_STRING("60 pts"),
-        COMPOUND_STRING("70 pts"),
-        COMPOUND_STRING("80 pts"),
-        COMPOUND_STRING("90 pts"),
-        COMPOUND_STRING("100 pts"),
-        COMPOUND_STRING("?")
-    },
-    [SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_1] =
-    {
-        COMPOUND_STRING("KISS POSTER{CLEAR_TO 0x5E}16BP"),
-        COMPOUND_STRING("KISS CUSHION{CLEAR_TO 0x5E}32BP"),
-        COMPOUND_STRING("SMOOCHUM DOLL{CLEAR_TO 0x5E}32BP"),
-        COMPOUND_STRING("TOGEPI DOLL{CLEAR_TO 0x5E}48BP"),
-        COMPOUND_STRING("MEOWTH DOLL{CLEAR_TO 0x5E}48BP"),
-        COMPOUND_STRING("CLEFAIRY DOLL{CLEAR_TO 0x5E}48BP"),
-        COMPOUND_STRING("DITTO DOLL{CLEAR_TO 0x5E}48BP"),
-        COMPOUND_STRING("CYNDAQUIL DOLL{CLEAR_TO 0x5E}80BP"),
-        COMPOUND_STRING("CHIKORITA DOLL{CLEAR_TO 0x5E}80BP"),
-        COMPOUND_STRING("TOTODILE DOLL{CLEAR_TO 0x5E}80BP"),
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         gText_Exit
     },
     [SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_2] =
     {
-<<<<<<< HEAD
         gText_LaprasDoll128BP,
         gText_SnorlaxDoll128BP,
         gText_VenusaurDoll256BP,
         gText_CharizardDoll256BP,
         gText_BlastoiseDoll256BP,
-=======
-        COMPOUND_STRING("LAPRAS DOLL{CLEAR_TO 0x58}128BP"),
-        COMPOUND_STRING("SNORLAX DOLL{CLEAR_TO 0x58}128BP"),
-        COMPOUND_STRING("VENUSAUR DOLL{CLEAR_TO 0x58}256BP"),
-        COMPOUND_STRING("CHARIZARD DOLL{CLEAR_TO 0x58}256BP"),
-        COMPOUND_STRING("BLASTOISE DOLL{CLEAR_TO 0x58}256BP"),
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         gText_Exit
     },
     [SCROLL_MULTI_BF_EXCHANGE_CORNER_VITAMIN_VENDOR] =
     {
-<<<<<<< HEAD
         gText_Protein1BP,
         gText_Calcium1BP,
         gText_Iron1BP,
         gText_Zinc1BP,
         gText_Carbos1BP,
         gText_HpUp1BP,
-=======
-        COMPOUND_STRING("PROTEIN{CLEAR_TO 0x64}1BP"),
-        COMPOUND_STRING("CALCIUM{CLEAR_TO 0x64}1BP"),
-        COMPOUND_STRING("IRON{CLEAR_TO 0x64}1BP"),
-        COMPOUND_STRING("ZINC{CLEAR_TO 0x64}1BP"),
-        COMPOUND_STRING("CARBOS{CLEAR_TO 0x64}1BP"),
-        COMPOUND_STRING("HP UP{CLEAR_TO 0x64}1BP"),
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         gText_Exit
     },
     [SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR] =
     {
-<<<<<<< HEAD
         gText_Leftovers48BP,
         gText_WhiteHerb48BP,
         gText_QuickClaw48BP,
@@ -2901,22 +2482,10 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_KingsRock64BP,
         gText_FocusBand64BP,
         gText_ScopeLens64BP,
-=======
-        COMPOUND_STRING("LEFTOVERS{CLEAR_TO 0x5E}48BP"),
-        COMPOUND_STRING("WHITE HERB{CLEAR_TO 0x5E}48BP"),
-        COMPOUND_STRING("QUICK CLAW{CLEAR_TO 0x5E}48BP"),
-        COMPOUND_STRING("MENTAL HERB{CLEAR_TO 0x5E}48BP"),
-        COMPOUND_STRING("BRIGHTPOWDER{CLEAR_TO 0x5E}64BP"),
-        COMPOUND_STRING("CHOICE BAND{CLEAR_TO 0x5E}64BP"),
-        COMPOUND_STRING("KING'S ROCK{CLEAR_TO 0x5E}64BP"),
-        COMPOUND_STRING("FOCUS BAND{CLEAR_TO 0x5E}64BP"),
-        COMPOUND_STRING("SCOPE LENS{CLEAR_TO 0x5E}64BP"),
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         gText_Exit
     },
     [SCROLL_MULTI_BERRY_POWDER_VENDOR] =
     {
-<<<<<<< HEAD
         gText_EnergyPowder50,
         gText_EnergyRoot80,
         gText_HealPowder50,
@@ -2928,19 +2497,6 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_Zinc1000,
         gText_HPUp1000,
         gText_PPUp3000,
-=======
-        COMPOUND_STRING("ENERGYPOWDER{CLEAR_TO 114}{FONT_SMALL}50"),
-        COMPOUND_STRING("ENERGY ROOT{CLEAR_TO 114}{FONT_SMALL}80"),
-        COMPOUND_STRING("HEAL POWDER{CLEAR_TO 114}{FONT_SMALL}50"),
-        COMPOUND_STRING("REVIVAL HERB{CLEAR_TO 108}{FONT_SMALL}300"),
-        COMPOUND_STRING("PROTEIN{CLEAR_TO 99}{FONT_SMALL}1,000"),
-        COMPOUND_STRING("IRON{CLEAR_TO 99}{FONT_SMALL}1,000"),
-        COMPOUND_STRING("CARBOS{CLEAR_TO 99}{FONT_SMALL}1,000"),
-        COMPOUND_STRING("CALCIUM{CLEAR_TO 99}{FONT_SMALL}1,000"),
-        COMPOUND_STRING("ZINC{CLEAR_TO 99}{FONT_SMALL}1,000"),
-        COMPOUND_STRING("HP UP{CLEAR_TO 99}{FONT_SMALL}1,000"),
-        COMPOUND_STRING("PP UP{CLEAR_TO 99}{FONT_SMALL}3,000"),
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         gText_Exit
     },
     [SCROLL_MULTI_BF_RECEPTIONIST] =
@@ -2958,7 +2514,6 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
     },
     [SCROLL_MULTI_BF_MOVE_TUTOR_1] =
     {
-<<<<<<< HEAD
         gText_Softboiled16BP,
         gText_SeismicToss24BP,
         gText_DreamEater24BP,
@@ -2969,23 +2524,10 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_Counter48BP,
         gText_ThunderWave48BP,
         gText_SwordsDance48BP,
-=======
-        COMPOUND_STRING("SOFTBOILED{CLEAR_TO 0x4E}16BP"),
-        COMPOUND_STRING("SEISMIC TOSS{CLEAR_TO 0x4E}24BP"),
-        COMPOUND_STRING("DREAM EATER{CLEAR_TO 0x4E}24BP"),
-        COMPOUND_STRING("MEGA PUNCH{CLEAR_TO 0x4E}24BP"),
-        COMPOUND_STRING("MEGA KICK{CLEAR_TO 0x4E}48BP"),
-        COMPOUND_STRING("BODY SLAM{CLEAR_TO 0x4E}48BP"),
-        COMPOUND_STRING("ROCK SLIDE{CLEAR_TO 0x4E}48BP"),
-        COMPOUND_STRING("COUNTER{CLEAR_TO 0x4E}48BP"),
-        COMPOUND_STRING("THUNDER WAVE{CLEAR_TO 0x4E}48BP"),
-        COMPOUND_STRING("SWORDS DANCE{CLEAR_TO 0x4E}48BP"),
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         gText_Exit
     },
     [SCROLL_MULTI_BF_MOVE_TUTOR_2] =
     {
-<<<<<<< HEAD
         gText_DefenseCurl16BP,
         gText_Snore24BP,
         gText_MudSlap24BP,
@@ -3003,18 +2545,6 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_FrenzyPlant64BP,
         gText_BlastBurn64BP,
         gText_HydroCannon64BP,
-=======
-        COMPOUND_STRING("DEFENSE CURL{CLEAR_TO 0x4E}16BP"),
-        COMPOUND_STRING("SNORE{CLEAR_TO 0x4E}24BP"),
-        COMPOUND_STRING("MUD-SLAP{CLEAR_TO 0x4E}24BP"),
-        COMPOUND_STRING("SWIFT{CLEAR_TO 0x4E}24BP"),
-        COMPOUND_STRING("ICY WIND{CLEAR_TO 0x4E}24BP"),
-        COMPOUND_STRING("ENDURE{CLEAR_TO 0x4E}48BP"),
-        COMPOUND_STRING("PSYCH UP{CLEAR_TO 0x4E}48BP"),
-        COMPOUND_STRING("ICE PUNCH{CLEAR_TO 0x4E}48BP"),
-        COMPOUND_STRING("THUNDERPUNCH{CLEAR_TO 0x4E}48BP"),
-        COMPOUND_STRING("FIRE PUNCH{CLEAR_TO 0x4E}48BP"),
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         gText_Exit
     },
     [SCROLL_MULTI_SS_TIDAL_DESTINATION] =
@@ -3047,11 +2577,7 @@ static void Task_ShowScrollableMultichoice(u8 taskId)
     struct Task *task = &gTasks[taskId];
 
     LockPlayerFieldControls();
-<<<<<<< HEAD
     sScrollableMultichoice_ScrollOffset = 0;
-=======
-    gScrollableMultichoice_ScrollOffset = 0;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     sScrollableMultichoice_ItemSpriteId = MAX_SPRITES;
     FillFrontierExchangeCornerWindowAndItemIcon(task->tScrollMultiId, 0);
     ShowBattleFrontierTutorWindow(task->tScrollMultiId, 0);
@@ -3125,11 +2651,7 @@ static void ScrollableMultichoice_MoveCursor(s32 itemIndex, bool8 onInit, struct
         u16 selection;
         struct Task *task = &gTasks[taskId];
         ListMenuGetScrollAndRow(task->tListTaskId, &selection, NULL);
-<<<<<<< HEAD
         sScrollableMultichoice_ScrollOffset = selection;
-=======
-        gScrollableMultichoice_ScrollOffset = selection;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         ListMenuGetCurrentItemArrayId(task->tListTaskId, &selection);
         HideFrontierExchangeCornerItemIcon(task->tScrollMultiId, sFrontierExchangeCorner_NeverRead);
         FillFrontierExchangeCornerWindowAndItemIcon(task->tScrollMultiId, selection);
@@ -3244,7 +2766,6 @@ static void ScrollableMultichoice_UpdateScrollArrows(u8 taskId)
     struct ScrollArrowsTemplate template = sScrollableMultichoice_ScrollArrowsTemplate;
     if (task->tMaxItemsOnScreen != task->tNumItems)
     {
-<<<<<<< HEAD
         template.firstX = (task->tWidth / 2) * 8 + 12 + (task->tLeft - 1) * 8;
         template.firstY = 8;
         template.secondX = (task->tWidth / 2) * 8 + 12 + (task->tLeft - 1) * 8;
@@ -3252,17 +2773,6 @@ static void ScrollableMultichoice_UpdateScrollArrows(u8 taskId)
         template.fullyUpThreshold = 0;
         template.fullyDownThreshold = task->tNumItems - task->tMaxItemsOnScreen;
         task->tScrollArrowId = AddScrollIndicatorArrowPair(&template, &sScrollableMultichoice_ScrollOffset);
-=======
-        u32 y0 = (8 * (task->tTop - 1));
-
-        template.firstX = (task->tWidth / 2) * 8 + 12 + (task->tLeft - 1) * 8;
-        template.firstY = 8 + y0;
-        template.secondX = (task->tWidth / 2) * 8 + 12 + (task->tLeft - 1) * 8;
-        template.secondY = task->tHeight * 8 + 10 + y0;
-        template.fullyUpThreshold = 0;
-        template.fullyDownThreshold = task->tNumItems - task->tMaxItemsOnScreen;
-        task->tScrollArrowId = AddScrollIndicatorArrowPair(&template, &gScrollableMultichoice_ScrollOffset);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
 }
 
@@ -3293,7 +2803,6 @@ void SetBattleTowerLinkPlayerGfx(void)
 
 void ShowNatureGirlMessage(void)
 {
-<<<<<<< HEAD
     static const u8 *const sNatureGirlMessages[NUM_NATURES] = {
         [NATURE_HARDY]   = BattleFrontier_Lounge5_Text_NatureGirlHardy,
         [NATURE_LONELY]  = BattleFrontier_Lounge5_Text_NatureGirlLonely,
@@ -3322,20 +2831,13 @@ void ShowNatureGirlMessage(void)
         [NATURE_QUIRKY]  = BattleFrontier_Lounge5_Text_NatureGirlDocileNaiveQuietQuirky,
     };
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     u8 nature;
 
     if (gSpecialVar_0x8004 >= PARTY_SIZE)
         gSpecialVar_0x8004 = 0;
 
-<<<<<<< HEAD
     nature = GetNature(&gPlayerParty[gSpecialVar_0x8004], FALSE);
     ShowFieldMessage(sNatureGirlMessages[nature]);
-=======
-    nature = GetNature(&gPlayerParty[gSpecialVar_0x8004]);
-    ShowFieldMessage(gNaturesInfo[nature].natureGirlMessage);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 void UpdateFrontierGambler(u16 daysSince)
@@ -3581,7 +3083,6 @@ static void HideFrontierExchangeCornerItemIcon(u16 menu, u16 unused)
     }
 }
 
-<<<<<<< HEAD
 static const u16 sBattleFrontier_TutorMoves1[] =
 {
     MOVE_SOFT_BOILED,
@@ -3625,11 +3126,6 @@ void BufferBattleFrontierTutorMoveName(void)
         StringCopy(gStringVar1, gMoveNames[sBattleFrontier_TutorMoves1[gSpecialVar_0x8004]]);
     else if (gSpecialVar_0x8005 == 2)
         StringCopy(gStringVar1, gMoveNames[sBattleFrontier_TutorMoves3[gSpecialVar_0x8004]]);
-=======
-void BufferBattleFrontierTutorMoveName(void)
-{
-    StringCopy(gStringVar1, GetMoveName(gSpecialVar_0x8005));
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void ShowBattleFrontierTutorWindow(u8 menu, u16 selection)
@@ -3645,11 +3141,7 @@ static void ShowBattleFrontierTutorWindow(u8 menu, u16 selection)
         .baseBlock = 28,
     };
 
-<<<<<<< HEAD
     if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_3)
-=======
-    if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     {
         if (gSpecialVar_0x8006 == 0)
         {
@@ -3692,7 +3184,6 @@ static void ShowBattleFrontierTutorMoveDescription(u8 menu, u16 selection)
         gText_Exit,
     };
 
-<<<<<<< HEAD
     static const u8 *const sBattleFrontier_TutorMoveDescriptions3[] =
     {
         BattleFrontier_Lounge7_Text_StrongElementalMoveDesc,
@@ -3702,22 +3193,14 @@ static void ShowBattleFrontierTutorMoveDescription(u8 menu, u16 selection)
     };
 
     if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_3)
-=======
-    if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     {
         FillWindowPixelRect(sTutorMoveAndElevatorWindowId, PIXEL_FILL(1), 0, 0, 96, 48);
         if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_2)
             AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sBattleFrontier_TutorMoveDescriptions2[selection], 0, 1, 0, NULL);
-<<<<<<< HEAD
         else if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1)
             AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sBattleFrontier_TutorMoveDescriptions1[selection], 0, 1, 0, NULL);
         else
             AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sBattleFrontier_TutorMoveDescriptions3[selection], 0, 1, 0, NULL);
-=======
-        else
-            AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sBattleFrontier_TutorMoveDescriptions1[selection], 0, 1, 0, NULL);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
 }
 
@@ -3748,7 +3231,6 @@ void ScrollableMultichoice_RedrawPersistentMenu(void)
     }
 }
 
-<<<<<<< HEAD
 void GetBattleFrontierTutorMoveIndex(void)
 {
     u8 i;
@@ -3800,8 +3282,6 @@ void GetBattleFrontierTutorMoveIndex(void)
     }
 }
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 // Never called
 // Close a scrollable multichoice that stays open after selection
 void ScrollableMultichoice_ClosePersistentMenu(void)
@@ -3914,12 +3394,9 @@ static void Task_DeoxysRockInteraction(u8 taskId)
     }
 }
 
-<<<<<<< HEAD
 // duplicate of event_object_movement
 #define OBJ_EVENT_PAL_TAG_BIRTH_ISLAND_STONE      0x111F
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static void ChangeDeoxysRockLevel(u8 rockLevel)
 {
     u8 paletteNum = IndexOfSpritePaletteTag(OBJ_EVENT_PAL_TAG_BIRTH_ISLAND_STONE);
@@ -3933,13 +3410,8 @@ static void ChangeDeoxysRockLevel(u8 rockLevel)
 
     CreateTask(WaitForDeoxysRockMovement, 8);
     gFieldEffectArguments[0] = LOCALID_BIRTH_ISLAND_EXTERIOR_ROCK;
-<<<<<<< HEAD
     gFieldEffectArguments[1] = MAP_NUM(BIRTH_ISLAND_EXTERIOR);
     gFieldEffectArguments[2] = MAP_GROUP(BIRTH_ISLAND_EXTERIOR);
-=======
-    gFieldEffectArguments[1] = MAP_NUM(MAP_BIRTH_ISLAND_EXTERIOR);
-    gFieldEffectArguments[2] = MAP_GROUP(MAP_BIRTH_ISLAND_EXTERIOR);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gFieldEffectArguments[3] = sDeoxysRockCoords[rockLevel][0];
     gFieldEffectArguments[4] = sDeoxysRockCoords[rockLevel][1];
 
@@ -3966,11 +3438,7 @@ static void WaitForDeoxysRockMovement(u8 taskId)
 void IncrementBirthIslandRockStepCount(void)
 {
     u16 stepCount = VarGet(VAR_DEOXYS_ROCK_STEP_COUNT);
-<<<<<<< HEAD
     if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(BIRTH_ISLAND_EXTERIOR) && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(BIRTH_ISLAND_EXTERIOR))
-=======
-    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_BIRTH_ISLAND_EXTERIOR) && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_BIRTH_ISLAND_EXTERIOR))
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     {
         if (++stepCount > 99)
             VarSet(VAR_DEOXYS_ROCK_STEP_COUNT, 0);
@@ -3985,11 +3453,7 @@ void SetDeoxysRockPalette(void)
     u32 paletteNum = IndexOfSpritePaletteTag(OBJ_EVENT_PAL_TAG_BIRTH_ISLAND_STONE);
     LoadPalette(&sDeoxysRockPalettes[(u8)VarGet(VAR_DEOXYS_ROCK_LEVEL)], OBJ_PLTT_ID(paletteNum), PLTT_SIZEOF(4));
     // Set faded to all black, weather blending handled during fade-in
-<<<<<<< HEAD
     CpuFill16(0, &gPlttBufferFaded[OBJ_PLTT_ID(paletteNum)], 32);
-=======
-    CpuFill16(RGB_BLACK, &gPlttBufferFaded[OBJ_PLTT_ID(paletteNum)], PLTT_SIZE_4BPP);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 void SetPCBoxToSendMon(u8 boxId)
@@ -4070,7 +3534,6 @@ void CreateAbnormalWeatherEvent(void)
 bool32 GetAbnormalWeatherMapNameAndType(void)
 {
     static const u8 sAbnormalWeatherMapNumbers[] = {
-<<<<<<< HEAD
         MAP_NUM(ROUTE114),
         MAP_NUM(ROUTE114),
         MAP_NUM(ROUTE115),
@@ -4087,24 +3550,6 @@ bool32 GetAbnormalWeatherMapNameAndType(void)
         MAP_NUM(ROUTE127),
         MAP_NUM(ROUTE129),
         MAP_NUM(ROUTE129)
-=======
-        MAP_NUM(MAP_ROUTE114),
-        MAP_NUM(MAP_ROUTE114),
-        MAP_NUM(MAP_ROUTE115),
-        MAP_NUM(MAP_ROUTE115),
-        MAP_NUM(MAP_ROUTE116),
-        MAP_NUM(MAP_ROUTE116),
-        MAP_NUM(MAP_ROUTE118),
-        MAP_NUM(MAP_ROUTE118),
-        MAP_NUM(MAP_ROUTE105),
-        MAP_NUM(MAP_ROUTE105),
-        MAP_NUM(MAP_ROUTE125),
-        MAP_NUM(MAP_ROUTE125),
-        MAP_NUM(MAP_ROUTE127),
-        MAP_NUM(MAP_ROUTE127),
-        MAP_NUM(MAP_ROUTE129),
-        MAP_NUM(MAP_ROUTE129)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     };
 
     u16 abnormalWeather = VarGet(VAR_ABNORMAL_WEATHER_LOCATION);
@@ -4122,7 +3567,6 @@ bool8 AbnormalWeatherHasExpired(void)
     // Duplicate array.
     static const u8 sAbnormalWeatherMapNumbers[] =
     {
-<<<<<<< HEAD
         MAP_NUM(ROUTE114),
         MAP_NUM(ROUTE114),
         MAP_NUM(ROUTE115),
@@ -4139,24 +3583,6 @@ bool8 AbnormalWeatherHasExpired(void)
         MAP_NUM(ROUTE127),
         MAP_NUM(ROUTE129),
         MAP_NUM(ROUTE129)
-=======
-        MAP_NUM(MAP_ROUTE114),
-        MAP_NUM(MAP_ROUTE114),
-        MAP_NUM(MAP_ROUTE115),
-        MAP_NUM(MAP_ROUTE115),
-        MAP_NUM(MAP_ROUTE116),
-        MAP_NUM(MAP_ROUTE116),
-        MAP_NUM(MAP_ROUTE118),
-        MAP_NUM(MAP_ROUTE118),
-        MAP_NUM(MAP_ROUTE105),
-        MAP_NUM(MAP_ROUTE105),
-        MAP_NUM(MAP_ROUTE125),
-        MAP_NUM(MAP_ROUTE125),
-        MAP_NUM(MAP_ROUTE127),
-        MAP_NUM(MAP_ROUTE127),
-        MAP_NUM(MAP_ROUTE129),
-        MAP_NUM(MAP_ROUTE129)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     };
 
     u16 steps = VarGet(VAR_ABNORMAL_WEATHER_STEP_COUNTER);
@@ -4168,7 +3594,6 @@ bool8 AbnormalWeatherHasExpired(void)
     if (++steps > 999)
     {
         VarSet(VAR_ABNORMAL_WEATHER_STEP_COUNTER, 0);
-<<<<<<< HEAD
         if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(UNDERWATER_MARINE_CAVE))
         {
             switch (gSaveBlock1Ptr->location.mapNum)
@@ -4178,17 +3603,6 @@ bool8 AbnormalWeatherHasExpired(void)
             case MAP_NUM(MARINE_CAVE_END):
             case MAP_NUM(TERRA_CAVE_ENTRANCE):
             case MAP_NUM(TERRA_CAVE_END):
-=======
-        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_UNDERWATER_MARINE_CAVE))
-        {
-            switch (gSaveBlock1Ptr->location.mapNum)
-            {
-            case MAP_NUM(MAP_UNDERWATER_MARINE_CAVE):
-            case MAP_NUM(MAP_MARINE_CAVE_ENTRANCE):
-            case MAP_NUM(MAP_MARINE_CAVE_END):
-            case MAP_NUM(MAP_TERRA_CAVE_ENTRANCE):
-            case MAP_NUM(MAP_TERRA_CAVE_END):
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 VarSet(VAR_SHOULD_END_ABNORMAL_WEATHER, 1);
                 return FALSE;
             default:
@@ -4196,7 +3610,6 @@ bool8 AbnormalWeatherHasExpired(void)
             }
         }
 
-<<<<<<< HEAD
         if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(UNDERWATER_ROUTE127))
         {
             switch (gSaveBlock1Ptr->location.mapNum)
@@ -4205,16 +3618,6 @@ bool8 AbnormalWeatherHasExpired(void)
             case MAP_NUM(UNDERWATER_ROUTE129):
             case MAP_NUM(UNDERWATER_ROUTE105):
             case MAP_NUM(UNDERWATER_ROUTE125):
-=======
-        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_UNDERWATER_ROUTE127))
-        {
-            switch (gSaveBlock1Ptr->location.mapNum)
-            {
-            case MAP_NUM(MAP_UNDERWATER_ROUTE127):
-            case MAP_NUM(MAP_UNDERWATER_ROUTE129):
-            case MAP_NUM(MAP_UNDERWATER_ROUTE105):
-            case MAP_NUM(MAP_UNDERWATER_ROUTE125):
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 VarSet(VAR_SHOULD_END_ABNORMAL_WEATHER, 1);
                 return FALSE;
             default:
@@ -4250,7 +3653,6 @@ u32 GetMartEmployeeObjectEventId(void)
 {
     static const u8 sPokeMarts[][3] =
     {
-<<<<<<< HEAD
         { MAP_GROUP(OLDALE_TOWN_MART),     MAP_NUM(OLDALE_TOWN_MART),     LOCALID_OLDALE_MART_CLERK },
         { MAP_GROUP(LAVARIDGE_TOWN_MART),  MAP_NUM(LAVARIDGE_TOWN_MART),  LOCALID_LAVARIDGE_MART_CLERK },
         { MAP_GROUP(FALLARBOR_TOWN_MART),  MAP_NUM(FALLARBOR_TOWN_MART),  LOCALID_FALLARBOR_MART_CLERK },
@@ -4263,20 +3665,6 @@ u32 GetMartEmployeeObjectEventId(void)
         { MAP_GROUP(MOSSDEEP_CITY_MART),   MAP_NUM(MOSSDEEP_CITY_MART),   LOCALID_MOSSDEEP_MART_CLERK },
         { MAP_GROUP(SOOTOPOLIS_CITY_MART), MAP_NUM(SOOTOPOLIS_CITY_MART), LOCALID_SOOTOPOLIS_MART_CLERK },
         { MAP_GROUP(BATTLE_FRONTIER_MART), MAP_NUM(BATTLE_FRONTIER_MART), LOCALID_BATTLE_FRONTIER_MART_CLERK }
-=======
-        { MAP_GROUP(MAP_OLDALE_TOWN_MART),     MAP_NUM(MAP_OLDALE_TOWN_MART),     LOCALID_OLDALE_MART_CLERK },
-        { MAP_GROUP(MAP_LAVARIDGE_TOWN_MART),  MAP_NUM(MAP_LAVARIDGE_TOWN_MART),  LOCALID_LAVARIDGE_MART_CLERK },
-        { MAP_GROUP(MAP_FALLARBOR_TOWN_MART),  MAP_NUM(MAP_FALLARBOR_TOWN_MART),  LOCALID_FALLARBOR_MART_CLERK },
-        { MAP_GROUP(MAP_VERDANTURF_TOWN_MART), MAP_NUM(MAP_VERDANTURF_TOWN_MART), LOCALID_VERDANTURF_MART_CLERK },
-        { MAP_GROUP(MAP_PETALBURG_CITY_MART),  MAP_NUM(MAP_PETALBURG_CITY_MART),  LOCALID_PETALBURG_MART_CLERK },
-        { MAP_GROUP(MAP_SLATEPORT_CITY_MART),  MAP_NUM(MAP_SLATEPORT_CITY_MART),  LOCALID_SLATEPORT_MART_CLERK },
-        { MAP_GROUP(MAP_MAUVILLE_CITY_MART),   MAP_NUM(MAP_MAUVILLE_CITY_MART),   LOCALID_MAUVILLE_MART_CLERK },
-        { MAP_GROUP(MAP_RUSTBORO_CITY_MART),   MAP_NUM(MAP_RUSTBORO_CITY_MART),   LOCALID_RUSTBORO_MART_CLERK },
-        { MAP_GROUP(MAP_FORTREE_CITY_MART),    MAP_NUM(MAP_FORTREE_CITY_MART),    LOCALID_FORTREE_MART_CLERK },
-        { MAP_GROUP(MAP_MOSSDEEP_CITY_MART),   MAP_NUM(MAP_MOSSDEEP_CITY_MART),   LOCALID_MOSSDEEP_MART_CLERK },
-        { MAP_GROUP(MAP_SOOTOPOLIS_CITY_MART), MAP_NUM(MAP_SOOTOPOLIS_CITY_MART), LOCALID_SOOTOPOLIS_MART_CLERK },
-        { MAP_GROUP(MAP_BATTLE_FRONTIER_MART), MAP_NUM(MAP_BATTLE_FRONTIER_MART), LOCALID_FRONTIER_MART_CLERK },
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     };
 
     u8 i;
@@ -4296,11 +3684,7 @@ bool32 IsTrainerRegistered(void)
     int index = GetRematchIdxByTrainerIdx(gSpecialVar_0x8004);
     if (index >= 0)
     {
-<<<<<<< HEAD
         if (FlagGet(FLAG_MATCH_CALL_REGISTERED + index) == TRUE)
-=======
-        if (FlagGet(TRAINER_REGISTERED_FLAGS_START + index) == TRUE)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             return TRUE;
     }
     return FALSE;
@@ -4560,11 +3944,7 @@ void GetBattlePyramidHint(void)
 // Used to avoid a potential softlock if the player respawns on Dewford with no way off
 void ResetHealLocationFromDewford(void)
 {
-<<<<<<< HEAD
     if (gSaveBlock1Ptr->lastHealLocation.mapGroup == MAP_GROUP(DEWFORD_TOWN) && gSaveBlock1Ptr->lastHealLocation.mapNum == MAP_NUM(DEWFORD_TOWN))
-=======
-    if (gSaveBlock1Ptr->lastHealLocation.mapGroup == MAP_GROUP(MAP_DEWFORD_TOWN) && gSaveBlock1Ptr->lastHealLocation.mapNum == MAP_NUM(MAP_DEWFORD_TOWN))
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         SetLastHealLocationWarp(HEAL_LOCATION_PETALBURG_CITY);
 }
 
@@ -4641,7 +4021,6 @@ bool8 InPokemonCenter(void)
 #define FANCLUB_BITFIELD (gSaveBlock1Ptr->vars[VAR_FANCLUB_FAN_COUNTER - VARS_START])
 #define FANCLUB_COUNTER    0x007F
 
-<<<<<<< HEAD
 #define GET_TRAINER_FAN_CLUB_FLAG(flag) (FANCLUB_BITFIELD >> (flag) & 1)
 #define SET_TRAINER_FAN_CLUB_FLAG(flag) (FANCLUB_BITFIELD |= 1 << (flag))
 #define FLIP_TRAINER_FAN_CLUB_FLAG(flag)(FANCLUB_BITFIELD ^= 1 << (flag))
@@ -4650,16 +4029,6 @@ bool8 InPokemonCenter(void)
 #define SET_TRAINER_FAN_CLUB_COUNTER(count) (FANCLUB_BITFIELD = (FANCLUB_BITFIELD & ~FANCLUB_COUNTER) | (count))
 #define INCR_TRAINER_FAN_CLUB_COUNTER(count)(FANCLUB_BITFIELD += (count))
 #define CLEAR_TRAINER_FAN_CLUB_COUNTER      (FANCLUB_BITFIELD &= ~FANCLUB_COUNTER)
-=======
-#define GET_TRAINER_FAN_CLUB_FLAG(flag)  (FANCLUB_BITFIELD >> (flag) & 1)
-#define SET_TRAINER_FAN_CLUB_FLAG(flag)  (FANCLUB_BITFIELD |= 1 << (flag))
-#define FLIP_TRAINER_FAN_CLUB_FLAG(flag) (FANCLUB_BITFIELD ^= 1 << (flag))
-
-#define GET_TRAINER_FAN_CLUB_COUNTER         (FANCLUB_BITFIELD & FANCLUB_COUNTER)
-#define SET_TRAINER_FAN_CLUB_COUNTER(count)  (FANCLUB_BITFIELD = (FANCLUB_BITFIELD & ~FANCLUB_COUNTER) | (count))
-#define INCR_TRAINER_FAN_CLUB_COUNTER(count) (FANCLUB_BITFIELD += (count))
-#define CLEAR_TRAINER_FAN_CLUB_COUNTER       (FANCLUB_BITFIELD &= ~FANCLUB_COUNTER)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 void ResetFanClub(void)
 {
@@ -4683,19 +4052,11 @@ void UpdateTrainerFanClubGameClear(void)
         SetPlayerGotFirstFans();
         SetInitialFansOfPlayer();
         gSaveBlock1Ptr->vars[VAR_FANCLUB_LOSE_FAN_TIMER - VARS_START] = gSaveBlock2Ptr->playTimeHours;
-<<<<<<< HEAD
         FlagClear(FLAG_GARBAGEFLAG);
         FlagClear(FLAG_GARBAGEFLAG);
         FlagClear(FLAG_GARBAGEFLAG);
         FlagClear(FLAG_GARBAGEFLAG);
         FlagClear(FLAG_GARBAGEFLAG);
-=======
-        FlagClear(FLAG_HIDE_FANCLUB_OLD_LADY);
-        FlagClear(FLAG_HIDE_FANCLUB_BOY);
-        FlagClear(FLAG_HIDE_FANCLUB_LITTLE_BOY);
-        FlagClear(FLAG_HIDE_FANCLUB_LADY);
-        FlagClear(FLAG_HIDE_LILYCOVE_FAN_CLUB_INTERVIEWER);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         VarSet(VAR_LILYCOVE_FAN_CLUB_STATE, 1);
     }
 }
@@ -4737,7 +4098,6 @@ u8 TryGainNewFanFromCounter(u8 incrementId)
 }
 
 
-<<<<<<< HEAD
 static const u16 sEliteFourLightingPalettes[][16] = {
     INCBIN_U16("graphics/field_specials/elite_four_lighting_0.gbapal"),
     INCBIN_U16("graphics/field_specials/elite_four_lighting_1.gbapal"),
@@ -4870,8 +4230,6 @@ void StopPokemonLeagueLightingEffectTask(void)
     }
 }
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 // Loop through the fan club members, and if theyre not a fan of the player there is a 50% chance for them to become a fan
 // Stops when a fan is gained
 // If no new fan was gained while looping, the last non-fan in the list becomes a fan
@@ -5038,20 +4396,9 @@ void BufferFanClubTrainerName(void)
     case FANCLUB_MEMBER8:
         break;
     }
-<<<<<<< HEAD
     BufferFanClubTrainerName_(&gSaveBlock1Ptr->linkBattleRecords, whichLinkTrainer, whichNPCTrainer);
 }
 
-=======
-#if FREE_LINK_BATTLE_RECORDS == FALSE
-    BufferFanClubTrainerName_(&gSaveBlock1Ptr->linkBattleRecords, whichLinkTrainer, whichNPCTrainer);
-#else
-    BufferFanClubTrainerName_(whichLinkTrainer, whichNPCTrainer);
-#endif //FREE_LINK_BATTLE_RECORDS
-}
-
-#if FREE_LINK_BATTLE_RECORDS == FALSE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static void BufferFanClubTrainerName_(struct LinkBattleRecords *linkRecords, u8 whichLinkTrainer, u8 whichNPCTrainer)
 {
     struct LinkBattleRecord *record = &linkRecords->entries[whichLinkTrainer];
@@ -5089,38 +4436,6 @@ static void BufferFanClubTrainerName_(struct LinkBattleRecords *linkRecords, u8 
         ConvertInternationalString(gStringVar1, linkRecords->languages[whichLinkTrainer]);
     }
 }
-<<<<<<< HEAD
-=======
-#else
-static void BufferFanClubTrainerName_(u8 whichLinkTrainer, u8 whichNPCTrainer)
-{
-    switch (whichNPCTrainer)
-    {
-        case 0:
-            StringCopy(gStringVar1, gText_Wallace);
-            break;
-        case 1:
-            StringCopy(gStringVar1, gText_Steven);
-            break;
-        case 2:
-            StringCopy(gStringVar1, gText_Brawly);
-            break;
-        case 3:
-            StringCopy(gStringVar1, gText_Winona);
-            break;
-        case 4:
-            StringCopy(gStringVar1, gText_Phoebe);
-            break;
-        case 5:
-            StringCopy(gStringVar1, gText_Glacia);
-            break;
-        default:
-            StringCopy(gStringVar1, gText_Wallace);
-            break;
-    }
-}
-#endif //FREE_LINK_BATTLE_RECORDS
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 void UpdateTrainerFansAfterLinkBattle(void)
 {
@@ -5150,7 +4465,6 @@ u8 Script_TryGainNewFanFromCounter(void)
     return TryGainNewFanFromCounter(gSpecialVar_0x8004);
 }
 
-<<<<<<< HEAD
 // Changes a Deoxys' form if the following conditions are met:
 // -gSpecialVar_0x8004 is currently hosting a Deoxys form.
 // -The metatile behavior of the tile in front of the Player is MB_UNUSED_2C, MB_UNUSED_2D, MB_UNUSED_2E or MB_UNUSED_2F.
@@ -5502,125 +4816,4 @@ void SwitchMonAbility(void)
     {
         gSpecialVar_Result = FALSE;
     }
-=======
-void TrySkyBattle(void)
-{
-    int i;
-
-    if (B_VAR_SKY_BATTLE == 0 || B_FLAG_SKY_BATTLE == 0)
-    {
-        LockPlayerFieldControls();
-        ScriptContext_SetupScript(Debug_FlagsAndVarNotSetBattleConfigMessage);
-        return;
-    }
-    for (i = 0; i < CalculatePlayerPartyCount(); i++)
-    {
-        struct Pokemon* pokemon = &gPlayerParty[i];
-        if (CanMonParticipateInSkyBattle(pokemon) && GetMonData(pokemon, MON_DATA_HP, NULL) > 0)
-        {
-            PreparePartyForSkyBattle();
-            gSpecialVar_Result = TRUE;
-            return;
-        }
-    }
-    gSpecialVar_Result = FALSE;
-}
-
-void PreparePartyForSkyBattle(void)
-{
-    int i, participatingPokemonSlot = 0;
-    u8 partyCount = CalculatePlayerPartyCount();
-
-    FlagSet(B_FLAG_SKY_BATTLE);
-    SavePlayerParty();
-
-    for (i = 0; i < partyCount; i++)
-    {
-        struct Pokemon* pokemon = &gPlayerParty[i];
-
-        if (CanMonParticipateInSkyBattle(pokemon))
-            participatingPokemonSlot += 1 << i;
-        else
-            ZeroMonData(pokemon);
-    }
-    VarSet(B_VAR_SKY_BATTLE,participatingPokemonSlot);
-    CompactPartySlots();
-}
-
-void GetObjectPosition(u16* xPointer, u16* yPointer, u32 localId, u32 useTemplate)
-{
-    u32 objectId;
-    struct ObjectEvent* objEvent;
-
-    if (useTemplate)
-    {
-        const struct ObjectEventTemplate *objTemplate = FindObjectEventTemplateByLocalId(localId, gSaveBlock1Ptr->objectEventTemplates, gMapHeader.events->objectEventCount);
-        *xPointer = objTemplate->x;
-        *yPointer = objTemplate->y;
-        return;
-    }
-
-    objectId = GetObjectEventIdByLocalId(localId);
-    objEvent = &gObjectEvents[objectId];
-    *xPointer = objEvent->currentCoords.x - 7;
-    *yPointer = objEvent->currentCoords.y - 7;
-}
-
-bool32 CheckObjectAtXY(u32 x, u32 y)
-{
-    u32 i;
-
-    for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
-    {
-        if (!gObjectEvents[i].active)
-            continue;
-
-        if (gObjectEvents[i].currentCoords.x != x)
-            continue;
-
-        if (gObjectEvents[i].currentCoords.y != y)
-            continue;
-        return TRUE;
-    }
-    return FALSE;
-}
-
-bool32 CheckPartyHasSpecies(u32 givenSpecies)
-{
-    u32 partyIndex;
-
-    for (partyIndex = 0; partyIndex < CalculatePlayerPartyCount(); partyIndex++)
-        if (GetMonData(&gPlayerParty[partyIndex], MON_DATA_SPECIES) == givenSpecies)
-            return TRUE;
-
-    return FALSE;
-}
-
-void UseBlankMessageToCancelPokemonPic(void)
-{
-    u8 t = EOS;
-    AddTextPrinterParameterized(0, FONT_NORMAL, &t, 0, 1, 0, NULL);
-    ScriptMenu_HidePokemonPic();
-}
-
-void EnterCode(void)
-{
-    DoNamingScreen(NAMING_SCREEN_CODE, gStringVar2, 0, 0, 0, CB2_ReturnToFieldContinueScript);
-}
-
-void GetCodeFeedback(void)
-{
-    static const u8 sText_SampleCode[] = _("SampleCode");
-    if (!StringCompare(gStringVar2, sText_SampleCode))
-        gSpecialVar_Result = 1;
-    else
-        gSpecialVar_Result = 0;
-}
-
-void SetHiddenNature(void)
-{
-    u32 hiddenNature = gSpecialVar_Result;
-    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HIDDEN_NATURE, &hiddenNature);
-    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }

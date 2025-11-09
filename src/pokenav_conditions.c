@@ -365,22 +365,13 @@ static u8 *CopyConditionMonNameGender(u8 *str, u16 listId, bool8 skipPadding)
         level = GetLevelFromBoxMonExp(boxMon);
     }
 
-<<<<<<< HEAD
     if ((species == SPECIES_NIDORAN_F || species == SPECIES_NIDORAN_M) && !StringCompare(str, gSpeciesNames[species]))
-=======
-    if ((species == SPECIES_NIDORAN_F || species == SPECIES_NIDORAN_M) && !StringCompare(str, GetSpeciesName(species)))
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         gender = MON_GENDERLESS;
 
     str_ = str; // For some reason, a variable is needed to match.
     while (*str_ != EOS)
         (str_++);
 
-<<<<<<< HEAD
-=======
-    str_ = WrapFontIdToFit(str, str_, FONT_NORMAL, 57);
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     *(str_++) = EXT_CTRL_CODE_BEGIN;
     *(str_++) = EXT_CTRL_CODE_SKIP;
     *(str_++) = 60;
@@ -531,12 +522,7 @@ static void GetMonConditionGraphData(s16 listId, u8 loadId)
 static void ConditionGraphDrawMonPic(s16 listId, u8 loadId)
 {
     u16 boxId, monId, species;
-<<<<<<< HEAD
     u32 personality, tid;
-=======
-    u32 personality;
-    bool8 isShiny;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     struct Pokenav_ConditionMenu *menu = GetSubstructPtr(POKENAV_SUBSTRUCT_CONDITION_GRAPH_MENU);
     struct PokenavMonList *monListPtr = GetSubstructPtr(POKENAV_SUBSTRUCT_MON_LIST);
 
@@ -546,17 +532,10 @@ static void ConditionGraphDrawMonPic(s16 listId, u8 loadId)
     boxId = monListPtr->monData[listId].boxId;
     monId = monListPtr->monData[listId].monId;
     species = GetBoxOrPartyMonData(boxId, monId, MON_DATA_SPECIES_OR_EGG, NULL);
-<<<<<<< HEAD
     tid = GetBoxOrPartyMonData(boxId, monId, MON_DATA_OT_ID, NULL);
     personality = GetBoxOrPartyMonData(boxId, monId, MON_DATA_PERSONALITY, NULL);
     LoadSpecialPokePic(&gMonFrontPicTable[species], menu->monPicGfx[loadId], species, personality, TRUE);
     LZ77UnCompWram(GetMonSpritePalFromSpeciesAndPersonality(species, tid, personality), menu->monPal[loadId]);
-=======
-    isShiny = GetBoxOrPartyMonData(boxId, monId, MON_DATA_IS_SHINY, NULL);
-    personality = GetBoxOrPartyMonData(boxId, monId, MON_DATA_PERSONALITY, NULL);
-    LoadSpecialPokePic(menu->monPicGfx[loadId], species, personality, TRUE);
-    memcpy(&menu->monPal[loadId], GetMonSpritePalFromSpeciesAndPersonality(species, isShiny, personality), 32);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 u16 GetMonListCount(void)

@@ -88,10 +88,6 @@ static const u8 sText_DashesNoPlayer[] = _("-------");
 static const u8 sText_DashesNoScore[] = _("----");
 
 // code
-<<<<<<< HEAD
-=======
-#if FREE_LINK_BATTLE_RECORDS == FALSE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static void ClearLinkBattleRecord(struct LinkBattleRecord *record)
 {
     CpuFill16(0, record, sizeof(struct LinkBattleRecord));
@@ -205,11 +201,7 @@ static void UpdateLinkBattleGameStats(s32 battleOutcome)
         IncrementGameStat(stat);
 }
 
-<<<<<<< HEAD
 static void UpdateLinkBattleRecords(struct LinkBattleRecords *records, const u8 *name, u16 trainerId, s32 battleOutcome, u8 battlerId)
-=======
-static void UpdateLinkBattleRecords(struct LinkBattleRecords *records, const u8 *name, u16 trainerId, s32 battleOutcome, u8 battler)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     s32 index;
 
@@ -222,16 +214,11 @@ static void UpdateLinkBattleRecords(struct LinkBattleRecords *records, const u8 
         ClearLinkBattleRecord(&records->entries[index]);
         StringCopyN(records->entries[index].name, name, PLAYER_NAME_LENGTH);
         records->entries[index].trainerId = trainerId;
-<<<<<<< HEAD
         records->languages[index] = gLinkPlayers[battlerId].language;
-=======
-        records->languages[index] = gLinkPlayers[battler].language;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
     UpdateLinkBattleRecord(&records->entries[index], battleOutcome);
     SortLinkBattleRecords(records);
 }
-<<<<<<< HEAD
 
 void ClearPlayerLinkBattleRecords(void)
 {
@@ -241,50 +228,24 @@ void ClearPlayerLinkBattleRecords(void)
 static void IncTrainerCardWins(s32 battlerId)
 {
     u16 *wins = &gTrainerCards[battlerId].linkBattleWins;
-=======
-#endif //FREE_LINK_BATTLE_RECORDS
-
-void ClearPlayerLinkBattleRecords(void)
-{
-#if FREE_LINK_BATTLE_RECORDS == FALSE
-    ClearLinkBattleRecords(gSaveBlock1Ptr->linkBattleRecords.entries);
-#endif //FREE_LINK_BATTLE_RECORDS
-}
-
-#if FREE_LINK_BATTLE_RECORDS == FALSE
-static void IncTrainerCardWins(s32 battler)
-{
-    u16 *wins = &gTrainerCards[battler].linkBattleWins;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     (*wins)++;
     if (*wins > 9999)
         *wins = 9999;
 }
 
-<<<<<<< HEAD
 static void IncTrainerCardLosses(s32 battlerId)
 {
     u16 *losses = &gTrainerCards[battlerId].linkBattleLosses;
-=======
-static void IncTrainerCardLosses(s32 battler)
-{
-    u16 *losses = &gTrainerCards[battler].linkBattleLosses;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     (*losses)++;
     if (*losses > 9999)
         *losses = 9999;
 }
 
-<<<<<<< HEAD
 static void UpdateTrainerCardWinsLosses(s32 battlerId)
-=======
-static void UpdateTrainerCardWinsLosses(s32 battler)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     switch (gBattleOutcome)
     {
     case B_OUTCOME_WON:
-<<<<<<< HEAD
         IncTrainerCardWins(BATTLE_OPPOSITE(battlerId));
         IncTrainerCardLosses(battlerId);
         break;
@@ -309,36 +270,6 @@ void UpdatePlayerLinkBattleRecords(s32 battlerId)
     }
 }
 
-=======
-        IncTrainerCardWins(BATTLE_OPPOSITE(battler));
-        IncTrainerCardLosses(battler);
-        break;
-    case B_OUTCOME_LOST:
-        IncTrainerCardLosses(BATTLE_OPPOSITE(battler));
-        IncTrainerCardWins(battler);
-        break;
-    }
-}
-#endif //FREE_LINK_BATTLE_RECORDS
-
-void UpdatePlayerLinkBattleRecords(s32 battler)
-{
-#if FREE_LINK_BATTLE_RECORDS == FALSE
-    if (InUnionRoom() != TRUE)
-    {
-        UpdateTrainerCardWinsLosses(battler);
-        UpdateLinkBattleRecords(
-            &gSaveBlock1Ptr->linkBattleRecords,
-            gTrainerCards[battler].playerName,
-            gTrainerCards[battler].trainerId,
-            gBattleOutcome,
-            battler);
-    }
-#endif //FREE_LINK_BATTLE_RECORDS
-}
-
-#if FREE_LINK_BATTLE_RECORDS == FALSE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static void PrintLinkBattleWinsLossesDraws(struct LinkBattleRecord *records)
 {
     s32 x;
@@ -380,19 +311,10 @@ static void PrintLinkBattleRecord(struct LinkBattleRecord *record, u8 y, s32 lan
         AddTextPrinterParameterized(gRecordsWindowId, FONT_NORMAL, gStringVar1, 176, (y * 8) + 1, 0, NULL);
     }
 }
-<<<<<<< HEAD
 
 void ShowLinkBattleRecords(void)
 {
     s32 i, x;
-=======
-#endif //FREE_LINK_BATTLE_RECORDS
-
-void ShowLinkBattleRecords(void)
-{
-#if FREE_LINK_BATTLE_RECORDS == FALSE
-    s32 x, i;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     gRecordsWindowId = AddWindow(&sLinkBattleRecordsWindow);
     DrawStdWindowFrame(gRecordsWindowId, FALSE);
@@ -413,10 +335,6 @@ void ShowLinkBattleRecords(void)
 
     PutWindowTilemap(gRecordsWindowId);
     CopyWindowToVram(gRecordsWindowId, COPYWIN_FULL);
-<<<<<<< HEAD
-=======
-#endif //FREE_LINK_BATTLE_RECORDS
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 void RemoveRecordsWindow(void)

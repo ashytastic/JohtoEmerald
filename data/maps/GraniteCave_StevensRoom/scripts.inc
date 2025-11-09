@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 .set LOCALID_STEVEN, 1
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 GraniteCave_StevensRoom_MapScripts::
 	.byte 0
 
@@ -32,42 +29,24 @@ GraniteCave_StevensRoom_EventScript_Steven::
 	call_if_eq VAR_FACING, DIR_WEST, GraniteCave_StevensRoom_EventScript_StevenExitWestEast
 	call_if_eq VAR_FACING, DIR_EAST, GraniteCave_StevensRoom_EventScript_StevenExitWestEast
 	playse SE_EXIT
-<<<<<<< HEAD
 	removeobject LOCALID_STEVEN
-=======
-	removeobject LOCALID_GRANITE_CAVE_STEVEN
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	release
 	end
 
 GraniteCave_StevensRoom_EventScript_StevenExitNorth::
-<<<<<<< HEAD
 	applymovement LOCALID_STEVEN, GraniteCave_StevensRoom_Movement_StevenExit
-=======
-	applymovement LOCALID_GRANITE_CAVE_STEVEN, GraniteCave_StevensRoom_Movement_StevenExit
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 GraniteCave_StevensRoom_EventScript_StevenExitWestEast::
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, GraniteCave_StevensRoom_Movement_PlayerTurnTowardExit
 	applymovement LOCALID_STEVEN, GraniteCave_StevensRoom_Movement_StevenExit
-=======
-	applymovement LOCALID_PLAYER, GraniteCave_StevensRoom_Movement_PlayerTurnTowardExit
-	applymovement LOCALID_GRANITE_CAVE_STEVEN, GraniteCave_StevensRoom_Movement_StevenExit
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 GraniteCave_StevensRoom_EventScript_StevenExitSouth::
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, GraniteCave_StevensRoom_Movement_PlayerTurnTowardExit
 	applymovement LOCALID_STEVEN, GraniteCave_StevensRoom_Movement_StevenExitSouth
-=======
-	applymovement LOCALID_PLAYER, GraniteCave_StevensRoom_Movement_PlayerTurnTowardExit
-	applymovement LOCALID_GRANITE_CAVE_STEVEN, GraniteCave_StevensRoom_Movement_StevenExitSouth
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 

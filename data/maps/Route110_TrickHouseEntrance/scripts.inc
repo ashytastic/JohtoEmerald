@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 .set LOCALID_TRICK_MASTER, 1
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 Route110_TrickHouseEntrance_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route110_TrickHouseEntrance_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route110_TrickHouseEntrance_OnFrame
@@ -132,11 +129,7 @@ Route110_TrickHouseEntrance_EventScript_TrickMasterFound::
 	addobject LOCALID_TRICK_MASTER
 	showobjectat LOCALID_TRICK_MASTER, MAP_ROUTE110_TRICK_HOUSE_ENTRANCE
 	turnobject LOCALID_TRICK_MASTER, DIR_EAST
-<<<<<<< HEAD
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
-=======
-	turnobject LOCALID_PLAYER, DIR_WEST
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 Route110_TrickHouseEntrance_EventScript_SetTrickMasterHidingSpot::
@@ -238,15 +231,9 @@ Route110_TrickHouseEntrance_EventScript_TrickMaster::
 
 Route110_TrickHouseEntrance_EventScript_FoundTrickMaster::
 	playse SE_PIN
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48
-=======
-	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
-	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_Delay48
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	call_if_eq VAR_TRICK_HOUSE_LEVEL, 0, Route110_TrickHouseEntrance_EventScript_FoundBeneathDesk
 	call_if_eq VAR_TRICK_HOUSE_LEVEL, 1, Route110_TrickHouseEntrance_EventScript_FoundBehindTree
@@ -480,15 +467,9 @@ Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom::
 	setmetatile 5, 1, METATILE_GenericBuilding_TrickHouse_Stairs_Down, FALSE
 	special DrawWholeMapView
 	delay 20
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Route110_TrickHouseEntrance_Movement_EnterRoom
-=======
-	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
-	waitmovement 0
-	applymovement LOCALID_PLAYER, Route110_TrickHouseEntrance_Movement_EnterRoom
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	switch VAR_TRICK_HOUSE_LEVEL
 	case 0, Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom1

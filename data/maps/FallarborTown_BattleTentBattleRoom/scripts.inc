@@ -1,27 +1,17 @@
-<<<<<<< HEAD
 .set LOCALID_PLAYER, 1
 .set LOCALID_ATTENDANT, 2
 .set LOCALID_OPPONENT, 3
 
-=======
-@ On this map the player will automatically walk into the room, but the camera is supposed to remain still.
-@ To do this GF sets the player (LOCALID_PLAYER) invisible and creates a fake player object (LOCALID_FALLARBOR_TENT_BATTLE_PLAYER).
-@ The graphics of this fake player object are represented with VAR_OBJ_GFX_ID_1.
-@ The graphics of the opponent are represented with VAR_OBJ_GFX_ID_0, which will ultimately be set by tower_setopponent.
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 FallarborTown_BattleTentBattleRoom_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, FallarborTown_BattleTentBattleRoom_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, FallarborTown_BattleTentBattleRoom_OnFrame
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, FallarborTown_BattleTentBattleRoom_OnWarp
 	.byte 0
 
-<<<<<<< HEAD
 	@ On this map the player (OBJ_EVENT_ID_PLAYER) is hidden
 	@ The player is represented instead by object event 1, which has the gfx id VAR_OBJ_GFX_ID_1
 	@ The opponent is represented by object event 3, which has the gfx id VAR_OBJ_GFX_ID_0
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 FallarborTown_BattleTentBattleRoom_OnTransition:
 	call FallarborTown_BattleTentBattleRoom_EventScript_SetPlayerGfx
 	end
@@ -48,29 +38,17 @@ FallarborTown_BattleTentBattleRoom_OnFrame:
 
 FallarborTown_BattleTentBattleRoom_EventScript_EnterRoom::
 	lockall
-<<<<<<< HEAD
 	showobjectat LOCALID_PLAYER, MAP_FALLARBOR_TOWN_BATTLE_TENT_BATTLE_ROOM
 	applymovement LOCALID_PLAYER, FallarborTown_BattleTentBattleRoom_Movement_PlayerEnter
-=======
-	showobjectat LOCALID_FALLARBOR_TENT_BATTLE_PLAYER, MAP_FALLARBOR_TOWN_BATTLE_TENT_BATTLE_ROOM
-	applymovement LOCALID_FALLARBOR_TENT_BATTLE_PLAYER, FallarborTown_BattleTentBattleRoom_Movement_PlayerEnter
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	frontier_get FRONTIER_DATA_BATTLE_NUM
 	goto_if_ne VAR_RESULT, 0, FallarborTown_BattleTentBattleRoom_EventScript_ResumeChallenge
 FallarborTown_BattleTentBattleRoom_EventScript_NextOpponentEnter::
 	tower_setopponent
-<<<<<<< HEAD
 	addobject LOCALID_OPPONENT
 	applymovement LOCALID_OPPONENT, FallarborTown_BattleTentBattleRoom_Movement_OpponentEnter
 	waitmovement 0
 	applymovement LOCALID_ATTENDANT, FallarborTown_BattleTentBattleRoom_Movement_AttendantJump
-=======
-	addobject LOCALID_FALLARBOR_TENT_BATTLE_OPPONENT
-	applymovement LOCALID_FALLARBOR_TENT_BATTLE_OPPONENT, FallarborTown_BattleTentBattleRoom_Movement_OpponentEnter
-	waitmovement 0
-	applymovement LOCALID_FALLARBOR_TENT_BATTLE_ATTENDANT, FallarborTown_BattleTentBattleRoom_Movement_AttendantJump
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	playse SE_M_BELLY_DRUM
 	waitse
 	waitmovement 0
@@ -81,11 +59,7 @@ FallarborTown_BattleTentBattleRoom_EventScript_NextOpponentEnter::
 	call BattleFrontier_BattleArenaBattleRoom_EventScript_DoArenaBattle
 	switch VAR_RESULT
 	case 1, FallarborTown_BattleTentBattleRoom_EventScript_DefeatedOpponent
-<<<<<<< HEAD
 	applymovement LOCALID_ATTENDANT, FallarborTown_BattleTentBattleRoom_Movement_AttendantJump
-=======
-	applymovement LOCALID_FALLARBOR_TENT_BATTLE_ATTENDANT, FallarborTown_BattleTentBattleRoom_Movement_AttendantJump
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	playse SE_M_SNORE
 	waitse
 	waitmovement 0
@@ -98,11 +72,7 @@ FallarborTown_BattleTentBattleRoom_EventScript_WarpToLobbyLost::
 	waitstate
 
 FallarborTown_BattleTentBattleRoom_EventScript_DefeatedOpponent::
-<<<<<<< HEAD
 	applymovement LOCALID_ATTENDANT, FallarborTown_BattleTentBattleRoom_Movement_AttendantJump
-=======
-	applymovement LOCALID_FALLARBOR_TENT_BATTLE_ATTENDANT, FallarborTown_BattleTentBattleRoom_Movement_AttendantJump
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	playse SE_BANG
 	waitse
 	waitmovement 0
@@ -114,21 +84,12 @@ FallarborTown_BattleTentBattleRoom_EventScript_IncrementBattleNum::
 	frontier_set FRONTIER_DATA_BATTLE_NUM, VAR_RESULT
 	switch VAR_RESULT
 	case 3, FallarborTown_BattleTentBattleRoom_EventScript_WarpToLobbyWon
-<<<<<<< HEAD
 	applymovement LOCALID_OPPONENT, FallarborTown_BattleTentBattleRoom_Movement_OpponentExit
 	waitmovement 0
 	removeobject LOCALID_OPPONENT
 	applymovement LOCALID_ATTENDANT, FallarborTown_BattleTentBattleRoom_Movement_AttendantApproachPlayer
 	waitmovement 0
 	applymovement LOCALID_PLAYER, FallarborTown_BattleTentBattleRoom_Movement_PlayerFaceAttendant
-=======
-	applymovement LOCALID_FALLARBOR_TENT_BATTLE_OPPONENT, FallarborTown_BattleTentBattleRoom_Movement_OpponentExit
-	waitmovement 0
-	removeobject LOCALID_FALLARBOR_TENT_BATTLE_OPPONENT
-	applymovement LOCALID_FALLARBOR_TENT_BATTLE_ATTENDANT, FallarborTown_BattleTentBattleRoom_Movement_AttendantApproachPlayer
-	waitmovement 0
-	applymovement LOCALID_FALLARBOR_TENT_BATTLE_PLAYER, FallarborTown_BattleTentBattleRoom_Movement_PlayerFaceAttendant
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	msgbox BattleFrontier_BattleArenaBattleRoom_Text_MonsWillBeRestored, MSGBOX_DEFAULT
 	special LoadPlayerParty
@@ -165,15 +126,9 @@ FallarborTown_BattleTentBattleRoom_EventScript_AskRetireChallenge::
 
 FallarborTown_BattleTentBattleRoom_EventScript_ContinueChallenge::
 	closemessage
-<<<<<<< HEAD
 	applymovement LOCALID_ATTENDANT, FallarborTown_BattleTentBattleRoom_Movement_AttendantReturnToPos
 	waitmovement 0
 	applymovement LOCALID_PLAYER, FallarborTown_BattleTentBattleRoom_Movement_PlayerFaceBattle
-=======
-	applymovement LOCALID_FALLARBOR_TENT_BATTLE_ATTENDANT, FallarborTown_BattleTentBattleRoom_Movement_AttendantReturnToPos
-	waitmovement 0
-	applymovement LOCALID_FALLARBOR_TENT_BATTLE_PLAYER, FallarborTown_BattleTentBattleRoom_Movement_PlayerFaceBattle
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	goto FallarborTown_BattleTentBattleRoom_EventScript_NextOpponentEnter
 	waitstate
@@ -213,15 +168,9 @@ FallarborTown_BattleTentBattleRoom_EventScript_PauseChallenge::
 	end
 
 FallarborTown_BattleTentBattleRoom_EventScript_ResumeChallenge::
-<<<<<<< HEAD
 	applymovement LOCALID_ATTENDANT, FallarborTown_BattleTentBattleRoom_Movement_AttendantApproachPlayer
 	waitmovement 0
 	applymovement LOCALID_PLAYER, FallarborTown_BattleTentBattleRoom_Movement_PlayerFaceAttendant
-=======
-	applymovement LOCALID_FALLARBOR_TENT_BATTLE_ATTENDANT, FallarborTown_BattleTentBattleRoom_Movement_AttendantApproachPlayer
-	waitmovement 0
-	applymovement LOCALID_FALLARBOR_TENT_BATTLE_PLAYER, FallarborTown_BattleTentBattleRoom_Movement_PlayerFaceAttendant
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	goto FallarborTown_BattleTentBattleRoom_EventScript_AskContinueChallenge
 	end
@@ -285,15 +234,9 @@ FallarborTown_BattleTentBattleRoom_OnWarp:
 	.2byte 0
 
 FallarborTown_BattleTentBattleRoom_EventScript_SetUpObjects::
-<<<<<<< HEAD
 	hideobjectat OBJ_EVENT_ID_PLAYER, MAP_FALLARBOR_TOWN_BATTLE_TENT_BATTLE_ROOM
 	hideobjectat LOCALID_PLAYER, MAP_FALLARBOR_TOWN_BATTLE_TENT_BATTLE_ROOM
 	removeobject LOCALID_OPPONENT
-=======
-	hideobjectat LOCALID_PLAYER, MAP_FALLARBOR_TOWN_BATTLE_TENT_BATTLE_ROOM
-	hideobjectat LOCALID_FALLARBOR_TENT_BATTLE_PLAYER, MAP_FALLARBOR_TOWN_BATTLE_TENT_BATTLE_ROOM
-	removeobject LOCALID_FALLARBOR_TENT_BATTLE_OPPONENT
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setvar VAR_TEMP_1, 1
 	end
 

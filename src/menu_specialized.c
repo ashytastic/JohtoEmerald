@@ -10,10 +10,6 @@
 #include "international_string_util.h"
 #include "menu.h"
 #include "menu_specialized.h"
-<<<<<<< HEAD
-=======
-#include "move.h"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include "move_relearner.h"
 #include "palette.h"
 #include "player_pc.h"
@@ -28,16 +24,10 @@
 #include "trig.h"
 #include "window.h"
 #include "constants/songs.h"
-<<<<<<< HEAD
 #include "gba/io_reg.h"
 
 extern const struct CompressedSpriteSheet gMonFrontPicTable[];
 
-=======
-#include "constants/battle_move_effects.h"
-#include "gba/io_reg.h"
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 EWRAM_DATA static u8 sMailboxWindowIds[MAILBOXWIN_COUNT] = {0};
 EWRAM_DATA static struct ListMenuItem *sMailboxList = NULL;
 
@@ -115,16 +105,10 @@ static const u8 sConditionToLineLength[MAX_CONDITION + 1] =
     34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 35
 };
 
-<<<<<<< HEAD
 
 static const struct WindowTemplate sMoveRelearnerWindowTemplates[] =
 {
     {
-=======
-static const struct WindowTemplate sMoveRelearnerWindowTemplates[] =
-{
-    [RELEARNERWIN_DESC_BATTLE] = {
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .bg = 1,
         .tilemapLeft = 1,
         .tilemapTop = 1,
@@ -133,11 +117,7 @@ static const struct WindowTemplate sMoveRelearnerWindowTemplates[] =
         .paletteNum = 15,
         .baseBlock = 0xA
     },
-<<<<<<< HEAD
     {
-=======
-    [RELEARNERWIN_DESC_CONTEST] = {
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .bg = 1,
         .tilemapLeft = 1,
         .tilemapTop = 1,
@@ -146,11 +126,7 @@ static const struct WindowTemplate sMoveRelearnerWindowTemplates[] =
         .paletteNum = 15,
         .baseBlock = 0xCA
     },
-<<<<<<< HEAD
     {
-=======
-    [RELEARNERWIN_MOVE_LIST] = {
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .bg = 1,
         .tilemapLeft = 19,
         .tilemapTop = 1,
@@ -159,11 +135,7 @@ static const struct WindowTemplate sMoveRelearnerWindowTemplates[] =
         .paletteNum = 15,
         .baseBlock = 0x18A
     },
-<<<<<<< HEAD
     {
-=======
-    [RELEARNERWIN_MSG] = {
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .bg = 1,
         .tilemapLeft = 4,
         .tilemapTop = 15,
@@ -172,12 +144,7 @@ static const struct WindowTemplate sMoveRelearnerWindowTemplates[] =
         .paletteNum = 15,
         .baseBlock = 0x202
     },
-<<<<<<< HEAD
     {
-=======
-    // Unused. Identical to sMoveRelearnerYesNoMenuTemplate
-    [RELEARNERWIN_YESNO] = {
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .bg = 0,
         .tilemapLeft = 22,
         .tilemapTop = 8,
@@ -208,11 +175,7 @@ static const struct ListMenuTemplate sMoveRelearnerMovesListTemplate =
     .itemPrintFunc = NULL,
     .totalItems = 0,
     .maxShowed = 0,
-<<<<<<< HEAD
     .windowId = 2,
-=======
-    .windowId = RELEARNERWIN_MOVE_LIST,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     .header_X = 0,
     .item_X = 8,
     .cursor_X = 0,
@@ -224,12 +187,7 @@ static const struct ListMenuTemplate sMoveRelearnerMovesListTemplate =
     .itemVerticalPadding = 0,
     .scrollMultiple = LIST_NO_MULTIPLE_SCROLL,
     .fontId = FONT_NORMAL,
-<<<<<<< HEAD
     .cursorKind = CURSOR_BLACK_ARROW
-=======
-    .cursorKind = CURSOR_BLACK_ARROW,
-    .textNarrowWidth = 68,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 //--------------
@@ -359,11 +317,7 @@ void MailboxMenu_Free(void)
 // filled with the graph color.
 //---------------------------------------
 
-<<<<<<< HEAD
 #define SHIFT_RIGHT_ADJUSTED(n, s)(((n) >> (s)) + (((n) >> ((s) - 1)) & 1))
-=======
-#define SHIFT_RIGHT_ADJUSTED(n, s) (((n) >> (s)) + (((n) >> ((s) - 1)) & 1))
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 void ConditionGraph_Init(struct ConditionGraph *graph)
 {
@@ -746,11 +700,7 @@ void ConditionGraph_CalcPositions(u8 *conditions, struct UCoords16 *positions)
 // Move relearner
 //----------------
 
-<<<<<<< HEAD
 void InitMoveRelearnerWindows(bool8 useContextWindow)
-=======
-void InitMoveRelearnerWindows(bool8 useContestWindow)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     u8 i;
 
@@ -762,7 +712,6 @@ void InitMoveRelearnerWindows(bool8 useContestWindow)
     for (i = 0; i < ARRAY_COUNT(sMoveRelearnerWindowTemplates) - 1; i++)
         FillWindowPixelBuffer(i, PIXEL_FILL(1));
 
-<<<<<<< HEAD
     if (!useContextWindow)
     {
         PutWindowTilemap(0);
@@ -777,22 +726,6 @@ void InitMoveRelearnerWindows(bool8 useContestWindow)
     PutWindowTilemap(3);
     DrawStdFrameWithCustomTileAndPalette(2, FALSE, 1, 0xE);
     DrawStdFrameWithCustomTileAndPalette(3, FALSE, 1, 0xE);
-=======
-    if (!useContestWindow)
-    {
-        PutWindowTilemap(RELEARNERWIN_DESC_BATTLE);
-        DrawStdFrameWithCustomTileAndPalette(RELEARNERWIN_DESC_BATTLE, FALSE, 0x1, 0xE);
-    }
-    else
-    {
-        PutWindowTilemap(RELEARNERWIN_DESC_CONTEST);
-        DrawStdFrameWithCustomTileAndPalette(RELEARNERWIN_DESC_CONTEST, FALSE, 1, 0xE);
-    }
-    PutWindowTilemap(RELEARNERWIN_MOVE_LIST);
-    PutWindowTilemap(RELEARNERWIN_MSG);
-    DrawStdFrameWithCustomTileAndPalette(RELEARNERWIN_MOVE_LIST, FALSE, 1, 0xE);
-    DrawStdFrameWithCustomTileAndPalette(RELEARNERWIN_MSG, FALSE, 1, 0xE);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     MoveRelearnerDummy();
     ScheduleBgCopyTilemapToVram(1);
 }
@@ -819,7 +752,6 @@ u8 LoadMoveRelearnerMovesList(const struct ListMenuItem *items, u16 numChoices)
 static void MoveRelearnerLoadBattleMoveDescription(u32 chosenMove)
 {
     s32 x;
-<<<<<<< HEAD
     const struct BattleMove *move;
     u8 buffer[32];
     const u8 *str;
@@ -853,69 +785,22 @@ static void MoveRelearnerLoadBattleMoveDescription(u32 chosenMove)
     AddTextPrinterParameterized(0, FONT_NORMAL, buffer, x, 0x29, TEXT_SKIP_DRAW, NULL);
 
     if (move->power < 2)
-=======
-    u8 buffer[32];
-    const u8 *str;
-
-    if (B_SHOW_CATEGORY_ICON == TRUE)
-        MoveRelearnerShowHideCategoryIcon(chosenMove);
-
-    FillWindowPixelBuffer(RELEARNERWIN_DESC_BATTLE, PIXEL_FILL(1));
-    str = gText_MoveRelearnerBattleMoves;
-    x = GetStringCenterAlignXOffset(FONT_NORMAL, str, 128);
-    AddTextPrinterParameterized(RELEARNERWIN_DESC_BATTLE, FONT_NORMAL, str, x, 1, TEXT_SKIP_DRAW, NULL);
-
-    str = gText_MoveRelearnerPP;
-    AddTextPrinterParameterized(RELEARNERWIN_DESC_BATTLE, FONT_NORMAL, str, 4, 41, TEXT_SKIP_DRAW, NULL);
-
-    str = gText_MoveRelearnerPower;
-    x = GetStringRightAlignXOffset(FONT_NORMAL, str, 106);
-    AddTextPrinterParameterized(RELEARNERWIN_DESC_BATTLE, FONT_NORMAL, str, x, 25, TEXT_SKIP_DRAW, NULL);
-
-    str = gText_MoveRelearnerAccuracy;
-    x = GetStringRightAlignXOffset(FONT_NORMAL, str, 106);
-    AddTextPrinterParameterized(RELEARNERWIN_DESC_BATTLE, FONT_NORMAL, str, x, 41, TEXT_SKIP_DRAW, NULL);
-    if (chosenMove == LIST_CANCEL)
-    {
-        // On "Cancel", skip printing move data
-        CopyWindowToVram(RELEARNERWIN_DESC_BATTLE, COPYWIN_GFX);
-        return;
-    }
-    str = gTypesInfo[GetMoveType(chosenMove)].name;
-    AddTextPrinterParameterized(RELEARNERWIN_DESC_BATTLE, FONT_NORMAL, str, 4, 25, TEXT_SKIP_DRAW, NULL);
-
-    x = 4 + GetStringWidth(FONT_NORMAL, gText_MoveRelearnerPP, 0);
-    ConvertIntToDecimalStringN(buffer, GetMovePP(chosenMove), STR_CONV_MODE_LEFT_ALIGN, 2);
-    AddTextPrinterParameterized(RELEARNERWIN_DESC_BATTLE, FONT_NORMAL, buffer, x, 41, TEXT_SKIP_DRAW, NULL);
-
-    if (GetMovePower(chosenMove) < 2)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     {
         str = gText_ThreeDashes;
     }
     else
     {
-<<<<<<< HEAD
         ConvertIntToDecimalStringN(buffer, move->power, STR_CONV_MODE_LEFT_ALIGN, 3);
         str = buffer;
     }
     AddTextPrinterParameterized(0, FONT_NORMAL, str, 0x6A, 0x19, TEXT_SKIP_DRAW, NULL);
 
     if (move->accuracy == 0)
-=======
-        ConvertIntToDecimalStringN(buffer, GetMovePower(chosenMove), STR_CONV_MODE_LEFT_ALIGN, 3);
-        str = buffer;
-    }
-    AddTextPrinterParameterized(RELEARNERWIN_DESC_BATTLE, FONT_NORMAL, str, 106, 25, TEXT_SKIP_DRAW, NULL);
-
-    if (GetMoveAccuracy(chosenMove) == 0)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     {
         str = gText_ThreeDashes;
     }
     else
     {
-<<<<<<< HEAD
         ConvertIntToDecimalStringN(buffer, move->accuracy, STR_CONV_MODE_LEFT_ALIGN, 3);
         str = buffer;
     }
@@ -923,20 +808,12 @@ static void MoveRelearnerLoadBattleMoveDescription(u32 chosenMove)
 
     str = gMoveDescriptionPointers[chosenMove - 1];
     AddTextPrinterParameterized(0, FONT_NARROW, str, 0, 0x41, 0, NULL);
-=======
-        ConvertIntToDecimalStringN(buffer, GetMoveAccuracy(chosenMove), STR_CONV_MODE_LEFT_ALIGN, 3);
-        str = buffer;
-    }
-    AddTextPrinterParameterized(RELEARNERWIN_DESC_BATTLE, FONT_NORMAL, str, 106, 41, TEXT_SKIP_DRAW, NULL);
-    AddTextPrinterParameterized(RELEARNERWIN_DESC_BATTLE, FONT_NARROW, GetMoveDescription(chosenMove), 0, 65, 0, NULL);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void MoveRelearnerMenuLoadContestMoveDescription(u32 chosenMove)
 {
     s32 x;
     const u8 *str;
-<<<<<<< HEAD
     const struct ContestMove *move;
 
     MoveRelearnerShowHideHearts(chosenMove);
@@ -967,36 +844,6 @@ static void MoveRelearnerMenuLoadContestMoveDescription(u32 chosenMove)
     AddTextPrinterParameterized(1, FONT_NARROW, str, 0, 0x41, TEXT_SKIP_DRAW, NULL);
 
     CopyWindowToVram(1, COPYWIN_GFX);
-=======
-
-    MoveRelearnerShowHideHearts(chosenMove);
-    FillWindowPixelBuffer(RELEARNERWIN_DESC_CONTEST, PIXEL_FILL(1));
-    str = gText_MoveRelearnerContestMovesTitle;
-    x = GetStringCenterAlignXOffset(FONT_NORMAL, str, 128);
-    AddTextPrinterParameterized(RELEARNERWIN_DESC_CONTEST, FONT_NORMAL, str, x, 1, TEXT_SKIP_DRAW, NULL);
-
-    str = gText_MoveRelearnerAppeal;
-    x = GetStringRightAlignXOffset(FONT_NORMAL, str, 92);
-    AddTextPrinterParameterized(RELEARNERWIN_DESC_CONTEST, FONT_NORMAL, str, x, 25, TEXT_SKIP_DRAW, NULL);
-
-    str = gText_MoveRelearnerJam;
-    x = GetStringRightAlignXOffset(FONT_NORMAL, str, 92);
-    AddTextPrinterParameterized(RELEARNERWIN_DESC_CONTEST, FONT_NORMAL, str, x, 41, TEXT_SKIP_DRAW, NULL);
-
-    if (chosenMove == MENU_NOTHING_CHOSEN)
-    {
-        CopyWindowToVram(RELEARNERWIN_DESC_CONTEST, COPYWIN_GFX);
-        return;
-    }
-
-    str = gContestMoveTypeTextPointers[GetMoveContestCategory(chosenMove)];
-    AddTextPrinterParameterized(RELEARNERWIN_DESC_CONTEST, FONT_NORMAL, str, 4, 25, TEXT_SKIP_DRAW, NULL);
-
-    str = gContestEffectDescriptionPointers[GetMoveContestEffect(chosenMove)];
-    AddTextPrinterParameterized(RELEARNERWIN_DESC_CONTEST, FONT_NARROW, str, 0, 65, TEXT_SKIP_DRAW, NULL);
-
-    CopyWindowToVram(RELEARNERWIN_DESC_CONTEST, COPYWIN_GFX);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void MoveRelearnerCursorCallback(s32 itemIndex, bool8 onInit, struct ListMenu *list)
@@ -1007,7 +854,6 @@ static void MoveRelearnerCursorCallback(s32 itemIndex, bool8 onInit, struct List
     MoveRelearnerMenuLoadContestMoveDescription(itemIndex);
 }
 
-<<<<<<< HEAD
 void MoveRelearnerPrintText(u8 *str)
 {
     u8 speed;
@@ -1016,26 +862,12 @@ void MoveRelearnerPrintText(u8 *str)
     gTextFlags.canABSpeedUpPrint = TRUE;
     speed = GetPlayerTextSpeedDelay();
     AddTextPrinterParameterized2(3, FONT_NORMAL, str, speed, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, 3);
-=======
-void MoveRelearnerPrintMessage(u8 *str)
-{
-    u8 speed;
-
-    FillWindowPixelBuffer(RELEARNERWIN_MSG, PIXEL_FILL(1));
-    gTextFlags.canABSpeedUpPrint = TRUE;
-    speed = GetPlayerTextSpeedDelay();
-    AddTextPrinterParameterized2(RELEARNERWIN_MSG, FONT_NORMAL, str, speed, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, 3);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 bool16 MoveRelearnerRunTextPrinters(void)
 {
     RunTextPrinters();
-<<<<<<< HEAD
     return IsTextPrinterActive(3);
-=======
-    return IsTextPrinterActive(RELEARNERWIN_MSG);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 void MoveRelearnerCreateYesNoMenu(void)
@@ -1100,11 +932,7 @@ static u8 *GetConditionMenuMonString(u8 *dst, u16 boxId, u16 monId)
         level = GetLevelFromBoxMonExp(boxMon);
     }
 
-<<<<<<< HEAD
     if ((species == SPECIES_NIDORAN_F || species == SPECIES_NIDORAN_M) && !StringCompare(dst, gSpeciesNames[species]))
-=======
-    if ((species == SPECIES_NIDORAN_F || species == SPECIES_NIDORAN_M) && !StringCompare(dst, GetSpeciesName(species)))
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         gender = MON_GENDERLESS;
 
     for (str = dst; *str != EOS; str++)
@@ -1243,19 +1071,11 @@ void GetConditionMenuMonGfx(void *tilesDst, void *palDst, u16 boxId, u16 monId, 
     if (partyId != numMons)
     {
         u16 species = GetBoxOrPartyMonData(boxId, monId, MON_DATA_SPECIES_OR_EGG, NULL);
-<<<<<<< HEAD
         u32 trainerId = GetBoxOrPartyMonData(boxId, monId, MON_DATA_OT_ID, NULL);
         u32 personality = GetBoxOrPartyMonData(boxId, monId, MON_DATA_PERSONALITY, NULL);
 
         LoadSpecialPokePic(&gMonFrontPicTable[species], tilesDst, species, personality, TRUE);
         LZ77UnCompWram(GetMonSpritePalFromSpeciesAndPersonality(species, trainerId, personality), palDst);
-=======
-        bool8 isShiny = GetBoxOrPartyMonData(boxId, monId, MON_DATA_IS_SHINY, NULL);
-        u32 personality = GetBoxOrPartyMonData(boxId, monId, MON_DATA_PERSONALITY, NULL);
-
-        LoadSpecialPokePic(tilesDst, species, personality, TRUE);
-        memcpy(palDst, GetMonSpritePalFromSpeciesAndPersonality(species, isShiny, personality), 32);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
 }
 
@@ -1373,11 +1193,7 @@ void LoadConditionMonPicTemplate(struct SpriteSheet *sheet, struct SpriteTemplat
     *pal = dataPal;
 }
 
-<<<<<<< HEAD
 void LoadConditionSelectionIcons(struct SpriteSheet *sheets, struct SpriteTemplate * template, struct SpritePalette *pals)
-=======
-void LoadConditionSelectionIcons(struct SpriteSheet *sheets, struct SpriteTemplate *template, struct SpritePalette *pals)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     u8 i;
 

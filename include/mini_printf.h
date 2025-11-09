@@ -45,13 +45,8 @@
 
 #else
 
-<<<<<<< HEAD
 s32 mini_vsnprintf(char* buffer, u32 buffer_len, const char *fmt, va_list va);
 s32 mini_vpprintf(void* buf, const char *fmt, va_list va);
-=======
-s32 mini_vsnprintf(char *buffer, u32 buffer_len, const char *fmt, va_list va);
-s32 mini_vpprintf(void *buf, const char *fmt, va_list va);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 #endif
 #endif

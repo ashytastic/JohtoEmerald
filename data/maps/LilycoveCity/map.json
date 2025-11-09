@@ -52,11 +52,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_BALDING_MAN",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 28,
       "y": 28,
       "elevation": 3,
@@ -69,11 +65,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_POLICEMAN",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_RICH_BOY",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 21,
       "y": 15,
       "elevation": 3,
@@ -86,11 +78,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_GYM_GUY",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_MAN_2",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 16,
       "y": 9,
       "elevation": 5,
@@ -116,11 +104,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 35,
       "y": 37,
       "elevation": 5,
@@ -133,11 +117,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 34,
       "y": 37,
       "elevation": 5,
@@ -150,11 +130,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 57,
       "y": 17,
       "elevation": 3,
@@ -167,11 +143,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 73,
       "y": 15,
       "elevation": 3,
@@ -181,11 +153,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LilycoveCity_EventScript_WailmerTrainerGrunt",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
-=======
-      "flag": "FLAG_HIDE_LILYCOVE_CITY_AQUA_GRUNTS"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -196,7 +164,6 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-<<<<<<< HEAD
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LilycoveCity_EventScript_ItemMaxRepel",
       "flag": "FLAG_ITEM_GARBAGEFLAG"
@@ -205,16 +172,6 @@
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
       "x": 54,
       "y": 8,
-=======
-      "trainer_sight_or_berry_tree_id": "ITEM_MAX_REPEL",
-      "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_LILYCOVE_CITY_MAX_REPEL"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
-      "x": 43,
-      "y": 18,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
       "movement_range_x": 1,
@@ -222,21 +179,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LilycoveCity_EventScript_AquaGrunt4",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
       "x": 52,
       "y": 13,
-=======
-      "flag": "FLAG_HIDE_LILYCOVE_CITY_AQUA_GRUNTS"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
-      "x": 46,
-      "y": 12,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -244,21 +192,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LilycoveCity_EventScript_AquaGrunt1",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
       "x": 51,
       "y": 13,
-=======
-      "flag": "FLAG_HIDE_LILYCOVE_CITY_AQUA_GRUNTS"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
-      "x": 45,
-      "y": 12,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -266,17 +205,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LilycoveCity_EventScript_AquaGrunt2",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
-=======
-      "flag": "FLAG_HIDE_LILYCOVE_CITY_AQUA_GRUNTS"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 38,
       "y": 9,
       "elevation": 5,
@@ -286,21 +218,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LilycoveCity_EventScript_AquaGrunt3",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
       "x": 46,
       "y": 9,
-=======
-      "flag": "FLAG_HIDE_LILYCOVE_CITY_AQUA_GRUNTS"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
-      "x": 50,
-      "y": 7,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "elevation": 5,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -321,17 +244,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LilycoveCity_EventScript_Rival",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY",
-=======
-      "flag": "FLAG_HIDE_LILYCOVE_CITY_RIVAL"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_SCHOOL_KID_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 16,
       "y": 23,
       "elevation": 3,
@@ -344,12 +260,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_F",
-=======
-      "local_id": "LOCALID_LILYCOVE_WOMAN_1",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 41,
       "y": 25,
       "elevation": 3,
@@ -362,12 +273,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_GYM_GUY",
-=======
-      "local_id": "LOCALID_LILYCOVE_MAN_1",
-      "graphics_id": "OBJ_EVENT_GFX_MAN_2",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 40,
       "y": 25,
       "elevation": 3,
@@ -404,7 +310,6 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LilycoveCity_EventScript_FatMan",
       "flag": "0"
-<<<<<<< HEAD
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -457,8 +362,6 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "0"
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "warp_events": [
@@ -559,7 +462,6 @@
       "elevation": 0,
       "dest_map": "MAP_LILYCOVE_CITY_LILYCOVE_MUSEUM_1F",
       "dest_warp_id": "1"
-<<<<<<< HEAD
     },
     {
       "x": 45,
@@ -572,11 +474,6 @@
   "coord_events": [
 
   ],
-=======
-    }
-  ],
-  "coord_events": [],
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "bg_events": [
     {
       "type": "sign",
@@ -676,7 +573,6 @@
     },
     {
       "type": "hidden_item",
-<<<<<<< HEAD
       "x": 45,
       "y": 12,
       "elevation": 0,
@@ -698,13 +594,5 @@
       "x": 24,
       "y": 15
 	}
-=======
-      "x": 64,
-      "y": 31,
-      "elevation": 0,
-      "item": "ITEM_POKE_BALL",
-      "flag": "FLAG_HIDDEN_ITEM_LILYCOVE_CITY_POKE_BALL"
-    }
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   ]
 }

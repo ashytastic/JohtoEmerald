@@ -7,21 +7,12 @@ EverGrandeCity_SidneysRoom_MapScripts::
 
 EverGrandeCity_SidneysRoom_OnTransition:
 	setflag FLAG_MET_SCOTT_IN_EVERGRANDE
-<<<<<<< HEAD
 	setflag FLAG_GARBAGEFLAG
 	end
 
 EverGrandeCity_SidneysRoom_OnLoad:
 	call_if_set FLAG_DEFEATED_ELITE_4_WILL, EverGrandeCity_SidneysRoom_EventScript_ResetAdvanceToNextRoom
 	call_if_eq VAR_GARBAGEVAR, 1, EverGrandeCity_SidneysRoom_EventScript_CloseDoor
-=======
-	setflag FLAG_HIDE_EVER_GRANDE_POKEMON_CENTER_1F_SCOTT
-	end
-
-EverGrandeCity_SidneysRoom_OnLoad:
-	call_if_set FLAG_DEFEATED_ELITE_4_SIDNEY, EverGrandeCity_SidneysRoom_EventScript_ResetAdvanceToNextRoom
-	call_if_eq VAR_ELITE_4_STATE, 1, EverGrandeCity_SidneysRoom_EventScript_CloseDoor
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 EverGrandeCity_SidneysRoom_EventScript_ResetAdvanceToNextRoom::
@@ -37,48 +28,31 @@ EverGrandeCity_SidneysRoom_OnWarp:
 	.2byte 0
 
 EverGrandeCity_SidneysRoom_EventScript_PlayerTurnNorth::
-<<<<<<< HEAD
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
 	end
 
 EverGrandeCity_SidneysRoom_OnFrame:
 	map_script_2 VAR_GARBAGEVAR, 0, EverGrandeCity_SidneysRoom_EventScript_WalkInCloseDoor
-=======
-	turnobject LOCALID_PLAYER, DIR_NORTH
-	end
-
-EverGrandeCity_SidneysRoom_OnFrame:
-	map_script_2 VAR_ELITE_4_STATE, 0, EverGrandeCity_SidneysRoom_EventScript_WalkInCloseDoor
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.2byte 0
 
 EverGrandeCity_SidneysRoom_EventScript_WalkInCloseDoor::
 	lockall
 	call PokemonLeague_EliteFour_EventScript_WalkInCloseDoor
-<<<<<<< HEAD
 	setvar VAR_GARBAGEVAR, 1
-=======
-	setvar VAR_ELITE_4_STATE, 1
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	releaseall
 	end
 
 EverGrandeCity_SidneysRoom_EventScript_Sidney::
 	lock
 	faceplayer
-<<<<<<< HEAD
 	goto_if_set FLAG_DEFEATED_ELITE_4_WILL, EverGrandeCity_SidneysRoom_EventScript_PostBattleSpeech
 	goto_if_set FLAG_SIDNEY_REMATCH, EverGrandeCity_SidneysRoom_EventScript_SidneyRematch
-=======
-	goto_if_set FLAG_DEFEATED_ELITE_4_SIDNEY, EverGrandeCity_SidneysRoom_EventScript_PostBattleSpeech
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
 	msgbox EverGrandeCity_SidneysRoom_Text_IntroSpeech, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_SIDNEY, EverGrandeCity_SidneysRoom_Text_Defeat
 	goto EverGrandeCity_SidneysRoom_EventScript_Defeated
 	end
 
-<<<<<<< HEAD
 EverGrandeCity_SidneysRoom_EventScript_SidneyRematch::
 	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
 	msgbox EverGrandeCity_SidneysRoom_Text_IntroSpeech2, MSGBOX_DEFAULT
@@ -86,19 +60,13 @@ EverGrandeCity_SidneysRoom_EventScript_SidneyRematch::
 	goto EverGrandeCity_SidneysRoom_EventScript_Defeated
 	end
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 EverGrandeCity_SidneysRoom_EventScript_PostBattleSpeech::
 	msgbox EverGrandeCity_SidneysRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
 	release
 	end
 
 EverGrandeCity_SidneysRoom_EventScript_Defeated::
-<<<<<<< HEAD
 	setflag FLAG_DEFEATED_ELITE_4_WILL
-=======
-	setflag FLAG_DEFEATED_ELITE_4_SIDNEY
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
 	msgbox EverGrandeCity_SidneysRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
 	release
@@ -114,7 +82,6 @@ EverGrandeCity_SidneysRoom_Text_IntroSpeech:
 	.string "a battle that can only be staged\l"
 	.string "here in the POKéMON LEAGUE!$"
 
-<<<<<<< HEAD
 EverGrandeCity_SidneysRoom_Text_IntroSpeech2:
 	.string "Welcome back, challenger!\n"
 	.string "I'm SIDNEY of the ELITE FOUR.\p"
@@ -126,26 +93,17 @@ EverGrandeCity_SidneysRoom_Text_IntroSpeech2:
 	.string "here in the POKéMON LEAGUE!\p"
 	.string "This time, I won't lose.$"
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 EverGrandeCity_SidneysRoom_Text_Defeat:
 	.string "Well, how do you like that? I lost!\n"
 	.string "Eh, it was fun, so it doesn't matter.$"
 
-<<<<<<< HEAD
 EverGrandeCity_SidneysRoom_Text_Defeat2:
 	.string "Well, how do you like that? I lost!\n"
 	.string "Again! It doesn't matter. It was fun.$"
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 EverGrandeCity_SidneysRoom_Text_PostBattleSpeech:
 	.string "Well, listen to what this loser has\n"
 	.string "to say.\p"
 	.string "You've got what it takes to go far.\n"
 	.string "Now, go on to the next room and enjoy\l"
 	.string "your next battle!$"
-<<<<<<< HEAD
-=======
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

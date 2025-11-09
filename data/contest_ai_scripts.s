@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 #include "config.h"
-=======
-#include "config/general.h"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include "constants/global.h"
 #include "constants/contest.h"
 	.include "asm/macros.inc"

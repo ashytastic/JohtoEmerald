@@ -2,13 +2,8 @@
   "id": "MAP_BATTLE_FRONTIER_LOUNGE9",
   "name": "BattleFrontier_Lounge9",
   "layout": "LAYOUT_BATTLE_FRONTIER_LOUNGE2",
-<<<<<<< HEAD
   "music": "MUS_HG_B_TOWER",
   "region_map_section": "MAPSEC_LILYCOVE_CITY",
-=======
-  "music": "MUS_B_TOWER_RS",
-  "region_map_section": "MAPSEC_BATTLE_FRONTIER",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -17,28 +12,18 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-<<<<<<< HEAD
   "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_FISHER",
       "x": 8,
       "y": 4,
-=======
-  "connections": null,
-  "object_events": [
-    {
-      "graphics_id": "OBJ_EVENT_GFX_GIRL_2",
-      "x": 6,
-      "y": 3,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-<<<<<<< HEAD
       "script": "BattleFrontier_Lounge9_EV_HP",
       "flag": "0"
     },
@@ -157,15 +142,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "BattleFrontier_Lounge9_Heal",
-=======
-      "script": "0x0",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "flag": "0"
     }
   ],
   "warp_events": [
     {
-<<<<<<< HEAD
       "x": 12,
       "y": 9,
       "elevation": 0,
@@ -201,22 +182,4 @@
       "script": "BattleFrontier_Lounge9_EV_Column"
     }
   ]
-=======
-      "x": 1,
-      "y": 9,
-      "elevation": 0,
-      "dest_map": "MAP_BATTLE_FRONTIER_OUTSIDE_EAST",
-      "dest_warp_id": "11"
-    },
-    {
-      "x": 2,
-      "y": 9,
-      "elevation": 0,
-      "dest_map": "MAP_BATTLE_FRONTIER_OUTSIDE_EAST",
-      "dest_warp_id": "11"
-    }
-  ],
-  "coord_events": [],
-  "bg_events": []
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }

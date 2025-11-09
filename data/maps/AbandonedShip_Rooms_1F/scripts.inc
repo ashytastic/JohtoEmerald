@@ -1,9 +1,6 @@
 AbandonedShip_Rooms_1F_MapScripts::
-<<<<<<< HEAD
 	map_script MAP_SCRIPT_ON_TRANSITION, SetTimeEncounters
 	map_script MAP_SCRIPT_ON_RESUME, SetTimeEncounters
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.byte 0
 
 AbandonedShip_Rooms_1F_EventScript_Gentleman::
@@ -11,11 +8,7 @@ AbandonedShip_Rooms_1F_EventScript_Gentleman::
 	end
 
 AbandonedShip_Rooms_1F_EventScript_Demetrius::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_JULIA, AbandonedShip_Rooms_1F_Text_DemetriusIntro, AbandonedShip_Rooms_1F_Text_DemetriusDefeat
-=======
-	trainerbattle_single TRAINER_DEMETRIUS, AbandonedShip_Rooms_1F_Text_DemetriusIntro, AbandonedShip_Rooms_1F_Text_DemetriusDefeat
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox AbandonedShip_Rooms_1F_Text_DemetriusPostBattle, MSGBOX_AUTOCLOSE
 	end
 

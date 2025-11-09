@@ -1,9 +1,5 @@
 #include "global.h"
 #include "graphics.h"
-<<<<<<< HEAD
-=======
-#include "decompress.h"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 // Duplicate of sBerryFixGraphics in berry_fix_program.c
 static const struct {
@@ -45,13 +41,8 @@ static void UNUSED LoadBerryFixGraphics(u32 idx)
     REG_BG0HOFS = 0;
     REG_BG0VOFS = 0;
     REG_BLDCNT = 0;
-<<<<<<< HEAD
     LZ77UnCompVram(sBerryFixGraphics[idx].gfx, (void *)BG_CHAR_ADDR(0));
     LZ77UnCompVram(sBerryFixGraphics[idx].tilemap, (void *)BG_SCREEN_ADDR(31));
-=======
-    DecompressDataWithHeaderVram(sBerryFixGraphics[idx].gfx, (void *)BG_CHAR_ADDR(0));
-    DecompressDataWithHeaderVram(sBerryFixGraphics[idx].tilemap, (void *)BG_SCREEN_ADDR(31));
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     CpuCopy16(sBerryFixGraphics[idx].pltt, (void *)BG_PLTT, BG_PLTT_SIZE);
     REG_BG0CNT = BGCNT_SCREENBASE(31);
     REG_DISPCNT = DISPCNT_BG0_ON;

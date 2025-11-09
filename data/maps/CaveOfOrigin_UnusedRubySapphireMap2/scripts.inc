@@ -1,5 +1,4 @@
 CaveOfOrigin_UnusedRubySapphireMap2_MapScripts::
-<<<<<<< HEAD
 	map_script MAP_SCRIPT_ON_RESUME, CaveOfOrigin_UnusedRubySapphireMap2_OnResume
 	map_script MAP_SCRIPT_ON_TRANSITION, CaveOfOrigin_UnusedRubySapphireMap2_OnTransition
 	.byte 0
@@ -60,12 +59,3 @@ CaveOfOrigin_UnusedRubySapphireMap2_EventScript_RanFromRegigigas::
 	setvar VAR_0x8004, SPECIES_REGIGIGAS
 	goto Common_EventScript_LegendaryFlewAway
 	end
-=======
-	map_script MAP_SCRIPT_ON_TRANSITION, CaveOfOrigin_UnusedRubySapphireMap2_OnTransition
-	.byte 0
-
-CaveOfOrigin_UnusedRubySapphireMap2_OnTransition:
-	call_if_set FLAG_UNUSED_RS_LEGENDARY_BATTLE_DONE, CaveOfOrigin_EventScript_DisableTriggers
-	end
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

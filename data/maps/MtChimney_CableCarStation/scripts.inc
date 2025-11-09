@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 .set LOCALID_ATTENDANT, 1
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 MtChimney_CableCarStation_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, MtChimney_CableCarStation_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, MtChimney_CableCarStation_OnFrame
@@ -13,13 +10,8 @@ MtChimney_CableCarStation_OnTransition:
 	end
 
 MtChimney_CableCarStation_EventScript_MoveAttendantAside::
-<<<<<<< HEAD
 	setobjectxyperm LOCALID_ATTENDANT, 5, 4
 	setobjectmovementtype LOCALID_ATTENDANT, MOVEMENT_TYPE_FACE_RIGHT
-=======
-	setobjectxyperm LOCALID_MT_CHIMNEY_CABLE_CAR_ATTENDANT, 5, 4
-	setobjectmovementtype LOCALID_MT_CHIMNEY_CABLE_CAR_ATTENDANT, MOVEMENT_TYPE_FACE_RIGHT
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	return
 
 MtChimney_CableCarStation_OnFrame:
@@ -28,21 +20,12 @@ MtChimney_CableCarStation_OnFrame:
 
 MtChimney_CableCarStation_EventScript_ExitCableCar::
 	lockall
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, MtChimney_CableCarStation_Movement_ExitCableCar
 	applymovement LOCALID_ATTENDANT, MtChimney_CableCarStation_Movement_FollowPlayerOutFromCableCar
 	waitmovement 0
 	setvar VAR_CABLE_CAR_STATION_STATE, 0
 	setobjectxyperm LOCALID_ATTENDANT, 6, 7
 	setobjectmovementtype LOCALID_ATTENDANT, MOVEMENT_TYPE_FACE_DOWN
-=======
-	applymovement LOCALID_PLAYER, MtChimney_CableCarStation_Movement_ExitCableCar
-	applymovement LOCALID_MT_CHIMNEY_CABLE_CAR_ATTENDANT, MtChimney_CableCarStation_Movement_FollowPlayerOutFromCableCar
-	waitmovement 0
-	setvar VAR_CABLE_CAR_STATION_STATE, 0
-	setobjectxyperm LOCALID_MT_CHIMNEY_CABLE_CAR_ATTENDANT, 6, 7
-	setobjectmovementtype LOCALID_MT_CHIMNEY_CABLE_CAR_ATTENDANT, MOVEMENT_TYPE_FACE_DOWN
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	releaseall
 	end
 
@@ -57,13 +40,8 @@ MtChimney_CableCarStation_EventScript_Attendant::
 MtChimney_CableCarStation_EventScript_RideCableCar::
 	msgbox MtChimney_CableCarStation_Text_StepThisWay, MSGBOX_DEFAULT
 	closemessage
-<<<<<<< HEAD
 	applymovement LOCALID_ATTENDANT, MtChimney_CableCarStation_Movement_LeadPlayerToCableCar
 	applymovement OBJ_EVENT_ID_PLAYER, MtChimney_CableCarStation_Movement_BoardCableCar
-=======
-	applymovement LOCALID_MT_CHIMNEY_CABLE_CAR_ATTENDANT, MtChimney_CableCarStation_Movement_LeadPlayerToCableCar
-	applymovement LOCALID_PLAYER, MtChimney_CableCarStation_Movement_BoardCableCar
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	setvar VAR_0x8004, TRUE  @ Going down
 	setvar VAR_CABLE_CAR_STATION_STATE, 2

@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 .set LOCALID_NURSE, 1
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 FortreeCity_PokemonCenter_1F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, FortreeCity_PokemonCenter_1F_OnTransition
 	map_script MAP_SCRIPT_ON_RESUME, CableClub_OnResume
@@ -12,7 +9,6 @@ FortreeCity_PokemonCenter_1F_OnTransition:
 	setrespawn HEAL_LOCATION_FORTREE_CITY
 	end
 
-<<<<<<< HEAD
 FortreeCity_PokemonCenter_1F_RhyperiorEvo::
 	msgbox FortreeCity_PokemonCenter_1F_RhyperiorEvo_Text, MSGBOX_NPC
 	end
@@ -28,10 +24,6 @@ FortreeCity_PokemonCenter_1F_RhyperiorEvo_Text:
 
 FortreeCity_PokemonCenter_1F_EventScript_Nurse::
 	setvar VAR_0x800B, LOCALID_NURSE
-=======
-FortreeCity_PokemonCenter_1F_EventScript_Nurse::
-	setvar VAR_0x800B, LOCALID_FORTREE_NURSE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call Common_EventScript_PkmnCenterNurse
 	waitmessage
 	waitbuttonpress

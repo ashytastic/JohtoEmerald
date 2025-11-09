@@ -29,11 +29,7 @@ extern FILE* g_outputFile;
 
 extern std::string g_asmLabel;
 extern int g_masterVolume;
-<<<<<<< HEAD
 extern int g_voiceGroup;
-=======
-extern std::string g_voiceGroup;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 extern int g_priority;
 extern int g_reverb;
 extern int g_clocksPerBeat;

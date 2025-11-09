@@ -12,11 +12,7 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-<<<<<<< HEAD
   "connections": 0,
-=======
-  "connections": null,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
@@ -54,13 +50,9 @@
       "dest_warp_id": "8"
     }
   ],
-<<<<<<< HEAD
   "coord_events": [
 
   ],
-=======
-  "coord_events": [],
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "bg_events": [
     {
       "type": "hidden_item",

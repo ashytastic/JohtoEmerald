@@ -61,11 +61,7 @@
     F(FLASH) \
     F(ROCK_SMASH) \
     F(WATERFALL) \
-<<<<<<< HEAD
     F(WHIRLPOOL)
-=======
-    F(DIVE)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 #define FOREACH_TMHM(F) \
     FOREACH_TM(F) \

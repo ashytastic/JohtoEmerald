@@ -12,17 +12,10 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-<<<<<<< HEAD
   "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN",
-=======
-  "connections": null,
-  "object_events": [
-    {
-      "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 2,
       "y": 3,
       "elevation": 3,
@@ -35,11 +28,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 6,
       "y": 3,
       "elevation": 3,
@@ -68,15 +57,10 @@
       "dest_warp_id": "4"
     }
   ],
-<<<<<<< HEAD
   "coord_events": [
 
   ],
   "bg_events": [
 
   ]
-=======
-  "coord_events": [],
-  "bg_events": []
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }

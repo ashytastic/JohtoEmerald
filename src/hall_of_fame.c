@@ -35,7 +35,6 @@
 #include "confetti_util.h"
 #include "constants/rgb.h"
 
-<<<<<<< HEAD
 #define HALL_OF_FAME_MAX_TEAMS 50
 #define TAG_CONFETTI 1001
 
@@ -53,11 +52,6 @@ struct HallofFameTeam
     struct HallofFameMon mon[PARTY_SIZE];
 };
 
-=======
-#define HALL_OF_FAME_MAX_TEAMS 30
-#define TAG_CONFETTI 1001
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 STATIC_ASSERT(sizeof(struct HallofFameTeam) * HALL_OF_FAME_MAX_TEAMS <= SECTOR_DATA_SIZE * NUM_HOF_SECTORS, HallOfFameFreeSpace);
 
 struct HofGfx
@@ -71,10 +65,6 @@ struct HofGfx
 static EWRAM_DATA u32 sHofFadePalettes = 0;
 static EWRAM_DATA struct HallofFameTeam *sHofMonPtr = NULL;
 static EWRAM_DATA struct HofGfx *sHofGfxPtr = NULL;
-<<<<<<< HEAD
-=======
-EWRAM_DATA struct HallofFameTeam *gHoFSaveBuffer = NULL;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 static void ClearVramOamPltt_LoadHofPal(void);
 static void LoadHofGfx(void);
@@ -107,11 +97,7 @@ static void Task_HofPC_HandlePaletteOnExit(u8 taskId);
 static void Task_HofPC_HandleExit(u8 taskId);
 static void Task_HofPC_ExitOnButtonPress(u8 taskId);
 static void SpriteCB_GetOnScreenAndAnimate(struct Sprite *sprite);
-<<<<<<< HEAD
 static void HallOfFame_PrintMonInfo(struct HallofFameMon* currMon, u8 unused1, u8 unused2);
-=======
-static void HallOfFame_PrintMonInfo(struct HallofFameMon *currMon, u8 unused1, u8 unused2);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static void HallOfFame_PrintWelcomeText(u8 unusedPossiblyWindowId, u8 unused2);
 static void HallOfFame_PrintPlayerInfo(u8 unused1, u8 unused2);
 static void Task_DoDomeConfetti(u8 taskId);
@@ -168,11 +154,7 @@ static const struct CompressedSpriteSheet sSpriteSheet_Confetti[] =
     {},
 };
 
-<<<<<<< HEAD
 static const struct CompressedSpritePalette sSpritePalette_Confetti[] =
-=======
-static const struct SpritePalette sSpritePalette_Confetti[] =
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     {.data = gConfetti_Pal, .tag = TAG_CONFETTI},
     {},
@@ -314,11 +296,7 @@ static const union AnimCmd sAnim_WhiteConfettiC[] =
     ANIMCMD_END
 };
 
-<<<<<<< HEAD
 static const union AnimCmd * const sAnims_Confetti[] =
-=======
-static const union AnimCmd *const sAnims_Confetti[] =
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     sAnim_PinkConfettiA,
     sAnim_RedConfettiA,
@@ -352,20 +330,12 @@ static const struct SpriteTemplate sSpriteTemplate_HofConfetti =
 
 static const u16 sHallOfFame_Pal[] = INCBIN_U16("graphics/misc/japanese_hof.gbapal");
 
-<<<<<<< HEAD
 static const u32 sHallOfFame_Gfx[] = INCBIN_U32("graphics/misc/japanese_hof.4bpp.lz");
-=======
-static const u32 sHallOfFame_Gfx[] = INCBIN_U32("graphics/misc/japanese_hof.4bpp.smol");
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 static const struct HallofFameMon sDummyFameMon =
 {
     .tid = 0x3EA03EA,
     .personality = 0,
-<<<<<<< HEAD
-=======
-    .isShiny = FALSE,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     .species = SPECIES_NONE,
     .lvl = 0,
     .nickname = {0}
@@ -429,11 +399,7 @@ static bool8 InitHallOfFameScreen(void)
         if (!gPaletteFade.active)
         {
             SetMainCallback2(CB2_HallOfFame);
-<<<<<<< HEAD
             PlayBGM(MUS_HG_HALL_OF_FAME);
-=======
-            PlayBGM(MUS_HALL_OF_FAME);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             return FALSE;
         }
         break;
@@ -448,26 +414,13 @@ static bool8 InitHallOfFameScreen(void)
 #define tPlayerSpriteID     data[4]
 #define tMonSpriteId(i)     data[i + 5]
 
-<<<<<<< HEAD
-=======
-static void AllocateHoFTeams(void)
-{
-    sHofMonPtr = AllocZeroed(sizeof(*sHofMonPtr));
-    gHoFSaveBuffer = Alloc(SECTOR_SIZE * NUM_HOF_SECTORS);
-}
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 void CB2_DoHallOfFameScreen(void)
 {
     if (!InitHallOfFameScreen())
     {
         u8 taskId = CreateTask(Task_Hof_InitMonData, 0);
         gTasks[taskId].tDontSaveData = FALSE;
-<<<<<<< HEAD
         sHofMonPtr = AllocZeroed(sizeof(*sHofMonPtr));
-=======
-        AllocateHoFTeams();
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
 }
 
@@ -477,11 +430,7 @@ void CB2_DoHallOfFameScreenDontSaveData(void)
     {
         u8 taskId = CreateTask(Task_Hof_InitMonData, 0);
         gTasks[taskId].tDontSaveData = TRUE;
-<<<<<<< HEAD
         sHofMonPtr = AllocZeroed(sizeof(*sHofMonPtr));
-=======
-        AllocateHoFTeams();
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
 }
 
@@ -498,10 +447,6 @@ static void Task_Hof_InitMonData(u8 taskId)
         {
             sHofMonPtr->mon[i].species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG);
             sHofMonPtr->mon[i].tid = GetMonData(&gPlayerParty[i], MON_DATA_OT_ID);
-<<<<<<< HEAD
-=======
-            sHofMonPtr->mon[i].isShiny = GetMonData(&gPlayerParty[i], MON_DATA_IS_SHINY);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             sHofMonPtr->mon[i].personality = GetMonData(&gPlayerParty[i], MON_DATA_PERSONALITY);
             sHofMonPtr->mon[i].lvl = GetMonData(&gPlayerParty[i], MON_DATA_LEVEL);
             GetMonData(&gPlayerParty[i], MON_DATA_NICKNAME, nickname);
@@ -513,10 +458,6 @@ static void Task_Hof_InitMonData(u8 taskId)
         {
             sHofMonPtr->mon[i].species = SPECIES_NONE;
             sHofMonPtr->mon[i].tid = 0;
-<<<<<<< HEAD
-=======
-            sHofMonPtr->mon[i].isShiny = FALSE;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             sHofMonPtr->mon[i].personality = 0;
             sHofMonPtr->mon[i].lvl = 0;
             sHofMonPtr->mon[i].nickname[0] = EOS;
@@ -541,28 +482,16 @@ static void Task_Hof_InitMonData(u8 taskId)
 static void Task_Hof_InitTeamSaveData(u8 taskId)
 {
     u16 i;
-<<<<<<< HEAD
     struct HallofFameTeam *lastSavedTeam = (struct HallofFameTeam *)(gDecompressionBuffer);
 
     if (!gHasHallOfFameRecords)
     {
         memset(gDecompressionBuffer, 0, SECTOR_SIZE * NUM_HOF_SECTORS);
-=======
-    struct HallofFameTeam *lastSavedTeam = gHoFSaveBuffer;
-
-    if (!gHasHallOfFameRecords)
-    {
-        memset(gHoFSaveBuffer, 0, SECTOR_SIZE * NUM_HOF_SECTORS);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
     else
     {
         if (LoadGameSave(SAVE_HALL_OF_FAME) != SAVE_STATUS_OK)
-<<<<<<< HEAD
             memset(gDecompressionBuffer, 0, SECTOR_SIZE * NUM_HOF_SECTORS);
-=======
-            memset(gHoFSaveBuffer, 0, SECTOR_SIZE * NUM_HOF_SECTORS);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
 
     for (i = 0; i < HALL_OF_FAME_MAX_TEAMS; i++, lastSavedTeam++)
@@ -572,13 +501,8 @@ static void Task_Hof_InitTeamSaveData(u8 taskId)
     }
     if (i >= HALL_OF_FAME_MAX_TEAMS)
     {
-<<<<<<< HEAD
         struct HallofFameTeam *afterTeam = (struct HallofFameTeam *)(gDecompressionBuffer);
         struct HallofFameTeam *beforeTeam = (struct HallofFameTeam *)(gDecompressionBuffer);
-=======
-        struct HallofFameTeam *afterTeam = gHoFSaveBuffer;
-        struct HallofFameTeam *beforeTeam = gHoFSaveBuffer;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         afterTeam++;
         for (i = 0; i < HALL_OF_FAME_MAX_TEAMS - 1; i++, beforeTeam++, afterTeam++)
         {
@@ -594,16 +518,6 @@ static void Task_Hof_InitTeamSaveData(u8 taskId)
     gTasks[taskId].func = Task_Hof_TrySaveData;
 }
 
-<<<<<<< HEAD
-=======
-static void FreeAllHoFMem(void)
-{
-    TRY_FREE_AND_SET_NULL(sHofGfxPtr);
-    TRY_FREE_AND_SET_NULL(sHofMonPtr);
-    TRY_FREE_AND_SET_NULL(gHoFSaveBuffer);
-}
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static void Task_Hof_TrySaveData(u8 taskId)
 {
     gGameContinueCallback = CB2_DoHallOfFameScreenDontSaveData;
@@ -613,12 +527,8 @@ static void Task_Hof_TrySaveData(u8 taskId)
         UnsetBgTilemapBuffer(3);
         FreeAllWindowBuffers();
 
-<<<<<<< HEAD
         TRY_FREE_AND_SET_NULL(sHofGfxPtr);
         TRY_FREE_AND_SET_NULL(sHofMonPtr);
-=======
-        FreeAllHoFMem();
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
         DestroyTask(taskId);
     }
@@ -653,11 +563,7 @@ static void Task_Hof_DisplayMon(u8 taskId)
     s16 startX, startY, destX, destY;
 
     u16 currMonId = gTasks[taskId].tDisplayedMonId;
-<<<<<<< HEAD
     struct HallofFameMon* currMon = &sHofMonPtr->mon[currMonId];
-=======
-    struct HallofFameMon *currMon = &sHofMonPtr->mon[currMonId];
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     if (gTasks[taskId].tMonNumber > PARTY_SIZE / 2)
     {
@@ -677,11 +583,7 @@ static void Task_Hof_DisplayMon(u8 taskId)
     if (currMon->species == SPECIES_EGG)
         destY += 10;
 
-<<<<<<< HEAD
     spriteId = CreateMonPicSprite_Affine(currMon->species, currMon->tid, currMon->personality, MON_PIC_AFFINE_FRONT, startX, startY, currMonId, TAG_NONE);
-=======
-    spriteId = CreateMonPicSprite_Affine(currMon->species, currMon->isShiny, currMon->personality, MON_PIC_AFFINE_FRONT, startX, startY, currMonId, TAG_NONE);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gSprites[spriteId].tDestinationX = destX;
     gSprites[spriteId].tDestinationY = destY;
     gSprites[spriteId].data[0] = 0;
@@ -695,11 +597,7 @@ static void Task_Hof_DisplayMon(u8 taskId)
 static void Task_Hof_PrintMonInfoAfterAnimating(u8 taskId)
 {
     u16 currMonId = gTasks[taskId].tDisplayedMonId;
-<<<<<<< HEAD
     struct HallofFameMon* currMon = &sHofMonPtr->mon[currMonId];
-=======
-    struct HallofFameMon *currMon = &sHofMonPtr->mon[currMonId];
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     struct Sprite *monSprite = &gSprites[gTasks[taskId].tMonSpriteId(currMonId)];
 
     if (monSprite->callback == SpriteCallbackDummy)
@@ -714,11 +612,7 @@ static void Task_Hof_PrintMonInfoAfterAnimating(u8 taskId)
 static void Task_Hof_TryDisplayAnotherMon(u8 taskId)
 {
     u16 currPokeID = gTasks[taskId].tDisplayedMonId;
-<<<<<<< HEAD
     struct HallofFameMon* currMon = &sHofMonPtr->mon[currPokeID];
-=======
-    struct HallofFameMon *currMon = &sHofMonPtr->mon[currPokeID];
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     if (gTasks[taskId].tFrameCount != 0)
     {
@@ -730,11 +624,7 @@ static void Task_Hof_TryDisplayAnotherMon(u8 taskId)
         if (gTasks[taskId].tDisplayedMonId < PARTY_SIZE - 1 && currMon[1].species != SPECIES_NONE) // there is another Pokémon to display
         {
             gTasks[taskId].tDisplayedMonId++;
-<<<<<<< HEAD
             //BeginNormalPaletteFade(sHofFadePalettes, 0, 12, 12, RGB(16, 29, 24));
-=======
-            BeginNormalPaletteFade(sHofFadePalettes, 0, 12, 12, RGB(16, 29, 24));
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             gSprites[gTasks[taskId].tMonSpriteId(currPokeID)].oam.priority = 1;
             gTasks[taskId].func = Task_Hof_DisplayMon;
         }
@@ -781,11 +671,7 @@ static void Task_Hof_DoConfetti(u8 taskId)
             if (gTasks[taskId].tMonSpriteId(i) != SPRITE_NONE)
                 gSprites[gTasks[taskId].tMonSpriteId(i)].oam.priority = 1;
         }
-<<<<<<< HEAD
         BeginNormalPaletteFade(sHofFadePalettes, 0, 12, 12, RGB(21, 15, 5)); //red:RGB(14, 3, 2) //halloffame background color fade hue tint shade
-=======
-        BeginNormalPaletteFade(sHofFadePalettes, 0, 12, 12, RGB(16, 29, 24));
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         FillWindowPixelBuffer(0, PIXEL_FILL(0));
         CopyWindowToVram(0, COPYWIN_FULL);
         gTasks[taskId].tFrameCount = 7;
@@ -882,14 +768,10 @@ static void Task_Hof_HandleExit(u8 taskId)
         UnsetBgTilemapBuffer(3);
         ResetBgsAndClearDma3BusyFlags(0);
         DestroyTask(taskId);
-<<<<<<< HEAD
 
         TRY_FREE_AND_SET_NULL(sHofGfxPtr);
         TRY_FREE_AND_SET_NULL(sHofMonPtr);
 
-=======
-        FreeAllHoFMem();
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         StartCredits();
     }
 }
@@ -921,10 +803,6 @@ void CB2_DoHallOfFamePC(void)
         SetVBlankCallback(NULL);
         ClearVramOamPltt_LoadHofPal();
         sHofGfxPtr = AllocZeroed(sizeof(*sHofGfxPtr));
-<<<<<<< HEAD
-=======
-        AllocateHoFTeams();
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         gMain.state = 1;
         break;
     case 1:
@@ -941,11 +819,7 @@ void CB2_DoHallOfFamePC(void)
     case 3:
         if (!LoadHofBgs())
         {
-<<<<<<< HEAD
             struct HallofFameTeam *fameTeam = (struct HallofFameTeam *)(gDecompressionBuffer);
-=======
-            struct HallofFameTeam *fameTeam = gHoFSaveBuffer;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             fameTeam->mon[0] = sDummyFameMon;
             ComputerScreenOpenEffect(0, 0, 0);
             SetVBlankCallback(VBlankCB_HallOfFame);
@@ -974,10 +848,7 @@ void CB2_DoHallOfFamePC(void)
                 gTasks[taskId].tMonSpriteId(i) = SPRITE_NONE;
             }
 
-<<<<<<< HEAD
             sHofMonPtr = AllocZeroed(SECTOR_SIZE * NUM_HOF_SECTORS);
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             SetMainCallback2(CB2_HallOfFame);
         }
         break;
@@ -996,12 +867,8 @@ static void Task_HofPC_CopySaveData(u8 taskId)
         u16 i;
         struct HallofFameTeam *savedTeams;
 
-<<<<<<< HEAD
         CpuCopy16(gDecompressionBuffer, sHofMonPtr, SECTOR_SIZE * NUM_HOF_SECTORS);
         savedTeams = sHofMonPtr;
-=======
-        savedTeams = gHoFSaveBuffer;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         for (i = 0; i < HALL_OF_FAME_MAX_TEAMS; i++, savedTeams++)
         {
             if (savedTeams->mon[0].species == SPECIES_NONE)
@@ -1021,13 +888,8 @@ static void Task_HofPC_CopySaveData(u8 taskId)
 
 static void Task_HofPC_DrawSpritesPrintText(u8 taskId)
 {
-<<<<<<< HEAD
     struct HallofFameTeam *savedTeams = sHofMonPtr;
     struct HallofFameMon* currMon;
-=======
-    struct HallofFameTeam *savedTeams = gHoFSaveBuffer;
-    struct HallofFameMon *currMon;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     u16 i;
 
     for (i = 0; i < gTasks[taskId].tCurrTeamNo; i++)
@@ -1067,11 +929,7 @@ static void Task_HofPC_DrawSpritesPrintText(u8 taskId)
             if (currMon->species == SPECIES_EGG)
                 posY += 10;
 
-<<<<<<< HEAD
             spriteId = CreateMonPicSprite_HandleDeoxys(currMon->species, currMon->tid, currMon->personality, TRUE, posX, posY, i, TAG_NONE);
-=======
-            spriteId = CreateMonPicSprite(currMon->species, currMon->isShiny, currMon->personality, TRUE, posX, posY, i, TAG_NONE);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             gSprites[spriteId].oam.priority = 1;
             gTasks[taskId].tMonSpriteId(i) = spriteId;
         }
@@ -1096,13 +954,8 @@ static void Task_HofPC_DrawSpritesPrintText(u8 taskId)
 
 static void Task_HofPC_PrintMonInfo(u8 taskId)
 {
-<<<<<<< HEAD
     struct HallofFameTeam *savedTeams = sHofMonPtr;
     struct HallofFameMon* currMon;
-=======
-    struct HallofFameTeam *savedTeams = gHoFSaveBuffer;
-    struct HallofFameMon *currMon;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     u16 i;
     u16 currMonID;
 
@@ -1190,11 +1043,7 @@ static void Task_HofPC_HandlePaletteOnExit(u8 taskId)
     struct HallofFameTeam *fameTeam;
 
     CpuCopy16(gPlttBufferFaded, gPlttBufferUnfaded, PLTT_SIZE);
-<<<<<<< HEAD
     fameTeam = (struct HallofFameTeam *)(gDecompressionBuffer);
-=======
-    fameTeam = gHoFSaveBuffer;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     fameTeam->mon[0] = sDummyFameMon;
     ComputerScreenCloseEffect(0, 0, 0);
     gTasks[taskId].func = Task_HofPC_HandleExit;
@@ -1204,11 +1053,7 @@ static void Task_HofPC_HandleExit(u8 taskId)
 {
     if (!IsComputerScreenCloseEffectActive())
     {
-<<<<<<< HEAD
         u8 i;
-=======
-        s32 i;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
         for (i = 0; i < PARTY_SIZE; i++)
         {
@@ -1230,12 +1075,8 @@ static void Task_HofPC_HandleExit(u8 taskId)
         ResetBgsAndClearDma3BusyFlags(0);
         DestroyTask(taskId);
 
-<<<<<<< HEAD
         TRY_FREE_AND_SET_NULL(sHofGfxPtr);
         TRY_FREE_AND_SET_NULL(sHofMonPtr);
-=======
-        FreeAllHoFMem();
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
         ReturnFromHallOfFamePC();
     }
@@ -1270,11 +1111,7 @@ static void HallOfFame_PrintWelcomeText(u8 unusedPossiblyWindowId, u8 unused2)
     CopyWindowToVram(0, COPYWIN_FULL);
 }
 
-<<<<<<< HEAD
 static void HallOfFame_PrintMonInfo(struct HallofFameMon* currMon, u8 unused1, u8 unused2)
-=======
-static void HallOfFame_PrintMonInfo(struct HallofFameMon *currMon, u8 unused1, u8 unused2)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     u8 text[max(32, POKEMON_NAME_LENGTH + 1)];
     u8 *stringPtr;
@@ -1291,15 +1128,6 @@ static void HallOfFame_PrintMonInfo(struct HallofFameMon *currMon, u8 unused1, u
         dexNumber = SpeciesToPokedexNum(currMon->species);
         if (dexNumber != 0xFFFF)
         {
-<<<<<<< HEAD
-=======
-            if (IsNationalPokedexEnabled())
-            {
-                stringPtr[0] = (dexNumber / 1000) + CHAR_0;
-                stringPtr++;
-                dexNumber %= 1000;
-            }
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             stringPtr[0] = (dexNumber / 100) + CHAR_0;
             stringPtr++;
             dexNumber %= 100;
@@ -1329,23 +1157,11 @@ static void HallOfFame_PrintMonInfo(struct HallofFameMon *currMon, u8 unused1, u
     }
     else
     {
-<<<<<<< HEAD
         width = GetStringRightAlignXOffset(FONT_NORMAL, text, 0x80);
         AddTextPrinterParameterized3(0, FONT_NORMAL, width, 1, sMonInfoTextColors, TEXT_SKIP_DRAW, text);
 
         text[0] = CHAR_SLASH;
         stringPtr = StringCopy(text + 1, gSpeciesNames[currMon->species]);
-=======
-        u32 fontId = GetFontIdToFit(text, FONT_NORMAL, 0, 66);
-        width = GetStringRightAlignXOffset(fontId, text, 0x80);
-        AddTextPrinterParameterized3(0, fontId, width, 1, sMonInfoTextColors, TEXT_SKIP_DRAW, text);
-
-        text[0] = CHAR_SLASH;
-        text[1] = EXT_CTRL_CODE_BEGIN;
-        text[2] = EXT_CTRL_CODE_FONT;
-        text[3] = fontId;
-        stringPtr = StringCopy(text + 4, GetSpeciesName(currMon->species));
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
         if (currMon->species != SPECIES_NIDORAN_M && currMon->species != SPECIES_NIDORAN_F)
         {
@@ -1464,11 +1280,7 @@ static void LoadHofGfx(void)
     FreeAllSpritePalettes();
     gReservedSpritePaletteCount = 8;
     LoadCompressedSpriteSheet(sSpriteSheet_Confetti);
-<<<<<<< HEAD
     LoadCompressedSpritePalette(sSpritePalette_Confetti);
-=======
-    LoadSpritePalette(sSpritePalette_Confetti);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void InitHofBgs(void)
@@ -1666,11 +1478,7 @@ static void UpdateDomeConfetti(struct ConfettiUtil *util)
 static void Task_DoDomeConfetti(u8 taskId)
 {
     u32 id = 0;
-<<<<<<< HEAD
     u16 *data = gTasks[taskId].data;
-=======
-    s16 *data = gTasks[taskId].data;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     switch (tState)
     {
@@ -1683,11 +1491,7 @@ static void Task_DoDomeConfetti(u8 taskId)
             gSpecialVar_0x8005 = 0xFFFF;
         }
         LoadCompressedSpriteSheet(sSpriteSheet_Confetti);
-<<<<<<< HEAD
         LoadCompressedSpritePalette(sSpritePalette_Confetti);
-=======
-        LoadSpritePalette(sSpritePalette_Confetti);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         tState++;
         break;
     case 1:

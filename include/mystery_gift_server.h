@@ -71,11 +71,7 @@ struct MysteryGiftServerCmd
 {
     u32 instr;
     u32 parameter;
-<<<<<<< HEAD
     const void * ptr;
-=======
-    const void *ptr;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 struct MysteryGiftServer
@@ -84,7 +80,6 @@ struct MysteryGiftServer
     u32 param;
     u32 funcId;
     u32 cmdidx;
-<<<<<<< HEAD
     const struct MysteryGiftServerCmd * script;
     void * recvBuffer;
     struct WonderCard * card;
@@ -93,29 +88,13 @@ struct MysteryGiftServer
     const void * ramScript;
     u32 ramScriptSize;
     const void * clientScript;
-=======
-    const struct MysteryGiftServerCmd *script;
-    void *recvBuffer;
-    struct WonderCard *card;
-    struct WonderNews *news;
-    struct MysteryGiftLinkGameData *linkGameData;
-    const void *ramScript;
-    u32 ramScriptSize;
-    const void *clientScript;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     u32 clientScriptSize;
     u32 stamp;
     struct MysteryGiftLink link;
 };
 
-<<<<<<< HEAD
 void MysterGiftServer_CreateForCard();
 void MysterGiftServer_CreateForNews();
 u32 MysterGiftServer_Run(u16 * endVal);
-=======
-void MysterGiftServer_CreateForCard(void);
-void MysterGiftServer_CreateForNews(void);
-u32 MysterGiftServer_Run(u16 *endVal);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 #endif //GUARD_MYSTERY_GIFT_SERVER_H

@@ -3,11 +3,7 @@
   "name": "MauvilleCity_BikeShop",
   "layout": "LAYOUT_MAUVILLE_CITY_BIKE_SHOP",
   "music": "MUS_RUSTBORO",
-<<<<<<< HEAD
   "region_map_section": "MAPSEC_BLACKTHORN_CITY",
-=======
-  "region_map_section": "MAPSEC_MAUVILLE_CITY",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -16,17 +12,10 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-<<<<<<< HEAD
   "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_GYM_GUY",
-=======
-  "connections": null,
-  "object_events": [
-    {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_2",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 2,
       "y": 5,
       "elevation": 3,
@@ -39,11 +28,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_ROCKER",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_MAN_5",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 7,
       "y": 6,
       "elevation": 3,
@@ -72,13 +57,9 @@
       "dest_warp_id": "2"
     }
   ],
-<<<<<<< HEAD
   "coord_events": [
 
   ],
-=======
-  "coord_events": [],
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "bg_events": [
     {
       "type": "sign",

@@ -54,11 +54,7 @@ void PreparePokeblockFeedScene(void);
 extern const s8 gPokeblockFlavorCompatibilityTable[NUM_NATURES * FLAVOR_COUNT];
 extern const u8 *const gPokeblockNames[];
 extern const struct CompressedSpriteSheet gPokeblockCase_SpriteSheet;
-<<<<<<< HEAD
 extern const struct CompressedSpritePalette gPokeblockCase_SpritePal;
-=======
-extern const struct SpritePalette gPokeblockCase_SpritePal;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 void OpenPokeblockCase(u8 caseId, void (*callback)(void));
 void OpenPokeblockCaseInBattle(void);

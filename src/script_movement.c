@@ -1,10 +1,6 @@
 #include "global.h"
 #include "script_movement.h"
 #include "event_object_movement.h"
-<<<<<<< HEAD
-=======
-#include "event_scripts.h"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include "task.h"
 #include "util.h"
 #include "constants/event_objects.h"
@@ -93,11 +89,7 @@ static bool8 ScriptMovement_TryAddNewMovement(u8 taskId, u8 objEventId, const u8
             return FALSE;
         }
     }
-<<<<<<< HEAD
     moveScrId = GetMovementScriptIdFromObjectEventId(taskId, OBJ_EVENT_ID_PLAYER);
-=======
-    moveScrId = GetMovementScriptIdFromObjectEventId(taskId, LOCALID_PLAYER);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (moveScrId == OBJECT_EVENTS_COUNT)
     {
         return TRUE;
@@ -150,31 +142,19 @@ static void LoadObjectEventIdFromMovementScript(u8 taskId, u8 moveScrId, u8 *obj
 
 static void ClearMovementScriptFinished(u8 taskId, u8 moveScrId)
 {
-<<<<<<< HEAD
     u16 mask = ~gBitTable[moveScrId];
-=======
-    u16 mask = ~(1u << moveScrId);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     gTasks[taskId].data[0] &= mask;
 }
 
 static void SetMovementScriptFinished(u8 taskId, u8 moveScrId)
 {
-<<<<<<< HEAD
     gTasks[taskId].data[0] |= gBitTable[moveScrId];
-=======
-    gTasks[taskId].data[0] |= (1u << moveScrId);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static bool8 IsMovementScriptFinished(u8 taskId, u8 moveScrId)
 {
-<<<<<<< HEAD
     u16 moveScriptFinished = (u16)gTasks[taskId].data[0] & gBitTable[moveScrId];
-=======
-    u16 moveScriptFinished = (u16)gTasks[taskId].data[0] & (1u << moveScrId);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     if (moveScriptFinished != 0)
         return TRUE;
@@ -225,7 +205,6 @@ static void ScriptMovement_MoveObjects(u8 taskId)
     }
 }
 
-<<<<<<< HEAD
 static void ScriptMovement_TakeStep(u8 taskId, u8 moveScrId, u8 objEventId, const u8 *movementScript)
 {
     u8 nextMoveActionId;
@@ -233,34 +212,6 @@ static void ScriptMovement_TakeStep(u8 taskId, u8 moveScrId, u8 objEventId, cons
     if (ObjectEventIsHeldMovementActive(&gObjectEvents[objEventId])
      && !ObjectEventClearHeldMovementIfFinished(&gObjectEvents[objEventId]))
         return;
-=======
-// from event_object_movement
-#define sTypeFuncId data[1]
-#define sTimer      data[5]
-
-static void ScriptMovement_TakeStep(u8 taskId, u8 moveScrId, u8 objEventId, const u8 *movementScript)
-{
-    u8 nextMoveActionId;
-    struct ObjectEvent *obj = &gObjectEvents[objEventId];
-
-    if (ObjectEventIsHeldMovementActive(obj) && !ObjectEventClearHeldMovementIfFinished(obj))
-    {
-        // If, while undergoing scripted movement,
-        // a non-player object collides with an active follower pokemon,
-        // put that follower into a pokeball
-        // (sTimer helps limit this expensive check to once per step)
-        if (OW_FOLLOWERS_SCRIPT_MOVEMENT && gSprites[obj->spriteId].sTimer == 1
-         && (objEventId = GetObjectObjectCollidesWith(obj, 0, 0, TRUE)) < OBJECT_EVENTS_COUNT
-            // switch `obj` to follower
-         && ((obj = &gObjectEvents[objEventId])->movementType == MOVEMENT_TYPE_FOLLOW_PLAYER)
-         && gSprites[obj->spriteId].sTypeFuncId != 0)
-        {
-            ClearObjectEventMovement(obj, &gSprites[obj->spriteId]);
-            ScriptMovement_StartObjectMovementScript(obj->localId, obj->mapNum, obj->mapGroup, EnterPokeballMovement);
-        }
-        return;
-    }
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     nextMoveActionId = *movementScript;
     if (nextMoveActionId == MOVEMENT_ACTION_STEP_END)
@@ -278,8 +229,3 @@ static void ScriptMovement_TakeStep(u8 taskId, u8 moveScrId, u8 objEventId, cons
     }
 }
 
-<<<<<<< HEAD
-=======
-#undef sTypeFuncId
-#undef sTimer
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

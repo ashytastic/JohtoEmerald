@@ -1,12 +1,9 @@
-<<<<<<< HEAD
 .set LOCALID_MECHADOLL_1, 1
 .set LOCALID_MECHADOLL_2, 2
 .set LOCALID_MECHADOLL_3, 3
 .set LOCALID_MECHADOLL_4, 4
 .set LOCALID_MECHADOLL_5, 5
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 Route110_TrickHousePuzzle5_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route110_TrickHousePuzzle5_OnTransition
 	.byte 0

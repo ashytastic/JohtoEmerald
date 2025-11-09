@@ -3,10 +3,6 @@
 
 #include "palette.h"
 #include "constants/contest.h"
-<<<<<<< HEAD
-=======
-#include "random.h" // for rng_value_t
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 enum
 {
@@ -110,17 +106,9 @@ struct ContestPokemon
     u8 sheen;
     u8 highestRank;
     bool8 gameCleared;
-<<<<<<< HEAD
     u8 unused[10];
     u32 personality;
     u32 otId;
-=======
-    u8 isShiny:1;
-    u8 unused1:7;
-    u32 personality;
-    u32 otId;
-    u8 filter;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 struct ContestTempSave
@@ -136,11 +124,6 @@ struct ContestMoveAnimData
     u16 species;
     u16 targetSpecies;
     bool8 hasTargetAnim:1;
-<<<<<<< HEAD
-=======
-    u8 isShiny:1;
-    u8 targetIsShiny:1;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     u8 contestant;
     u32 personality;
     u32 otId;
@@ -307,19 +290,11 @@ struct ContestResources
     struct ContestGraphicsState *gfxState;
     struct ContestMoveAnimData *moveAnim;
     struct ContestTV *tv;
-<<<<<<< HEAD
     struct ContestUnused * unused;
     u8 * contestBgTilemaps[CONTESTANT_COUNT];
     void * boxBlinkTiles1;
     void * boxBlinkTiles2;
     void * animBgTileBuffer;
-=======
-    struct ContestUnused *unused;
-    u8 *contestBgTilemaps[CONTESTANT_COUNT];
-    void *boxBlinkTiles1;
-    void *boxBlinkTiles2;
-    void *animBgTileBuffer;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 #define eContest (*gContestResources->contest)
@@ -352,11 +327,7 @@ extern struct ContestResources *gContestResources;
 extern struct ContestWinner gCurContestWinner;
 extern u8 gCurContestWinnerIsForArtist;
 extern u8 gCurContestWinnerSaveIdx;
-<<<<<<< HEAD
 extern u32 gContestRngValue;
-=======
-extern rng_value_t gContestRngValue;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 // contest.c
 void ResetLinkContestBoolean(void);

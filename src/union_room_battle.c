@@ -26,11 +26,7 @@ struct UnionRoomBattle
     s16 textState;
 };
 
-<<<<<<< HEAD
 static EWRAM_DATA struct UnionRoomBattle * sBattle = NULL;
-=======
-static EWRAM_DATA struct UnionRoomBattle *sBattle = NULL;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 static const struct BgTemplate sBgTemplates[] = {
     {
@@ -73,19 +69,11 @@ static void CB2_SetUpPartiesAndStartBattle(void)
     }
     IncrementGameStat(GAME_STAT_NUM_UNION_ROOM_BATTLES);
     CalculatePlayerPartyCount();
-<<<<<<< HEAD
     gTrainerBattleOpponent_A = TRAINER_UNION_ROOM;
     SetMainCallback2(CB2_InitBattle);
 }
 
 static void AddTextPrinterForUnionRoomBattle(u8 windowId, const u8 * str, u8 x, u8 y, s32 speed)
-=======
-    TRAINER_BATTLE_PARAM.opponentA = TRAINER_UNION_ROOM;
-    SetMainCallback2(CB2_InitBattle);
-}
-
-static void AddTextPrinterForUnionRoomBattle(u8 windowId, const u8 *str, u8 x, u8 y, s32 speed)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     s32 letterSpacing = 0;
     s32 lineSpacing = 1;
@@ -93,11 +81,7 @@ static void AddTextPrinterForUnionRoomBattle(u8 windowId, const u8 *str, u8 x, u
     AddTextPrinterParameterized4(windowId, FONT_NORMAL, x, y, letterSpacing, lineSpacing, sTextColors, speed, str);
 }
 
-<<<<<<< HEAD
 static bool32 PrintUnionRoomBattleMessage(s16 * state, const u8 * str, s32 speed)
-=======
-static bool32 PrintUnionRoomBattleMessage(s16 *state, const u8 *str, s32 speed)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     switch (*state)
     {

@@ -22,10 +22,7 @@
 #include "graphics.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
-<<<<<<< HEAD
 #include "sound_check_menu.h"
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 enum {
     TAG_VERSION = 1000,
@@ -37,19 +34,12 @@ enum {
 #define VERSION_BANNER_LEFT_X 98
 #define VERSION_BANNER_RIGHT_X 162
 #define VERSION_BANNER_Y 2
-<<<<<<< HEAD
 #define VERSION_BANNER_Y_GOAL 58
-=======
-#define VERSION_BANNER_Y_GOAL 66
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #define START_BANNER_X 128
 
 #define CLEAR_SAVE_BUTTON_COMBO (B_BUTTON | SELECT_BUTTON | DPAD_UP)
 #define RESET_RTC_BUTTON_COMBO (B_BUTTON | SELECT_BUTTON | DPAD_LEFT)
-<<<<<<< HEAD
 #define SOUND_TEST_BUTTON_COMBO (B_BUTTON | SELECT_BUTTON | DPAD_RIGHT)
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #define BERRY_UPDATE_BUTTON_COMBO (B_BUTTON | SELECT_BUTTON)
 #define A_B_START_SELECT (A_BUTTON | B_BUTTON | START_BUTTON | SELECT_BUTTON)
 
@@ -60,10 +50,7 @@ static void Task_TitleScreenPhase3(u8);
 static void CB2_GoToMainMenu(void);
 static void CB2_GoToClearSaveDataScreen(void);
 static void CB2_GoToResetRtcScreen(void);
-<<<<<<< HEAD
 static void CB2_GoToSoundCheckScreen(void);
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static void CB2_GoToBerryFixScreen(void);
 static void CB2_GoToCopyrightScreen(void);
 static void UpdateLegendaryMarkingColor(u8);
@@ -76,17 +63,10 @@ static void SpriteCB_PokemonLogoShine(struct Sprite *sprite);
 // const rom data
 static const u16 sUnusedUnknownPal[] = INCBIN_U16("graphics/title_screen/unused.gbapal");
 
-<<<<<<< HEAD
 static const u32 sTitleScreenRayquazaGfx[] = INCBIN_U32("graphics/title_screen/rayquaza.4bpp.lz");
 static const u32 sTitleScreenRayquazaTilemap[] = INCBIN_U32("graphics/title_screen/rayquaza.bin.lz");
 static const u32 sTitleScreenLogoShineGfx[] = INCBIN_U32("graphics/title_screen/logo_shine.4bpp.lz");
 //static const u32 sTitleScreenCloudsGfx[] = INCBIN_U32("graphics/title_screen/clouds.4bpp.lz");
-=======
-static const u32 sTitleScreenRayquazaGfx[] = INCBIN_U32("graphics/title_screen/rayquaza.4bpp.smol");
-static const u32 sTitleScreenRayquazaTilemap[] = INCBIN_U32("graphics/title_screen/rayquaza.bin.smolTM");
-static const u32 sTitleScreenLogoShineGfx[] = INCBIN_U32("graphics/title_screen/logo_shine.4bpp.smol");
-static const u32 sTitleScreenCloudsGfx[] = INCBIN_U32("graphics/title_screen/clouds.4bpp.smol");
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 
 
@@ -469,7 +449,6 @@ static void CreateCopyrightBanner(s16 x, s16 y)
     {
         spriteId = CreateSprite(&sStartCopyrightBannerSpriteTemplate, x, y, 0);
         StartSpriteAnim(&gSprites[spriteId], i + NUM_PRESS_START_FRAMES);
-<<<<<<< HEAD
 
         // Make the version/copyright segments blink like "Press Start"
         gSprites[spriteId].sAnimate = TRUE;   // <— add this line
@@ -478,11 +457,6 @@ static void CreateCopyrightBanner(s16 x, s16 y)
 }
 
 
-=======
-    }
-}
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #undef sAnimate
 #undef sTimer
 
@@ -533,12 +507,8 @@ static void SpriteCB_PokemonLogoShine(struct Sprite *sprite)
              || sprite->x == DISPLAY_WIDTH / 2 + (4 * SHINE_SPEED)
              || sprite->x == DISPLAY_WIDTH / 2 + (5 * SHINE_SPEED)
              || sprite->x == DISPLAY_WIDTH / 2 + (6 * SHINE_SPEED))
-<<<<<<< HEAD
                 //gPlttBufferFaded[0] = RGB(24, 31, 12);
                 gPlttBufferFaded[0] = RGB(1, 1, 1);
-=======
-                gPlttBufferFaded[0] = RGB(24, 31, 12);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             else
                 gPlttBufferFaded[0] = backgroundColor;
         }
@@ -635,7 +605,6 @@ void CB2_InitTitleScreen(void)
         break;
     case 1:
         // bg2
-<<<<<<< HEAD
         LZ77UnCompVram(gTitleScreenPokemonLogoGfx, (void *)(BG_CHAR_ADDR(0)));
         LZ77UnCompVram(gTitleScreenPokemonLogoTilemap, (void *)(BG_SCREEN_ADDR(9)));
         LoadPalette(gTitleScreenBgPalettes, BG_PLTT_ID(0), 15 * PLTT_SIZE_4BPP);
@@ -645,17 +614,6 @@ void CB2_InitTitleScreen(void)
         // bg1
         //LZ77UnCompVram(sTitleScreenCloudsGfx, (void *)(BG_CHAR_ADDR(3)));
         //LZ77UnCompVram(gTitleScreenCloudsTilemap, (void *)(BG_SCREEN_ADDR(27)));
-=======
-        DecompressDataWithHeaderVram(gTitleScreenPokemonLogoGfx, (void *)(BG_CHAR_ADDR(0)));
-        DecompressDataWithHeaderVram(gTitleScreenPokemonLogoTilemap, (void *)(BG_SCREEN_ADDR(9)));
-        LoadPalette(gTitleScreenBgPalettes, BG_PLTT_ID(0), 15 * PLTT_SIZE_4BPP);
-        // bg3
-        DecompressDataWithHeaderVram(sTitleScreenRayquazaGfx, (void *)(BG_CHAR_ADDR(2)));
-        DecompressDataWithHeaderVram(sTitleScreenRayquazaTilemap, (void *)(BG_SCREEN_ADDR(26)));
-        // bg1
-        DecompressDataWithHeaderVram(sTitleScreenCloudsGfx, (void *)(BG_CHAR_ADDR(3)));
-        DecompressDataWithHeaderVram(gTitleScreenCloudsTilemap, (void *)(BG_SCREEN_ADDR(27)));
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         ScanlineEffect_Stop();
         ResetTasks();
         ResetSpriteData();
@@ -709,11 +667,7 @@ void CB2_InitTitleScreen(void)
                                     | DISPCNT_OBJ_ON
                                     | DISPCNT_WIN0_ON
                                     | DISPCNT_OBJWIN_ON);
-<<<<<<< HEAD
         m4aSongNumStart(MUS_HG_TITLE);
-=======
-        m4aSongNumStart(MUS_TITLE);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         gMain.state = 5;
         break;
     case 5:
@@ -811,13 +765,8 @@ static void Task_TitleScreenPhase2(u8 taskId)
                                     | DISPCNT_BG1_ON
                                     | DISPCNT_BG2_ON
                                     | DISPCNT_OBJ_ON);
-<<<<<<< HEAD
         CreatePressStartBanner(START_BANNER_X, 138); //108 //90
         CreateCopyrightBanner(START_BANNER_X, 148); //version number
-=======
-        CreatePressStartBanner(START_BANNER_X, 108);
-        CreateCopyrightBanner(START_BANNER_X, 148);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         gTasks[taskId].tBg1Y = 0;
         gTasks[taskId].func = Task_TitleScreenPhase3;
     }
@@ -856,15 +805,12 @@ static void Task_TitleScreenPhase3(u8 taskId)
         BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
         SetMainCallback2(CB2_GoToResetRtcScreen);
     }
-<<<<<<< HEAD
     else if (JOY_HELD(SOUND_TEST_BUTTON_COMBO) == SOUND_TEST_BUTTON_COMBO)
     {
         FadeOutBGM(4);
         BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
         SetMainCallback2(CB2_GoToSoundCheckScreen);
     }
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     else if (JOY_HELD(BERRY_UPDATE_BUTTON_COMBO) == BERRY_UPDATE_BUTTON_COMBO)
     {
         FadeOutBGM(4);
@@ -899,11 +845,7 @@ static void CB2_GoToMainMenu(void)
 static void CB2_GoToCopyrightScreen(void)
 {
     if (!UpdatePaletteFade())
-<<<<<<< HEAD
         SetMainCallback2(CB2_CopyrightScreen);
-=======
-        SetMainCallback2(CB2_InitCopyrightScreenAfterTitleScreen);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void CB2_GoToClearSaveDataScreen(void)
@@ -918,7 +860,6 @@ static void CB2_GoToResetRtcScreen(void)
         SetMainCallback2(CB2_InitResetRtcScreen);
 }
 
-<<<<<<< HEAD
 static void CB2_GoToSoundCheckScreen(void)
 {
     if (!UpdatePaletteFade())
@@ -927,8 +868,6 @@ static void CB2_GoToSoundCheckScreen(void)
     BuildOamBuffer();
 }
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static void CB2_GoToBerryFixScreen(void)
 {
     if (!UpdatePaletteFade())
@@ -940,10 +879,7 @@ static void CB2_GoToBerryFixScreen(void)
 
 static void UpdateLegendaryMarkingColor(u8 frameNum)
 {
-<<<<<<< HEAD
     return;
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if ((frameNum % 4) == 0) // Change color every 4th frame
     {
         s32 intensity = Cos(frameNum, 128) + 128;

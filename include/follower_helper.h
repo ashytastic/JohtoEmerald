@@ -1,7 +1,6 @@
 #ifndef GUARD_FOLLOWER_HELPER_H
 #define GUARD_FOLLOWER_HELPER_H
 
-<<<<<<< HEAD
 enum {
   FOLLOWER_EMOTION_HAPPY = 0,
   FOLLOWER_EMOTION_NEUTRAL, // Also called "No emotion"
@@ -21,52 +20,18 @@ enum {
 union __attribute__((packed)) MsgConditionData {
     u8 bytes[3];
     struct __attribute__((packed)) {
-=======
-enum FollowerEmotion
-{
-    FOLLOWER_EMOTION_HAPPY = 0,
-    FOLLOWER_EMOTION_NEUTRAL, // Also called "No emotion"
-    FOLLOWER_EMOTION_SAD,
-    FOLLOWER_EMOTION_UPSET,
-    FOLLOWER_EMOTION_ANGRY,
-    FOLLOWER_EMOTION_PENSIVE,
-    FOLLOWER_EMOTION_LOVE,
-    FOLLOWER_EMOTION_SURPRISE,
-    FOLLOWER_EMOTION_CURIOUS,
-    FOLLOWER_EMOTION_MUSIC,
-    FOLLOWER_EMOTION_POISONED,
-    FOLLOWER_EMOTION_LENGTH,
-};
-
-// Can be either 3 bytes, a u16 and a byte, or a 24-bit value
-union __attribute__((packed)) MsgConditionData
-{
-    u8 bytes[3];
-    struct __attribute__((packed))
-    {
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         u16 hw;
         u8 b;
     } split;
     u32 raw:24;
 }; // size = 0x3
 
-<<<<<<< HEAD
 struct __attribute__((packed)) MsgCondition {
-=======
-struct __attribute__((packed)) MsgCondition
-{
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     u32 type:8;
     union MsgConditionData data;
 }; // size = 0x4
 
-<<<<<<< HEAD
 struct FollowerMsgInfoExtended {
-=======
-struct FollowerMsgInfoExtended
-{
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     const u8 *text;
     const u8 *script;
 
@@ -81,7 +46,6 @@ struct FollowerMsgInfoExtended
 }; // size = 8 + 4 + 5*4 = 32, 0x20
 
 // Follower message conditions
-<<<<<<< HEAD
 #define MSG_COND_NONE           0
 #define MSG_COND_SPECIES        1
 #define MSG_COND_TYPE           2
@@ -99,39 +63,15 @@ struct FollowerMsgInfoExtended
 
 // Convenience macro: no payload needed; we just check the current map type.
 #define MATCH_OUTDOORS()       MATCH_U24(MSG_COND_OUTDOORS, 0)
-=======
-enum MessageCondition
-{
-    MSG_COND_NONE,
-    MSG_COND_SPECIES,
-    MSG_COND_TYPE,
-    MSG_COND_STATUS,
-    MSG_COND_MAPSEC,
-    MSG_COND_MAP,
-    MSG_COND_ON_MB,
-    MSG_COND_WEATHER,
-    MSG_COND_MUSIC,
-    MSG_COND_TIME_OF_DAY,
-    MSG_COND_NEAR_MB
-};
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 #define MATCH_U24(type, value) {type, {.raw = value}}
 #define MATCH_U16(type, value1, value2) {type, {.split = {.hw = value1, .b = value2}}}
 #define MATCH_U8(type, v1, v2, v3) {type, {.bytes = {v1, v2, v3}}}
 
-<<<<<<< HEAD
 #define MATCH_SPECIES(species) MATCH_U24(MSG_COND_SPECIES, species)
 #define MATCH_TYPES(type1, type2) MATCH_U8(MSG_COND_TYPE, type1, type2, 0)
 // Checks that follower has *neither* of the two types
 #define MATCH_NOT_TYPES(type1, type2) MATCH_U8(MSG_COND_TYPE, type1, type2, TYPE_NONE)
-=======
-#define MATCH_SPECIES(species) MATCH_U16(MSG_COND_SPECIES, species, 0)
-#define MATCH_NOT_SPECIES(species) MATCH_U16(MSG_COND_SPECIES, species, 1)
-#define MATCH_TYPES(type1, type2) MATCH_U8(MSG_COND_TYPE, type1, type2, 0)
-// Checks that follower has *neither* of the two types
-#define MATCH_NOT_TYPES(type1, type2) MATCH_U8(MSG_COND_TYPE, type1, type2, TYPE_NONE | 1)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #define MATCH_STATUS(status) MATCH_U24(MSG_COND_STATUS, status)
 #define MATCH_MAPSEC(mapsec) MATCH_U24(MSG_COND_MAPSEC, mapsec)
 #define MATCH_MAP_RAW(mapGroup, mapNum) MATCH_U8(MSG_COND_MAP, mapGroup, mapNum, 0)
@@ -144,12 +84,7 @@ enum MessageCondition
 // Matches metatile behavior within a '+' shape of size `distance`
 #define MATCH_NEAR_MB(mb, distance) MATCH_U8(MSG_COND_NEAR_MB, mb, distance, 0)
 
-<<<<<<< HEAD
 enum {
-=======
-enum ConditionalMessage
-{
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     COND_MSG_CELEBI,
     COND_MSG_FIRE,
     COND_MSG_EVER_GRANDE,
@@ -180,10 +115,6 @@ enum ConditionalMessage
     COND_MSG_BURN,
     COND_MSG_DAY,
     COND_MSG_NIGHT,
-<<<<<<< HEAD
-=======
-    COND_MSG_ABNORMAL_WEATHER,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     COND_MSG_COUNT,
 };
 

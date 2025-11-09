@@ -1,5 +1,4 @@
 SealedChamber_InnerRoom_MapScripts::
-<<<<<<< HEAD
 	map_script MAP_SCRIPT_ON_TRANSITION, SealedChamber_InnerRoom_OnTransition
 	.byte 0
 
@@ -8,10 +7,6 @@ SealedChamber_InnerRoom_OnTransition:
 	setflag FLAG_LANDMARK_SEALED_CHAMBER
 	end
 
-=======
-	.byte 0
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 SealedChamber_InnerRoom_EventScript_BrailleBackWall::
 	lockall
 	braillemsgbox SealedChamber_InnerRoom_Braille_FirstWailordLastRelicanth
@@ -35,7 +30,6 @@ SealedChamber_InnerRoom_EventScript_BrailleBackWall::
 	waitstate
 	playse SE_DOOR
 	delay 40
-<<<<<<< HEAD
 	special DoSealedChamberShakingEffect_Short
 	waitstate
 	playse SE_DOOR
@@ -44,8 +38,6 @@ SealedChamber_InnerRoom_EventScript_BrailleBackWall::
 	waitstate
 	playse SE_DOOR
 	delay 40
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox gText_DoorOpenedFarAway, MSGBOX_DEFAULT
 	closemessage
 	fadeinbgm 0

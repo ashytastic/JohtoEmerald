@@ -3,11 +3,7 @@
   "name": "VerdanturfTown",
   "layout": "LAYOUT_VERDANTURF_TOWN",
   "music": "MUS_VERDANTURF",
-<<<<<<< HEAD
   "region_map_section": "MAPSEC_ROUTE_26",
-=======
-  "region_map_section": "MAPSEC_VERDANTURF_TOWN",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_TOWN",
@@ -30,11 +26,7 @@
   ],
   "object_events": [
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_GYM_GUY",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_MAN_2",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 4,
       "y": 17,
       "elevation": 3,
@@ -47,10 +39,6 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
-=======
-      "local_id": "LOCALID_VERDANTURF_TWIN",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_TWIN",
       "x": 9,
       "y": 2,
@@ -64,11 +52,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_MR_FUJI",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 7,
       "y": 11,
       "elevation": 3,
@@ -92,7 +76,6 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "VerdanturfTown_EventScript_Camper",
       "flag": "0"
-<<<<<<< HEAD
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
@@ -132,8 +115,6 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "0"
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "warp_events": [
@@ -187,13 +168,9 @@
       "dest_warp_id": "0"
     }
   ],
-<<<<<<< HEAD
   "coord_events": [
 
   ],
-=======
-  "coord_events": [],
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "bg_events": [
     {
       "type": "sign",
@@ -259,7 +236,6 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "VerdanturfTown_EventScript_RusturfTunnelSign"
     }
-<<<<<<< HEAD
   ],
   "heal_locations": [
     {
@@ -267,7 +243,5 @@
       "x": 16,
       "y": 4
 	}
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   ]
 }

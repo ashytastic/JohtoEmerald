@@ -1,18 +1,6 @@
 #ifndef GUARD_BATTLE_BG_H
 #define GUARD_BATTLE_BG_H
 
-<<<<<<< HEAD
-=======
-struct BattleBackground
-{
-    const void *tileset;
-    const void *tilemap;
-    const void *entryTileset;
-    const void *entryTilemap;
-    const void *palette;
-};
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 void BattleInitBgsAndWindows(void);
 void InitBattleBgsVideo(void);
 void LoadBattleMenuWindowGfx(void);
@@ -21,9 +9,5 @@ void LoadBattleTextboxAndBackground(void);
 void InitLinkBattleVsScreen(u8 taskId);
 void DrawBattleEntryBackground(void);
 bool8 LoadChosenBattleElement(u8 caseId);
-<<<<<<< HEAD
-=======
-void DrawTerrainTypeBattleBackground(void);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 #endif // GUARD_BATTLE_BG_H

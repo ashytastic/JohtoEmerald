@@ -3,11 +3,7 @@
   "name": "Route110",
   "layout": "LAYOUT_ROUTE110",
   "music": "MUS_ROUTE110",
-<<<<<<< HEAD
   "region_map_section": "MAPSEC_ROUTE_35",
-=======
-  "region_map_section": "MAPSEC_ROUTE_110",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_ROUTE",
@@ -31,7 +27,6 @@
       "map": "MAP_ROUTE103",
       "offset": 60,
       "direction": "left"
-<<<<<<< HEAD
     },
     {
       "map": "MAP_CAVE_OF_ORIGIN_UNUSED_RUBY_SAPPHIRE_MAP1",
@@ -42,8 +37,6 @@
       "map": "MAP_ROUTE118",
       "offset": 40,
       "direction": "up"
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "object_events": [
@@ -61,11 +54,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_BIKER",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 29,
       "y": 79,
       "elevation": 4,
@@ -78,11 +67,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 14,
       "y": 69,
       "elevation": 3,
@@ -95,11 +80,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_BIKER",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 9,
       "y": 57,
       "elevation": 4,
@@ -112,11 +93,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 10,
       "y": 11,
       "elevation": 3,
@@ -142,11 +119,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_WORKER_M",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_BOY_3",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 15,
       "y": 7,
       "elevation": 3,
@@ -172,11 +145,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_BIKER",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 19,
       "y": 31,
       "elevation": 4,
@@ -202,11 +171,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_BIKER",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 16,
       "y": 55,
       "elevation": 4,
@@ -219,11 +184,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_TRAINER_TOWER_DUDE",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 3,
       "y": 39,
       "elevation": 3,
@@ -236,11 +197,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_LASS",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 33,
       "y": 15,
       "elevation": 3,
@@ -253,11 +210,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_SUPER_NERD",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_MANIAC",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 34,
       "y": 40,
       "elevation": 3,
@@ -270,11 +223,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_FISHER",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 10,
       "y": 19,
       "elevation": 3,
@@ -334,15 +283,9 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-<<<<<<< HEAD
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route110_EventScript_ItemDireHit",
       "flag": "FLAG_ITEM_GARBAGEFLAG"
-=======
-      "trainer_sight_or_berry_tree_id": "ITEM_DIRE_HIT",
-      "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_110_DIRE_HIT"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -353,22 +296,12 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-<<<<<<< HEAD
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route110_EventScript_ItemRareCandy",
       "flag": "FLAG_ITEM_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BIKER",
-=======
-      "trainer_sight_or_berry_tree_id": "ITEM_RARE_CANDY",
-      "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_110_RARE_CANDY"
-    },
-    {
-      "local_id": "LOCALID_CHALLENGE_BIKER",
-      "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 27,
       "y": 92,
       "elevation": 3,
@@ -381,11 +314,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 7,
       "y": 83,
       "elevation": 3,
@@ -395,17 +324,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route110_EventScript_AquaGrunt1",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
-=======
-      "flag": "FLAG_HIDE_ROUTE_110_TEAM_AQUA"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 8,
       "y": 83,
       "elevation": 3,
@@ -415,17 +337,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route110_EventScript_AquaGrunt2",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
-=======
-      "flag": "FLAG_HIDE_ROUTE_110_TEAM_AQUA"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 9,
       "y": 83,
       "elevation": 3,
@@ -435,17 +350,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route110_EventScript_AquaGrunt3",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
-=======
-      "flag": "FLAG_HIDE_ROUTE_110_TEAM_AQUA"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 10,
       "y": 83,
       "elevation": 3,
@@ -455,17 +363,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route110_EventScript_AquaGrunt4",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
-=======
-      "flag": "FLAG_HIDE_ROUTE_110_TEAM_AQUA"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 8,
       "y": 82,
       "elevation": 3,
@@ -475,17 +376,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BIKER",
-=======
-      "flag": "FLAG_HIDE_ROUTE_110_TEAM_AQUA"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 21,
       "y": 78,
       "elevation": 4,
@@ -498,10 +392,6 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
-=======
-      "local_id": "LOCALID_ROUTE110_RIVAL",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
       "x": 34,
       "y": 54,
@@ -512,16 +402,9 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
-=======
-      "flag": "FLAG_HIDE_ROUTE_110_RIVAL"
-    },
-    {
-      "local_id": "LOCALID_ROUTE110_RIVAL_ON_BIKE",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_VAR_3",
       "x": 34,
       "y": 54,
@@ -532,11 +415,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
-=======
-      "flag": "FLAG_HIDE_ROUTE_110_RIVAL_ON_BIKE"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
@@ -552,11 +431,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_BILL",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_POKEFAN_F",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 10,
       "y": 76,
       "elevation": 3,
@@ -569,11 +444,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_ATTENDANT_M",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_POKEFAN_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 7,
       "y": 76,
       "elevation": 3,
@@ -599,11 +470,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_ROCKER",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_MAN_5",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 36,
       "y": 40,
       "elevation": 3,
@@ -624,22 +491,12 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-<<<<<<< HEAD
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route110_EventScript_ItemElixir",
       "flag": "FLAG_ITEM_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PROF_ELM",
-=======
-      "trainer_sight_or_berry_tree_id": "ITEM_ELIXIR",
-      "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_110_ELIXIR"
-    },
-    {
-      "local_id": "LOCALID_ROUTE110_BIRCH",
-      "graphics_id": "OBJ_EVENT_GFX_PROF_BIRCH",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 9,
       "y": 79,
       "elevation": 3,
@@ -649,11 +506,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
-=======
-      "flag": "FLAG_HIDE_ROUTE_110_BIRCH"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "warp_events": [
@@ -675,44 +528,28 @@
       "x": 15,
       "y": 16,
       "elevation": 0,
-<<<<<<< HEAD
       "dest_map": "MAP_ROUTE110_SEASIDE_CYCLING_ROAD_SOUTH_ENTRANCE",
-=======
-      "dest_map": "MAP_ROUTE110_SEASIDE_CYCLING_ROAD_NORTH_ENTRANCE",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "dest_warp_id": "0"
     },
     {
       "x": 18,
       "y": 16,
       "elevation": 0,
-<<<<<<< HEAD
       "dest_map": "MAP_ROUTE110_SEASIDE_CYCLING_ROAD_SOUTH_ENTRANCE",
-=======
-      "dest_map": "MAP_ROUTE110_SEASIDE_CYCLING_ROAD_NORTH_ENTRANCE",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "dest_warp_id": "2"
     },
     {
       "x": 16,
       "y": 88,
       "elevation": 0,
-<<<<<<< HEAD
       "dest_map": "MAP_ROUTE110_SEASIDE_CYCLING_ROAD_NORTH_ENTRANCE",
-=======
-      "dest_map": "MAP_ROUTE110_SEASIDE_CYCLING_ROAD_SOUTH_ENTRANCE",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "dest_warp_id": "0"
     },
     {
       "x": 19,
       "y": 88,
       "elevation": 0,
-<<<<<<< HEAD
       "dest_map": "MAP_ROUTE110_SEASIDE_CYCLING_ROAD_NORTH_ENTRANCE",
-=======
-      "dest_map": "MAP_ROUTE110_SEASIDE_CYCLING_ROAD_SOUTH_ENTRANCE",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "dest_warp_id": "2"
     }
   ],
@@ -740,11 +577,7 @@
       "x": 33,
       "y": 56,
       "elevation": 3,
-<<<<<<< HEAD
       "var": "VAR_GARBAGEVAR",
-=======
-      "var": "VAR_ROUTE110_STATE",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "var_value": "0",
       "script": "Route110_EventScript_RivalTrigger1"
     },
@@ -753,11 +586,7 @@
       "x": 34,
       "y": 56,
       "elevation": 3,
-<<<<<<< HEAD
       "var": "VAR_GARBAGEVAR",
-=======
-      "var": "VAR_ROUTE110_STATE",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "var_value": "0",
       "script": "Route110_EventScript_RivalTrigger2"
     },
@@ -766,11 +595,7 @@
       "x": 35,
       "y": 56,
       "elevation": 3,
-<<<<<<< HEAD
       "var": "VAR_GARBAGEVAR",
-=======
-      "var": "VAR_ROUTE110_STATE",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "var_value": "0",
       "script": "Route110_EventScript_RivalTrigger3"
     },

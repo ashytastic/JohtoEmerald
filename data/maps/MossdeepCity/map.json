@@ -44,11 +44,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 50,
       "y": 34,
       "elevation": 5,
@@ -61,11 +57,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_BILL",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_POKEFAN_F",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 32,
       "y": 12,
       "elevation": 5,
@@ -112,21 +104,12 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-<<<<<<< HEAD
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MossdeepCity_EventScript_ItemNetBall",
       "flag": "FLAG_ITEM_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BALDING_MAN",
-=======
-      "trainer_sight_or_berry_tree_id": "ITEM_NET_BALL",
-      "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_MOSSDEEP_CITY_NET_BALL"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 55,
       "y": 5,
       "elevation": 7,
@@ -139,11 +122,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_1",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 56,
       "y": 21,
       "elevation": 7,
@@ -156,11 +135,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_BOY",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_BOY_2",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 23,
       "y": 13,
       "elevation": 5,
@@ -173,12 +148,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_PETREL",
-=======
-      "local_id": "LOCALID_MOSSDEEP_GRUNT_1",
-      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 44,
       "y": 23,
       "elevation": 5,
@@ -188,18 +158,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PETREL",
-=======
-      "flag": "FLAG_HIDE_MOSSDEEP_CITY_TEAM_MAGMA"
-    },
-    {
-      "local_id": "LOCALID_MOSSDEEP_GRUNT_2",
-      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 44,
       "y": 24,
       "elevation": 5,
@@ -209,18 +171,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PETREL",
-=======
-      "flag": "FLAG_HIDE_MOSSDEEP_CITY_TEAM_MAGMA"
-    },
-    {
-      "local_id": "LOCALID_MOSSDEEP_GRUNT_3",
-      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 44,
       "y": 25,
       "elevation": 5,
@@ -230,18 +184,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PETREL",
-=======
-      "flag": "FLAG_HIDE_MOSSDEEP_CITY_TEAM_MAGMA"
-    },
-    {
-      "local_id": "LOCALID_MOSSDEEP_GRUNT_4",
-      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 44,
       "y": 26,
       "elevation": 5,
@@ -251,18 +197,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ARCHER",
-=======
-      "flag": "FLAG_HIDE_MOSSDEEP_CITY_TEAM_MAGMA"
-    },
-    {
-      "local_id": "LOCALID_MOSSDEEP_MAXIE",
-      "graphics_id": "OBJ_EVENT_GFX_MAXIE",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 45,
       "y": 25,
       "elevation": 5,
@@ -272,11 +210,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
-=======
-      "flag": "FLAG_HIDE_MOSSDEEP_CITY_TEAM_MAGMA"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
@@ -292,12 +226,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_PROF_OAK",
-=======
-      "local_id": "LOCALID_MOSSDEEP_SCOTT",
-      "graphics_id": "OBJ_EVENT_GFX_SCOTT",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 61,
       "y": 29,
       "elevation": 5,
@@ -307,11 +236,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MossdeepCity_EventScript_Scott",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
-=======
-      "flag": "FLAG_HIDE_MOSSDEEP_CITY_SCOTT"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
@@ -325,7 +250,6 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MossdeepCity_EventScript_BlackBelt",
       "flag": "0"
-<<<<<<< HEAD
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_JIRACHI",
@@ -391,8 +315,6 @@
       "trainer_sight_or_berry_tree_id": "2",
       "script": "NULL",
       "flag": "0"
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "warp_events": [
@@ -509,11 +431,7 @@
       "x": 42,
       "y": 21,
       "elevation": 5,
-<<<<<<< HEAD
       "var": "VAR_GARBAGEVAR",
-=======
-      "var": "VAR_MOSSDEEP_CITY_STATE",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "var_value": "1",
       "script": "MossdeepCity_EventScript_TeamMagmaEnterSpaceCenter"
     },
@@ -522,11 +440,7 @@
       "x": 41,
       "y": 22,
       "elevation": 5,
-<<<<<<< HEAD
       "var": "VAR_GARBAGEVAR",
-=======
-      "var": "VAR_MOSSDEEP_CITY_STATE",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "var_value": "1",
       "script": "MossdeepCity_EventScript_TeamMagmaEnterSpaceCenter"
     },
@@ -535,11 +449,7 @@
       "x": 41,
       "y": 23,
       "elevation": 5,
-<<<<<<< HEAD
       "var": "VAR_GARBAGEVAR",
-=======
-      "var": "VAR_MOSSDEEP_CITY_STATE",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "var_value": "1",
       "script": "MossdeepCity_EventScript_TeamMagmaEnterSpaceCenter"
     },
@@ -548,11 +458,7 @@
       "x": 41,
       "y": 24,
       "elevation": 5,
-<<<<<<< HEAD
       "var": "VAR_GARBAGEVAR",
-=======
-      "var": "VAR_MOSSDEEP_CITY_STATE",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "var_value": "1",
       "script": "MossdeepCity_EventScript_TeamMagmaEnterSpaceCenter"
     },
@@ -561,11 +467,7 @@
       "x": 40,
       "y": 25,
       "elevation": 5,
-<<<<<<< HEAD
       "var": "VAR_GARBAGEVAR",
-=======
-      "var": "VAR_MOSSDEEP_CITY_STATE",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "var_value": "1",
       "script": "MossdeepCity_EventScript_TeamMagmaEnterSpaceCenter"
     },
@@ -574,11 +476,7 @@
       "x": 40,
       "y": 26,
       "elevation": 5,
-<<<<<<< HEAD
       "var": "VAR_GARBAGEVAR",
-=======
-      "var": "VAR_MOSSDEEP_CITY_STATE",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "var_value": "1",
       "script": "MossdeepCity_EventScript_TeamMagmaEnterSpaceCenter"
     }
@@ -648,7 +546,6 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "MossdeepCity_EventScript_WhiteRock"
     }
-<<<<<<< HEAD
   ],
   "heal_locations": [
     {
@@ -656,7 +553,5 @@
       "x": 28,
       "y": 17
 	}
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   ]
 }

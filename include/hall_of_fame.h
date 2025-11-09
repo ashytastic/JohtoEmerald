@@ -1,26 +1,6 @@
 #ifndef GUARD_HALL_OF_FAME_H
 #define GUARD_HALL_OF_FAME_H
 
-<<<<<<< HEAD
-=======
-struct HallofFameMon
-{
-    u32 tid;
-    u32 personality;
-    u16 isShiny:1;
-    u16 species:15;
-    u8 lvl;
-    u8 nickname[POKEMON_NAME_LENGTH];
-};
-
-struct HallofFameTeam
-{
-    struct HallofFameMon mon[PARTY_SIZE];
-};
-
-extern struct HallofFameTeam *gHoFSaveBuffer;
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 void CB2_DoHallOfFameScreen(void);
 void CB2_DoHallOfFameScreenDontSaveData(void);
 void CB2_DoHallOfFamePC(void);

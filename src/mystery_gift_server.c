@@ -13,11 +13,7 @@ enum {
     FUNC_RUN,
 };
 
-<<<<<<< HEAD
 EWRAM_DATA static struct MysteryGiftServer * sServer = NULL;
-=======
-EWRAM_DATA static struct MysteryGiftServer *sServer = NULL;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 static void MysteryGiftServer_Init(struct MysteryGiftServer *, const void *, u32, u32);
 static void MysteryGiftServer_Free(struct MysteryGiftServer *);
@@ -38,11 +34,7 @@ void MysterGiftServer_CreateForCard(void)
     MysteryGiftServer_Init(sServer, gMysteryGiftServerScript_SendWonderCard, 0, 1);
 }
 
-<<<<<<< HEAD
 u32 MysterGiftServer_Run(u16 * endVal)
-=======
-u32 MysterGiftServer_Run(u16 *endVal)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     u32 result;
     if (sServer == NULL)
@@ -57,11 +49,7 @@ u32 MysterGiftServer_Run(u16 *endVal)
     return result;
 }
 
-<<<<<<< HEAD
 static void MysteryGiftServer_Init(struct MysteryGiftServer * svr, const void * script, u32 sendPlayerId, u32 recvPlayerId)
-=======
-static void MysteryGiftServer_Init(struct MysteryGiftServer *svr, const void *script, u32 sendPlayerId, u32 recvPlayerId)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     svr->unused = 0;
     svr->funcId = FUNC_INIT;
@@ -74,11 +62,7 @@ static void MysteryGiftServer_Init(struct MysteryGiftServer *svr, const void *sc
     MysteryGiftLink_Init(&svr->link, sendPlayerId, recvPlayerId);
 }
 
-<<<<<<< HEAD
 static void MysteryGiftServer_Free(struct MysteryGiftServer * svr)
-=======
-static void MysteryGiftServer_Free(struct MysteryGiftServer *svr)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     Free(svr->card);
     Free(svr->news);
@@ -86,11 +70,7 @@ static void MysteryGiftServer_Free(struct MysteryGiftServer *svr)
     Free(svr->linkGameData);
 }
 
-<<<<<<< HEAD
 static void MysteryGiftServer_InitSend(struct MysteryGiftServer * svr, u32 ident, const void * src, u32 size)
-=======
-static void MysteryGiftServer_InitSend(struct MysteryGiftServer *svr, u32 ident, const void *src, u32 size)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     AGB_ASSERT(size <= MG_LINK_BUFFER_SIZE);
     MysteryGiftLink_InitSend(&svr->link, ident, src, size);
@@ -98,11 +78,7 @@ static void MysteryGiftServer_InitSend(struct MysteryGiftServer *svr, u32 ident,
 
 // Given the command pointer parameter and the 'default' normal data.
 // If the command's pointer is not empty use that as the send data, otherwise use the default.
-<<<<<<< HEAD
 static const void * MysteryGiftServer_GetSendData(const void * dynamicData, const void * defaultData)
-=======
-static const void * MysteryGiftServer_GetSendData(const void *dynamicData, const void *defaultData)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     if (dynamicData != NULL)
         return dynamicData;
@@ -110,11 +86,7 @@ static const void * MysteryGiftServer_GetSendData(const void *dynamicData, const
         return defaultData;
 }
 
-<<<<<<< HEAD
 static u32 MysteryGiftServer_Compare(const void * a, const void * b)
-=======
-static u32 MysteryGiftServer_Compare(const void *a, const void *b)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     if (b < a)
         return 0;
@@ -124,60 +96,36 @@ static u32 MysteryGiftServer_Compare(const void *a, const void *b)
         return 2;
 }
 
-<<<<<<< HEAD
 static u32 Server_Init(struct MysteryGiftServer * svr)
-=======
-static u32 Server_Init(struct MysteryGiftServer *svr)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     svr->funcId = FUNC_RUN;
     return SVR_RET_INIT;
 }
 
-<<<<<<< HEAD
 static u32 Server_Done(struct MysteryGiftServer * svr)
-=======
-static u32 Server_Done(struct MysteryGiftServer *svr)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     return SVR_RET_END;
 }
 
-<<<<<<< HEAD
 static u32 Server_Recv(struct MysteryGiftServer * svr)
-=======
-static u32 Server_Recv(struct MysteryGiftServer *svr)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     if (MysteryGiftLink_Recv(&svr->link))
         svr->funcId = FUNC_RUN;
     return SVR_RET_ACTIVE;
 }
 
-<<<<<<< HEAD
 static u32 Server_Send(struct MysteryGiftServer * svr)
-=======
-static u32 Server_Send(struct MysteryGiftServer *svr)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     if (MysteryGiftLink_Send(&svr->link))
         svr->funcId = FUNC_RUN;
     return SVR_RET_ACTIVE;
 }
 
-<<<<<<< HEAD
 static u32 Server_Run(struct MysteryGiftServer * svr)
 {
     // process command
     const struct MysteryGiftServerCmd * cmd = &svr->script[svr->cmdidx];
     const void * ptr;
-=======
-static u32 Server_Run(struct MysteryGiftServer *svr)
-{
-    // process command
-    const struct MysteryGiftServerCmd *cmd = &svr->script[svr->cmdidx];
-    const void *ptr;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     svr->cmdidx++;
 
     switch (cmd->instr)
@@ -332,11 +280,7 @@ static u32 (*const sFuncTable[])(struct MysteryGiftServer *) = {
     [FUNC_RUN] = Server_Run
 };
 
-<<<<<<< HEAD
 static u32 MysteryGiftServer_CallFunc(struct MysteryGiftServer * svr)
-=======
-static u32 MysteryGiftServer_CallFunc(struct MysteryGiftServer *svr)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     u32 response;
     AGB_ASSERT(svr->funcId < ARRAY_COUNT(sFuncTable));

@@ -1,7 +1,6 @@
 #ifndef GUARD_TRAINER_REMATCH_H
 #define GUARD_TRAINER_REMATCH_H
 
-<<<<<<< HEAD
 enum {
     REMATCH_ROSE,
     REMATCH_ANDRES,
@@ -86,9 +85,6 @@ enum {
 
 #define REMATCH_SPECIAL_TRAINER_START   REMATCH_WALLY_VR
 #define REMATCH_ELITE_FOUR_ENTRIES      REMATCH_SIDNEY
-=======
-#include "constants/rematches.h"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 void UpdateGymLeaderRematch(void);
 

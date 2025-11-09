@@ -1,17 +1,10 @@
 #ifndef GUARD_PALETTE_H
 #define GUARD_PALETTE_H
 
-<<<<<<< HEAD
 #define gPaletteFade_selectedPalettes (gPaletteFade.multipurpose1) // normal and fast fade
 #define gPaletteFade_blendCnt         (gPaletteFade.multipurpose1) // hardware fade
 #define gPaletteFade_delay            (gPaletteFade.multipurpose2) // normal and hardware fade
 #define gPaletteFade_submode          (gPaletteFade.multipurpose2) // fast fade
-=======
-#define gPaletteFadeSelectedPalettes (gPaletteFade.multipurpose1) // normal and fast fade
-#define gPaletteFadeBlendCnt         (gPaletteFade.multipurpose1) // hardware fade
-#define gPaletteFadeDelay            (gPaletteFade.multipurpose2) // normal and hardware fade
-#define gPaletteFadeSubmode          (gPaletteFade.multipurpose2) // fast fade
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 #define PLTT_BUFFER_SIZE (PLTT_SIZE / sizeof(u16))
 
@@ -21,11 +14,6 @@
 #define PALETTE_FADE_STATUS_LOADING 0xFF
 
 #define PALETTES_BG      0x0000FFFF
-<<<<<<< HEAD
-=======
-// like PALETTES_BG but excludes UI pals [13, 15]
-#define PALETTES_MAP     0x00001FFF
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #define PALETTES_OBJECTS 0xFFFF0000
 #define PALETTES_ALL     (PALETTES_BG | PALETTES_OBJECTS)
 
@@ -36,13 +24,6 @@
 #define OBJ_PLTT_ID(n) (OBJ_PLTT_OFFSET + PLTT_ID(n))
 #define OBJ_PLTT_ID2(n) (PLTT_ID((n) + 16))
 
-<<<<<<< HEAD
-=======
-// Used to determine whether a sprite palette tag should be excluded from time (and weather) blending
-#define BLEND_IMMUNE_FLAG (1 << 15)
-#define IS_BLEND_IMMUNE_TAG(tag) ((tag) & BLEND_IMMUNE_FLAG)
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 enum
 {
     FAST_FADE_IN_FROM_WHITE,
@@ -51,27 +32,10 @@ enum
     FAST_FADE_OUT_TO_BLACK,
 };
 
-<<<<<<< HEAD
 struct BlendSettings {
   u32 blendColor:24;
   u32 isTint:1;
   u32 coeff:5;
-=======
-struct BlendSettings
-{
-    u32 blendColor:24;
-    u32 isTint:1;
-    u32 coeff:5;
-    u32 unused:2;
-};
-
-struct TimeBlendSettings
-{
-    struct BlendSettings startBlend;
-    struct BlendSettings endBlend;
-    u16 weight;
-    u16 altWeight;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 struct PaletteFadeControl
@@ -80,7 +44,6 @@ struct PaletteFadeControl
     // These three are only used for TOD blending
     struct BlendSettings *bld0;
     struct BlendSettings *bld1;
-<<<<<<< HEAD
     u16 weight:9; // [0, 256], so must be 9 bits
     u8 delayCounter:6;
     u16 y:5; // blend coefficient
@@ -97,33 +60,12 @@ struct PaletteFadeControl
     bool16 softwareFadeFinishing:1;
     bool16 objPaletteToggle:1;
     u8 deltaY:4; // rate of change of blend coefficient
-=======
-    u32 weight:9; // [0, 256], so must be 9 bits
-    u32 delayCounter:6;
-    u32 y:5; // blend coefficient
-    u32 targetY:5; // target blend coefficient
-    u32 multipurpose2:6;
-    bool32 active:1;
-    u32 blendColor:15;
-    // end of word
-    bool32 yDec:1; // whether blend coefficient is decreasing
-    bool32 bufferTransferDisabled:1;
-    u32 mode:2;
-    bool32 shouldResetBlendRegisters:1;
-    bool32 hardwareFadeFinishing:1;
-    u32 softwareFadeFinishingCounter:5;
-    bool32 softwareFadeFinishing:1;
-    bool32 objPaletteToggle:1;
-    u32 deltaY:4; // rate of change of blend coefficient
-    u32 padding:15;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 extern const struct BlendSettings gTimeOfDayBlend[];
 
 extern struct PaletteFadeControl gPaletteFade;
 extern u32 gPlttBufferTransferPending;
-<<<<<<< HEAD
 extern u8 ALIGNED(4) gPaletteDecompressionBuffer[];
 extern u16 ALIGNED(4) gPlttBufferUnfaded[PLTT_BUFFER_SIZE];
 extern u16 ALIGNED(4) gPlttBufferFaded[PLTT_BUFFER_SIZE];
@@ -138,24 +80,10 @@ void ResetPaletteFade(void);
 bool8 BeginNormalPaletteFade(u32 selectedPalettes, s8 delay, u8 startY, u8 targetY, u16 blendColor);
 bool8 BeginTimeOfDayPaletteFade(u32, s8, u8, u8, struct BlendSettings *, struct BlendSettings *, u16, u16);
 void PaletteStruct_ResetById(u16 id);
-=======
-extern u16 ALIGNED(4) gPlttBufferUnfaded[PLTT_BUFFER_SIZE];
-extern u16 ALIGNED(4) gPlttBufferFaded[PLTT_BUFFER_SIZE];
-
-void LoadPalette(const void *src, u32 offset, u32 size);
-void LoadPaletteFast(const void *src, u32 offset, u32 size);
-void FillPalette(u32 value, u32 offset, u32 size);
-void TransferPlttBuffer(void);
-u32 UpdatePaletteFade(void);
-void ResetPaletteFade(void);
-bool32 BeginNormalPaletteFade(u32 selectedPalettes, s8 delay, u8 startY, u8 targetY, u32 blendColor);
-bool32 BeginTimeOfDayPaletteFade(u32 selectedPalettes, s8 delay, u8 startY, u8 targetY, struct BlendSettings *bld0, struct BlendSettings *bld1, u32 weight, u32 color);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 void ResetPaletteFadeControl(void);
 void InvertPlttBuffer(u32 selectedPalettes);
 void TintPlttBuffer(u32 selectedPalettes, s8 r, s8 g, s8 b);
 void UnfadePlttBuffer(u32 selectedPalettes);
-<<<<<<< HEAD
 void BeginFastPaletteFade(u8 submode);
 void BeginHardwarePaletteFade(u8 blendCnt, u8 delay, u8 y, u8 targetY, u8 shouldResetBlendRegisters);
 void BlendPalettes(u32 selectedPalettes, u8 coeff, u16 color);
@@ -174,35 +102,11 @@ void TintPalette_CustomTone(u16 *palette, u16 count, u16 rTone, u16 gTone, u16 b
 static inline void SetBackdropFromColor(u16 color)
 {
   FillPalette(color, 0, PLTT_SIZEOF(1));
-=======
-void BeginFastPaletteFade(u32 submode);
-void BeginHardwarePaletteFade(u32 blendCnt, u32 delay, u32 y, u32 targetY, u32 shouldResetBlendRegisters);
-void BlendPalettes(u32 selectedPalettes, u8 coeff, u32 color);
-void BlendPalettesFine(u32 palettes, u16 *src, u16 *dst, u32 coeff, u32 color);
-void BlendPalettesUnfaded(u32 selectedPalettes, u8 coeff, u32 color);
-void BlendPalettesGradually(u32 selectedPalettes, s8 delay, u8 coeff, u8 coeffTarget, u16 color, u8 priority, u8 id);
-void TimeBlendPalette(u16 palOffset, u32 coeff, u32 blendColor);
-void TintPalette_RGB_Copy(u16 palOffset, u32 blendColor);
-void TimeMixPalettes(u32 palettes, u16 *src, u16 *dst, struct BlendSettings *blend0, struct BlendSettings *blend1, u16 weight0);
-void AvgPaletteWeighted(u16 *src0, u16 *src1, u16 *dst, u16 weight0);
-void TintPalette_GrayScale(u16 *palette, u32 count);
-void TintPalette_GrayScale2(u16 *palette, u32 count);
-void TintPalette_SepiaTone(u16 *palette, u32 count);
-void TintPalette_CustomTone(u16 *palette, u32 count, u16 rTone, u16 gTone, u16 bTone);
-
-static inline void SetBackdropFromColor(u32 color)
-{
-    FillPalette(color, 0, PLTT_SIZEOF(1));
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static inline void SetBackdropFromPalette(const u16 *palette)
 {
-<<<<<<< HEAD
   LoadPalette(palette, 0, PLTT_SIZEOF(1));
-=======
-    LoadPalette(palette, 0, PLTT_SIZEOF(1));
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 #endif // GUARD_PALETTE_H

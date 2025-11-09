@@ -27,32 +27,8 @@ EWRAM_DATA u16 gSpecialVar_MonBoxPos = 0;
 EWRAM_DATA u16 gSpecialVar_Unused_0x8014 = 0;
 EWRAM_DATA static u8 sSpecialFlags[SPECIAL_FLAGS_SIZE] = {0};
 
-<<<<<<< HEAD
 extern u16 *const gSpecialVars[];
 
-=======
-#if TESTING
-#define TEST_FLAGS_SIZE     1
-#define TEST_VARS_SIZE      8
-EWRAM_DATA static u8 sTestFlags[TEST_FLAGS_SIZE] = {0};
-EWRAM_DATA static u16 sTestVars[TEST_VARS_SIZE] = {0};
-#endif // TESTING
-
-extern u16 *const gSpecialVars[];
-
-const u16 gBadgeFlags[NUM_BADGES] =
-{
-    FLAG_BADGE01_GET,
-    FLAG_BADGE02_GET,
-    FLAG_BADGE03_GET,
-    FLAG_BADGE04_GET,
-    FLAG_BADGE05_GET,
-    FLAG_BADGE06_GET,
-    FLAG_BADGE07_GET,
-    FLAG_BADGE08_GET,
-};
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 void InitEventData(void)
 {
     memset(gSaveBlock1Ptr->flags, 0, sizeof(gSaveBlock1Ptr->flags));
@@ -69,10 +45,7 @@ void ClearTempFieldEventData(void)
     FlagClear(FLAG_SYS_USE_STRENGTH);
     FlagClear(FLAG_SYS_CTRL_OBJ_DELETE);
     FlagClear(FLAG_NURSE_UNION_ROOM_REMINDER);
-<<<<<<< HEAD
     VarSet(VAR_TIME_BASED_ENCOUNTER, 0);
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 void ClearDailyFlags(void)
@@ -195,13 +168,6 @@ u16 *GetVarPointer(u16 id)
         return NULL;
     else if (id < SPECIAL_VARS_START)
         return &gSaveBlock1Ptr->vars[id - VARS_START];
-<<<<<<< HEAD
-=======
-#if TESTING
-    else if (id >= TESTING_VARS_START)
-        return &sTestVars[id - TESTING_VARS_START];
-#endif // TESTING
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     else
         return gSpecialVars[id - SPECIAL_VARS_START];
 }
@@ -242,13 +208,6 @@ u8 *GetFlagPointer(u16 id)
         return NULL;
     else if (id < SPECIAL_FLAGS_START)
         return &gSaveBlock1Ptr->flags[id / 8];
-<<<<<<< HEAD
-=======
-#if TESTING
-    else if (id >= TESTING_FLAGS_START)
-        return &sTestFlags[(id - TESTING_FLAGS_START) / 8];
-#endif // TESTING
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     else
         return &sSpecialFlags[(id - SPECIAL_FLAGS_START) / 8];
 }

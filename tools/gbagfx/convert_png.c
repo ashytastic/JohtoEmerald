@@ -62,11 +62,7 @@ static unsigned char *ConvertBitDepth(unsigned char *src, int srcBitDepth, int d
 
         for (j = 8 - srcBitDepth; j >= 0; j -= srcBitDepth)
         {
-<<<<<<< HEAD
             unsigned char pixel = (srcByte >> j) % (1 << destBitDepth);
-=======
-            unsigned char pixel = ((srcByte >> j) % (1 << srcBitDepth)) % (1 << destBitDepth);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             *dest |= pixel << destBit;
             destBit -= destBitDepth;
             if (destBit < 0)

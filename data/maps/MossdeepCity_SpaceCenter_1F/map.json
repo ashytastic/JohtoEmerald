@@ -12,18 +12,10 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-<<<<<<< HEAD
   "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_M",
-=======
-  "connections": null,
-  "object_events": [
-    {
-      "local_id": "LOCALID_SPACE_CENTER_1F_SCIENTIST_1",
-      "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_1",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 7,
       "y": 2,
       "elevation": 3,
@@ -36,12 +28,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_M",
-=======
-      "local_id": "LOCALID_SPACE_CENTER_1F_SCIENTIST_2",
-      "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_1",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 2,
       "y": 2,
       "elevation": 3,
@@ -54,10 +41,6 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
-=======
-      "local_id": "LOCALID_SPACE_CENTER_1F_SAILOR",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
       "x": 6,
       "y": 6,
@@ -71,12 +54,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_2",
-=======
-      "local_id": "LOCALID_SPACE_CENTER_1F_OLD_MAN",
-      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 10,
       "y": 2,
       "elevation": 3,
@@ -89,12 +67,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_LASS",
-=======
-      "local_id": "LOCALID_SPACE_CENTER_1F_WOMAN",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 14,
       "y": 7,
       "elevation": 3,
@@ -107,11 +80,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_ARIANA",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_F",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 12,
       "y": 9,
       "elevation": 3,
@@ -121,17 +90,10 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
       "script": "MossdeepCity_SpaceCenter_1F_EventScript_Grunt3",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PETREL",
-=======
-      "flag": "FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_1F_TEAM_MAGMA"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 11,
       "y": 6,
       "elevation": 3,
@@ -141,17 +103,10 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
       "script": "MossdeepCity_SpaceCenter_1F_EventScript_Grunt1",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PETREL",
-=======
-      "flag": "FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_1F_TEAM_MAGMA"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 10,
       "y": 2,
       "elevation": 3,
@@ -161,18 +116,10 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
       "script": "MossdeepCity_SpaceCenter_1F_EventScript_Grunt4",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PETREL",
-=======
-      "flag": "FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_1F_TEAM_MAGMA"
-    },
-    {
-      "local_id": "LOCALID_SPACE_CENTER_1F_STAIR_GRUNT",
-      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 13,
       "y": 2,
       "elevation": 3,
@@ -182,11 +129,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MossdeepCity_SpaceCenter_1F_EventScript_Grunt2",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
-=======
-      "flag": "FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_1F_TEAM_MAGMA"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
@@ -199,11 +142,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MossdeepCity_SpaceCenter_1F_EventScript_MagmaNote",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
-=======
-      "flag": "FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_MAGMA_NOTE"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_STEVEN",
@@ -216,11 +155,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MossdeepCity_SpaceCenter_1F_EventScript_Steven",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
-=======
-      "flag": "FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_1F_STEVEN"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "warp_events": [
@@ -246,15 +181,10 @@
       "dest_warp_id": "0"
     }
   ],
-<<<<<<< HEAD
   "coord_events": [
 
   ],
   "bg_events": [
 
   ]
-=======
-  "coord_events": [],
-  "bg_events": []
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }

@@ -1,15 +1,11 @@
-<<<<<<< HEAD
 .set LOCALID_WALLYS_DAD, 1
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 PetalburgCity_WallysHouse_MapScripts::
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, PetalburgCity_WallysHouse_OnFrame
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, PetalburgCity_WallysHouse_OnWarp
 	.byte 0
 
 PetalburgCity_WallysHouse_OnWarp:
-<<<<<<< HEAD
 	map_script_2 VAR_GARBAGEVAR, 4, PetalburgCity_WallysHouse_EventScript_PlayerWallysDadFaceEachOther
 	.2byte 0
 
@@ -20,18 +16,6 @@ PetalburgCity_WallysHouse_EventScript_PlayerWallysDadFaceEachOther::
 
 PetalburgCity_WallysHouse_OnFrame:
 	map_script_2 VAR_GARBAGEVAR, 4, PetalburgCity_WallysHouse_EventScript_GiveHMSurf
-=======
-	map_script_2 VAR_PETALBURG_CITY_STATE, 4, PetalburgCity_WallysHouse_EventScript_PlayerWallysDadFaceEachOther
-	.2byte 0
-
-PetalburgCity_WallysHouse_EventScript_PlayerWallysDadFaceEachOther::
-	turnobject LOCALID_PLAYER, DIR_EAST
-	turnobject LOCALID_WALLYS_HOUSE_WALLYS_DAD, DIR_WEST
-	end
-
-PetalburgCity_WallysHouse_OnFrame:
-	map_script_2 VAR_PETALBURG_CITY_STATE, 4, PetalburgCity_WallysHouse_EventScript_GiveHMSurf
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.2byte 0
 
 PetalburgCity_WallysHouse_EventScript_GiveHMSurf::
@@ -40,11 +24,7 @@ PetalburgCity_WallysHouse_EventScript_GiveHMSurf::
 	giveitem ITEM_HM_SURF
 	setflag FLAG_RECEIVED_HM_SURF
 	msgbox PetalburgCity_WallysHouse_Text_SurfGoAllSortsOfPlaces, MSGBOX_DEFAULT
-<<<<<<< HEAD
 	setvar VAR_GARBAGEVAR, 5
-=======
-	setvar VAR_PETALBURG_CITY_STATE, 5
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	releaseall
 	end
 

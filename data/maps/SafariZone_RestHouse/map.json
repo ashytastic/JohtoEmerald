@@ -12,11 +12,7 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-<<<<<<< HEAD
   "connections": 0,
-=======
-  "connections": null,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
@@ -32,11 +28,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_TRAINER_TOWER_DUDE",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 8,
       "y": 4,
       "elevation": 0,
@@ -78,15 +70,10 @@
       "dest_warp_id": "0"
     }
   ],
-<<<<<<< HEAD
   "coord_events": [
 
   ],
   "bg_events": [
 
   ]
-=======
-  "coord_events": [],
-  "bg_events": []
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }

@@ -1,13 +1,9 @@
-<<<<<<< HEAD
 .set LOCALID_DAYCARE_MAN, 3
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 .set LOCALID_DAYCARE_MON_0, 25
 .set LOCALID_DAYCARE_MON_1, 26
 
 Route117_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route117_OnTransition
-<<<<<<< HEAD
 	map_script MAP_SCRIPT_ON_RESUME, SetTimeEncounters
 	.byte 0
 
@@ -21,11 +17,6 @@ callfunc ScrFunc_getdaycaregfx
 
 Route117_OnTransition:
 	callnative SetTimeBasedEncounters
-=======
-	.byte 0
-
-Route117_OnTransition:
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call Route117_EventScript_TryMoveDayCareMan
 	@ set flags for OW daycare mons
 	setflag FLAG_TEMP_1
@@ -39,7 +30,6 @@ Route117_OnTransition:
 Route117_EventScript_ShowDaycareMon1:
 	@ set pokemon movement type based on compatibility
 	special SetDaycareCompatibilityString
-<<<<<<< HEAD
 	@ 0:
 	call_if_eq VAR_RESULT, PARENTS_INCOMPATIBLE, Route117_EventScript_DaycareMonIncompatible
 	@ 20: do nothing if low compatibility
@@ -47,11 +37,6 @@ Route117_EventScript_ShowDaycareMon1:
 	@ 50:
 	call_if_eq VAR_RESULT, PARENTS_MED_COMPATIBILITY, Route117_EventScript_DaycareMonMedCompatibility
 	@ 70:
-=======
-	call_if_eq VAR_RESULT, PARENTS_INCOMPATIBLE, Route117_EventScript_DaycareMonIncompatible
-	@ Don't do anything if PARENTS_LOW_COMPATIBILITY
-	call_if_eq VAR_RESULT, PARENTS_MED_COMPATIBILITY, Route117_EventScript_DaycareMonMedCompatibility
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call_if_eq VAR_RESULT, PARENTS_MAX_COMPATIBILITY, Route117_EventScript_DaycareMonMaxCompatibility
 	clearflag FLAG_TEMP_2
 Route117_EventScript_ShowDaycareMon0:
@@ -104,11 +89,7 @@ Route117_EventScript_DayCareSign::
 	end
 
 Route117_EventScript_Isaac::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_CHUCK_1_3, Route117_Text_IsaacIntro, Route117_Text_IsaacDefeat, Route117_EventScript_RegisterIsaac
-=======
-	trainerbattle_single TRAINER_ISAAC_1, Route117_Text_IsaacIntro, Route117_Text_IsaacDefeat, Route117_EventScript_RegisterIsaac
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route117_EventScript_RematchIsaac
 	msgbox Route117_Text_IsaacPostBattle, MSGBOX_DEFAULT
@@ -119,20 +100,12 @@ Route117_EventScript_RegisterIsaac::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route117_Text_IsaacRegister, MSGBOX_DEFAULT
-<<<<<<< HEAD
 	register_matchcall TRAINER_CHUCK_1_3
-=======
-	register_matchcall TRAINER_ISAAC_1
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	release
 	end
 
 Route117_EventScript_RematchIsaac::
-<<<<<<< HEAD
 	trainerbattle_rematch TRAINER_CHUCK_1_3, Route117_Text_IsaacRematchIntro, Route117_Text_IsaacRematchDefeat
-=======
-	trainerbattle_rematch TRAINER_ISAAC_1, Route117_Text_IsaacRematchIntro, Route117_Text_IsaacRematchDefeat
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route117_Text_IsaacPostRematch, MSGBOX_AUTOCLOSE
 	end
 
@@ -158,11 +131,7 @@ Route117_EventScript_RematchLydia::
 	end
 
 Route117_EventScript_Dylan::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_LEWIS, Route117_Text_DylanIntro, Route117_Text_DylanDefeat, Route117_EventScript_RegisterDylan
-=======
-	trainerbattle_single TRAINER_DYLAN_1, Route117_Text_DylanIntro, Route117_Text_DylanDefeat, Route117_EventScript_RegisterDylan
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route117_EventScript_RematchDylan
 	msgbox Route117_Text_DylanPostBattle, MSGBOX_DEFAULT
@@ -173,20 +142,12 @@ Route117_EventScript_RegisterDylan::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route117_Text_DylanRegister, MSGBOX_DEFAULT
-<<<<<<< HEAD
 	register_matchcall TRAINER_LEWIS
-=======
-	register_matchcall TRAINER_DYLAN_1
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	release
 	end
 
 Route117_EventScript_RematchDylan::
-<<<<<<< HEAD
 	trainerbattle_rematch TRAINER_LEWIS, Route117_Text_DylanRematchIntro, Route117_Text_DylanRematchDefeat
-=======
-	trainerbattle_rematch TRAINER_DYLAN_1, Route117_Text_DylanRematchIntro, Route117_Text_DylanRematchDefeat
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route117_Text_DylanPostRematch, MSGBOX_AUTOCLOSE
 	end
 
@@ -265,11 +226,7 @@ Route117_EventScript_Brandi::
 	end
 
 Route117_EventScript_Aisha::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_ARNIE, Route117_Text_AishaIntro, Route117_Text_AishaDefeat
-=======
-	trainerbattle_single TRAINER_AISHA, Route117_Text_AishaIntro, Route117_Text_AishaDefeat
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route117_Text_AishaPostBattle, MSGBOX_AUTOCLOSE
 	end
 

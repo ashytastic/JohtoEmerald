@@ -1,5 +1,4 @@
 AquaHideout_UnusedRubyMap3_MapScripts::
-<<<<<<< HEAD
 	map_script MAP_SCRIPT_ON_TRANSITION, AquaHideout_UnusedRubyMap3_OnTransition
 	.byte 0
 
@@ -26,7 +25,3 @@ AquaHideout_UnusedRubyMap3_BonslyMunchEvo_Text:
 	.string "IMITATING other POKéMON.\p"
 	.string "Very different from my MUNCHLAX, who\n"
 	.string "evolved by FRIENDSHIP, don't you think?$"
-=======
-	.byte 0
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

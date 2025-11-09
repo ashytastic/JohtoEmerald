@@ -58,15 +58,12 @@ enum {
 };
 
 enum {
-<<<<<<< HEAD
     JUMP_TYPE_NORMAL,
     JUMP_TYPE_FAST,
     JUMP_TYPE_SLOW,
 };
 
 enum {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     FUNC_GAME_INTRO,
     FUNC_WAIT_ROUND,
     FUNC_GAME_ROUND,
@@ -111,11 +108,7 @@ enum {
 // the lower 8 bits are a timer to the next state.
 // When the timer is incremented above 255, it increments
 // the vine state and the timer is reset.
-<<<<<<< HEAD
 #define VINE_STATE_TIMER(vineState)(((vineState) << 8) | 0xFF)
-=======
-#define VINE_STATE_TIMER(vineState) (((vineState) << 8) | 0xFF)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 enum {
     MONSTATE_NORMAL, // Pokémon is either on the ground or in the middle of a jump
@@ -164,12 +157,7 @@ enum {
 
 struct PokemonJump_MonInfo
 {
-<<<<<<< HEAD
     u16 species;
-=======
-    u16 isShiny:1;
-    u16 species:15;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     u32 otId;
     u32 personality;
 };
@@ -285,24 +273,17 @@ struct PokemonJump
     struct PokemonJump_Player *player;
 };
 
-<<<<<<< HEAD
 struct PokemonJumpMons
 {
     u16 species;
     u16 jumpType;
 };
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static void InitGame(struct PokemonJump *);
 static void ResetForNewGame(struct PokemonJump *);
 static void InitPlayerAndJumpTypes(void);
 static void ResetPlayersForNewGame(void);
-<<<<<<< HEAD
 static s16 GetPokemonJumpSpeciesIdx(u16 species);
-=======
-static s16 GetSpeciesPokemonJumpType(u16 species);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static void InitJumpMonInfo(struct PokemonJump_MonInfo *, struct Pokemon *);
 static void CB2_PokemonJump(void);
 static void Task_StartPokemonJump(u8);
@@ -433,16 +414,11 @@ static void DoPokeJumpCountdown(void);
 static void Msg_CommunicationStandby(void);
 static void Task_ShowPokemonJumpRecords(u8);
 static void PrintRecordsText(u16, int);
-<<<<<<< HEAD
 static void TruncateToFirstWordOnly(u8 *);
-=======
-static inline void TruncateToFirstWordOnly(u8 *);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 EWRAM_DATA static struct PokemonJump *sPokemonJump = NULL;
 EWRAM_DATA static struct PokemonJumpGfx *sPokemonJumpGfx = NULL;
 
-<<<<<<< HEAD
 /*
     According to the clerk, the Pokémon allowed in
     Pokémon Jump are all <= 28 inches, and do not
@@ -552,8 +528,6 @@ static const struct PokemonJumpMons sPokeJumpMons[] =
     { .species = SPECIES_BAGON,      .jumpType = JUMP_TYPE_FAST, },
 };
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 void StartPokemonJump(u16 partyId, MainCallback exitCallback)
 {
     u8 taskId;
@@ -640,20 +614,12 @@ static void ResetForNewGame(struct PokemonJump *jump)
 
 static void InitPlayerAndJumpTypes(void)
 {
-<<<<<<< HEAD
     int i, index;
 
     for (i = 0; i < MAX_RFU_PLAYERS; i++)
     {
         index = GetPokemonJumpSpeciesIdx(sPokemonJump->monInfo[i].species);
         sPokemonJump->players[i].monJumpType = sPokeJumpMons[index].jumpType;
-=======
-    int i;
-
-    for (i = 0; i < MAX_RFU_PLAYERS; i++)
-    {
-        sPokemonJump->players[i].monJumpType = GetSpeciesPokemonJumpType(sPokemonJump->monInfo[i].species);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
 
     sPokemonJump->player = &sPokemonJump->players[sPokemonJump->multiplayerId];
@@ -675,7 +641,6 @@ static void ResetPlayersForNewGame(void)
     }
 }
 
-<<<<<<< HEAD
 static s16 GetPokemonJumpSpeciesIdx(u16 species)
 {
     u32 i;
@@ -686,21 +651,12 @@ static s16 GetPokemonJumpSpeciesIdx(u16 species)
     }
 
     return -1; // species isnt allowed
-=======
-static s16 GetSpeciesPokemonJumpType(u16 species)
-{
-    return gSpeciesInfo[SanitizeSpeciesId(species)].pokemonJumpType;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void InitJumpMonInfo(struct PokemonJump_MonInfo *monInfo, struct Pokemon *mon)
 {
     monInfo->species = GetMonData(mon, MON_DATA_SPECIES);
     monInfo->otId = GetMonData(mon, MON_DATA_OT_ID);
-<<<<<<< HEAD
-=======
-    monInfo->isShiny = GetMonData(mon, MON_DATA_IS_SHINY);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     monInfo->personality = GetMonData(mon, MON_DATA_PERSONALITY);
 }
 
@@ -843,11 +799,7 @@ static void RecvLinkData_Leader(void)
         sPokemonJump->allPlayersReady = TRUE;
 }
 
-<<<<<<< HEAD
 static bool32 (* const sPokeJumpLeaderFuncs[])(void) =
-=======
-static bool32 (*const sPokeJumpLeaderFuncs[])(void) =
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     [FUNC_GAME_INTRO]     = GameIntro_Leader,
     [FUNC_WAIT_ROUND]     = WaitRound_Leader,
@@ -946,11 +898,7 @@ static void RecvLinkData_Member(void)
     }
 }
 
-<<<<<<< HEAD
 static bool32 (* const sPokeJumpMemberFuncs[])(void) =
-=======
-static bool32 (*const sPokeJumpMemberFuncs[])(void) =
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     [FUNC_GAME_INTRO]     = GameIntro_Member,
     [FUNC_WAIT_ROUND]     = WaitRound_Member,
@@ -2012,7 +1960,6 @@ static void HandleMonState(void)
 
 static const s8 sJumpOffsets[][48] =
 {
-<<<<<<< HEAD
     [JUMP_TYPE_NORMAL] = { -3,  -6,  -8, -10, -13, -15, -17, -19,
                           -21, -23, -25, -27, -28, -29,
                           JUMP_PEAK, JUMP_PEAK, JUMP_PEAK,
@@ -2031,26 +1978,6 @@ static const s8 sJumpOffsets[][48] =
                          -29, -29, -28, -28, -27, -27, -26, -25,
                          -24, -22, -20, -18, -16, -14, -12, -11,
                           -9,  -6,  -4,  -1},
-=======
-    [PKMN_JUMP_TYPE_NORMAL - 1] = { -3,  -6,  -8, -10, -13, -15, -17, -19,
-                                   -21, -23, -25, -27, -28, -29,
-                                   JUMP_PEAK, JUMP_PEAK, JUMP_PEAK,
-                                   -28, -27, -26, -25, -23, -22, -20, -18,
-                                   -17, -15, -13, -11,  -8,  -6,  -4,  -1},
-
-    [PKMN_JUMP_TYPE_FAST - 1]  = { -3,  -6,  -9, -11, -14, -16, -18, -20,
-                                  -22, -24, -26, -28, -29,
-                                  JUMP_PEAK, JUMP_PEAK,
-                                  -28, -26, -24, -22, -20, -18, -16, -14,
-                                  -11, -9,  -6,  -4,  -1},
-
-    [PKMN_JUMP_TYPE_SLOW - 1]  = { -3,  -6,  -9, -11, -13, -15, -17, -19,
-                                  -21, -23, -25, -27, -28, -29,
-                                  JUMP_PEAK, JUMP_PEAK, JUMP_PEAK, JUMP_PEAK,
-                                  -29, -29, -28, -28, -27, -27, -26, -25,
-                                  -24, -22, -20, -18, -16, -14, -12, -11,
-                                   -9,  -6,  -4,  -1},
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 static void UpdateJump(int multiplayerId)
@@ -2085,11 +2012,7 @@ static void UpdateJump(int multiplayerId)
 
     jumpOffsetIdx -= 4;
     if (jumpOffsetIdx < (int)ARRAY_COUNT(sJumpOffsets[0]))
-<<<<<<< HEAD
         jumpOffset = sJumpOffsets[player->monJumpType][jumpOffsetIdx];
-=======
-        jumpOffset = sJumpOffsets[player->monJumpType - 1][jumpOffsetIdx];
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     else
         jumpOffset = 0;
 
@@ -2420,11 +2343,7 @@ static u8 *GetPokeJumpPlayerName(u8 multiplayerId)
 
 bool32 IsSpeciesAllowedInPokemonJump(u16 species)
 {
-<<<<<<< HEAD
     return GetPokemonJumpSpeciesIdx(species) > -1;
-=======
-    return GetSpeciesPokemonJumpType(species) != PKMN_JUMP_TYPE_NONE;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 void IsPokemonJumpSpeciesInParty(void)
@@ -2450,21 +2369,12 @@ void IsPokemonJumpSpeciesInParty(void)
 static const u16 sPokeJumpPal1[] = INCBIN_U16("graphics/pokemon_jump/pal1.gbapal");
 static const u16 sPokeJumpPal2[] = INCBIN_U16("graphics/pokemon_jump/pal2.gbapal");
 
-<<<<<<< HEAD
 static const u32 sVine1_Gfx[] = INCBIN_U32("graphics/pokemon_jump/vine1.4bpp.lz");
 static const u32 sVine2_Gfx[] = INCBIN_U32("graphics/pokemon_jump/vine2.4bpp.lz");
 static const u32 sVine3_Gfx[] = INCBIN_U32("graphics/pokemon_jump/vine3.4bpp.lz");
 static const u32 sVine4_Gfx[] = INCBIN_U32("graphics/pokemon_jump/vine4.4bpp.lz");
 
 static const u32 sStar_Gfx[] = INCBIN_U32("graphics/pokemon_jump/star.4bpp.lz");
-=======
-static const u32 sVine1_Gfx[] = INCBIN_U32("graphics/pokemon_jump/vine1.4bpp.smol");
-static const u32 sVine2_Gfx[] = INCBIN_U32("graphics/pokemon_jump/vine2.4bpp.smol");
-static const u32 sVine3_Gfx[] = INCBIN_U32("graphics/pokemon_jump/vine3.4bpp.smol");
-static const u32 sVine4_Gfx[] = INCBIN_U32("graphics/pokemon_jump/vine4.4bpp.smol");
-
-static const u32 sStar_Gfx[] = INCBIN_U32("graphics/pokemon_jump/star.4bpp.smol");
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 static const struct CompressedSpriteSheet sCompressedSpriteSheets[] =
 {
@@ -2797,11 +2707,7 @@ static void CreateJumpMonSprite(struct PokemonJumpGfx *jumpGfx, struct PokemonJu
 {
     struct SpriteTemplate spriteTemplate;
     struct SpriteSheet spriteSheet;
-<<<<<<< HEAD
     struct CompressedSpritePalette spritePalette;
-=======
-    struct SpritePalette spritePalette;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     u8 *buffer;
     u8 *unusedBuffer;
     u8 subpriority;
@@ -2817,33 +2723,20 @@ static void CreateJumpMonSprite(struct PokemonJumpGfx *jumpGfx, struct PokemonJu
 
     if (buffer && unusedBuffer)
     {
-<<<<<<< HEAD
         HandleLoadSpecialPokePic(
             &gMonStillFrontPicTable[monInfo->species],
             buffer,
             monInfo->species,
             monInfo->personality);
-=======
-        HandleLoadSpecialPokePic(TRUE,
-                                buffer,
-                                monInfo->species,
-                                monInfo->personality);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
         spriteSheet.data = buffer;
         spriteSheet.tag = multiplayerId;
         spriteSheet.size = MON_PIC_SIZE;
         LoadSpriteSheet(&spriteSheet);
 
-<<<<<<< HEAD
         spritePalette.data = GetMonSpritePalFromSpeciesAndPersonality(monInfo->species, monInfo->otId, monInfo->personality);
         spritePalette.tag = multiplayerId;
         LoadCompressedSpritePalette(&spritePalette);
-=======
-        spritePalette.data = GetMonSpritePalFromSpeciesAndPersonality(monInfo->species, monInfo->isShiny, monInfo->personality);
-        spritePalette.tag = multiplayerId;
-        LoadSpritePalette(&spritePalette);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
         Free(buffer);
         Free(unusedBuffer);
@@ -3153,7 +3046,6 @@ static void InitPokeJumpGfx(struct PokemonJumpGfx *jumpGfx)
 static const u16 sInterface_Pal[] = INCBIN_U16("graphics/pokemon_jump/interface.gbapal");
 
 static const u16 sBg_Pal[] = INCBIN_U16("graphics/pokemon_jump/bg.gbapal");
-<<<<<<< HEAD
 static const u32 sBg_Gfx[] = INCBIN_U32("graphics/pokemon_jump/bg.4bpp.lz");
 static const u32 sBg_Tilemap[] = INCBIN_U32("graphics/pokemon_jump/bg.bin.lz");
 
@@ -3164,18 +3056,6 @@ static const u32 sVenusaur_Tilemap[] = INCBIN_U32("graphics/pokemon_jump/venusau
 static const u16 sBonuses_Pal[] = INCBIN_U16("graphics/pokemon_jump/bonuses.gbapal");
 static const u32 sBonuses_Gfx[] = INCBIN_U32("graphics/pokemon_jump/bonuses.4bpp.lz");
 static const u32 sBonuses_Tilemap[] = INCBIN_U32("graphics/pokemon_jump/bonuses.bin.lz");
-=======
-static const u32 sBg_Gfx[] = INCBIN_U32("graphics/pokemon_jump/bg.4bpp.smol");
-static const u32 sBg_Tilemap[] = INCBIN_U32("graphics/pokemon_jump/bg.bin.smolTM");
-
-static const u16 sVenusaur_Pal[] = INCBIN_U16("graphics/pokemon_jump/venusaur.gbapal");
-static const u32 sVenusaur_Gfx[] = INCBIN_U32("graphics/pokemon_jump/venusaur.4bpp.smol");
-static const u32 sVenusaur_Tilemap[] = INCBIN_U32("graphics/pokemon_jump/venusaur.bin.smolTM");
-
-static const u16 sBonuses_Pal[] = INCBIN_U16("graphics/pokemon_jump/bonuses.gbapal");
-static const u32 sBonuses_Gfx[] = INCBIN_U32("graphics/pokemon_jump/bonuses.4bpp.smol");
-static const u32 sBonuses_Tilemap[] = INCBIN_U32("graphics/pokemon_jump/bonuses.bin.smolTM");
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 static const struct BgTemplate sBgTemplates[] =
 {
@@ -3836,11 +3716,7 @@ static void CreateJumpMonSprites(void)
     {
         struct PokemonJump_MonInfo *monInfo = GetMonInfoByMultiplayerId(i);
 
-<<<<<<< HEAD
         y = gMonFrontPicCoords[monInfo->species].y_offset;
-=======
-        y = gSpeciesInfo[monInfo->species].frontPicYOffset;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         CreateJumpMonSprite(sPokemonJumpGfx, monInfo, *xCoords, y + 112, i);
         CreateStarSprite(sPokemonJumpGfx, *xCoords, 112, i);
         xCoords++;
@@ -4049,12 +3925,7 @@ static void Task_UpdateBonus(u8 taskId)
 struct MonInfoPacket
 {
     u8 id;
-<<<<<<< HEAD
     u16 species;
-=======
-    u16 isShiny:1;
-    u16 species:15;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     u32 personality;
     u32 otId;
 };
@@ -4063,10 +3934,6 @@ static void SendPacket_MonInfo(struct PokemonJump_MonInfo *monInfo)
 {
     struct MonInfoPacket packet;
     packet.id = PACKET_MON_INFO,
-<<<<<<< HEAD
-=======
-    packet.isShiny = monInfo->isShiny,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     packet.species = monInfo->species,
     packet.otId = monInfo->otId,
     packet.personality = monInfo->personality,
@@ -4084,10 +3951,6 @@ static bool32 RecvPacket_MonInfo(int multiplayerId, struct PokemonJump_MonInfo *
     if (packet.id == PACKET_MON_INFO)
     {
         monInfo->species = packet.species;
-<<<<<<< HEAD
-=======
-        monInfo->isShiny = packet.isShiny;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         monInfo->otId = packet.otId;
         monInfo->personality = packet.personality;
         return TRUE;
@@ -4228,25 +4091,13 @@ static bool32 RecvPacket_MemberStateToMember(struct PokemonJump_Player *player, 
     return TRUE;
 }
 
-<<<<<<< HEAD
-=======
-#if FREE_POKEMON_JUMP == FALSE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static struct PokemonJumpRecords *GetPokeJumpRecords(void)
 {
     return &gSaveBlock2Ptr->pokeJump;
 }
-<<<<<<< HEAD
 
 void ResetPokemonJumpRecords(void)
 {
-=======
-#endif //FREE_POKEMON_JUMP
-
-void ResetPokemonJumpRecords(void)
-{
-#if FREE_POKEMON_JUMP == FALSE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     struct PokemonJumpRecords *records = GetPokeJumpRecords();
     records->jumpsInRow = 0;
     records->bestJumpScore = 0;
@@ -4254,18 +4105,10 @@ void ResetPokemonJumpRecords(void)
     records->gamesWithMaxPlayers = 0;
     records->unused2 = 0;
     records->unused1 = 0;
-<<<<<<< HEAD
-=======
-#endif //FREE_POKEMON_JUMP
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static bool32 TryUpdateRecords(u32 jumpScore, u16 jumpsInRow, u16 excellentsInRow)
 {
-<<<<<<< HEAD
-=======
-#if FREE_POKEMON_JUMP == FALSE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     struct PokemonJumpRecords *records = GetPokeJumpRecords();
     bool32 newRecord = FALSE;
 
@@ -4277,27 +4120,13 @@ static bool32 TryUpdateRecords(u32 jumpScore, u16 jumpsInRow, u16 excellentsInRo
         records->excellentsInRow = excellentsInRow, newRecord = TRUE;
 
     return newRecord;
-<<<<<<< HEAD
-=======
-#else
-    return FALSE;
-#endif //FREE_POKEMON_JUMP
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void IncrementGamesWithMaxPlayers(void)
 {
-<<<<<<< HEAD
     struct PokemonJumpRecords *records = GetPokeJumpRecords();
     if (records->gamesWithMaxPlayers < 9999)
         records->gamesWithMaxPlayers++;
-=======
-#if FREE_POKEMON_JUMP == FALSE
-    struct PokemonJumpRecords *records = GetPokeJumpRecords();
-    if (records->gamesWithMaxPlayers < 9999)
-        records->gamesWithMaxPlayers++;
-#endif //FREE_POKEMON_JUMP
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 void ShowPokemonJumpRecords(void)
@@ -4377,10 +4206,6 @@ static void Task_ShowPokemonJumpRecords(u8 taskId)
 
 static void PrintRecordsText(u16 windowId, int width)
 {
-<<<<<<< HEAD
-=======
-#if FREE_POKEMON_JUMP == FALSE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     int i, x;
     int recordNums[3];
     struct PokemonJumpRecords *records = GetPokeJumpRecords();
@@ -4401,16 +4226,9 @@ static void PrintRecordsText(u16 windowId, int width)
         AddTextPrinterParameterized(windowId, FONT_NORMAL, gStringVar1, x, 25 + (i * 16), TEXT_SKIP_DRAW, NULL);
     }
     PutWindowTilemap(windowId);
-<<<<<<< HEAD
 }
 
 static void TruncateToFirstWordOnly(u8 *str)
-=======
-#endif //FREE_POKEMON_JUMP
-}
-
-static inline void TruncateToFirstWordOnly(u8 *str)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     for (;*str != EOS; str++)
     {

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .set LOCALID_WOMAN, 8
 .set LOCALID_GRUNT_1, 10
 .set LOCALID_GRUNT_2, 11
@@ -15,13 +14,6 @@ MossdeepCity_MapScripts::
 
 MossdeepCity_OnTransition:
 	callnative SetTimeBasedEncounters
-=======
-MossdeepCity_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, MossdeepCity_OnTransition
-	.byte 0
-
-MossdeepCity_OnTransition:
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	clearflag FLAG_MOSSDEEP_GYM_SWITCH_1
 	clearflag FLAG_MOSSDEEP_GYM_SWITCH_2
 	clearflag FLAG_MOSSDEEP_GYM_SWITCH_3
@@ -29,7 +21,6 @@ MossdeepCity_OnTransition:
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
 	end
 
-<<<<<<< HEAD
 MossdeepCity_EventScript_Evo::
 	msgbox MossdeepCity_EventScript_Evo_Text, MSGBOX_NPC
 	end
@@ -61,8 +52,6 @@ MossdeepCity_EventScript_Evo2_Text:
 	.string "Maybe I should capture one for her.\p"
 	.string "She's gonna love it!$"
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 MossdeepCity_EventScript_PokefanF::
 	lock
 	faceplayer
@@ -102,7 +91,6 @@ MossdeepCity_EventScript_Girl::
 	end
 
 MossdeepCity_EventScript_Woman::
-<<<<<<< HEAD
 	goto_if_set FLAG_JIRACHI, MossdeepCity_EventScript_Woman2
 	msgbox MossdeepCity_Text_SpecialSpaceCenterRock, MSGBOX_NPC
 	end
@@ -213,15 +201,6 @@ MossdeepCity_Text_ItsAWhiteRock3:
 	.string "Something jumped you from\n"
 	.string "behind the white rock!$"
 
-=======
-	msgbox MossdeepCity_Text_SpecialSpaceCenterRock, MSGBOX_NPC
-	end
-
-MossdeepCity_EventScript_WhiteRock::
-	msgbox MossdeepCity_Text_ItsAWhiteRock, MSGBOX_SIGN
-	end
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 MossdeepCity_EventScript_GymSign::
 	msgbox MossdeepCity_Text_GymSign, MSGBOX_SIGN
 	end
@@ -235,17 +214,12 @@ MossdeepCity_EventScript_SpaceCenterSign::
 	end
 
 MossdeepCity_EventScript_VisitedMossdeep::
-<<<<<<< HEAD
 	setflag FLAG_VISITED_CELADON_CITY
-=======
-	setflag FLAG_VISITED_MOSSDEEP_CITY
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setvar VAR_TEMP_1, 1
 	end
 
 MossdeepCity_EventScript_TeamMagmaEnterSpaceCenter::
 	lockall
-<<<<<<< HEAD
 	applymovement LOCALID_MAXIE, MossdeepCity_Movement_MaxieGestureToSpaceCenter
 	waitmovement 0
 	applymovement LOCALID_GRUNT_1, MossdeepCity_Movement_GruntFaceSpaceCenter
@@ -267,29 +241,6 @@ MossdeepCity_EventScript_TeamMagmaEnterSpaceCenter::
 	delay 30
 	setvar VAR_GARBAGEVAR, 2
 	setflag FLAG_GARBAGEFLAG
-=======
-	applymovement LOCALID_MOSSDEEP_MAXIE, MossdeepCity_Movement_MaxieGestureToSpaceCenter
-	waitmovement 0
-	applymovement LOCALID_MOSSDEEP_GRUNT_1, MossdeepCity_Movement_GruntFaceSpaceCenter
-	applymovement LOCALID_MOSSDEEP_GRUNT_2, MossdeepCity_Movement_GruntFaceSpaceCenter
-	applymovement LOCALID_MOSSDEEP_GRUNT_3, MossdeepCity_Movement_GruntFaceSpaceCenter
-	applymovement LOCALID_MOSSDEEP_GRUNT_4, MossdeepCity_Movement_GruntFaceSpaceCenter
-	waitmovement 0
-	applymovement LOCALID_MOSSDEEP_MAXIE, MossdeepCity_Movement_MaxieEnterSpaceCenter
-	applymovement LOCALID_MOSSDEEP_GRUNT_1, MossdeepCity_Movement_Grunt1EnterSpaceCenter
-	applymovement LOCALID_MOSSDEEP_GRUNT_2, MossdeepCity_Movement_Grunt2EnterSpaceCenter
-	applymovement LOCALID_MOSSDEEP_GRUNT_3, MossdeepCity_Movement_Grunt3EnterSpaceCenter
-	applymovement LOCALID_MOSSDEEP_GRUNT_4, MossdeepCity_Movement_Grunt4EnterSpaceCenter
-	waitmovement 0
-	removeobject LOCALID_MOSSDEEP_MAXIE
-	removeobject LOCALID_MOSSDEEP_GRUNT_1
-	removeobject LOCALID_MOSSDEEP_GRUNT_2
-	removeobject LOCALID_MOSSDEEP_GRUNT_3
-	removeobject LOCALID_MOSSDEEP_GRUNT_4
-	delay 30
-	setvar VAR_MOSSDEEP_CITY_STATE, 2
-	setflag FLAG_HIDE_MOSSDEEP_CITY_TEAM_MAGMA
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	releaseall
 	end
 
@@ -450,33 +401,19 @@ MossdeepCity_EventScript_Scott::
 	call_if_eq VAR_FACING, DIR_NORTH, MossdeepCity_EventScript_ScottExitNorth
 	call_if_eq VAR_FACING, DIR_EAST, MossdeepCity_EventScript_ScottExitEast
 	addvar VAR_SCOTT_STATE, 1
-<<<<<<< HEAD
 	removeobject LOCALID_SCOTT
-=======
-	removeobject LOCALID_MOSSDEEP_SCOTT
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	release
 	end
 
 MossdeepCity_EventScript_ScottExitNorth::
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, MossdeepCity_Movement_PlayerWatchScottExit
 	applymovement LOCALID_SCOTT, MossdeepCity_Movement_ScottExitNorth
-=======
-	applymovement LOCALID_PLAYER, MossdeepCity_Movement_PlayerWatchScottExit
-	applymovement LOCALID_MOSSDEEP_SCOTT, MossdeepCity_Movement_ScottExitNorth
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 MossdeepCity_EventScript_ScottExitEast::
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, MossdeepCity_Movement_PlayerWatchScottExit
 	applymovement LOCALID_SCOTT, MossdeepCity_Movement_ScottExitEast
-=======
-	applymovement LOCALID_PLAYER, MossdeepCity_Movement_PlayerWatchScottExit
-	applymovement LOCALID_MOSSDEEP_SCOTT, MossdeepCity_Movement_ScottExitEast
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
@@ -595,17 +532,12 @@ MossdeepCity_Text_SpecialSpaceCenterRock:
 	.string "I use a wish tag to make it happen.\n"
 	.string "That's what I do.$"
 
-<<<<<<< HEAD
 MossdeepCity_Text_SpecialSpaceCenterRock2:
 	.string "What was that? That wasn't my wish!$"
 
 MossdeepCity_Text_ItsAWhiteRock:
 	.string "It's a white rock.\p"
 	.string "It emanates a mysterious energy…$"
-=======
-MossdeepCity_Text_ItsAWhiteRock:
-	.string "It's a white rock.$"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 MossdeepCity_Text_GymSign:
 	.string "MOSSDEEP CITY POKéMON GYM\n"
@@ -642,7 +574,3 @@ MossdeepCity_Text_SootopolisNewGymLeader:
 	.string "LEADER come in.\p"
 	.string "People tell me the new LEADER once\n"
 	.string "mentored WALLACE.$"
-<<<<<<< HEAD
-=======
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

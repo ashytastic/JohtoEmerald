@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 .set LOCALID_ATTENDANT, 1
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 Route112_CableCarStation_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route112_CableCarStation_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route112_CableCarStation_OnFrame
@@ -14,13 +11,8 @@ Route112_CableCarStation_OnTransition:
 	end
 
 Route112_CableCarStation_EventScript_MoveAttendantAside::
-<<<<<<< HEAD
 	setobjectxyperm LOCALID_ATTENDANT, 7, 4
 	setobjectmovementtype LOCALID_ATTENDANT, MOVEMENT_TYPE_FACE_LEFT
-=======
-	setobjectxyperm LOCALID_ROUTE112_CABLE_CAR_ATTENDANT, 7, 4
-	setobjectmovementtype LOCALID_ROUTE112_CABLE_CAR_ATTENDANT, MOVEMENT_TYPE_FACE_LEFT
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	return
 
 Route112_CableCarStation_OnFrame:
@@ -29,21 +21,12 @@ Route112_CableCarStation_OnFrame:
 
 Route112_CableCarStation_EventScript_ExitCableCar::
 	lockall
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, Route112_CableCarStation_Movement_ExitCableCar
 	applymovement LOCALID_ATTENDANT, Route112_CableCarStation_Movement_FollowPlayerOutFromCableCar
 	waitmovement 0
 	setvar VAR_CABLE_CAR_STATION_STATE, 0
 	setobjectxyperm LOCALID_ATTENDANT, 6, 7
 	setobjectmovementtype LOCALID_ATTENDANT, MOVEMENT_TYPE_FACE_DOWN
-=======
-	applymovement LOCALID_PLAYER, Route112_CableCarStation_Movement_ExitCableCar
-	applymovement LOCALID_ROUTE112_CABLE_CAR_ATTENDANT, Route112_CableCarStation_Movement_FollowPlayerOutFromCableCar
-	waitmovement 0
-	setvar VAR_CABLE_CAR_STATION_STATE, 0
-	setobjectxyperm LOCALID_ROUTE112_CABLE_CAR_ATTENDANT, 6, 7
-	setobjectmovementtype LOCALID_ROUTE112_CABLE_CAR_ATTENDANT, MOVEMENT_TYPE_FACE_DOWN
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	releaseall
 	end
 
@@ -58,13 +41,8 @@ Route112_CableCarStation_EventScript_Attendant::
 Route112_CableCarStation_EventScript_RideCableCar::
 	msgbox Route112_CableCarStation_Text_StepThisWay, MSGBOX_DEFAULT
 	closemessage
-<<<<<<< HEAD
 	applymovement LOCALID_ATTENDANT, Route112_CableCarStation_Movement_LeadPlayerToCableCar
 	applymovement OBJ_EVENT_ID_PLAYER, Route112_CableCarStation_Movement_BoardCableCar
-=======
-	applymovement LOCALID_ROUTE112_CABLE_CAR_ATTENDANT, Route112_CableCarStation_Movement_LeadPlayerToCableCar
-	applymovement LOCALID_PLAYER, Route112_CableCarStation_Movement_BoardCableCar
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	setvar VAR_0x8004, FALSE  @ Going up
 	setvar VAR_CABLE_CAR_STATION_STATE, 1

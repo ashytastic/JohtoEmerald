@@ -3,11 +3,7 @@
   "name": "Route117",
   "layout": "LAYOUT_ROUTE117",
   "music": "MUS_ROUTE110",
-<<<<<<< HEAD
   "region_map_section": "MAPSEC_ROUTE_42",
-=======
-  "region_map_section": "MAPSEC_ROUTE_117",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_ROUTE",
@@ -30,11 +26,7 @@
   ],
   "object_events": [
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_1",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 13,
       "y": 13,
       "elevation": 3,
@@ -60,12 +52,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_2",
-=======
-      "local_id": "LOCALID_DAYCARE_MAN",
-      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 47,
       "y": 4,
       "elevation": 3,
@@ -78,11 +65,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_ZIGZAGOON",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_ZIGZAGOON_2",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 33,
       "y": 3,
       "elevation": 3,
@@ -95,11 +78,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_BUDEW",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_KECLEON",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 39,
       "y": 4,
       "elevation": 3,
@@ -112,11 +91,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_AZUMARILL",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_AZUMARILL",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 42,
       "y": 2,
       "elevation": 3,
@@ -129,11 +104,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_PIKACHU",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_PIKACHU",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 51,
       "y": 1,
       "elevation": 3,
@@ -172,11 +143,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_M",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_MAN_4",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 33,
       "y": 11,
       "elevation": 3,
@@ -236,15 +203,9 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-<<<<<<< HEAD
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route117_EventScript_ItemGreatBall",
       "flag": "FLAG_ITEM_GARBAGEFLAG"
-=======
-      "trainer_sight_or_berry_tree_id": "ITEM_GREAT_BALL",
-      "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_117_GREAT_BALL"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
@@ -268,21 +229,12 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-<<<<<<< HEAD
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route117_EventScript_ItemRevive",
       "flag": "FLAG_ITEM_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BATTLE_GIRL",
-=======
-      "trainer_sight_or_berry_tree_id": "ITEM_REVIVE",
-      "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_117_REVIVE"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_RUNNING_TRIATHLETE_F",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 26,
       "y": 13,
       "elevation": 3,
@@ -295,11 +247,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_SUPER_NERD",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_MANIAC",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 17,
       "y": 12,
       "elevation": 3,
@@ -312,11 +260,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_LASS",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 43,
       "y": 6,
       "elevation": 3,
@@ -329,11 +273,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_LASS",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 42,
       "y": 6,
       "elevation": 3,
@@ -346,11 +286,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_CAPTAIN",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_GIRL_2",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 48,
       "y": 10,
       "elevation": 3,
@@ -363,11 +299,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_LASS",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 15,
       "y": 4,
       "elevation": 3,
@@ -380,11 +312,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 21,
       "y": 4,
       "elevation": 3,
@@ -397,11 +325,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_BATTLE_GIRL",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_RUNNING_TRIATHLETE_F",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 16,
       "y": 4,
       "elevation": 3,
@@ -414,7 +338,6 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_LASS",
       "x": 10,
       "y": 5,
@@ -426,32 +349,6 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route116_RoseradeEvo",
       "flag": "0"
-=======
-      "graphics_id": "OBJ_EVENT_GFX_VAR_0",
-      "x": 47,
-      "y": 2,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "VAR_TEMP_0",
-      "script": "NULL",
-      "flag": "FLAG_TEMP_1"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_VAR_1",
-      "x": 49,
-      "y": 2,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "VAR_TEMP_1",
-      "script": "NULL",
-      "flag": "FLAG_TEMP_2"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "warp_events": [
@@ -463,13 +360,9 @@
       "dest_warp_id": "0"
     }
   ],
-<<<<<<< HEAD
   "coord_events": [
 
   ],
-=======
-  "coord_events": [],
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "bg_events": [
     {
       "type": "sign",

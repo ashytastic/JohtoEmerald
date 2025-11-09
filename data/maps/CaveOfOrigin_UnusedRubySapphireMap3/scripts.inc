@@ -1,5 +1,4 @@
 CaveOfOrigin_UnusedRubySapphireMap3_MapScripts::
-<<<<<<< HEAD
 	map_script MAP_SCRIPT_ON_LOAD, CaveOfOrigin_UnusedRubySapphireMap3_OnLoad
 	map_script MAP_SCRIPT_ON_TRANSITION, CaveOfOrigin_UnusedRubySapphireMap3_OnTransition
 	.byte 0
@@ -26,12 +25,3 @@ CaveOfOrigin_UnusedRubySapphireMap3_Hiker_Text:
 	.string "ruins in the northern part of the\l"
 	.string "region. What do they represent?\p"
 	.string "Are they from an ancient civilization?$"
-=======
-	map_script MAP_SCRIPT_ON_TRANSITION, CaveOfOrigin_UnusedRubySapphireMap3_OnTransition
-	.byte 0
-
-CaveOfOrigin_UnusedRubySapphireMap3_OnTransition:
-	call_if_set FLAG_UNUSED_RS_LEGENDARY_BATTLE_DONE, CaveOfOrigin_EventScript_DisableTriggers
-	end
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

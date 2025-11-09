@@ -12,17 +12,10 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-<<<<<<< HEAD
   "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN",
-=======
-  "connections": null,
-  "object_events": [
-    {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 4,
       "y": 6,
       "elevation": 3,
@@ -32,17 +25,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LilycoveCity_CoveLilyMotel_2F_EventScript_GameDesigner",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_M",
-=======
-      "flag": "FLAG_HIDE_LILYCOVE_MOTEL_GAME_DESIGNERS"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_1",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 1,
       "y": 4,
       "elevation": 3,
@@ -52,11 +38,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LilycoveCity_CoveLilyMotel_2F_EventScript_GraphicArtist",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
-=======
-      "flag": "FLAG_HIDE_LILYCOVE_MOTEL_GAME_DESIGNERS"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
@@ -69,17 +51,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LilycoveCity_CoveLilyMotel_2F_EventScript_FatMan",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_M",
-=======
-      "flag": "FLAG_HIDE_LILYCOVE_MOTEL_GAME_DESIGNERS"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_4",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 10,
       "y": 3,
       "elevation": 3,
@@ -89,17 +64,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LilycoveCity_CoveLilyMotel_2F_EventScript_Programmer",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GBA_KID",
-=======
-      "flag": "FLAG_HIDE_LILYCOVE_MOTEL_GAME_DESIGNERS"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_GAMEBOY_KID",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 7,
       "y": 3,
       "elevation": 3,
@@ -109,11 +77,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LilycoveCity_CoveLilyMotel_2F_EventScript_GameBoyKid",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
-=======
-      "flag": "FLAG_HIDE_LILYCOVE_MOTEL_GAME_DESIGNERS"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
@@ -126,17 +90,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LilycoveCity_CoveLilyMotel_2F_EventScript_Woman",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PROF_OAK",
-=======
-      "flag": "FLAG_HIDE_LILYCOVE_MOTEL_GAME_DESIGNERS"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_SCOTT",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 1,
       "y": 7,
       "elevation": 3,
@@ -146,11 +103,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LilycoveCity_CoveLilyMotel_2F_EventScript_Scott",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
-=======
-      "flag": "FLAG_HIDE_LILYCOVE_MOTEL_SCOTT"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "warp_events": [
@@ -162,15 +115,10 @@
       "dest_warp_id": "2"
     }
   ],
-<<<<<<< HEAD
   "coord_events": [
 
   ],
   "bg_events": [
 
   ]
-=======
-  "coord_events": [],
-  "bg_events": []
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }

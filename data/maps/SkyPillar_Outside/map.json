@@ -12,18 +12,10 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-<<<<<<< HEAD
   "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_LANCE",
-=======
-  "connections": null,
-  "object_events": [
-    {
-      "local_id": "LOCALID_SKY_PILLAR_WALLACE",
-      "graphics_id": "OBJ_EVENT_GFX_WALLACE",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 13,
       "y": 7,
       "elevation": 3,
@@ -33,11 +25,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SkyPillar_Outside_EventScript_Wallace",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
-=======
-      "flag": "FLAG_HIDE_SKY_PILLAR_WALLACE"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "warp_events": [
@@ -56,15 +44,10 @@
       "dest_warp_id": "0"
     }
   ],
-<<<<<<< HEAD
   "coord_events": [
 
   ],
   "bg_events": [
 
   ]
-=======
-  "coord_events": [],
-  "bg_events": []
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }

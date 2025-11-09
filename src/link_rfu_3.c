@@ -35,11 +35,7 @@ EWRAM_DATA u8 gWirelessStatusIndicatorSpriteId = 0;
 static u8 sSequenceArrayValOffset;
 
 static const u16 sWirelessLinkIconPalette[] = INCBIN_U16("graphics/link/wireless_icon.gbapal");
-<<<<<<< HEAD
 static const u32 sWirelessLinkIconPic[] = INCBIN_U32("graphics/link/wireless_icon.4bpp.lz");
-=======
-static const u32 sWirelessLinkIconPic[] = INCBIN_U32("graphics/link/wireless_icon.4bpp.smol");
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 // Most of the below two tables won't make sense with ASCII encoding.
 static const u8 sWireless_ASCIItoRSETable[256] = {
@@ -138,11 +134,7 @@ static const u8 sWireless_ASCIItoRSETable[256] = {
     0x8d, 0x8e, 0x8f, 0x90, 0x91, 0x92, 0x93, 0x94
 };
 
-<<<<<<< HEAD
 static const u8 sWireless_RSEtoASCIITable[256] = {
-=======
-const u8 gWireless_RSEtoASCIITable[256] = {
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     [CHAR_SPACE] = ' ',
     0x86, 0x87, 0x88, 0x89, 0x8a, 0x8b, 0x8c, 0x8d,
     0x8e, 0x8f, 0x90, 0x91, 0x92, 0x93, 0x94, 0x95,
@@ -619,11 +611,7 @@ static void UNUSED PkmnStrToASCII(u8 *asciiStr, const u8 *pkmnStr)
     s32 i;
 
     for (i = 0; pkmnStr[i] != EOS; i++)
-<<<<<<< HEAD
         asciiStr[i] = sWireless_RSEtoASCIITable[pkmnStr[i]];
-=======
-        asciiStr[i] = gWireless_RSEtoASCIITable[pkmnStr[i]];
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     asciiStr[i] = 0;
 }
 
@@ -688,11 +676,7 @@ void InitHostRfuGameData(struct RfuGameData *data, u8 activity, bool32 startedAc
     data->compatibility.hasNews = FALSE;
     data->compatibility.hasCard = FALSE;
     data->compatibility.unknown = FALSE;
-<<<<<<< HEAD
     data->compatibility.canLinkNationally = TRUE;
-=======
-    data->compatibility.canLinkNationally = FlagGet(FLAG_IS_CHAMPION);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     data->compatibility.hasNationalDex = IsNationalPokedexEnabled();
     data->compatibility.gameClear = FlagGet(FLAG_SYS_GAME_CLEAR);
 }

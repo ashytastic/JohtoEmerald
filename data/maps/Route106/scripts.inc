@@ -1,9 +1,6 @@
 Route106_MapScripts::
-<<<<<<< HEAD
 	map_script MAP_SCRIPT_ON_TRANSITION, SetTimeEncounters
 	map_script MAP_SCRIPT_ON_RESUME, SetTimeEncounters
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.byte 0
 
 Route106_EventScript_TrainerTipsSign::
@@ -21,11 +18,7 @@ Route106_EventScript_Kyla::
 	end
 
 Route106_EventScript_Elliot::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_MASA, Route106_Text_ElliotIntro, Route106_Text_ElliotDefeated, Route106_EventScript_ElliotRegisterMatchCallAfterBattle
-=======
-	trainerbattle_single TRAINER_ELLIOT_1, Route106_Text_ElliotIntro, Route106_Text_ElliotDefeated, Route106_EventScript_ElliotRegisterMatchCallAfterBattle
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route106_EventScript_ElliotRematch
 	msgbox Route106_Text_ElliotPostBattle, MSGBOX_DEFAULT
@@ -36,20 +29,12 @@ Route106_EventScript_ElliotRegisterMatchCallAfterBattle::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route106_Text_ElliotRegister, MSGBOX_DEFAULT
-<<<<<<< HEAD
 	register_matchcall TRAINER_MASA
-=======
-	register_matchcall TRAINER_ELLIOT_1
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	release
 	end
 
 Route106_EventScript_ElliotRematch::
-<<<<<<< HEAD
 	trainerbattle_rematch TRAINER_MASA, Route106_Text_ElliotRematchIntro, Route106_Text_ElliotRematchDefeated
-=======
-	trainerbattle_rematch TRAINER_ELLIOT_1, Route106_Text_ElliotRematchIntro, Route106_Text_ElliotRematchDefeated
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route106_Text_ElliotRematchPostBattle, MSGBOX_AUTOCLOSE
 	end
 

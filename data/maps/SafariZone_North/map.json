@@ -31,11 +31,7 @@
   ],
   "object_events": [
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_FISHER",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 22,
       "y": 9,
       "elevation": 3,
@@ -48,11 +44,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_M",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_MAN_4",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 6,
       "y": 29,
       "elevation": 3,
@@ -151,7 +143,6 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-<<<<<<< HEAD
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SafariZone_North_EventScript_ItemCalcium",
       "flag": "FLAG_GARBAGEFLAG"
@@ -166,14 +157,4 @@
   "bg_events": [
 
   ]
-=======
-      "trainer_sight_or_berry_tree_id": "ITEM_CALCIUM",
-      "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_SAFARI_ZONE_NORTH_CALCIUM"
-    }
-  ],
-  "warp_events": [],
-  "coord_events": [],
-  "bg_events": []
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }

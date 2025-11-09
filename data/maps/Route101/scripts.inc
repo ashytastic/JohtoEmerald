@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .set LOCALID_BIRCH, 2
 .set LOCALID_ZIGZAGOON, 4
 
@@ -6,36 +5,20 @@ Route101_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route101_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route101_OnFrame
 	map_script MAP_SCRIPT_ON_RESUME, SetTimeEncounters
-=======
-Route101_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, Route101_OnTransition
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route101_OnFrame
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.byte 0
 
 Route101_OnTransition:
 	call ProfBirch_EventScript_UpdateLocation
-<<<<<<< HEAD
 	callnative SetTimeBasedEncounters
 	end
 
 Route101_OnFrame:
 	map_script_2 VAR_GARBAGEVAR, 0, Route101_EventScript_HideMapNamePopup
-=======
-	end
-
-Route101_OnFrame:
-	map_script_2 VAR_ROUTE101_STATE, 0, Route101_EventScript_HideMapNamePopup
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.2byte 0
 
 Route101_EventScript_HideMapNamePopup::
 	setflag FLAG_HIDE_MAP_NAME_POPUP
-<<<<<<< HEAD
 	setvar VAR_GARBAGEVAR, 1
-=======
-	setvar VAR_ROUTE101_STATE, 1
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 Route101_EventScript_StartBirchRescue::
@@ -43,7 +26,6 @@ Route101_EventScript_StartBirchRescue::
 	playbgm MUS_HELP, TRUE
 	msgbox Route101_Text_HelpMe, MSGBOX_DEFAULT
 	closemessage
-<<<<<<< HEAD
 	setobjectxy LOCALID_BIRCH, 0, 15
 	setobjectxy LOCALID_ZIGZAGOON, 0, 16
 	applymovement OBJ_EVENT_ID_PLAYER, Route101_Movement_EnterScene
@@ -61,25 +43,6 @@ Route101_EventScript_StartBirchRescue::
 	msgbox Route101_Text_PleaseHelp, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_GARBAGEVAR, 2
-=======
-	setobjectxy LOCALID_ROUTE101_BIRCH, 0, 15
-	setobjectxy LOCALID_ROUTE101_ZIGZAGOON, 0, 16
-	applymovement LOCALID_PLAYER, Route101_Movement_EnterScene
-	applymovement LOCALID_ROUTE101_BIRCH, Route101_Movement_BirchRunAway1
-	applymovement LOCALID_ROUTE101_ZIGZAGOON, Route101_Movement_ZigzagoonChase1
-	waitmovement 0
-	applymovement LOCALID_ROUTE101_ZIGZAGOON, Route101_Movement_ZigzagoonChaseInCircles
-	applymovement LOCALID_ROUTE101_BIRCH, Route101_Movement_BirchRunInCircles
-	waitmovement 0
-	applymovement LOCALID_ROUTE101_BIRCH, Common_Movement_WalkInPlaceFasterRight
-	waitmovement 0
-	applymovement LOCALID_ROUTE101_ZIGZAGOON, Route101_Movement_ZigzagoonFaceBirch
-	applymovement LOCALID_ROUTE101_BIRCH, Route101_Movement_BirchFaceZigzagoon
-	waitmovement 0
-	msgbox Route101_Text_PleaseHelp, MSGBOX_DEFAULT
-	closemessage
-	setvar VAR_ROUTE101_STATE, 2
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	releaseall
 	end
 
@@ -87,11 +50,7 @@ Route101_EventScript_PreventExitSouth::
 	lockall
 	msgbox Route101_Text_DontLeaveMe, MSGBOX_DEFAULT
 	closemessage
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, Route101_Movement_PreventExitSouth
-=======
-	applymovement LOCALID_PLAYER, Route101_Movement_PreventExitSouth
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	releaseall
 	end
@@ -100,11 +59,7 @@ Route101_EventScript_PreventExitWest::
 	lockall
 	msgbox Route101_Text_DontLeaveMe, MSGBOX_DEFAULT
 	closemessage
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, Route101_Movement_PreventExitWest
-=======
-	applymovement LOCALID_PLAYER, Route101_Movement_PreventExitWest
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	releaseall
 	end
@@ -113,11 +68,7 @@ Route101_EventScript_PreventExitNorth::
 	lockall
 	msgbox Route101_Text_DontLeaveMe, MSGBOX_DEFAULT
 	closemessage
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, Route101_Movement_PreventExitNorth
-=======
-	applymovement LOCALID_PLAYER, Route101_Movement_PreventExitNorth
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	releaseall
 	end
@@ -272,7 +223,6 @@ Route101_EventScript_RouteSign::
 Route101_EventScript_BirchsBag::
 	lock
 	faceplayer
-<<<<<<< HEAD
 	setflag FLAG_RESCUED_BIRCH
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_ZIGZAGOON
@@ -291,26 +241,6 @@ Route101_EventScript_BirchsBag::
 	setflag FLAG_GARBAGEFLAG
 	setvar VAR_GARBAGEVAR, 2
 	setvar VAR_GARBAGEVAR, 3
-=======
-	setflag FLAG_SYS_POKEMON_GET
-	setflag FLAG_RESCUED_BIRCH
-	fadescreen FADE_TO_BLACK
-	removeobject LOCALID_ROUTE101_ZIGZAGOON
-	setobjectxy LOCALID_PLAYER, 6, 13
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
-	waitmovement 0
-	special ChooseStarter
-	waitstate
-	applymovement LOCALID_ROUTE101_BIRCH, Route101_Movement_BirchApproachPlayer
-	waitmovement 0
-	msgbox Route101_Text_YouSavedMe, MSGBOX_DEFAULT
-	special HealPlayerParty
-	setflag FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE
-	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH
-	setflag FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG
-	setvar VAR_BIRCH_LAB_STATE, 2
-	setvar VAR_ROUTE101_STATE, 3
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom
@@ -325,11 +255,7 @@ Route101_EventScript_HideMayInBedroom::
 	return
 
 Route101_EventScript_HideBrendanInBedroom::
-<<<<<<< HEAD
 	setflag FLAG_GARBAGEFLAG
-=======
-	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_BEDROOM
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	return
 
 Route101_Movement_BirchApproachPlayer:

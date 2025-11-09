@@ -16,11 +16,7 @@
   "shared_scripts_map": "BattlePyramidSquare01",
   "object_events": [
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_CAPTAIN",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_GIRL_2",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 5,
       "y": 2,
       "elevation": 4,
@@ -33,11 +29,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_CAPTAIN",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_GIRL_2",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 2,
       "y": 5,
       "elevation": 4,
@@ -50,11 +42,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_CAPTAIN",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_GIRL_2",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 5,
       "y": 5,
       "elevation": 4,
@@ -67,11 +55,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_CAPTAIN",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_GIRL_2",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 2,
       "y": 2,
       "elevation": 4,

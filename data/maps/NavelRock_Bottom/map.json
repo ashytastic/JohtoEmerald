@@ -12,7 +12,6 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-<<<<<<< HEAD
   "connections": 0,
   "object_events": [
     {
@@ -23,19 +22,6 @@
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
-=======
-  "connections": null,
-  "object_events": [
-    {
-      "local_id": "LOCALID_NAVEL_ROCK_LUGIA",
-      "graphics_id": "OBJ_EVENT_GFX_LUGIA",
-      "x": 11,
-      "y": 13,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NavelRock_Bottom_EventScript_Lugia",
@@ -51,15 +37,10 @@
       "dest_warp_id": "0"
     }
   ],
-<<<<<<< HEAD
   "coord_events": [
 
   ],
   "bg_events": [
 
   ]
-=======
-  "coord_events": [],
-  "bg_events": []
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }

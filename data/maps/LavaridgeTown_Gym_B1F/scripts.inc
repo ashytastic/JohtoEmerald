@@ -1,11 +1,8 @@
-<<<<<<< HEAD
 .equ LOCALID_JACE, 1
 .equ LOCALID_KEEGAN, 2
 .equ LOCALID_JEFF, 3
 .equ LOCALID_ELI, 4
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 LavaridgeTown_Gym_B1F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, LavaridgeTown_Gym_B1F_OnTransition
 	.byte 0
@@ -24,11 +21,7 @@ LavaridgeTown_Gym_B1F_EventScript_SetTrainerTempVars::
 	goto_if_defeated TRAINER_KEEGAN, LavaridgeTown_Gym_B1F_EventScript_SetJaceTempVar
 	setvar VAR_TEMP_7, 1
 LavaridgeTown_Gym_B1F_EventScript_SetJaceTempVar::
-<<<<<<< HEAD
 	goto_if_defeated TRAINER_KOGA_2, LavaridgeTown_Gym_B1F_EventScript_SetJeffTempVar
-=======
-	goto_if_defeated TRAINER_JACE, LavaridgeTown_Gym_B1F_EventScript_SetJeffTempVar
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setvar VAR_TEMP_8, 1
 LavaridgeTown_Gym_B1F_EventScript_SetJeffTempVar::
 	goto_if_defeated TRAINER_JEFF, LavaridgeTown_Gym_B1F_EventScript_SetEliTempVar
@@ -43,11 +36,7 @@ LavaridgeTown_Gym_B1F_EventScript_CheckBuryTrainers::
 	goto_if_defeated TRAINER_KEEGAN, LavaridgeTown_Gym_B1F_EventScript_CheckBuryJace
 	setobjectmovementtype LOCALID_KEEGAN, MOVEMENT_TYPE_BURIED
 LavaridgeTown_Gym_B1F_EventScript_CheckBuryJace::
-<<<<<<< HEAD
 	goto_if_defeated TRAINER_KOGA_2, LavaridgeTown_Gym_B1F_EventScript_CheckBuryJeff
-=======
-	goto_if_defeated TRAINER_JACE, LavaridgeTown_Gym_B1F_EventScript_CheckBuryJeff
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setobjectmovementtype LOCALID_JACE, MOVEMENT_TYPE_BURIED
 LavaridgeTown_Gym_B1F_EventScript_CheckBuryJeff::
 	goto_if_defeated TRAINER_JEFF, LavaridgeTown_Gym_B1F_EventScript_CheckBuryEli

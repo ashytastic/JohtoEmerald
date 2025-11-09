@@ -1,5 +1,4 @@
 MeteorFalls_B1F_2R_MapScripts::
-<<<<<<< HEAD
 	map_script MAP_SCRIPT_ON_TRANSITION, MeteorFalls_B1F_2R_OnTransition
 	.byte 0
 
@@ -10,7 +9,3 @@ MeteorFalls_B1F_2R_OnTransition::
 MeteorFalls_B1F_2R_SwitchToModern::
 	setmaplayoutindex LAYOUT_METEOR_FALLS_B1F_2R_MODERN
 	end
-=======
-	.byte 0
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

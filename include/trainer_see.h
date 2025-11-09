@@ -17,11 +17,7 @@ extern bool8 gTrainerApproachedPlayer;
 extern u8 gApproachingTrainerId;
 
 bool8 CheckForTrainersWantingBattle(void);
-<<<<<<< HEAD
 void SetBuriedTrainerMovement(struct ObjectEvent *var);
-=======
-void SetBuriedTrainerMovement(struct ObjectEvent *objEvent);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 void DoTrainerApproach(void);
 void TryPrepareSecondApproachingTrainer(void);
 u8 FldEff_ExclamationMarkIcon(void);
@@ -30,10 +26,5 @@ u8 FldEff_HeartIcon(void);
 u8 GetCurrentApproachingTrainerObjectEventId(void);
 u8 GetChosenApproachingTrainerObjectEventId(u8 arrayId);
 void PlayerFaceTrainerAfterBattle(void);
-<<<<<<< HEAD
-=======
-u8 FldEff_DoubleExclMarkIcon(void);
-u8 FldEff_XIcon(void);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 #endif // GUARD_TRAINER_SEE_H

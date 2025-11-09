@@ -10,11 +10,7 @@ Underwater_SeafloorCavern_OnTransition:
 	end
 
 Underwater_SeafloorCavern_EventScript_HideSubmarine::
-<<<<<<< HEAD
 	setflag FLAG_GARBAGEFLAG
-=======
-	setflag FLAG_HIDE_UNDERWATER_SEA_FLOOR_CAVERN_STOLEN_SUBMARINE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 Underwater_SeafloorCavern_OnLoad:

@@ -2,10 +2,6 @@ ENTRY(Start)
 
 gNumMusicPlayers = 4;
 gMaxLines = 0;
-<<<<<<< HEAD
-=======
-gInitialMainCB2 = CB2_InitCopyrightScreenAfterBootup;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 MEMORY
 {
@@ -16,7 +12,6 @@ MEMORY
 
 SECTIONS {
 
-<<<<<<< HEAD
     ewram 0x2000000 (NOLOAD) :
     ALIGN(4)
     {
@@ -37,45 +32,11 @@ SECTIONS {
 
         src/*.o(COMMON);
         gflib/*.o(COMMON);
-=======
-
-    .ewram ORIGIN(EWRAM) : AT (__ewram_lma)
-    ALIGN(4)
-    {
-        __ewram_start = .;
-        *(.ewram*)
-        . = ALIGN(4);
-        __ewram_end = .;
-    } > EWRAM
-
-    .ewram.sbss (NOLOAD) :
-    ALIGN(4)
-    {
-        *.o(.sbss);
-    } > EWRAM
-
-    .iwram ORIGIN(IWRAM) : AT (__iwram_lma)
-    ALIGN(4)
-    {
-        __iwram_start = .;
-        *(.iwram*);
-        . = ALIGN(4);
-        __iwram_end = .;
-    } > IWRAM
-
-    .iwram.bss (NOLOAD) :
-    ALIGN(4)
-    {
-        *.o(.bss*);
-        *.o(common_data);
-        src/*.o(COMMON);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         *libc.a:*.o(COMMON);
         *libnosys.a:*.o(COMMON);
     } > IWRAM
 
     /* BEGIN ROM DATA */
-<<<<<<< HEAD
     . = 0x8000000;
 
     .text :
@@ -88,24 +49,6 @@ SECTIONS {
         gflib/*.o(.text*);
         src/*.o(.text*);
         asm/*.o(.text*);
-=======
-
-    .text ORIGIN(ROM) :
-    ALIGN(4)
-    {
-        src/rom_header.o(.text*);
-        KEEP(*.o(.text.header_gf));
-        KEEP(*.o(.text.header_rhh));
-        src/crt0.o(.text);
-        *libagbsyscall.a:*.o(.text*);
-        *libgcc.a:*.o(.text*);
-        *libc.a:*.o(.text*);
-        *libnosys.a:*.o(.text*);
-        asm/*.o(.text*);
-        KEEP(*.o(.text.consts));
-        *.o(.text*);
-        *.o(.eh_frame);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     } > ROM =0
 
     script_data :
@@ -114,7 +57,6 @@ SECTIONS {
 		data/*.o(script_data);
     } > ROM =0
 
-<<<<<<< HEAD
     lib_text :
     ALIGN(4)
     {
@@ -186,33 +128,6 @@ SECTIONS {
     {
         src/graphics.o(.rodata);
     } > ROM =0
-=======
-    .rodata :
-    ALIGN(4)
-    {
-        *.o(.rodata*);
-        *libgcc.a:*.o(.rodata*);
-        *libc.a:*.o(.rodata*);
-        *libc.a:*.o(.data*);
-        sound/songs/*.o(.rodata);
-    } > ROM =0
-
-    .data.iwram :
-    ALIGN(4)
-    {
-        __iwram_lma = .;
-        . = . + (__iwram_end - __iwram_start);
-    } > ROM = 0
-
-    .data.ewram :
-    ALIGN(4)
-    {
-        __ewram_lma = .;
-        . = . + (__ewram_end - __ewram_start);
-    } > ROM = 0
-
-    __rom_end = .;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     /* DWARF debug sections.
        Symbols in the DWARF debugging sections are relative to the beginning

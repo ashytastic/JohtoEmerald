@@ -6,7 +6,6 @@ MauvilleCity_Mart_EventScript_Clerk::
 	faceplayer
 	message gText_HowMayIServeYou
 	waitmessage
-<<<<<<< HEAD
 	pokemart 0
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
@@ -17,8 +16,6 @@ MauvilleCity_Mart_EventScript_Clerk2::
 	faceplayer
 	message gText_HowMayIServeYou
 	waitmessage
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	pokemart MauvilleCity_Mart_Pokemart
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
@@ -26,7 +23,6 @@ MauvilleCity_Mart_EventScript_Clerk2::
 
 	.align 2
 MauvilleCity_Mart_Pokemart:
-<<<<<<< HEAD
 	.2byte ITEM_X_SPEED
 	.2byte ITEM_X_ATTACK
 	.2byte ITEM_X_DEFEND
@@ -36,21 +32,6 @@ MauvilleCity_Mart_Pokemart:
 	.2byte ITEM_NONE
 	release
 	end
-=======
-	.2byte ITEM_POKE_BALL
-	.2byte ITEM_GREAT_BALL
-	.2byte ITEM_SUPER_POTION
-	.2byte ITEM_ANTIDOTE
-	.2byte ITEM_PARALYZE_HEAL
-	.2byte ITEM_AWAKENING
-	.2byte ITEM_X_SPEED
-	.2byte ITEM_X_ATTACK
-	.2byte ITEM_X_DEFENSE
-	.2byte ITEM_GUARD_SPEC
-	.2byte ITEM_DIRE_HIT
-	.2byte ITEM_X_ACCURACY
-	pokemartlistend
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 MauvilleCity_Mart_EventScript_ExpertM::
 	msgbox MauvilleCity_Mart_Text_ItemsToTemporarilyElevateStats, MSGBOX_NPC

@@ -87,11 +87,7 @@ std::string StringParser::ReadCharOrEscape()
         if (isEscape)
             RaiseError("unknown escape '\\%c'", code);
         else
-<<<<<<< HEAD
             RaiseError("unknown character U+%X", code);
-=======
-            RaiseError("unknown character U+%X\nIf this character is intended to be used, it needs to be implemented", code);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
 
     return sequence;

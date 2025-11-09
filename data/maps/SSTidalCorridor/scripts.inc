@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 .set LOCALID_SAILOR, 1
 .set LOCALID_SCOTT, 5
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 SSTidalCorridor_MapScripts::
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, SSTidalCorridor_OnFrame
 	.byte 0
@@ -143,11 +140,7 @@ SSTidalCorridor_EventScript_ExitSlateport::
 	end
 
 SSTidalCorridor_EventScript_HideSnatchGiver::
-<<<<<<< HEAD
 	setflag FLAG_GARBAGEFLAG
-=======
-	setflag FLAG_HIDE_SS_TIDAL_ROOMS_SNATCH_GIVER
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	return
 
 SSTidalCorridor_EventScript_Porthole::
@@ -180,11 +173,7 @@ SSTidalCorridor_EventScript_EnjoyYourCruise::
 SSTidalCorridor_EventScript_CheckIfTrainersDefeated::
 	goto_if_not_defeated TRAINER_PHILLIP, SSTidalCorridor_EventScript_TrainerNotDefeated
 	goto_if_not_defeated TRAINER_LEONARD, SSTidalCorridor_EventScript_TrainerNotDefeated
-<<<<<<< HEAD
 	goto_if_not_defeated TRAINER_GRUNT_26, SSTidalCorridor_EventScript_TrainerNotDefeated
-=======
-	goto_if_not_defeated TRAINER_COLTON, SSTidalCorridor_EventScript_TrainerNotDefeated
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto_if_not_defeated TRAINER_MICAH, SSTidalCorridor_EventScript_TrainerNotDefeated
 	goto_if_not_defeated TRAINER_THOMAS, SSTidalCorridor_EventScript_TrainerNotDefeated
 	goto_if_not_defeated TRAINER_LEA_AND_JED, SSTidalCorridor_EventScript_TrainerNotDefeated
@@ -199,7 +188,6 @@ SSTidalCorridor_EventScript_TrainerNotDefeated::
 
 SSTidalCorridor_EventScript_ScottScene::
 	lockall
-<<<<<<< HEAD
 	applymovement LOCALID_SCOTT, SSTidalCorridor_Movement_ScottApproachPlayer
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
@@ -214,22 +202,6 @@ SSTidalCorridor_EventScript_ScottScene::
 	waitse
 	removeobject LOCALID_SCOTT
 	applymovement LOCALID_SAILOR, SSTidalCorridor_Movement_SailorReturn
-=======
-	applymovement LOCALID_SS_TIDAL_SCOTT, SSTidalCorridor_Movement_ScottApproachPlayer
-	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
-	waitmovement 0
-	msgbox SSTidalCorridor_Text_ScottBattleFrontierInvite, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_PLAYER, SSTidalCorridor_Movement_PlayerWatchScottExit
-	applymovement LOCALID_SS_TIDAL_EXIT_SAILOR, SSTidalCorridor_Movement_SailorMoveForScott
-	applymovement LOCALID_SS_TIDAL_SCOTT, SSTidalCorridor_Movement_ScottExit
-	waitmovement 0
-	playse SE_EXIT
-	waitse
-	removeobject LOCALID_SS_TIDAL_SCOTT
-	applymovement LOCALID_SS_TIDAL_EXIT_SAILOR, SSTidalCorridor_Movement_SailorReturn
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	delay 30
 	setflag FLAG_MET_SCOTT_ON_SS_TIDAL

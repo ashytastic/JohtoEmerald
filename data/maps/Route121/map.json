@@ -3,11 +3,7 @@
   "name": "Route121",
   "layout": "LAYOUT_ROUTE121",
   "music": "MUS_ROUTE120",
-<<<<<<< HEAD
   "region_map_section": "MAPSEC_ROUTE_46",
-=======
-  "region_map_section": "MAPSEC_ROUTE_121",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_ROUTE",
@@ -35,11 +31,7 @@
   ],
   "object_events": [
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_F",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 29,
       "y": 14,
       "elevation": 3,
@@ -156,11 +148,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_LASS",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 39,
       "y": 9,
       "elevation": 3,
@@ -173,11 +161,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_LASS",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 40,
       "y": 9,
       "elevation": 3,
@@ -190,12 +174,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
-=======
-      "local_id": "LOCALID_ROUTE121_GRUNT_1",
-      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 30,
       "y": 8,
       "elevation": 3,
@@ -205,18 +184,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
-=======
-      "flag": "FLAG_HIDE_ROUTE_121_TEAM_AQUA_GRUNTS"
-    },
-    {
-      "local_id": "LOCALID_ROUTE121_GRUNT_2",
-      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 30,
       "y": 7,
       "elevation": 3,
@@ -226,18 +197,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
-=======
-      "flag": "FLAG_HIDE_ROUTE_121_TEAM_AQUA_GRUNTS"
-    },
-    {
-      "local_id": "LOCALID_ROUTE121_GRUNT_3",
-      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 31,
       "y": 7,
       "elevation": 3,
@@ -247,11 +210,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
-=======
-      "flag": "FLAG_HIDE_ROUTE_121_TEAM_AQUA_GRUNTS"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
@@ -280,11 +239,7 @@
       "flag": "FLAG_TEMP_12"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_BILL",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_POKEFAN_F",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 63,
       "y": 5,
       "elevation": 3,
@@ -310,11 +265,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_CHANNELER",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_HEX_MANIAC",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 11,
       "y": 11,
       "elevation": 3,
@@ -348,15 +299,9 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-<<<<<<< HEAD
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route121_EventScript_ItemCarbos",
       "flag": "FLAG_ITEM_GARBAGEFLAG"
-=======
-      "trainer_sight_or_berry_tree_id": "ITEM_CARBOS",
-      "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_121_CARBOS"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
@@ -372,11 +317,7 @@
       "flag": "FLAG_TEMP_13"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_SUPER_NERD",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_MANIAC",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 11,
       "y": 6,
       "elevation": 3,
@@ -389,11 +330,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_M",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_MAN_4",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 59,
       "y": 8,
       "elevation": 3,
@@ -419,11 +356,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_MAN",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 65,
       "y": 9,
       "elevation": 3,
@@ -436,11 +369,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_WORKER_F",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 72,
       "y": 9,
       "elevation": 3,
@@ -461,15 +390,9 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-<<<<<<< HEAD
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route121_EventScript_ItemRevive",
       "flag": "FLAG_ITEM_GARBAGEFLAG"
-=======
-      "trainer_sight_or_berry_tree_id": "ITEM_REVIVE",
-      "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_121_REVIVE"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -480,7 +403,6 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-<<<<<<< HEAD
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route121_EventScript_ItemZinc",
       "flag": "FLAG_ITEM_GARBAGEFLAG"
@@ -497,11 +419,6 @@
       "trainer_sight_or_berry_tree_id": "ITEM_FAIRY_GEM",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_121_FAIRY_GEM"
-=======
-      "trainer_sight_or_berry_tree_id": "ITEM_ZINC",
-      "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_121_ZINC"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "warp_events": [
@@ -509,11 +426,7 @@
       "x": 37,
       "y": 5,
       "elevation": 0,
-<<<<<<< HEAD
       "dest_map": "MAP_ROUTE121_SAFARI_ZONE_GATE_SAFARI_ZONE_ENTRANCE",
-=======
-      "dest_map": "MAP_ROUTE121_SAFARI_ZONE_ENTRANCE",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "dest_warp_id": "2"
     }
   ],
@@ -523,11 +436,7 @@
       "x": 25,
       "y": 5,
       "elevation": 3,
-<<<<<<< HEAD
       "var": "VAR_GARBAGEVAR",
-=======
-      "var": "VAR_ROUTE121_STATE",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "var_value": "0",
       "script": "Route121_EventScript_AquaGruntsMoveOut"
     },
@@ -536,11 +445,7 @@
       "x": 25,
       "y": 6,
       "elevation": 3,
-<<<<<<< HEAD
       "var": "VAR_GARBAGEVAR",
-=======
-      "var": "VAR_ROUTE121_STATE",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "var_value": "0",
       "script": "Route121_EventScript_AquaGruntsMoveOut"
     },
@@ -549,11 +454,7 @@
       "x": 25,
       "y": 7,
       "elevation": 3,
-<<<<<<< HEAD
       "var": "VAR_GARBAGEVAR",
-=======
-      "var": "VAR_ROUTE121_STATE",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "var_value": "0",
       "script": "Route121_EventScript_AquaGruntsMoveOut"
     },
@@ -562,11 +463,7 @@
       "x": 25,
       "y": 8,
       "elevation": 3,
-<<<<<<< HEAD
       "var": "VAR_GARBAGEVAR",
-=======
-      "var": "VAR_ROUTE121_STATE",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "var_value": "0",
       "script": "Route121_EventScript_AquaGruntsMoveOut"
     }

@@ -122,7 +122,6 @@ struct EasyChatWordsByLetter
 
 void InitEasyChatPhrases(void);
 void ShowEasyChatScreen(void);
-<<<<<<< HEAD
 u8 * CopyEasyChatWord(u8 *dest, u16 word);
 bool32 IsEasyChatAnswerUnlocked(int word);
 void InitializeEasyChatWordArray(u16 *words, u16 length);
@@ -133,18 +132,6 @@ u16 UnlockRandomTrendySaying(void);
 u16 EasyChat_GetNumWordsInGroup(u8);
 u16 GetRandomEasyChatWordFromUnlockedGroup(u16);
 void DoEasyChatScreen(u8 type, u16 *words, MainCallback callback, u8 displayedPersonType);
-=======
-u8 *CopyEasyChatWord(u8 *dest, u16 easyChatWord);
-bool32 IsEasyChatAnswerUnlocked(int easyChatWord);
-void InitializeEasyChatWordArray(u16 *words, u16 length);
-u8 *ConvertEasyChatWordsToString(u8 *dest, const u16 *src, u16 columns, u16 rows);
-bool8 IsBardWordInvalid(u16 easyChatWord);
-u16 GetRandomEasyChatWordFromGroup(u16 groupId);
-u16 UnlockRandomTrendySaying(void);
-u16 EasyChat_GetNumWordsInGroup(u8 groupId);
-u16 GetRandomEasyChatWordFromUnlockedGroup(u16 groupId);
-void DoEasyChatScreen(u8 type, u16 *words, MainCallback exitCallback, u8 displayedPersonType);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 void InitQuestionnaireWords(void);
 void UnlockTrendySaying(u8 wordIndex);
 

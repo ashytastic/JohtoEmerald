@@ -5,10 +5,6 @@
 #include "pokemon_animation.h"
 #include "sprite.h"
 #include "task.h"
-<<<<<<< HEAD
-=======
-#include "test_runner.h"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include "trig.h"
 #include "util.h"
 #include "data.h"
@@ -29,13 +25,9 @@
     uses a BACK_ANIM_* that refers to a set of 3 ANIM functions. Which of the
     3 that gets used depends on the Pokémon's nature (see sBackAnimationIds).
 
-<<<<<<< HEAD
     The table linking species to a BACK_ANIM is in this file (sSpeciesToBackAnimSet)
     while the table linking species to an ANIM for their front animation is in
     pokemon.c (sMonFrontAnimIdsTable).
-=======
-    The gSpeciesInfo table links to both BACK_ANIM and ANIM in its frontAnimId and backAnimId fields.
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     These are the functions that will start an animation:
     - LaunchAnimationTaskForFrontSprite
@@ -211,12 +203,6 @@ static void Anim_ShakeGlowGreen_Slow(struct Sprite *sprite);
 static void Anim_ShakeGlowBlue_Fast(struct Sprite *sprite);
 static void Anim_ShakeGlowBlue(struct Sprite *sprite);
 static void Anim_ShakeGlowBlue_Slow(struct Sprite *sprite);
-<<<<<<< HEAD
-=======
-static void Anim_ShakeGlowBlack_Slow(struct Sprite *sprite);
-static void Anim_ShakeGlowWhite_Slow(struct Sprite *sprite);
-static void Anim_ShakeGlowPurple_Slow(struct Sprite *sprite);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 static void WaitAnimEnd(struct Sprite *sprite);
 
@@ -224,7 +210,6 @@ static struct PokemonAnimData sAnims[MAX_BATTLERS_COUNT];
 static u8 sAnimIdx;
 static bool32 sIsSummaryAnim;
 
-<<<<<<< HEAD
 static const u8 sSpeciesToBackAnimSet[] =
 {
     [SPECIES_BULBASAUR]  = BACK_ANIM_DIP_RIGHT_SIDE,
@@ -665,8 +650,6 @@ static const u8 sSpeciesToBackAnimSet[] =
     [SPECIES_UNUSED_SPACE10] = BACK_ANIM_SHRINK_GROW,
 };
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 // Equivalent to struct YellowFlashData, but doesn't match as a struct
 static const u8 sYellowFlashData[][2] =
 {
@@ -694,11 +677,7 @@ static const u8 sVerticalShakeData[][2] =
     {-1,   0}
 };
 
-<<<<<<< HEAD
 static void (* const sMonAnimFunctions[])(struct Sprite *sprite) =
-=======
-static void (*const sMonAnimFunctions[])(struct Sprite *sprite) =
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     [ANIM_V_SQUISH_AND_BOUNCE]               = Anim_VerticalSquishBounce,
     [ANIM_CIRCULAR_STRETCH_TWICE]            = Anim_CircularStretchTwice,
@@ -850,14 +829,7 @@ static void (*const sMonAnimFunctions[])(struct Sprite *sprite) =
     [ANIM_SHAKE_GLOW_GREEN_SLOW]             = Anim_ShakeGlowGreen_Slow,
     [ANIM_SHAKE_GLOW_BLUE_FAST]              = Anim_ShakeGlowBlue_Fast,
     [ANIM_SHAKE_GLOW_BLUE]                   = Anim_ShakeGlowBlue,
-<<<<<<< HEAD
     [ANIM_SHAKE_GLOW_BLUE_SLOW]              = Anim_ShakeGlowBlue_Slow
-=======
-    [ANIM_SHAKE_GLOW_BLUE_SLOW]              = Anim_ShakeGlowBlue_Slow,
-    [ANIM_SHAKE_GLOW_BLACK_SLOW]             = Anim_ShakeGlowBlack_Slow,
-    [ANIM_SHAKE_GLOW_WHITE_SLOW]             = Anim_ShakeGlowWhite_Slow,
-    [ANIM_SHAKE_GLOW_PURPLE_SLOW]            = Anim_ShakeGlowPurple_Slow
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 // Each back anim set has 3 possible animations depending on nature
@@ -889,7 +861,6 @@ static const u8 sBackAnimationIds[] =
     [(BACK_ANIM_SHAKE_FLASH_YELLOW - 1) * 3]      = ANIM_SHAKE_FLASH_YELLOW_FAST, ANIM_SHAKE_FLASH_YELLOW, ANIM_SHAKE_FLASH_YELLOW_SLOW,
     [(BACK_ANIM_SHAKE_GLOW_RED - 1) * 3]          = ANIM_SHAKE_GLOW_RED_FAST, ANIM_SHAKE_GLOW_RED, ANIM_SHAKE_GLOW_RED_SLOW,
     [(BACK_ANIM_SHAKE_GLOW_GREEN - 1) * 3]        = ANIM_SHAKE_GLOW_GREEN_FAST, ANIM_SHAKE_GLOW_GREEN, ANIM_SHAKE_GLOW_GREEN_SLOW,
-<<<<<<< HEAD
     [(BACK_ANIM_SHAKE_GLOW_BLUE - 1) * 3]         = ANIM_SHAKE_GLOW_BLUE_FAST,  ANIM_SHAKE_GLOW_BLUE, ANIM_SHAKE_GLOW_BLUE_SLOW,
 };
 
@@ -920,9 +891,6 @@ static const u8 sBackAnimNatureModTable[NUM_NATURES] =
     [NATURE_SASSY]   = 1,
     [NATURE_CAREFUL] = 2,
     [NATURE_QUIRKY]  = 1,
-=======
-    [(BACK_ANIM_SHAKE_GLOW_BLUE - 1) * 3]         = ANIM_SHAKE_GLOW_BLUE_FAST, ANIM_SHAKE_GLOW_BLUE, ANIM_SHAKE_GLOW_BLUE_SLOW,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 static const union AffineAnimCmd sMonAffineAnim_0[] =
@@ -964,21 +932,12 @@ static void SetPosForRotation(struct Sprite *sprite, u16 index, s16 amplitudeX, 
     sprite->y2 = yAdder + amplitudeY;
 }
 
-<<<<<<< HEAD
 u8 GetSpeciesBackAnimSet(u16 species)
 {
     if (sSpeciesToBackAnimSet[species] != BACK_ANIM_NONE)
         return sSpeciesToBackAnimSet[species] - 1;
     else
         return 0;
-=======
-enum BackAnim GetSpeciesBackAnimSet(u16 species)
-{
-    if (gSpeciesInfo[species].backAnimId != BACK_ANIM_NONE)
-        return gSpeciesInfo[species].backAnimId - 1;
-    else
-        return BACK_ANIM_NONE;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 #define tState  data[0]
@@ -1014,14 +973,7 @@ static void Task_HandleMonAnimation(u8 taskId)
         for (i = 2; i < ARRAY_COUNT(sprite->data); i++)
             sprite->data[i] = 0;
 
-<<<<<<< HEAD
         sprite->callback = sMonAnimFunctions[gTasks[taskId].tAnimId];
-=======
-        if (gTestRunnerHeadless)
-            sprite->callback = WaitAnimEnd;
-        else
-            sprite->callback = sMonAnimFunctions[gTasks[taskId].tAnimId];
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         sIsSummaryAnim = FALSE;
 
         gTasks[taskId].tState++;
@@ -1032,23 +984,11 @@ static void Task_HandleMonAnimation(u8 taskId)
         sprite->data[2] = gTasks[taskId].tSpeciesId;
         sprite->data[1] = 0;
 
-<<<<<<< HEAD
-=======
-        // Task_HandleMonAnimation handles more than just KO animations,
-        // but if the counter is non-zero then only KO animations are running.
-        // This assumption is not checked.
-        if (gBattleStruct->battlerKOAnimsRunning > 0)
-            gBattleStruct->battlerKOAnimsRunning--;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         DestroyTask(taskId);
     }
 }
 
-<<<<<<< HEAD
 void LaunchAnimationTaskForFrontSprite(struct Sprite *sprite, u8 frontAnimId)
-=======
-void LaunchAnimationTaskForFrontSprite(struct Sprite *sprite, enum AnimFunctionIDs frontAnimId)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     u8 taskId = CreateTask(Task_HandleMonAnimation, 128);
     gTasks[taskId].tPtrHi = (u32)(sprite) >> 16;
@@ -1056,45 +996,26 @@ void LaunchAnimationTaskForFrontSprite(struct Sprite *sprite, enum AnimFunctionI
     gTasks[taskId].tAnimId = frontAnimId;
 }
 
-<<<<<<< HEAD
 void StartMonSummaryAnimation(struct Sprite *sprite, u8 frontAnimId)
-=======
-void StartMonSummaryAnimation(struct Sprite *sprite, enum AnimFunctionIDs frontAnimId)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     // sDontFlip is expected to still be FALSE here, not explicitly cleared
     sIsSummaryAnim = TRUE;
     sprite->callback = sMonAnimFunctions[frontAnimId];
 }
 
-<<<<<<< HEAD
 void LaunchAnimationTaskForBackSprite(struct Sprite *sprite, u8 backAnimSet)
 {
     u8 nature, taskId, animId, battlerId;
-=======
-void LaunchAnimationTaskForBackSprite(struct Sprite *sprite, enum BackAnim backAnimSet)
-{
-    u8 nature, taskId, battler;
-    enum AnimFunctionIDs animId;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     taskId = CreateTask(Task_HandleMonAnimation, 128);
     gTasks[taskId].tPtrHi = (u32)(sprite) >> 16;
     gTasks[taskId].tPtrLo = (u32)(sprite);
 
-<<<<<<< HEAD
     battlerId = sprite->data[0];
     nature = GetNature(&gPlayerParty[gBattlerPartyIndexes[battlerId]], FALSE);
 
     // * 3 below because each back anim has 3 variants depending on nature
     animId = 3 * backAnimSet + sBackAnimNatureModTable[nature];
-=======
-    battler = sprite->data[0];
-    nature = GetNature(GetBattlerMon(battler));
-
-    // * 3 below because each back anim has 3 variants depending on nature
-    animId = 3 * backAnimSet + gNaturesInfo[nature].backAnim;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gTasks[taskId].tAnimId = sBackAnimationIds[animId];
 }
 
@@ -2151,11 +2072,7 @@ static void Anim_GlowYellow(struct Sprite *sprite)
 
 static void Anim_GlowPurple(struct Sprite *sprite)
 {
-<<<<<<< HEAD
     GlowColor(RGB(24, 0, 24), 12, 2);
-=======
-    GlowColor(RGB_PURPLE, 12, 2);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void BackAndLunge_0(struct Sprite *sprite);
@@ -5102,32 +5019,21 @@ static void ShrinkGrowVibrate(struct Sprite *sprite)
     }
     else
     {
-<<<<<<< HEAD
         u8 posY_unsigned;
         s8 posY_signed;
         s32 posY;
         s16 index = (u16)(sprite->data[2] % sprite->data[6] * 256) / sprite->data[6] % 256;
-=======
-        s8 sinY;
-        u16 y;
-        s16 index = ((u16)(sprite->data[2] % sprite->data[6] * 256) / sprite->data[6]) % 256;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         if (sprite->data[2] % 2 == 0)
         {
             sprite->data[4] = Sin(index, 32) + 256;
             sprite->data[5] = Sin(index, 32) + 256;
-<<<<<<< HEAD
             posY_unsigned = Sin(index, 32);
             posY_signed = posY_unsigned;
-=======
-            sinY = Sin(index, 32);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         }
         else
         {
             sprite->data[4] = Sin(index, 8) + 256;
             sprite->data[5] = Sin(index, 8) + 256;
-<<<<<<< HEAD
             posY_unsigned = Sin(index, 8);
             posY_signed = posY_unsigned;
         }
@@ -5136,13 +5042,6 @@ static void ShrinkGrowVibrate(struct Sprite *sprite)
         if (posY < 0)
             posY += 7;
         sprite->y2 = (u32)(posY) >> 3;
-=======
-            sinY = Sin(index, 8);
-        }
-
-        y = sinY / 8;
-        sprite->y2 = y;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         HandleSetAffineData(sprite, sprite->data[4], sprite->data[5], 0);
     }
 
@@ -5456,13 +5355,7 @@ enum {
     SHAKEGLOW_RED,
     SHAKEGLOW_GREEN,
     SHAKEGLOW_BLUE,
-<<<<<<< HEAD
     SHAKEGLOW_BLACK
-=======
-    SHAKEGLOW_BLACK,
-    SHAKEGLOW_WHITE,
-    SHAKEGLOW_PURPLE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 static void ShakeGlow_Blend(struct Sprite *sprite)
@@ -5472,13 +5365,7 @@ static void ShakeGlow_Blend(struct Sprite *sprite)
         [SHAKEGLOW_RED]   = RGB_RED,
         [SHAKEGLOW_GREEN] = RGB_GREEN,
         [SHAKEGLOW_BLUE]  = RGB_BLUE,
-<<<<<<< HEAD
         [SHAKEGLOW_BLACK] = RGB_BLACK
-=======
-        [SHAKEGLOW_BLACK] = RGB_BLACK,
-        [SHAKEGLOW_WHITE] = RGB_WHITE,
-        [SHAKEGLOW_PURPLE] = RGB_PURPLE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     };
 
     if (sprite->data[2] > 127)
@@ -5705,72 +5592,6 @@ static void Anim_ShakeGlowBlue_Slow(struct Sprite *sprite)
     sprite->data[2]++;
 }
 
-<<<<<<< HEAD
-=======
-static void Anim_ShakeGlowBlack_Slow(struct Sprite *sprite)
-{
-    if (sprite->data[2] == 0)
-    {
-        sprite->data[7] = (sprite->oam.paletteNum * 16) + 256;
-        sprite->data[0] = 80;
-        sprite->data[5] = 0;
-        sprite->data[4] = 1;
-        sprite->data[3] = 0;
-        sprite->data[1] = SHAKEGLOW_BLACK;
-    }
-
-    if (sprite->data[2] % 2 == 0)
-        ShakeGlow_Blend(sprite);
-
-    if (sprite->data[2] >= (128 - sprite->data[0] * sprite->data[4]) / 2)
-        ShakeGlow_Move(sprite);
-
-    sprite->data[2]++;
-}
-
-static void Anim_ShakeGlowWhite_Slow(struct Sprite *sprite)
-{
-    if (sprite->data[2] == 0)
-    {
-        sprite->data[7] = (sprite->oam.paletteNum * 16) + 256;
-        sprite->data[0] = 80;
-        sprite->data[5] = 0;
-        sprite->data[4] = 1;
-        sprite->data[3] = 0;
-        sprite->data[1] = SHAKEGLOW_WHITE;
-    }
-
-    if (sprite->data[2] % 2 == 0)
-        ShakeGlow_Blend(sprite);
-
-    if (sprite->data[2] >= (128 - sprite->data[0] * sprite->data[4]) / 2)
-        ShakeGlow_Move(sprite);
-
-    sprite->data[2]++;
-}
-
-static void Anim_ShakeGlowPurple_Slow(struct Sprite *sprite)
-{
-    if (sprite->data[2] == 0)
-    {
-        sprite->data[7] = (sprite->oam.paletteNum * 16) + 256;
-        sprite->data[0] = 80;
-        sprite->data[5] = 0;
-        sprite->data[4] = 1;
-        sprite->data[3] = 0;
-        sprite->data[1] = SHAKEGLOW_PURPLE;
-    }
-
-    if (sprite->data[2] % 2 == 0)
-        ShakeGlow_Blend(sprite);
-
-    if (sprite->data[2] >= (128 - sprite->data[0] * sprite->data[4]) / 2)
-        ShakeGlow_Move(sprite);
-
-    sprite->data[2]++;
-}
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static void WaitAnimEnd(struct Sprite *sprite)
 {
     if (sprite->animEnded)

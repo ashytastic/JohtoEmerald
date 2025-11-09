@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .set LOCALID_RIVAL, 2
 
 Route103_MapScripts::
@@ -9,14 +8,6 @@ Route103_MapScripts::
 
 Route103_OnTransition:
 	callnative SetTimeBasedEncounters
-=======
-Route103_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, Route103_OnTransition
-	map_script MAP_SCRIPT_ON_LOAD, Route103_OnLoad
-	.byte 0
-
-Route103_OnTransition:
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call Common_EventScript_SetupRivalGfxId
 	call ProfBirch_EventScript_UpdateLocation
 	end
@@ -41,19 +32,11 @@ Route103_EventScript_RivalMay::
 	msgbox Route103_Text_MayRoute103Pokemon, MSGBOX_DEFAULT
 	closemessage
 	playbgm MUS_ENCOUNTER_MAY, TRUE
-<<<<<<< HEAD
 	applymovement LOCALID_RIVAL, Common_Movement_FacePlayer
 	waitmovement 0
 	applymovement LOCALID_RIVAL, Common_Movement_ExclamationMark
 	waitmovement 0
 	applymovement LOCALID_RIVAL, Common_Movement_Delay48
-=======
-	applymovement LOCALID_ROUTE103_RIVAL, Common_Movement_FacePlayer
-	waitmovement 0
-	applymovement LOCALID_ROUTE103_RIVAL, Common_Movement_ExclamationMark
-	waitmovement 0
-	applymovement LOCALID_ROUTE103_RIVAL, Common_Movement_Delay48
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	msgbox Route103_Text_MayLetsBattle, MSGBOX_DEFAULT
 	switch VAR_STARTER_MON
@@ -66,19 +49,11 @@ Route103_EventScript_RivalBrendan::
 	msgbox Route103_Text_BrendanRoute103Pokemon, MSGBOX_DEFAULT
 	closemessage
 	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
-<<<<<<< HEAD
 	applymovement LOCALID_RIVAL, Common_Movement_FacePlayer
 	waitmovement 0
 	applymovement LOCALID_RIVAL, Common_Movement_ExclamationMark
 	waitmovement 0
 	applymovement LOCALID_RIVAL, Common_Movement_Delay48
-=======
-	applymovement LOCALID_ROUTE103_RIVAL, Common_Movement_FacePlayer
-	waitmovement 0
-	applymovement LOCALID_ROUTE103_RIVAL, Common_Movement_ExclamationMark
-	waitmovement 0
-	applymovement LOCALID_ROUTE103_RIVAL, Common_Movement_Delay48
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	msgbox Route103_Text_BrendanLetsBattle, MSGBOX_DEFAULT
 	switch VAR_STARTER_MON
@@ -113,11 +88,7 @@ Route103_EventScript_StartBrendanBattleTorchic::
 	end
 
 Route103_EventScript_StartBrendanBattleMudkip::
-<<<<<<< HEAD
 	trainerbattle_no_intro TRAINER_THOM_AND_KAE, Route103_Text_BrendanDefeated
-=======
-	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_103_MUDKIP, Route103_Text_BrendanDefeated
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto Route103_EventScript_AfterBrendanBattle
 	end
 
@@ -141,73 +112,41 @@ Route103_EventScript_RivalExit::
 	end
 
 Route103_EventScript_RivalExitFacingNorth::
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, Route103_Movement_WatchRivalExitFacingNorth
 	applymovement LOCALID_RIVAL, Route103_Movement_RivalExitFacingNorth1
 	waitmovement 0
 	playse SE_LEDGE
 	applymovement LOCALID_RIVAL, Route103_Movement_RivalExitFacingNorth2
-=======
-	applymovement LOCALID_PLAYER, Route103_Movement_WatchRivalExitFacingNorth
-	applymovement LOCALID_ROUTE103_RIVAL, Route103_Movement_RivalExitFacingNorth1
-	waitmovement 0
-	playse SE_LEDGE
-	applymovement LOCALID_ROUTE103_RIVAL, Route103_Movement_RivalExitFacingNorth2
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	goto Route103_EventScript_RivalEnd
 	end
 
 Route103_EventScript_RivalExitFacingEastOrWest::
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, Route103_Movement_WatchRivalExitFacingEastOrWest
 	applymovement LOCALID_RIVAL, Route103_Movement_RivalExit1
 	waitmovement 0
 	playse SE_LEDGE
 	applymovement LOCALID_RIVAL, Route103_Movement_RivalExit2
-=======
-	applymovement LOCALID_PLAYER, Route103_Movement_WatchRivalExitFacingEastOrWest
-	applymovement LOCALID_ROUTE103_RIVAL, Route103_Movement_RivalExit1
-	waitmovement 0
-	playse SE_LEDGE
-	applymovement LOCALID_ROUTE103_RIVAL, Route103_Movement_RivalExit2
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	goto Route103_EventScript_RivalEnd
 	end
 
 Route103_EventScript_RivalExitFacingSouth::
-<<<<<<< HEAD
 	applymovement LOCALID_RIVAL, Route103_Movement_RivalExit1
 	waitmovement 0
 	playse SE_LEDGE
 	applymovement LOCALID_RIVAL, Route103_Movement_RivalExit2
-=======
-	applymovement LOCALID_ROUTE103_RIVAL, Route103_Movement_RivalExit1
-	waitmovement 0
-	playse SE_LEDGE
-	applymovement LOCALID_ROUTE103_RIVAL, Route103_Movement_RivalExit2
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	goto Route103_EventScript_RivalEnd
 	end
 
 Route103_EventScript_RivalEnd::
-<<<<<<< HEAD
 	removeobject LOCALID_RIVAL
 	setvar VAR_GARBAGEVAR, 4
 	clearflag FLAG_GARBAGEFLAG
 	setflag FLAG_DEFEATED_RIVAL_ROUTE103
 	setvar VAR_OLDALE_RIVAL_STATE, 1
 	clearflag FLAG_GARBAGEFLAG
-=======
-	removeobject LOCALID_ROUTE103_RIVAL
-	setvar VAR_BIRCH_LAB_STATE, 4
-	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_RIVAL
-	setflag FLAG_DEFEATED_RIVAL_ROUTE103
-	setvar VAR_OLDALE_RIVAL_STATE, 1
-	clearflag FLAG_HIDE_OLDALE_TOWN_RIVAL
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	savebgm MUS_DUMMY
 	fadedefaultbgm
 	releaseall
@@ -265,20 +204,12 @@ Route103_EventScript_RouteSign::
 	end
 
 Route103_EventScript_Daisy::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_JEFFREY, Route103_Text_DaisyIntro, Route103_Text_DaisyDefeated
-=======
-	trainerbattle_single TRAINER_DAISY, Route103_Text_DaisyIntro, Route103_Text_DaisyDefeated
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route103_Text_DaisyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route103_EventScript_Amy::
-<<<<<<< HEAD
 	trainerbattle_double TRAINER_AMY_AND_MAY, Route103_Text_AmyIntro, Route103_Text_AmyDefeated, Route103_Text_AmyNotEnoughPokemon, Route102_EventScript_AmyRegisterMatchCallAfterBattle
-=======
-	trainerbattle_double TRAINER_AMY_AND_LIV_1, Route103_Text_AmyIntro, Route103_Text_AmyDefeated, Route103_Text_AmyNotEnoughPokemon, Route102_EventScript_AmyRegisterMatchCallAfterBattle
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route102_EventScript_AmyRematch
 	msgbox Route103_Text_AmyPostBattle, MSGBOX_AUTOCLOSE
@@ -286,29 +217,17 @@ Route103_EventScript_Amy::
 
 Route102_EventScript_AmyRegisterMatchCallAfterBattle::
 	msgbox Route103_Text_AmyLivRegister, MSGBOX_DEFAULT
-<<<<<<< HEAD
 	register_matchcall TRAINER_AMY_AND_MAY
-=======
-	register_matchcall TRAINER_AMY_AND_LIV_1
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	release
 	end
 
 Route102_EventScript_AmyRematch::
-<<<<<<< HEAD
 	trainerbattle_rematch_double TRAINER_AMY_AND_MAY, Route103_Text_AmyRematchIntro, Route103_Text_AmyRematchDefeated, Route103_Text_AmyRematchNotEnoughPokemon
-=======
-	trainerbattle_rematch_double TRAINER_AMY_AND_LIV_1, Route103_Text_AmyRematchIntro, Route103_Text_AmyRematchDefeated, Route103_Text_AmyRematchNotEnoughPokemon
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route103_Text_AmyRematchPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route103_EventScript_Liv::
-<<<<<<< HEAD
 	trainerbattle_double TRAINER_AMY_AND_MAY, Route103_Text_LivIntro, Route103_Text_LivDefeated, Route103_Text_LivNotEnoughPokemon, Route102_EventScript_LivRegisterMatchCallAfterBattle
-=======
-	trainerbattle_double TRAINER_AMY_AND_LIV_1, Route103_Text_LivIntro, Route103_Text_LivDefeated, Route103_Text_LivNotEnoughPokemon, Route102_EventScript_LivRegisterMatchCallAfterBattle
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route102_EventScript_LivRematch
 	msgbox Route103_Text_LivPostBattle, MSGBOX_AUTOCLOSE
@@ -316,20 +235,12 @@ Route103_EventScript_Liv::
 
 Route102_EventScript_LivRegisterMatchCallAfterBattle::
 	msgbox Route103_Text_AmyLivRegister, MSGBOX_DEFAULT
-<<<<<<< HEAD
 	register_matchcall TRAINER_AMY_AND_MAY
-=======
-	register_matchcall TRAINER_AMY_AND_LIV_1
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	release
 	end
 
 Route102_EventScript_LivRematch::
-<<<<<<< HEAD
 	trainerbattle_rematch_double TRAINER_AMY_AND_MAY, Route103_Text_LivRematchIntro, Route103_Text_LivRematchDefeated, Route103_Text_LivRematchNotEnoughPokemon
-=======
-	trainerbattle_rematch_double TRAINER_AMY_AND_LIV_1, Route103_Text_LivRematchIntro, Route103_Text_LivRematchDefeated, Route103_Text_LivRematchNotEnoughPokemon
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route103_Text_LivRematchPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -375,11 +286,7 @@ Route103_EventScript_Pete::
 	end
 
 Route103_EventScript_Isabelle::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_WILL_1, Route103_Text_IsabelleIntro, Route103_Text_IsabelleDefeated
-=======
-	trainerbattle_single TRAINER_ISABELLE, Route103_Text_IsabelleIntro, Route103_Text_IsabelleDefeated
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route103_Text_IsabellePostBattle, MSGBOX_AUTOCLOSE
 	end
 

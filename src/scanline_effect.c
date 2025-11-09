@@ -38,11 +38,8 @@ void ScanlineEffect_Clear(void)
     gScanlineEffect.dmaControl = 0;
     gScanlineEffect.srcBuffer = 0;
     gScanlineEffect.state = 0;
-<<<<<<< HEAD
     gScanlineEffect.unused16 = 0;
     gScanlineEffect.unused17 = 0;
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gScanlineEffect.waveTaskId = TASK_NONE;
 }
 
@@ -68,11 +65,8 @@ void ScanlineEffect_SetParams(struct ScanlineEffectParams params)
     gScanlineEffect.dmaControl = params.dmaControl;
     gScanlineEffect.dmaDest    = params.dmaDest;
     gScanlineEffect.state      = params.initState;
-<<<<<<< HEAD
     gScanlineEffect.unused16   = params.unused9;
     gScanlineEffect.unused17   = params.unused9;
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 void ScanlineEffect_InitHBlankDmaTransfer(void)

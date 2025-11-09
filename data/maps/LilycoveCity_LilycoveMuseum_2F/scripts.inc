@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 .set LOCALID_CURATOR, 1
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 LilycoveCity_LilycoveMuseum_2F_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, LilycoveCity_LilycoveMuseum_2F_OnLoad
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, LilycoveCity_LilycoveMuseum_2F_OnFrame
@@ -62,16 +59,11 @@ LilycoveCity_LilycoveMuseum_2F_EventScript_SetToughPainting::
 	end
 
 LilycoveCity_LilycoveMuseum_2F_OnFrame:
-<<<<<<< HEAD
 	map_script_2 VAR_GARBAGEVAR, 0, LilycoveCity_LilycoveMuseum_2F_EventScript_ShowExhibitHall
-=======
-	map_script_2 VAR_LILYCOVE_MUSEUM_2F_STATE, 0, LilycoveCity_LilycoveMuseum_2F_EventScript_ShowExhibitHall
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.2byte 0
 
 LilycoveCity_LilycoveMuseum_2F_EventScript_ShowExhibitHall::
 	lockall
-<<<<<<< HEAD
 	applymovement LOCALID_CURATOR, Common_Movement_FacePlayer
 	applymovement OBJ_EVENT_ID_PLAYER, LilycoveCity_LilycoveMuseum_2F_Movement_PlayerWalkInPlaceLeft
 	waitmovement 0
@@ -87,23 +79,6 @@ LilycoveCity_LilycoveMuseum_2F_EventScript_ShowExhibitHall::
 	waitmovement 0
 	msgbox LilycoveCity_LilycoveMuseum_2F_Text_PleaseObtainPaintingsForExhibit, MSGBOX_SIGN
 	copyvar VAR_GARBAGEVAR, 1
-=======
-	applymovement LOCALID_MUSEUM_2F_CURATOR, Common_Movement_FacePlayer
-	applymovement LOCALID_PLAYER, LilycoveCity_LilycoveMuseum_2F_Movement_PlayerWalkInPlaceLeft
-	waitmovement 0
-	msgbox LilycoveCity_LilycoveMuseum_2F_Text_ThisIsExhibitHall, MSGBOX_SIGN
-	applymovement LOCALID_MUSEUM_2F_CURATOR, LilycoveCity_LilycoveMuseum_2F_Movement_FaceExhibitHall
-	waitmovement 0
-	applymovement LOCALID_PLAYER, LilycoveCity_LilycoveMuseum_2F_Movement_FaceExhibitHall
-	waitmovement 0
-	msgbox LilycoveCity_LilycoveMuseum_2F_Text_ExplainExhibitHall, MSGBOX_SIGN
-	applymovement LOCALID_MUSEUM_2F_CURATOR, Common_Movement_FacePlayer
-	waitmovement 0
-	applymovement LOCALID_PLAYER, LilycoveCity_LilycoveMuseum_2F_Movement_PlayerWalkInPlaceLeft
-	waitmovement 0
-	msgbox LilycoveCity_LilycoveMuseum_2F_Text_PleaseObtainPaintingsForExhibit, MSGBOX_SIGN
-	copyvar VAR_LILYCOVE_MUSEUM_2F_STATE, 1
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	releaseall
 	end
 
@@ -134,27 +109,16 @@ LilycoveCity_LilycoveMuseum_2F_EventScript_AddedPainting::
 	end
 
 LilycoveCity_LilycoveMuseum_2F_EventScript_ThankPlayer::
-<<<<<<< HEAD
 	applymovement LOCALID_CURATOR, Common_Movement_FacePlayer
 	waitmovement 0
 	msgbox LilycoveCity_LilycoveMuseum_2F_Text_ItsYouPlayer, MSGBOX_DEFAULT
 	applymovement LOCALID_CURATOR, LilycoveCity_LilycoveMuseum_2F_Movement_FaceExhibitHall
-=======
-	applymovement LOCALID_MUSEUM_2F_CURATOR, Common_Movement_FacePlayer
-	waitmovement 0
-	msgbox LilycoveCity_LilycoveMuseum_2F_Text_ItsYouPlayer, MSGBOX_DEFAULT
-	applymovement LOCALID_MUSEUM_2F_CURATOR, LilycoveCity_LilycoveMuseum_2F_Movement_FaceExhibitHall
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox LilycoveCity_LilycoveMuseum_2F_Text_PaintingsAttractedMoreGuests, MSGBOX_DEFAULT
 	goto LilycoveCity_LilycoveMuseum_2F_EventScript_GiveGlassOrnament
 	end
 
 LilycoveCity_LilycoveMuseum_2F_EventScript_GiveGlassOrnament::
-<<<<<<< HEAD
 	applymovement LOCALID_CURATOR, Common_Movement_FacePlayer
-=======
-	applymovement LOCALID_MUSEUM_2F_CURATOR, Common_Movement_FacePlayer
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox LilycoveCity_LilycoveMuseum_2F_Text_TokenOfGratitude, MSGBOX_DEFAULT
 	givedecoration DECOR_GLASS_ORNAMENT
 	goto_if_eq VAR_RESULT, FALSE, LilycoveCity_LilycoveMuseum_2F_EventScript_NoRoomForGlassOrnament

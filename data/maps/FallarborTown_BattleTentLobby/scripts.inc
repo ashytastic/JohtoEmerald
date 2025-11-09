@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 .set LOCALID_ATTENDANT, 1
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 FallarborTown_BattleTentLobby_MapScripts::
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, FallarborTown_BattleTentLobby_OnFrame
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, FallarborTown_BattleTentLobby_OnWarp
@@ -14,11 +11,7 @@ FallarborTown_BattleTentLobby_OnWarp:
 
 FallarborTown_BattleTentLobby_EventScript_TurnPlayerNorth::
 	setvar VAR_TEMP_1, 1
-<<<<<<< HEAD
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
-=======
-	turnobject LOCALID_PLAYER, DIR_NORTH
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 FallarborTown_BattleTentLobby_OnFrame:
@@ -135,10 +128,7 @@ FallarborTown_BattleTentLobby_EventScript_TryEnterChallenge::
 	frontier_set FRONTIER_DATA_LVL_MODE, FRONTIER_LVL_TENT
 	msgbox FallarborTown_BattleTentLobby_Text_SelectThreeMons, MSGBOX_DEFAULT
 	fadescreen FADE_TO_BLACK
-<<<<<<< HEAD
 	callnative RemoveFollowingPokemon
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setvar VAR_0x8004, 2
 	setvar VAR_0x8005, FRONTIER_PARTY_SIZE
 	special ChoosePartyForBattleFrontier
@@ -202,7 +192,6 @@ FallarborTown_BattleTentLobby_EventScript_EndCancelChallenge::
 	end
 
 FallarborTown_BattleTentLobby_EventScript_WalkToDoor::
-<<<<<<< HEAD
 	applymovement LOCALID_ATTENDANT, FallarborTown_BattleTentLobby_Movement_AttendantWalkToDoor
 	applymovement OBJ_EVENT_ID_PLAYER, FallarborTown_BattleTentLobby_Movement_PlayerWalkToDoor
 	waitmovement 0
@@ -210,15 +199,6 @@ FallarborTown_BattleTentLobby_EventScript_WalkToDoor::
 	waitdooranim
 	applymovement LOCALID_ATTENDANT, FallarborTown_BattleTentLobby_Movement_AttendantEnterDoor
 	applymovement OBJ_EVENT_ID_PLAYER, FallarborTown_BattleTentLobby_Movement_PlayerEnterDoor
-=======
-	applymovement LOCALID_FALLARBOR_TENT_ATTENDANT, FallarborTown_BattleTentLobby_Movement_AttendantWalkToDoor
-	applymovement LOCALID_PLAYER, FallarborTown_BattleTentLobby_Movement_PlayerWalkToDoor
-	waitmovement 0
-	opendoor 6, 1
-	waitdooranim
-	applymovement LOCALID_FALLARBOR_TENT_ATTENDANT, FallarborTown_BattleTentLobby_Movement_AttendantEnterDoor
-	applymovement LOCALID_PLAYER, FallarborTown_BattleTentLobby_Movement_PlayerEnterDoor
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	closedoor 6, 1
 	waitdooranim

@@ -40,10 +40,7 @@
 #define SCROLL_MULTI_BF_MOVE_TUTOR_2                      10
 #define SCROLL_MULTI_SS_TIDAL_DESTINATION                 11
 #define SCROLL_MULTI_BATTLE_TENT_RULES                    12
-<<<<<<< HEAD
 #define SCROLL_MULTI_BF_MOVE_TUTOR_3                      13
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 #define MAX_SCROLL_MULTI_ON_SCREEN 6
 #define MAX_SCROLL_MULTI_LENGTH 16
@@ -90,17 +87,4 @@
 #define DEOXYS_ROCK_SOLVED     2
 #define DEOXYS_ROCK_COMPLETE   3
 
-<<<<<<< HEAD
-=======
-enum {
-    OPEN_PARTY_SCREEN,
-    NO_PARTY_SCREEN
-};
-
-enum {
-    CURRENT_POSITION,
-    TEMPLATE_POSITION
-};
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #endif // GUARD_CONSTANTS_FIELD_SPECIALS_H

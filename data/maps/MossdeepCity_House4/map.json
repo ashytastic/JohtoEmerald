@@ -12,11 +12,7 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-<<<<<<< HEAD
   "connections": 0,
-=======
-  "connections": null,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
@@ -45,11 +41,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_SKITTY",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_SKITTY",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 2,
       "y": 4,
       "elevation": 3,
@@ -78,15 +70,10 @@
       "dest_warp_id": "7"
     }
   ],
-<<<<<<< HEAD
   "coord_events": [
 
   ],
   "bg_events": [
 
   ]
-=======
-  "coord_events": [],
-  "bg_events": []
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }

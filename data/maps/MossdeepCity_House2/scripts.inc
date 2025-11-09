@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 .set LOCALID_WINGULL, 3
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 MossdeepCity_House2_MapScripts::
 	.byte 0
 
@@ -23,35 +20,20 @@ MossdeepCity_House2_EventScript_Wingull::
 	waitmoncry
 	closemessage
 	setflag FLAG_WINGULL_DELIVERED_MAIL
-<<<<<<< HEAD
 	clearflag FLAG_GARBAGEFLAG
 	call_if_eq VAR_FACING, DIR_NORTH, MossdeepCity_House2_EventScript_WingullExitNorth
 	call_if_eq VAR_FACING, DIR_WEST, MossdeepCity_House2_EventScript_WingullExitWest
 	removeobject LOCALID_WINGULL
-=======
-	clearflag FLAG_HIDE_FORTREE_CITY_HOUSE_4_WINGULL
-	call_if_eq VAR_FACING, DIR_NORTH, MossdeepCity_House2_EventScript_WingullExitNorth
-	call_if_eq VAR_FACING, DIR_WEST, MossdeepCity_House2_EventScript_WingullExitWest
-	removeobject LOCALID_MOSSDEEP_HOUSE_WINGULL
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	release
 	end
 
 MossdeepCity_House2_EventScript_WingullExitNorth::
-<<<<<<< HEAD
 	applymovement LOCALID_WINGULL, MossdeepCity_House2_Movement_WingullExitNorth
-=======
-	applymovement LOCALID_MOSSDEEP_HOUSE_WINGULL, MossdeepCity_House2_Movement_WingullExitNorth
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 MossdeepCity_House2_EventScript_WingullExitWest::
-<<<<<<< HEAD
 	applymovement LOCALID_WINGULL, MossdeepCity_House2_Movement_WingullExitEast
-=======
-	applymovement LOCALID_MOSSDEEP_HOUSE_WINGULL, MossdeepCity_House2_Movement_WingullExitEast
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 

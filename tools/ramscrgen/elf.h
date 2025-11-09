@@ -22,16 +22,9 @@
 #define ELF_H
 
 #include <cstdint>
-<<<<<<< HEAD
 #include <map>
 #include <string>
 
 std::map<std::string, std::uint32_t> GetCommonSymbols(std::string sourcePath, std::string path);
-=======
-#include <vector>
-#include <string>
-
-std::vector<std::pair<std::string, std::uint32_t>> GetCommonSymbols(std::string sourcePath, std::string path);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 #endif // ELF_H

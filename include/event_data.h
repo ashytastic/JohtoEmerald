@@ -48,9 +48,4 @@ extern u16 gSpecialVar_MonBoxId;
 extern u16 gSpecialVar_MonBoxPos;
 extern u16 gSpecialVar_Unused_0x8014;
 
-<<<<<<< HEAD
-=======
-extern const u16 gBadgeFlags[NUM_BADGES];
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #endif // GUARD_EVENT_DATA_H

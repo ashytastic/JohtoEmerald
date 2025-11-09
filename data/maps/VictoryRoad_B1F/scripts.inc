@@ -1,9 +1,6 @@
 VictoryRoad_B1F_MapScripts::
-<<<<<<< HEAD
 	map_script MAP_SCRIPT_ON_RESUME, SetTimeEncounters
 	map_script MAP_SCRIPT_ON_TRANSITION, SetTimeEncounters
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.byte 0
 
 VictoryRoad_B1F_EventScript_Samuel::
@@ -27,11 +24,7 @@ VictoryRoad_B1F_EventScript_Mitchell::
 	end
 
 VictoryRoad_B1F_EventScript_Halle::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_PRYCE_1, VictoryRoad_B1F_Text_HalleIntro, VictoryRoad_B1F_Text_HalleDefeat
-=======
-	trainerbattle_single TRAINER_HALLE, VictoryRoad_B1F_Text_HalleIntro, VictoryRoad_B1F_Text_HalleDefeat
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox VictoryRoad_B1F_Text_HallePostBattle, MSGBOX_AUTOCLOSE
 	end
 

@@ -2,28 +2,17 @@
 @  These are labeled in DewfordTown/scripts.inc
 
 Route109_MapScripts::
-<<<<<<< HEAD
 	map_script MAP_SCRIPT_ON_RESUME, SetTimeEncounters
 	map_script MAP_SCRIPT_ON_TRANSITION, SetTimeEncounters
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.byte 0
 
 Route109_EventScript_StartDepartForDewford::
 	call EventScript_BackupMrBrineyLocation
-<<<<<<< HEAD
 	setobjectsubpriority LOCALID_BRINEY_R109, MAP_ROUTE109, 0
 	setobjectsubpriority OBJ_EVENT_ID_PLAYER, MAP_ROUTE109, 0
 	applymovement LOCALID_BRINEY_R109, Route109_Movement_BrineyEnterBoat
 	waitmovement 0
 	removeobject LOCALID_BRINEY_R109
-=======
-	setobjectsubpriority LOCALID_ROUTE109_BRINEY, MAP_ROUTE109, 0
-	setobjectsubpriority LOCALID_PLAYER, MAP_ROUTE109, 0
-	applymovement LOCALID_ROUTE109_BRINEY, Route109_Movement_BrineyEnterBoat
-	waitmovement 0
-	removeobject LOCALID_ROUTE109_BRINEY
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	switch VAR_FACING
 	case DIR_SOUTH, Route109_EventScript_EnterBoatSouth
 	case DIR_WEST, Route109_EventScript_EnterBoatWest
@@ -31,37 +20,24 @@ Route109_EventScript_StartDepartForDewford::
 	end
 
 Route109_EventScript_EnterBoatSouth::
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, Route109_Movement_PlayerEnterBoatSouth
-=======
-	applymovement LOCALID_PLAYER, Route109_Movement_PlayerEnterBoatSouth
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	goto Route109_EventScript_DoSailToDewford
 	end
 
 Route109_EventScript_EnterBoatEast::
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, Route109_Movement_PlayerEnterBoatEast
-=======
-	applymovement LOCALID_PLAYER, Route109_Movement_PlayerEnterBoatEast
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	goto Route109_EventScript_DoSailToDewford
 	end
 
 Route109_EventScript_EnterBoatWest::
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, Route109_Movement_PlayerEnterBoatWest
-=======
-	applymovement LOCALID_PLAYER, Route109_Movement_PlayerEnterBoatWest
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	goto Route109_EventScript_DoSailToDewford
 	end
 
 Route109_EventScript_DoSailToDewford::
-<<<<<<< HEAD
 	hideobjectat OBJ_EVENT_ID_PLAYER, MAP_ROUTE109
 	call Common_EventScript_PlayBrineysBoatMusic
 	applymovement LOCALID_BOAT_R109, Route109_Movement_SailToDewford
@@ -88,34 +64,6 @@ Route109_EventScript_DoSailToDewford::
 	resetobjectsubpriority OBJ_EVENT_ID_PLAYER, MAP_ROUTE109
 	resetobjectsubpriority LOCALID_BRINEY_DEWFORD, MAP_DEWFORD_TOWN
 	copyobjectxytoperm LOCALID_BRINEY_DEWFORD
-=======
-	hideobjectat LOCALID_PLAYER, MAP_ROUTE109
-	call Common_EventScript_PlayBrineysBoatMusic
-	applymovement LOCALID_ROUTE109_BOAT, Route109_Movement_SailToDewford
-	applymovement LOCALID_PLAYER, Route109_Movement_SailToDewford
-	waitmovement 0
-	delay 50
-	call Common_EventScript_StopBrineysBoatMusic
-	showobjectat LOCALID_PLAYER, MAP_DEWFORD_TOWN
-	applymovement LOCALID_PLAYER, Route109_Movement_PlayerExitBoat
-	waitmovement 0
-	addobject LOCALID_DEWFORD_BOAT
-	clearflag FLAG_HIDE_MR_BRINEY_BOAT_DEWFORD_TOWN
-	setobjectxyperm LOCALID_DEWFORD_BRINEY, 12, 8
-	addobject LOCALID_DEWFORD_BRINEY
-	setobjectsubpriority LOCALID_DEWFORD_BRINEY, MAP_DEWFORD_TOWN, 0
-	applymovement LOCALID_DEWFORD_BRINEY, Route109_Movement_BrineyExitBoat
-	waitmovement 0
-	clearflag FLAG_HIDE_MR_BRINEY_DEWFORD_TOWN
-	setflag FLAG_HIDE_ROUTE_109_MR_BRINEY_BOAT
-	hideobjectat LOCALID_ROUTE109_BOAT, MAP_ROUTE109
-	msgbox DewfordTown_Text_BrineyLandedInDewford, MSGBOX_DEFAULT
-	closemessage
-	copyvar VAR_BRINEY_LOCATION, VAR_0x8008
-	resetobjectsubpriority LOCALID_PLAYER, MAP_ROUTE109
-	resetobjectsubpriority LOCALID_DEWFORD_BRINEY, MAP_DEWFORD_TOWN
-	copyobjectxytoperm LOCALID_DEWFORD_BRINEY
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	release
 	end
 
@@ -491,11 +439,7 @@ Route109_EventScript_LolaRematch::
 	end
 
 Route109_EventScript_Austina::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_CODY, Route109_Text_AustinaIntro, Route109_Text_AustinaDefeated
-=======
-	trainerbattle_single TRAINER_AUSTINA, Route109_Text_AustinaIntro, Route109_Text_AustinaDefeated
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route109_Text_AustinaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -520,29 +464,17 @@ Route109_EventScript_Mel::
 	end
 
 Route109_EventScript_Chandler::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_GRUNT_11, Route109_Text_ChandlerIntro, Route109_Text_ChandlerDefeated
-=======
-	trainerbattle_single TRAINER_CHANDLER, Route109_Text_ChandlerIntro, Route109_Text_ChandlerDefeated
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route109_Text_ChandlerPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route109_EventScript_Hailey::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_BUGSY_2, Route109_Text_HaileyIntro, Route109_Text_HaileyDefeated
-=======
-	trainerbattle_single TRAINER_HAILEY, Route109_Text_HaileyIntro, Route109_Text_HaileyDefeated
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route109_Text_HaileyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route109_EventScript_Elijah::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_MARVIN, Route109_Text_ElijahIntro, Route109_Text_ElijahDefeated
-=======
-	trainerbattle_single TRAINER_ELIJAH, Route109_Text_ElijahIntro, Route109_Text_ElijahDefeated
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route109_Text_ElijahPostBattle, MSGBOX_AUTOCLOSE
 	end
 

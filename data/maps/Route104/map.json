@@ -3,11 +3,7 @@
   "name": "Route104",
   "layout": "LAYOUT_ROUTE104",
   "music": "MUS_ROUTE104",
-<<<<<<< HEAD
   "region_map_section": "MAPSEC_ROUTE_29",
-=======
-  "region_map_section": "MAPSEC_ROUTE_104",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_ROUTE",
@@ -48,11 +44,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_CAPTAIN",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_GIRL_2",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 25,
       "y": 49,
       "elevation": 3,
@@ -65,11 +57,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_LASS",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 31,
       "y": 24,
       "elevation": 3,
@@ -82,11 +70,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_MR_FUJI",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 27,
       "y": 63,
       "elevation": 3,
@@ -112,11 +96,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 28,
       "y": 74,
       "elevation": 3,
@@ -129,10 +109,6 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
-=======
-      "local_id": "LOCALID_ROUTE104_BOAT",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_MR_BRINEYS_BOAT",
       "x": 12,
       "y": 54,
@@ -143,18 +119,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
-=======
-      "flag": "FLAG_HIDE_ROUTE_104_MR_BRINEY_BOAT"
-    },
-    {
-      "local_id": "LOCALID_ROUTE104_BRINEY",
-      "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 12,
       "y": 51,
       "elevation": 4,
@@ -164,17 +132,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FISHER",
-=======
-      "flag": "FLAG_HIDE_ROUTE_104_MR_BRINEY"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 29,
       "y": 8,
       "elevation": 3,
@@ -265,11 +226,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 37,
       "y": 8,
       "elevation": 3,
@@ -342,21 +299,12 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-<<<<<<< HEAD
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route104_EventScript_ItemPPUp",
       "flag": "FLAG_ITEM_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WORKER_F",
-=======
-      "trainer_sight_or_berry_tree_id": "ITEM_PP_UP",
-      "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_104_PP_UP"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 8,
       "y": 19,
       "elevation": 3,
@@ -366,11 +314,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route104_EventScript_WhiteHerbFlorist",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
-=======
-      "flag": "FLAG_HIDE_ROUTE_104_WHITE_HERB_FLORIST"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TWIN",
@@ -399,11 +343,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_POLICEMAN",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_RICH_BOY",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 21,
       "y": 25,
       "elevation": 3,
@@ -437,15 +377,9 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-<<<<<<< HEAD
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route104_EventScript_ItemPokeBall",
       "flag": "FLAG_ITEM_GARBAGEFLAG"
-=======
-      "trainer_sight_or_berry_tree_id": "ITEM_POKE_BALL",
-      "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_104_POKE_BALL"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
@@ -469,15 +403,9 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-<<<<<<< HEAD
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route104_EventScript_ItemXAccuracy",
       "flag": "FLAG_ITEM_GARBAGEFLAG"
-=======
-      "trainer_sight_or_berry_tree_id": "ITEM_X_ACCURACY",
-      "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_104_X_ACCURACY"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
@@ -501,21 +429,12 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-<<<<<<< HEAD
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route104_EventScript_ItemPotion",
       "flag": "FLAG_ITEM_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY",
-=======
-      "trainer_sight_or_berry_tree_id": "ITEM_POTION",
-      "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_104_POTION"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_BOY_2",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 5,
       "y": 26,
       "elevation": 3,
@@ -528,11 +447,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_FISHER",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 15,
       "y": 59,
       "elevation": 3,
@@ -545,10 +460,6 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
-=======
-      "local_id": "LOCALID_ROUTE104_RIVAL",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
       "x": 17,
       "y": 50,
@@ -626,11 +537,7 @@
       "x": 17,
       "y": 51,
       "elevation": 3,
-<<<<<<< HEAD
       "var": "VAR_GARBAGEVAR",
-=======
-      "var": "VAR_ROUTE104_STATE",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "var_value": "1",
       "script": "Route104_EventScript_RivalTrigger"
     }

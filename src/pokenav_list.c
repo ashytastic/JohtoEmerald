@@ -34,11 +34,7 @@ struct PokenavListWindowState {
     u16 selectedIndexOffset;
     u16 entriesOnscreen;
     u32 listItemSize;
-<<<<<<< HEAD
     void * listPtr;
-=======
-    void *listPtr;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 struct PokenavListSub
@@ -47,11 +43,7 @@ struct PokenavListSub
     u32 printStart;
     u32 printIndex;
     u32 itemSize;
-<<<<<<< HEAD
     void * listPtr;
-=======
-    void *listPtr;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     s32 startBgY;
     s32 endBgY;
     u32 loopedTaskId;
@@ -102,15 +94,7 @@ static u32 LoopedTask_ReshowListFromCheckPage(s32);
 static u32 LoopedTask_PrintCheckPageInfo(s32);
 
 static const u16 sListArrow_Pal[] = INCBIN_U16("graphics/pokenav/list_arrows.gbapal");
-<<<<<<< HEAD
 static const u32 sListArrow_Gfx[] = INCBIN_U32("graphics/pokenav/list_arrows.4bpp.lz");
-=======
-static const u32 sListArrow_Gfx[] = INCBIN_U32("graphics/pokenav/list_arrows.4bpp.smol");
-
-static const u8 gText_PokenavMatchCall_Strategy[] = _("STRATEGY");
-static const u8 gText_PokenavMatchCall_TrainerPokemon[] = _("TRAINER'S POKéMON");
-static const u8 gText_PokenavMatchCall_SelfIntroduction[] = _("SELF-INTRODUCTION");
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 static EWRAM_DATA u32 sMoveWindowDownIndex = 0; // Read, but pointlessly
 
@@ -208,11 +192,7 @@ static void InitListItems(struct PokenavListWindowState *windowState, struct Pok
     PrintListItems(windowState->listPtr, windowState->windowTopIndex, numToPrint, windowState->listItemSize, 0, subPtr);
 }
 
-<<<<<<< HEAD
 static void PrintListItems(void * listPtr, u32 topIndex, u32 numItems, u32 itemSize, u32 printStart, struct PokenavListSub *list)
-=======
-static void PrintListItems(void *listPtr, u32 topIndex, u32 numItems, u32 itemSize, u32 printStart, struct PokenavListSub *list)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     if (numItems == 0)
         return;

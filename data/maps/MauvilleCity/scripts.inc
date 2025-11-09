@@ -1,35 +1,22 @@
-<<<<<<< HEAD
 .set LOCALID_WALLY, 6
 .set LOCALID_WALLYS_UNCLE, 7
 .set LOCALID_SCOTT, 11
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 MauvilleCity_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, MauvilleCity_OnTransition
 	.byte 0
 
 MauvilleCity_OnTransition:
-<<<<<<< HEAD
 	setflag FLAG_VISITED_BLACKTHORN_CITY
 	clearflag FLAG_FORCE_MIRAGE_TOWER_VISIBLE
 	clearflag FLAG_GARBAGEFLAG
 	setflag FLAG_SYS_TV_START
 	clearflag FLAG_MAUVILLE_GYM_BARRIERS_STATE
 	setvar VAR_GARBAGEVAR, 0
-=======
-	setflag FLAG_VISITED_MAUVILLE_CITY
-	clearflag FLAG_FORCE_MIRAGE_TOWER_VISIBLE
-	clearflag FLAG_HIDE_SLATEPORT_MUSEUM_POPULATION
-	setflag FLAG_SYS_TV_START
-	clearflag FLAG_MAUVILLE_GYM_BARRIERS_STATE
-	setvar VAR_MAUVILLE_GYM_STATE, 0
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call_if_set FLAG_GOT_TM_THUNDERBOLT_FROM_WATTSON, MauvilleCity_EventScript_MoveWattsonBackToGym
 	end
 
 MauvilleCity_EventScript_MoveWattsonBackToGym::
-<<<<<<< HEAD
 	clearflag FLAG_GARBAGEFLAG
 	setflag FLAG_GARBAGEFLAG
 	setflag FLAG_WATTSON_REMATCH_AVAILABLE
@@ -49,13 +36,6 @@ MauvilleCity_EventScript_MagnezoneEvo_Text:
 	.string "Was it battling? HOLDING IT?\l"
 	.string "I seriously don't know…$"
 
-=======
-	clearflag FLAG_HIDE_MAUVILLE_GYM_WATTSON
-	setflag FLAG_HIDE_MAUVILLE_CITY_WATTSON
-	setflag FLAG_WATTSON_REMATCH_AVAILABLE
-	return
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 MauvilleCity_EventScript_Boy::
 	msgbox MauvilleCity_Text_NurseHurtMonBackToHealth, MSGBOX_NPC
 	end
@@ -108,11 +88,7 @@ MauvilleCity_EventScript_WallysUncle::
 	goto_if_set FLAG_DECLINED_WALLY_BATTLE_MAUVILLE, MauvilleCity_EventScript_UncleAskPlayerToBattleWally
 	msgbox MauvilleCity_Text_UncleHesTooPeppy, MSGBOX_DEFAULT
 	closemessage
-<<<<<<< HEAD
 	applymovement LOCALID_WALLYS_UNCLE, Common_Movement_FaceOriginalDirection
-=======
-	applymovement LOCALID_MAUVILLE_WALLYS_UNCLE, Common_Movement_FaceOriginalDirection
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	release
 	end
@@ -120,11 +96,7 @@ MauvilleCity_EventScript_WallysUncle::
 MauvilleCity_EventScript_UncleAskPlayerToBattleWally::
 	msgbox MauvilleCity_Text_UncleCanYouBattleWally, MSGBOX_DEFAULT
 	closemessage
-<<<<<<< HEAD
 	applymovement LOCALID_WALLYS_UNCLE, Common_Movement_FaceOriginalDirection
-=======
-	applymovement LOCALID_MAUVILLE_WALLYS_UNCLE, Common_Movement_FaceOriginalDirection
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	release
 	end
@@ -132,30 +104,17 @@ MauvilleCity_EventScript_UncleAskPlayerToBattleWally::
 MauvilleCity_EventScript_Wally::
 	lockall
 	goto_if_set FLAG_DECLINED_WALLY_BATTLE_MAUVILLE, MauvilleCity_EventScript_WallyRequestBattleAgain
-<<<<<<< HEAD
 	applymovement LOCALID_WALLY, Common_Movement_WalkInPlaceFasterRight
-=======
-	applymovement LOCALID_MAUVILLE_WALLY, Common_Movement_WalkInPlaceFasterRight
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	msgbox MauvilleCity_Text_WallyWantToChallengeGym, MSGBOX_DEFAULT
 	msgbox MauvilleCity_Text_UncleYourePushingIt, MSGBOX_DEFAULT
 	msgbox MauvilleCity_Text_WallyWeCanBeatAnyone, MSGBOX_DEFAULT
-<<<<<<< HEAD
 	applymovement LOCALID_WALLY, Common_Movement_FacePlayer
 	waitmovement 0
 	playse SE_PIN
 	applymovement LOCALID_WALLY, Common_Movement_ExclamationMark
 	waitmovement 0
 	applymovement LOCALID_WALLY, Common_Movement_Delay48
-=======
-	applymovement LOCALID_MAUVILLE_WALLY, Common_Movement_FacePlayer
-	waitmovement 0
-	playse SE_PIN
-	applymovement LOCALID_MAUVILLE_WALLY, Common_Movement_ExclamationMark
-	waitmovement 0
-	applymovement LOCALID_MAUVILLE_WALLY, Common_Movement_Delay48
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	msgbox MauvilleCity_Text_WallyWillYouBattleMe, MSGBOX_YESNO
 	goto MauvilleCity_EventScript_BattleWallyPrompt
@@ -171,7 +130,6 @@ MauvilleCity_EventScript_BattleWallyPrompt::
 	end
 
 MauvilleCity_EventScript_WallyAndUncleExitNorth::
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, MauvilleCity_Movement_PlayerWatchWallyExitNorth1
 	applymovement LOCALID_WALLY, MauvilleCity_Movement_WallyExitNorth1
 	applymovement LOCALID_WALLYS_UNCLE, MauvilleCity_Movement_WallysUncleExitNorth1
@@ -187,29 +145,11 @@ MauvilleCity_EventScript_WallyAndUncleExitNorth::
 	applymovement OBJ_EVENT_ID_PLAYER, MauvilleCity_Movement_PlayerWatchWallyExitNorth2
 	applymovement LOCALID_WALLYS_UNCLE, MauvilleCity_Movement_WallysUncleExitNorth2
 	applymovement LOCALID_WALLY, MauvilleCity_Movement_WallyExitNorth2
-=======
-	applymovement LOCALID_PLAYER, MauvilleCity_Movement_PlayerWatchWallyExitNorth1
-	applymovement LOCALID_MAUVILLE_WALLY, MauvilleCity_Movement_WallyExitNorth1
-	applymovement LOCALID_MAUVILLE_WALLYS_UNCLE, MauvilleCity_Movement_WallysUncleExitNorth1
-	waitmovement 0
-	applymovement LOCALID_MAUVILLE_WALLY, Common_Movement_WalkInPlaceFasterRight
-	waitmovement 0
-	delay 30
-	applymovement LOCALID_PLAYER, MauvilleCity_Movement_PlayerFaceUncleNorth
-	applymovement LOCALID_MAUVILLE_WALLYS_UNCLE, MauvilleCity_Movement_WallysUncleApproachPlayerNorth
-	waitmovement 0
-	msgbox MauvilleCity_Text_UncleVisitUsSometime, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_PLAYER, MauvilleCity_Movement_PlayerWatchWallyExitNorth2
-	applymovement LOCALID_MAUVILLE_WALLYS_UNCLE, MauvilleCity_Movement_WallysUncleExitNorth2
-	applymovement LOCALID_MAUVILLE_WALLY, MauvilleCity_Movement_WallyExitNorth2
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	goto MauvilleCity_EventScript_DefeatedWally
 	end
 
 MauvilleCity_EventScript_WallyAndUncleExitEast::
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, MauvilleCity_Movement_PlayerWatchWallyExitEast1
 	applymovement LOCALID_WALLY, MauvilleCity_Movement_WallyExitEast1
 	applymovement LOCALID_WALLYS_UNCLE, MauvilleCity_Movement_WallysUncleExitEast1
@@ -224,112 +164,59 @@ MauvilleCity_EventScript_WallyAndUncleExitEast::
 	applymovement OBJ_EVENT_ID_PLAYER, MauvilleCity_Movement_PlayerWatchWallyExitEast2
 	applymovement LOCALID_WALLYS_UNCLE, MauvilleCity_Movement_WallysUncleExitEast2
 	applymovement LOCALID_WALLY, MauvilleCity_Movement_WallyExitEast2
-=======
-	applymovement LOCALID_PLAYER, MauvilleCity_Movement_PlayerWatchWallyExitEast1
-	applymovement LOCALID_MAUVILLE_WALLY, MauvilleCity_Movement_WallyExitEast1
-	applymovement LOCALID_MAUVILLE_WALLYS_UNCLE, MauvilleCity_Movement_WallysUncleExitEast1
-	waitmovement 0
-	applymovement LOCALID_MAUVILLE_WALLY, Common_Movement_WalkInPlaceFasterRight
-	waitmovement 0
-	delay 30
-	applymovement LOCALID_MAUVILLE_WALLYS_UNCLE, MauvilleCity_Movement_WallysUncleApproachPlayerEast
-	waitmovement 0
-	msgbox MauvilleCity_Text_UncleVisitUsSometime, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_PLAYER, MauvilleCity_Movement_PlayerWatchWallyExitEast2
-	applymovement LOCALID_MAUVILLE_WALLYS_UNCLE, MauvilleCity_Movement_WallysUncleExitEast2
-	applymovement LOCALID_MAUVILLE_WALLY, MauvilleCity_Movement_WallyExitEast2
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	goto MauvilleCity_EventScript_DefeatedWally
 	end
 
 MauvilleCity_EventScript_DefeatedWally::
-<<<<<<< HEAD
 	removeobject LOCALID_WALLY
 	removeobject LOCALID_WALLYS_UNCLE
 	clearflag FLAG_HIDE_VERDANTURF_TOWN_WANDAS_HOUSE_WALLY
 	clearflag FLAG_GARBAGEFLAG
-=======
-	removeobject LOCALID_MAUVILLE_WALLY
-	removeobject LOCALID_MAUVILLE_WALLYS_UNCLE
-	clearflag FLAG_HIDE_VERDANTURF_TOWN_WANDAS_HOUSE_WALLY
-	clearflag FLAG_HIDE_VERDANTURF_TOWN_WANDAS_HOUSE_WALLYS_UNCLE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setflag FLAG_DEFEATED_WALLY_MAUVILLE
 	setvar VAR_WALLY_CALL_STEP_COUNTER, 0
 	setflag FLAG_ENABLE_FIRST_WALLY_POKENAV_CALL
 	call_if_eq VAR_FACING, DIR_NORTH, MauvilleCity_EventScript_ScottApproachPlayerNorth
 	call_if_eq VAR_FACING, DIR_EAST, MauvilleCity_EventScript_ScottApproachPlayerEast
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
-=======
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	msgbox MauvilleCity_Text_ScottYouDidntHoldBack, MSGBOX_DEFAULT
 	closemessage
 	addvar VAR_SCOTT_STATE, 1
 	call_if_eq VAR_FACING, DIR_NORTH, MauvilleCity_EventScript_ScottExitNorth
 	call_if_eq VAR_FACING, DIR_EAST, MauvilleCity_EventScript_ScottExitEast
-<<<<<<< HEAD
 	removeobject LOCALID_SCOTT
-=======
-	removeobject LOCALID_MAUVILLE_SCOTT
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	releaseall
 	end
 
 MauvilleCity_EventScript_ScottApproachPlayerNorth::
-<<<<<<< HEAD
 	addobject LOCALID_SCOTT
 	applymovement LOCALID_SCOTT, MauvilleCity_Movement_ScottApproachPlayerNorth
-=======
-	addobject LOCALID_MAUVILLE_SCOTT
-	applymovement LOCALID_MAUVILLE_SCOTT, MauvilleCity_Movement_ScottApproachPlayerNorth
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 MauvilleCity_EventScript_ScottApproachPlayerEast::
-<<<<<<< HEAD
 	setobjectxyperm LOCALID_SCOTT, 12, 13
 	addobject LOCALID_SCOTT
 	applymovement LOCALID_SCOTT, MauvilleCity_Movement_ScottApproachPlayerEast
-=======
-	setobjectxyperm LOCALID_MAUVILLE_SCOTT, 12, 13
-	addobject LOCALID_MAUVILLE_SCOTT
-	applymovement LOCALID_MAUVILLE_SCOTT, MauvilleCity_Movement_ScottApproachPlayerEast
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 MauvilleCity_EventScript_ScottExitNorth::
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, MauvilleCity_Movement_PlayerWatchScottExitNorth
 	applymovement LOCALID_SCOTT, MauvilleCity_Movement_ScottExitNorth
-=======
-	applymovement LOCALID_PLAYER, MauvilleCity_Movement_PlayerWatchScottExitNorth
-	applymovement LOCALID_MAUVILLE_SCOTT, MauvilleCity_Movement_ScottExitNorth
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 MauvilleCity_EventScript_ScottExitEast::
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, MauvilleCity_Movement_PlayerWatchScottExitEast
 	applymovement LOCALID_SCOTT, MauvilleCity_Movement_ScottExitEast
-=======
-	applymovement LOCALID_PLAYER, MauvilleCity_Movement_PlayerWatchScottExitEast
-	applymovement LOCALID_MAUVILLE_SCOTT, MauvilleCity_Movement_ScottExitEast
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 MauvilleCity_EventScript_BattleWally::
 	msgbox MauvilleCity_Text_WallyHereICome, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_WALLY_MAUVILLE, MauvilleCity_Text_WallyDefeat
-<<<<<<< HEAD
 	applymovement LOCALID_WALLY, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	msgbox MauvilleCity_Text_WallyIllGoBackToVerdanturf, MSGBOX_DEFAULT
@@ -337,15 +224,6 @@ MauvilleCity_EventScript_BattleWally::
 	waitmovement 0
 	msgbox MauvilleCity_Text_ThankYouNotEnoughToBattle, MSGBOX_DEFAULT
 	applymovement LOCALID_WALLY, Common_Movement_WalkInPlaceFasterRight
-=======
-	applymovement LOCALID_MAUVILLE_WALLY, Common_Movement_WalkInPlaceFasterRight
-	waitmovement 0
-	msgbox MauvilleCity_Text_WallyIllGoBackToVerdanturf, MSGBOX_DEFAULT
-	applymovement LOCALID_MAUVILLE_WALLY, Common_Movement_FacePlayer
-	waitmovement 0
-	msgbox MauvilleCity_Text_ThankYouNotEnoughToBattle, MSGBOX_DEFAULT
-	applymovement LOCALID_MAUVILLE_WALLY, Common_Movement_WalkInPlaceFasterRight
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	msgbox MauvilleCity_Text_UncleNoNeedToBeDown, MSGBOX_DEFAULT
 	return
@@ -357,11 +235,7 @@ MauvilleCity_EventScript_DeclineWallyBattle::
 	end
 
 MauvilleCity_EventScript_WallyRequestBattleAgain::
-<<<<<<< HEAD
 	applymovement LOCALID_WALLY, Common_Movement_FacePlayer
-=======
-	applymovement LOCALID_MAUVILLE_WALLY, Common_Movement_FacePlayer
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	msgbox MauvilleCity_Text_WallyPleaseBattleMe, MSGBOX_YESNO
 	goto MauvilleCity_EventScript_BattleWallyPrompt
@@ -563,10 +437,6 @@ MauvilleCity_EventScript_Wattson::
 	goto_if_set FLAG_GOT_BASEMENT_KEY_FROM_WATTSON, MauvilleCity_EventScript_BegunNewMauville
 	msgbox MauvilleCity_Text_WattsonNeedFavorTakeKey, MSGBOX_DEFAULT
 	giveitem ITEM_BASEMENT_KEY
-<<<<<<< HEAD
-=======
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setflag FLAG_GOT_BASEMENT_KEY_FROM_WATTSON
 	msgbox MauvilleCity_Text_WattsonWontBeChallenge, MSGBOX_DEFAULT
 	release

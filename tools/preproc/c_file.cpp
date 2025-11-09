@@ -30,7 +30,6 @@
 #include "char_util.h"
 #include "utf8.h"
 #include "string_parser.h"
-<<<<<<< HEAD
 
 CFile::CFile(const char * filenameCStr, bool isStdin)
 {
@@ -81,18 +80,6 @@ CFile::CFile(const char * filenameCStr, bool isStdin)
     m_buffer[m_size] = 0;
 
     std::fclose(fp);
-=======
-#include "io.h"
-
-CFile::CFile(const char * filenameCStr, bool isStdin)
-{
-    if (isStdin)
-        m_filename = std::string{"<stdin>/"}.append(filenameCStr);
-    else
-        m_filename = std::string(filenameCStr);
-
-    m_buffer = ReadFileToBuffer(filenameCStr, isStdin, &m_size);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     m_pos = 0;
     m_lineNum = 1;
@@ -406,11 +393,7 @@ void CFile::TryConvertIncbin()
 
         // INCBIN_COMP; include *compressed* version of file
         if (incbinType == 7)
-<<<<<<< HEAD
             path = path.append(".lz");
-=======
-            path = path.append(".smol");
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
         m_pos++;
 

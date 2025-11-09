@@ -122,7 +122,6 @@
 #define MULTI_SLATEPORT_TENT_RULES         111
 #define MULTI_FALLARBOR_TENT_RULES         112
 #define MULTI_TAG_MATCH_TYPE               113
-<<<<<<< HEAD
 #define MULTI_GAME_CORNER_DOLLS2           114
 #define MULTI_DAYS_OF_WEEK                 115
 #define MULTI_KURT_BALLS                   116
@@ -140,9 +139,6 @@
 #define MULTI_5FLOORS                     128
 
 
-=======
-#define MULTI_BERRY_PLOT                   114
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 // Lilycove SS Tidal Multichoice Selections
 #define SSTIDAL_SELECTION_SLATEPORT        0
@@ -186,13 +182,4 @@
 #define STDSTRING_BATTLE_PIKE      28
 #define STDSTRING_BATTLE_PYRAMID   29
 
-<<<<<<< HEAD
-=======
-// Dynamic Multichoice Callbacks
-
-#define DYN_MULTICHOICE_CB_DEBUG      0
-#define DYN_MULTICHOICE_CB_SHOW_ITEM  1
-#define DYN_MULTICHOICE_CB_NONE       255
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #endif //GUARD_SCRIPT_MENU_CONSTANTS_H

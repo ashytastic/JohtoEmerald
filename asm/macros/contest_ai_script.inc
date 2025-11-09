@@ -141,41 +141,25 @@
 
 	.macro if_points_less_than num:req, destination:req
 	.byte 0x16
-<<<<<<< HEAD
 	.byte \num
-=======
-	.2byte \num
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.4byte \destination
 	.endm
 
 	.macro if_points_more_than num:req, destination:req
 	.byte 0x17
-<<<<<<< HEAD
 	.byte \num
-=======
-	.2byte \num
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.4byte \destination
 	.endm
 
 	.macro if_points_eq num:req, destination:req
 	.byte 0x18
-<<<<<<< HEAD
 	.byte \num
-=======
-	.2byte \num
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.4byte \destination
 	.endm
 
 	.macro if_points_not_eq num:req, destination:req
 	.byte 0x19
-<<<<<<< HEAD
 	.byte \num
-=======
-	.2byte \num
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.4byte \destination
 	.endm
 
@@ -187,41 +171,25 @@
 
 	.macro if_preliminary_points_less_than num:req, destination:req
 	.byte 0x1B
-<<<<<<< HEAD
 	.byte \num
-=======
-	.2byte \num
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.4byte \destination
 	.endm
 
 	.macro if_preliminary_points_more_than num:req, destination:req
 	.byte 0x1C
-<<<<<<< HEAD
 	.byte \num
-=======
-	.2byte \num
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.4byte \destination
 	.endm
 
 	.macro if_preliminary_points_eq num:req, destination:req
 	.byte 0x1D
-<<<<<<< HEAD
 	.byte \num
-=======
-	.2byte \num
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.4byte \destination
 	.endm
 
 	.macro if_preliminary_points_not_eq num:req, destination:req
 	.byte 0x1E
-<<<<<<< HEAD
 	.byte \num
-=======
-	.2byte \num
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.4byte \destination
 	.endm
 

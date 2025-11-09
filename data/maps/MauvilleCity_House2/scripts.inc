@@ -24,14 +24,8 @@ MauvilleCity_House2_EventScript_AskToTradeForHarborMail::
 
 MauvilleCity_House2_EventScript_AcceptTrade::
 	msgbox MauvilleCity_House2_Text_IllTradeYouCoinCase, MSGBOX_DEFAULT
-<<<<<<< HEAD
 	removeitem ITEM_HARBOR_MAIL
 	giveitem ITEM_COIN_CASE
-=======
-	giveitem ITEM_COIN_CASE
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-	removeitem ITEM_HARBOR_MAIL
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setflag FLAG_RECEIVED_COIN_CASE
 	goto MauvilleCity_House2_EventScript_ReceivedCoinCase
 	end

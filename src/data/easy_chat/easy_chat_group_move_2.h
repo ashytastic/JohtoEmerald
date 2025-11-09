@@ -53,11 +53,7 @@ const u16 gEasyChatGroup_Move2[] = {
     MOVE_EMBER,
     MOVE_ERUPTION,
     MOVE_EXPLOSION,
-<<<<<<< HEAD
     MOVE_FAINT_ATTACK,
-=======
-    MOVE_FEINT_ATTACK,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     MOVE_FAKE_OUT,
     MOVE_FALSE_SWIPE,
     MOVE_FEATHER_DANCE,
@@ -77,11 +73,7 @@ const u16 gEasyChatGroup_Move2[] = {
     MOVE_GUILLOTINE,
     MOVE_HEAT_WAVE,
     MOVE_HELPING_HAND,
-<<<<<<< HEAD
     MOVE_HI_JUMP_KICK,
-=======
-    MOVE_HIGH_JUMP_KICK,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     MOVE_HIDDEN_POWER,
     MOVE_HORN_ATTACK,
     MOVE_HORN_DRILL,
@@ -197,11 +189,7 @@ const u16 gEasyChatGroup_Move2[] = {
     MOVE_TRIPLE_KICK,
     MOVE_TWINEEDLE,
     MOVE_TWISTER,
-<<<<<<< HEAD
     MOVE_VICE_GRIP,
-=======
-    MOVE_VISE_GRIP,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     MOVE_VINE_WHIP,
     MOVE_VOLT_TACKLE,
     MOVE_WATER_GUN,
@@ -213,7 +201,6 @@ const u16 gEasyChatGroup_Move2[] = {
     MOVE_WISH,
     MOVE_WRAP,
     MOVE_ZAP_CANNON,
-<<<<<<< HEAD
     MOVE_DARK_PULSE,
     MOVE_PSYCHO_CUT,
     MOVE_FOCUS_BLAST,
@@ -227,6 +214,4 @@ const u16 gEasyChatGroup_Move2[] = {
     MOVE_PLAY_ROUGH,
     MOVE_MOONBLAST,
     MOVE_POISON_JAB,
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };

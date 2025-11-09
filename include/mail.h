@@ -1,13 +1,7 @@
 #ifndef GUARD_MAIL_H
 #define GUARD_MAIL_H
 
-<<<<<<< HEAD
 #define IS_ITEM_MAIL(itemId)((itemId == ITEM_ORANGE_MAIL            \
-=======
-#include "main.h"
-
-#define IS_ITEM_MAIL(itemId) ((itemId == ITEM_ORANGE_MAIL           \
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                               || itemId == ITEM_HARBOR_MAIL         \
                               || itemId == ITEM_GLITTER_MAIL        \
                               || itemId == ITEM_MECH_MAIL           \
@@ -21,11 +15,7 @@
                               || itemId == ITEM_RETRO_MAIL))
 
 // mail.h
-<<<<<<< HEAD
 void ReadMail(struct Mail *mail, void (*exitCallback)(void), bool8 hasText);
-=======
-void ReadMail(struct Mail *mail, MainCallback exitCallback, bool8 hasText);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 // mail_data.h
 void ClearAllMail(void);

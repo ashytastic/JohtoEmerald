@@ -8,11 +8,7 @@ u8 BattleArena_ShowJudgmentWindow(u8 *state);
 void BattleArena_InitPoints(void);
 void BattleArena_AddMindPoints(u8 battler);
 void BattleArena_AddSkillPoints(u8 battler);
-<<<<<<< HEAD
 void BattleArena_DeductSkillPoints(u8 battler, u16 stringId);
-=======
-void BattleArena_DeductSkillPoints(u8 battler, enum StringID stringId);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 void DrawArenaRefereeTextBox(void);
 void EraseArenaRefereeTextBox(void);
 

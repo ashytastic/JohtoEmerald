@@ -12,17 +12,10 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-<<<<<<< HEAD
   "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_ATTENDANT_M",
-=======
-  "connections": null,
-  "object_events": [
-    {
-      "graphics_id": "OBJ_EVENT_GFX_POKEFAN_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 4,
       "y": 7,
       "elevation": 3,
@@ -61,11 +54,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_M",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_MAN_4",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 5,
       "y": 14,
       "elevation": 3,
@@ -78,11 +67,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_LASS",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 4,
       "y": 14,
       "elevation": 3,
@@ -95,11 +80,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_POLICEMAN",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_RICH_BOY",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 22,
       "y": 11,
       "elevation": 3,
@@ -125,11 +106,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_SUPER_NERD",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_MANIAC",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 28,
       "y": 5,
       "elevation": 3,
@@ -139,11 +116,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SSTidalRooms_EventScript_SnatchGiver",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
-=======
-      "flag": "FLAG_HIDE_SS_TIDAL_ROOMS_SNATCH_GIVER"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "warp_events": [
@@ -232,13 +205,9 @@
       "dest_warp_id": "7"
     }
   ],
-<<<<<<< HEAD
   "coord_events": [
 
   ],
-=======
-  "coord_events": [],
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "bg_events": [
     {
       "type": "sign",

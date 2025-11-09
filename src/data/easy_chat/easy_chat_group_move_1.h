@@ -121,11 +121,7 @@ const u16 gEasyChatGroup_Move1[] = {
     MOVE_SKY_ATTACK,
     MOVE_SKY_UPPERCUT,
     MOVE_SLASH,
-<<<<<<< HEAD
     MOVE_SMELLING_SALT,
-=======
-    MOVE_SMELLING_SALTS,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     MOVE_SMOG,
     MOVE_SMOKESCREEN,
     MOVE_SNORE,

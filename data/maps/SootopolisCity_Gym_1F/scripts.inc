@@ -67,11 +67,7 @@ SootopolisCity_Gym_1F_EventScript_UnlockThirdStairs::
 SootopolisCity_Gym_1F_EventScript_FallThroughIce::
 	lockall
 	delay 20
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, SootopolisCity_Gym_1F_Movement_FallThroughIce
-=======
-	applymovement LOCALID_PLAYER, SootopolisCity_Gym_1F_Movement_FallThroughIce
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	playse SE_FALL
 	delay 60
@@ -98,7 +94,6 @@ SootopolisCity_Gym_1F_EventScript_JuanDefeated::
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox SootopolisCity_Gym_1F_Text_ExplainRainBadgeTakeThis, MSGBOX_DEFAULT
-<<<<<<< HEAD
 	setflag FLAG_DEFEATED_BLACKTHORN_GYM
 	setflag FLAG_BADGE08_GET
 	setflag FLAG_GARBAGEFLAG
@@ -106,15 +101,6 @@ SootopolisCity_Gym_1F_EventScript_JuanDefeated::
 	setflag FLAG_GARBAGEFLAG
 	setvar VAR_GARBAGEVAR, 6
 	clearflag FLAG_GARBAGEFLAG
-=======
-	setflag FLAG_DEFEATED_SOOTOPOLIS_GYM
-	setflag FLAG_BADGE08_GET
-	setflag FLAG_HIDE_SOOTOPOLIS_CITY_RESIDENTS
-	setflag FLAG_HIDE_SOOTOPOLIS_CITY_STEVEN
-	setflag FLAG_HIDE_SOOTOPOLIS_CITY_WALLACE
-	setvar VAR_SOOTOPOLIS_CITY_STATE, 6
-	clearflag FLAG_HIDE_SOOTOPOLIS_CITY_MAN_1
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setvar VAR_0x8008, 8
 	call Common_EventScript_SetGymTrainers
 	call SootopolisCity_Gym_1F_EventScript_GiveWaterPulse
@@ -157,11 +143,7 @@ SootopolisCity_Gym_1F_EventScript_JuanRematch::
 SootopolisCity_Gym_1F_EventScript_GymGuide::
 	lock
 	faceplayer
-<<<<<<< HEAD
 	goto_if_set FLAG_DEFEATED_BLACKTHORN_GYM, SootopolisCity_Gym_1F_EventScript_GymGuidePostVictory
-=======
-	goto_if_set FLAG_DEFEATED_SOOTOPOLIS_GYM, SootopolisCity_Gym_1F_EventScript_GymGuidePostVictory
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox SootopolisCity_Gym_1F_Text_GymGuideAdvice, MSGBOX_DEFAULT
 	release
 	end

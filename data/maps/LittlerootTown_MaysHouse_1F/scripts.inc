@@ -1,10 +1,7 @@
-<<<<<<< HEAD
 .set LOCALID_MOM, 1
 .set LOCALID_RIVAL_MOM, 4
 .set LOCALID_RIVAL, 7
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 LittlerootTown_MaysHouse_1F_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, LittlerootTown_MaysHouse_1F_OnLoad
 	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_MaysHouse_1F_OnTransition
@@ -12,11 +9,7 @@ LittlerootTown_MaysHouse_1F_MapScripts::
 	.byte 0
 
 LittlerootTown_MaysHouse_1F_OnLoad:
-<<<<<<< HEAD
 	call_if_lt VAR_GARBAGEVAR, 6, LittlerootTown_MaysHouse_1F_EventScript_SetMovingBoxes
-=======
-	call_if_lt VAR_LITTLEROOT_INTRO_STATE, 6, LittlerootTown_MaysHouse_1F_EventScript_SetMovingBoxes
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call_if_set FLAG_RECEIVED_RUNNING_SHOES, LittlerootTown_MaysHouse_1F_EventScript_CheckShowShoesManual
 	end
 
@@ -35,7 +28,6 @@ LittlerootTown_MaysHouse_1F_EventScript_ShowRunningShoesManual::
 	return
 
 LittlerootTown_MaysHouse_1F_OnTransition:
-<<<<<<< HEAD
 	call_if_eq VAR_GARBAGEVAR, 3, LittlerootTown_MaysHouse_1F_EventScript_MoveMomToDoor
 	call_if_eq VAR_GARBAGEVAR, 5, LittlerootTown_MaysHouse_1F_EventScript_MoveMomToStairs
 	call_if_eq VAR_GARBAGEVAR, 6, LittlerootTown_MaysHouse_1F_EventScript_MoveMomToTV
@@ -54,56 +46,23 @@ LittlerootTown_MaysHouse_1F_EventScript_MoveMomToTV::
 LittlerootTown_MaysHouse_1F_EventScript_MoveMomToDoor::
 	setobjectxyperm LOCALID_MOM, 1, 8
 	setobjectmovementtype LOCALID_MOM, MOVEMENT_TYPE_FACE_UP
-=======
-	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 3, LittlerootTown_MaysHouse_1F_EventScript_MoveMomToDoor
-	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 5, LittlerootTown_MaysHouse_1F_EventScript_MoveMomToStairs
-	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 6, LittlerootTown_MaysHouse_1F_EventScript_MoveMomToTV
-	end
-
-LittlerootTown_MaysHouse_1F_EventScript_MoveMomToStairs::
-	setobjectxyperm LOCALID_PLAYERS_HOUSE_1F_MOM, 2, 4
-	setobjectmovementtype LOCALID_PLAYERS_HOUSE_1F_MOM, MOVEMENT_TYPE_FACE_UP
-	return
-
-LittlerootTown_MaysHouse_1F_EventScript_MoveMomToTV::
-	setobjectxyperm LOCALID_PLAYERS_HOUSE_1F_MOM, 6, 5
-	setobjectmovementtype LOCALID_PLAYERS_HOUSE_1F_MOM, MOVEMENT_TYPE_FACE_UP
-	return
-
-LittlerootTown_MaysHouse_1F_EventScript_MoveMomToDoor::
-	setobjectxyperm LOCALID_PLAYERS_HOUSE_1F_MOM, 1, 8
-	setobjectmovementtype LOCALID_PLAYERS_HOUSE_1F_MOM, MOVEMENT_TYPE_FACE_UP
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	return
 
 @ Many of the below scripts have no gender check because they assume youre in the correct house
 LittlerootTown_MaysHouse_1F_OnFrame:
-<<<<<<< HEAD
 	map_script_2 VAR_GARBAGEVAR, 3, LittlerootTown_MaysHouse_1F_EventScript_EnterHouseMovingIn
 	map_script_2 VAR_GARBAGEVAR, 5, LittlerootTown_MaysHouse_1F_EventScript_GoUpstairsToSetClock
 	map_script_2 VAR_GARBAGEVAR, 6, LittlerootTown_MaysHouse_1F_EventScript_PetalburgGymReport
 	map_script_2 VAR_GARBAGEVAR, 1, LittlerootTown_MaysHouse_1F_EventScript_YoureNewNeighbor
 	map_script_2 VAR_GARBAGEVAR, 3, PlayersHouse_1F_EventScript_GetSSTicketAndSeeLatiTV
-=======
-	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 3, LittlerootTown_MaysHouse_1F_EventScript_EnterHouseMovingIn
-	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 5, LittlerootTown_MaysHouse_1F_EventScript_GoUpstairsToSetClock
-	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 6, LittlerootTown_MaysHouse_1F_EventScript_PetalburgGymReport
-	map_script_2 VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 1, LittlerootTown_MaysHouse_1F_EventScript_YoureNewNeighbor
-	map_script_2 VAR_LITTLEROOT_HOUSES_STATE_MAY, 3, PlayersHouse_1F_EventScript_GetSSTicketAndSeeLatiTV
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.2byte 0
 
 LittlerootTown_MaysHouse_1F_EventScript_GoUpstairsToSetClock::
 	lockall
 	msgbox PlayersHouse_1F_Text_GoSetTheClock, MSGBOX_DEFAULT
 	closemessage
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_MaysHouse_1F_Movement_PushTowardStairs
 	applymovement LOCALID_MOM, LittlerootTown_MaysHouse_1F_Movement_PushTowardStairs
-=======
-	applymovement LOCALID_PLAYER, LittlerootTown_MaysHouse_1F_Movement_PushTowardStairs
-	applymovement LOCALID_PLAYERS_HOUSE_1F_MOM, LittlerootTown_MaysHouse_1F_Movement_PushTowardStairs
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	warp MAP_LITTLEROOT_TOWN_MAYS_HOUSE_2F, 1, 1
 	waitstate
@@ -116,11 +75,7 @@ LittlerootTown_MaysHouse_1F_Movement_PushTowardStairs:
 
 LittlerootTown_MaysHouse_1F_EventScript_EnterHouseMovingIn::
 	lockall
-<<<<<<< HEAD
 	setvar VAR_0x8004, LOCALID_MOM
-=======
-	setvar VAR_0x8004, LOCALID_PLAYERS_HOUSE_1F_MOM
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setvar VAR_0x8005, FEMALE
 	goto PlayersHouse_1F_EventScript_EnterHouseMovingIn
 	end
@@ -128,41 +83,24 @@ LittlerootTown_MaysHouse_1F_EventScript_EnterHouseMovingIn::
 LittlerootTown_MaysHouse_1F_EventScript_PetalburgGymReport::
 	lockall
 	setvar VAR_0x8004, FEMALE
-<<<<<<< HEAD
 	setvar VAR_0x8005, LOCALID_MOM
-=======
-	setvar VAR_0x8005, LOCALID_PLAYERS_HOUSE_1F_MOM
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto PlayersHouse_1F_EventScript_PetalburgGymReportFemale
 	end
 
 LittlerootTown_MaysHouse_1F_EventScript_YoureNewNeighbor::
 	lockall
 	playse SE_PIN
-<<<<<<< HEAD
 	applymovement LOCALID_RIVAL_MOM, Common_Movement_ExclamationMark
 	waitmovement 0
 	applymovement LOCALID_RIVAL_MOM, Common_Movement_Delay48
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 	applymovement LOCALID_RIVAL_MOM, LittlerootTown_MaysHouse_1F_Movement_RivalMomApproach
-=======
-	applymovement LOCALID_RIVALS_HOUSE_1F_MOM, Common_Movement_ExclamationMark
-	waitmovement 0
-	applymovement LOCALID_RIVALS_HOUSE_1F_MOM, Common_Movement_Delay48
-	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
-	applymovement LOCALID_RIVALS_HOUSE_1F_MOM, LittlerootTown_MaysHouse_1F_Movement_RivalMomApproach
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	special GetRivalSonDaughterString
 	msgbox RivalsHouse_1F_Text_OhYoureTheNewNeighbor, MSGBOX_DEFAULT
 	setflag FLAG_MET_RIVAL_MOM
-<<<<<<< HEAD
 	setvar VAR_GARBAGEVAR, 2
-=======
-	setvar VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 2
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	releaseall
 	end
 
@@ -180,11 +118,7 @@ RivalsHouse_1F_EventScript_RivalMom::
 	faceplayer
 	goto_if_set FLAG_DEFEATED_RIVAL_ROUTE103, RivalsHouse_1F_EventScript_GoHomeEverySoOften
 	goto_if_set FLAG_SYS_POKEMON_GET, RivalsHouse_1F_EventScript_RivalIsOnRoute103
-<<<<<<< HEAD
 	goto_if_eq VAR_GARBAGEVAR, 3, RivalsHouse_1F_EventScript_RivalTooBusy
-=======
-	goto_if_eq VAR_LITTLEROOT_RIVAL_STATE, 3, RivalsHouse_1F_EventScript_RivalTooBusy
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	special GetRivalSonDaughterString
 	msgbox RivalsHouse_1F_Text_LikeChildLikeFather, MSGBOX_DEFAULT
 	release
@@ -215,11 +149,7 @@ RivalsHouse_1F_EventScript_RivalSibling::
 
 LittlerootTown_MaysHouse_1F_EventScript_GoSeeRoom::
 	lockall
-<<<<<<< HEAD
 	setvar VAR_0x8004, LOCALID_MOM
-=======
-	setvar VAR_0x8004, LOCALID_PLAYERS_HOUSE_1F_MOM
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setvar VAR_0x8005, FEMALE
 	applymovement VAR_0x8004, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
@@ -247,21 +177,12 @@ LittlerootTown_MaysHouse_1F_EventScript_MeetRival2::
 LittlerootTown_MaysHouse_1F_EventScript_MeetRival::
 	playse SE_EXIT
 	delay 10
-<<<<<<< HEAD
 	addobject LOCALID_RIVAL
 	delay 30
 	playse SE_PIN
 	applymovement LOCALID_RIVAL, Common_Movement_ExclamationMark
 	waitmovement 0
 	applymovement LOCALID_RIVAL, Common_Movement_Delay48
-=======
-	addobject LOCALID_RIVALS_HOUSE_1F_RIVAL
-	delay 30
-	playse SE_PIN
-	applymovement LOCALID_RIVALS_HOUSE_1F_RIVAL, Common_Movement_ExclamationMark
-	waitmovement 0
-	applymovement LOCALID_RIVALS_HOUSE_1F_RIVAL, Common_Movement_Delay48
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	call_if_ne VAR_0x8008, 1, LittlerootTown_MaysHouse_1F_EventScript_PlayerFaceMay
 	playbgm MUS_ENCOUNTER_MAY, TRUE
@@ -274,7 +195,6 @@ LittlerootTown_MaysHouse_1F_EventScript_MeetRival::
 	call_if_eq VAR_0x8008, 1, LittlerootTown_MaysHouse_1F_EventScript_MayGoUpstairs1
 	call_if_eq VAR_0x8008, 2, LittlerootTown_MaysHouse_1F_EventScript_MayGoUpstairs2
 	playse SE_EXIT
-<<<<<<< HEAD
 	removeobject LOCALID_RIVAL
 	setflag FLAG_GARBAGEFLAG
 	setflag FLAG_GARBAGEFLAG
@@ -282,53 +202,28 @@ LittlerootTown_MaysHouse_1F_EventScript_MeetRival::
 	delay 30
 	setvar VAR_GARBAGEVAR, 3
 	setvar VAR_GARBAGEVAR, 1
-=======
-	removeobject LOCALID_RIVALS_HOUSE_1F_RIVAL
-	setflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_MAY
-	setflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_2F_POKE_BALL
-	clearflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_BEDROOM
-	delay 30
-	setvar VAR_LITTLEROOT_RIVAL_STATE, 3
-	setvar VAR_LITTLEROOT_TOWN_STATE, 1
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	savebgm MUS_DUMMY
 	fadedefaultbgm
 	releaseall
 	end
 
 LittlerootTown_MaysHouse_1F_EventScript_PlayerFaceMay::
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
-=======
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 LittlerootTown_MaysHouse_1F_EventScript_MayApproachPlayer0::
-<<<<<<< HEAD
 	applymovement LOCALID_RIVAL, LittlerootTown_MaysHouse_1F_Movement_MayApproachPlayer0
-=======
-	applymovement LOCALID_RIVALS_HOUSE_1F_RIVAL, LittlerootTown_MaysHouse_1F_Movement_MayApproachPlayer0
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 LittlerootTown_MaysHouse_1F_EventScript_MayApproachPlayer1::
-<<<<<<< HEAD
 	applymovement LOCALID_RIVAL, LittlerootTown_MaysHouse_1F_Movement_MayApproachPlayer1
-=======
-	applymovement LOCALID_RIVALS_HOUSE_1F_RIVAL, LittlerootTown_MaysHouse_1F_Movement_MayApproachPlayer1
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 LittlerootTown_MaysHouse_1F_EventScript_MayApproachPlayer2::
-<<<<<<< HEAD
 	applymovement LOCALID_RIVAL, LittlerootTown_MaysHouse_1F_Movement_MayApproachPlayer2
-=======
-	applymovement LOCALID_RIVALS_HOUSE_1F_RIVAL, LittlerootTown_MaysHouse_1F_Movement_MayApproachPlayer2
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
@@ -359,35 +254,20 @@ LittlerootTown_MaysHouse_1F_Movement_MayApproachPlayer2:
 	step_end
 
 LittlerootTown_MaysHouse_1F_EventScript_MayGoUpstairs0::
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_MaysHouse_1F_Movement_PlayerWatchMayExit0
 	applymovement LOCALID_RIVAL, LittlerootTown_MaysHouse_1F_Movement_MayGoUpstairs0
-=======
-	applymovement LOCALID_PLAYER, LittlerootTown_MaysHouse_1F_Movement_PlayerWatchMayExit0
-	applymovement LOCALID_RIVALS_HOUSE_1F_RIVAL, LittlerootTown_MaysHouse_1F_Movement_MayGoUpstairs0
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 LittlerootTown_MaysHouse_1F_EventScript_MayGoUpstairs1::
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_MaysHouse_1F_Movement_PlayerWatchMayExit1
 	applymovement LOCALID_RIVAL, LittlerootTown_MaysHouse_1F_Movement_MayGoUpstairs1
-=======
-	applymovement LOCALID_PLAYER, LittlerootTown_MaysHouse_1F_Movement_PlayerWatchMayExit1
-	applymovement LOCALID_RIVALS_HOUSE_1F_RIVAL, LittlerootTown_MaysHouse_1F_Movement_MayGoUpstairs1
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 LittlerootTown_MaysHouse_1F_EventScript_MayGoUpstairs2::
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_MaysHouse_1F_Movement_PlayerWatchMayExit2
 	applymovement LOCALID_RIVAL, LittlerootTown_MaysHouse_1F_Movement_MayGoUpstairs2
-=======
-	applymovement LOCALID_PLAYER, LittlerootTown_MaysHouse_1F_Movement_PlayerWatchMayExit2
-	applymovement LOCALID_RIVALS_HOUSE_1F_RIVAL, LittlerootTown_MaysHouse_1F_Movement_MayGoUpstairs2
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
@@ -460,27 +340,16 @@ RivalsHouse_1F_Text_LikeChildLikeFather:
 	.string "scrabbling about in grassy places.$"
 
 RivalsHouse_1F_Text_TooBusyToNoticeVisit:
-<<<<<<< HEAD
 	.string "That SILVER!\p"
-=======
-	.string "That {RIVAL}!\p"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.string "I guess our child is too busy with\n"
 	.string "POKéMON to notice that you came\l"
 	.string "to visit, {PLAYER}{KUN}.$"
 
 RivalsHouse_1F_Text_WentOutToRoute103:
-<<<<<<< HEAD
 	.string "Oh, SILVER went out to ROUTE 103\n"
 	.string "just a little while ago.\p"
 	.string "Like father, like child.\n"
 	.string "SILVER can't stay quietly at home.$"
-=======
-	.string "Oh, {RIVAL} went out to ROUTE 103\n"
-	.string "just a little while ago.\p"
-	.string "Like father, like child.\n"
-	.string "{RIVAL} can't stay quietly at home.$"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 RivalsHouse_1F_Text_ShouldGoHomeEverySoOften:
 	.string "I think it's wonderful for people to\n"

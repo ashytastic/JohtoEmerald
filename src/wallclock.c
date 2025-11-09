@@ -55,46 +55,25 @@ static void SpriteCB_AMIndicator(struct Sprite *sprite);
 #define PALTAG_WALL_CLOCK_MALE   0x1000
 #define PALTAG_WALL_CLOCK_FEMALE 0x1001
 
-<<<<<<< HEAD
 enum
 {
-=======
-enum {
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     PERIOD_AM,
     PERIOD_PM,
 };
 
-<<<<<<< HEAD
 enum
 {
-=======
-enum {
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     MOVE_NONE,
     MOVE_BACKWARD,
     MOVE_FORWARD,
 };
 
-<<<<<<< HEAD
 static const u32 sHand_Gfx[] = INCBIN_U32("graphics/wallclock/hand.4bpp.lz");
-=======
-enum {
-    WIN_MSG,
-    WIN_BUTTON_LABEL,
-};
-
-static const u32 sHand_Gfx[] = INCBIN_U32("graphics/wallclock/hand.4bpp.smol");
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static const u16 sTextPrompt_Pal[] = INCBIN_U16("graphics/wallclock/text_prompt.gbapal"); // for "Cancel" or "Confirm"
 
 static const struct WindowTemplate sWindowTemplates[] =
 {
-<<<<<<< HEAD
     {
-=======
-    [WIN_MSG] = {
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .bg = 0,
         .tilemapLeft = 3,
         .tilemapTop = 17,
@@ -103,11 +82,7 @@ static const struct WindowTemplate sWindowTemplates[] =
         .paletteNum = 14,
         .baseBlock = 512
     },
-<<<<<<< HEAD
     {
-=======
-    [WIN_BUTTON_LABEL] = {
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .bg = 2,
         .tilemapLeft = 24,
         .tilemapTop = 16,
@@ -666,11 +641,7 @@ static void LoadWallClockGraphics(void)
     DmaFillLarge16(3, 0, (void *)VRAM, VRAM_SIZE, 0x1000);
     DmaClear32(3, (void *)OAM, OAM_SIZE);
     DmaClear16(3, (void *)PLTT, PLTT_SIZE);
-<<<<<<< HEAD
     LZ77UnCompVram(gWallClock_Gfx, (void *)VRAM);
-=======
-    DecompressDataWithHeaderVram(gWallClock_Gfx, (void *)VRAM);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     if (gSpecialVar_0x8004 == MALE)
         LoadPalette(gWallClockMale_Pal, BG_PLTT_ID(0), PLTT_SIZE_4BPP);
@@ -715,7 +686,6 @@ void CB2_StartWallClock(void)
     u8 spriteId;
 
     LoadWallClockGraphics();
-<<<<<<< HEAD
     LZ77UnCompVram(gWallClockStart_Tilemap, (u16 *)BG_SCREEN_ADDR(7));
 
     taskId = CreateTask(Task_SetClock_WaitFadeIn, 0);
@@ -726,18 +696,6 @@ void CB2_StartWallClock(void)
     gTasks[taskId].tMoveSpeed = 0;
     gTasks[taskId].tMinuteHandAngle = 0;
     gTasks[taskId].tHourHandAngle = 300;
-=======
-    DecompressDataWithHeaderVram(gWallClockStart_Tilemap, (u16 *)BG_SCREEN_ADDR(7));
-
-    taskId = CreateTask(Task_SetClock_WaitFadeIn, 0);
-    gTasks[taskId].tHours = gLocalTime.hours;
-    gTasks[taskId].tMinutes = gLocalTime.minutes;
-    gTasks[taskId].tMoveDir = 0;
-    gTasks[taskId].tPeriod = gTasks[taskId].tHours / 12;
-    gTasks[taskId].tMoveSpeed = 0;
-    gTasks[taskId].tMinuteHandAngle = gTasks[taskId].tMinutes * 6;
-    gTasks[taskId].tHourHandAngle = (gTasks[taskId].tHours % 12) * 30 + (gTasks[taskId].tMinutes / 10) * 5;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     spriteId = CreateSprite(&sSpriteTemplate_MinuteHand, 120, 80, 1);
     gSprites[spriteId].sTaskId = taskId;
@@ -759,13 +717,8 @@ void CB2_StartWallClock(void)
 
     WallClockInit();
 
-<<<<<<< HEAD
     AddTextPrinterParameterized(1, FONT_NORMAL, gText_Confirm3, 0, 1, 0, NULL);
     PutWindowTilemap(1);
-=======
-    AddTextPrinterParameterized(WIN_BUTTON_LABEL, FONT_NORMAL, gText_Confirm3, 0, 1, 0, NULL);
-    PutWindowTilemap(WIN_BUTTON_LABEL);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ScheduleBgCopyTilemapToVram(2);
 }
 
@@ -777,11 +730,7 @@ void CB2_ViewWallClock(void)
     u8 angle2;
 
     LoadWallClockGraphics();
-<<<<<<< HEAD
     LZ77UnCompVram(gWallClockView_Tilemap, (u16 *)BG_SCREEN_ADDR(7));
-=======
-    DecompressDataWithHeaderVram(gWallClockView_Tilemap, (u16 *)BG_SCREEN_ADDR(7));
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     taskId = CreateTask(Task_ViewClock_WaitFadeIn, 0);
     InitClockWithRtc(taskId);
@@ -816,13 +765,8 @@ void CB2_ViewWallClock(void)
 
     WallClockInit();
 
-<<<<<<< HEAD
     AddTextPrinterParameterized(1, FONT_NORMAL, gText_Cancel4, 0, 1, 0, NULL);
     PutWindowTilemap(1);
-=======
-    AddTextPrinterParameterized(WIN_BUTTON_LABEL, FONT_NORMAL, gText_Cancel4, 0, 1, 0, NULL);
-    PutWindowTilemap(WIN_BUTTON_LABEL);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ScheduleBgCopyTilemapToVram(2);
 }
 
@@ -885,15 +829,9 @@ static void Task_SetClock_HandleInput(u8 taskId)
 
 static void Task_SetClock_AskConfirm(u8 taskId)
 {
-<<<<<<< HEAD
     DrawStdFrameWithCustomTileAndPalette(0, FALSE, 0x250, 0x0d);
     AddTextPrinterParameterized(0, FONT_NORMAL, gText_IsThisTheCorrectTime, 0, 1, 0, NULL);
     PutWindowTilemap(0);
-=======
-    DrawStdFrameWithCustomTileAndPalette(WIN_MSG, FALSE, 0x250, 0x0d);
-    AddTextPrinterParameterized(WIN_MSG, FONT_NORMAL, gText_IsThisTheCorrectTime, 0, 1, 0, NULL);
-    PutWindowTilemap(WIN_MSG);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     ScheduleBgCopyTilemapToVram(0);
     CreateYesNoMenu(&sWindowTemplate_ConfirmYesNo, 0x250, 0x0d, 1);
     gTasks[taskId].func = Task_SetClock_HandleConfirmInput;
@@ -910,13 +848,8 @@ static void Task_SetClock_HandleConfirmInput(u8 taskId)
     case 1: // NO
     case MENU_B_PRESSED:
         PlaySE(SE_SELECT);
-<<<<<<< HEAD
         ClearStdWindowAndFrameToTransparent(0, FALSE);
         ClearWindowTilemap(0);
-=======
-        ClearStdWindowAndFrameToTransparent(WIN_MSG, FALSE);
-        ClearWindowTilemap(WIN_MSG);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         gTasks[taskId].func = Task_SetClock_HandleInput;
         break;
     }
@@ -949,7 +882,6 @@ static void Task_ViewClock_HandleInput(u8 taskId)
     InitClockWithRtc(taskId);
     if (JOY_NEW(A_BUTTON | B_BUTTON))
         gTasks[taskId].func = Task_ViewClock_FadeOut;
-<<<<<<< HEAD
     if (JOY_NEW(R_BUTTON)){
         PlaySE(SE_SELECT);
         LZ77UnCompVram(gWallClockStart_Tilemap, (u16 *)BG_SCREEN_ADDR(7));
@@ -963,8 +895,6 @@ static void Task_ViewClock_HandleInput(u8 taskId)
         PlaySE(SE_SELECT);
         FastForwardTime(10, 4);
     }
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void Task_ViewClock_FadeOut(u8 taskId)

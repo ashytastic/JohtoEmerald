@@ -1,9 +1,6 @@
 Route108_MapScripts::
-<<<<<<< HEAD
 	map_script MAP_SCRIPT_ON_RESUME, SetTimeEncounters
 	map_script MAP_SCRIPT_ON_TRANSITION, SetTimeEncounters
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.byte 0
 
 Route108_EventScript_Jerome::
@@ -27,20 +24,12 @@ Route108_EventScript_Missy::
 	end
 
 Route108_EventScript_Carolina::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_GRUNT_2, Route108_Text_CarolinaIntro, Route108_Text_CarolinaDefeated
-=======
-	trainerbattle_single TRAINER_CAROLINA, Route108_Text_CarolinaIntro, Route108_Text_CarolinaDefeated
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route108_Text_CarolinaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route108_EventScript_Cory::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_GRUNT_29, Route108_Text_CoryIntro, Route108_Text_CoryDefeated, Route108_EventScript_CoryRegisterMatchCallAfterBattle
-=======
-	trainerbattle_single TRAINER_CORY_1, Route108_Text_CoryIntro, Route108_Text_CoryDefeated, Route108_EventScript_CoryRegisterMatchCallAfterBattle
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route108_EventScript_CoryRematch
 	msgbox Route108_Text_CoryPostBattle, MSGBOX_DEFAULT
@@ -51,20 +40,12 @@ Route108_EventScript_CoryRegisterMatchCallAfterBattle::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route108_Text_CoryRegister, MSGBOX_DEFAULT
-<<<<<<< HEAD
 	register_matchcall TRAINER_GRUNT_29
-=======
-	register_matchcall TRAINER_CORY_1
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	release
 	end
 
 Route108_EventScript_CoryRematch::
-<<<<<<< HEAD
 	trainerbattle_rematch TRAINER_GRUNT_29, Route108_Text_CoryRematchIntro, Route108_Text_CoryRematchDefeated
-=======
-	trainerbattle_rematch TRAINER_CORY_1, Route108_Text_CoryRematchIntro, Route108_Text_CoryRematchDefeated
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route108_Text_CoryRematchPostBattle, MSGBOX_AUTOCLOSE
 	end
 

@@ -60,11 +60,7 @@ static void SpriteCB_CryMeterNeedle(struct Sprite *);
 static void SetCryMeterNeedleTarget(s8);
 
 // IWRAM common
-<<<<<<< HEAD
 u8 gDexCryScreenState;
-=======
-COMMON_DATA u8 gDexCryScreenState = 0;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 // EWRAM vars
 static EWRAM_DATA struct PokedexCryScreen *sDexCryScreen = NULL;
@@ -76,11 +72,7 @@ static const u8 sCryMeterNeedle_Gfx[] = INCBIN_U8("graphics/pokedex/cry_meter_ne
 
 static const u16 sCryMeter_Tilemap[] = INCBIN_U16("graphics/pokedex/cry_meter_map.bin"); // Unused
 static const u16 sCryMeter_Pal[] = INCBIN_U16("graphics/pokedex/cry_meter.gbapal");
-<<<<<<< HEAD
 static const u8 sCryMeter_Gfx[] = INCBIN_U8("graphics/pokedex/cry_meter.4bpp.lz");
-=======
-static const u8 sCryMeter_Gfx[] = INCBIN_U8("graphics/pokedex/cry_meter.4bpp.smol");
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 static const u16 sWaveformOffsets[][72] =
 {
@@ -370,11 +362,7 @@ static void BufferCryWaveformSegment(void)
     else
         baseBuffer = gSoundInfo.pcmBuffer + (gSoundInfo.pcmDmaPeriod + 1 - gPcmDmaCounter) * gSoundInfo.pcmSamplesPerVBlank;
 
-<<<<<<< HEAD
     buffer = baseBuffer + 0x630;
-=======
-    buffer = baseBuffer + PCM_DMA_BUF_SIZE;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     for (i = 0; i < ARRAY_COUNT(sDexCryScreen->cryWaveformBuffer); i++)
         sDexCryScreen->cryWaveformBuffer[i] = buffer[i * 2] * 2;
 }

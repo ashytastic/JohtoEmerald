@@ -1,12 +1,5 @@
-<<<<<<< HEAD
 .set LOCALID_OPPONENT, 2
 .set LOCALID_PLAYER, 3
-=======
-@ On this map the player will automatically walk into the room, but the camera is supposed to remain still.
-@ To do this GF sets the player (LOCALID_PLAYER) invisible and creates a fake player object (LOCALID_SLATEPORT_TENT_BATTLE_PLAYER).
-@ The graphics of this fake player object are represented with VAR_OBJ_GFX_ID_1.
-@ The graphics of the opponent are represented with VAR_OBJ_GFX_ID_0, which will ultimately be set by factory_setopponentgfx.
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 SlateportCity_BattleTentBattleRoom_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, SlateportCity_BattleTentBattleRoom_OnTransition
@@ -14,12 +7,9 @@ SlateportCity_BattleTentBattleRoom_MapScripts::
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, SlateportCity_BattleTentBattleRoom_OnFrame
 	.byte 0
 
-<<<<<<< HEAD
 	@ On this map the player (OBJ_EVENT_ID_PLAYER) is hidden
 	@ The player is represented instead by LOCALID_PLAYER, which has the gfx id VAR_OBJ_GFX_ID_1
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 SlateportCity_BattleTentBattleRoom_OnTransition:
 	call SlateportCity_BattleTentBattleRoom_EventScript_SetPlayerGfx
 	end
@@ -44,13 +34,8 @@ SlateportCity_BattleTentBattleRoom_OnWarp:
 
 SlateportCity_BattleTentBattleRoom_EventScript_SetUpObjects::
 	setvar VAR_TEMP_1, 1
-<<<<<<< HEAD
 	hideobjectat OBJ_EVENT_ID_PLAYER, MAP_FALLARBOR_TOWN_BATTLE_TENT_BATTLE_ROOM
 	hideobjectat LOCALID_OPPONENT, MAP_SLATEPORT_CITY_BATTLE_TENT_BATTLE_ROOM
-=======
-	hideobjectat LOCALID_PLAYER, MAP_FALLARBOR_TOWN_BATTLE_TENT_BATTLE_ROOM
-	hideobjectat LOCALID_SLATEPORT_TENT_BATTLE_OPPONENT, MAP_SLATEPORT_CITY_BATTLE_TENT_BATTLE_ROOM
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 SlateportCity_BattleTentBattleRoom_OnFrame:
@@ -58,7 +43,6 @@ SlateportCity_BattleTentBattleRoom_OnFrame:
 	.2byte 0
 
 SlateportCity_BattleTentBattleRoom_EventScript_EnterRoom::
-<<<<<<< HEAD
 	applymovement LOCALID_PLAYER, SlateportCity_BattleTentBattleRoom_Movement_PlayerEnter
 	waitmovement 0
 	factory_setopponentgfx
@@ -67,16 +51,6 @@ SlateportCity_BattleTentBattleRoom_EventScript_EnterRoom::
 	delay 1
 	addobject LOCALID_OPPONENT
 	applymovement LOCALID_OPPONENT, SlateportCity_BattleTentBattleRoom_Movement_OpponentEnter
-=======
-	applymovement LOCALID_SLATEPORT_TENT_BATTLE_PLAYER, SlateportCity_BattleTentBattleRoom_Movement_PlayerEnter
-	waitmovement 0
-	factory_setopponentgfx
-	setobjectxyperm LOCALID_SLATEPORT_TENT_BATTLE_OPPONENT, 5, 1
-	removeobject LOCALID_SLATEPORT_TENT_BATTLE_OPPONENT
-	delay 1
-	addobject LOCALID_SLATEPORT_TENT_BATTLE_OPPONENT
-	applymovement LOCALID_SLATEPORT_TENT_BATTLE_OPPONENT, SlateportCity_BattleTentBattleRoom_Movement_OpponentEnter
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	battletent_getopponentintro
 	lockall
@@ -129,7 +103,3 @@ SlateportCity_BattleTentBattleRoom_Movement_OpponentEnter:
 	walk_down
 	walk_in_place_faster_left
 	step_end
-<<<<<<< HEAD
-=======
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

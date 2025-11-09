@@ -12,18 +12,10 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-<<<<<<< HEAD
   "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_GROUDON",
-=======
-  "connections": null,
-  "object_events": [
-    {
-      "local_id": "LOCALID_MAGMA_HIDEOUT_4F_GROUDON",
-      "graphics_id": "OBJ_EVENT_GFX_GROUDON_FRONT",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 16,
       "y": 17,
       "elevation": 0,
@@ -33,18 +25,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PETREL",
-=======
-      "flag": "FLAG_HIDE_MAGMA_HIDEOUT_4F_GROUDON"
-    },
-    {
-      "local_id": "LOCALID_MAGMA_HIDEOUT_4F_GRUNT_1",
-      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 31,
       "y": 22,
       "elevation": 0,
@@ -54,18 +38,10 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "MagmaHideout_4F_EventScript_Grunt11",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PETREL",
-=======
-      "flag": "FLAG_HIDE_MAGMA_HIDEOUT_GRUNTS"
-    },
-    {
-      "local_id": "LOCALID_MAGMA_HIDEOUT_4F_GRUNT_2",
-      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 30,
       "y": 13,
       "elevation": 0,
@@ -75,18 +51,10 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "MagmaHideout_4F_EventScript_Grunt12",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PETREL",
-=======
-      "flag": "FLAG_HIDE_MAGMA_HIDEOUT_GRUNTS"
-    },
-    {
-      "local_id": "LOCALID_MAGMA_HIDEOUT_4F_GRUNT_3",
-      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 26,
       "y": 13,
       "elevation": 0,
@@ -96,18 +64,10 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "MagmaHideout_4F_EventScript_Grunt13",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PETREL",
-=======
-      "flag": "FLAG_HIDE_MAGMA_HIDEOUT_GRUNTS"
-    },
-    {
-      "local_id": "LOCALID_MAGMA_HIDEOUT_4F_TABITHA",
-      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 22,
       "y": 4,
       "elevation": 0,
@@ -117,18 +77,10 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "4",
       "script": "MagmaHideout_4F_EventScript_Tabitha",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ARCHER",
-=======
-      "flag": "FLAG_HIDE_MAGMA_HIDEOUT_GRUNTS"
-    },
-    {
-      "local_id": "LOCALID_MAGMA_HIDEOUT_4F_MAXIE",
-      "graphics_id": "OBJ_EVENT_GFX_MAXIE",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 16,
       "y": 21,
       "elevation": 0,
@@ -138,18 +90,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MagmaHideout_4F_EventScript_Maxie",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_GROUDON",
-=======
-      "flag": "FLAG_HIDE_MAGMA_HIDEOUT_GRUNTS"
-    },
-    {
-      "local_id": "LOCALID_MAGMA_HIDEOUT_4F_GROUDON_SLEEPING",
-      "graphics_id": "OBJ_EVENT_GFX_GROUDON_ASLEEP",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 16,
       "y": 17,
       "elevation": 3,
@@ -159,11 +103,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
-=======
-      "flag": "FLAG_HIDE_MAGMA_HIDEOUT_4F_GROUDON_ASLEEP"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -174,13 +114,8 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-<<<<<<< HEAD
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MagmaHideout_4F_EventScript_ItemMaxRevive",
-=======
-      "trainer_sight_or_berry_tree_id": "ITEM_MAX_REVIVE",
-      "script": "Common_EventScript_FindItem",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "flag": "FLAG_ITEM_MAGMA_HIDEOUT_4F_MAX_REVIVE"
     }
   ],
@@ -200,15 +135,10 @@
       "dest_warp_id": "1"
     }
   ],
-<<<<<<< HEAD
   "coord_events": [
 
   ],
   "bg_events": [
 
   ]
-=======
-  "coord_events": [],
-  "bg_events": []
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }

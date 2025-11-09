@@ -1,34 +1,21 @@
-<<<<<<< HEAD
 .set LOCALID_RIVAL, 1
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 LittlerootTown_BrendansHouse_2F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_BrendansHouse_2F_OnTransition
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, LittlerootTown_BrendansHouse_2F_OnWarp
 	.byte 0
 
 LittlerootTown_BrendansHouse_2F_OnTransition:
-<<<<<<< HEAD
 	call_if_lt VAR_GARBAGEVAR, 2, LittlerootTown_BrendansHouse_2F_EventScript_CheckSetReadyToMeetBrendan
 	call_if_ge VAR_GARBAGEVAR, 3, LittlerootTown_BrendansHouse_2F_EventScript_CheckShouldUpdateBrendanPos
 	call_if_eq VAR_GARBAGEVAR, 4, PlayersHouse_2F_EventScript_BlockStairsUntilClockIsSet
-=======
-	call_if_lt VAR_LITTLEROOT_RIVAL_STATE, 2, LittlerootTown_BrendansHouse_2F_EventScript_CheckSetReadyToMeetBrendan
-	call_if_ge VAR_LITTLEROOT_RIVAL_STATE, 3, LittlerootTown_BrendansHouse_2F_EventScript_CheckShouldUpdateBrendanPos
-	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 4, PlayersHouse_2F_EventScript_BlockStairsUntilClockIsSet
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call SecretBase_EventScript_SetDecorationFlags
 	setvar VAR_SECRET_BASE_INITIALIZED, 0
 	end
 
 LittlerootTown_BrendansHouse_2F_EventScript_CheckShouldUpdateBrendanPos::
 	goto_if_set FLAG_MET_RIVAL_LILYCOVE, LittlerootTown_BrendansHouse_2F_EventScript_TryUpdateBrendanPos
-<<<<<<< HEAD
 	goto_if_ge VAR_GARBAGEVAR, 2, LittlerootTown_BrendansHouse_2F_EventScript_Ret
-=======
-	goto_if_ge VAR_BIRCH_LAB_STATE, 2, LittlerootTown_BrendansHouse_2F_EventScript_Ret
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto LittlerootTown_BrendansHouse_2F_EventScript_TryUpdateBrendanPos
 
 LittlerootTown_BrendansHouse_2F_EventScript_TryUpdateBrendanPos::
@@ -36,13 +23,8 @@ LittlerootTown_BrendansHouse_2F_EventScript_TryUpdateBrendanPos::
 	goto_if_eq VAR_RESULT, MALE, LittlerootTown_BrendansHouse_2F_EventScript_Ret
 	@ Odd that the MaysHouse equivalent was used below instead
 	goto_if_ge VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 2, LittlerootTown_MaysHouse_2F_EventScript_Ret
-<<<<<<< HEAD
 	setobjectxyperm LOCALID_RIVAL, 0, 2
 	setobjectmovementtype LOCALID_RIVAL, MOVEMENT_TYPE_FACE_UP
-=======
-	setobjectxyperm LOCALID_RIVALS_HOUSE_2F_RIVAL, 0, 2
-	setobjectmovementtype LOCALID_RIVALS_HOUSE_2F_RIVAL, MOVEMENT_TYPE_FACE_UP
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	return
 
 LittlerootTown_BrendansHouse_2F_EventScript_Ret::
@@ -54,11 +36,7 @@ LittlerootTown_BrendansHouse_2F_EventScript_CheckSetReadyToMeetBrendan::
 	return
 
 LittlerootTown_BrendansHouse_2F_EventScript_SetReadyToMeetBrendan::
-<<<<<<< HEAD
 	setvar VAR_GARBAGEVAR, 2
-=======
-	setvar VAR_LITTLEROOT_RIVAL_STATE, 2
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	return
 
 LittlerootTown_BrendansHouse_2F_OnWarp:
@@ -72,18 +50,13 @@ LittlerootTown_BrendansHouse_2F_EventScript_CheckInitDecor::
 
 LittlerootTown_BrendansHouse_2F_EventScript_RivalsPokeBall::
 	lockall
-<<<<<<< HEAD
 	goto_if_eq VAR_GARBAGEVAR, 2, LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendan
-=======
-	goto_if_eq VAR_LITTLEROOT_RIVAL_STATE, 2, LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendan
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox RivalsHouse_2F_Text_ItsRivalsPokeBall, MSGBOX_DEFAULT
 	releaseall
 	end
 
 LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendan::
 	delay 10
-<<<<<<< HEAD
 	addobject LOCALID_RIVAL
 	applymovement LOCALID_RIVAL, LittlerootTown_BrendansHouse_2F_Movement_BrendanEnters
 	waitmovement 0
@@ -91,15 +64,6 @@ LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendan::
 	applymovement LOCALID_RIVAL, Common_Movement_ExclamationMark
 	waitmovement 0
 	applymovement LOCALID_RIVAL, Common_Movement_Delay48
-=======
-	addobject LOCALID_RIVALS_HOUSE_2F_RIVAL
-	applymovement LOCALID_RIVALS_HOUSE_2F_RIVAL, LittlerootTown_BrendansHouse_2F_Movement_BrendanEnters
-	waitmovement 0
-	playse SE_PIN
-	applymovement LOCALID_RIVALS_HOUSE_2F_RIVAL, Common_Movement_ExclamationMark
-	waitmovement 0
-	applymovement LOCALID_RIVALS_HOUSE_2F_RIVAL, Common_Movement_Delay48
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	delay 10
 	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
@@ -107,24 +71,16 @@ LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendan::
 	call_if_eq VAR_FACING, DIR_SOUTH, LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendanSouth
 	call_if_eq VAR_FACING, DIR_WEST, LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendanWest
 	call_if_eq VAR_FACING, DIR_EAST, LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendanEast
-<<<<<<< HEAD
 	setvar VAR_GARBAGEVAR, 3
 	setflag FLAG_GARBAGEFLAG
 	clearflag FLAG_GARBAGEFLAG
 	setvar VAR_GARBAGEVAR, 1
-=======
-	setvar VAR_LITTLEROOT_RIVAL_STATE, 3
-	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F_POKE_BALL
-	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_BEDROOM
-	setvar VAR_LITTLEROOT_TOWN_STATE, 1
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	savebgm MUS_DUMMY
 	fadedefaultbgm
 	releaseall
 	end
 
 LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendanNorth::
-<<<<<<< HEAD
 	applymovement LOCALID_RIVAL, LittlerootTown_BrendansHouse_2F_Movement_BrendanApproachPlayerNorth
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
@@ -133,21 +89,10 @@ LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendanNorth::
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_BrendansHouse_2F_Movement_PlayerWatchBrendanNorth
 	applymovement LOCALID_RIVAL, LittlerootTown_BrendansHouse_2F_Movement_BrendanWalkToPCNorth
-=======
-	applymovement LOCALID_RIVALS_HOUSE_2F_RIVAL, LittlerootTown_BrendansHouse_2F_Movement_BrendanApproachPlayerNorth
-	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
-	waitmovement 0
-	msgbox RivalsHouse_2F_Text_BrendanWhoAreYou, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_PLAYER, LittlerootTown_BrendansHouse_2F_Movement_PlayerWatchBrendanNorth
-	applymovement LOCALID_RIVALS_HOUSE_2F_RIVAL, LittlerootTown_BrendansHouse_2F_Movement_BrendanWalkToPCNorth
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendanSouth::
-<<<<<<< HEAD
 	applymovement LOCALID_RIVAL, LittlerootTown_BrendansHouse_2F_Movement_BrendanApproachPlayerSouth
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
@@ -156,21 +101,10 @@ LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendanSouth::
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_BrendansHouse_2F_Movement_PlayerWatchBrendanSouth
 	applymovement LOCALID_RIVAL, LittlerootTown_BrendansHouse_2F_Movement_BrendanWalkToPCSouth
-=======
-	applymovement LOCALID_RIVALS_HOUSE_2F_RIVAL, LittlerootTown_BrendansHouse_2F_Movement_BrendanApproachPlayerSouth
-	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
-	waitmovement 0
-	msgbox RivalsHouse_2F_Text_BrendanWhoAreYou, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_PLAYER, LittlerootTown_BrendansHouse_2F_Movement_PlayerWatchBrendanSouth
-	applymovement LOCALID_RIVALS_HOUSE_2F_RIVAL, LittlerootTown_BrendansHouse_2F_Movement_BrendanWalkToPCSouth
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendanWest::
-<<<<<<< HEAD
 	applymovement LOCALID_RIVAL, LittlerootTown_BrendansHouse_2F_Movement_BrendanApproachPlayerWest
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
@@ -179,21 +113,10 @@ LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendanWest::
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_BrendansHouse_2F_Movement_PlayerWatchBrendanWest
 	applymovement LOCALID_RIVAL, LittlerootTown_BrendansHouse_2F_Movement_BrendanWalkToPCWest
-=======
-	applymovement LOCALID_RIVALS_HOUSE_2F_RIVAL, LittlerootTown_BrendansHouse_2F_Movement_BrendanApproachPlayerWest
-	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
-	waitmovement 0
-	msgbox RivalsHouse_2F_Text_BrendanWhoAreYou, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_PLAYER, LittlerootTown_BrendansHouse_2F_Movement_PlayerWatchBrendanWest
-	applymovement LOCALID_RIVALS_HOUSE_2F_RIVAL, LittlerootTown_BrendansHouse_2F_Movement_BrendanWalkToPCWest
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendanEast::
-<<<<<<< HEAD
 	applymovement LOCALID_RIVAL, LittlerootTown_BrendansHouse_2F_Movement_BrendanApproachPlayerEast
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
@@ -201,15 +124,6 @@ LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendanEast::
 	msgbox RivalsHouse_2F_Text_BrendanWhoAreYou, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_RIVAL, LittlerootTown_BrendansHouse_2F_Movement_BrendanWalkToPCEast
-=======
-	applymovement LOCALID_RIVALS_HOUSE_2F_RIVAL, LittlerootTown_BrendansHouse_2F_Movement_BrendanApproachPlayerEast
-	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
-	waitmovement 0
-	msgbox RivalsHouse_2F_Text_BrendanWhoAreYou, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_RIVALS_HOUSE_2F_RIVAL, LittlerootTown_BrendansHouse_2F_Movement_BrendanWalkToPCEast
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
@@ -325,11 +239,7 @@ LittlerootTown_BrendansHouse_2F_EventScript_PC::
 	lockall
 	checkplayergender
 	goto_if_eq VAR_RESULT, MALE, LittlerootTown_BrendansHouse_2F_EventScript_CheckPlayersPC
-<<<<<<< HEAD
 	goto_if_eq VAR_RESULT, FEMALE, LittlerootTown_BrendansHouse_2F_EventScript_CheckPlayersPC
-=======
-	goto_if_eq VAR_RESULT, FEMALE, LittlerootTown_BrendansHouse_2F_EventScript_CheckRivalsPC
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 LittlerootTown_BrendansHouse_2F_EventScript_CheckPlayersPC::
@@ -364,12 +274,8 @@ PlayersHouse_2F_EventScript_GameCube::
 
 PlayersHouse_2F_Text_ClockIsStopped:
 	.string "The clock is stopped…\p"
-<<<<<<< HEAD
 	.string "Better set it and start it before\n"
 	.string "heading downstairs!$"
-=======
-	.string "Better set it and start it!$"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 PlayersHouse_2F_Text_HowDoYouLikeYourRoom:
 	.string "MOM: {PLAYER}, how do you like your\n"
@@ -391,17 +297,12 @@ PlayersHouse_2F_Text_Notebook:
 
 Common_Text_LookCloserAtMap:
 	.string "{PLAYER} took a closer look at the\n"
-<<<<<<< HEAD
 	.string "Region Map.$"
-=======
-	.string "HOENN region map.$"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 PlayersHouse_2F_Text_ItsAGameCube:
 	.string "It's a Nintendo GameCube.\p"
 	.string "A Game Boy Advance is connected to\n"
 	.string "serve as the Controller.$"
-<<<<<<< HEAD
 
 Common_Text_ReceivedMon:
 	.string "{PLAYER} received {STR_VAR_1}!$"
@@ -409,5 +310,3 @@ Common_Text_ReceivedMon:
 Common_Text_PartyIsFull:
 	.string "Whoa, wait. You can't carry any\n"
 	.string "more POKéMON.$"	
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

@@ -18,7 +18,6 @@ OldaleTown_Mart_Pokemart_Basic:
 	.2byte ITEM_ANTIDOTE
 	.2byte ITEM_PARALYZE_HEAL
 	.2byte ITEM_AWAKENING
-<<<<<<< HEAD
 	.2byte ITEM_NONE
 	release
 	end
@@ -26,17 +25,10 @@ OldaleTown_Mart_Pokemart_Basic:
 OldaleTown_Mart_ExpandedItems::
 	@pokemart OldaleTown_Mart_Pokemart_Expanded
 	pokemart 0
-=======
-	pokemartlistend
-
-OldaleTown_Mart_ExpandedItems::
-	pokemart OldaleTown_Mart_Pokemart_Expanded
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
 
-<<<<<<< HEAD
 @	.align 2
 @OldaleTown_Mart_Pokemart_Expanded:
 @	.2byte ITEM_POKE_BALL
@@ -47,16 +39,6 @@ OldaleTown_Mart_ExpandedItems::
 @	.2byte ITEM_NONE
 @	release
 @	end
-=======
-	.align 2
-OldaleTown_Mart_Pokemart_Expanded:
-	.2byte ITEM_POKE_BALL
-	.2byte ITEM_POTION
-	.2byte ITEM_ANTIDOTE
-	.2byte ITEM_PARALYZE_HEAL
-	.2byte ITEM_AWAKENING
-	pokemartlistend
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 OldaleTown_Mart_EventScript_Woman::
 	lock

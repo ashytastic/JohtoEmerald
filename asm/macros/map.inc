@@ -2,17 +2,8 @@
 
 	@ Takes a MAP constant and outputs the map group and map number as separate bytes
 	.macro map map_id:req
-<<<<<<< HEAD
 	.byte \map_id >> 8    @ map group
 	.byte \map_id & 0xFF  @ map num
-=======
-	.ifdef \map_id
-	.byte \map_id >> 8    @ map group
-	.byte \map_id & 0xFF  @ map num
-	.else
-	.error "undefined map (check for typos)"
-	.endif
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.endm
 
 	@ Defines a map script. 'type' is any MAP_SCRIPT_* constant (see include/constants/map_scripts.h)
@@ -29,24 +20,13 @@
 	.endm
 
 	@ Defines an object event template for map data, to be used by a normal object. Mirrors the struct layout of ObjectEventTemplate in include/global.fieldmap.h
-<<<<<<< HEAD
 	.macro object_event index:req, gfx:req, kind:req, x:req, y:req, elevation:req, movement_type:req, x_radius:req, y_radius:req, trainer_type:req, sight_radius_tree_etc:req, script:req, event_flag:req
-=======
-	.macro object_event index:req, gfx:req, x:req, y:req, elevation:req, movement_type:req, x_radius:req, y_radius:req, trainer_type:req, sight_radius_tree_etc:req, script:req, event_flag:req
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.byte \index
 	.2byte \gfx
 	.byte OBJ_KIND_NORMAL
 	.2byte \x, \y
 	.byte \elevation
 	.byte \movement_type
-<<<<<<< HEAD
-=======
-	.if \x_radius > 15
-		@ This warning is relevant for GetItemBallIdAndAmountFromTemplate
-		.error "movementRangeX has a bitfield of 4 bytes, so values over 15 will overflow. Use a custom script for item balls that should give the player more than 15 items."
-	.endif
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.byte ((\y_radius << 4) | \x_radius)
 	.space 1  @ Padding
 	.2byte \trainer_type
@@ -57,25 +37,6 @@
 	inc _num_npcs
 	.endm
 
-<<<<<<< HEAD
-=======
-	@ Defines an object event template for map data, to be used by a clone object. Mirrors the struct layout of ObjectEventTemplate in include/global.fieldmap.h
-	@ NOTE: The handling for this type of event does not exist in Emerald by default; it is exclusive to FRLG.
-	.macro clone_event index:req, gfx:req, x:req, y:req, target_local_id:req, target_map_id:req
-	.byte \index
-	.byte \gfx
-	.byte OBJ_KIND_CLONE
-	.space 1  @ Padding
-	.2byte \x, \y
-	.byte \target_local_id
-	.space 3  @ Padding
-	.2byte \target_map_id & 0xFF  @ map num
-	.2byte \target_map_id >> 8    @ map group
-	.space 8  @ Padding
-	inc _num_npcs
-	.endm
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	@ Defines a warp event for map data. Mirrors the struct layout of WarpEvent in include/global.fieldmap.h
 	.macro warp_def x:req, y:req, elevation:req, warpId:req, map_id:req
 	.2byte \x, \y
@@ -87,21 +48,12 @@
 	.endm
 
 	@ Defines a coord event for map data. Mirrors the struct layout of CoordEvent in include/global.fieldmap.h
-<<<<<<< HEAD
 	.macro coord_event x:req, y:req, elevation:req, trigger:req, index:req, script:req
 	.2byte \x, \y
 	.byte \elevation
 	.space 1  @ Padding
 	.2byte \trigger
 	.2byte \index
-=======
-	.macro coord_event x:req, y:req, elevation:req, var:req, varValue:req, script:req
-	.2byte \x, \y
-	.byte \elevation
-	.space 1  @ Padding
-	.2byte \var
-	.2byte \varValue
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.space 2  @ Padding
 	.4byte \script
 	inc _num_traps

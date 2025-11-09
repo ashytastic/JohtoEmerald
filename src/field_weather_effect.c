@@ -17,10 +17,7 @@
 #include "palette.h"
 
 EWRAM_DATA static u8 sCurrentAbnormalWeather = 0;
-<<<<<<< HEAD
 EWRAM_DATA static u16 sUnusedWeatherRelated = 0;
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 const u16 gCloudsWeatherPalette[] = INCBIN_U16("graphics/weather/cloud.gbapal");
 const u16 gSandstormWeatherPalette[] = INCBIN_U16("graphics/weather/sandstorm.gbapal");
@@ -156,20 +153,11 @@ bool8 Clouds_Finish(void)
     return FALSE;
 }
 
-<<<<<<< HEAD
-=======
-STATIC_ASSERT(OW_SHADOW_INTENSITY >= 0 && OW_SHADOW_INTENSITY <= 16, ObjEventShadowTransparencyNotInRange)
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 void Sunny_InitVars(void)
 {
     gWeatherPtr->targetColorMapIndex = 0;
     gWeatherPtr->colorMapStepDelay = 20;
-<<<<<<< HEAD
     Weather_SetBlendCoeffs(8, 12);
-=======
-    Weather_SetBlendCoeffs(8, BASE_SHADOW_INTENSITY); // preserve shadow darkness
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gWeatherPtr->noShadows = FALSE;
 }
 
@@ -497,11 +485,7 @@ void Rain_InitVars(void)
     gWeatherPtr->targetColorMapIndex = 3;
     gWeatherPtr->colorMapStepDelay = 20;
     SetRainStrengthFromSoundEffect(SE_RAIN);
-<<<<<<< HEAD
     Weather_SetBlendCoeffs(8, 12); // preserve shadow darkness
-=======
-    Weather_SetBlendCoeffs(8, BASE_SHADOW_INTENSITY); // preserve shadow darkness
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gWeatherPtr->noShadows = FALSE;
 }
 
@@ -792,19 +776,11 @@ void Snow_InitVars(void)
 {
     gWeatherPtr->initStep = 0;
     gWeatherPtr->weatherGfxLoaded = FALSE;
-<<<<<<< HEAD
     gWeatherPtr->targetColorMapIndex = 3;
     gWeatherPtr->colorMapStepDelay = 20;
     gWeatherPtr->targetSnowflakeSpriteCount = 32;
     gWeatherPtr->snowflakeVisibleCounter = 0;
     Weather_SetBlendCoeffs(8, 12); // preserve shadow darkness
-=======
-    gWeatherPtr->targetColorMapIndex = 0;
-    gWeatherPtr->colorMapStepDelay = 20;
-    gWeatherPtr->targetSnowflakeSpriteCount = NUM_SNOWFLAKE_SPRITES;
-    gWeatherPtr->snowflakeVisibleCounter = 0;
-    Weather_SetBlendCoeffs(8, BASE_SHADOW_INTENSITY); // preserve shadow darkness
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gWeatherPtr->noShadows = FALSE;
 }
 
@@ -972,14 +948,9 @@ static void InitSnowflakeSpriteMovement(struct Sprite *sprite)
     sprite->tFallCounter = 0;
 }
 
-<<<<<<< HEAD
 static void WaitSnowflakeSprite(struct Sprite *sprite)
 {
     // Timer is never incremented
-=======
-static void UNUSED WaitSnowflakeSprite(struct Sprite *sprite)
-{
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (++gWeatherPtr->snowflakeTimer > 18)
     {
         sprite->invisible = FALSE;
@@ -993,10 +964,7 @@ static void UNUSED WaitSnowflakeSprite(struct Sprite *sprite)
 static void UpdateSnowflakeSprite(struct Sprite *sprite)
 {
     s16 x;
-<<<<<<< HEAD
     s16 y;
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     sprite->tPosY += sprite->tDeltaY;
     sprite->y = sprite->tPosY >> 7;
@@ -1012,10 +980,7 @@ static void UpdateSnowflakeSprite(struct Sprite *sprite)
         sprite->x = 242 - (gSpriteCoordOffsetX + sprite->centerToCornerVecX);
     else if (x > 242)
         sprite->x = -3 - (gSpriteCoordOffsetX + sprite->centerToCornerVecX);
-<<<<<<< HEAD
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 #undef tPosY
@@ -1067,11 +1032,7 @@ void Thunderstorm_InitVars(void)
     gWeatherPtr->weatherGfxLoaded = FALSE;  // duplicate assignment
     gWeatherPtr->thunderEnqueued = FALSE;
     SetRainStrengthFromSoundEffect(SE_THUNDERSTORM);
-<<<<<<< HEAD
     Weather_SetBlendCoeffs(8, 12); // preserve shadow darkness
-=======
-    Weather_SetBlendCoeffs(8, BASE_SHADOW_INTENSITY); // preserve shadow darkness
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gWeatherPtr->noShadows = FALSE;
 }
 
@@ -1101,11 +1062,7 @@ void Downpour_InitVars(void)
     gWeatherPtr->colorMapStepDelay = 20;
     gWeatherPtr->weatherGfxLoaded = FALSE;  // duplicate assignment
     SetRainStrengthFromSoundEffect(SE_DOWNPOUR);
-<<<<<<< HEAD
     Weather_SetBlendCoeffs(8, 12); // preserve shadow darkness
-=======
-    Weather_SetBlendCoeffs(8, BASE_SHADOW_INTENSITY); // preserve shadow darkness
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gWeatherPtr->noShadows = FALSE;
 }
 
@@ -1399,7 +1356,6 @@ void FogHorizontal_Main(void);
 static void CreateFogHorizontalSprites(void);
 static void DestroyFogHorizontalSprites(void);
 
-<<<<<<< HEAD
 // Within the weather palette, shadow sprites' color index
 #define SHADOW_COLOR_INDEX 9
 
@@ -1419,26 +1375,6 @@ u8 UpdateShadowColor(u16 color) {
     gPlttBufferFaded[index] = blendedColor;
   }
   return paletteNum;
-=======
-// Updates just the color of shadows to match special weather blending
-u8 UpdateShadowColor(u16 color)
-{
-    u8 paletteNum = IndexOfSpritePaletteTag(TAG_WEATHER_START);
-    u16 ALIGNED(4) tempBuffer[16];
-    u16 blendedColor;
-    if (paletteNum < 16)
-    {
-        u16 index = OBJ_PLTT_ID(paletteNum) + SHADOW_COLOR_INDEX;
-        gPlttBufferUnfaded[index] = gPlttBufferFaded[index] = color;
-        // Copy to temporary buffer, blend, and keep just the shadow color index
-        CpuFastCopy(&gPlttBufferFaded[index - SHADOW_COLOR_INDEX], tempBuffer, PLTT_SIZE_4BPP);
-        UpdateSpritePaletteWithTime(paletteNum);
-        blendedColor = gPlttBufferFaded[index];
-        CpuFastCopy(tempBuffer, &gPlttBufferFaded[index - SHADOW_COLOR_INDEX], PLTT_SIZE_4BPP);
-        gPlttBufferFaded[index] = blendedColor;
-    }
-    return paletteNum;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 void FogHorizontal_InitVars(void)
@@ -1476,24 +1412,12 @@ void FogHorizontal_Main(void)
     {
     case 0:
         CreateFogHorizontalSprites();
-<<<<<<< HEAD
         if (gWeatherPtr->currWeather == WEATHER_FOG_HORIZONTAL) {
           u8 paletteNum = IndexOfSpritePaletteTag(TAG_WEATHER_START);
           Weather_SetTargetBlendCoeffs(12, 8, 3);
           UpdateShadowColor(0x3DEF); // Gray
         } else
             Weather_SetTargetBlendCoeffs(4, 16, 0);
-=======
-        if (gWeatherPtr->currWeather == WEATHER_FOG_HORIZONTAL)
-        {
-            Weather_SetTargetBlendCoeffs(12, 8, 3);
-            UpdateShadowColor(RGB_GRAY);
-        }
-        else
-        {
-            Weather_SetTargetBlendCoeffs(4, 16, 0);
-        }
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         gWeatherPtr->initStep++;
         break;
     case 1:
@@ -1621,12 +1545,8 @@ void Ash_InitVars(void)
     gWeatherPtr->ashUnused = 20; // Never read
     if (!gWeatherPtr->ashSpritesCreated)
     {
-<<<<<<< HEAD
         Weather_SetBlendCoeffs(0, 12);
         // SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(64, 63)); // These aren't valid blend coefficients!
-=======
-        Weather_SetBlendCoeffs(0, BASE_SHADOW_INTENSITY);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
     gWeatherPtr->noShadows = FALSE;
 }
@@ -2085,11 +2005,7 @@ void Sandstorm_Main(void)
         break;
     case 1:
         Weather_SetTargetBlendCoeffs(16, 2, 0);
-<<<<<<< HEAD
         UpdateShadowColor(0x3DEF);
-=======
-        UpdateShadowColor(RGB_GRAY);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         gWeatherPtr->initStep++;
         break;
     case 2:
@@ -2354,11 +2270,7 @@ void Shade_InitVars(void)
     gWeatherPtr->initStep = 0;
     gWeatherPtr->targetColorMapIndex = 3;
     gWeatherPtr->colorMapStepDelay = 20;
-<<<<<<< HEAD
     Weather_SetBlendCoeffs(8, 12); // preserve shadow darkness
-=======
-    Weather_SetBlendCoeffs(8, BASE_SHADOW_INTENSITY); // preserve shadow darkness
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gWeatherPtr->noShadows = FALSE;
 }
 
@@ -2546,15 +2458,12 @@ static void UpdateBubbleSprite(struct Sprite *sprite)
 
 //------------------------------------------------------------------------------
 
-<<<<<<< HEAD
 static void UNUSED UnusedSetCurrentAbnormalWeather(u32 weather, u32 unknown)
 {
     sCurrentAbnormalWeather = weather;
     sUnusedWeatherRelated = unknown;
 }
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #define tState         data[0]
 #define tWeatherA      data[1]
 #define tWeatherB      data[2]

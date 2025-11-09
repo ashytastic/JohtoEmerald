@@ -1,18 +1,12 @@
 AbandonedShip_HiddenFloorCorridors_MapScripts::
 	map_script MAP_SCRIPT_ON_RESUME, AbandonedShip_HiddenFloorCorridors_OnResume
 	map_script MAP_SCRIPT_ON_LOAD, AbandonedShip_HiddenFloorCorridors_OnLoad
-<<<<<<< HEAD
 	map_script MAP_SCRIPT_ON_TRANSITION, SetTimeEncounters
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.byte 0
 
 AbandonedShip_HiddenFloorCorridors_OnResume:
 	setdivewarp MAP_ABANDONED_SHIP_UNDERWATER1, 5, 4
-<<<<<<< HEAD
 	callnative SetTimeBasedEncounters
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 AbandonedShip_HiddenFloorCorridors_OnLoad:
@@ -61,19 +55,11 @@ AbandonedShip_HiddenFloorCorridors_EventScript_LockRoom6::
 AbandonedShip_HiddenFloorCorridors_EventScript_Room1Door::
 	lockall
 	goto_if_set FLAG_USED_ROOM_1_KEY, AbandonedShip_HiddenFloorCorridors_EventScript_TheDoorIsOpen
-<<<<<<< HEAD
 	checkitem ITEM_ROOM_1_KEY
 	goto_if_eq VAR_RESULT, FALSE, AbandonedShip_HiddenFloorCorridors_EventScript_Rm1IsLocked
 	msgbox AbandonedShip_HiddenFloorCorridors_Text_InsertedKey, MSGBOX_DEFAULT
 	playse SE_PIN
 	removeitem ITEM_ROOM_1_KEY
-=======
-	checkitem ITEM_KEY_TO_ROOM_1
-	goto_if_eq VAR_RESULT, FALSE, AbandonedShip_HiddenFloorCorridors_EventScript_Rm1IsLocked
-	msgbox AbandonedShip_HiddenFloorCorridors_Text_InsertedKey, MSGBOX_DEFAULT
-	playse SE_PIN
-	removeitem ITEM_KEY_TO_ROOM_1
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setflag FLAG_USED_ROOM_1_KEY
 	call AbandonedShip_HiddenFloorCorridors_EventScript_UnlockRoom1
 	special DrawWholeMapView
@@ -83,19 +69,11 @@ AbandonedShip_HiddenFloorCorridors_EventScript_Room1Door::
 AbandonedShip_HiddenFloorCorridors_EventScript_Room2Door::
 	lockall
 	goto_if_set FLAG_USED_ROOM_2_KEY, AbandonedShip_HiddenFloorCorridors_EventScript_TheDoorIsOpen
-<<<<<<< HEAD
 	checkitem ITEM_ROOM_2_KEY
 	goto_if_eq VAR_RESULT, FALSE, AbandonedShip_HiddenFloorCorridors_EventScript_Rm2IsLocked
 	msgbox AbandonedShip_HiddenFloorCorridors_Text_InsertedKey, MSGBOX_DEFAULT
 	playse SE_PIN
 	removeitem ITEM_ROOM_2_KEY
-=======
-	checkitem ITEM_KEY_TO_ROOM_2
-	goto_if_eq VAR_RESULT, FALSE, AbandonedShip_HiddenFloorCorridors_EventScript_Rm2IsLocked
-	msgbox AbandonedShip_HiddenFloorCorridors_Text_InsertedKey, MSGBOX_DEFAULT
-	playse SE_PIN
-	removeitem ITEM_KEY_TO_ROOM_2
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setflag FLAG_USED_ROOM_2_KEY
 	call AbandonedShip_HiddenFloorCorridors_EventScript_UnlockRoom2
 	special DrawWholeMapView
@@ -105,19 +83,11 @@ AbandonedShip_HiddenFloorCorridors_EventScript_Room2Door::
 AbandonedShip_HiddenFloorCorridors_EventScript_Room4Door::
 	lockall
 	goto_if_set FLAG_USED_ROOM_4_KEY, AbandonedShip_HiddenFloorCorridors_EventScript_TheDoorIsOpen
-<<<<<<< HEAD
 	checkitem ITEM_ROOM_4_KEY
 	goto_if_eq VAR_RESULT, FALSE, AbandonedShip_HiddenFloorCorridors_EventScript_Rm4IsLocked
 	msgbox AbandonedShip_HiddenFloorCorridors_Text_InsertedKey, MSGBOX_DEFAULT
 	playse SE_PIN
 	removeitem ITEM_ROOM_4_KEY
-=======
-	checkitem ITEM_KEY_TO_ROOM_4
-	goto_if_eq VAR_RESULT, FALSE, AbandonedShip_HiddenFloorCorridors_EventScript_Rm4IsLocked
-	msgbox AbandonedShip_HiddenFloorCorridors_Text_InsertedKey, MSGBOX_DEFAULT
-	playse SE_PIN
-	removeitem ITEM_KEY_TO_ROOM_4
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setflag FLAG_USED_ROOM_4_KEY
 	call AbandonedShip_HiddenFloorCorridors_EventScript_UnlockRoom4
 	special DrawWholeMapView
@@ -127,19 +97,11 @@ AbandonedShip_HiddenFloorCorridors_EventScript_Room4Door::
 AbandonedShip_HiddenFloorCorridors_EventScript_Room6Door::
 	lockall
 	goto_if_set FLAG_USED_ROOM_6_KEY, AbandonedShip_HiddenFloorCorridors_EventScript_TheDoorIsOpen
-<<<<<<< HEAD
 	checkitem ITEM_ROOM_6_KEY
 	goto_if_eq VAR_RESULT, FALSE, AbandonedShip_HiddenFloorCorridors_EventScript_Rm6IsLocked
 	msgbox AbandonedShip_HiddenFloorCorridors_Text_InsertedKey, MSGBOX_DEFAULT
 	playse SE_PIN
 	removeitem ITEM_ROOM_6_KEY
-=======
-	checkitem ITEM_KEY_TO_ROOM_6
-	goto_if_eq VAR_RESULT, FALSE, AbandonedShip_HiddenFloorCorridors_EventScript_Rm6IsLocked
-	msgbox AbandonedShip_HiddenFloorCorridors_Text_InsertedKey, MSGBOX_DEFAULT
-	playse SE_PIN
-	removeitem ITEM_KEY_TO_ROOM_6
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setflag FLAG_USED_ROOM_6_KEY
 	call AbandonedShip_HiddenFloorCorridors_EventScript_UnlockRoom6
 	special DrawWholeMapView

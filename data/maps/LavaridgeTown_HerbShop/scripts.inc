@@ -17,13 +17,9 @@ LavaridgeTown_HerbShop_Pokemart:
 	.2byte ITEM_ENERGY_ROOT
 	.2byte ITEM_HEAL_POWDER
 	.2byte ITEM_REVIVAL_HERB
-<<<<<<< HEAD
 	.2byte ITEM_NONE
 	release
 	end
-=======
-	pokemartlistend
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 LavaridgeTown_HerbShop_EventScript_ExpertM::
 	msgbox LavaridgeTown_HerbShop_Text_HerbalMedicineWorksButMonWillDislike, MSGBOX_NPC
@@ -32,19 +28,11 @@ LavaridgeTown_HerbShop_EventScript_ExpertM::
 LavaridgeTown_HerbShop_EventScript_OldMan::
 	lock
 	faceplayer
-<<<<<<< HEAD
 	goto_if_set FLAG_GARBAGEFLAG, LavaridgeTown_HerbShop_EventScript_ExplainCharcoal
 	msgbox LavaridgeTown_HerbShop_Text_YouveComeToLookAtHerbalMedicine, MSGBOX_DEFAULT
 	giveitem ITEM_CHARCOAL
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_GARBAGEFLAG
-=======
-	goto_if_set FLAG_RECEIVED_CHARCOAL, LavaridgeTown_HerbShop_EventScript_ExplainCharcoal
-	msgbox LavaridgeTown_HerbShop_Text_YouveComeToLookAtHerbalMedicine, MSGBOX_DEFAULT
-	giveitem ITEM_CHARCOAL
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-	setflag FLAG_RECEIVED_CHARCOAL
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	release
 	end
 

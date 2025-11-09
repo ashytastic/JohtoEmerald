@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 #!/bin/bash
-=======
-#!/usr/bin/env bash
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 if [[ -d "$DEVKITARM/bin/" ]]; then
     OBJDUMP_BIN="$DEVKITARM/bin/arm-none-eabi-objdump"

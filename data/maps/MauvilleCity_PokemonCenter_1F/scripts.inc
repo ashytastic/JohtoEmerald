@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 .set LOCALID_NURSE, 1
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 MauvilleCity_PokemonCenter_1F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, MauvilleCity_PokemonCenter_1F_OnTransition
 	map_script MAP_SCRIPT_ON_RESUME, CableClub_OnResume
@@ -19,11 +16,7 @@ MauvilleCity_PokemonCenter_1F_EventScript_SetMauvilleOldManGfx::
 	end
 
 MauvilleCity_PokemonCenter_1F_EventScript_Nurse::
-<<<<<<< HEAD
 	setvar VAR_0x800B, LOCALID_NURSE
-=======
-	setvar VAR_0x800B, LOCALID_MAUVILLE_NURSE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call Common_EventScript_PkmnCenterNurse
 	waitmessage
 	waitbuttonpress

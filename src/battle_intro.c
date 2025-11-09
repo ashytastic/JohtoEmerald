@@ -8,7 +8,6 @@
 #include "main.h"
 #include "scanline_effect.h"
 #include "task.h"
-<<<<<<< HEAD
 #include "trig.h"
 #include "constants/trainers.h"
 
@@ -17,13 +16,6 @@ static EWRAM_DATA u16 sBgCnt = 0;
 extern const u8 gBattleAnimBgCntSet[];
 extern const u8 gBattleAnimBgCntGet[];
 
-=======
-#include "test_runner.h"
-#include "trig.h"
-#include "constants/battle_partner.h"
-#include "constants/trainers.h"
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static void BattleIntroSlide1(u8);
 static void BattleIntroSlide2(u8);
 static void BattleIntroSlide3(u8);
@@ -31,7 +23,6 @@ static void BattleIntroSlideLink(u8);
 static void BattleIntroSlidePartner(u8);
 static void BattleIntroNoSlide(u8);
 
-<<<<<<< HEAD
 static const TaskFunc sBattleIntroSlideFuncs[] =
 {
     [BATTLE_TERRAIN_GRASS]      = BattleIntroSlide1,
@@ -45,29 +36,12 @@ static const TaskFunc sBattleIntroSlideFuncs[] =
     [BATTLE_TERRAIN_BUILDING]   = BattleIntroSlide3,
     [BATTLE_TERRAIN_PLAIN]      = BattleIntroSlide3,
     [BATTLE_TERRAIN_BLUE_BUILDING] = BattleIntroSlide3,
-=======
-static const u8 sBattleAnimBgCnts[] = {REG_OFFSET_BG0CNT, REG_OFFSET_BG1CNT, REG_OFFSET_BG2CNT, REG_OFFSET_BG3CNT};
-
-static const TaskFunc sBattleIntroSlideFuncs[] =
-{
-    [BATTLE_ENVIRONMENT_GRASS]      = BattleIntroSlide1,
-    [BATTLE_ENVIRONMENT_LONG_GRASS] = BattleIntroSlide1,
-    [BATTLE_ENVIRONMENT_SAND]       = BattleIntroSlide2,
-    [BATTLE_ENVIRONMENT_UNDERWATER] = BattleIntroSlide2,
-    [BATTLE_ENVIRONMENT_WATER]      = BattleIntroSlide2,
-    [BATTLE_ENVIRONMENT_POND]       = BattleIntroSlide1,
-    [BATTLE_ENVIRONMENT_MOUNTAIN]   = BattleIntroSlide1,
-    [BATTLE_ENVIRONMENT_CAVE]       = BattleIntroSlide1,
-    [BATTLE_ENVIRONMENT_BUILDING]   = BattleIntroSlide3,
-    [BATTLE_ENVIRONMENT_PLAIN]      = BattleIntroSlide3,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 void SetAnimBgAttribute(u8 bgId, u8 attributeId, u8 value)
 {
     if (bgId < 4)
     {
-<<<<<<< HEAD
         sBgCnt = GetGpuReg(gBattleAnimBgCntSet[bgId]);
         switch (attributeId)
         {
@@ -95,41 +69,11 @@ void SetAnimBgAttribute(u8 bgId, u8 attributeId, u8 value)
         }
 
         SetGpuReg(gBattleAnimBgCntSet[bgId], sBgCnt);
-=======
-        u32 bgCnt = GetGpuReg(sBattleAnimBgCnts[bgId]);
-        switch (attributeId)
-        {
-        case BG_ANIM_SCREEN_SIZE:
-            ((vBgCnt *)&bgCnt)->screenSize = value;
-            break;
-        case BG_ANIM_AREA_OVERFLOW_MODE:
-            ((vBgCnt *)&bgCnt)->areaOverflowMode = value;
-            break;
-        case BG_ANIM_MOSAIC:
-            ((vBgCnt *)&bgCnt)->mosaic = value;
-            break;
-        case BG_ANIM_CHAR_BASE_BLOCK:
-            ((vBgCnt *)&bgCnt)->charBaseBlock = value;
-            break;
-        case BG_ANIM_PRIORITY:
-            ((vBgCnt *)&bgCnt)->priority = value;
-            break;
-        case BG_ANIM_PALETTES_MODE:
-            ((vBgCnt *)&bgCnt)->palettes = value;
-            break;
-        case BG_ANIM_SCREEN_BASE_BLOCK:
-            ((vBgCnt *)&bgCnt)->screenBaseBlock = value;
-            break;
-        }
-
-        SetGpuReg(sBattleAnimBgCnts[bgId], bgCnt);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
 }
 
 int GetAnimBgAttribute(u8 bgId, u8 attributeId)
 {
-<<<<<<< HEAD
     u16 bgCnt;
 
     if (bgId < 4)
@@ -151,29 +95,6 @@ int GetAnimBgAttribute(u8 bgId, u8 attributeId)
             return ((struct BgCnt *)&bgCnt)->palettes;
         case BG_ANIM_SCREEN_BASE_BLOCK:
             return ((struct BgCnt *)&bgCnt)->screenBaseBlock;
-=======
-    u32 bgCnt;
-
-    if (bgId < 4)
-    {
-        bgCnt = GetGpuReg(sBattleAnimBgCnts[bgId]);
-        switch (attributeId)
-        {
-        case BG_ANIM_SCREEN_SIZE:
-            return ((vBgCnt *)&bgCnt)->screenSize;
-        case BG_ANIM_AREA_OVERFLOW_MODE:
-            return ((vBgCnt *)&bgCnt)->areaOverflowMode;
-        case BG_ANIM_MOSAIC:
-            return ((vBgCnt *)&bgCnt)->mosaic;
-        case BG_ANIM_CHAR_BASE_BLOCK:
-            return ((vBgCnt *)&bgCnt)->charBaseBlock;
-        case BG_ANIM_PRIORITY:
-            return ((vBgCnt *)&bgCnt)->priority;
-        case BG_ANIM_PALETTES_MODE:
-            return ((vBgCnt *)&bgCnt)->palettes;
-        case BG_ANIM_SCREEN_BASE_BLOCK:
-            return ((vBgCnt *)&bgCnt)->screenBaseBlock;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         }
     }
 
@@ -181,7 +102,6 @@ int GetAnimBgAttribute(u8 bgId, u8 attributeId)
 }
 
 #define tState data[0]
-<<<<<<< HEAD
 #define tTerrain data[1]
 
 void HandleIntroSlide(u8 terrain)
@@ -189,15 +109,6 @@ void HandleIntroSlide(u8 terrain)
     u8 taskId;
 
     if ((gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER) && gPartnerTrainerId != TRAINER_STEVEN_PARTNER)
-=======
-#define tEnvironment data[1]
-
-void HandleIntroSlide(u8 environment)
-{
-    u8 taskId;
-
-    if ((gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER) && gPartnerTrainerId < TRAINER_PARTNER(PARTNER_NONE))
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     {
         taskId = CreateTask(BattleIntroSlidePartner, 0);
     }
@@ -207,7 +118,6 @@ void HandleIntroSlide(u8 environment)
     }
     else if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
     {
-<<<<<<< HEAD
         if (gSaveBlock2Ptr->optionsFastIntro == 1)
         {
             taskId = CreateTask(BattleIntroSlide3, 0);
@@ -220,18 +130,10 @@ void HandleIntroSlide(u8 environment)
     else if ((gBattleTypeFlags & BATTLE_TYPE_KYOGRE_GROUDON) && gGameVersion != VERSION_RUBY)
     {
         terrain = BATTLE_TERRAIN_GRAY_CAVE;
-=======
-        taskId = CreateTask(BattleIntroSlide3, 0);
-    }
-    else if (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL) == SPECIES_KYOGRE)
-    {
-        environment = BATTLE_ENVIRONMENT_UNDERWATER;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         taskId = CreateTask(BattleIntroSlide2, 0);
     }
     else
     {
-<<<<<<< HEAD
         if (gSaveBlock2Ptr->optionsFastIntro == 1)
         {
             taskId = CreateTask(sBattleIntroSlideFuncs[terrain], 0);
@@ -244,13 +146,6 @@ void HandleIntroSlide(u8 environment)
 
     gTasks[taskId].tState = 0;
     gTasks[taskId].tTerrain = terrain;
-=======
-        taskId = CreateTask(sBattleIntroSlideFuncs[environment], 0);
-    }
-
-    gTasks[taskId].tState = 0;
-    gTasks[taskId].tEnvironment = environment;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gTasks[taskId].data[2] = 0;
     gTasks[taskId].data[3] = 0;
     gTasks[taskId].data[4] = 0;
@@ -300,11 +195,7 @@ static void BattleIntroNoSlide(u8 taskId)
         }
         break;
     case 2:
-<<<<<<< HEAD
         gBattle_WIN0V -= 0xFF * 5;
-=======
-        gBattle_WIN0V -= 0xFF * 2;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         if ((gBattle_WIN0V & 0xFF00) == 0)
         {
             gTasks[taskId].tState++;
@@ -327,11 +218,6 @@ static void BattleIntroNoSlide(u8 taskId)
 static void BattleIntroSlide1(u8 taskId)
 {
     int i;
-<<<<<<< HEAD
-=======
-    if (B_FAST_INTRO_NO_SLIDE || gTestRunnerHeadless)
-        return BattleIntroNoSlide(taskId);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     gBattle_BG1_X += 6;
     switch (gTasks[taskId].tState)
@@ -372,24 +258,14 @@ static void BattleIntroSlide1(u8 taskId)
         }
         else
         {
-<<<<<<< HEAD
             if (gTasks[taskId].tTerrain == BATTLE_TERRAIN_LONG_GRASS)
             {
                 if (gBattle_BG1_Y != 0xFFB0)
-=======
-            if (gTasks[taskId].tEnvironment == BATTLE_ENVIRONMENT_LONG_GRASS)
-            {
-                if (gBattle_BG1_Y != (u16)(-80))
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                     gBattle_BG1_Y -= 2;
             }
             else
             {
-<<<<<<< HEAD
                 if (gBattle_BG1_Y != 0xFFC8)
-=======
-                if (gBattle_BG1_Y != (u16)(-56))
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                     gBattle_BG1_Y -= 1;
             }
         }
@@ -427,7 +303,6 @@ static void BattleIntroSlide1(u8 taskId)
 static void BattleIntroSlide2(u8 taskId)
 {
     int i;
-<<<<<<< HEAD
 
     switch (gTasks[taskId].tTerrain)
     {
@@ -436,27 +311,11 @@ static void BattleIntroSlide2(u8 taskId)
         gBattle_BG1_X += 8;
         break;
     case BATTLE_TERRAIN_GRAY_CAVE:
-=======
-    if (B_FAST_INTRO_NO_SLIDE || gTestRunnerHeadless)
-        return BattleIntroNoSlide(taskId);
-
-    switch (gTasks[taskId].tEnvironment)
-    {
-    case BATTLE_ENVIRONMENT_SAND:
-    case BATTLE_ENVIRONMENT_WATER:
-        gBattle_BG1_X += 8;
-        break;
-    case BATTLE_ENVIRONMENT_UNDERWATER:
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         gBattle_BG1_X += 6;
         break;
     }
 
-<<<<<<< HEAD
     if (gTasks[taskId].tTerrain == BATTLE_TERRAIN_WATER)
-=======
-    if (gTasks[taskId].tEnvironment == BATTLE_ENVIRONMENT_WATER)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     {
         gBattle_BG1_Y = Cos2(gTasks[taskId].data[6]) / 512 - 8;
         if (gTasks[taskId].data[6] < 180)
@@ -556,11 +415,6 @@ static void BattleIntroSlide2(u8 taskId)
 static void BattleIntroSlide3(u8 taskId)
 {
     int i;
-<<<<<<< HEAD
-=======
-    if (B_FAST_INTRO_NO_SLIDE || gTestRunnerHeadless)
-        return BattleIntroNoSlide(taskId);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     gBattle_BG1_X += 8;
     switch (gTasks[taskId].tState)
@@ -797,14 +651,9 @@ static void BattleIntroSlidePartner(u8 taskId)
 void DrawBattlerOnBg(int bgId, u8 x, u8 y, u8 battlerPosition, u8 paletteId, u8 *tiles, u16 *tilemap, u16 tilesOffset)
 {
     int i, j;
-<<<<<<< HEAD
     u8 battler = GetBattlerAtPosition(battlerPosition);
     int offset = tilesOffset;
     CpuCopy16(gMonSpritesGfxPtr->sprites.ptr[battlerPosition] + BG_SCREEN_SIZE * gBattleMonForms[battler], tiles, BG_SCREEN_SIZE);
-=======
-    int offset = tilesOffset;
-    CpuCopy16(gMonSpritesGfxPtr->spritesGfx[battlerPosition], tiles, BG_SCREEN_SIZE);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     LoadBgTiles(bgId, tiles, 0x1000, tilesOffset);
     for (i = y; i < y + 8; i++)
     {
@@ -821,11 +670,7 @@ static void UNUSED DrawBattlerOnBgDMA(u8 x, u8 y, u8 battlerPosition, u8 arg3, u
 {
     int i, j, offset;
 
-<<<<<<< HEAD
     DmaCopy16(3, gMonSpritesGfxPtr->sprites.ptr[battlerPosition] + BG_SCREEN_SIZE * arg3, (void *)BG_SCREEN_ADDR(0) + arg5, BG_SCREEN_SIZE);
-=======
-    DmaCopy16(3, gMonSpritesGfxPtr->spritesGfx[battlerPosition] + BG_SCREEN_SIZE * arg3, (void *)BG_SCREEN_ADDR(0) + arg5, BG_SCREEN_SIZE);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     offset = (arg5 >> 5) - (arg7 << 9);
     for (i = y; i < y + 8; i++)
     {

@@ -3,11 +3,7 @@
   "name": "VerdanturfTown_WandasHouse",
   "layout": "LAYOUT_VERDANTURF_TOWN_WANDAS_HOUSE",
   "music": "MUS_VERDANTURF",
-<<<<<<< HEAD
   "region_map_section": "MAPSEC_OLIVINE_CITY",
-=======
-  "region_map_section": "MAPSEC_VERDANTURF_TOWN",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -16,17 +12,10 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-<<<<<<< HEAD
   "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_SILVER",
-=======
-  "connections": null,
-  "object_events": [
-    {
-      "graphics_id": "OBJ_EVENT_GFX_WALLY",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 14,
       "y": 5,
       "elevation": 3,
@@ -49,17 +38,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "VerdanturfTown_WandasHouse_EventScript_WandasBoyfriend",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ATTENDANT_M",
-=======
-      "flag": "FLAG_HIDE_VERDANTURF_TOWN_WANDAS_HOUSE_WANDAS_BOYFRIEND"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_POKEFAN_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 7,
       "y": 2,
       "elevation": 3,
@@ -69,17 +51,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "VerdanturfTown_WandasHouse_EventScript_WallysUncle",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BILL",
-=======
-      "flag": "FLAG_HIDE_VERDANTURF_TOWN_WANDAS_HOUSE_WALLYS_UNCLE"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_POKEFAN_F",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 2,
       "y": 4,
       "elevation": 3,
@@ -102,11 +77,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "VerdanturfTown_WandasHouse_EventScript_Wanda",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
-=======
-      "flag": "FLAG_HIDE_VERDANTURF_TOWN_WANDAS_HOUSE_WANDA"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "warp_events": [
@@ -125,15 +96,10 @@
       "dest_warp_id": "3"
     }
   ],
-<<<<<<< HEAD
   "coord_events": [
 
   ],
   "bg_events": [
 
   ]
-=======
-  "coord_events": [],
-  "bg_events": []
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }

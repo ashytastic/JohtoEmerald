@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @ Contest move effect descriptions
 
 gText_HighlyAppealingMove::
@@ -250,8 +249,6 @@ gContestMoveTypeSmartText::
 gContestMoveTypeToughText::
 	.string "TOUGH$"
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 gText_AppealNumWhichMoveWillBePlayed::
 	.string "Appeal no. {STR_VAR_1}!\n"
 	.string "Which move will be played?$"
@@ -272,7 +269,6 @@ gText_AllOutOfAppealTime::
 	.string "We're all out of\n"
 	.string "Appeal Time!{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}$"
 
-<<<<<<< HEAD
 @ Unused appeal result texts
 
 gText_ButAppealWasJammed::
@@ -443,8 +439,6 @@ gText_EveryonesAppealsMadeSame::
 	.string "Everyone's appeals were\n"
 	.string "made the same.$"
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 @ Appeal result texts
 
 gText_BecameMoreConsciousOfOtherMons::
@@ -739,7 +733,6 @@ gText_Contest_Hesitancy::
 
 gText_Contest_Fear::
 	.string "fear$"
-<<<<<<< HEAD
 
 gText_Contest_Coolness::
 	.string "coolness$"
@@ -777,5 +770,3 @@ gText_ToughMove::
 
 gText_3QuestionMarks::
 	.string "???$"
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

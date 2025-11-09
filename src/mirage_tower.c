@@ -57,18 +57,12 @@ struct FallAnim_Fossil
 
 #define TAG_CEILING_CRUMBLE 4000
 
-<<<<<<< HEAD
 #define MIRAGE_TOWER_GFX_LENGTH (sizeof(sBlankTile_Gfx) + sizeof(sMirageTower_Gfx))
 #define FOSSIL_DISINTEGRATE_LENGTH 0x100
 
 static const struct SpriteSheet sCeilingCrumbleSpriteSheets[];
 static const s16 sCeilingCrumblePositions[][3];
 
-=======
-#define MIRAGE_TOWER_GFX_LENGTH (sizeof(sMirageTower_Gfx))
-#define FOSSIL_DISINTEGRATE_LENGTH 0x100
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static void PlayerDescendMirageTower(u8);
 static void DoScreenShake(u8);
 static void IncrementCeilingCrumbleFinishedCount(void);
@@ -82,12 +76,8 @@ static void Task_FossilFallAndSink(u8);
 static void SpriteCB_FallingFossil(struct Sprite *);
 static void UpdateDisintegrationEffect(u8 *, u16, u8, u8, u8);
 
-<<<<<<< HEAD
 static const u8 ALIGNED(2) sBlankTile_Gfx[32] = {0};
 static const u8 sMirageTower_Gfx[] = INCBIN_U8("graphics/misc/mirage_tower.4bpp");
-=======
-static const ALIGNED(2) u8 sMirageTower_Gfx[] = INCBIN_U8("graphics/misc/mirage_tower.4bpp");
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static const u16 sMirageTowerTilemap[] = INCBIN_U16("graphics/misc/mirage_tower.bin");
 static const u16 sFossil_Pal[] = INCBIN_U16("graphics/object_events/pics/misc/fossil.gbapal"); // Unused
 static const u8 sFossil_Gfx[] = INCBIN_U8("graphics/object_events/pics/misc/fossil.4bpp"); // Duplicate of gObjectEventPic_Fossil
@@ -162,12 +152,9 @@ static const union AnimCmd *const sAnims_FallingFossil[] =
     sAnim_FallingFossil,
 };
 
-<<<<<<< HEAD
 // Duplicate of event_object_movement
 #define OBJ_EVENT_PAL_TAG_NPC_1                   0x1103
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static const struct SpriteTemplate sSpriteTemplate_FallingFossil =
 {
     .tileTag = TAG_NONE,
@@ -282,11 +269,7 @@ static u16 sDebug_DisintegrationData[8];
 
 bool8 IsMirageTowerVisible(void)
 {
-<<<<<<< HEAD
     if (!(gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE111) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE111)))
-=======
-    if (!(gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE111) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE111)))
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         return FALSE;
     return FlagGet(FLAG_MIRAGE_TOWER_VISIBLE);
 }
@@ -309,13 +292,8 @@ void TryStartMirageTowerPulseBlendEffect(void)
         return;
     }
 
-<<<<<<< HEAD
     if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(ROUTE111)
      || gSaveBlock1Ptr->location.mapNum != MAP_NUM(ROUTE111)
-=======
-    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MAP_ROUTE111)
-     || gSaveBlock1Ptr->location.mapNum != MAP_NUM(MAP_ROUTE111)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
      || !FlagGet(FLAG_MIRAGE_TOWER_VISIBLE))
         return;
 
@@ -328,13 +306,8 @@ void TryStartMirageTowerPulseBlendEffect(void)
 
 void ClearMirageTowerPulseBlendEffect(void)
 {
-<<<<<<< HEAD
     if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(ROUTE111)
      || gSaveBlock1Ptr->location.mapNum   != MAP_NUM(ROUTE111)
-=======
-    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MAP_ROUTE111)
-     || gSaveBlock1Ptr->location.mapNum   != MAP_NUM(MAP_ROUTE111)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
      || !FlagGet(FLAG_MIRAGE_TOWER_VISIBLE)
      || sMirageTowerPulseBlend == NULL)
         return;
@@ -476,18 +449,11 @@ static void FinishCeilingCrumbleTask(u8 taskId)
     ScriptContext_Enable();
 }
 
-<<<<<<< HEAD
-=======
-#define sIndex   data[0]
-#define sYOffset data[1]
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static void CreateCeilingCrumbleSprites(void)
 {
     u8 i;
     u8 spriteId;
 
-<<<<<<< HEAD
     for (i = 0; i < 8; i++)
     {
         spriteId = CreateSprite(&sSpriteTemplate_CeilingCrumbleLarge, sCeilingCrumblePositions[i][0] + 120, sCeilingCrumblePositions[i][1], 8);
@@ -501,50 +467,20 @@ static void CreateCeilingCrumbleSprites(void)
         gSprites[spriteId].oam.priority = 0;
         gSprites[spriteId].oam.paletteNum = 0;
         gSprites[spriteId].data[0] = i;
-=======
-    for (i = 0; i < ARRAY_COUNT(sCeilingCrumblePositions); i++)
-    {
-        spriteId = CreateSprite(&sSpriteTemplate_CeilingCrumbleLarge, sCeilingCrumblePositions[i][0] + 120, sCeilingCrumblePositions[i][1], 8);
-        gSprites[spriteId].oam.priority = 0;
-        // These sprites use color index 11 from the player's sprite palette. This probably wasn't intentional.
-        // The palettes for Brendan and May have different shades of green at this index, so the color of these sprites changes
-        // depending on the player's gender (and neither shade of green particularly fits a crumbling yellow/brown ceiling).
-        gSprites[spriteId].oam.paletteNum = PALSLOT_PLAYER;
-        gSprites[spriteId].sIndex = i;
-    }
-    for (i = 0; i < ARRAY_COUNT(sCeilingCrumblePositions); i++)
-    {
-        spriteId = CreateSprite(&sSpriteTemplate_CeilingCrumbleSmall, sCeilingCrumblePositions[i][0] + 115, sCeilingCrumblePositions[i][1] - 3, 8);
-        gSprites[spriteId].oam.priority = 0;
-        gSprites[spriteId].oam.paletteNum = PALSLOT_PLAYER;
-        gSprites[spriteId].sIndex = i;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
 }
 
 static void SpriteCB_CeilingCrumble(struct Sprite *sprite)
 {
-<<<<<<< HEAD
     sprite->data[1] += 2;
     sprite->y2 = sprite->data[1] / 2;
     if(((sprite->y) + (sprite->y2)) >  sCeilingCrumblePositions[sprite->data[0]][2])
-=======
-    sprite->sYOffset += 2;
-    sprite->y2 = sprite->sYOffset / 2;
-    if ((sprite->y + sprite->y2) >  sCeilingCrumblePositions[sprite->sIndex][2])
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     {
         DestroySprite(sprite);
         IncrementCeilingCrumbleFinishedCount();
     }
 }
 
-<<<<<<< HEAD
-=======
-#undef sIndex
-#undef sYOffset
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static void SetInvisibleMirageTowerMetatiles(void)
 {
     u8 i;
@@ -611,11 +547,7 @@ static void InitMirageTowerShake(u8 taskId)
         gTasks[taskId].tState++;
         break;
     case 2:
-<<<<<<< HEAD
         CpuSet(sBlankTile_Gfx, sMirageTowerGfxBuffer, MIRAGE_TOWER_GFX_LENGTH / 2);
-=======
-        CpuSet(sMirageTower_Gfx, sMirageTowerGfxBuffer, MIRAGE_TOWER_GFX_LENGTH / 2);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         LoadBgTiles(0, sMirageTowerGfxBuffer, MIRAGE_TOWER_GFX_LENGTH, 0);
         gTasks[taskId].tState++;
         break;
@@ -670,7 +602,6 @@ static void DoMirageTowerDisintegration(u8 taskId)
                     sFallingTower[index].disintegrateRand[i] = i;
 
                 // Randomize disintegration pattern
-<<<<<<< HEAD
                 for (i = 0; i <= (INNER_BUFFER_LENGTH - 1); i++)
                 {
                     u16 rand1, rand2, temp;
@@ -678,11 +609,6 @@ static void DoMirageTowerDisintegration(u8 taskId)
                     rand2 = Random() % INNER_BUFFER_LENGTH;
                     SWAP(sFallingTower[index].disintegrateRand[rand2], sFallingTower[index].disintegrateRand[rand1], temp);
                 }
-=======
-                Shuffle(sFallingTower[index].disintegrateRand, INNER_BUFFER_LENGTH,
-                    sizeof(sFallingTower[index].disintegrateRand[0]));
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 if (gTasks[taskId].data[3] <= (OUTER_BUFFER_LENGTH - 1))
                     gTasks[taskId].data[3]++;
                 gTasks[taskId].data[1] = 0;
@@ -781,7 +707,6 @@ static void Task_FossilFallAndSink(u8 taskId)
         break;
     case 6:
         // Randomize disintegration pattern
-<<<<<<< HEAD
         for (i = 0; i < FOSSIL_DISINTEGRATE_LENGTH * sizeof(u16); i++)
         {
             u16 rand1, rand2, temp;
@@ -789,10 +714,6 @@ static void Task_FossilFallAndSink(u8 taskId)
             rand2 = Random() % FOSSIL_DISINTEGRATE_LENGTH;
             SWAP(sFallingFossil->disintegrateRand[rand2], sFallingFossil->disintegrateRand[rand1], temp);
         }
-=======
-        Shuffle(sFallingFossil->disintegrateRand, FOSSIL_DISINTEGRATE_LENGTH,
-            sizeof(sFallingFossil->disintegrateRand[0]));
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         gSprites[sFallingFossil->spriteId].callback = SpriteCB_FallingFossil;
         break;
     case 7:

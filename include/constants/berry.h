@@ -10,16 +10,6 @@
 #define BERRY_FIRMNESS_VERY_HARD   4
 #define BERRY_FIRMNESS_SUPER_HARD  5
 
-<<<<<<< HEAD
-=======
-#define BERRY_COLOR_RED    0
-#define BERRY_COLOR_BLUE   1
-#define BERRY_COLOR_PURPLE 2
-#define BERRY_COLOR_GREEN  3
-#define BERRY_COLOR_YELLOW 4
-#define BERRY_COLOR_PINK   5
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #define FLAVOR_SPICY   0
 #define FLAVOR_DRY     1
 #define FLAVOR_SWEET   2
@@ -33,11 +23,6 @@
 #define BERRY_STAGE_TALLER      3
 #define BERRY_STAGE_FLOWERING   4
 #define BERRY_STAGE_BERRIES     5
-<<<<<<< HEAD
-=======
-#define BERRY_STAGE_TRUNK       6 // These follow BERRY_STAGE_BERRIES to preserve save compatibility
-#define BERRY_STAGE_BUDDING     7
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #define BERRY_STAGE_SPARKLING   255
 
 // Berries can be watered in the following stages:
@@ -140,7 +125,6 @@
 #define BERRY_TREE_ROUTE_123_SITRUS   88
 #define BERRY_TREE_ROUTE_123_RAWST    89
 
-<<<<<<< HEAD
 //start CRYSTAL berries
 
 #define BERRY_TREE_CHERI_1      90
@@ -182,9 +166,6 @@
 #define BERRY_TREE_TAMATO_2     126
 #define BERRY_TREE_TAMATO_3     127
 
-=======
-// Remainder are unused
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 #define BERRY_TREES_COUNT 128
 

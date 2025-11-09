@@ -70,7 +70,6 @@
 
 // Get the id of the col/row from the selection ID
 // e.g. GET_ROW(SQU_PURPLE_SKITTY) is ROW_PURPLE
-<<<<<<< HEAD
 #define GET_COL(selectionId)((selectionId) % (NUM_BOARD_POKES + 1))
 #define GET_ROW(selectionId)((selectionId) / (NUM_BOARD_POKES + 1) * (NUM_BOARD_POKES + 1))
 
@@ -78,15 +77,6 @@
 // e.g. GET_ROW_IDX(SQU_PURPLE_SKITTY) is 2 (purple being the 3rd row)
 #define GET_COL_IDX(selectionId)(selectionId - 1)
 #define GET_ROW_IDX(selectionId)(selectionId / 5 - 1)
-=======
-#define GET_COL(selectionId) ((selectionId) % (NUM_BOARD_POKES + 1))
-#define GET_ROW(selectionId) ((selectionId) / (NUM_BOARD_POKES + 1) * (NUM_BOARD_POKES + 1))
-
-// Get the col/row index from the selection ID
-// e.g. GET_ROW_IDX(SQU_PURPLE_SKITTY) is 2 (purple being the 3rd row)
-#define GET_COL_IDX(selectionId) (selectionId - 1)
-#define GET_ROW_IDX(selectionId) (selectionId / 5 - 1)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 // Flags for the above selections, used to set which spaces have been hit or bet on
 #define F_WYNAUT_COL      (1 << COL_WYNAUT)
@@ -159,11 +149,7 @@
 
 // 2 different Roulette tables with 2 different rates (normal vs service day special)
 // & 1 gets which table, >> 7 gets if ROULETTE_SPECIAL_RATE is set
-<<<<<<< HEAD
 #define GET_MIN_BET_ID(var)(((var) & 1) + (((var) >> 7) * 2))
-=======
-#define GET_MIN_BET_ID(var) (((var) & 1) + (((var) >> 7) * 2))
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 // Having Shroomish or Taillow in the party can make rolls more consistent in length
 // It also increases the likelihood that, if they appear to unstick a ball, they'll move it to a slot the player bet on
@@ -431,13 +417,8 @@ static void SpriteCB_Shroomish(struct Sprite *);
 static void SpriteCB_Taillow(struct Sprite *);
 
 static const u16 sWheel_Pal[] = INCBIN_U16("graphics/roulette/wheel.gbapal"); // also palette for grid
-<<<<<<< HEAD
 static const u32 sGrid_Tilemap[] = INCBIN_U32("graphics/roulette/grid.bin.lz");
 static const u32 sWheel_Tilemap[] = INCBIN_U32("graphics/roulette/wheel.bin.lz");
-=======
-static const u32 sGrid_Tilemap[] = INCBIN_U32("graphics/roulette/grid.bin.smolTM");
-static const u32 sWheel_Tilemap[] = INCBIN_U32("graphics/roulette/wheel.bin.smolTM");
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static const struct BgTemplate sBgTemplates[] =
 {
     // Text box
@@ -2358,7 +2339,6 @@ static const u16 sUnused1_Pal[] = INCBIN_U16("graphics/roulette/unused_1.gbapal"
 static const u16 sUnused2_Pal[] = INCBIN_U16("graphics/roulette/unused_2.gbapal");
 static const u16 sUnused3_Pal[] = INCBIN_U16("graphics/roulette/unused_3.gbapal");
 static const u16 sUnused4_Pal[] = INCBIN_U16("graphics/roulette/unused_4.gbapal");
-<<<<<<< HEAD
 static const u32 sBall_Gfx[] = INCBIN_U32("graphics/roulette/ball.4bpp.lz");
 static const u32 sBallCounter_Gfx[] = INCBIN_U32("graphics/roulette/ball_counter.4bpp.lz");
 static const u32 sShroomishTaillow_Gfx[] = INCBIN_U32("graphics/roulette/roulette_tilt.4bpp.lz");
@@ -2366,15 +2346,6 @@ static const u32 sGridIcons_Gfx[] = INCBIN_U32("graphics/roulette/grid_icons.4bp
 static const u32 sWheelIcons_Gfx[] = INCBIN_U32("graphics/roulette/wheel_icons.4bpp.lz");
 static const u32 sShadow_Gfx[] = INCBIN_U32("graphics/roulette/shadow.4bpp.lz");
 static const u32 sCursor_Gfx[] = INCBIN_U32("graphics/roulette/cursor.4bpp.lz");
-=======
-static const u32 sBall_Gfx[] = INCBIN_U32("graphics/roulette/ball.4bpp.smol");
-static const u32 sBallCounter_Gfx[] = INCBIN_U32("graphics/roulette/ball_counter.4bpp.smol");
-static const u32 sShroomishTaillow_Gfx[] = INCBIN_U32("graphics/roulette/roulette_tilt.4bpp.smol");
-static const u32 sGridIcons_Gfx[] = INCBIN_U32("graphics/roulette/grid_icons.4bpp.smol");
-static const u32 sWheelIcons_Gfx[] = INCBIN_U32("graphics/roulette/wheel_icons.4bpp.smol");
-static const u32 sShadow_Gfx[] = INCBIN_U32("graphics/roulette/shadow.4bpp.smol");
-static const u32 sCursor_Gfx[] = INCBIN_U32("graphics/roulette/cursor.4bpp.smol");
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 static const struct SpritePalette sSpritePalettes[] =
 {
@@ -3550,7 +3521,6 @@ static void CreateGridSprites(void)
 {
     u8 i, j;
     u8 spriteId;
-<<<<<<< HEAD
     struct SpriteSheet s;
     LZ77UnCompWram(sSpriteSheet_Headers.data, gDecompressionBuffer);
     s.data = gDecompressionBuffer;
@@ -3562,12 +3532,6 @@ static void CreateGridSprites(void)
     s.size = sSpriteSheet_GridIcons.size;
     s.tag  = sSpriteSheet_GridIcons.tag;
     LoadSpriteSheet(&s);
-=======
-
-    LoadCompressedSpriteSheet(&sSpriteSheet_Headers);
-    LoadCompressedSpriteSheet(&sSpriteSheet_GridIcons);
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     for (i = 0; i < NUM_BOARD_COLORS; i++)
     {
         u8 y = i * 24;
@@ -3692,7 +3656,6 @@ static void CreateWheelIconSprites(void)
 {
     u8 i, j;
     u16 angle;
-<<<<<<< HEAD
     struct SpriteSheet s;
 
     LZ77UnCompWram(sSpriteSheet_WheelIcons.data, gDecompressionBuffer);
@@ -3700,10 +3663,6 @@ static void CreateWheelIconSprites(void)
     s.size = sSpriteSheet_WheelIcons.size;
     s.tag  = sSpriteSheet_WheelIcons.tag;
     LoadSpriteSheet(&s);
-=======
-
-    LoadCompressedSpriteSheet(&sSpriteSheet_WheelIcons);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     angle = 15;
     for (i = 0; i < NUM_BOARD_COLORS; i++)
@@ -3743,16 +3702,12 @@ static void CreateInterfaceSprites(void)
     u8 i;
     for (i = 0; i < ARRAY_COUNT(sSpriteSheets_Interface) - 1; i++)
     {
-<<<<<<< HEAD
         struct SpriteSheet s;
         LZ77UnCompWram(sSpriteSheets_Interface[i].data, gDecompressionBuffer);
         s.data = gDecompressionBuffer;
         s.size = sSpriteSheets_Interface[i].size;
         s.tag  = sSpriteSheets_Interface[i].tag;
         LoadSpriteSheet(&s);
-=======
-        LoadCompressedSpriteSheet(&sSpriteSheets_Interface[i]);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
     sRoulette->spriteIds[SPR_CREDIT] = CreateSprite(&sSpriteTemplate_Credit, 208, 16, 4);
     gSprites[sRoulette->spriteIds[SPR_CREDIT]].animPaused = TRUE;
@@ -3895,16 +3850,12 @@ static void SpriteCB_GridSquare(struct Sprite *sprite)
 static void CreateWheelCenterSprite(void)
 {
     u8 spriteId;
-<<<<<<< HEAD
     struct SpriteSheet s;
     LZ77UnCompWram(sSpriteSheet_WheelCenter.data, gDecompressionBuffer);
     s.data = gDecompressionBuffer;
     s.size = sSpriteSheet_WheelCenter.size;
     s.tag = sSpriteSheet_WheelCenter.tag;
     LoadSpriteSheet(&s);
-=======
-    LoadCompressedSpriteSheet(&sSpriteSheet_WheelCenter);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     // This sprite id isn't saved because it doesn't need to be referenced again
     // but by virtue of creation order it's SPR_WHEEL_CENTER
     spriteId = CreateSprite(&sSpriteTemplate_WheelCenter, 116, 80, 81);

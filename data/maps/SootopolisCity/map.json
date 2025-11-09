@@ -12,18 +12,10 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-<<<<<<< HEAD
   "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
-=======
-  "connections": [],
-  "object_events": [
-    {
-      "local_id": "LOCALID_SOOTOPOLIS_EXPERT",
-      "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 31,
       "y": 18,
       "elevation": 3,
@@ -36,12 +28,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_LASS",
-=======
-      "local_id": "LOCALID_SOOTOPOLIS_WOMAN_2",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 47,
       "y": 33,
       "elevation": 0,
@@ -51,18 +38,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SootopolisCity_EventScript_Woman2",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CAPTAIN",
-=======
-      "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_RESIDENTS"
-    },
-    {
-      "local_id": "LOCALID_KIRI",
-      "graphics_id": "OBJ_EVENT_GFX_GIRL_2",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 9,
       "y": 43,
       "elevation": 3,
@@ -75,10 +54,6 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
-=======
-      "local_id": "LOCALID_SOOTOPOLIS_NINJA_BOY",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
       "x": 51,
       "y": 14,
@@ -92,12 +67,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_MR_FUJI",
-=======
-      "local_id": "LOCALID_SOOTOPOLIS_BOY_1",
-      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 43,
       "y": 26,
       "elevation": 3,
@@ -110,11 +80,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_BALDING_MAN",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 26,
       "y": 4,
       "elevation": 3,
@@ -124,16 +90,9 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SootopolisCity_EventScript_Man",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
-=======
-      "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_MAN_1"
-    },
-    {
-      "local_id": "LOCALID_SOOTOPOLIS_STEVEN",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_STEVEN",
       "x": 20,
       "y": 36,
@@ -144,18 +103,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SootopolisCity_EventScript_Steven",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WORKER_F",
-=======
-      "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_STEVEN"
-    },
-    {
-      "local_id": "LOCALID_SOOTOPOLIS_WOMAN_1",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 49,
       "y": 34,
       "elevation": 3,
@@ -168,10 +119,6 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
-=======
-      "local_id": "LOCALID_SOOTOPOLIS_GROUDON",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_GROUDON_SIDE",
       "x": 28,
       "y": 44,
@@ -185,10 +132,6 @@
       "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_GROUDON"
     },
     {
-<<<<<<< HEAD
-=======
-      "local_id": "LOCALID_SOOTOPOLIS_KYOGRE",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_KYOGRE_SIDE",
       "x": 34,
       "y": 44,
@@ -202,10 +145,6 @@
       "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_KYOGRE"
     },
     {
-<<<<<<< HEAD
-=======
-      "local_id": "LOCALID_SOOTOPOLIS_RAYQUAZA",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_RAYQUAZA",
       "x": 31,
       "y": 41,
@@ -219,12 +158,7 @@
       "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_RAYQUAZA"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_SUPER_NERD",
-=======
-      "local_id": "LOCALID_SOOTOPOLIS_MANIAC",
-      "graphics_id": "OBJ_EVENT_GFX_MANIAC",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 17,
       "y": 44,
       "elevation": 3,
@@ -234,18 +168,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SootopolisCity_EventScript_Maniac",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
-=======
-      "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_RESIDENTS"
-    },
-    {
-      "local_id": "LOCALID_SOOTOPOLIS_GIRL",
-      "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 14,
       "y": 42,
       "elevation": 3,
@@ -255,16 +181,9 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SootopolisCity_EventScript_Girl",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
-=======
-      "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_RESIDENTS"
-    },
-    {
-      "local_id": "LOCALID_SOOTOPOLIS_BLACK_BELT",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
       "x": 17,
       "y": 40,
@@ -275,18 +194,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SootopolisCity_EventScript_BlackBelt",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY",
-=======
-      "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_RESIDENTS"
-    },
-    {
-      "local_id": "LOCALID_SOOTOPOLIS_BOY_2",
-      "graphics_id": "OBJ_EVENT_GFX_BOY_2",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 19,
       "y": 37,
       "elevation": 3,
@@ -296,18 +207,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SootopolisCity_EventScript_Boy2",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ARCHER",
-=======
-      "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_RESIDENTS"
-    },
-    {
-      "local_id": "LOCALID_SOOTOPOLIS_MAXIE",
-      "graphics_id": "OBJ_EVENT_GFX_MAXIE",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 29,
       "y": 33,
       "elevation": 3,
@@ -317,18 +220,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SootopolisCity_EventScript_Maxie",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PROTON",
-=======
-      "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_MAXIE"
-    },
-    {
-      "local_id": "LOCALID_SOOTOPOLIS_ARCHIE",
-      "graphics_id": "OBJ_EVENT_GFX_ARCHIE",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 31,
       "y": 33,
       "elevation": 3,
@@ -338,18 +233,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SootopolisCity_EventScript_Archie",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LANCE",
-=======
-      "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_ARCHIE"
-    },
-    {
-      "local_id": "LOCALID_SOOTOPOLIS_WALLACE",
-      "graphics_id": "OBJ_EVENT_GFX_WALLACE",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 31,
       "y": 18,
       "elevation": 3,
@@ -359,7 +246,6 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SootopolisCity_EventScript_Wallace",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
@@ -387,9 +273,6 @@
       "trainer_sight_or_berry_tree_id": "2",
       "script": "NULL",
       "flag": "0"
-=======
-      "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_WALLACE"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "warp_events": [
@@ -485,13 +368,9 @@
       "dest_warp_id": "0"
     }
   ],
-<<<<<<< HEAD
   "coord_events": [
 
   ],
-=======
-  "coord_events": [],
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "bg_events": [
     {
       "type": "sign",
@@ -541,7 +420,6 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "SootopolisCity_EventScript_CitySign"
     }
-<<<<<<< HEAD
   ],
   "heal_locations": [
     {
@@ -549,7 +427,5 @@
       "x": 43,
       "y": 32
 	}
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   ]
 }

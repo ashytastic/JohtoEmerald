@@ -244,11 +244,7 @@
 #define FRONTIER_TRAINER_KAY            240
 #define FRONTIER_TRAINER_ELENA          241
 #define FRONTIER_TRAINER_ALANA          242
-<<<<<<< HEAD
 #define FRONTIER_TRAINER_BAILEYS         243
-=======
-#define FRONTIER_TRAINER_ALEXAS         243
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #define FRONTIER_TRAINER_WESTON         244
 #define FRONTIER_TRAINER_JASPER         245
 #define FRONTIER_TRAINER_NADIA          246
@@ -305,7 +301,6 @@
 #define FRONTIER_TRAINER_DAWN           297
 #define FRONTIER_TRAINER_ABBY           298
 #define FRONTIER_TRAINER_GRETEL         299
-<<<<<<< HEAD
 //Added by Pokeemerald
 #define FRONTIER_TRAINER_LEADER_BROCK           300
 #define FRONTIER_TRAINER_LEADER_CHUCK           301
@@ -330,10 +325,6 @@
 
 
 #define FRONTIER_TRAINERS_COUNT         320
-=======
-
-#define FRONTIER_TRAINERS_COUNT         300
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 // special trainer IDs begin at 300, see constants/trainers.h
 

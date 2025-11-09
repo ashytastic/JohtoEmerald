@@ -19,7 +19,6 @@ MauvilleCity_BikeShop_EventScript_SkipGreeting::
 	end
 
 MauvilleCity_BikeShop_EventScript_ChooseBike::
-<<<<<<< HEAD
 	msgbox MauvilleCity_BikeShop_Text_ExplainBikesChooseWhichOne, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, MauvilleCity_BikeShop_EventScript_GetAcroBike
 	goto_if_eq VAR_RESULT, NO, MauvilleCity_BikeShop_EventScript_GetMachBike
@@ -28,14 +27,6 @@ MauvilleCity_BikeShop_EventScript_ChooseBike::
 	@switch VAR_RESULT
 	@case 0, MauvilleCity_BikeShop_EventScript_GetMachBike
 	@case 1, MauvilleCity_BikeShop_EventScript_GetMachBike
-=======
-	message MauvilleCity_BikeShop_Text_ExplainBikesChooseWhichOne
-	waitmessage
-	multichoice 21, 8, MULTI_BIKE, TRUE
-	switch VAR_RESULT
-	case 0, MauvilleCity_BikeShop_EventScript_GetMachBike
-	case 1, MauvilleCity_BikeShop_EventScript_GetAcroBike
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 MauvilleCity_BikeShop_EventScript_NotFar::
@@ -45,58 +36,32 @@ MauvilleCity_BikeShop_EventScript_NotFar::
 	end
 
 MauvilleCity_BikeShop_EventScript_YesFar::
-<<<<<<< HEAD
-=======
-	setflag FLAG_RECEIVED_BIKE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto MauvilleCity_BikeShop_EventScript_ChooseBike
 	end
 
 MauvilleCity_BikeShop_EventScript_GetMachBike::
-<<<<<<< HEAD
 	msgbox MauvilleCity_BikeShop_Text_GuessYouDontNeedBike2, MSGBOX_DEFAULT
 	@giveitem ITEM_MACH_BIKE
 	@goto MauvilleCity_BikeShop_EventScript_ComeBackToSwitchBikes
 	release
-=======
-	msgbox MauvilleCity_BikeShop_Text_ChoseMachBike, MSGBOX_DEFAULT
-	giveitem ITEM_MACH_BIKE
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-	goto MauvilleCity_BikeShop_EventScript_ComeBackToSwitchBikes
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 MauvilleCity_BikeShop_EventScript_GetAcroBike::
 	msgbox MauvilleCity_BikeShop_Text_ChoseAcroBike, MSGBOX_DEFAULT
-<<<<<<< HEAD
 	giveitem ITEM_MACH_BIKE
 	setflag FLAG_RECEIVED_BIKE
-=======
-	giveitem ITEM_ACRO_BIKE
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto MauvilleCity_BikeShop_EventScript_ComeBackToSwitchBikes
 	end
 
 MauvilleCity_BikeShop_EventScript_ComeBackToSwitchBikes::
 	msgbox MauvilleCity_BikeShop_Text_ComeBackToSwitchBikes, MSGBOX_DEFAULT
-<<<<<<< HEAD
-=======
-	special SwapRegisteredBike
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	release
 	end
 
 MauvilleCity_BikeShop_EventScript_AskSwitchBikes::
-<<<<<<< HEAD
 	msgbox MauvilleCity_BikeShop_Text_WantToSwitchBikes, MSGBOX_NPC
 	@goto_if_eq VAR_RESULT, YES, MauvilleCity_BikeShop_EventScript_SwitchBikes
 	@goto_if_eq VAR_RESULT, NO, MauvilleCity_BikeShop_EventScript_KeepBike
-=======
-	msgbox MauvilleCity_BikeShop_Text_WantToSwitchBikes, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, MauvilleCity_BikeShop_EventScript_SwitchBikes
-	goto_if_eq VAR_RESULT, NO, MauvilleCity_BikeShop_EventScript_KeepBike
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 @ If the player does not have a bike on them Rydel assumes its stored in the PC
@@ -227,13 +192,10 @@ MauvilleCity_BikeShop_Text_GuessYouDontNeedBike:
 	.string "Then, I guess you have no need for\n"
 	.string "any of my BIKES.$"
 
-<<<<<<< HEAD
 MauvilleCity_BikeShop_Text_GuessYouDontNeedBike2:
 	.string "RYDEL: Is that right?\p"
 	.string "Okay, it's up to you.$"
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 MauvilleCity_BikeShop_Text_ExplainBikesChooseWhichOne:
 	.string "RYDEL: Hm, hm… … … … …\p"
 	.string "You're saying that you came all this\n"
@@ -254,22 +216,15 @@ MauvilleCity_BikeShop_Text_ExplainBikesChooseWhichOne:
 	.string "to feel the wind with their bodies!\p"
 	.string "And an ACRO BIKE is for those who\n"
 	.string "prefer technical rides!\p"
-<<<<<<< HEAD
 	.string "And you know the best thing?\p"
 	.string "Both ACRO and MACH BIKES are just\n"
 	.string "one BIKE! One-in-all!\p"
 	.string "So, do you want a BIKE?$"
-=======
-	.string "I'm a real sweetheart, so you can\n"
-	.string "have whichever one you like!\p"
-	.string "Which one will you choose?$"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 MauvilleCity_BikeShop_Text_ChoseMachBike:
 	.string "{PLAYER} chose the MACH BIKE.$"
 
 MauvilleCity_BikeShop_Text_ChoseAcroBike:
-<<<<<<< HEAD
 	.string "{PLAYER} got a BIKE.$"
 
 MauvilleCity_BikeShop_Text_ComeBackToSwitchBikes:
@@ -282,17 +237,6 @@ MauvilleCity_BikeShop_Text_WantToSwitchBikes:
 	.string "your BIKE?\p"
 	.string "RYDEL: Remember to press the\n"
 	.string "R button to change the BIKE mode.$"
-=======
-	.string "{PLAYER} chose the ACRO BIKE.$"
-
-MauvilleCity_BikeShop_Text_ComeBackToSwitchBikes:
-	.string "RYDEL: If you get the urge to switch\n"
-	.string "BIKES, just come see me!$"
-
-MauvilleCity_BikeShop_Text_WantToSwitchBikes:
-	.string "RYDEL: Oh? Were you thinking about\n"
-	.string "switching BIKES?$"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 MauvilleCity_BikeShop_Text_IllSwitchBikes:
 	.string "RYDEL: Okay, no problem!\n"

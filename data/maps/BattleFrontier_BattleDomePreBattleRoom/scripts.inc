@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 .set LOCALID_ATTENDANT, 1
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 BattleFrontier_BattleDomePreBattleRoom_MapScripts::
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, BattleFrontier_BattleDomePreBattleRoom_OnFrame
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, BattleFrontier_BattleDomePreBattleRoom_OnWarp
@@ -14,11 +11,7 @@ BattleFrontier_BattleDomePreBattleRoom_OnWarp:
 
 BattleFrontier_BattleDomePreBattleRoom_EventScript_TurnPlayerNorth::
 	setvar VAR_TEMP_1, 1
-<<<<<<< HEAD
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
-=======
-	turnobject LOCALID_PLAYER, DIR_NORTH
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	end
 
 BattleFrontier_BattleDomePreBattleRoom_OnFrame:
@@ -27,16 +20,9 @@ BattleFrontier_BattleDomePreBattleRoom_OnFrame:
 
 BattleFrontier_BattleDomePreBattleRoom_EventScript_EnterRoom::
 	goto_if_eq VAR_0x8006, 1, BattleFrontier_BattleDomePreBattleRoom_EventScript_ReturnFromBattle
-<<<<<<< HEAD
 	frontier_set FRONTIER_DATA_RECORD_DISABLED, TRUE
 	setvar VAR_TEMP_0, 1
 	applymovement OBJ_EVENT_ID_PLAYER, BattleFrontier_BattleDomePreBattleRoom_Movement_PlayerEnter
-=======
-	delay 1
-	frontier_set FRONTIER_DATA_RECORD_DISABLED, TRUE
-	setvar VAR_TEMP_0, 1
-	applymovement LOCALID_PLAYER, BattleFrontier_BattleDomePreBattleRoom_Movement_PlayerEnter
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	lockall
 BattleFrontier_BattleDomePreBattleRoom_EventScript_AskReadyForNextRound::
@@ -164,7 +150,6 @@ BattleFrontier_BattleDomePreBattleRoom_EventScript_ContinueChallenge::
 	dome_setopponent
 	msgbox BattleFrontier_BattleDomePreBattleRoom_Text_RightThisWay, MSGBOX_DEFAULT
 	closemessage
-<<<<<<< HEAD
 	applymovement LOCALID_ATTENDANT, BattleFrontier_BattleDomePreBattleRoom_Movement_AttendantMoveAside
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, BattleFrontier_BattleDomePreBattleRoom_Movement_PlayerWalkToDoor
@@ -172,15 +157,6 @@ BattleFrontier_BattleDomePreBattleRoom_EventScript_ContinueChallenge::
 	opendoor 5, 1
 	waitdooranim
 	applymovement OBJ_EVENT_ID_PLAYER, BattleFrontier_BattleDomePreBattleRoom_Movement_PlayerEnterDoor
-=======
-	applymovement LOCALID_DOME_PRE_BATTLE_ATTENDANT, BattleFrontier_BattleDomePreBattleRoom_Movement_AttendantMoveAside
-	waitmovement 0
-	applymovement LOCALID_PLAYER, BattleFrontier_BattleDomePreBattleRoom_Movement_PlayerWalkToDoor
-	waitmovement 0
-	opendoor 5, 1
-	waitdooranim
-	applymovement LOCALID_PLAYER, BattleFrontier_BattleDomePreBattleRoom_Movement_PlayerEnterDoor
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	closedoor 5, 1
 	waitdooranim

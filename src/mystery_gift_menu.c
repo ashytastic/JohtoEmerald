@@ -32,15 +32,6 @@
 #include "wonder_news.h"
 #include "constants/cable_club.h"
 
-<<<<<<< HEAD
-=======
-enum {
-    WIN_HEADER,
-    WIN_MSG,
-    WIN_UNK, // Cleared, but nothing is ever apparently rendered on it
-};
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #define LIST_MENU_TILE_NUM 10
 #define LIST_MENU_PAL_NUM BG_PLTT_ID(14)
 
@@ -52,11 +43,7 @@ EWRAM_DATA static u8 sDownArrowCounterAndYCoordIdx[8] = {};
 EWRAM_DATA bool8 gGiftIsFromEReader = FALSE;
 
 static const u16 sTextboxBorder_Pal[] = INCBIN_U16("graphics/interface/mystery_gift_textbox_border.gbapal");
-<<<<<<< HEAD
 static const u32 sTextboxBorder_Gfx[] = INCBIN_U32("graphics/interface/mystery_gift_textbox_border.4bpp.lz");
-=======
-static const u32 sTextboxBorder_Gfx[] = INCBIN_U32("graphics/interface/mystery_gift_textbox_border.4bpp.smol");
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 struct MysteryGiftTaskData
 {
@@ -71,11 +58,7 @@ struct MysteryGiftTaskData
     bool8 isWonderNews;
     bool8 sourceIsFriend;
     u8 msgId;
-<<<<<<< HEAD
     u8 * clientMsg;
-=======
-    u8 *clientMsg;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 };
 
 static const struct BgTemplate sBGTemplates[] = {
@@ -115,11 +98,7 @@ static const struct BgTemplate sBGTemplates[] = {
 };
 
 static const struct WindowTemplate sMainWindows[] = {
-<<<<<<< HEAD
     {
-=======
-    [WIN_HEADER] = {
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .bg = 0,
         .tilemapLeft = 0,
         .tilemapTop = 0,
@@ -127,12 +106,7 @@ static const struct WindowTemplate sMainWindows[] = {
         .height = 2,
         .paletteNum = 12,
         .baseBlock = 0x0013
-<<<<<<< HEAD
     }, {
-=======
-    },
-    [WIN_MSG] = {
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .bg = 0,
         .tilemapLeft = 1,
         .tilemapTop = 15,
@@ -140,12 +114,7 @@ static const struct WindowTemplate sMainWindows[] = {
         .height = 4,
         .paletteNum = 12,
         .baseBlock = 0x004f
-<<<<<<< HEAD
     }, {
-=======
-    },
-    [WIN_UNK] = {
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         .bg = 0,
         .tilemapLeft = 0,
         .tilemapTop = 15,
@@ -255,11 +224,7 @@ static const struct ListMenuTemplate sListMenuTemplate_ThreeOptions = {
     .itemPrintFunc = NULL,
     .totalItems = 3,
     .maxShowed = 3,
-<<<<<<< HEAD
     .windowId = 0,
-=======
-    .windowId = 0, // Overwritten by DoMysteryGiftListMenu
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     .header_X = 0,
     .item_X = 8,
     .cursor_X = 0,
@@ -304,11 +269,7 @@ static const struct ListMenuTemplate sListMenu_ReceiveSendToss = {
     .itemPrintFunc = NULL,
     .totalItems = 4,
     .maxShowed = 4,
-<<<<<<< HEAD
     .windowId = 0,
-=======
-    .windowId = 0, // Overwritten by DoMysteryGiftListMenu
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     .header_X = 0,
     .item_X = 8,
     .cursor_X = 0,
@@ -329,11 +290,7 @@ static const struct ListMenuTemplate sListMenu_ReceiveToss = {
     .itemPrintFunc = NULL,
     .totalItems = 3,
     .maxShowed = 3,
-<<<<<<< HEAD
     .windowId = 0,
-=======
-    .windowId = 0, // Overwritten by DoMysteryGiftListMenu
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     .header_X = 0,
     .item_X = 8,
     .cursor_X = 0,
@@ -354,11 +311,7 @@ static const struct ListMenuTemplate sListMenu_ReceiveSend = {
     .itemPrintFunc = NULL,
     .totalItems = 3,
     .maxShowed = 3,
-<<<<<<< HEAD
     .windowId = 0,
-=======
-    .windowId = 0, // Overwritten by DoMysteryGiftListMenu
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     .header_X = 0,
     .item_X = 8,
     .cursor_X = 0,
@@ -379,11 +332,7 @@ static const struct ListMenuTemplate sListMenu_Receive = {
     .itemPrintFunc = NULL,
     .totalItems = 2,
     .maxShowed = 2,
-<<<<<<< HEAD
     .windowId = 0,
-=======
-    .windowId = 0, // Overwritten by DoMysteryGiftListMenu
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     .header_X = 0,
     .item_X = 8,
     .cursor_X = 0,
@@ -405,15 +354,9 @@ static const u8 *const sUnusedMenuTexts[] = {
     gText_ReturnToTitle
 };
 
-<<<<<<< HEAD
 ALIGNED(2) static const u8 sTextColors_TopMenu[]      = { TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE,     TEXT_COLOR_DARK_GRAY };
 ALIGNED(2) static const u8 sTextColors_TopMenu_Copy[] = { TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE,     TEXT_COLOR_DARK_GRAY };
 ALIGNED(2) static const u8 sMG_Ereader_TextColor_2[]  = { TEXT_COLOR_WHITE,       TEXT_COLOR_DARK_GRAY, TEXT_COLOR_LIGHT_GRAY };
-=======
-ALIGNED(2) static const u8 sTextColors_Header[]      = { TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE,     TEXT_COLOR_DARK_GRAY };
-ALIGNED(2) static const u8 sTextColors_Header_Copy[] = { TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE,     TEXT_COLOR_DARK_GRAY };
-ALIGNED(2) static const u8 sMG_Ereader_TextColor_2[] = { TEXT_COLOR_WHITE,       TEXT_COLOR_DARK_GRAY, TEXT_COLOR_LIGHT_GRAY };
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 static void VBlankCB_MysteryGiftEReader(void)
 {
@@ -477,11 +420,7 @@ static bool32 HandleMysteryGiftOrEReaderSetup(s32 isEReader)
         FillBgTilemapBufferRect(1, 0x000, 0, 0, 32, 32, 17);
         FillBgTilemapBufferRect(2, 0x000, 0, 0, 32, 32, 17);
         MG_DrawCheckerboardPattern(3);
-<<<<<<< HEAD
         PrintMysteryGiftOrEReaderTopMenu(isEReader, FALSE);
-=======
-        PrintMysteryGiftOrEReaderHeader(isEReader, FALSE);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         gMain.state++;
         break;
     case 2:
@@ -535,7 +474,6 @@ void MainCB_FreeAllBuffersAndReturnToInitTitleScreen(void)
     SetMainCallback2(CB2_InitTitleScreen);
 }
 
-<<<<<<< HEAD
 void PrintMysteryGiftOrEReaderTopMenu(bool8 isEReader, bool32 useCancel)
 {
     const u8 * header;
@@ -544,22 +482,10 @@ void PrintMysteryGiftOrEReaderTopMenu(bool8 isEReader, bool32 useCancel)
     if (!isEReader)
     {
         header = gText_MysteryGift;
-=======
-// Print the text window at the top of the screen with the title and control instructions
-void PrintMysteryGiftOrEReaderHeader(bool8 isEReader, bool32 useCancel)
-{
-    const u8 *title;
-    const u8 *options;
-    FillWindowPixelBuffer(WIN_HEADER, 0);
-    if (!isEReader)
-    {
-        title = gText_MysteryGift;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         options = !useCancel ? gText_PickOKExit : gText_PickOKCancel;
     }
     else
     {
-<<<<<<< HEAD
         header = gJPText_MysteryGift;
         options = gJPText_DecideStop;
     }
@@ -568,16 +494,6 @@ void PrintMysteryGiftOrEReaderHeader(bool8 isEReader, bool32 useCancel)
     AddTextPrinterParameterized4(0, FONT_SMALL, GetStringRightAlignXOffset(FONT_SMALL, options, 0xDE), 1, 0, 0, sTextColors_TopMenu, TEXT_SKIP_DRAW, options);
     CopyWindowToVram(0, COPYWIN_GFX);
     PutWindowTilemap(0);
-=======
-        title = gJPText_MysteryGift;
-        options = gJPText_DecideStop;
-    }
-
-    AddTextPrinterParameterized4(WIN_HEADER, FONT_NORMAL, 4, 1, 0, 0, sTextColors_Header, TEXT_SKIP_DRAW, title);
-    AddTextPrinterParameterized4(WIN_HEADER, FONT_SMALL, GetStringRightAlignXOffset(FONT_SMALL, options, 0xDE), 1, 0, 0, sTextColors_Header, TEXT_SKIP_DRAW, options);
-    CopyWindowToVram(WIN_HEADER, COPYWIN_GFX);
-    PutWindowTilemap(WIN_HEADER);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 void MG_DrawTextBorder(u8 windowId)
@@ -617,7 +533,6 @@ static void ClearScreenInBg0(bool32 ignoreTopTwoRows)
     CopyBgTilemapBufferToVram(0);
 }
 
-<<<<<<< HEAD
 void AddTextPrinterToWindow1(const u8 *str)
 {
     StringExpandPlaceholders(gStringVar4, str);
@@ -633,23 +548,6 @@ static void ClearTextWindow(void)
     rbox_fill_rectangle(1);
     ClearWindowTilemap(1);
     CopyWindowToVram(1, COPYWIN_MAP);
-=======
-void MG_AddMessageTextPrinter(const u8 *str)
-{
-    StringExpandPlaceholders(gStringVar4, str);
-    FillWindowPixelBuffer(WIN_MSG, 0x11);
-    AddTextPrinterParameterized4(WIN_MSG, FONT_NORMAL, 0, 1, 0, 0, sMG_Ereader_TextColor_2, 0, gStringVar4);
-    DrawTextBorderOuter(WIN_MSG, 0x001, 0xF);
-    PutWindowTilemap(WIN_MSG);
-    CopyWindowToVram(WIN_MSG, COPYWIN_FULL);
-}
-
-static void ClearMessage(void)
-{
-    rbox_fill_rectangle(WIN_MSG);
-    ClearWindowTilemap(WIN_MSG);
-    CopyWindowToVram(WIN_MSG, COPYWIN_MAP);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 #define DOWN_ARROW_X 208
@@ -660,7 +558,6 @@ bool32 PrintMysteryGiftMenuMessage(u8 *textState, const u8 *str)
     switch (*textState)
     {
     case 0:
-<<<<<<< HEAD
         AddTextPrinterToWindow1(str);
         (*textState)++;
         break;
@@ -673,20 +570,6 @@ bool32 PrintMysteryGiftMenuMessage(u8 *textState, const u8 *str)
         DrawDownArrow(1, DOWN_ARROW_X, DOWN_ARROW_Y, 1, TRUE, &sDownArrowCounterAndYCoordIdx[0], &sDownArrowCounterAndYCoordIdx[1]);
         *textState = 0;
         ClearTextWindow();
-=======
-        MG_AddMessageTextPrinter(str);
-        (*textState)++;
-        break;
-    case 1:
-        DrawDownArrow(WIN_MSG, DOWN_ARROW_X, DOWN_ARROW_Y, 1, FALSE, &sDownArrowCounterAndYCoordIdx[0], &sDownArrowCounterAndYCoordIdx[1]);
-        if (JOY_NEW(A_BUTTON | B_BUTTON))
-            (*textState)++;
-        break;
-    case 2:
-        DrawDownArrow(WIN_MSG, DOWN_ARROW_X, DOWN_ARROW_Y, 1, TRUE, &sDownArrowCounterAndYCoordIdx[0], &sDownArrowCounterAndYCoordIdx[1]);
-        *textState = 0;
-        ClearMessage();
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         return TRUE;
     case 0xFF:
         *textState = 2;
@@ -697,26 +580,15 @@ bool32 PrintMysteryGiftMenuMessage(u8 *textState, const u8 *str)
 
 static void HideDownArrow(void)
 {
-<<<<<<< HEAD
     DrawDownArrow(1, DOWN_ARROW_X, DOWN_ARROW_Y, 1, FALSE, &sDownArrowCounterAndYCoordIdx[0], &sDownArrowCounterAndYCoordIdx[1]);
-=======
-    DrawDownArrow(WIN_MSG, DOWN_ARROW_X, DOWN_ARROW_Y, 1, FALSE, &sDownArrowCounterAndYCoordIdx[0], &sDownArrowCounterAndYCoordIdx[1]);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void ShowDownArrow(void)
 {
-<<<<<<< HEAD
     DrawDownArrow(1, DOWN_ARROW_X, DOWN_ARROW_Y, 1, TRUE, &sDownArrowCounterAndYCoordIdx[0], &sDownArrowCounterAndYCoordIdx[1]);
 }
 
 static bool32 UNUSED HideDownArrowAndWaitButton(u8 * textState)
-=======
-    DrawDownArrow(WIN_MSG, DOWN_ARROW_X, DOWN_ARROW_Y, 1, TRUE, &sDownArrowCounterAndYCoordIdx[0], &sDownArrowCounterAndYCoordIdx[1]);
-}
-
-static bool32 UNUSED HideDownArrowAndWaitButton(u8 *textState)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     switch (*textState)
     {
@@ -733,26 +605,15 @@ static bool32 UNUSED HideDownArrowAndWaitButton(u8 *textState)
     return FALSE;
 }
 
-<<<<<<< HEAD
 static bool32 PrintStringAndWait2Seconds(u8 * counter, const u8 * str)
 {
     if (*counter == 0)
         AddTextPrinterToWindow1(str);
-=======
-static bool32 PrintStringAndWait2Seconds(u8 *counter, const u8 *str)
-{
-    if (*counter == 0)
-        MG_AddMessageTextPrinter(str);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     if (++(*counter) > 120)
     {
         *counter = 0;
-<<<<<<< HEAD
         ClearTextWindow();
-=======
-        ClearMessage();
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         return TRUE;
     }
     else
@@ -761,11 +622,7 @@ static bool32 PrintStringAndWait2Seconds(u8 *counter, const u8 *str)
     }
 }
 
-<<<<<<< HEAD
 static u32 MysteryGift_HandleThreeOptionMenu(u8 * unused0, u16 * unused1, u8 whichMenu)
-=======
-static u32 MysteryGift_HandleThreeOptionMenu(u8 *unused0, u16 *unused1, u8 whichMenu)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     struct ListMenuTemplate listMenuTemplate = sListMenuTemplate_ThreeOptions;
     struct WindowTemplate windowTemplate = sWindowTemplate_ThreeOptions;
@@ -790,22 +647,13 @@ static u32 MysteryGift_HandleThreeOptionMenu(u8 *unused0, u16 *unused1, u8 which
     response = DoMysteryGiftListMenu(&windowTemplate, &listMenuTemplate, 1, LIST_MENU_TILE_NUM, LIST_MENU_PAL_NUM);
     if (response != LIST_NOTHING_CHOSEN)
     {
-<<<<<<< HEAD
         ClearWindowTilemap(2);
         CopyWindowToVram(2, COPYWIN_MAP);
-=======
-        ClearWindowTilemap(WIN_UNK);
-        CopyWindowToVram(WIN_UNK, COPYWIN_MAP);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
     return response;
 }
 
-<<<<<<< HEAD
 s8 DoMysteryGiftYesNo(u8 * textState, u16 * windowId, bool8 yesNoBoxPlacement, const u8 * str)
-=======
-s8 DoMysteryGiftYesNo(u8 *textState, u16 *windowId, bool8 yesNoBoxPlacement, const u8 *str)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     struct WindowTemplate windowTemplate;
     s8 input;
@@ -862,11 +710,7 @@ s8 DoMysteryGiftYesNo(u8 *textState, u16 *windowId, bool8 yesNoBoxPlacement, con
 }
 
 // Handle the "Receive/Send/Toss" menu that appears when selecting Wonder Card/News
-<<<<<<< HEAD
 static s32 HandleGiftSelectMenu(u8 * textState, u16 * windowId, bool32 cannotToss, bool32 cannotSend)
-=======
-static s32 HandleGiftSelectMenu(u8 *textState, u16 *windowId, bool32 cannotToss, bool32 cannotSend)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     struct WindowTemplate UNUSED windowTemplate;
     s32 input;
@@ -933,11 +777,7 @@ static bool32 ValidateCardOrNews(bool32 isWonderNews)
         return ValidateSavedWonderNews();
 }
 
-<<<<<<< HEAD
 static bool32 HandleLoadWonderCardOrNews(u8 * state, bool32 isWonderNews)
-=======
-static bool32 HandleLoadWonderCardOrNews(u8 *state, bool32 isWonderNews)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     switch (*state)
     {
@@ -1003,11 +843,7 @@ static bool32 ExitWonderCardOrNews(bool32 isWonderNews, bool32 useCancel)
     }
 }
 
-<<<<<<< HEAD
 static s32 AskDiscardGift(u8 * textState, u16 * windowId, bool32 isWonderNews)
-=======
-static s32 AskDiscardGift(u8 *textState, u16 *windowId, bool32 isWonderNews)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     if (!isWonderNews)
         return DoMysteryGiftYesNo(textState, windowId, TRUE, gText_IfThrowAwayCardEventWontHappen);
@@ -1015,11 +851,7 @@ static s32 AskDiscardGift(u8 *textState, u16 *windowId, bool32 isWonderNews)
         return DoMysteryGiftYesNo(textState, windowId, TRUE, gText_OkayToDiscardNews);
 }
 
-<<<<<<< HEAD
 static bool32 PrintThrownAway(u8 * textState, bool32 isWonderNews)
-=======
-static bool32 PrintThrownAway(u8 *textState, bool32 isWonderNews)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     if (!isWonderNews)
         return PrintMysteryGiftMenuMessage(textState, gText_WonderCardThrownAway);
@@ -1027,20 +859,12 @@ static bool32 PrintThrownAway(u8 *textState, bool32 isWonderNews)
         return PrintMysteryGiftMenuMessage(textState, gText_WonderNewsThrownAway);
 }
 
-<<<<<<< HEAD
 static bool32 SaveOnMysteryGiftMenu(u8 * state)
-=======
-static bool32 SaveOnMysteryGiftMenu(u8 *state)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     switch (*state)
     {
     case 0:
-<<<<<<< HEAD
         AddTextPrinterToWindow1(gText_DataWillBeSaved);
-=======
-        MG_AddMessageTextPrinter(gText_DataWillBeSaved);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         (*state)++;
         break;
     case 1:
@@ -1048,11 +872,7 @@ static bool32 SaveOnMysteryGiftMenu(u8 *state)
         (*state)++;
         break;
     case 2:
-<<<<<<< HEAD
         AddTextPrinterToWindow1(gText_SaveCompletedPressA);
-=======
-        MG_AddMessageTextPrinter(gText_SaveCompletedPressA);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         (*state)++;
         break;
     case 3:
@@ -1061,26 +881,16 @@ static bool32 SaveOnMysteryGiftMenu(u8 *state)
         break;
     case 4:
         *state = 0;
-<<<<<<< HEAD
         ClearTextWindow();
-=======
-        ClearMessage();
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         return TRUE;
     }
 
     return FALSE;
 }
 
-<<<<<<< HEAD
 static const u8 * GetClientResultMessage(bool32 * successMsg, bool8 isWonderNews, bool8 sourceIsFriend, u32 msgId)
 {
     const u8 * msg = NULL;
-=======
-static const u8 *GetClientResultMessage(bool32 *successMsg, bool8 isWonderNews, bool8 sourceIsFriend, u32 msgId)
-{
-    const u8 *msg = NULL;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     *successMsg = FALSE;
 
     switch (msgId)
@@ -1150,21 +960,13 @@ static const u8 *GetClientResultMessage(bool32 *successMsg, bool8 isWonderNews, 
     return msg;
 }
 
-<<<<<<< HEAD
 static bool32 PrintSuccessMessage(u8 * state, const u8 * msg, u16 * timer)
-=======
-static bool32 PrintSuccessMessage(u8 *state, const u8 *msg, u16 *timer)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     switch (*state)
     {
     case 0:
         if (msg != NULL)
-<<<<<<< HEAD
             AddTextPrinterToWindow1(msg);
-=======
-            MG_AddMessageTextPrinter(msg);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         PlayFanfare(MUS_OBTAIN_ITEM);
         *timer = 0;
         (*state)++;
@@ -1177,11 +979,7 @@ static bool32 PrintSuccessMessage(u8 *state, const u8 *msg, u16 *timer)
         if (IsFanfareTaskInactive())
         {
             *state = 0;
-<<<<<<< HEAD
             ClearTextWindow();
-=======
-            ClearMessage();
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             return TRUE;
         }
         break;
@@ -1189,15 +987,9 @@ static bool32 PrintSuccessMessage(u8 *state, const u8 *msg, u16 *timer)
     return FALSE;
 }
 
-<<<<<<< HEAD
 static const u8 * GetServerResultMessage(bool32 * wonderSuccess, bool8 sourceIsFriend, u32 msgId)
 {
     const u8 * result = gText_CommunicationError;
-=======
-static const u8 *GetServerResultMessage(bool32 *wonderSuccess, bool8 sourceIsFriend, u32 msgId)
-{
-    const u8 *result = gText_CommunicationError;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     *wonderSuccess = FALSE;
     switch (msgId)
     {
@@ -1252,17 +1044,10 @@ static const u8 *GetServerResultMessage(bool32 *wonderSuccess, bool8 sourceIsFri
     return result;
 }
 
-<<<<<<< HEAD
 static bool32 PrintServerResultMessage(u8 * state, u16 * timer, bool8 sourceIsFriend, u32 msgId)
 {
     bool32 wonderSuccess;
     const u8 * str = GetServerResultMessage(&wonderSuccess, sourceIsFriend, msgId);
-=======
-static bool32 PrintServerResultMessage(u8 *state, u16 *timer, bool8 sourceIsFriend, u32 msgId)
-{
-    bool32 wonderSuccess;
-    const u8 *str = GetServerResultMessage(&wonderSuccess, sourceIsFriend, msgId);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (wonderSuccess)
         return PrintSuccessMessage(state, str, timer);
     else
@@ -1317,11 +1102,7 @@ enum {
 static void CreateMysteryGiftTask(void)
 {
     u8 taskId = CreateTask(Task_MysteryGift, 0);
-<<<<<<< HEAD
     struct MysteryGiftTaskData * data = (void *)gTasks[taskId].data;
-=======
-    struct MysteryGiftTaskData *data = (void *)gTasks[taskId].data;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     data->state = MG_STATE_TO_MAIN_MENU;
     data->textState = 0;
     data->unused4 = 0;
@@ -1379,11 +1160,7 @@ static void Task_MysteryGift(u8 taskId)
             if (PrintMysteryGiftMenuMessage(&data->textState, gText_DontHaveCardNewOneInput))
             {
                 data->state = MG_STATE_SOURCE_PROMPT;
-<<<<<<< HEAD
                 PrintMysteryGiftOrEReaderTopMenu(FALSE, TRUE);
-=======
-                PrintMysteryGiftOrEReaderHeader(FALSE, TRUE);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             }
         }
         else
@@ -1391,26 +1168,16 @@ static void Task_MysteryGift(u8 taskId)
             if (PrintMysteryGiftMenuMessage(&data->textState, gText_DontHaveNewsNewOneInput))
             {
                 data->state = MG_STATE_SOURCE_PROMPT;
-<<<<<<< HEAD
                 PrintMysteryGiftOrEReaderTopMenu(FALSE, TRUE);
-=======
-                PrintMysteryGiftOrEReaderHeader(FALSE, TRUE);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             }
         }
         break;
     }
     case MG_STATE_SOURCE_PROMPT:
         if (!data->isWonderNews)
-<<<<<<< HEAD
             AddTextPrinterToWindow1(gText_WhereShouldCardBeAccessed);
         else
             AddTextPrinterToWindow1(gText_WhereShouldNewsBeAccessed);
-=======
-            MG_AddMessageTextPrinter(gText_WhereShouldCardBeAccessed);
-        else
-            MG_AddMessageTextPrinter(gText_WhereShouldNewsBeAccessed);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         data->state = MG_STATE_SOURCE_PROMPT_INPUT;
         break;
     case MG_STATE_SOURCE_PROMPT_INPUT:
@@ -1418,29 +1185,17 @@ static void Task_MysteryGift(u8 taskId)
         switch (MysteryGift_HandleThreeOptionMenu(&data->textState, &data->var, TRUE))
         {
         case 0: // "Wireless Communication"
-<<<<<<< HEAD
             ClearTextWindow();
-=======
-            ClearMessage();
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             data->state = MG_STATE_CLIENT_LINK_START;
             data->sourceIsFriend = FALSE;
             break;
         case 1: // "Friend"
-<<<<<<< HEAD
             ClearTextWindow();
-=======
-            ClearMessage();
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             data->state = MG_STATE_CLIENT_LINK_START;
             data->sourceIsFriend = TRUE;
             break;
         case LIST_CANCEL:
-<<<<<<< HEAD
             ClearTextWindow();
-=======
-            ClearMessage();
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             if (ValidateCardOrNews(data->isWonderNews))
             {
                 data->state = MG_STATE_LOAD_GIFT;
@@ -1448,11 +1203,7 @@ static void Task_MysteryGift(u8 taskId)
             else
             {
                 data->state = MG_STATE_TO_MAIN_MENU;
-<<<<<<< HEAD
                 PrintMysteryGiftOrEReaderTopMenu(FALSE, FALSE);
-=======
-                PrintMysteryGiftOrEReaderHeader(FALSE, FALSE);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             }
             break;
         }
@@ -1494,11 +1245,7 @@ static void Task_MysteryGift(u8 taskId)
         }
         break;
     case MG_STATE_CLIENT_COMMUNICATING:
-<<<<<<< HEAD
         AddTextPrinterToWindow1(gText_Communicating);
-=======
-        MG_AddMessageTextPrinter(gText_Communicating);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         data->state = MG_STATE_CLIENT_LINK;
         break;
     case MG_STATE_CLIENT_LINK:
@@ -1631,11 +1378,7 @@ static void Task_MysteryGift(u8 taskId)
             {
                 // Did not receive card/news, return to main menu
                 data->state = MG_STATE_TO_MAIN_MENU;
-<<<<<<< HEAD
                 PrintMysteryGiftOrEReaderTopMenu(FALSE, FALSE);
-=======
-                PrintMysteryGiftOrEReaderHeader(FALSE, FALSE);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             }
             else
             {
@@ -1756,11 +1499,7 @@ static void Task_MysteryGift(u8 taskId)
         if (PrintThrownAway(&data->textState, data->isWonderNews))
         {
             data->state = MG_STATE_TO_MAIN_MENU;
-<<<<<<< HEAD
             PrintMysteryGiftOrEReaderTopMenu(FALSE, FALSE);
-=======
-            PrintMysteryGiftOrEReaderHeader(FALSE, FALSE);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         }
         break;
     case MG_STATE_GIFT_INPUT_EXIT:
@@ -1806,20 +1545,12 @@ static void Task_MysteryGift(u8 taskId)
 
         if (!data->isWonderNews)
         {
-<<<<<<< HEAD
             AddTextPrinterToWindow1(gText_SendingWonderCard);
-=======
-            MG_AddMessageTextPrinter(gText_SendingWonderCard);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             MysterGiftServer_CreateForCard();
         }
         else
         {
-<<<<<<< HEAD
             AddTextPrinterToWindow1(gText_SendingWonderNews);
-=======
-            MG_AddMessageTextPrinter(gText_SendingWonderNews);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             MysterGiftServer_CreateForNews();
         }
         data->state = MG_STATE_SERVER_LINK;
@@ -1854,11 +1585,7 @@ static void Task_MysteryGift(u8 taskId)
             else
             {
                 data->state = MG_STATE_TO_MAIN_MENU;
-<<<<<<< HEAD
                 PrintMysteryGiftOrEReaderTopMenu(FALSE, FALSE);
-=======
-                PrintMysteryGiftOrEReaderHeader(FALSE, FALSE);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             }
         }
         break;
@@ -1867,11 +1594,7 @@ static void Task_MysteryGift(u8 taskId)
         if (PrintMysteryGiftMenuMessage(&data->textState, gText_CommunicationError))
         {
             data->state = MG_STATE_TO_MAIN_MENU;
-<<<<<<< HEAD
             PrintMysteryGiftOrEReaderTopMenu(FALSE, FALSE);
-=======
-            PrintMysteryGiftOrEReaderHeader(FALSE, FALSE);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         }
         break;
     case MG_STATE_EXIT:

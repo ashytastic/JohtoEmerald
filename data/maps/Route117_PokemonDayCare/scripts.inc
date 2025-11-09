@@ -6,7 +6,6 @@ Route117_PokemonDayCare_OnTransition:
 	setflag FLAG_LANDMARK_POKEMON_DAYCARE
 	end
 
-<<<<<<< HEAD
 Route117_PokemonDayCare_Incense::
 	msgbox Route117_PokemonDayCare_Incense_Text, MSGBOX_NPC
 	end
@@ -18,5 +17,3 @@ Route117_PokemonDayCare_Incense_Text:
 	.string "How many POKéMON can be obtained?\n"
 	.string "Well, currently 9 different POKéMON\l"
 	.string "can be obtained using INCENSE.$"
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

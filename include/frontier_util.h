@@ -13,11 +13,7 @@ void ScrollRankingHallRecordsWindow(void);
 void ClearRankingHallRecords(void);
 void SaveGameFrontier(void);
 u8 GetFrontierBrainTrainerPicIndex(void);
-<<<<<<< HEAD
 u8 GetFrontierBrainTrainerClass(void);
-=======
-enum TrainerClassID GetFrontierBrainTrainerClass(void);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 void CopyFrontierBrainTrainerName(u8 *dst);
 bool8 IsFrontierBrainFemale(void);
 void SetFrontierBrainObjEventGfx_2(void);
@@ -28,13 +24,9 @@ u16 GetFrontierBrainMonMove(u8 monId, u8 moveSlotId);
 u8 GetFrontierBrainMonNature(u8 monId);
 u8 GetFrontierBrainMonEvs(u8 monId, u8 evStatId);
 s32 GetFronterBrainSymbol(void);
-<<<<<<< HEAD
 
 extern const u16 gFrontierBannedSpeciesEasy[];
 extern const u16 gFrontierBannedSpeciesNormal[];
 extern const u16 gFrontierBannedSpeciesHard[];
-=======
-void ClearEnemyPartyAfterChallenge(void);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 #endif // GUARD_FRONTIER_UTIL_H

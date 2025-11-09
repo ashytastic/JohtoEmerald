@@ -12,18 +12,10 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-<<<<<<< HEAD
   "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_F",
-=======
-  "connections": null,
-  "object_events": [
-    {
-      "local_id": "LOCALID_CONTEST_MC",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 6,
       "y": 4,
       "elevation": 3,
@@ -36,12 +28,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_EUSINE",
-=======
-      "local_id": "LOCALID_CONTEST_JUDGE",
-      "graphics_id": "OBJ_EVENT_GFX_CONTEST_JUDGE",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 7,
       "y": 4,
       "elevation": 3,
@@ -54,10 +41,6 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
-=======
-      "local_id": "LOCALID_CONTESTANT_1",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
       "x": 4,
       "y": 7,
@@ -71,10 +54,6 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
-=======
-      "local_id": "LOCALID_CONTESTANT_2",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_VAR_1",
       "x": 6,
       "y": 7,
@@ -88,10 +67,6 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
-=======
-      "local_id": "LOCALID_CONTESTANT_3",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_VAR_2",
       "x": 8,
       "y": 7,
@@ -105,10 +80,6 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
-=======
-      "local_id": "LOCALID_CONTEST_AUDIENCE_1",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_VAR_4",
       "x": 2,
       "y": 6,
@@ -122,10 +93,6 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
-=======
-      "local_id": "LOCALID_CONTEST_AUDIENCE_3",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_VAR_6",
       "x": 4,
       "y": 2,
@@ -139,10 +106,6 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
-=======
-      "local_id": "LOCALID_CONTEST_AUDIENCE_4",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_VAR_7",
       "x": 5,
       "y": 2,
@@ -156,10 +119,6 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
-=======
-      "local_id": "LOCALID_CONTEST_AUDIENCE_5",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_VAR_8",
       "x": 9,
       "y": 2,
@@ -173,10 +132,6 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
-=======
-      "local_id": "LOCALID_CONTEST_AUDIENCE_6",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_VAR_9",
       "x": 10,
       "y": 2,
@@ -190,10 +145,6 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
-=======
-      "local_id": "LOCALID_CONTEST_AUDIENCE_7",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_VAR_A",
       "x": 12,
       "y": 5,
@@ -207,10 +158,6 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
-=======
-      "local_id": "LOCALID_CONTEST_AUDIENCE_2",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_VAR_5",
       "x": 2,
       "y": 5,
@@ -224,10 +171,6 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
-=======
-      "local_id": "LOCALID_CONTEST_POKEBALL",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 7,
       "y": 5,
@@ -241,10 +184,6 @@
       "flag": "FLAG_HIDE_CONTEST_POKE_BALL"
     },
     {
-<<<<<<< HEAD
-=======
-      "local_id": "LOCALID_CONTESTANT_4",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_VAR_3",
       "x": 10,
       "y": 7,
@@ -258,12 +197,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_UNUSED_WOMAN_4",
-=======
-      "local_id": "LOCALID_CONTEST_ARTIST",
-      "graphics_id": "OBJ_EVENT_GFX_ARTIST",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 12,
       "y": 6,
       "elevation": 3,
@@ -276,7 +210,6 @@
       "flag": "0"
     }
   ],
-<<<<<<< HEAD
   "warp_events": [
 
   ],
@@ -286,9 +219,4 @@
   "bg_events": [
 
   ]
-=======
-  "warp_events": [],
-  "coord_events": [],
-  "bg_events": []
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }

@@ -3,11 +3,7 @@
   "name": "Route110_TrickHousePuzzle5",
   "layout": "LAYOUT_ROUTE110_TRICK_HOUSE_PUZZLE5",
   "music": "MUS_TRICK_HOUSE",
-<<<<<<< HEAD
   "region_map_section": "MAPSEC_ROUTE_35",
-=======
-  "region_map_section": "MAPSEC_ROUTE_110",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -19,12 +15,7 @@
   "connections": null,
   "object_events": [
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_BALDING_MAN",
-=======
-      "local_id": "LOCALID_MECHADOLL_1",
-      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 6,
       "y": 17,
       "elevation": 3,
@@ -37,12 +28,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_BALDING_MAN",
-=======
-      "local_id": "LOCALID_MECHADOLL_2",
-      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 0,
       "y": 7,
       "elevation": 3,
@@ -55,12 +41,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_BALDING_MAN",
-=======
-      "local_id": "LOCALID_MECHADOLL_3",
-      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 14,
       "y": 10,
       "elevation": 3,
@@ -73,12 +54,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_BALDING_MAN",
-=======
-      "local_id": "LOCALID_MECHADOLL_4",
-      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 14,
       "y": 19,
       "elevation": 3,
@@ -91,12 +67,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_BALDING_MAN",
-=======
-      "local_id": "LOCALID_MECHADOLL_5",
-      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 10,
       "y": 4,
       "elevation": 3,

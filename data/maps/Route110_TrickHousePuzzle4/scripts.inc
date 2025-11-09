@@ -13,11 +13,7 @@ Route110_TrickHousePuzzle4_EventScript_FoundScroll::
 	end
 
 Route110_TrickHousePuzzle4_EventScript_Cora::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_GRUNT_28, Route110_TrickHousePuzzle4_Text_CoraIntro, Route110_TrickHousePuzzle4_Text_CoraDefeat
-=======
-	trainerbattle_single TRAINER_CORA, Route110_TrickHousePuzzle4_Text_CoraIntro, Route110_TrickHousePuzzle4_Text_CoraDefeat
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route110_TrickHousePuzzle4_Text_CoraPostBattle, MSGBOX_AUTOCLOSE
 	end
 

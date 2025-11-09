@@ -3,11 +3,7 @@
   "name": "DewfordTown_Gym",
   "layout": "LAYOUT_DEWFORD_TOWN_GYM",
   "music": "MUS_GYM",
-<<<<<<< HEAD
   "region_map_section": "MAPSEC_AZALEA_TOWN",
-=======
-  "region_map_section": "MAPSEC_DEWFORD_TOWN",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -16,17 +12,10 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_GYM",
-<<<<<<< HEAD
   "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_BUGSY",
-=======
-  "connections": null,
-  "object_events": [
-    {
-      "graphics_id": "OBJ_EVENT_GFX_BRAWLY",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 4,
       "y": 3,
       "elevation": 0,
@@ -52,11 +41,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 15,
       "y": 3,
       "elevation": 3,
@@ -69,11 +54,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 12,
       "y": 25,
       "elevation": 3,
@@ -86,11 +67,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_GYM_GUY",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_MAN_2",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 5,
       "y": 24,
       "elevation": 3,
@@ -116,11 +93,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 16,
       "y": 9,
       "elevation": 3,
@@ -162,13 +135,9 @@
       "dest_warp_id": "2"
     }
   ],
-<<<<<<< HEAD
   "coord_events": [
 
   ],
-=======
-  "coord_events": [],
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "bg_events": [
     {
       "type": "sign",

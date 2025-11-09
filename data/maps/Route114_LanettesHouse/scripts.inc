@@ -3,7 +3,6 @@ Route114_LanettesHouse_MapScripts::
 	.byte 0
 
 Route114_LanettesHouse_OnTransition:
-<<<<<<< HEAD
 	setflag FLAG_LANDMARK_BillS_HOUSE
 	end
 
@@ -16,20 +15,6 @@ Route114_LanettesHouse_EventScript_Bill::
 	givedecoration DECOR_LOTAD_DOLL
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowNoRoomForDecor
 	setflag FLAG_RECEIVED_DOLL_Bill
-=======
-	setflag FLAG_LANDMARK_LANETTES_HOUSE
-	end
-
-Route114_LanettesHouse_EventScript_Lanette::
-	lock
-	faceplayer
-	goto_if_set FLAG_RECEIVED_DOLL_LANETTE, Route114_LanettesHouse_EventScript_OfferAdvice
-	setflag FLAG_SYS_PC_LANETTE
-	msgbox Route114_LanettesHouse_Text_EverythingClutteredKeepThis, MSGBOX_DEFAULT
-	givedecoration DECOR_LOTAD_DOLL
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowNoRoomForDecor
-	setflag FLAG_RECEIVED_DOLL_LANETTE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	release
 	end
 
@@ -61,11 +46,7 @@ Route114_LanettesHouse_EventScript_PC::
 	end
 
 Route114_LanettesHouse_Text_EverythingClutteredKeepThis:
-<<<<<<< HEAD
 	.string "Bill: Oh! {PLAYER}{KUN}!\p"
-=======
-	.string "LANETTE: Oh! {PLAYER}{KUN}!\p"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.string "I'm sorry everything is so cluttered…\n"
 	.string "When I get engrossed in research,\l"
 	.string "things end up this way…\p"
@@ -79,19 +60,11 @@ Route114_LanettesHouse_Text_OrganizeYourBoxes:
 	.string "can tell which POKéMON are in them.$"
 
 Route114_LanettesHouse_Text_ResearchNotesPage1:
-<<<<<<< HEAD
 	.string "It's BILL'S research notes.\n"
 	.string "There's information about BOXES.\p"
 	.string "Design BOXES to hold 30 POKéMON each.\p"
 	.string "Each TRAINER should be able to store\n"
 	.string "450 POKéMON on the PC system.\p"
-=======
-	.string "It's LANETTE's research notes.\n"
-	.string "There's information about BOXES.\p"
-	.string "Design BOXES to hold 30 POKéMON each.\p"
-	.string "Each TRAINER should be able to store\n"
-	.string "420 POKéMON on the PC system.\p"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.string "Keep reading?$"
 
 Route114_LanettesHouse_Text_ResearchNotesPage2:

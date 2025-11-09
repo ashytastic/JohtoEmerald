@@ -3,11 +3,7 @@
   "name": "Route119_WeatherInstitute_1F",
   "layout": "LAYOUT_ROUTE119_WEATHER_INSTITUTE_1F",
   "music": "MUS_RUSTBORO",
-<<<<<<< HEAD
   "region_map_section": "MAPSEC_ROUTE_44",
-=======
-  "region_map_section": "MAPSEC_ROUTE_119",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -16,17 +12,10 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-<<<<<<< HEAD
   "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
-=======
-  "connections": null,
-  "object_events": [
-    {
-      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 15,
       "y": 3,
       "elevation": 3,
@@ -36,17 +25,10 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "Route119_WeatherInstitute_1F_EventScript_Grunt1",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROCKET_F",
-=======
-      "flag": "FLAG_HIDE_ROUTE_119_TEAM_AQUA"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_F",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 10,
       "y": 5,
       "elevation": 3,
@@ -56,17 +38,10 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
       "script": "Route119_WeatherInstitute_1F_EventScript_Grunt4",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_M",
-=======
-      "flag": "FLAG_HIDE_ROUTE_119_TEAM_AQUA"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_4",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 5,
       "y": 4,
       "elevation": 3,
@@ -76,17 +51,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route119_WeatherInstitute_1F_EventScript_InstituteWorker2",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_M",
-=======
-      "flag": "FLAG_HIDE_WEATHER_INSTITUTE_1F_WORKERS"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_4",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 2,
       "y": 11,
       "elevation": 3,
@@ -96,16 +64,9 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route119_WeatherInstitute_1F_EventScript_InstituteWorker1",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
-=======
-      "flag": "FLAG_HIDE_WEATHER_INSTITUTE_1F_WORKERS"
-    },
-    {
-      "local_id": "LOCALID_WEATHER_INSTITUTE_LITTLE_BOY",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
       "x": 14,
       "y": 11,
@@ -142,13 +103,9 @@
       "dest_warp_id": "0"
     }
   ],
-<<<<<<< HEAD
   "coord_events": [
 
   ],
-=======
-  "coord_events": [],
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "bg_events": [
     {
       "type": "sign",

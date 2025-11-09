@@ -3,11 +3,7 @@
   "name": "LittlerootTown_MaysHouse_1F",
   "layout": "LAYOUT_LITTLEROOT_TOWN_MAYS_HOUSE_1F",
   "music": "MUS_LITTLEROOT",
-<<<<<<< HEAD
   "region_map_section": "MAPSEC_NEW_BARK_TOWN",
-=======
-  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -16,16 +12,9 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-<<<<<<< HEAD
   "connections": 0,
   "object_events": [
     {
-=======
-  "connections": null,
-  "object_events": [
-    {
-      "local_id": "LOCALID_PLAYERS_HOUSE_1F_MOM",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_MOM",
       "x": 8,
       "y": 6,
@@ -36,11 +25,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PlayersHouse_1F_EventScript_Mom",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
-=======
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_MOM"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_VIGOROTH_FACING_AWAY",
@@ -53,11 +38,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PlayersHouse_1F_EventScript_Vigoroth1",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
-=======
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_HOUSE_VIGOROTH_1"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_VIGOROTH_CARRYING_BOX",
@@ -70,18 +51,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PlayersHouse_1F_EventScript_Vigoroth2",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LASS",
-=======
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_HOUSE_VIGOROTH_2"
-    },
-    {
-      "local_id": "LOCALID_RIVALS_HOUSE_1F_MOM",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 8,
       "y": 7,
       "elevation": 3,
@@ -91,18 +64,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "RivalsHouse_1F_EventScript_RivalMom",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_JASMINE",
-=======
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_MOM"
-    },
-    {
-      "local_id": "LOCALID_PLAYERS_HOUSE_1F_DAD",
-      "graphics_id": "OBJ_EVENT_GFX_NORMAN",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 5,
       "y": 6,
       "elevation": 3,
@@ -112,11 +77,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
-=======
-      "flag": "FLAG_HIDE_PLAYERS_HOUSE_DAD"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
@@ -129,16 +90,9 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "RivalsHouse_1F_EventScript_RivalSibling",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
-=======
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_SIBLING"
-    },
-    {
-      "local_id": "LOCALID_RIVALS_HOUSE_1F_RIVAL",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_RIVAL_MAY_NORMAL",
       "x": 2,
       "y": 8,
@@ -149,11 +103,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
-=======
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_MAY"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "warp_events": [
@@ -185,11 +135,7 @@
       "x": 2,
       "y": 8,
       "elevation": 0,
-<<<<<<< HEAD
       "var": "VAR_GARBAGEVAR",
-=======
-      "var": "VAR_LITTLEROOT_INTRO_STATE",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "var_value": "4",
       "script": "LittlerootTown_MaysHouse_1F_EventScript_GoSeeRoom"
     },
@@ -198,11 +144,7 @@
       "x": 1,
       "y": 3,
       "elevation": 0,
-<<<<<<< HEAD
       "var": "VAR_GARBAGEVAR",
-=======
-      "var": "VAR_LITTLEROOT_RIVAL_STATE",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "var_value": "2",
       "script": "LittlerootTown_MaysHouse_1F_EventScript_MeetRival0"
     },
@@ -211,11 +153,7 @@
       "x": 2,
       "y": 4,
       "elevation": 0,
-<<<<<<< HEAD
       "var": "VAR_GARBAGEVAR",
-=======
-      "var": "VAR_LITTLEROOT_RIVAL_STATE",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "var_value": "2",
       "script": "LittlerootTown_MaysHouse_1F_EventScript_MeetRival1"
     },
@@ -224,20 +162,12 @@
       "x": 3,
       "y": 3,
       "elevation": 0,
-<<<<<<< HEAD
       "var": "VAR_GARBAGEVAR",
-=======
-      "var": "VAR_LITTLEROOT_RIVAL_STATE",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "var_value": "2",
       "script": "LittlerootTown_MaysHouse_1F_EventScript_MeetRival2"
     }
   ],
-<<<<<<< HEAD
   "bg_events": [
 
   ]
-=======
-  "bg_events": []
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }

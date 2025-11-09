@@ -49,11 +49,8 @@ gText_ThankYouForWaiting::
 
 gText_WeHopeToSeeYouAgain2::
 	.string "We hope to see you again!$"
-<<<<<<< HEAD
 
 gText_PkmnCenterChallenge_NoVisitsLeft:: @ tx_difficulty_challenge
     .string "Sorry, but you are playing with\n"
     .string "the POKéCENTER challenge!\p"
     .string "Good luck!{PAUSE_UNTIL_PRESS}$"
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

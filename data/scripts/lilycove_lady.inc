@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 .set LOCALID_LILYCOVE_LADY, 4
 .set LOCALID_LADYS_MON, 5
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 LilycoveCity_PokemonCenter_1F_EventScript_LilycoveLady::
 	special Script_GetLilycoveLadyId
 	switch VAR_RESULT
@@ -393,11 +390,7 @@ LilycoveCity_PokemonCenter_1F_EventScript_FeedPokeblock::
 	applymovement LOCALID_LILYCOVE_LADY, LilycoveCity_PokemonCenter_1F_Movement_LadyFaceMon
 	waitmovement 0
 	delay 60
-<<<<<<< HEAD
 	applymovement LOCALID_LADYS_MON, LilycoveCity_PokemonCenter_1F_Movement_MonFaceLady
-=======
-	applymovement LOCALID_LILYCOVE_LADYS_MON, LilycoveCity_PokemonCenter_1F_Movement_MonFaceLady
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	delay 60
 	waitse
@@ -410,11 +403,7 @@ LilycoveCity_PokemonCenter_1F_EventScript_FeedPokeblock::
 
 @ VAR_0x8004 here is the return value from GivePokeblockToContestLady
 LilycoveCity_PokemonCenter_1F_EventScript_MonEnjoyPokeblock::
-<<<<<<< HEAD
 	applymovement LOCALID_LADYS_MON, LilycoveCity_PokemonCenter_1F_Movement_MonJump
-=======
-	applymovement LOCALID_LILYCOVE_LADYS_MON, LilycoveCity_PokemonCenter_1F_Movement_MonJump
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	delay 60
 LilycoveCity_PokemonCenter_1F_EventScript_FinishFeedPokeblock::

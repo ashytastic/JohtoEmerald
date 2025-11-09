@@ -1,31 +1,21 @@
-<<<<<<< HEAD
 .set LOCALID_BRINEY, 11
 .set LOCALID_WANDAS_BF_OUTSIDE, 21
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 Route116_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route116_OnTransition
 	map_script MAP_SCRIPT_ON_LOAD, Route116_OnLoad
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route116_OnFrame
-<<<<<<< HEAD
 	map_script MAP_SCRIPT_ON_RESUME, SetTimeEncounters
 	.byte 0
 
 Route116_OnTransition:
 	callnative SetTimeBasedEncounters
-=======
-	.byte 0
-
-Route116_OnTransition:
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call_if_set FLAG_RECOVERED_DEVON_GOODS, Route116_EventScript_SetWandasBoyfriendPos
 	call_if_eq VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_HideMapNamePopup
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_116_NORTH, AbnormalWeather_StartGroudonWeather
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_116_SOUTH, AbnormalWeather_StartGroudonWeather
 	end
 
-<<<<<<< HEAD
 Route116_RoseradeEvo::
 	msgbox Route116_RoseradeEvo_Text, MSGBOX_NPC
 	end
@@ -38,10 +28,6 @@ Route116_RoseradeEvo_Text:
 
 Route116_EventScript_SetWandasBoyfriendPos::
 	setobjectxyperm LOCALID_WANDAS_BF_OUTSIDE, 38, 10
-=======
-Route116_EventScript_SetWandasBoyfriendPos::
-	setobjectxyperm LOCALID_ROUTE116_WANDAS_BF, 38, 10
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	return
 
 Route116_OnLoad:
@@ -91,11 +77,7 @@ Route116_EventScript_GiveRepeatBall::
 	call_if_eq VAR_FACING, DIR_WEST, Route116_EventScript_DevonEmployeeExit
 	call_if_eq VAR_FACING, DIR_EAST, Route116_EventScript_DevonEmployeeExitEast
 	removeobject VAR_LAST_TALKED
-<<<<<<< HEAD
 	clearflag FLAG_GARBAGEFLAG
-=======
-	clearflag FLAG_HIDE_RUSTBORO_CITY_DEVON_CORP_3F_EMPLOYEE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setflag FLAG_RECEIVED_REPEAT_BALL
 	release
 	end
@@ -168,29 +150,17 @@ Route116_EventScript_Briney::
 	lock
 	faceplayer
 	msgbox Route116_Text_ScoundrelMadeOffWithPeeko, MSGBOX_DEFAULT
-<<<<<<< HEAD
 	setvar VAR_GARBAGEVAR, 2
-=======
-	setvar VAR_ROUTE116_STATE, 2
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	release
 	end
 
 Route116_EventScript_BrineyTrigger::
 	lockall
-<<<<<<< HEAD
 	applymovement LOCALID_BRINEY, Common_Movement_WalkInPlaceFasterRight
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	msgbox Route116_Text_ScoundrelMadeOffWithPeeko, MSGBOX_DEFAULT
 	setvar VAR_GARBAGEVAR, 2
-=======
-	applymovement LOCALID_ROUTE116_BRINEY, Common_Movement_WalkInPlaceFasterRight
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
-	waitmovement 0
-	msgbox Route116_Text_ScoundrelMadeOffWithPeeko, MSGBOX_DEFAULT
-	setvar VAR_ROUTE116_STATE, 2
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	releaseall
 	end
 
@@ -282,17 +252,10 @@ Route116_EventScript_Jose::
 	end
 
 Route116_EventScript_Jerry::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_ARCHER_1, Route116_Text_JerryIntro, Route116_Text_JerryDefeat, Route116_EventScript_TryRegisterJerryAfterBattle
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route116_EventScript_RematchJerry
 	setvar VAR_0x8004, TRAINER_ARCHER_1
-=======
-	trainerbattle_single TRAINER_JERRY_1, Route116_Text_JerryIntro, Route116_Text_JerryDefeat, Route116_EventScript_TryRegisterJerryAfterBattle
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, Route116_EventScript_RematchJerry
-	setvar VAR_0x8004, TRAINER_JERRY_1
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	specialvar VAR_RESULT, IsTrainerRegistered
 	goto_if_eq VAR_RESULT, FALSE, Route116_EventScript_TryRegisterJerry
 	msgbox Route116_Text_JerryPostBattle, MSGBOX_DEFAULT
@@ -308,11 +271,7 @@ Route116_EventScript_RegisterJerryAfterBattle::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route116_Text_JerryRegister2, MSGBOX_DEFAULT
-<<<<<<< HEAD
 	register_matchcall TRAINER_ARCHER_1
-=======
-	register_matchcall TRAINER_JERRY_1
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	release
 	end
 
@@ -324,20 +283,12 @@ Route116_EventScript_TryRegisterJerry::
 
 Route116_EventScript_RegisterJerry::
 	msgbox Route116_Text_JerryRegister1, MSGBOX_DEFAULT
-<<<<<<< HEAD
 	register_matchcall TRAINER_ARCHER_1
-=======
-	register_matchcall TRAINER_JERRY_1
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	release
 	end
 
 Route116_EventScript_RematchJerry::
-<<<<<<< HEAD
 	trainerbattle_rematch TRAINER_ARCHER_1, Route116_Text_JerryRematchIntro, Route116_Text_JerryRematchDefeat
-=======
-	trainerbattle_rematch TRAINER_JERRY_1, Route116_Text_JerryRematchIntro, Route116_Text_JerryRematchDefeat
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route116_Text_JerryPostRematch, MSGBOX_AUTOCLOSE
 	end
 
@@ -347,11 +298,7 @@ Route116_EventScript_Clark::
 	end
 
 Route116_EventScript_Janice::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_RIVAL_TOTODILE_1, Route116_Text_JaniceIntro, Route116_Text_JaniceDefeat
-=======
-	trainerbattle_single TRAINER_JANICE, Route116_Text_JaniceIntro, Route116_Text_JaniceDefeat
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route116_Text_JanicePostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -402,20 +349,12 @@ Route116_EventScript_Sarah::
 	end
 
 Route116_EventScript_Dawson::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_JOEL, Route116_Text_DawsonIntro, Route116_Text_DawsonDefeat
-=======
-	trainerbattle_single TRAINER_DAWSON, Route116_Text_DawsonIntro, Route116_Text_DawsonDefeat
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route116_Text_DawsonPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route116_EventScript_Devan::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_KATE, Route116_Text_DevanIntro, Route116_Text_DevanDefeat
-=======
-	trainerbattle_single TRAINER_DEVAN, Route116_Text_DevanIntro, Route116_Text_DevanDefeat
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route116_Text_DevanPostBattle, MSGBOX_AUTOCLOSE
 	end
 

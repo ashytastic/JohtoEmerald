@@ -1,5 +1,4 @@
 #include "global.h"
-<<<<<<< HEAD
 #include "event_data.h"
 #include "rtc.h"
 #include "time_events.h"
@@ -12,31 +11,11 @@
 #include "main.h"
 #include "overworld.h"
 #include "wallclock.h"
-=======
-#include "berry.h"
-#include "clock.h"
-#include "dewford_trend.h"
-#include "event_data.h"
-#include "field_specials.h"
-#include "field_weather.h"
-#include "main.h"
-#include "lottery_corner.h"
-#include "overworld.h"
-#include "rtc.h"
-#include "time_events.h"
-#include "tv.h"
-#include "wallclock.h"
-#include "constants/form_change_types.h"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 static void UpdatePerDay(struct Time *localTime);
 static void UpdatePerMinute(struct Time *localTime);
 
-<<<<<<< HEAD
 static void InitTimeBasedEvents(void)
-=======
-void InitTimeBasedEvents(void)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     FlagSet(FLAG_SYS_CLOCK_SET);
     RtcCalcLocalTime();
@@ -73,18 +52,11 @@ static void UpdatePerDay(struct Time *localTime)
         UpdateFrontierGambler(daysSince);
         SetShoalItemFlag(daysSince);
         SetRandomLotteryNumber(daysSince);
-<<<<<<< HEAD
-=======
-        UpdateDaysPassedSinceFormChange(daysSince);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         *days = localTime->days;
     }
 }
 
-<<<<<<< HEAD
 //HnS Updated
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static void UpdatePerMinute(struct Time *localTime)
 {
     struct Time difference;
@@ -92,7 +64,6 @@ static void UpdatePerMinute(struct Time *localTime)
 
     CalcTimeDifference(&difference, &gSaveBlock2Ptr->lastBerryTreeUpdate, localTime);
     minutes = 24 * 60 * difference.days + 60 * difference.hours + difference.minutes;
-<<<<<<< HEAD
 
     if (minutes > 0)
     {
@@ -108,34 +79,6 @@ static void UpdatePerMinute(struct Time *localTime)
     // minutes == 0: nothing to do
 }
 
-=======
-    if (minutes != 0)
-    {
-        if (minutes >= 0)
-        {
-            BerryTreeTimeUpdate(minutes);
-            gSaveBlock2Ptr->lastBerryTreeUpdate = *localTime;
-        }
-    }
-}
-
-void FormChangeTimeUpdate()
-{
-    s32 i;
-    for (i = 0; i < PARTY_SIZE; i++)
-    {
-        struct Pokemon *mon = &gPlayerParty[i];
-        u32 targetSpecies = GetFormChangeTargetSpecies(mon, FORM_CHANGE_TIME_OF_DAY, 0);
-        u32 currentSpecies = GetMonData(mon, MON_DATA_SPECIES);
-
-        if (targetSpecies != currentSpecies)
-        {
-            SetMonData(mon, MON_DATA_SPECIES, &targetSpecies);
-            CalculateMonStats(mon);
-        }
-    }
-}
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 static void ReturnFromStartWallClock(void)
 {
@@ -148,7 +91,6 @@ void StartWallClock(void)
     SetMainCallback2(CB2_StartWallClock);
     gMain.savedCallback = ReturnFromStartWallClock;
 }
-<<<<<<< HEAD
 
 
 void FastForwardTime(s16 daysToUpdateDay, s16 hoursToGrowBerries){
@@ -163,5 +105,3 @@ void FastForwardTime(s16 daysToUpdateDay, s16 hoursToGrowBerries){
         localTimeOffset.hours += hoursBerry;
         UpdatePerMinute(&localTimeOffset);
 }
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

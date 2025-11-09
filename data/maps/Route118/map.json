@@ -3,11 +3,7 @@
   "name": "Route118",
   "layout": "LAYOUT_ROUTE118",
   "music": "MUS_ROUTE118",
-<<<<<<< HEAD
   "region_map_section": "MAPSEC_ROUTE_43",
-=======
-  "region_map_section": "MAPSEC_ROUTE_118",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_ROUTE",
@@ -31,7 +27,6 @@
       "map": "MAP_ROUTE123",
       "offset": 0,
       "direction": "right"
-<<<<<<< HEAD
     },
     {
       "map": "MAP_CAVE_OF_ORIGIN_UNUSED_RUBY_SAPPHIRE_MAP1",
@@ -42,8 +37,6 @@
       "map": "MAP_ROUTE110",
       "offset": -40,
       "direction": "down"
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "object_events": [
@@ -87,11 +80,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_ROCKER",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_MAN_5",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 64,
       "y": 10,
       "elevation": 3,
@@ -104,12 +93,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_SAGE",
-=======
-      "local_id": "LOCALID_ROUTE118_GABBY_1",
-      "graphics_id": "OBJ_EVENT_GFX_REPORTER_F",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 33,
       "y": 8,
       "elevation": 3,
@@ -119,18 +103,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "GabbyAndTy_EventScript_GabbyBattle2",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_JUGGLER",
-=======
-      "flag": "FLAG_HIDE_ROUTE_118_GABBY_AND_TY_1"
-    },
-    {
-      "local_id": "LOCALID_ROUTE118_TY_1",
-      "graphics_id": "OBJ_EVENT_GFX_CAMERAMAN",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 34,
       "y": 8,
       "elevation": 3,
@@ -140,17 +116,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "GabbyAndTy_EventScript_TyBattle2",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CAPTAIN",
-=======
-      "flag": "FLAG_HIDE_ROUTE_118_GABBY_AND_TY_1"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_GIRL_2",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 12,
       "y": 10,
       "elevation": 3,
@@ -163,12 +132,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_SAGE",
-=======
-      "local_id": "LOCALID_ROUTE118_GABBY_2",
-      "graphics_id": "OBJ_EVENT_GFX_REPORTER_F",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 33,
       "y": 8,
       "elevation": 3,
@@ -178,18 +142,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "GabbyAndTy_EventScript_GabbyBattle5",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_JUGGLER",
-=======
-      "flag": "FLAG_HIDE_ROUTE_118_GABBY_AND_TY_2"
-    },
-    {
-      "local_id": "LOCALID_ROUTE118_TY_2",
-      "graphics_id": "OBJ_EVENT_GFX_CAMERAMAN",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 34,
       "y": 8,
       "elevation": 3,
@@ -199,18 +155,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "GabbyAndTy_EventScript_TyBattle5",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SAGE",
-=======
-      "flag": "FLAG_HIDE_ROUTE_118_GABBY_AND_TY_2"
-    },
-    {
-      "local_id": "LOCALID_ROUTE118_GABBY_3",
-      "graphics_id": "OBJ_EVENT_GFX_REPORTER_F",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 33,
       "y": 8,
       "elevation": 3,
@@ -220,18 +168,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "GabbyAndTy_EventScript_GabbyBattle6",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_JUGGLER",
-=======
-      "flag": "FLAG_HIDE_ROUTE_118_GABBY_AND_TY_3"
-    },
-    {
-      "local_id": "LOCALID_ROUTE118_TY_3",
-      "graphics_id": "OBJ_EVENT_GFX_CAMERAMAN",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 34,
       "y": 8,
       "elevation": 3,
@@ -241,11 +181,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "GabbyAndTy_EventScript_TyBattle6",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
-=======
-      "flag": "FLAG_HIDE_ROUTE_118_GABBY_AND_TY_3"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
@@ -261,11 +197,7 @@
       "flag": "FLAG_TEMP_11"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_FISHER",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 28,
       "y": 8,
       "elevation": 3,
@@ -291,11 +223,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_FISHER",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 14,
       "y": 14,
       "elevation": 3,
@@ -308,11 +236,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_ROCKER",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_MAN_5",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 56,
       "y": 7,
       "elevation": 3,
@@ -325,11 +249,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_FISHER",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 39,
       "y": 15,
       "elevation": 3,
@@ -342,11 +262,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_ROCKER",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_MAN_5",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 17,
       "y": 11,
       "elevation": 3,
@@ -359,10 +275,6 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
-=======
-      "local_id": "LOCALID_ROUTE118_STEVEN",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_STEVEN",
       "x": 44,
       "y": 7,
@@ -373,11 +285,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
-=======
-      "flag": "FLAG_HIDE_ROUTE_118_STEVEN"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -388,15 +296,9 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-<<<<<<< HEAD
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route118_EventScript_ItemHyperPotion",
       "flag": "FLAG_GARBAGEFLAG"
-=======
-      "trainer_sight_or_berry_tree_id": "ITEM_HYPER_POTION",
-      "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_118_HYPER_POTION"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
@@ -434,11 +336,7 @@
       "x": 43,
       "y": 11,
       "elevation": 3,
-<<<<<<< HEAD
       "var": "VAR_GARBAGEVAR",
-=======
-      "var": "VAR_ROUTE118_STATE",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "var_value": "0",
       "script": "Route118_EventScript_StevenTrigger0"
     },
@@ -447,11 +345,7 @@
       "x": 44,
       "y": 11,
       "elevation": 3,
-<<<<<<< HEAD
       "var": "VAR_GARBAGEVAR",
-=======
-      "var": "VAR_ROUTE118_STATE",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "var_value": "0",
       "script": "Route118_EventScript_StevenTrigger1"
     },
@@ -460,11 +354,7 @@
       "x": 45,
       "y": 11,
       "elevation": 3,
-<<<<<<< HEAD
       "var": "VAR_GARBAGEVAR",
-=======
-      "var": "VAR_ROUTE118_STATE",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "var_value": "0",
       "script": "Route118_EventScript_StevenTrigger2"
     }

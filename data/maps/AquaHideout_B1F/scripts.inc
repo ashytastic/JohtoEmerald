@@ -19,19 +19,11 @@ AquaHideout_B1F_OnTransition:
 	end
 
 AquaHideout_B1F_EventScript_ShowElectrode1::
-<<<<<<< HEAD
 	clearflag FLAG_GARBAGEFLAG
 	return
 
 AquaHideout_B1F_EventScript_ShowElectrode2::
 	clearflag FLAG_GARBAGEFLAG
-=======
-	clearflag FLAG_HIDE_AQUA_HIDEOUT_B1F_ELECTRODE_1
-	return
-
-AquaHideout_B1F_EventScript_ShowElectrode2::
-	clearflag FLAG_HIDE_AQUA_HIDEOUT_B1F_ELECTRODE_2
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	return
 
 AquaHideout_B1F_EventScript_Electrode1::
@@ -83,11 +75,7 @@ AquaHideout_B1F_EventScript_DefeatedElectrode2::
 	end
 
 AquaHideout_B1F_EventScript_Grunt2::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_SCOTT, AquaHideout_B1F_Text_Grunt2Intro, AquaHideout_B1F_Text_Grunt2Defeat, AquaHideout_B1F_EventScript_Grunt2Defeated
-=======
-	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_2, AquaHideout_B1F_Text_Grunt2Intro, AquaHideout_B1F_Text_Grunt2Defeat, AquaHideout_B1F_EventScript_Grunt2Defeated
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox AquaHideout_B1F_Text_Grunt2PostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -99,11 +87,7 @@ AquaHideout_B1F_EventScript_Grunt2Defeated::
 	end
 
 AquaHideout_B1F_EventScript_Grunt3::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_SEAN, AquaHideout_B1F_Text_Grunt3Intro, AquaHideout_B1F_Text_Grunt3Defeat, AquaHideout_B1F_EventScript_Grunt3Defeated
-=======
-	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_3, AquaHideout_B1F_Text_Grunt3Intro, AquaHideout_B1F_Text_Grunt3Defeat, AquaHideout_B1F_EventScript_Grunt3Defeated
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox AquaHideout_B1F_Text_Grunt3PostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -113,20 +97,12 @@ AquaHideout_B1F_EventScript_Grunt3Defeated::
 	end
 
 AquaHideout_B1F_EventScript_Grunt5::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_SID, AquaHideout_B1F_Text_Grunt5Intro, AquaHideout_B1F_Text_Grunt5Defeat
-=======
-	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_5, AquaHideout_B1F_Text_Grunt5Intro, AquaHideout_B1F_Text_Grunt5Defeat
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox AquaHideout_B1F_Text_Grunt5PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 AquaHideout_B1F_EventScript_Grunt7::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_STEPHEN, AquaHideout_B1F_Text_Grunt7Intro, AquaHideout_B1F_Text_Grunt7Defeat
-=======
-	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_7, AquaHideout_B1F_Text_Grunt7Intro, AquaHideout_B1F_Text_Grunt7Defeat
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox AquaHideout_B1F_Text_Grunt7PostBattle, MSGBOX_AUTOCLOSE
 	end
 

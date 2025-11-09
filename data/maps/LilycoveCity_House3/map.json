@@ -12,17 +12,10 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-<<<<<<< HEAD
   "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_GBA_KID",
-=======
-  "connections": null,
-  "object_events": [
-    {
-      "graphics_id": "OBJ_EVENT_GFX_GAMEBOY_KID",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 3,
       "y": 4,
       "elevation": 3,
@@ -35,11 +28,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_BILL",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_POKEFAN_F",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 7,
       "y": 4,
       "elevation": 3,
@@ -52,11 +41,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_GBA_KID",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_GAMEBOY_KID",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 1,
       "y": 4,
       "elevation": 3,
@@ -69,11 +54,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_GBA_KID",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_GAMEBOY_KID",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 2,
       "y": 5,
       "elevation": 3,
@@ -86,11 +67,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_GBA_KID",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_GAMEBOY_KID",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 2,
       "y": 3,
       "elevation": 3,
@@ -103,11 +80,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_BALDING_MAN",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 7,
       "y": 5,
       "elevation": 3,
@@ -136,15 +109,10 @@
       "dest_warp_id": "10"
     }
   ],
-<<<<<<< HEAD
   "coord_events": [
 
   ],
   "bg_events": [
 
   ]
-=======
-  "coord_events": [],
-  "bg_events": []
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }

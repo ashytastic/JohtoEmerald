@@ -21,12 +21,8 @@ static void Task_LinkContest_InitFlags(u8);
 
 bool32 LinkContest_SendBlock(void *src, u16 size)
 {
-<<<<<<< HEAD
     memcpy(gDecompressionBuffer, src, size);
     if (SendBlock(BitmaskAllOtherLinkPlayers(), gDecompressionBuffer, size))
-=======
-    if (SendBlock(BitmaskAllOtherLinkPlayers(), src, size))
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         return TRUE;
     else
         return FALSE;

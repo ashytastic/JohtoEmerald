@@ -1,14 +1,10 @@
-<<<<<<< HEAD
 .set LOCALID_STEVEN, 1
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 MeteorFalls_StevensCave_MapScripts::
 	.byte 0
 
 MeteorFalls_StevensCave_EventScript_Steven::
 	lock
-<<<<<<< HEAD
 	goto_if_set FLAG_STEVEN_REMATCH, MeteorFalls_StevensCave_EventScript_StevenRematch
 	goto_if_set FLAG_DEFEATED_RED, MeteorFalls_StevensCave_EventScript_Defeated
 	waitse
@@ -18,21 +14,10 @@ MeteorFalls_StevensCave_EventScript_Steven::
 	applymovement LOCALID_STEVEN, Common_Movement_Delay48
 	waitmovement 0
 	applymovement LOCALID_STEVEN, Common_Movement_FacePlayer
-=======
-	goto_if_set FLAG_DEFEATED_METEOR_FALLS_STEVEN, MeteorFalls_StevensCave_EventScript_Defeated
-	waitse
-	playse SE_PIN
-	applymovement LOCALID_METEOR_FALLS_STEVEN, Common_Movement_ExclamationMark
-	waitmovement 0
-	applymovement LOCALID_METEOR_FALLS_STEVEN, Common_Movement_Delay48
-	waitmovement 0
-	applymovement LOCALID_METEOR_FALLS_STEVEN, Common_Movement_FacePlayer
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	msgbox MeteorFalls_StevensCave_Text_ShouldKnowHowGoodIAmExpectWorst, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_STEVEN, MeteorFalls_StevensCave_Text_StevenDefeat
 	msgbox MeteorFalls_StevensCave_Text_MyPredictionCameTrue, MSGBOX_DEFAULT
-<<<<<<< HEAD
 	setflag FLAG_DEFEATED_RED
 	setflag FLAG_SIDNEY_REMATCH
 	setflag FLAG_PHOEBE_REMATCH
@@ -58,24 +43,16 @@ MeteorFalls_StevensCave_EventScript_StevenRematch::
 	msgbox MeteorFalls_StevensCave_Text_MyPredictionCameTrue2, MSGBOX_DEFAULT
 	clearflag FLAG_STEVEN_REMATCH
 	goto_if_unset FLAG_ARCEUS_EGG_GIVE MeteorFalls_StevensCave_EventScript_StevenArceusEvent
-=======
-	setflag FLAG_DEFEATED_METEOR_FALLS_STEVEN
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	release
 	end
 
 MeteorFalls_StevensCave_EventScript_Defeated::
-<<<<<<< HEAD
 	applymovement LOCALID_STEVEN, Common_Movement_FacePlayer
-=======
-	applymovement LOCALID_METEOR_FALLS_STEVEN, Common_Movement_FacePlayer
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	msgbox MeteorFalls_StevensCave_Text_MyPredictionCameTrue, MSGBOX_DEFAULT
 	release
 	end
 
-<<<<<<< HEAD
 MeteorFalls_StevensCave_EventScript_StevenArceusEvent::
 	msgbox MeteorFalls_StevensCave_Text_ArceusEvent1, MSGBOX_DEFAULT
 	setflag FLAG_ARCEUS_EGG_GIVE
@@ -115,8 +92,6 @@ MeteorFalls_StevensCave_Text_ArceusEvent2:
 	.string "Maybe it's an ancient POKéMON?\p"
 	.string "Fufufu… who knows…$"
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 MeteorFalls_StevensCave_Text_ShouldKnowHowGoodIAmExpectWorst:
 	.string "STEVEN: Oh, wow, {PLAYER}{KUN}.\n"
 	.string "I'm amazed you knew where to find me.\p"
@@ -130,7 +105,6 @@ MeteorFalls_StevensCave_Text_ShouldKnowHowGoodIAmExpectWorst:
 	.string "Okay, {PLAYER}{KUN}, if you're going to mount\n"
 	.string "a serious challenge, expect the worst!$"
 
-<<<<<<< HEAD
 MeteorFalls_StevensCave_Text_ShouldKnowHowGoodIAmExpectWorst2:
 	.string "STEVEN: Oh, hey, {PLAYER}{KUN}.\p"
 	.string "You're back. WALLACE told me that\n"
@@ -140,19 +114,14 @@ MeteorFalls_StevensCave_Text_ShouldKnowHowGoodIAmExpectWorst2:
 	.string "a serious challenge again?\p"
 	.string "Okay, {PLAYER}{KUN}, let's go for it!$"
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 MeteorFalls_StevensCave_Text_StevenDefeat:
 	.string "You…\n"
 	.string "I had no idea you'd become so strong…$"
 
-<<<<<<< HEAD
 MeteorFalls_StevensCave_Text_StevenDefeat2:
 	.string "You…\n"
 	.string "No one can surpass you now.$"
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 MeteorFalls_StevensCave_Text_MyPredictionCameTrue:
 	.string "STEVEN: Come to think of it, ever since\n"
 	.string "our paths first crossed in GRANITE\l"
@@ -163,7 +132,6 @@ MeteorFalls_StevensCave_Text_MyPredictionCameTrue:
 	.string "And where will you go from here?\p"
 	.string "… … … … … …\n"
 	.string "… … … … … …\p"
-<<<<<<< HEAD
 	.string "Fufufu, what about this?\p"
 	.string "You should start by challenging the\n"
 	.string "ELITE FOUR again. I heard they got\l"
@@ -180,7 +148,3 @@ MeteorFalls_StevensCave_Text_MyPredictionCameTrue2:
 	.string "… … … … … …\n"
 	.string "… … … … … …\p"
 	.string "Fufufu, even I couldn't tell you that.$"
-=======
-	.string "Fufufu, even I couldn't tell you that.$"
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

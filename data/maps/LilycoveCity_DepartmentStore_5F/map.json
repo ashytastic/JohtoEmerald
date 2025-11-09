@@ -12,11 +12,7 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-<<<<<<< HEAD
   "connections": 0,
-=======
-  "connections": null,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_GIRL",
@@ -32,11 +28,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_BILL",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_POKEFAN_F",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 7,
       "y": 7,
       "elevation": 3,
@@ -49,11 +41,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_F",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 7,
       "y": 2,
       "elevation": 3,
@@ -66,11 +54,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_F",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 9,
       "y": 2,
       "elevation": 3,
@@ -83,11 +67,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_F",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 15,
       "y": 6,
       "elevation": 3,
@@ -100,11 +80,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_F",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 17,
       "y": 6,
       "elevation": 3,
@@ -117,10 +93,6 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
-=======
-      "local_id": "LOCALID_DEPARTMENT_STORE_STAIRS_WOMAN",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
       "x": 9,
       "y": 5,
@@ -157,15 +129,10 @@
       "dest_warp_id": "0"
     }
   ],
-<<<<<<< HEAD
   "coord_events": [
 
   ],
   "bg_events": [
 
   ]
-=======
-  "coord_events": [],
-  "bg_events": []
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }

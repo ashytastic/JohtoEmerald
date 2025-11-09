@@ -131,19 +131,11 @@ static const struct BgTemplate sBgTemplates[4] = {
     },
 };
 
-<<<<<<< HEAD
 static const u16 sGround_Tilemap[] = INCBIN_U16("graphics/cable_car/ground.bin.lz");
 static const u16 sTrees_Tilemap[] = INCBIN_U16("graphics/cable_car/trees.bin.lz");
 static const u16 sBgMountains_Tilemap[] = INCBIN_U16("graphics/cable_car/bg_mountains.bin.lz");
 static const u16 sPylonTop_Tilemap[] = INCBIN_U16("graphics/cable_car/pylon_top.bin");
 static const u16 sPylonPole_Tilemap[] = INCBIN_U16("graphics/cable_car/pylon_pole.bin.lz");
-=======
-static const u16 sGround_Tilemap[] = INCBIN_U16("graphics/cable_car/ground.bin.smolTM");
-static const u16 sTrees_Tilemap[] = INCBIN_U16("graphics/cable_car/trees.bin.smolTM");
-static const u16 sBgMountains_Tilemap[] = INCBIN_U16("graphics/cable_car/bg_mountains.bin.smolTM");
-static const u16 sPylonTop_Tilemap[] = INCBIN_U16("graphics/cable_car/pylon_top.bin");
-static const u16 sPylonPole_Tilemap[] = INCBIN_U16("graphics/cable_car/pylon_pole.bin.smolTM");
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 static const struct CompressedSpriteSheet sSpriteSheets[] = {
     { gCableCar_Gfx,      0x800, TAG_CABLE_CAR },
@@ -888,17 +880,8 @@ static void CreateCableCarSprites(void)
     // 1/64 chance for an NPC to appear hiking on the ground below the Cable Car
     if ((rval % 64) == 0)
     {
-<<<<<<< HEAD
         rval >>= 7;
         spriteId = CreateObjectGraphicsSprite(hikerGraphicsIds[rval % (ARRAY_COUNT(hikerGraphicsIds))], hikerCallbacks[GOING_DOWN], hikerCoords[GOING_DOWN][0], hikerCoords[GOING_DOWN][1], 106);
-=======
-        // BUGFIX: The - 1 in the below ARRAY_COUNT means the Zigzagoon is never used
-#ifdef BUGFIX
-        spriteId = CreateObjectGraphicsSprite(hikerGraphicsIds[rval % ARRAY_COUNT(hikerGraphicsIds)], hikerCallbacks[GOING_DOWN], hikerCoords[GOING_DOWN][0], hikerCoords[GOING_DOWN][1], 106);
-#else
-        spriteId = CreateObjectGraphicsSprite(hikerGraphicsIds[rval % (ARRAY_COUNT(hikerGraphicsIds) - 1)], hikerCallbacks[GOING_DOWN], hikerCoords[GOING_DOWN][0], hikerCoords[GOING_DOWN][1], 106);
-#endif
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         if (spriteId != MAX_SPRITES)
         {
             gSprites[spriteId].oam.priority = 2;
@@ -906,10 +889,7 @@ static void CreateCableCarSprites(void)
             gSprites[spriteId].y2 = -gSprites[spriteId].centerToCornerVecY;
 
             // Randomly choose which direction the NPC is going
-<<<<<<< HEAD
             rval >>= 2;
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             if (!GOING_DOWN)
             {
                 if (rval % 2)
@@ -938,10 +918,7 @@ static void CreateCableCarSprites(void)
                     gSprites[spriteId].sSameDir = FALSE;
                 }
             }
-<<<<<<< HEAD
             rval >>= 1;
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             gSprites[spriteId].sDelay = hikerMovementDelayTable[rval % ARRAY_COUNT(hikerMovementDelayTable)];
         }
     }

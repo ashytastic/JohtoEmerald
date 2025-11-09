@@ -138,11 +138,7 @@ CableClub_EventScript_CloseLinkAndExitLinkRoom::
 	goto_if_eq VAR_0x8007, 0, CableClub_EventScript_PlayerExitLinkRoom
 	applymovement VAR_0x8007, Movement_AttendantFaceLeft
 	waitmovement 0
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_PlayerExitLinkRoom
-=======
-	applymovement LOCALID_PLAYER, Movement_PlayerExitLinkRoom
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	applymovement VAR_0x8007, Movement_AttendantFaceDown
 	waitmovement 0
@@ -162,11 +158,7 @@ CableClub_EventScript_PlayerExitTradeCenter::
 	special CloseLink
 	setvar VAR_CABLE_CLUB_STATE, 0
 	goto_if_eq VAR_0x8007, 0, CableClub_EventScript_PlayerExitLinkRoom
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_PlayerFaceAttendantRight
-=======
-	applymovement LOCALID_PLAYER, Movement_PlayerFaceAttendantRight
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	applymovement VAR_0x8007, Movement_AttendantFaceLeft
 	waitmovement 0
@@ -186,11 +178,7 @@ CableClub_EventScript_ExitRecordCorner::
 CableClub_EventScript_PlayerExitRecordCorner::
 	special CloseLink
 	setvar VAR_CABLE_CLUB_STATE, 0
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_PlayerExitLinkRoom
-=======
-	applymovement LOCALID_PLAYER, Movement_PlayerExitLinkRoom
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	goto_if_eq VAR_0x8007, 0, CableClub_EventScript_ExitRecordCornerRet
 	applymovement VAR_0x8007, Movement_AttendantFaceDown
@@ -211,11 +199,7 @@ CableClub_EventScript_ExitUnionRoom::
 CableClub_EventScript_PlayerExitUnionRoom::
 	setvar VAR_CABLE_CLUB_STATE, 0
 	goto_if_eq VAR_0x8007, 0, CableClub_EventScript_PlayerExitLinkRoom
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_PlayerFaceAttendantRight
-=======
-	applymovement LOCALID_PLAYER, Movement_PlayerFaceAttendantRight
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	applymovement VAR_0x8007, Movement_AttendantFaceLeft
 	waitmovement 0
@@ -229,40 +213,24 @@ CableClub_EventScript_TrainerCardDataOverwritten::
 	delay 60
 	message CableClub_Text_HopeToSeeYouAgain
 	waitmessage
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_PlayerExitLinkRoom
-=======
-	applymovement LOCALID_PLAYER, Movement_PlayerExitLinkRoom
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	applymovement VAR_0x8007, Movement_AttendantFaceDown
 	waitmovement 0
 	return
 
 CableClub_EventScript_PlayerExitLinkRoom::
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_PlayerExitLinkRoom
-=======
-	applymovement LOCALID_PLAYER, Movement_PlayerExitLinkRoom
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
 CableClub_EventScript_Tutorial::
 	lockall
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	msgbox CableClub_Text_FirstTimeRightThisWay, MSGBOX_DEFAULT
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, CableClub_Movement_PlayerApproachCounter
-=======
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
-	waitmovement 0
-	msgbox CableClub_Text_FirstTimeRightThisWay, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_PLAYER, CableClub_Movement_PlayerApproachCounter
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	delay 30
 	msgbox CableClub_Text_ExplainWirelessClubFirstTime, MSGBOX_DEFAULT
@@ -289,11 +257,7 @@ CableClub_EventScript_UnusedWelcomeToCableClub::
 
 CableClub_EventScript_SelectCableClubRoom::
 	setvar VAR_0x8004, 0
-<<<<<<< HEAD
 	goto_if_set FLAG_VISITED_BLACKTHORN_CITY, CableClub_EventScript_CableClubUnlockedRecordCorner
-=======
-	goto_if_set FLAG_VISITED_MAUVILLE_CITY, CableClub_EventScript_CableClubUnlockedRecordCorner
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	multichoice 0, 0, MULTI_CABLE_CLUB_NO_RECORD_MIX, FALSE
 	switch VAR_RESULT
 	case 0, CableClub_EventScript_TradeCenter
@@ -386,7 +350,6 @@ CableClub_EventScript_EnterColosseum::
 	applymovement VAR_LAST_TALKED, Movement_AttendantFaceLeft
 	waitmovement 0
 	closemessage
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_PlayerApproachLinkRoomLeft
 	waitmovement 0
 	opendoor 9, 1
@@ -394,15 +357,6 @@ CableClub_EventScript_EnterColosseum::
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_PlayerEnterLinkRoom
 	waitmovement 0
 	hideobjectat OBJ_EVENT_ID_PLAYER, 0
-=======
-	applymovement LOCALID_PLAYER, Movement_PlayerApproachLinkRoomLeft
-	waitmovement 0
-	opendoor 9, 1
-	waitdooranim
-	applymovement LOCALID_PLAYER, Movement_PlayerEnterLinkRoom
-	waitmovement 0
-	hideplayer
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	closedoor 9, 1
 	waitdooranim
 	release
@@ -415,11 +369,7 @@ CableClub_EventScript_EnterColosseum::
 
 @ Unused
 CableClub_EventScript_PlayerApproachLinkRoomRight::
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_PlayerApproachLinkRoomRight
-=======
-	applymovement LOCALID_PLAYER, Movement_PlayerApproachLinkRoomRight
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	waitmovement 0
 	return
 
@@ -494,7 +444,6 @@ CableClub_EventScript_EnterTradeCenter::
 	applymovement VAR_LAST_TALKED, Movement_AttendantFaceLeft
 	waitmovement 0
 	closemessage
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_PlayerApproachLinkRoomLeft
 	waitmovement 0
 	opendoor 9, 1
@@ -502,15 +451,6 @@ CableClub_EventScript_EnterTradeCenter::
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_PlayerEnterLinkRoom
 	waitmovement 0
 	hideobjectat OBJ_EVENT_ID_PLAYER, 0
-=======
-	applymovement LOCALID_PLAYER, Movement_PlayerApproachLinkRoomLeft
-	waitmovement 0
-	opendoor 9, 1
-	waitdooranim
-	applymovement LOCALID_PLAYER, Movement_PlayerEnterLinkRoom
-	waitmovement 0
-	hideplayer
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	closedoor 9, 1
 	waitdooranim
 	release
@@ -569,7 +509,6 @@ CableClub_EventScript_EnterRecordCorner::
 	applymovement VAR_LAST_TALKED, Movement_AttendantFaceLeft
 	waitmovement 0
 	closemessage
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_PlayerApproachLinkRoomLeft
 	waitmovement 0
 	opendoor 9, 1
@@ -577,15 +516,6 @@ CableClub_EventScript_EnterRecordCorner::
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_PlayerEnterLinkRoom
 	waitmovement 0
 	hideobjectat OBJ_EVENT_ID_PLAYER, 0
-=======
-	applymovement LOCALID_PLAYER, Movement_PlayerApproachLinkRoomLeft
-	waitmovement 0
-	opendoor 9, 1
-	waitdooranim
-	applymovement LOCALID_PLAYER, Movement_PlayerEnterLinkRoom
-	waitmovement 0
-	hideplayer
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	closedoor 9, 1
 	waitdooranim
 	release
@@ -966,7 +896,6 @@ CableClub_EventScript_EnterUnionRoom::
 	delay 60
 	applymovement VAR_LAST_TALKED, Movement_AttendantFaceLeft
 	waitmovement 0
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_PlayerApproachLinkRoomLeft
 	waitmovement 0
 	opendoor 5, 1
@@ -974,15 +903,6 @@ CableClub_EventScript_EnterUnionRoom::
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_PlayerEnterLinkRoom
 	waitmovement 0
 	hideobjectat OBJ_EVENT_ID_PLAYER, 0
-=======
-	applymovement LOCALID_PLAYER, Movement_PlayerApproachLinkRoomLeft
-	waitmovement 0
-	opendoor 5, 1
-	waitdooranim
-	applymovement LOCALID_PLAYER, Movement_PlayerEnterLinkRoom
-	waitmovement 0
-	hideplayer
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	closedoor 5, 1
 	waitdooranim
 	special Script_ResetUnionRoomTrade
@@ -1049,11 +969,7 @@ CableClub_EventScript_DirectCornerAttendant::
 CableClub_EventScript_DirectCornerSelectService::
 	checkitem ITEM_POWDER_JAR
 	goto_if_eq VAR_RESULT, FALSE, CableClub_EventScript_DirectCornerNoBerry
-<<<<<<< HEAD
 	goto_if_set FLAG_VISITED_BLACKTHORN_CITY, CableClub_EventScript_DirectCornerSelectAllServices
-=======
-	goto_if_set FLAG_VISITED_MAUVILLE_CITY, CableClub_EventScript_DirectCornerSelectAllServices
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	multichoice 0, 0, MULTI_WIRELESS_NO_RECORD, FALSE
 	switch VAR_RESULT
 	case 0, CableClub_EventScript_WirelessTrade
@@ -1075,11 +991,7 @@ CableClub_EventScript_DirectCornerSelectAllServices::
 	end
 
 CableClub_EventScript_DirectCornerNoBerry::
-<<<<<<< HEAD
 	goto_if_set FLAG_VISITED_BLACKTHORN_CITY, CableClub_EventScript_DirectCornerHasRecordMix
-=======
-	goto_if_set FLAG_VISITED_MAUVILLE_CITY, CableClub_EventScript_DirectCornerHasRecordMix
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	multichoice 0, 0, MULTI_WIRELESS_NO_RECORD_BERRY, FALSE
 	switch VAR_RESULT
 	case 0, CableClub_EventScript_WirelessTrade
@@ -1284,7 +1196,6 @@ CableClub_EventScript_EnterWirelessLinkRoom::
 	applymovement VAR_LAST_TALKED, Movement_AttendantFaceLeft
 	waitmovement 0
 	closemessage
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_PlayerApproachLinkRoomLeft
 	waitmovement 0
 	opendoor 9, 1
@@ -1292,15 +1203,6 @@ CableClub_EventScript_EnterWirelessLinkRoom::
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_PlayerEnterLinkRoom
 	waitmovement 0
 	hideobjectat OBJ_EVENT_ID_PLAYER, 0
-=======
-	applymovement LOCALID_PLAYER, Movement_PlayerApproachLinkRoomLeft
-	waitmovement 0
-	opendoor 9, 1
-	waitdooranim
-	applymovement LOCALID_PLAYER, Movement_PlayerEnterLinkRoom
-	waitmovement 0
-	hideplayer
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	closedoor 9, 1
 	waitdooranim
 	release
@@ -1356,15 +1258,7 @@ EventScript_CloseMossdeepGameCornerBarrier::
 
 CableClub_OnResume:
 	special InitUnionRoom
-<<<<<<< HEAD
 	end
-=======
-.if OW_FLAG_MOVE_UNION_ROOM_CHECK != 0
-	return
-.else
-	end
-.endif
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 MossdeepCity_GameCorner_1F_EventScript_InfoMan2::
 	lock
@@ -1484,15 +1378,9 @@ MossdeepCity_GameCorner_1F_EventScript_EnterMinigameRoom::
 	applymovement VAR_LAST_TALKED, Movement_AttendantFaceLeft
 	waitmovement 0
 	closemessage
-<<<<<<< HEAD
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_PlayerEnterMinigameRoom
 	waitmovement 0
 	hideobjectat OBJ_EVENT_ID_PLAYER, 0
-=======
-	applymovement LOCALID_PLAYER, Movement_PlayerEnterMinigameRoom
-	waitmovement 0
-	hideplayer
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	release
 	waitstate
 	end

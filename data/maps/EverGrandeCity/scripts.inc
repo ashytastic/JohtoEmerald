@@ -1,16 +1,10 @@
 EverGrandeCity_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, EverGrandeCity_OnTransition
-<<<<<<< HEAD
 	map_script MAP_SCRIPT_ON_RESUME, SetTimeEncounters
 	.byte 0
 
 EverGrandeCity_OnTransition:
 	callnative SetTimeBasedEncounters
-=======
-	.byte 0
-
-EverGrandeCity_OnTransition:
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
 	end
 
@@ -27,11 +21,7 @@ EverGrandeCity_EventScript_PokemonLeagueSign::
 	end
 
 EverGrandeCity_EventScript_SetVisitedEverGrande::
-<<<<<<< HEAD
 	setflag FLAG_VISITED_INDIGO_PLATEAU
-=======
-	setflag FLAG_VISITED_EVER_GRANDE_CITY
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	setvar VAR_TEMP_1, 1
 	end
 

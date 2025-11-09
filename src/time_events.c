@@ -25,11 +25,7 @@ static void SetMirageRnd(u32 rnd)
 // unused
 void InitMirageRnd(void)
 {
-<<<<<<< HEAD
     SetMirageRnd((Random() << 16) | Random());
-=======
-    SetMirageRnd(Random32());
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 void UpdateMirageRnd(u16 days)
@@ -51,11 +47,8 @@ bool8 IsMirageIslandPresent(void)
     for (i = 0; i < PARTY_SIZE; i++)
         if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) && (GetMonData(&gPlayerParty[i], MON_DATA_PERSONALITY) & 0xFFFF) == rnd)
             return TRUE;
-<<<<<<< HEAD
         else if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL) == SPECIES_MEW)
             return TRUE;
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
     return FALSE;
 }
@@ -94,15 +87,9 @@ void UpdateShoalTideFlag(void)
     {
         RtcCalcLocalTime();
         if (tide[gLocalTime.hours])
-<<<<<<< HEAD
             FlagSet(FLAG_SYS_LAKE_OF_RAGE_TIDE);
         else
             FlagClear(FLAG_SYS_LAKE_OF_RAGE_TIDE);
-=======
-            FlagSet(FLAG_SYS_SHOAL_TIDE);
-        else
-            FlagClear(FLAG_SYS_SHOAL_TIDE);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
 }
 

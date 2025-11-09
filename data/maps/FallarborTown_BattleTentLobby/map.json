@@ -3,11 +3,7 @@
   "name": "FallarborTown_BattleTentLobby",
   "layout": "LAYOUT_BATTLE_TENT_LOBBY",
   "music": "MUS_B_TOWER_RS",
-<<<<<<< HEAD
   "region_map_section": "MAPSEC_ECRUTEAK_CITY",
-=======
-  "region_map_section": "MAPSEC_FALLARBOR_TOWN",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -16,16 +12,9 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-<<<<<<< HEAD
   "connections": 0,
   "object_events": [
     {
-=======
-  "connections": null,
-  "object_events": [
-    {
-      "local_id": "LOCALID_FALLARBOR_TENT_ATTENDANT",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
       "x": 6,
       "y": 5,
@@ -65,11 +54,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_LASS",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 10,
       "y": 9,
       "elevation": 3,
@@ -82,11 +67,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_PROF_OAK",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_SCOTT",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 0,
       "y": 7,
       "elevation": 3,
@@ -96,11 +77,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "FallarborTown_BattleTentLobby_EventScript_Scott",
-<<<<<<< HEAD
       "flag": "FLAG_GARBAGEFLAG"
-=======
-      "flag": "FLAG_HIDE_FALLARBOR_TOWN_BATTLE_TENT_SCOTT"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     }
   ],
   "warp_events": [
@@ -119,13 +96,9 @@
       "dest_warp_id": "1"
     }
   ],
-<<<<<<< HEAD
   "coord_events": [
 
   ],
-=======
-  "coord_events": [],
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "bg_events": [
     {
       "type": "sign",

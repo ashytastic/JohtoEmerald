@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // Set .compressed = OW_GFX_COMPRESS
 #define COMP OW_GFX_COMPRESS
 
@@ -485,9 +484,6 @@ const void* const gFollowerPalettes[][2] =
 };
 
 #if OW_MON_POKEBALLS
-=======
-#if OW_FOLLOWERS_POKEBALLS
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 #define POKEBALL_GFX_INFO(NAME)                                     \
     [BALL_##NAME] = {                                               \
@@ -519,16 +515,6 @@ const struct ObjectEventGraphicsInfo gPokeballGraphics[POKEBALL_COUNT] = {
     POKEBALL_GFX_INFO(TIMER),
     POKEBALL_GFX_INFO(LUXURY),
     POKEBALL_GFX_INFO(PREMIER),
-<<<<<<< HEAD
-=======
-    // Gen IV/Sinnoh pokeballs
-    POKEBALL_GFX_INFO(DUSK),
-    POKEBALL_GFX_INFO(HEAL),
-    POKEBALL_GFX_INFO(QUICK),
-    POKEBALL_GFX_INFO(CHERISH),
-    POKEBALL_GFX_INFO(PARK),
-    // Gen II/Johto Apricorn pokeballs
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     POKEBALL_GFX_INFO(FAST),
     POKEBALL_GFX_INFO(LEVEL),
     POKEBALL_GFX_INFO(LURE),
@@ -536,7 +522,6 @@ const struct ObjectEventGraphicsInfo gPokeballGraphics[POKEBALL_COUNT] = {
     POKEBALL_GFX_INFO(LOVE),
     POKEBALL_GFX_INFO(FRIEND),
     POKEBALL_GFX_INFO(MOON),
-<<<<<<< HEAD
     POKEBALL_GFX_INFO(GS),
     // Gen IV/Sinnoh pokeballs
     #ifdef ITEM_DUSK_BALL
@@ -567,20 +552,9 @@ const struct ObjectEventGraphicsInfo gPokeballGraphics[POKEBALL_COUNT] = {
     #ifdef ITEM_BEAST_BALL
     POKEBALL_GFX_INFO(BEAST),
     #endif
-=======
-    POKEBALL_GFX_INFO(SPORT),
-    // Gen V
-    POKEBALL_GFX_INFO(DREAM),
-    // Gen VII
-    POKEBALL_GFX_INFO(BEAST),
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     // Gen VIII
     #ifdef ITEM_STRANGE_BALL
     POKEBALL_GFX_INFO(STRANGE),
     #endif
 };
-<<<<<<< HEAD
 #endif
-=======
-#endif //OW_FOLLOWERS_POKEBALLS
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

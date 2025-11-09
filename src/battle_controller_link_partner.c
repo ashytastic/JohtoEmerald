@@ -1,10 +1,6 @@
 #include "global.h"
 #include "battle.h"
-<<<<<<< HEAD
 #include "battle_ai_script_commands.h"
-=======
-#include "battle_ai_main.h"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 #include "battle_anim.h"
 #include "battle_controllers.h"
 #include "battle_interface.h"
@@ -32,7 +28,6 @@
 #include "constants/songs.h"
 #include "constants/trainers.h"
 #include "recorded_battle.h"
-<<<<<<< HEAD
 
 static void LinkPartnerHandleGetMonData(void);
 static void LinkPartnerHandleGetRawMonData(void);
@@ -401,102 +396,10 @@ static void SwitchIn_TryShinyAnim(void)
 static void LinkPartnerBufferExecCompleted(void)
 {
     gBattlerControllerFuncs[gActiveBattler] = LinkPartnerBufferRunCommand;
-=======
-#include "random.h"
-
-static void LinkPartnerHandleDrawTrainerPic(u32 battler);
-static void LinkPartnerHandleTrainerSlideBack(u32 battler);
-static void LinkPartnerHandleIntroTrainerBallThrow(u32 battler);
-static void LinkPartnerHandleDrawPartyStatusSummary(u32 battler);
-static void LinkPartnerHandleLinkStandbyMsg(u32 battler);
-static void LinkPartnerHandleEndLinkBattle(u32 battler);
-
-static void LinkPartnerBufferRunCommand(u32 battler);
-
-static void (*const sLinkPartnerBufferCommands[CONTROLLER_CMDS_COUNT])(u32 battler) =
-{
-    [CONTROLLER_GETMONDATA]               = BtlController_HandleGetMonData,
-    [CONTROLLER_GETRAWMONDATA]            = BtlController_Empty,
-    [CONTROLLER_SETMONDATA]               = BtlController_HandleSetMonData,
-    [CONTROLLER_SETRAWMONDATA]            = BtlController_HandleSetRawMonData,
-    [CONTROLLER_LOADMONSPRITE]            = BtlController_HandleLoadMonSprite,
-    [CONTROLLER_SWITCHINANIM]             = BtlController_HandleSwitchInAnim,
-    [CONTROLLER_RETURNMONTOBALL]          = BtlController_HandleReturnMonToBall,
-    [CONTROLLER_DRAWTRAINERPIC]           = LinkPartnerHandleDrawTrainerPic,
-    [CONTROLLER_TRAINERSLIDE]             = BtlController_Empty,
-    [CONTROLLER_TRAINERSLIDEBACK]         = LinkPartnerHandleTrainerSlideBack,
-    [CONTROLLER_FAINTANIMATION]           = BtlController_HandleFaintAnimation,
-    [CONTROLLER_PALETTEFADE]              = BtlController_Empty,
-    [CONTROLLER_SUCCESSBALLTHROWANIM]     = BtlController_Empty,
-    [CONTROLLER_BALLTHROWANIM]            = BtlController_Empty,
-    [CONTROLLER_PAUSE]                    = BtlController_Empty,
-    [CONTROLLER_MOVEANIMATION]            = BtlController_HandleMoveAnimation,
-    [CONTROLLER_PRINTSTRING]              = BtlController_HandlePrintString,
-    [CONTROLLER_PRINTSTRINGPLAYERONLY]    = BtlController_Empty,
-    [CONTROLLER_CHOOSEACTION]             = BtlController_Empty,
-    [CONTROLLER_YESNOBOX]                 = BtlController_Empty,
-    [CONTROLLER_CHOOSEMOVE]               = BtlController_Empty,
-    [CONTROLLER_OPENBAG]                  = BtlController_Empty,
-    [CONTROLLER_CHOOSEPOKEMON]            = BtlController_Empty,
-    [CONTROLLER_23]                       = BtlController_Empty,
-    [CONTROLLER_HEALTHBARUPDATE]          = BtlController_HandleHealthBarUpdate,
-    [CONTROLLER_EXPUPDATE]                = BtlController_Empty,
-    [CONTROLLER_STATUSICONUPDATE]         = BtlController_HandleStatusIconUpdate,
-    [CONTROLLER_STATUSANIMATION]          = BtlController_HandleStatusAnimation,
-    [CONTROLLER_STATUSXOR]                = BtlController_Empty,
-    [CONTROLLER_DATATRANSFER]             = BtlController_Empty,
-    [CONTROLLER_DMA3TRANSFER]             = BtlController_Empty,
-    [CONTROLLER_PLAYBGM]                  = BtlController_Empty,
-    [CONTROLLER_32]                       = BtlController_Empty,
-    [CONTROLLER_TWORETURNVALUES]          = BtlController_Empty,
-    [CONTROLLER_CHOSENMONRETURNVALUE]     = BtlController_Empty,
-    [CONTROLLER_ONERETURNVALUE]           = BtlController_Empty,
-    [CONTROLLER_ONERETURNVALUE_DUPLICATE] = BtlController_Empty,
-    [CONTROLLER_HITANIMATION]             = BtlController_HandleHitAnimation,
-    [CONTROLLER_CANTSWITCH]               = BtlController_Empty,
-    [CONTROLLER_PLAYSE]                   = BtlController_HandlePlaySE,
-    [CONTROLLER_PLAYFANFAREORBGM]         = BtlController_HandlePlayFanfareOrBGM,
-    [CONTROLLER_FAINTINGCRY]              = BtlController_HandleFaintingCry,
-    [CONTROLLER_INTROSLIDE]               = BtlController_HandleIntroSlide,
-    [CONTROLLER_INTROTRAINERBALLTHROW]    = LinkPartnerHandleIntroTrainerBallThrow,
-    [CONTROLLER_DRAWPARTYSTATUSSUMMARY]   = LinkPartnerHandleDrawPartyStatusSummary,
-    [CONTROLLER_HIDEPARTYSTATUSSUMMARY]   = BtlController_HandleHidePartyStatusSummary,
-    [CONTROLLER_ENDBOUNCE]                = BtlController_Empty,
-    [CONTROLLER_SPRITEINVISIBILITY]       = BtlController_HandleSpriteInvisibility,
-    [CONTROLLER_BATTLEANIMATION]          = BtlController_HandleBattleAnimation,
-    [CONTROLLER_LINKSTANDBYMSG]           = LinkPartnerHandleLinkStandbyMsg,
-    [CONTROLLER_RESETACTIONMOVESELECTION] = BtlController_Empty,
-    [CONTROLLER_ENDLINKBATTLE]            = LinkPartnerHandleEndLinkBattle,
-    [CONTROLLER_DEBUGMENU]                = BtlController_Empty,
-    [CONTROLLER_TERMINATOR_NOP]           = BtlController_TerminatorNop
-};
-
-void SetControllerToLinkPartner(u32 battler)
-{
-    gBattlerControllerEndFuncs[battler] = LinkPartnerBufferExecCompleted;
-    gBattlerControllerFuncs[battler] = LinkPartnerBufferRunCommand;
-}
-
-static void LinkPartnerBufferRunCommand(u32 battler)
-{
-    if (IsBattleControllerActiveOnLocal(battler))
-    {
-        if (gBattleResources->bufferA[battler][0] < ARRAY_COUNT(sLinkPartnerBufferCommands))
-            sLinkPartnerBufferCommands[gBattleResources->bufferA[battler][0]](battler);
-        else
-            BtlController_Complete(battler);
-    }
-}
-
-void LinkPartnerBufferExecCompleted(u32 battler)
-{
-    gBattlerControllerFuncs[battler] = LinkPartnerBufferRunCommand;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     if (gBattleTypeFlags & BATTLE_TYPE_LINK)
     {
         u8 playerId = GetMultiplayerId();
 
-<<<<<<< HEAD
         PrepareBufferDataTransferLink(2, 4, &playerId);
         gBattleBufferA[gActiveBattler][0] = CONTROLLER_TERMINATOR_NOP;
     }
@@ -1204,29 +1107,13 @@ static void DoSwitchOutAnimation(void)
 #define sSpeedX data[0]
 
 static void LinkPartnerHandleDrawTrainerPic(void)
-=======
-        PrepareBufferDataTransferLink(battler, B_COMM_CONTROLLER_IS_DONE, 4, &playerId);
-        gBattleResources->bufferA[battler][0] = CONTROLLER_TERMINATOR_NOP;
-    }
-    else
-    {
-        MarkBattleControllerIdleOnLocal(battler);
-    }
-}
-
-static void LinkPartnerHandleDrawTrainerPic(u32 battler)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     s16 xPos;
     u32 trainerPicId;
 
     if (gBattleTypeFlags & BATTLE_TYPE_MULTI)
     {
-<<<<<<< HEAD
         if ((GetBattlerPosition(gActiveBattler) & BIT_FLANK) != 0) // second mon
-=======
-        if ((GetBattlerPosition(battler) & BIT_FLANK) != 0) // second mon
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             xPos = 90;
         else // first mon
             xPos = 32;
@@ -1236,7 +1123,6 @@ static void LinkPartnerHandleDrawTrainerPic(u32 battler)
         xPos = 80;
     }
 
-<<<<<<< HEAD
     if ((gLinkPlayers[GetBattlerMultiplayerId(gActiveBattler)].version & 0xFF) == VERSION_FIRE_RED
         || (gLinkPlayers[GetBattlerMultiplayerId(gActiveBattler)].version & 0xFF) == VERSION_LEAF_GREEN)
     {
@@ -1811,45 +1697,4 @@ static void LinkPartnerHandleEndLinkBattle(void)
 
 static void LinkPartnerCmdEnd(void)
 {
-=======
-    trainerPicId = LinkPlayerGetTrainerPicId(GetBattlerMultiplayerId(battler));
-    BtlController_HandleDrawTrainerPic(battler, trainerPicId, FALSE,
-                                       xPos, 80 + 4 * (8 - gTrainerBacksprites[trainerPicId].coordinates.size),
-                                       -1);
-}
-
-static void LinkPartnerHandleTrainerSlideBack(u32 battler)
-{
-    BtlController_HandleTrainerSlideBack(battler, 35, FALSE);
-}
-
-static void LinkPartnerHandleIntroTrainerBallThrow(u32 battler)
-{
-    u32 trainerPicId = LinkPlayerGetTrainerPicId(GetBattlerMultiplayerId(battler));
-    const u16 *trainerPal = gTrainerBacksprites[trainerPicId].palette.data;
-    // Link partner uses the same intro sequence as the player partner.
-    BtlController_HandleIntroTrainerBallThrow(battler, 0xD6F9, trainerPal, 24, Controller_PlayerPartnerShowIntroHealthbox);
-}
-
-static void LinkPartnerHandleDrawPartyStatusSummary(u32 battler)
-{
-    BtlController_HandleDrawPartyStatusSummary(battler, B_SIDE_PLAYER, TRUE);
-}
-
-static void LinkPartnerHandleLinkStandbyMsg(u32 battler)
-{
-    RecordedBattle_RecordAllBattlerData(&gBattleResources->bufferA[battler][2]);
-    BtlController_Complete(battler);
-}
-
-static void LinkPartnerHandleEndLinkBattle(u32 battler)
-{
-    RecordedBattle_RecordAllBattlerData(&gBattleResources->bufferA[battler][4]);
-    gBattleOutcome = gBattleResources->bufferA[battler][1];
-    gSaveBlock2Ptr->frontier.disableRecordBattle = gBattleResources->bufferA[battler][2];
-    FadeOutMapMusic(5);
-    BeginFastPaletteFade(3);
-    BtlController_Complete(battler);
-    gBattlerControllerFuncs[battler] = SetBattleEndCallbacks;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }

@@ -11,10 +11,7 @@ SootopolisCity_LotadAndSeedotHouse_EventScript_SeedotBrother::
 	copyvar VAR_RESULT, VAR_0x8004
 	goto_if_eq VAR_RESULT, PARTY_NOTHING_CHOSEN, SootopolisCity_LotadAndSeedotHouse_EventScript_CancelShowSeedot
 	special CompareSeedotSize
-<<<<<<< HEAD
 	bufferunitsystemtext UNIT_TEXT_LENGTH_SMALL_PLURAL, 1
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto_if_eq VAR_RESULT, 1, SootopolisCity_LotadAndSeedotHouse_EventScript_NotSeedot
 	goto_if_eq VAR_RESULT, 2, SootopolisCity_LotadAndSeedotHouse_EventScript_SmallSeedot
 	goto_if_eq VAR_RESULT, 3, SootopolisCity_LotadAndSeedotHouse_EventScript_BigSeedot
@@ -59,10 +56,7 @@ SootopolisCity_LotadAndSeedotHouse_EventScript_LotadBrother::
 	copyvar VAR_RESULT, VAR_0x8004
 	goto_if_eq VAR_RESULT, PARTY_NOTHING_CHOSEN, SootopolisCity_LotadAndSeedotHouse_EventScript_CancelShowLotad
 	special CompareLotadSize
-<<<<<<< HEAD
 	bufferunitsystemtext UNIT_TEXT_LENGTH_SMALL_PLURAL, 1
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	goto_if_eq VAR_RESULT, 1, SootopolisCity_LotadAndSeedotHouse_EventScript_NotLotad
 	goto_if_eq VAR_RESULT, 2, SootopolisCity_LotadAndSeedotHouse_EventScript_SmallLotad
 	goto_if_eq VAR_RESULT, 3, SootopolisCity_LotadAndSeedotHouse_EventScript_BigLotad
@@ -100,10 +94,7 @@ SootopolisCity_LotadAndSeedotHouse_EventScript_NoRoomForElixir2::
 SootopolisCity_LotadAndSeedotHouse_EventScript_SeedotSizeRecord::
 	special GetSeedotSizeRecordInfo
 	lockall
-<<<<<<< HEAD
 	bufferunitsystemtext UNIT_TEXT_LENGTH_SMALL_SINGLE, 1
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox SootopolisCity_LotadAndSeedotHouse_Text_BiggestSeedotInHistory, MSGBOX_DEFAULT
 	releaseall
 	end
@@ -111,10 +102,7 @@ SootopolisCity_LotadAndSeedotHouse_EventScript_SeedotSizeRecord::
 SootopolisCity_LotadAndSeedotHouse_EventScript_LotadSizeRecord::
 	special GetLotadSizeRecordInfo
 	lockall
-<<<<<<< HEAD
 	bufferunitsystemtext UNIT_TEXT_LENGTH_SMALL_SINGLE, 1
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox SootopolisCity_LotadAndSeedotHouse_Text_BiggestLotadInHistory, MSGBOX_DEFAULT
 	releaseall
 	end
@@ -132,11 +120,7 @@ SootopolisCity_LotadAndSeedotHouse_Text_PleaseShowMeBigSeedot:
 	.string "P-p-please, show me!$"
 
 SootopolisCity_LotadAndSeedotHouse_Text_GoshMightBeBiggerThanLotad:
-<<<<<<< HEAD
 	.string "{STR_VAR_2} {STR_VAR_1}!\n"
-=======
-	.string "{STR_VAR_2}!\n"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.string "Oh, my gosh, this is a big one!\p"
 	.string "It might even beat the big LOTAD\n"
 	.string "my younger brother saw!\p"
@@ -152,11 +136,7 @@ SootopolisCity_LotadAndSeedotHouse_Text_BagCrammedFull1:
 	.string "Your BAG is crammed full.$"
 
 SootopolisCity_LotadAndSeedotHouse_Text_SeenBiggerSeedot:
-<<<<<<< HEAD
 	.string "{STR_VAR_2} {STR_VAR_1}, is it?\p"
-=======
-	.string "{STR_VAR_2}, is it?\p"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.string "Hmm… I've seen a bigger SEEDOT\n"
 	.string "than this one.$"
 
@@ -172,11 +152,7 @@ SootopolisCity_LotadAndSeedotHouse_Text_DontHaveBigSeedot:
 
 SootopolisCity_LotadAndSeedotHouse_Text_BiggestSeedotInHistory:
 	.string "The biggest SEEDOT in history!\n"
-<<<<<<< HEAD
 	.string "{STR_VAR_2}'s {STR_VAR_3}-{STR_VAR_1} giant!\p"
-=======
-	.string "{STR_VAR_2}'s {STR_VAR_3} giant!\p"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.string "A SEEDOT bigger than a LOTAD\n"
 	.string "always wanted!$"
 
@@ -192,11 +168,7 @@ SootopolisCity_LotadAndSeedotHouse_Text_PleaseShowMeBigLotad:
 	.string "P-p-please show me!$"
 
 SootopolisCity_LotadAndSeedotHouse_Text_WowMightBeBiggerThanSeedot:
-<<<<<<< HEAD
 	.string "{STR_VAR_2} {STR_VAR_1}!\n"
-=======
-	.string "{STR_VAR_2}!\n"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.string "Wow, that is big!\p"
 	.string "It might be even bigger than the huge\n"
 	.string "SEEDOT my big brother saw.\p"
@@ -212,11 +184,7 @@ SootopolisCity_LotadAndSeedotHouse_Text_BagCrammedFull2:
 	.string "Your BAG is crammed full.$"
 
 SootopolisCity_LotadAndSeedotHouse_Text_SeenBiggerLotad:
-<<<<<<< HEAD
 	.string "{STR_VAR_2} {STR_VAR_1}?\p"
-=======
-	.string "{STR_VAR_2}?\p"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	.string "Hmm… I've seen a bigger LOTAD\n"
 	.string "than this one here.$"
 
@@ -232,13 +200,6 @@ SootopolisCity_LotadAndSeedotHouse_Text_DontHaveBigLotad:
 
 SootopolisCity_LotadAndSeedotHouse_Text_BiggestLotadInHistory:
 	.string "The biggest LOTAD in history!\n"
-<<<<<<< HEAD
 	.string "{STR_VAR_2}'s {STR_VAR_3}-{STR_VAR_1} colossus!\p"
 	.string "A LOTAD bigger than a SEEDOT\n"
 	.string "always wanted!$"
-=======
-	.string "{STR_VAR_2}'s {STR_VAR_3} colossus!\p"
-	.string "A LOTAD bigger than a SEEDOT\n"
-	.string "always wanted!$"
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc

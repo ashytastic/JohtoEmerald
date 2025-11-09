@@ -49,11 +49,7 @@ void SetLilycoveLadyGfx(void)
     if (GetLilycoveLadyId() == LILYCOVE_LADY_CONTEST)
     {
         lilycoveLady = &gSaveBlock1Ptr->lilycoveLady;
-<<<<<<< HEAD
         VarSet(VAR_OBJ_GFX_ID_1, sContestLadyMonGfxId[lilycoveLady->contest.category]);
-=======
-        VarSet(VAR_OBJ_GFX_ID_1, sContestLadyValues[lilycoveLady->contest.category].monGfxId);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         gSpecialVar_Result = TRUE;
     }
     else
@@ -196,11 +192,7 @@ bool8 HasAnotherPlayerGivenFavorLadyItem(void)
 
 static void BufferItemName(u8 *dest, u16 itemId)
 {
-<<<<<<< HEAD
     StringCopy(dest, ItemId_GetName(itemId));
-=======
-    StringCopy(dest, GetItemName(itemId));
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 void BufferFavorLadyItemName(void)
@@ -404,11 +396,7 @@ static u8 BufferQuizAuthorName(void)
     sQuizLadyPtr = &gSaveBlock1Ptr->lilycoveLady.quiz;
     if (sQuizLadyPtr->playerName[0] == EOS)
     {
-<<<<<<< HEAD
         StringCopy_PlayerName(gStringVar1, gText_QuizLady_Lady);
-=======
-        StringCopy_PlayerName(gStringVar1, COMPOUND_STRING("Lady"));
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         authorNameId = QUIZ_AUTHOR_NAME_LADY;
     }
     else
@@ -463,11 +451,7 @@ static u8 GetPlayerNameLength(const u8 *playerName)
 
 void BufferQuizPrizeName(void)
 {
-<<<<<<< HEAD
     StringCopy(gStringVar1, ItemId_GetName(sQuizLadyPtr->prize));
-=======
-    StringCopy(gStringVar1, GetItemName(sQuizLadyPtr->prize));
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 bool8 BufferQuizAuthorNameAndCheckIfLady(void)
@@ -711,24 +695,15 @@ bool8 GivePokeblockToContestLady(struct Pokeblock *pokeblock)
 static void BufferContestLadyCategoryAndMonName(u8 *category, u8 *nickname)
 {
     sContestLadyPtr = &gSaveBlock1Ptr->lilycoveLady.contest;
-<<<<<<< HEAD
     StringCopy(category, sContestLadyCategoryNames[sContestLadyPtr->category]);
     StringCopy_Nickname(nickname, sContestLadyMonNames[sContestLadyPtr->category]);
-=======
-    StringCopy(category, sContestLadyValues[sContestLadyPtr->category].categoryName);
-    StringCopy_Nickname(nickname, sContestLadyValues[sContestLadyPtr->category].monName);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 void BufferContestLadyMonName(u8 *category, u8 *nickname)
 {
     sContestLadyPtr = &gSaveBlock1Ptr->lilycoveLady.contest;
     *category = sContestLadyPtr->category;
-<<<<<<< HEAD
     StringCopy(nickname, sContestLadyMonNames[sContestLadyPtr->category]);
-=======
-    StringCopy(nickname, sContestLadyValues[sContestLadyPtr->category].monName);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 void BufferContestLadyPlayerName(u8 *dest)
@@ -745,11 +720,7 @@ void BufferContestLadyLanguage(u8 *dest)
 
 void BufferContestName(u8 *dest, u8 category)
 {
-<<<<<<< HEAD
     StringCopy(dest, sContestNames[category]);
-=======
-    StringCopy(dest, sContestLadyValues[category].contestName);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 // Used by the Contest Lady's TV show to determine how well she performed
@@ -804,11 +775,7 @@ void SetContestLadyGivenPokeblock(void)
 void GetContestLadyMonSpecies(void)
 {
     sContestLadyPtr = &gSaveBlock1Ptr->lilycoveLady.contest;
-<<<<<<< HEAD
     gSpecialVar_0x8005 = sContestLadyMonSpecies[sContestLadyPtr->category];
-=======
-    gSpecialVar_0x8005 = sContestLadyValues[sContestLadyPtr->category].monSpecies;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 u8 GetContestLadyCategory(void)

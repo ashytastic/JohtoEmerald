@@ -3,11 +3,7 @@
   "name": "Route122",
   "layout": "LAYOUT_ROUTE122",
   "music": "MUS_ROUTE122",
-<<<<<<< HEAD
   "region_map_section": "MAPSEC_ROUTE_47",
-=======
-  "region_map_section": "MAPSEC_ROUTE_122",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_ROUTE",
@@ -28,13 +24,9 @@
       "direction": "down"
     }
   ],
-<<<<<<< HEAD
   "object_events": [
 
   ],
-=======
-  "object_events": [],
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "warp_events": [
     {
       "x": 22,
@@ -44,15 +36,10 @@
       "dest_warp_id": "0"
     }
   ],
-<<<<<<< HEAD
   "coord_events": [
 
   ],
   "bg_events": [
 
   ]
-=======
-  "coord_events": [],
-  "bg_events": []
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }

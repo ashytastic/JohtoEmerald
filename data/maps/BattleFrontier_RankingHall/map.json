@@ -12,17 +12,10 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-<<<<<<< HEAD
   "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_KURT",
-=======
-  "connections": null,
-  "object_events": [
-    {
-      "graphics_id": "OBJ_EVENT_GFX_TEALA",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 24,
       "y": 13,
       "elevation": 3,
@@ -48,11 +41,7 @@
       "flag": "0"
     },
     {
-<<<<<<< HEAD
       "graphics_id": "OBJ_EVENT_GFX_WORKER_M",
-=======
-      "graphics_id": "OBJ_EVENT_GFX_BOY_3",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "x": 44,
       "y": 11,
       "elevation": 3,
@@ -81,13 +70,9 @@
       "dest_warp_id": "4"
     }
   ],
-<<<<<<< HEAD
   "coord_events": [
 
   ],
-=======
-  "coord_events": [],
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "bg_events": [
     {
       "type": "sign",

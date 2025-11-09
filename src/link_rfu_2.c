@@ -77,13 +77,8 @@ struct RfuDebug
     u8 unused4[88];
 };
 
-<<<<<<< HEAD
 EWRAM_DATA u32 gRfuAPIBuffer[RFU_API_BUFF_SIZE_RAM / 4] = {};
 EWRAM_DATA struct RfuManager gRfu = {};
-=======
-COMMON_DATA u32 gRfuAPIBuffer[RFU_API_BUFF_SIZE_RAM / 4] = {0};
-COMMON_DATA struct RfuManager gRfu = {0};
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 
 static u8 sHeldKeyCount;
 static u8 sResendBlock8[CMD_LENGTH * 2];
@@ -143,11 +138,7 @@ static const u8 sAvailSlots[] = {
     [4] = AVAIL_SLOT4
 };
 
-<<<<<<< HEAD
 #define BLOCK_MASK(bitNum)((1 << (bitNum)) - 1)
-=======
-#define BLOCK_MASK(bitNum) ((1 << (bitNum)) - 1)
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 static const u32 sAllBlocksReceived[] = {
     BLOCK_MASK(0),
     BLOCK_MASK(1),
@@ -1184,13 +1175,7 @@ static void RfuHandleReceiveCommand(u8 unused)
                 gRfu.numBlocksReceived[i] = 0;
             }
             else
-<<<<<<< HEAD
                 gRfu.numBlocksReceived[i]++;
-=======
-            {
-                gRfu.numBlocksReceived[i]++;
-            }
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         }
     }
 }
@@ -1317,13 +1302,7 @@ bool32 Rfu_InitBlockSend(const u8 *src, size_t size)
     gRfu.sendBlock.count = (size / 12) + r4;
     gRfu.sendBlock.next = 0;
     if (size > BLOCK_BUFFER_SIZE)
-<<<<<<< HEAD
         gRfu.sendBlock.payload = src;
-=======
-    {
-        gRfu.sendBlock.payload = src;
-    }
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     else
     {
         if (src != gBlockSendBuffer)
@@ -1650,14 +1629,9 @@ static bool8 CheckForLeavingGroupMembers(void)
 
             }
             else if (gRfuSlotStatusNI[gRfu.childSlot]->recv.state == SLOT_STATE_RECV_FAILED)
-<<<<<<< HEAD
                 rfu_clearSlot(TYPE_NI_RECV, i);
             {
 
-=======
-            {
-                rfu_clearSlot(TYPE_NI_RECV, i);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             }
         }
     }
@@ -1803,13 +1777,7 @@ static void Task_PlayerExchange(u8 taskId)
             gTasks[taskId].tState = 101;
         }
         else
-<<<<<<< HEAD
             gTasks[taskId].tState = 2;
-=======
-        {
-            gTasks[taskId].tState = 2;
-        }
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         break;
     case 101:
         if (gSendCmd[0] == 0)
@@ -1830,13 +1798,7 @@ static void Task_PlayerExchange(u8 taskId)
             }
         }
         else
-<<<<<<< HEAD
             gTasks[taskId].tState++;
-=======
-        {
-            gTasks[taskId].tState++;
-        }
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
         break;
     case 4:
         if (AreAllPlayersFinishedReceiving())

@@ -55,10 +55,7 @@ DesertRuins_EventScript_CaveEntranceSide::
 	end
 
 DesertRuins_EventScript_Regirock::
-<<<<<<< HEAD
 	bufferspeciesname 0, SPECIES_REGIROCK
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	lock
 	faceplayer
 	waitse
@@ -67,17 +64,11 @@ DesertRuins_EventScript_Regirock::
 	waitmoncry
 	setwildbattle SPECIES_REGIROCK, 40
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
-<<<<<<< HEAD
 	call_if_set FLAG_DIFFICULTY_HARD, DesertRuins_EventScript_Regirock_Stats
 	special StartRegiBattle
 	waitstate
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	calculatemonstats
-=======
-	special StartRegiBattle
-	waitstate
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, DesertRuins_EventScript_DefeatedRegirock
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, DesertRuins_EventScript_RanFromRegirock
@@ -86,7 +77,6 @@ DesertRuins_EventScript_Regirock::
 	release
 	end
 
-<<<<<<< HEAD
 DesertRuins_EventScript_Regirock_Stats::
 	setvar VAR_0x8000, 500 @HP
 	setvar VAR_0x8002, 999 @DEF
@@ -94,8 +84,6 @@ DesertRuins_EventScript_Regirock_Stats::
 	special SetDefStat
 	return
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 DesertRuins_EventScript_DefeatedRegirock::
 	setflag FLAG_DEFEATED_REGIROCK
 	goto Common_EventScript_RemoveStaticPokemon

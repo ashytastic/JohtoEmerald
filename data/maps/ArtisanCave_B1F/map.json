@@ -2,11 +2,7 @@
   "id": "MAP_ARTISAN_CAVE_B1F",
   "name": "ArtisanCave_B1F",
   "layout": "LAYOUT_ARTISAN_CAVE_B1F",
-<<<<<<< HEAD
   "music": "MUS_RG_SEVII_CAVE",
-=======
-  "music": "MUS_PETALBURG_WOODS",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "region_map_section": "MAPSEC_ARTISAN_CAVE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -16,33 +12,19 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-<<<<<<< HEAD
   "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 12,
       "y": 36,
-=======
-  "connections": null,
-  "object_events": [
-    {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 32,
-      "y": 38,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-<<<<<<< HEAD
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ArtisanCave_B1F_EventScript_ItemHPUp",
-=======
-      "trainer_sight_or_berry_tree_id": "ITEM_HP_UP",
-      "script": "Common_EventScript_FindItem",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "flag": "FLAG_ITEM_ARTISAN_CAVE_B1F_HP_UP"
     }
   ],
@@ -62,13 +44,9 @@
       "dest_warp_id": "1"
     }
   ],
-<<<<<<< HEAD
   "coord_events": [
 
   ],
-=======
-  "coord_events": [],
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
   "bg_events": [
     {
       "type": "hidden_item",
@@ -80,13 +58,8 @@
     },
     {
       "type": "hidden_item",
-<<<<<<< HEAD
       "x": 32,
       "y": 38,
-=======
-      "x": 27,
-      "y": 8,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "elevation": 0,
       "item": "ITEM_CALCIUM",
       "flag": "FLAG_HIDDEN_ITEM_ARTISAN_CAVE_B1F_CALCIUM"
@@ -101,13 +74,8 @@
     },
     {
       "type": "hidden_item",
-<<<<<<< HEAD
       "x": 9,
       "y": 27,
-=======
-      "x": 19,
-      "y": 43,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
       "elevation": 0,
       "item": "ITEM_IRON",
       "flag": "FLAG_HIDDEN_ITEM_ARTISAN_CAVE_B1F_IRON"

@@ -11,11 +11,7 @@ Route129_OnLoad:
 
 Route129_OnTransition:
 	call_if_eq VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_HideMapNamePopup
-<<<<<<< HEAD
 	call_if_ge VAR_GARBAGEVAR, 4, Route129_EventScript_CheckSetAbnormalWeather
-=======
-	call_if_ge VAR_SOOTOPOLIS_CITY_STATE, 4, Route129_EventScript_CheckSetAbnormalWeather
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_129_WEST, AbnormalWeather_StartKyogreWeather
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_129_EAST, AbnormalWeather_StartKyogreWeather
 	end
@@ -29,20 +25,12 @@ Route129_OnFrame:
 	.2byte 0
 
 Route129_EventScript_Chase::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_GRUNT_14, Route129_Text_ChaseIntro, Route129_Text_ChaseDefeat
-=======
-	trainerbattle_single TRAINER_CHASE, Route129_Text_ChaseIntro, Route129_Text_ChaseDefeat
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route129_Text_ChasePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route129_EventScript_Allison::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_BOB, Route129_Text_AllisonIntro, Route129_Text_AllisonDefeat
-=======
-	trainerbattle_single TRAINER_ALLISON, Route129_Text_AllisonIntro, Route129_Text_AllisonDefeat
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route129_Text_AllisonPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -57,11 +45,7 @@ Route129_EventScript_Tisha::
 	end
 
 Route129_EventScript_Clarence::
-<<<<<<< HEAD
 	trainerbattle_single TRAINER_GRUNT_24, Route129_Text_ClarenceIntro, Route129_Text_ClarenceDefeat
-=======
-	trainerbattle_single TRAINER_CLARENCE, Route129_Text_ClarenceIntro, Route129_Text_ClarenceDefeat
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	msgbox Route129_Text_ClarencePostBattle, MSGBOX_AUTOCLOSE
 	end
 

@@ -1,5 +1,4 @@
 SafariZone_Northeast_MapScripts::
-<<<<<<< HEAD
 	map_script MAP_SCRIPT_ON_TRANSITION, SetTimeEncounters
 	map_script MAP_SCRIPT_ON_RESUME, SetTimeEncounters
 	.byte 0
@@ -16,8 +15,4 @@ SafariZone_Northeast_AmbipomEvo_Text:
 	.string "everyone laugh, it will evolve!\p"
 	.string "And it's still lovely!$"
 
-=======
-	.byte 0
-
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 @ Event scripts for SafariZone_Northeast are in SafariZone_South/scripts.inc

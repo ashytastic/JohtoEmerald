@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 .set LOCALID_WINGULL, 3
 
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 FortreeCity_House4_MapScripts::
 	.byte 0
 
@@ -18,17 +15,10 @@ FortreeCity_House4_EventScript_Boy::
 	msgbox FortreeCity_House4_Text_GoBirdPokemon, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_WINGULL_SENT_ON_ERRAND
-<<<<<<< HEAD
 	clearflag FLAG_GARBAGEFLAG
 	applymovement LOCALID_WINGULL, FortreeCity_House4_Movement_WingullExit
 	waitmovement 0
 	removeobject LOCALID_WINGULL
-=======
-	clearflag FLAG_HIDE_MOSSDEEP_CITY_HOUSE_2_WINGULL
-	applymovement LOCALID_FORTREE_HOUSE_WINGULL, FortreeCity_House4_Movement_WingullExit
-	waitmovement 0
-	removeobject LOCALID_FORTREE_HOUSE_WINGULL
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 	releaseall
 	end
 

@@ -26,11 +26,7 @@ static void SetRandomPalacePrize(void);
 static void GivePalacePrize(void);
 
 // Const rom data.
-<<<<<<< HEAD
 static void (* const sBattlePalaceFunctions[])(void) =
-=======
-static void (*const sBattlePalaceFunctions[])(void) =
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 {
     [BATTLE_PALACE_FUNC_INIT]               = InitPalaceChallenge,
     [BATTLE_PALACE_FUNC_GET_DATA]           = GetPalaceData,
@@ -98,11 +94,7 @@ static void InitPalaceChallenge(void)
         gSaveBlock2Ptr->frontier.palaceWinStreaks[battleMode][lvlMode] = 0;
 
     SetDynamicWarp(0, gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum, WARP_ID_NONE);
-<<<<<<< HEAD
     gTrainerBattleOpponent_A = 0;
-=======
-    TRAINER_BATTLE_PARAM.opponentA = 0;
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void GetPalaceData(void)
@@ -161,24 +153,14 @@ static void GetPalaceCommentId(void)
 
 static void SetPalaceOpponent(void)
 {
-<<<<<<< HEAD
     gTrainerBattleOpponent_A = 5 *(Random() % 255) / 64u;
     SetBattleFacilityTrainerGfxId(gTrainerBattleOpponent_A, 0);
-=======
-    TRAINER_BATTLE_PARAM.opponentA = 5 *(Random() % 255) / 64u;
-    SetBattleFacilityTrainerGfxId(TRAINER_BATTLE_PARAM.opponentA, 0);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void BufferOpponentIntroSpeech(void)
 {
-<<<<<<< HEAD
     if (gTrainerBattleOpponent_A < FRONTIER_TRAINERS_COUNT)
         FrontierSpeechToString(gFacilityTrainers[gTrainerBattleOpponent_A].speechBefore);
-=======
-    if (TRAINER_BATTLE_PARAM.opponentA < FRONTIER_TRAINERS_COUNT)
-        FrontierSpeechToString(gFacilityTrainers[TRAINER_BATTLE_PARAM.opponentA].speechBefore);
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
 }
 
 static void IncrementPalaceStreak(void)
@@ -198,10 +180,6 @@ static void IncrementPalaceStreak(void)
 
 static void SavePalaceChallenge(void)
 {
-<<<<<<< HEAD
-=======
-    ClearEnemyPartyAfterChallenge();
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
     gSaveBlock2Ptr->frontier.challengeStatus = gSpecialVar_0x8005;
     VarSet(VAR_TEMP_CHALLENGE_STATUS, 0);
     gSaveBlock2Ptr->frontier.challengePaused = TRUE;

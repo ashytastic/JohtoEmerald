@@ -7,7 +7,6 @@
         {
           "type": "land_mons",
           "encounter_rates": [
-<<<<<<< HEAD
             20,
             20,
             10,
@@ -20,43 +19,31 @@
             4,
             1,
             1
-=======
-            20, 20, 10, 10, 10, 10, 5, 5, 4, 4, 1, 1
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           ]
         },
         {
           "type": "water_mons",
           "encounter_rates": [
-<<<<<<< HEAD
             60,
             30,
             5,
             4,
             1
-=======
-            60, 30, 5, 4, 1
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           ]
         },
         {
           "type": "rock_smash_mons",
           "encounter_rates": [
-<<<<<<< HEAD
             60,
             30,
             5,
             4,
             1
-=======
-            60, 30, 5, 4, 1
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           ]
         },
         {
           "type": "fishing_mons",
           "encounter_rates": [
-<<<<<<< HEAD
             70,
             30,
             60,
@@ -85,14 +72,6 @@
               8,
               9
             ]
-=======
-            70, 30, 60, 20, 20, 40, 40, 15, 4, 1
-          ],
-          "groups": {
-            "old_rod": [0, 1],
-            "good_rod": [2, 3, 4],
-            "super_rod": [5, 6, 7, 8, 9]
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           }
         }
       ],
@@ -106,7 +85,6 @@
               {
                 "min_level": 2,
                 "max_level": 2,
-<<<<<<< HEAD
                 "species": "SPECIES_ESPEON"
               },
               {
@@ -314,8 +292,6 @@
               {
                 "min_level": 2,
                 "max_level": 2,
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 "species": "SPECIES_WURMPLE"
               },
               {
@@ -331,11 +307,7 @@
               {
                 "min_level": 3,
                 "max_level": 3,
-<<<<<<< HEAD
                 "species": "SPECIES_WEEDLE"
-=======
-                "species": "SPECIES_WURMPLE"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               },
               {
                 "min_level": 3,
@@ -345,40 +317,11 @@
               {
                 "min_level": 3,
                 "max_level": 3,
-<<<<<<< HEAD
-=======
-                "species": "SPECIES_POOCHYENA"
-              },
-              {
-                "min_level": 3,
-                "max_level": 3,
-                "species": "SPECIES_WURMPLE"
-              },
-              {
-                "min_level": 3,
-                "max_level": 3,
-                "species": "SPECIES_POOCHYENA"
-              },
-              {
-                "min_level": 2,
-                "max_level": 2,
-                "species": "SPECIES_ZIGZAGOON"
-              },
-              {
-                "min_level": 2,
-                "max_level": 2,
                 "species": "SPECIES_ZIGZAGOON"
               },
               {
                 "min_level": 3,
                 "max_level": 3,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
-                "species": "SPECIES_ZIGZAGOON"
-              },
-              {
-                "min_level": 3,
-                "max_level": 3,
-<<<<<<< HEAD
                 "species": "SPECIES_WURMPLE"
               },
               {
@@ -405,9 +348,6 @@
                 "min_level": 3,
                 "max_level": 3,
                 "species": "SPECIES_EEVEE"
-=======
-                "species": "SPECIES_ZIGZAGOON"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               }
             ]
           }
@@ -471,11 +411,7 @@
               {
                 "min_level": 4,
                 "max_level": 4,
-<<<<<<< HEAD
                 "species": "SPECIES_SURSKIT"
-=======
-                "species": "SPECIES_ZIGZAGOON"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               },
               {
                 "min_level": 3,
@@ -505,7 +441,6 @@
               {
                 "min_level": 5,
                 "max_level": 10,
-<<<<<<< HEAD
                 "species": "SPECIES_GOLDEEN"
               },
               {
@@ -974,14 +909,6 @@
                 "min_level": 20,
                 "max_level": 30,
                 "species": "SPECIES_SURSKIT"
-=======
-                "species": "SPECIES_MARILL"
-              },
-              {
-                "min_level": 20,
-                "max_level": 30,
-                "species": "SPECIES_GOLDEEN"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               }
             ]
           },
@@ -1180,11 +1107,7 @@
               {
                 "min_level": 25,
                 "max_level": 30,
-<<<<<<< HEAD
                 "species": "SPECIES_TENTACRUEL"
-=======
-                "species": "SPECIES_WAILMER"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               },
               {
                 "min_level": 35,
@@ -1200,7 +1123,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_ROUTE103",
           "base_label": "gRoute103_Night",
           "land_mons": {
@@ -1663,8 +1585,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_ROUTE104",
           "base_label": "gRoute104",
           "land_mons": {
@@ -1819,7 +1739,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_ROUTE104",
           "base_label": "gRoute104_Night",
           "land_mons": {
@@ -2282,8 +2201,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_ROUTE105",
           "base_label": "gRoute105",
           "water_mons": {
@@ -2373,7 +2290,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_ROUTE105",
           "base_label": "gRoute105_Night",
           "water_mons": {
@@ -2641,8 +2557,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_ROUTE110",
           "base_label": "gRoute110",
           "land_mons": {
@@ -2797,7 +2711,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_ROUTE110",
           "base_label": "gRoute110_Night",
           "land_mons": {
@@ -3260,8 +3173,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_ROUTE111",
           "base_label": "gRoute111",
           "land_mons": {
@@ -3350,7 +3261,6 @@
               {
                 "min_level": 5,
                 "max_level": 10,
-<<<<<<< HEAD
                 "species": "SPECIES_GOLDEEN"
               },
               {
@@ -3909,14 +3819,6 @@
                 "min_level": 20,
                 "max_level": 30,
                 "species": "SPECIES_SURSKIT"
-=======
-                "species": "SPECIES_MARILL"
-              },
-              {
-                "min_level": 20,
-                "max_level": 30,
-                "species": "SPECIES_GOLDEEN"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               }
             ]
           },
@@ -4076,7 +3978,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_ROUTE112",
           "base_label": "gRoute112_Night",
           "land_mons": {
@@ -4284,8 +4185,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_ROUTE113",
           "base_label": "gRoute113",
           "land_mons": {
@@ -4355,7 +4254,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_ROUTE113",
           "base_label": "gRoute113_Night",
           "land_mons": {
@@ -4563,8 +4461,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_ROUTE114",
           "base_label": "gRoute114",
           "land_mons": {
@@ -4608,25 +4504,11 @@
               {
                 "min_level": 18,
                 "max_level": 18,
-<<<<<<< HEAD
-=======
-                "species": "SPECIES_LOMBRE"
-              },
-              {
-                "min_level": 17,
-                "max_level": 17,
-                "species": "SPECIES_SEVIPER"
-              },
-              {
-                "min_level": 15,
-                "max_level": 15,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 "species": "SPECIES_SEVIPER"
               },
               {
                 "min_level": 17,
                 "max_level": 17,
-<<<<<<< HEAD
                 "species": "SPECIES_ZANGOOSE"
               },
               {
@@ -4638,9 +4520,6 @@
                 "min_level": 17,
                 "max_level": 17,
                 "species": "SPECIES_SURSKIT"
-=======
-                "species": "SPECIES_SEVIPER"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               },
               {
                 "min_level": 15,
@@ -4670,7 +4549,6 @@
               {
                 "min_level": 5,
                 "max_level": 10,
-<<<<<<< HEAD
                 "species": "SPECIES_GOLDEEN"
               },
               {
@@ -5229,14 +5107,6 @@
                 "min_level": 20,
                 "max_level": 30,
                 "species": "SPECIES_SURSKIT"
-=======
-                "species": "SPECIES_MARILL"
-              },
-              {
-                "min_level": 20,
-                "max_level": 30,
-                "species": "SPECIES_GOLDEEN"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               }
             ]
           },
@@ -5396,7 +5266,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_ROUTE116",
           "base_label": "gRoute116_Night",
           "land_mons": {
@@ -5604,8 +5473,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_ROUTE117",
           "base_label": "gRoute117",
           "land_mons": {
@@ -5624,7 +5491,6 @@
               {
                 "min_level": 14,
                 "max_level": 14,
-<<<<<<< HEAD
                 "species": "SPECIES_BUDEW"
               },
               {
@@ -5782,11 +5648,6 @@
                 "species": "SPECIES_BUDEW"
               },
               {
-=======
-                "species": "SPECIES_POOCHYENA"
-              },
-              {
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 "min_level": 14,
                 "max_level": 14,
                 "species": "SPECIES_ODDISH"
@@ -5819,7 +5680,6 @@
               {
                 "min_level": 14,
                 "max_level": 14,
-<<<<<<< HEAD
                 "species": "SPECIES_VOLBEAT"
               },
               {
@@ -5974,8 +5834,6 @@
               {
                 "min_level": 14,
                 "max_level": 14,
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 "species": "SPECIES_ILLUMISE"
               },
               {
@@ -6011,7 +5869,6 @@
               {
                 "min_level": 5,
                 "max_level": 10,
-<<<<<<< HEAD
                 "species": "SPECIES_GOLDEEN"
               },
               {
@@ -6172,14 +6029,6 @@
                 "min_level": 20,
                 "max_level": 30,
                 "species": "SPECIES_SURSKIT"
-=======
-                "species": "SPECIES_MARILL"
-              },
-              {
-                "min_level": 20,
-                "max_level": 30,
-                "species": "SPECIES_GOLDEEN"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               }
             ]
           },
@@ -6308,7 +6157,6 @@
             ]
           },
           "water_mons": {
-<<<<<<< HEAD
             "encounter_rate": 3,
             "mons": [
               {
@@ -6772,9 +6620,6 @@
           },
           "water_mons": {
             "encounter_rate": 3,
-=======
-            "encounter_rate": 4,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             "mons": [
               {
                 "min_level": 5,
@@ -6949,7 +6794,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_ROUTE124",
           "base_label": "gRoute124_Night",
           "water_mons": {
@@ -7217,8 +7061,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_PETALBURG_WOODS",
           "base_label": "gPetalburgWoods",
           "land_mons": {
@@ -7288,7 +7130,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_PETALBURG_WOODS",
           "base_label": "gPetalburgWoods_Night",
           "land_mons": {
@@ -7496,8 +7337,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_RUSTURF_TUNNEL",
           "base_label": "gRusturfTunnel",
           "land_mons": {
@@ -7564,7 +7403,6 @@
                 "species": "SPECIES_WHISMUR"
               }
             ]
-<<<<<<< HEAD
           },
           "rock_smash_mons": {
             "encounter_rate": 20,
@@ -7892,8 +7730,6 @@
                 "species": "SPECIES_NOSEPASS"
               }
             ]
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           }
         },
         {
@@ -8111,29 +7947,17 @@
             "mons": [
               {
                 "min_level": 40,
-<<<<<<< HEAD
                 "max_level": 42,
-=======
-                "max_level": 40,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 "species": "SPECIES_GOLBAT"
               },
               {
                 "min_level": 40,
-<<<<<<< HEAD
                 "max_level": 42,
-=======
-                "max_level": 40,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 "species": "SPECIES_HARIYAMA"
               },
               {
                 "min_level": 40,
-<<<<<<< HEAD
                 "max_level": 42,
-=======
-                "max_level": 40,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 "species": "SPECIES_LAIRON"
               },
               {
@@ -8143,81 +7967,48 @@
               },
               {
                 "min_level": 36,
-<<<<<<< HEAD
                 "max_level": 40,
-=======
-                "max_level": 36,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 "species": "SPECIES_ZUBAT"
               },
               {
                 "min_level": 36,
-<<<<<<< HEAD
                 "max_level": 40,
-=======
-                "max_level": 36,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 "species": "SPECIES_MAKUHITA"
               },
               {
                 "min_level": 38,
-<<<<<<< HEAD
                 "max_level": 41,
-=======
-                "max_level": 38,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 "species": "SPECIES_GOLBAT"
               },
               {
                 "min_level": 38,
-<<<<<<< HEAD
                 "max_level": 41,
-=======
-                "max_level": 38,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 "species": "SPECIES_HARIYAMA"
               },
               {
                 "min_level": 36,
-<<<<<<< HEAD
                 "max_level": 41,
-=======
-                "max_level": 36,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 "species": "SPECIES_ARON"
               },
               {
                 "min_level": 36,
-<<<<<<< HEAD
                 "max_level": 40,
-=======
-                "max_level": 36,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 "species": "SPECIES_WHISMUR"
               },
               {
                 "min_level": 36,
-<<<<<<< HEAD
                 "max_level": 40,
-=======
-                "max_level": 36,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 "species": "SPECIES_ARON"
               },
               {
                 "min_level": 36,
-<<<<<<< HEAD
                 "max_level": 39,
-=======
-                "max_level": 36,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 "species": "SPECIES_WHISMUR"
               }
             ]
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_VICTORY_ROAD_1F",
           "base_label": "gVictoryRoad_1F_Night",
           "land_mons": {
@@ -8425,8 +8216,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_SAFARI_ZONE_SOUTH",
           "base_label": "gSafariZone_South",
           "land_mons": {
@@ -8496,7 +8285,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_SAFARI_ZONE_SOUTH",
           "base_label": "gSafariZone_South_Night",
           "land_mons": {
@@ -8704,8 +8492,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_UNDERWATER_ROUTE126",
           "base_label": "gUnderwater_Route126",
           "water_mons": {
@@ -8742,7 +8528,6 @@
         {
           "map": "MAP_ABANDONED_SHIP_ROOMS_B1F",
           "base_label": "gAbandonedShip_Rooms_B1F",
-<<<<<<< HEAD
           "land_mons": {
             "encounter_rate": 1,
             "mons": [
@@ -9270,8 +9055,6 @@
               }
             ]
           },
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "water_mons": {
             "encounter_rate": 4,
             "mons": [
@@ -9527,7 +9310,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_FIERY_PATH",
           "base_label": "gFieryPath_Night",
           "land_mons": {
@@ -9735,8 +9517,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_METEOR_FALLS_B1F_2R",
           "base_label": "gMeteorFalls_B1F_2R",
           "land_mons": {
@@ -9770,11 +9550,7 @@
               {
                 "min_level": 37,
                 "max_level": 37,
-<<<<<<< HEAD
                 "species": "SPECIES_LUNATONE"
-=======
-                "species": "SPECIES_SOLROCK"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               },
               {
                 "min_level": 25,
@@ -9784,20 +9560,6 @@
               {
                 "min_level": 39,
                 "max_level": 39,
-<<<<<<< HEAD
-                "species": "SPECIES_GOLBAT"
-=======
-                "species": "SPECIES_SOLROCK"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
-              },
-              {
-                "min_level": 38,
-                "max_level": 38,
-                "species": "SPECIES_GOLBAT"
-              },
-              {
-                "min_level": 40,
-                "max_level": 40,
                 "species": "SPECIES_GOLBAT"
               },
               {
@@ -9808,11 +9570,17 @@
               {
                 "min_level": 40,
                 "max_level": 40,
-<<<<<<< HEAD
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 38,
+                "max_level": 38,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 40,
+                "max_level": 40,
                 "species": "SPECIES_CROBAT"
-=======
-                "species": "SPECIES_GOLBAT"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               }
             ]
           },
@@ -9972,7 +9740,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_JAGGED_PASS",
           "base_label": "gJaggedPass_Night",
           "land_mons": {
@@ -10180,8 +9947,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_ROUTE106",
           "base_label": "gRoute106",
           "water_mons": {
@@ -10271,7 +10036,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_ROUTE106",
           "base_label": "gRoute106_Night",
           "water_mons": {
@@ -10539,8 +10303,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_ROUTE107",
           "base_label": "gRoute107",
           "water_mons": {
@@ -10630,7 +10392,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_ROUTE107",
           "base_label": "gRoute107_Night",
           "water_mons": {
@@ -10898,8 +10659,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_ROUTE108",
           "base_label": "gRoute108",
           "water_mons": {
@@ -10989,7 +10748,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_ROUTE108",
           "base_label": "gRoute108_Night",
           "water_mons": {
@@ -11257,8 +11015,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_ROUTE109",
           "base_label": "gRoute109",
           "water_mons": {
@@ -11348,7 +11104,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_ROUTE109",
           "base_label": "gRoute109_Night",
           "water_mons": {
@@ -11616,8 +11371,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_ROUTE115",
           "base_label": "gRoute115",
           "land_mons": {
@@ -11772,7 +11525,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_ROUTE115",
           "base_label": "gRoute115_Night",
           "land_mons": {
@@ -12235,8 +11987,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_NEW_MAUVILLE_INSIDE",
           "base_label": "gNewMauville_Inside",
           "land_mons": {
@@ -12306,7 +12056,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_NEW_MAUVILLE_INSIDE",
           "base_label": "gNewMauville_Inside_Night",
           "land_mons": {
@@ -12514,8 +12263,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_ROUTE119",
           "base_label": "gRoute119",
           "land_mons": {
@@ -12574,7 +12321,6 @@
               {
                 "min_level": 27,
                 "max_level": 27,
-<<<<<<< HEAD
                 "species": "SPECIES_CASTFORM"
               },
               {
@@ -13037,8 +12783,6 @@
               {
                 "min_level": 27,
                 "max_level": 27,
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 "species": "SPECIES_TROPIUS"
               },
               {
@@ -13223,16 +12967,11 @@
               {
                 "min_level": 5,
                 "max_level": 10,
-<<<<<<< HEAD
                 "species": "SPECIES_GOLDEEN"
-=======
-                "species": "SPECIES_MARILL"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               },
               {
                 "min_level": 20,
                 "max_level": 30,
-<<<<<<< HEAD
                 "species": "SPECIES_SURSKIT"
               }
             ]
@@ -13696,9 +13435,6 @@
                 "min_level": 20,
                 "max_level": 30,
                 "species": "SPECIES_SURSKIT"
-=======
-                "species": "SPECIES_GOLDEEN"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               }
             ]
           },
@@ -13913,7 +13649,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_ROUTE121",
           "base_label": "gRoute121_Night",
           "land_mons": {
@@ -14376,8 +14111,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_ROUTE122",
           "base_label": "gRoute122",
           "water_mons": {
@@ -14467,7 +14200,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_ROUTE122",
           "base_label": "gRoute122_Night",
           "water_mons": {
@@ -14735,8 +14467,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_ROUTE123",
           "base_label": "gRoute123",
           "land_mons": {
@@ -14891,7 +14621,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_ROUTE123",
           "base_label": "gRoute123_Night",
           "land_mons": {
@@ -15354,8 +15083,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_MT_PYRE_2F",
           "base_label": "gMtPyre_2F",
           "land_mons": {
@@ -15744,47 +15471,27 @@
               {
                 "min_level": 25,
                 "max_level": 25,
-<<<<<<< HEAD
                 "species": "SPECIES_CHINGLING"
-=======
-                "species": "SPECIES_VULPIX"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               },
               {
                 "min_level": 27,
                 "max_level": 27,
-<<<<<<< HEAD
                 "species": "SPECIES_MEDITITE"
-=======
-                "species": "SPECIES_WINGULL"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               },
               {
                 "min_level": 27,
                 "max_level": 27,
-<<<<<<< HEAD
                 "species": "SPECIES_MEDITITE"
-=======
-                "species": "SPECIES_WINGULL"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               },
               {
                 "min_level": 26,
                 "max_level": 26,
-<<<<<<< HEAD
                 "species": "SPECIES_MEDITITE"
-=======
-                "species": "SPECIES_WINGULL"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               },
               {
                 "min_level": 28,
                 "max_level": 28,
-<<<<<<< HEAD
                 "species": "SPECIES_MEDITITE"
-=======
-                "species": "SPECIES_WINGULL"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               }
             ]
           }
@@ -15846,20 +15553,12 @@
                 "species": "SPECIES_DUSKULL"
               },
               {
-<<<<<<< HEAD
                 "min_level": 15,
-=======
-                "min_level": 28,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 "max_level": 28,
                 "species": "SPECIES_CHIMECHO"
               },
               {
-<<<<<<< HEAD
                 "min_level": 15,
-=======
-                "min_level": 28,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 "max_level": 28,
                 "species": "SPECIES_CHIMECHO"
               }
@@ -16025,7 +15724,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_ROUTE125",
           "base_label": "gRoute125_Night",
           "water_mons": {
@@ -16293,8 +15991,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_ROUTE126",
           "base_label": "gRoute126",
           "water_mons": {
@@ -16384,7 +16080,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_ROUTE126",
           "base_label": "gRoute126_Night",
           "water_mons": {
@@ -16652,8 +16347,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_ROUTE127",
           "base_label": "gRoute127",
           "water_mons": {
@@ -16743,7 +16436,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_ROUTE127",
           "base_label": "gRoute127_Night",
           "water_mons": {
@@ -17011,8 +16703,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_ROUTE128",
           "base_label": "gRoute128",
           "water_mons": {
@@ -17102,7 +16792,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_ROUTE128",
           "base_label": "gRoute128_Night",
           "water_mons": {
@@ -17370,8 +17059,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_ROUTE129",
           "base_label": "gRoute129",
           "water_mons": {
@@ -17522,7 +17209,6 @@
                 "species": "SPECIES_WYNAUT"
               },
               {
-<<<<<<< HEAD
                 "min_level": 100,
                 "max_level": 100,
                 "species": "SPECIES_WYNAUT"
@@ -17680,11 +17366,6 @@
                 "min_level": 100,
                 "max_level": 100,
                 "species": "SPECIES_WOBBUFFET"
-=======
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_WYNAUT"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               }
             ]
           },
@@ -17775,7 +17456,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_ROUTE130",
           "base_label": "gRoute130_CDay",
           "land_mons": {
@@ -18084,8 +17764,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_ROUTE131",
           "base_label": "gRoute131",
           "water_mons": {
@@ -18175,7 +17853,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_ROUTE131",
           "base_label": "gRoute131_Night",
           "water_mons": {
@@ -18443,8 +18120,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_ROUTE132",
           "base_label": "gRoute132",
           "water_mons": {
@@ -18534,7 +18209,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_ROUTE132",
           "base_label": "gRoute132_Night",
           "water_mons": {
@@ -18802,8 +18476,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_ROUTE133",
           "base_label": "gRoute133",
           "water_mons": {
@@ -18893,7 +18565,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_ROUTE133",
           "base_label": "gRoute133_Night",
           "water_mons": {
@@ -19161,8 +18832,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_ROUTE134",
           "base_label": "gRoute134",
           "water_mons": {
@@ -19252,7 +18921,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_ROUTE134",
           "base_label": "gRoute134_Night",
           "water_mons": {
@@ -20049,10 +19717,6 @@
               }
             ]
           },
-=======
-          "map": "MAP_ABANDONED_SHIP_HIDDEN_FLOOR_CORRIDORS",
-          "base_label": "gAbandonedShip_HiddenFloorCorridors",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "water_mons": {
             "encounter_rate": 4,
             "mons": [
@@ -21095,7 +20759,6 @@
             "encounter_rate": 4,
             "mons": [
               {
-<<<<<<< HEAD
                 "min_level": 20,
                 "max_level": 23,
                 "species": "SPECIES_TRAPINCH"
@@ -21239,83 +20902,17 @@
                 "min_level": 44,
                 "max_level": 45,
                 "species": "SPECIES_CRAWDAUNT"
-=======
-                "min_level": 30,
-                "max_level": 30,
-                "species": "SPECIES_ZUBAT"
-              },
-              {
-                "min_level": 31,
-                "max_level": 31,
-                "species": "SPECIES_ZUBAT"
-              },
-              {
-                "min_level": 32,
-                "max_level": 32,
-                "species": "SPECIES_ZUBAT"
-              },
-              {
-                "min_level": 30,
-                "max_level": 30,
-                "species": "SPECIES_SABLEYE"
-              },
-              {
-                "min_level": 32,
-                "max_level": 32,
-                "species": "SPECIES_SABLEYE"
-              },
-              {
-                "min_level": 34,
-                "max_level": 34,
-                "species": "SPECIES_SABLEYE"
-              },
-              {
-                "min_level": 33,
-                "max_level": 33,
-                "species": "SPECIES_ZUBAT"
-              },
-              {
-                "min_level": 34,
-                "max_level": 34,
-                "species": "SPECIES_ZUBAT"
-              },
-              {
-                "min_level": 34,
-                "max_level": 34,
-                "species": "SPECIES_GOLBAT"
-              },
-              {
-                "min_level": 35,
-                "max_level": 35,
-                "species": "SPECIES_GOLBAT"
-              },
-              {
-                "min_level": 33,
-                "max_level": 33,
-                "species": "SPECIES_GOLBAT"
-              },
-              {
-                "min_level": 36,
-                "max_level": 36,
-                "species": "SPECIES_GOLBAT"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               }
             ]
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_CAVE_OF_ORIGIN_UNUSED_RUBY_SAPPHIRE_MAP1",
           "base_label": "gCaveOfOrigin_UnusedRubySapphireMap_Night",
-=======
-          "map": "MAP_CAVE_OF_ORIGIN_UNUSED_RUBY_SAPPHIRE_MAP2",
-          "base_label": "gCaveOfOrigin_UnusedRubySapphireMap2",
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "land_mons": {
             "encounter_rate": 4,
             "mons": [
               {
-<<<<<<< HEAD
                 "min_level": 20,
                 "max_level": 23,
                 "species": "SPECIES_TRAPINCH"
@@ -21767,73 +21364,12 @@
                 "min_level": 44,
                 "max_level": 45,
                 "species": "SPECIES_CRAWDAUNT"
-=======
-                "min_level": 30,
-                "max_level": 30,
-                "species": "SPECIES_ZUBAT"
-              },
-              {
-                "min_level": 31,
-                "max_level": 31,
-                "species": "SPECIES_ZUBAT"
-              },
-              {
-                "min_level": 32,
-                "max_level": 32,
-                "species": "SPECIES_ZUBAT"
-              },
-              {
-                "min_level": 30,
-                "max_level": 30,
-                "species": "SPECIES_SABLEYE"
-              },
-              {
-                "min_level": 32,
-                "max_level": 32,
-                "species": "SPECIES_SABLEYE"
-              },
-              {
-                "min_level": 34,
-                "max_level": 34,
-                "species": "SPECIES_SABLEYE"
-              },
-              {
-                "min_level": 33,
-                "max_level": 33,
-                "species": "SPECIES_ZUBAT"
-              },
-              {
-                "min_level": 34,
-                "max_level": 34,
-                "species": "SPECIES_ZUBAT"
-              },
-              {
-                "min_level": 34,
-                "max_level": 34,
-                "species": "SPECIES_GOLBAT"
-              },
-              {
-                "min_level": 35,
-                "max_level": 35,
-                "species": "SPECIES_GOLBAT"
-              },
-              {
-                "min_level": 33,
-                "max_level": 33,
-                "species": "SPECIES_GOLBAT"
-              },
-              {
-                "min_level": 36,
-                "max_level": 36,
-                "species": "SPECIES_GOLBAT"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               }
             ]
           }
         },
         {
           "map": "MAP_CAVE_OF_ORIGIN_UNUSED_RUBY_SAPPHIRE_MAP3",
-<<<<<<< HEAD
           "base_label": "gCaveOfOrigin_UnusedRubySapphireMap30",
           "water_mons": {
             "encounter_rate": 8,
@@ -21912,75 +21448,11 @@
                 "min_level": 31,
                 "max_level": 34,
                 "species": "SPECIES_HORSEA"
-=======
-          "base_label": "gCaveOfOrigin_UnusedRubySapphireMap3",
-          "land_mons": {
-            "encounter_rate": 4,
-            "mons": [
-              {
-                "min_level": 30,
-                "max_level": 30,
-                "species": "SPECIES_ZUBAT"
-              },
-              {
-                "min_level": 31,
-                "max_level": 31,
-                "species": "SPECIES_ZUBAT"
-              },
-              {
-                "min_level": 32,
-                "max_level": 32,
-                "species": "SPECIES_ZUBAT"
-              },
-              {
-                "min_level": 30,
-                "max_level": 30,
-                "species": "SPECIES_SABLEYE"
-              },
-              {
-                "min_level": 32,
-                "max_level": 32,
-                "species": "SPECIES_SABLEYE"
-              },
-              {
-                "min_level": 34,
-                "max_level": 34,
-                "species": "SPECIES_SABLEYE"
-              },
-              {
-                "min_level": 33,
-                "max_level": 33,
-                "species": "SPECIES_ZUBAT"
-              },
-              {
-                "min_level": 34,
-                "max_level": 34,
-                "species": "SPECIES_ZUBAT"
-              },
-              {
-                "min_level": 34,
-                "max_level": 34,
-                "species": "SPECIES_GOLBAT"
-              },
-              {
-                "min_level": 35,
-                "max_level": 35,
-                "species": "SPECIES_GOLBAT"
-              },
-              {
-                "min_level": 33,
-                "max_level": 33,
-                "species": "SPECIES_GOLBAT"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               },
               {
                 "min_level": 36,
                 "max_level": 36,
-<<<<<<< HEAD
                 "species": "SPECIES_SEADRA"
-=======
-                "species": "SPECIES_GOLBAT"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               }
             ]
           }
@@ -22209,7 +21681,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_SAFARI_ZONE_SOUTHWEST",
           "base_label": "gSafariZone_Southwest_Night",
           "land_mons": {
@@ -22672,8 +22143,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_SAFARI_ZONE_NORTH",
           "base_label": "gSafariZone_North",
           "land_mons": {
@@ -22773,7 +22242,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_SAFARI_ZONE_NORTH",
           "base_label": "gSafariZone_North_Night",
           "land_mons": {
@@ -23071,8 +22539,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_SAFARI_ZONE_NORTHWEST",
           "base_label": "gSafariZone_Northwest",
           "land_mons": {
@@ -23227,7 +22693,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_SAFARI_ZONE_NORTHWEST",
           "base_label": "gSafariZone_Northwest_Night",
           "land_mons": {
@@ -23690,56 +23155,18 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_VICTORY_ROAD_B1F",
           "base_label": "gVictoryRoad_B1F",
           "land_mons": {
             "encounter_rate": 10,
             "mons": [
               {
-<<<<<<< HEAD
                 "min_level": 42,
                 "max_level": 46,
-=======
-                "min_level": 40,
-                "max_level": 40,
-                "species": "SPECIES_GOLBAT"
-              },
-              {
-                "min_level": 40,
-                "max_level": 40,
-                "species": "SPECIES_HARIYAMA"
-              },
-              {
-                "min_level": 40,
-                "max_level": 40,
-                "species": "SPECIES_LAIRON"
-              },
-              {
-                "min_level": 40,
-                "max_level": 40,
-                "species": "SPECIES_LAIRON"
-              },
-              {
-                "min_level": 38,
-                "max_level": 38,
-                "species": "SPECIES_GOLBAT"
-              },
-              {
-                "min_level": 38,
-                "max_level": 38,
-                "species": "SPECIES_HARIYAMA"
-              },
-              {
-                "min_level": 42,
-                "max_level": 42,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 "species": "SPECIES_GOLBAT"
               },
               {
                 "min_level": 42,
-<<<<<<< HEAD
                 "max_level": 46,
                 "species": "SPECIES_HARIYAMA"
               },
@@ -23761,14 +23188,10 @@
               {
                 "min_level": 44,
                 "max_level": 48,
-=======
-                "max_level": 42,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 "species": "SPECIES_HARIYAMA"
               },
               {
                 "min_level": 42,
-<<<<<<< HEAD
                 "max_level": 46,
                 "species": "SPECIES_MEDITITE"
               },
@@ -23795,24 +23218,6 @@
               {
                 "min_level": 44,
                 "max_level": 46,
-=======
-                "max_level": 42,
-                "species": "SPECIES_LAIRON"
-              },
-              {
-                "min_level": 38,
-                "max_level": 38,
-                "species": "SPECIES_MAWILE"
-              },
-              {
-                "min_level": 42,
-                "max_level": 42,
-                "species": "SPECIES_LAIRON"
-              },
-              {
-                "min_level": 38,
-                "max_level": 38,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 "species": "SPECIES_MAWILE"
               }
             ]
@@ -23849,7 +23254,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_VICTORY_ROAD_B1F",
           "base_label": "gVictoryRoad_B1F_Night",
           "land_mons": {
@@ -24147,15 +23551,12 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_VICTORY_ROAD_B2F",
           "base_label": "gVictoryRoad_B2F",
           "land_mons": {
             "encounter_rate": 10,
             "mons": [
               {
-<<<<<<< HEAD
                 "min_level": 44,
                 "max_level": 46,
                 "species": "SPECIES_GOLBAT"
@@ -24232,14 +23633,10 @@
               },
               {
                 "min_level": 35,
-=======
-                "min_level": 40,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 "max_level": 40,
                 "species": "SPECIES_GOLBAT"
               },
               {
-<<<<<<< HEAD
                 "min_level": 35,
                 "max_level": 40,
                 "species": "SPECIES_GOLBAT"
@@ -24649,54 +24046,20 @@
               {
                 "min_level": 42,
                 "max_level": 46,
-=======
-                "min_level": 40,
-                "max_level": 40,
-                "species": "SPECIES_SABLEYE"
-              },
-              {
-                "min_level": 40,
-                "max_level": 40,
-                "species": "SPECIES_LAIRON"
-              },
-              {
-                "min_level": 40,
-                "max_level": 40,
-                "species": "SPECIES_LAIRON"
-              },
-              {
-                "min_level": 42,
-                "max_level": 42,
-                "species": "SPECIES_GOLBAT"
-              },
-              {
-                "min_level": 42,
-                "max_level": 42,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 "species": "SPECIES_SABLEYE"
               },
               {
                 "min_level": 44,
-<<<<<<< HEAD
                 "max_level": 46,
                 "species": "SPECIES_MEDICHAM"
               },
               {
                 "min_level": 44,
                 "max_level": 46,
-=======
-                "max_level": 44,
-                "species": "SPECIES_GOLBAT"
-              },
-              {
-                "min_level": 44,
-                "max_level": 44,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 "species": "SPECIES_SABLEYE"
               },
               {
                 "min_level": 42,
-<<<<<<< HEAD
                 "max_level": 46,
                 "species": "SPECIES_LAIRON"
               },
@@ -24714,25 +24077,6 @@
                 "min_level": 47,
                 "max_level": 47,
                 "species": "SPECIES_MEDICHAM"
-=======
-                "max_level": 42,
-                "species": "SPECIES_LAIRON"
-              },
-              {
-                "min_level": 42,
-                "max_level": 42,
-                "species": "SPECIES_MAWILE"
-              },
-              {
-                "min_level": 44,
-                "max_level": 44,
-                "species": "SPECIES_LAIRON"
-              },
-              {
-                "min_level": 44,
-                "max_level": 44,
-                "species": "SPECIES_MAWILE"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               }
             ]
           },
@@ -24742,48 +24086,27 @@
               {
                 "min_level": 30,
                 "max_level": 35,
-<<<<<<< HEAD
                 "species": "SPECIES_SHELLDER"
-=======
-                "species": "SPECIES_GOLBAT"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               },
               {
                 "min_level": 25,
                 "max_level": 30,
-<<<<<<< HEAD
                 "species": "SPECIES_SHELLDER"
-=======
-                "species": "SPECIES_GOLBAT"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               },
               {
                 "min_level": 35,
                 "max_level": 40,
-<<<<<<< HEAD
                 "species": "SPECIES_CLOYSTER"
-=======
-                "species": "SPECIES_GOLBAT"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               },
               {
                 "min_level": 35,
                 "max_level": 40,
-<<<<<<< HEAD
                 "species": "SPECIES_CLOYSTER"
               },
               {
                 "min_level": 46,
                 "max_level": 46,
                 "species": "SPECIES_LAPRAS"
-=======
-                "species": "SPECIES_GOLBAT"
-              },
-              {
-                "min_level": 35,
-                "max_level": 40,
-                "species": "SPECIES_GOLBAT"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               }
             ]
           },
@@ -24818,20 +24141,12 @@
               {
                 "min_level": 25,
                 "max_level": 30,
-<<<<<<< HEAD
                 "species": "SPECIES_KABUTO"
-=======
-                "species": "SPECIES_BARBOACH"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               },
               {
                 "min_level": 30,
                 "max_level": 35,
-<<<<<<< HEAD
                 "species": "SPECIES_OMANYTE"
-=======
-                "species": "SPECIES_BARBOACH"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               },
               {
                 "min_level": 30,
@@ -24890,20 +24205,12 @@
               {
                 "min_level": 18,
                 "max_level": 18,
-<<<<<<< HEAD
                 "species": "SPECIES_LUNATONE"
-=======
-                "species": "SPECIES_SOLROCK"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               },
               {
                 "min_level": 14,
                 "max_level": 14,
-<<<<<<< HEAD
                 "species": "SPECIES_LUNATONE"
-=======
-                "species": "SPECIES_SOLROCK"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               },
               {
                 "min_level": 19,
@@ -25017,11 +24324,7 @@
           "map": "MAP_METEOR_FALLS_1F_2R",
           "base_label": "gMeteorFalls_1F_2R",
           "land_mons": {
-<<<<<<< HEAD
             "encounter_rate": 7,
-=======
-            "encounter_rate": 10,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
             "mons": [
               {
                 "min_level": 33,
@@ -25051,29 +24354,17 @@
               {
                 "min_level": 37,
                 "max_level": 37,
-<<<<<<< HEAD
                 "species": "SPECIES_LUNATONE"
-=======
-                "species": "SPECIES_SOLROCK"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               },
               {
                 "min_level": 35,
                 "max_level": 35,
-<<<<<<< HEAD
                 "species": "SPECIES_LUNATONE"
-=======
-                "species": "SPECIES_GOLBAT"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               },
               {
                 "min_level": 39,
                 "max_level": 39,
-<<<<<<< HEAD
                 "species": "SPECIES_LUNATONE"
-=======
-                "species": "SPECIES_SOLROCK"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               },
               {
                 "min_level": 38,
@@ -25217,29 +24508,17 @@
               {
                 "min_level": 37,
                 "max_level": 37,
-<<<<<<< HEAD
                 "species": "SPECIES_LUNATONE"
-=======
-                "species": "SPECIES_SOLROCK"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               },
               {
                 "min_level": 35,
                 "max_level": 35,
-<<<<<<< HEAD
                 "species": "SPECIES_LUNATONE"
-=======
-                "species": "SPECIES_GOLBAT"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               },
               {
                 "min_level": 39,
                 "max_level": 39,
-<<<<<<< HEAD
                 "species": "SPECIES_LUNATONE"
-=======
-                "species": "SPECIES_SOLROCK"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               },
               {
                 "min_level": 38,
@@ -25885,7 +25164,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_LILYCOVE_CITY",
           "base_label": "gLilycoveCity_Night",
           "water_mons": {
@@ -26153,8 +25431,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_DEWFORD_TOWN",
           "base_label": "gDewfordTown",
           "water_mons": {
@@ -26244,7 +25520,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_DEWFORD_TOWN",
           "base_label": "gDewfordTown_Night",
           "water_mons": {
@@ -26512,8 +25787,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_SLATEPORT_CITY",
           "base_label": "gSlateportCity",
           "water_mons": {
@@ -26692,7 +25965,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_MOSSDEEP_CITY",
           "base_label": "gMossdeepCity_Night",
           "water_mons": {
@@ -26960,8 +26232,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_PACIFIDLOG_TOWN",
           "base_label": "gPacifidlogTown",
           "water_mons": {
@@ -26978,11 +26248,7 @@
                 "species": "SPECIES_WINGULL"
               },
               {
-<<<<<<< HEAD
                 "min_level": 25,
-=======
-                "min_level": 15,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
                 "max_level": 25,
                 "species": "SPECIES_WINGULL"
               },
@@ -27144,7 +26410,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_EVER_GRANDE_CITY",
           "base_label": "gEverGrandeCity_Night",
           "water_mons": {
@@ -27412,8 +26677,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_PETALBURG_CITY",
           "base_label": "gPetalburgCity",
           "water_mons": {
@@ -27606,7 +26869,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_SHOAL_CAVE_LOW_TIDE_ICE_ROOM",
           "base_label": "gShoalCave_LowTideIceRoom_Night",
           "land_mons": {
@@ -27814,8 +27076,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_SKY_PILLAR_1F",
           "base_label": "gSkyPillar_1F",
           "land_mons": {
@@ -28266,7 +27526,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_SAFARI_ZONE_SOUTHEAST",
           "base_label": "gSafariZone_Southeast_Night",
           "land_mons": {
@@ -28729,8 +27988,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_SAFARI_ZONE_NORTHEAST",
           "base_label": "gSafariZone_Northeast",
           "land_mons": {
@@ -28744,11 +28001,7 @@
               {
                 "min_level": 34,
                 "max_level": 34,
-<<<<<<< HEAD
                 "species": "SPECIES_SUNKERN"
-=======
-                "species": "SPECIES_TEDDIURSA"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               },
               {
                 "min_level": 35,
@@ -28758,29 +28011,17 @@
               {
                 "min_level": 36,
                 "max_level": 36,
-<<<<<<< HEAD
                 "species": "SPECIES_SUNKERN"
-=======
-                "species": "SPECIES_TEDDIURSA"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               },
               {
                 "min_level": 34,
                 "max_level": 34,
-<<<<<<< HEAD
                 "species": "SPECIES_LEDYBA"
-=======
-                "species": "SPECIES_SUNKERN"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               },
               {
                 "min_level": 33,
                 "max_level": 33,
-<<<<<<< HEAD
                 "species": "SPECIES_PINECO"
-=======
-                "species": "SPECIES_LEDYBA"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               },
               {
                 "min_level": 35,
@@ -28790,11 +28031,7 @@
               {
                 "min_level": 34,
                 "max_level": 34,
-<<<<<<< HEAD
                 "species": "SPECIES_TEDDIURSA"
-=======
-                "species": "SPECIES_PINECO"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               },
               {
                 "min_level": 36,
@@ -28850,7 +28087,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_SAFARI_ZONE_NORTHEAST",
           "base_label": "gSafariZone_Northeast_Night",
           "land_mons": {
@@ -29148,8 +28384,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_MAGMA_HIDEOUT_1F",
           "base_label": "gMagmaHideout_1F",
           "land_mons": {
@@ -29771,7 +29005,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_MIRAGE_TOWER_1F",
           "base_label": "gMirageTower_1F_Night",
           "land_mons": {
@@ -29979,8 +29212,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_MIRAGE_TOWER_2F",
           "base_label": "gMirageTower_2F",
           "land_mons": {
@@ -30050,7 +29281,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_MIRAGE_TOWER_2F",
           "base_label": "gMirageTower_2F_Night",
           "land_mons": {
@@ -30258,8 +29488,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_MIRAGE_TOWER_3F",
           "base_label": "gMirageTower_3F",
           "land_mons": {
@@ -30329,7 +29557,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_MIRAGE_TOWER_3F",
           "base_label": "gMirageTower_3F_Night",
           "land_mons": {
@@ -30537,8 +29764,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_MIRAGE_TOWER_4F",
           "base_label": "gMirageTower_4F",
           "land_mons": {
@@ -30608,7 +29833,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_MIRAGE_TOWER_4F",
           "base_label": "gMirageTower_4F_Night",
           "land_mons": {
@@ -30816,8 +30040,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_DESERT_UNDERPASS",
           "base_label": "gDesertUnderpass",
           "land_mons": {
@@ -30956,7 +30178,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_ARTISAN_CAVE_B1F",
           "base_label": "gArtisanCave_B1F_Night",
           "land_mons": {
@@ -31164,8 +30385,6 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_ARTISAN_CAVE_1F",
           "base_label": "gArtisanCave_1F",
           "land_mons": {
@@ -31235,7 +30454,6 @@
           }
         },
         {
-<<<<<<< HEAD
           "map": "MAP_ARTISAN_CAVE_1F",
           "base_label": "gArtisanCave_1F_Night",
           "land_mons": {
@@ -31443,15 +30661,12 @@
           }
         },
         {
-=======
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
           "map": "MAP_ALTERING_CAVE",
           "base_label": "gAlteringCave1",
           "land_mons": {
             "encounter_rate": 7,
             "mons": [
               {
-<<<<<<< HEAD
                 "min_level": 1,
                 "max_level": 10,
                 "species": "SPECIES_UNOWN"
@@ -31510,66 +30725,6 @@
                 "min_level": 8,
                 "max_level": 99,
                 "species": "SPECIES_UNOWN"
-=======
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_ZUBAT"
-              },
-              {
-                "min_level": 12,
-                "max_level": 12,
-                "species": "SPECIES_ZUBAT"
-              },
-              {
-                "min_level": 8,
-                "max_level": 8,
-                "species": "SPECIES_ZUBAT"
-              },
-              {
-                "min_level": 14,
-                "max_level": 14,
-                "species": "SPECIES_ZUBAT"
-              },
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_ZUBAT"
-              },
-              {
-                "min_level": 12,
-                "max_level": 12,
-                "species": "SPECIES_ZUBAT"
-              },
-              {
-                "min_level": 16,
-                "max_level": 16,
-                "species": "SPECIES_ZUBAT"
-              },
-              {
-                "min_level": 6,
-                "max_level": 6,
-                "species": "SPECIES_ZUBAT"
-              },
-              {
-                "min_level": 8,
-                "max_level": 8,
-                "species": "SPECIES_ZUBAT"
-              },
-              {
-                "min_level": 14,
-                "max_level": 14,
-                "species": "SPECIES_ZUBAT"
-              },
-              {
-                "min_level": 8,
-                "max_level": 8,
-                "species": "SPECIES_ZUBAT"
-              },
-              {
-                "min_level": 14,
-                "max_level": 14,
-                "species": "SPECIES_ZUBAT"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               }
             ]
           }
@@ -32160,7 +31315,6 @@
               {
                 "min_level": 37,
                 "max_level": 37,
-<<<<<<< HEAD
                 "species": "SPECIES_LUNATONE"
               },
               {
@@ -58912,39 +58066,11 @@
               {
                 "min_level": 40,
                 "max_level": 42,
-=======
-                "species": "SPECIES_SOLROCK"
-              },
-              {
-                "min_level": 35,
-                "max_level": 35,
-                "species": "SPECIES_GOLBAT"
-              },
-              {
-                "min_level": 39,
-                "max_level": 39,
-                "species": "SPECIES_SOLROCK"
-              },
-              {
-                "min_level": 38,
-                "max_level": 38,
                 "species": "SPECIES_GOLBAT"
               },
               {
                 "min_level": 40,
                 "max_level": 40,
-                "species": "SPECIES_GOLBAT"
-              },
-              {
-                "min_level": 38,
-                "max_level": 38,
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
-                "species": "SPECIES_GOLBAT"
-              },
-              {
-                "min_level": 40,
-                "max_level": 40,
-<<<<<<< HEAD
                 "species": "SPECIES_POLIWHIRL"
               },
               {
@@ -68292,9 +67418,6 @@
                 "min_level": 10,
                 "max_level": 10,
                 "species": "SPECIES_LEDYBA"
-=======
-                "species": "SPECIES_GOLBAT"
->>>>>>> 8eea132406f53e5857d1eec72181867b469bddfc
               }
             ]
           }
